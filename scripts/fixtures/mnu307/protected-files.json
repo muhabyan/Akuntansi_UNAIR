@@ -149,7 +149,12 @@
   },
   "src/data/banksoal/mnm101.ts": {
     "worktree": "a93e61def445a1efd58f5413e014f7aeb03d9de4a5661885b71d164251a6c747",
-    "repository": "bac3409a81eef9cfe47253d21f7b5b1dffaeaaabbb84d9978da4c1493f244b43"
+    "repository": "bac3409a81eef9cfe47253d21f7b5b1dffaeaaabbb84d9978da4c1493f244b43",
+    "authorizedMnu108PostUas20261013": [
+      "5a842b8110ae39f9a1db0d09cacfda3a2b578b34ff727a4e6da70aa453d369b8",
+      "58774fb8282753a58075d4d6f93ce667bfc74c73defa7f2aa5502bc1ee7309f4",
+      "d2f4310bc2c654b0acf31ea26093a74aaf25853719a432952ccb7ad114e21686"
+    ]
   },
   "src/data/banksoal/mnu101.ts": {
     "worktree": "1586f9929bb28ce4fdf89b69cc8cac7dac5330c769766e296e7d850a9d6ed869",
@@ -245,7 +250,12 @@
   },
   "src/data/flashcards/mnm101.ts": {
     "worktree": "063e834237218fd9bdf5e1d9e56fc0c644a36abb9e71933e18a0b4a48301cdcb",
-    "repository": "00757f6dd375cad670c742c91a89873b75e3763b71d46fb52cbc09d4e9a5ec26"
+    "repository": "00757f6dd375cad670c742c91a89873b75e3763b71d46fb52cbc09d4e9a5ec26",
+    "authorizedMnu108PostUas20261013": [
+      "1d650189e10c1b80e2a9eb50230cb0878f971ad8f414b7cf4e48dff5e305bce9",
+      "63e7b48893b4b8571f5a5f8ba42c309763f903e3e64813c6e21bfab9a7895568",
+      "e11448d3f00aedc99af20060597d58ff02b35c3806d3698f9732575374441195"
+    ]
   },
   "src/data/flashcards/mnm106.ts": {
     "worktree": "194b9237f6033fead2f59ee6ccf41428849cbda438cf12c68c9aade6acfdfa83",
@@ -425,7 +435,12 @@
   },
   "src/data/quizzes/mnm101.ts": {
     "worktree": "be8826c26bd275935988c2cf16ca2606393c6d71daf924551e314f5b77a19b83",
-    "repository": "ae8400c4879497ec361d8826ad1d4d86776056fa6a7313a5c4e85708b6823adf"
+    "repository": "ae8400c4879497ec361d8826ad1d4d86776056fa6a7313a5c4e85708b6823adf",
+    "authorizedMnu108PostUas20261013": [
+      "1d5c5c3072cda4dba9280f438dff3533f1f05dadcda9e72bfbadaac5e3afe1e9",
+      "18e9bf19befbbbcba232ba8dfbfe05c7a77a31862350da9ef01f60d939e76e66",
+      "22a751ecfb677297d4094a9c637669dc0915318c34987194a8db66ee88556696"
+    ]
   },
   "src/data/quizzes/mnm106.ts": {
     "worktree": "b096223e97922091fb5cffa13ea1463e57ffefb16bdf1a529c4374692ad730a4",

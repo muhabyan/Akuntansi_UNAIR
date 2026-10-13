@@ -177,7 +177,7 @@ let preview,chromium,cdp;
 const profile=fs.mkdtempSync(path.join(os.tmpdir(),'akuntansihub-audit-browser-'));
 const results=[];
 const courseCodes=(process.env.AUDIT_COURSES??'MNK102').split(',');
-const meetings=code=>['MNK102','AKK202','PJK301','AKA201','MNU307'].includes(code)?[9,10,11,12,13,14,15]:[8,9,10,11,12,13,14];
+const meetings=code=>['MNK102','AKK202','PJK301','AKA201','MNU307','MNU108'].includes(code)?[9,10,11,12,13,14,15]:[8,9,10,11,12,13,14];
 try {
   preview=start(process.execPath,[path.join(root,'node_modules/vite/bin/vite.js'),'preview','--host',host,'--port',String(port),'--strictPort']);
   await waitFor(baseUrl);
@@ -198,7 +198,11 @@ try {
       const clicked=await evaluate(cdp,`(()=>{const el=document.querySelector('button[aria-label^="Buka TM ${tm}:"]');if(!el)return [...document.querySelectorAll('button')].map(b=>b.textContent.trim()).filter(Boolean).slice(-25);el.click();return true;})()`);
       if(clicked!==true)throw new Error('Material button: '+JSON.stringify(clicked));
       await sleep(500);
-      if(code==='MNK102')for(let tries=0;tries<40;tries++){if(await evaluate(cdp,"Boolean(document.querySelector('.layered-self-check'))"))break;await sleep(150);}
+      if(['MNK102','MNU108'].includes(code))for(let tries=0;tries<40;tries++){if(await evaluate(cdp,"Boolean(document.querySelector('.layered-self-check'))"))break;await sleep(150);}
+      if(code==='MNU108'){
+        await evaluate(cdp,"document.querySelectorAll('.layered-pendalaman > button[aria-expanded=\"false\"]').forEach(b=>b.click())");
+        await sleep(350);
+      }
       await evaluate(cdp,`document.querySelectorAll('details').forEach(d=>d.open=true);document.documentElement.classList.toggle('dark',${theme==='dark'})`);
       await sleep(400);
       const state=await evaluate(cdp,`(()=>{
@@ -213,15 +217,19 @@ try {
         for(const svg of graphs){const box=svg.viewBox.baseVal;const scale=svg.getBoundingClientRect().width/box.width;
           for(const t of svg.querySelectorAll('text')){const b=bounds(svg,t);if(b.x < box.x-1||b.y < box.y-1||b.right>box.x+box.width+1||b.bottom>box.y+box.height+1)clipped.push(t.textContent);
             if(t.closest('[data-testid="mobile-finance-graph"]')&&parseFloat(getComputedStyle(t).fontSize)*scale<12)tiny.push(t.textContent);}}
-        const legacyClipped=[];
-        for(const svg of allGraphs.filter(s=>!s.classList.contains('finance-svg'))){const box=svg.viewBox.baseVal;
-          for(const t of svg.querySelectorAll('text')){const b=bounds(svg,t);if(b.x < box.x-1||b.y < box.y-1||b.right>box.x+box.width+1||b.bottom>box.y+box.height+1)legacyClipped.push(t.textContent);}}
-        return {overflow:document.documentElement.scrollWidth-innerWidth,graphs:graphs.length,clipped,tiny,legacyGraphs:allGraphs.length-graphs.length,legacyClipped,mathErrors:document.querySelectorAll('.katex-error').length,mobileGraphs:document.querySelectorAll('[data-testid="mobile-finance-graph"]').length};
+        const legacyClipped=[];const filledConnectors=[];
+        for(const svg of allGraphs.filter(s=>!s.classList.contains('finance-svg'))){const box=svg.viewBox.baseVal;const scale=svg.getBoundingClientRect().width/box.width;
+          if(svg.classList.contains('mnu108-post-diagram'))for(const connector of svg.querySelectorAll('path[style*="fill:none"]'))if(getComputedStyle(connector).fill!=='none')filledConnectors.push(connector.getAttribute('d'));
+          for(const t of svg.querySelectorAll('text')){const b=bounds(svg,t);if(b.x < box.x-1||b.y < box.y-1||b.right>box.x+box.width+1||b.bottom>box.y+box.height+1)legacyClipped.push(t.textContent);
+            if(svg.classList.contains('mnu108-post-diagram')&&parseFloat(getComputedStyle(t).fontSize)*scale<12)tiny.push(t.textContent);}}
+        return {overflow:document.documentElement.scrollWidth-innerWidth,graphs:graphs.length,clipped,tiny,legacyGraphs:allGraphs.length-graphs.length,legacyClipped,filledConnectors,mathErrors:document.querySelectorAll('.katex-error').length,mobileGraphs:document.querySelectorAll('[data-testid="mobile-finance-graph"]').length};
       })()`);
       results.push({code,width,theme,tm,...state});
       if(tm===meetings(code).at(-1))console.log(`${code} ${width}px ${theme}: ${results.length} checks completed`);
       fs.writeFileSync(path.join(root,'tmp/source-audit/browser-progress.json'),JSON.stringify(results,null,2));
-      if((code==='MNK102'&&state.graphs===0)||state.overflow>0||state.clipped.length||state.legacyClipped.length||state.tiny.length||state.mathErrors)throw new Error(JSON.stringify(results.at(-1)));
+      const expectedMnu108={9:7,10:12,11:9,12:8,13:12,14:15,15:6};
+      if((code==='MNK102'&&state.graphs===0)||(code==='MNU108'&&state.legacyGraphs!==expectedMnu108[tm]*(width===375?2:1))||state.overflow>0||state.clipped.length||state.legacyClipped.length||state.tiny.length||state.filledConnectors.length||state.mathErrors)throw new Error(JSON.stringify(results.at(-1)));
+      if(code==='MNU108'&&[11,12,13,14,15].includes(tm)){await evaluate(cdp,tm===12?"[...document.querySelectorAll('.course-figure-surface')].find(f=>f.textContent.includes('Fiedler: pola')).scrollIntoView({block:'start',behavior:'instant'})":"document.querySelector('.course-figure-surface').scrollIntoView({block:'start',behavior:'instant'})");await sleep(200);const shot=await cdp.send('Page.captureScreenshot',{format:'png'});fs.writeFileSync(path.join(root,`tmp/source-audit/mnu108/tm${tm}-${width}-${theme}.png`),Buffer.from(shot.data,'base64'));}
       if(code==='MNK102'&&tm===9){await evaluate(cdp,`[...document.querySelectorAll('figure')].find(f=>f.textContent.includes('MM tanpa pajak: biaya klaim')).scrollIntoView({block:'start',behavior:'instant'})`);await sleep(400);const shot=await cdp.send('Page.captureScreenshot',{format:'png'});fs.writeFileSync(path.join(root,`tmp/source-audit/mm-${width}-${theme}.png`),Buffer.from(shot.data,'base64'));}
     }
   }

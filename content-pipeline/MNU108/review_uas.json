@@ -1,0 +1,301 @@
+{
+  "tm": 16,
+  "title": "Review / Pemantapan UAS Pengantar Manajemen",
+  "layout": "layered",
+  "coreReadingMinutes": 20,
+  "ref": "Daft dan Marcic, Understanding Management 12e (2023), Ch.8–15; RPP 2026 TM9–15. UAS pada TM16.",
+  "intro": "Gunakan ini untuk menghubungkan diagnosis, konsep, tindakan dan evaluasi dari tujuh TM. Prioritas latihan mengikuti RPP serta kasus buku; tidak ada arsip soal UAS yang ditemukan sehingga bentuk soal nyata belum diketahui.",
+  "objectives": [
+    "Pilih model dari masalah dan bukti.",
+    "Pisahkan fakta sumber dari asumsi serta penafsiran.",
+    "Jelaskan keputusan, kelemahan alternatif dan evaluasi.",
+    "Nyatakan definisi sebelum menghitung atau membaca data historis."
+  ],
+  "blocks": [
+    {
+      "kind": "h2",
+      "text": "1. Kilat: jalur menulis jawaban kasus"
+    },
+    {
+      "kind": "figure",
+      "spec": {
+        "id": "MNU108-UAS-OV",
+        "title": "Dari fakta ke keputusan yang dapat diuji",
+        "type": "process",
+        "nodes": [
+          {
+            "title": "Fakta dan masalah",
+            "items": [
+              "Apa yang diketahui? Apa yang masih asumsi?"
+            ]
+          },
+          {
+            "title": "Konsep dan diagnosis",
+            "items": [
+              "Pilih model relevan serta jelaskan mekanismenya"
+            ]
+          },
+          {
+            "title": "Keputusan dan alternatif",
+            "items": [
+              "Tindakan konkret, trade-off serta batas"
+            ]
+          },
+          {
+            "title": "Evaluasi",
+            "items": [
+              "Ukuran, waktu dan tindak lanjut"
+            ]
+          }
+        ],
+        "alt": "Fakta dan masalah menuju diagnosis, keputusan dan evaluasi.",
+        "source": "Sintesis latihan Ch.8–15, kasus pada hal.295–296,358,398–399,435–437,469–470,506,573–575."
+      }
+    },
+    {
+      "kind": "table",
+      "title": "Peta RPP dan kasus sumber",
+      "headers": [
+        "TM / bab",
+        "Konsep untuk diagnosis",
+        "Kasus RPP dan halaman"
+      ],
+      "rows": [
+        [
+          "TM9 / Ch.8",
+          "Innovation mencakup ide yang diciptakan dan dipakai. Product/service, process, people dan culture change mempunyai sasaran berbeda.",
+          "Chopper’s Sausage House; 295–296"
+        ],
+        [
+          "TM10 / Ch.9",
+          "HRM menghubungkan talenta dengan strategi dan kinerja. Social contract menjelaskan kontribusi serta kesempatan kedua pihak.",
+          "Whether to Fire Employees?; 358"
+        ],
+        [
+          "TM11 / Ch.10",
+          "Gunakan feedback dan self-assessment untuk mengenali blind spots. Pisahkan job satisfaction, commitment dan trust.",
+          "Conficio Industries; 398–399"
+        ],
+        [
+          "TM12 / Ch.11",
+          "Leadership memengaruhi orang menuju tujuan; jabatan tidak menjadi satu-satunya sumber. Management dan leadership memberi kekuatan yang saling melengkapi.",
+          "Pulse Exercise Systems; 435–437"
+        ],
+        [
+          "TM13 / Ch.12",
+          "Pisahkan intrinsic satisfaction dari reward yang diberikan pihak luar. Content theories memeriksa kebutuhan; process theories memeriksa pilihan tindakan.",
+          "Morgan’s Department Store; 469–470"
+        ],
+        [
+          "TM14 / Ch.13–14",
+          "Komunikasi memerlukan pertukaran serta mutual understanding. Pilih channel menurut ambiguitas, emosi, feedback dan kebutuhan record.",
+          "Brainchild; 506"
+        ],
+        [
+          "TM15 / Ch.15",
+          "Feedback control: standards, measure, compare, action. Balanced scorecard menghubungkan empat perspektif dengan mission/goals.",
+          "Grading the Teachers; 573–575"
+        ]
+      ],
+      "caption": "RPP Excel 2026, baris48–60; halaman cetak buku, PDF = halaman cetak+28.",
+      "stackOnMobile": true
+    },
+    {
+      "kind": "h2",
+      "text": "2. Inti: konsep yang perlu dibedakan"
+    },
+    {
+      "kind": "h3",
+      "text": "TM9: Mengelola inovasi dan perubahan"
+    },
+    {
+      "kind": "ul",
+      "items": [
+        "Innovation mencakup ide yang diciptakan dan dipakai.",
+        "Product/service, process, people dan culture change mempunyai sasaran berbeda.",
+        "Exploration dan exploitation memerlukan dukungan yang sesuai.",
+        "Discovery, collaboration dan peran/struktur membawa ide ke penggunaan.",
+        "OD mengubah relasi dan budaya melalui proses terencana.",
+        "Lewin: unfreezing, changing, refreezing."
+      ]
+    },
+    {
+      "kind": "self-check",
+      "question": "Apa bukti yang diperlukan sebelum memakai model TM9?",
+      "answer": [
+        {
+          "kind": "p",
+          "text": "Sebut fakta relevan, kondisi penerapan serta batas. Cocokkan dengan penjelasan inti dan kasus pada bacaan TM, lalu bandingkan kelemahan alternatif. Daft dan Marcic, Understanding Management 12e (2023), Ch. 8, hal. 266–297 (PDF 294–325); RPP Excel 2026, TM 9."
+        }
+      ]
+    },
+    {
+      "kind": "h3",
+      "text": "TM10: Talenta, HRM strategis dan inclusion"
+    },
+    {
+      "kind": "ul",
+      "items": [
+        "HRM menghubungkan talenta dengan strategi dan kinerja.",
+        "Social contract menjelaskan kontribusi serta kesempatan kedua pihak.",
+        "Job analysis, recruiting dan selection membantu menilai fit.",
+        "Training, development dan feedback mempunyai fokus berbeda.",
+        "Rewards, fairness dan exit information memengaruhi retensi.",
+        "Diversity dan inclusion perlu dinilai terpisah."
+      ]
+    },
+    {
+      "kind": "self-check",
+      "question": "Apa bukti yang diperlukan sebelum memakai model TM10?",
+      "answer": [
+        {
+          "kind": "p",
+          "text": "Sebut fakta relevan, kondisi penerapan serta batas. Cocokkan dengan penjelasan inti dan kasus pada bacaan TM, lalu bandingkan kelemahan alternatif. Daft dan Marcic, Understanding Management 12e (2023), Ch. 9, hal. 298–359 (PDF 326–387); RPP Excel 2026, TM 10."
+        }
+      ]
+    },
+    {
+      "kind": "h3",
+      "text": "TM11: Understanding Individual Behavior"
+    },
+    {
+      "kind": "ul",
+      "items": [
+        "Gunakan feedback dan self-assessment untuk mengenali blind spots.",
+        "Pisahkan job satisfaction, commitment dan trust.",
+        "Perception: observe, screen, organize; attribution memerlukan bukti.",
+        "Big Five adalah dimensi, sementara MBTI adalah preferensi.",
+        "EI memiliki empat komponen yang saling melengkapi.",
+        "Kelola komitmen melalui lima langkah dan perbaiki sumber stres."
+      ]
+    },
+    {
+      "kind": "self-check",
+      "question": "Apa bukti yang diperlukan sebelum memakai model TM11?",
+      "answer": [
+        {
+          "kind": "p",
+          "text": "Sebut fakta relevan, kondisi penerapan serta batas. Cocokkan dengan penjelasan inti dan kasus pada bacaan TM, lalu bandingkan kelemahan alternatif. Daft dan Marcic, Understanding Management 12e (2023), Ch. 10, hal. 360–399 (PDF 388–427); RPP Excel 2026, TM 11."
+        }
+      ]
+    },
+    {
+      "kind": "h3",
+      "text": "TM12: Leadership"
+    },
+    {
+      "kind": "ul",
+      "items": [
+        "Leadership memengaruhi orang menuju tujuan; jabatan tidak menjadi satu-satunya sumber.",
+        "Management dan leadership memberi kekuatan yang saling melengkapi.",
+        "Level 5, servant, authentic dan interactive menekankan aspek berbeda.",
+        "Task dan people behavior dipilih berdasarkan diagnosis situasi.",
+        "Bedakan penyesuaian readiness dengan pencocokan Fiedler.",
+        "Followership, basis power dan taktik pengaruh perlu dibaca bersama."
+      ]
+    },
+    {
+      "kind": "self-check",
+      "question": "Apa bukti yang diperlukan sebelum memakai model TM12?",
+      "answer": [
+        {
+          "kind": "p",
+          "text": "Sebut fakta relevan, kondisi penerapan serta batas. Cocokkan dengan penjelasan inti dan kasus pada bacaan TM, lalu bandingkan kelemahan alternatif. Daft dan Marcic, Understanding Management 12e (2023), Ch. 11, hal. 400–437 (PDF 428–465); RPP Excel 2026, TM 12."
+        }
+      ]
+    },
+    {
+      "kind": "h3",
+      "text": "TM13: Motivating Employees"
+    },
+    {
+      "kind": "ul",
+      "items": [
+        "Pisahkan intrinsic satisfaction dari reward yang diberikan pihak luar.",
+        "Content theories memeriksa kebutuhan; process theories memeriksa pilihan tindakan.",
+        "Hygiene mengurangi dissatisfaction, motivators meningkatkan satisfaction.",
+        "Expectancy memerlukan E→P, P→O dan valence.",
+        "Negative reinforcement memperkuat perilaku; punishment mengurangi perilaku.",
+        "Job design, empowerment dan engagement memerlukan dukungan yang nyata."
+      ]
+    },
+    {
+      "kind": "self-check",
+      "question": "Apa bukti yang diperlukan sebelum memakai model TM13?",
+      "answer": [
+        {
+          "kind": "p",
+          "text": "Sebut fakta relevan, kondisi penerapan serta batas. Cocokkan dengan penjelasan inti dan kasus pada bacaan TM, lalu bandingkan kelemahan alternatif. Daft dan Marcic, Understanding Management 12e (2023), Ch. 12, hal. 438–471 (PDF 466–499); RPP Excel 2026, TM 13."
+        }
+      ]
+    },
+    {
+      "kind": "h3",
+      "text": "TM14: Managing Communication and Leading Teams"
+    },
+    {
+      "kind": "ul",
+      "items": [
+        "Komunikasi memerlukan pertukaran serta mutual understanding.",
+        "Pilih channel menurut ambiguitas, emosi, feedback dan kebutuhan record.",
+        "Candor menggunakan fakta serta permintaan jelas dengan respect.",
+        "Bedakan arah formal dengan medium dan jaringan informal.",
+        "Tim memerlukan mission, interdependence, trust serta mutual accountability.",
+        "Kelola development, norms, conflict dan outcomes secara bersama."
+      ]
+    },
+    {
+      "kind": "self-check",
+      "question": "Apa bukti yang diperlukan sebelum memakai model TM14?",
+      "answer": [
+        {
+          "kind": "p",
+          "text": "Sebut fakta relevan, kondisi penerapan serta batas. Cocokkan dengan penjelasan inti dan kasus pada bacaan TM, lalu bandingkan kelemahan alternatif. Daft dan Marcic, Understanding Management 12e (2023), Ch. 13–14, hal. 472–543 (PDF 500–571); RPP Excel 2026, TM 14."
+        }
+      ]
+    },
+    {
+      "kind": "h3",
+      "text": "TM15: Managing Quality and Performance"
+    },
+    {
+      "kind": "ul",
+      "items": [
+        "Feedback control: standards, measure, compare, action.",
+        "Balanced scorecard menghubungkan empat perspektif dengan mission/goals.",
+        "Hierarchical dan decentralized dapat dipadukan; algorithmic control tetap perlu review.",
+        "TQM memasukkan quality dan continuous improvement ke seluruh aktivitas.",
+        "Budget memeriksa resources serta timing, bukan pengeluaran saja.",
+        "Financial ratios membutuhkan definisi dan data yang sesuai."
+      ]
+    },
+    {
+      "kind": "self-check",
+      "question": "Apa bukti yang diperlukan sebelum memakai model TM15?",
+      "answer": [
+        {
+          "kind": "p",
+          "text": "Sebut fakta relevan, kondisi penerapan serta batas. Cocokkan dengan penjelasan inti dan kasus pada bacaan TM, lalu bandingkan kelemahan alternatif. Daft dan Marcic, Understanding Management 12e (2023), Ch. 15, hal. 544–575 (PDF 572–603); RPP Excel 2026, TM 15."
+        }
+      ]
+    },
+    {
+      "kind": "pendalaman",
+      "title": "3. Menguji hitungan dan data",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Bedakan data historis, proyeksi, target dan hasil. Kasus Chopper menyebut estimates, Morgan tidak memberi tarif komisi, dan teacher case memakai bobot40/30/30. Current2,4 dan quick0,4 mengukur basis liquidity berbeda. Gross income label buku tidak sama dengan gross profit akuntansi. Jangan mengisi average inventory, probabilitas atau rate yang tidak tersedia. [hal.295–296,333,470,567–569,574]"
+        }
+      ]
+    },
+    {
+      "kind": "h2",
+      "text": "4. Latihan terarah"
+    },
+    {
+      "kind": "p",
+      "text": "Kerjakan satu kasus RPP tiap TM dan latihan berasumsi sebagai pembanding. Gunakan 60 kuis untuk memeriksa mekanisme dan alasan pengecoh; gunakan 42 flashcard untuk recall aktif. Target belajar adalah mampu menjelaskan bukti, hubungan konsep, keputusan serta batas, bukan menghafal nama teori."
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 // src/data/quizzes/mnm101.ts
 // Kuis pilihan ganda Pengantar Manajemen (MNU108; nama variabel dan file masih MNM101)
 // Sumber: Daft & Marcic, Understanding Management 12e (2023)
-// 56 soal Pra-UTS (TM 1-7, setiap penjelasan memuat [hal. X]) dan 35 soal Pra-UAS (TM 8-14, belum disinkronkan ke 12e)
+// 56 soal Pra-UTS (TM 1-7, setiap penjelasan memuat [hal. X]) dan 60 soal Pra-UAS (TM 9-15, Ch. 8-15 sesuai RPP 2026)
 import type { QuizQuestion } from '../../types';
 
 export const MNM101_QUIZ_UTS: QuizQuestion[] = [
@@ -793,494 +793,1204 @@ export const MNM101_QUIZ_UTS: QuizQuestion[] = [
 
 export const MNM101_QUIZ_UAS: QuizQuestion[] = [
   {
-    "tm": 8,
-    "topic": "Review Integratif UTS",
-    "difficulty": "advanced",
-    "q": "Jika perusahaan menerapkan strategi Diferensiasi (Porter) di lingkungan yang dinamis dan kompleks, desain struktur organisasi yang PALING sesuai adalah...",
+    "id": "mnu108-uas-tm09-01",
+    "tm": 9,
+    "topic": "Innovation vs creativity",
+    "difficulty": "basic",
+    "q": "Apa pembeda paling tepat antara creativity dan organizational innovation?",
     "options": [
-      "Struktur Mekanistik yang kaku dan sentralistis",
-      "Struktur Organik (seperti Tim atau Matriks) yang desentralistis dan fleksibel",
-      "Struktur Birokrasi Tradisional Max Weber",
-      "Struktur Tall dengan rentang kendali sangat sempit"
+      "Creativity menghasilkan ide; innovation mencakup penciptaan sekaligus penerapannya.",
+      "Creativity menerapkan ide; innovation hanya menyusun alternatif tanpa pemakaian.",
+      "Creativity mengadopsi teknologi luar; innovation hanya memperbaiki gagasan lama.",
+      "Creativity mengubah seluruh budaya; innovation hanya mengubah sikap individu."
     ],
-    "answer": 1,
-    "explanation": "Strategi diferensiasi di lingkungan dinamis memerlukan kreativitas, inovasi, dan kerja tim lintas batas yang didukung oleh struktur organik yang desentralistis."
+    "answer": 0,
+    "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 268, 273, 285].",
+    "sourceAnchors": [
+      "Ch. 8; [hal. 268, 273, 285]; PDF 296, 301, 313"
+    ],
+    "explanation": "Manfaat organisasi menuntut ide digunakan. Creativity menjelaskan lahirnya gagasan, sedangkan innovation juga memuat implementation. Alternatif lain: Pilihan lain membalik hubungan, mempersempit asal ide atau membatasi jenis perubahan. [hal. 268, 273, 285]",
+    "skill": "Diagnosis konsep, bukti dan penerapan"
   },
   {
-    "tm": 8,
-    "topic": "Review Integratif UTS",
-    "difficulty": "medium",
-    "q": "Manajer yang menghadapi masalah baru di mana tidak ada prosedur standar tertulis yang dapat digunakan harus mengambil...",
+    "id": "mnu108-uas-tm09-02",
+    "tm": 9,
+    "topic": "Reverse innovation",
+    "difficulty": "basic",
+    "q": "Dalam reverse innovation, bagaimana arah utama penyebaran produk yang dijelaskan buku?",
     "options": [
-      "Keputusan Terprogram (Programmed Decision)",
-      "Keputusan Tidak Terprogram (Non-programmed Decision)",
-      "Keputusan Refleks Otomatis",
-      "Standing Operating Procedure"
+      "Dikembangkan untuk pasar negara maju, lalu dipindahkan ke pasar berkembang.",
+      "Dikembangkan untuk pasar berkembang, lalu disesuaikan untuk pasar negara maju.",
+      "Dikembangkan hanya untuk unit internal, lalu dihentikan saat mencapai pasar.",
+      "Dikembangkan oleh marketing dahulu, lalu diserahkan kepada research perusahaan."
     ],
     "answer": 1,
-    "explanation": "Non-programmed decisions diambil untuk menanggapi situasi unik, rumit, tidak terstruktur, dan memiliki konsekuensi strategis besar."
+    "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 270].",
+    "sourceAnchors": [
+      "Ch. 8; [hal. 270]; PDF 298"
+    ],
+    "explanation": "Arah ini membalik pola tradisional inovasi dari negara makmur ke pasar berkembang. Alternatif lain: Pola tradisional mempunyai arah kebalikan; dua pilihan terakhir membahas fungsi internal, bukan geografi pasar. [hal. 270]",
+    "skill": "Diagnosis konsep, bukti dan penerapan"
   },
   {
-    "tm": 8,
-    "topic": "Review Integratif UTS",
+    "id": "mnu108-uas-tm09-03",
+    "tm": 9,
+    "topic": "Ambidextrous approach",
     "difficulty": "medium",
-    "q": "Pada siklus manajemen POAC, temuan deviasi bahwa realisasi penjualan berada di bawah target yang direncanakan akan ditindaklanjuti oleh fungsi...",
+    "q": "Mengapa organisasi ambidextrous dapat memakai ruang eksplorasi yang longgar dan penerapan yang lebih terstruktur?",
     "options": [
-      "Planning melalui penetapan ulang sasaran atau perbaikan strategi",
-      "Controlling melalui tindakan koreksi langsung",
-      "Organizing melalui perombakan struktur instan",
-      "Pilihan A dan B keduanya benar"
+      "Penciptaan ide dan implementasi membutuhkan kebebasan yang sama pada semua kegiatan.",
+      "Penciptaan ide harus terpusat ketat, sedangkan implementasi harus tanpa standar kerja.",
+      "Penciptaan ide dan implementasi mempunyai kebutuhan struktur serta rutinitas berbeda.",
+      "Penciptaan ide dilakukan marketing saja, sedangkan implementasi dilakukan research saja."
+    ],
+    "answer": 2,
+    "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 270–271].",
+    "sourceAnchors": [
+      "Ch. 8; [hal. 270–271]; PDF 298–299"
+    ],
+    "explanation": "Exploration mendukung kreativitas/eksperimen; exploitation memakai kemampuan dan rutinitas untuk menjalankan ide. Alternatif lain: Kesamaan struktur mengabaikan kebutuhan yang berbeda; pembalikan dan pembatasan departemen tidak sesuai model. [hal. 270–271]",
+    "skill": "Diagnosis konsep, bukti dan penerapan"
+  },
+  {
+    "id": "mnu108-uas-tm09-04",
+    "tm": 9,
+    "topic": "Three innovation strategies",
+    "difficulty": "medium",
+    "q": "Sebuah proyek mempunyai ide baru, tetapi antarfungsi tidak bertukar informasi dan tidak ada pemilik gagasan. Apa diagnosis menurut Exhibit 8.1?",
+    "options": [
+      "Collaboration telah berjalan; discovery dan penciptaan gagasan masih belum terjadi.",
+      "Innovation roles telah lengkap; discovery saja yang menentukan keberhasilan proyek.",
+      "Ketiga strategi telah berjalan; penerapan otomatis mengikuti adanya ide baru saja.",
+      "Discovery telah berjalan; collaboration dan peran/struktur implementasi masih lemah."
     ],
     "answer": 3,
-    "explanation": "Controlling mengambil tindakan koreksi operasional, sementara Planning menggunakan data deviasi tersebut sebagai masukan untuk merevisi target atau strategi berikutnya."
-  },
-  {
-    "tm": 8,
-    "topic": "Review Integratif UTS",
-    "difficulty": "advanced",
-    "q": "Dalam tipologi budaya Daft, organisasi yang menuntut disiplin tinggi, efisiensi operasional, dan kepatuhan penuh terhadap manual regulasi (seperti bank komersial) mencerminkan...",
-    "options": [
-      "Involvement Culture",
-      "Consistency Culture",
-      "Adaptability Culture",
-      "Adhocracy Culture"
+    "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 272].",
+    "sourceAnchors": [
+      "Ch. 8; [hal. 272]; PDF 300"
     ],
-    "answer": 1,
-    "explanation": "Consistency culture mengarahkan fokus internal pada stabilitas, metodis, keteraturan proses, dan kepatuhan standar kerja."
+    "explanation": "Tiga strategi saling melengkapi. Kehadiran gagasan belum menggantikan koordinasi dan dukungan untuk membawanya ke penerapan. Alternatif lain: Pilihan lain mengabaikan bukti tentang ide, memusatkan keberhasilan pada discovery atau menganggap implementasi otomatis. [hal. 272]",
+    "skill": "Diagnosis konsep, bukti dan penerapan"
   },
   {
-    "tm": 8,
-    "topic": "Review Integratif UTS",
+    "id": "mnu108-uas-tm09-05",
+    "tm": 9,
+    "topic": "Idea champion",
     "difficulty": "medium",
-    "q": "Berdasarkan matriks BCG, strategi yang paling tepat diterapkan untuk unit bisnis kategori 'Dogs' adalah...",
+    "q": "Dalam contoh L'Oréal, peran staf yang terus memperjuangkan pengembangan foundation sesuai kebutuhan pelanggan paling dekat dengan...",
     "options": [
-      "Mengucurkan investasi modal besar untuk promosi",
-      "Mempertahankan status quo tanpa evaluasi",
-      "Pemanenan kas (harvesting) atau divestasi (dijual/dilikuidasi)",
-      "Menjadikannya inti bisnis utama"
-    ],
-    "answer": 2,
-    "explanation": "Dogs memiliki pangsa pasar rendah di industri bertumbuh lambat; perusahaan sebaiknya melakukan likuidasi, menjual unit, atau memangkas biaya semaksimal mungkin."
-  },
-  {
-    "tm": 9,
-    "topic": "Model Perubahan Kurt Lewin",
-    "difficulty": "medium",
-    "q": "Tahap awal dalam model perubahan Kurt Lewin di mana manajer membuat karyawan menyadari adanya urgensi perubahan dan perlunya meninggalkan cara kerja lama disebut...",
-    "options": [
-      "Refreezing",
-      "Changing",
-      "Unfreezing (Pencairan)",
-      "Restructuring"
-    ],
-    "answer": 2,
-    "explanation": "Unfreezing adalah proses mendobrak rasa puas diri (complacency) dan membangun kesadaran bersama bahwa status quo tidak lagi dapat dipertahankan."
-  },
-  {
-    "tm": 9,
-    "topic": "Taktik Mengatasi Resistensi",
-    "difficulty": "medium",
-    "q": "Taktik mengatasi resistensi perubahan yang paling tepat digunakan ketika penolakan karyawan dipicu oleh kurangnya pemahaman atau kesalahpahaman informasi adalah...",
-    "options": [
-      "Koersi dan ancaman pemecatan",
-      "Edukasi dan Komunikasi terbuka",
-      "Manipulasi dan kooptasi",
-      "Negosiasi kompensasi finansial"
-    ],
-    "answer": 1,
-    "explanation": "Edukasi dan komunikasi efektif menjernihkan kesalahpahaman serta membantu karyawan melihat logika dan manfaat positif dari perubahan yang direncanakan."
-  },
-  {
-    "tm": 9,
-    "topic": "Analisis Medan Kekuatan Lewin",
-    "difficulty": "advanced",
-    "q": "Menurut Force Field Analysis Kurt Lewin, perubahan yang sukses PALING EFEKTIF dicapai dengan cara...",
-    "options": [
-      "Menambah kekuatan pendorong (driving forces) sekuat mungkin tanpa mempedulikan hambatan",
-      "Mengurangi atau menghilangkan kekuatan penghambat (restraining forces) sembari menjaga kekuatan pendorong",
-      "Mengabaikan kedua kekuatan dan membiarkan proses alami",
-      "Merekrut seluruh konsultan eksternal baru"
-    ],
-    "answer": 1,
-    "explanation": "Menambah driving forces sering kali hanya memicu perlawanan balik yang lebih keras. Mengurangi restraining forces meredakan ketakutan dan membuka jalan perubahan tanpa konflik destruktif."
-  },
-  {
-    "tm": 9,
-    "topic": "Pendekatan Inovasi Ambidextrous",
-    "difficulty": "advanced",
-    "q": "Pendekatan Ambidextrous dalam organisasi inovatif mengacu pada kemampuan korporasi untuk...",
-    "options": [
-      "Merekrut karyawan yang memiliki keahlian tangan kanan dan kiri",
-      "Menyeimbangkan antara mengeksplorasi ide terobosan baru dan mengeksploitasi efisiensi kapabilitas bisnis yang sudah ada",
-      "Memecah seluruh divisi menjadi perusahaan terpisah",
-      "Menghilangkan fungsi riset dan pengembangan"
-    ],
-    "answer": 1,
-    "explanation": "Organisasi ambidextrous mampu menciptakan struktur organik yang bebas berkreasi untuk inovasi masa depan, sembari menjalankan struktur mekanistik yang ketat untuk mengoperasikan bisnis harian."
-  },
-  {
-    "tm": 9,
-    "topic": "Pengembangan Organisasi (OD)",
-    "difficulty": "basic",
-    "q": "Intervensi Pengembangan Organisasi (OD) yang mengumpulkan data dari karyawan melalui survei kuesioner lalu mendiskusikan hasilnya bersama tim kerja untuk menyusun rencana perbaikan disebut...",
-    "options": [
-      "Survey Feedback",
-      "Team Building",
-      "Large-Group Intervention",
-      "Direct Coercion"
+      "Idea champion: orang yang mendorong penerimaan serta pengembangan perubahan.",
+      "Idea incubator: program organisasi yang menyediakan ruang pengembangan ide.",
+      "New-venture fund: sumber pembiayaan yang mendanai usulan produk perusahaan.",
+      "Innovation by acquisition: pembelian usaha lain untuk mendapatkan teknologinya."
     ],
     "answer": 0,
-    "explanation": "Survey Feedback adalah teknik intervensi OD di mana data sikap karyawan dikumpulkan dan diumpanbalikkan kepada anggota tim untuk memandu pemecahan masalah bersama."
+    "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 280–281].",
+    "sourceAnchors": [
+      "Ch. 8; [hal. 280–281]; PDF 308–309"
+    ],
+    "explanation": "Peran orang yang mendukung dan memperjuangkan gagasan sesuai definisi idea champion. Alternatif lain: Incubator dan fund adalah mekanisme dukungan; acquisition adalah cara memperoleh inovasi melalui pembelian usaha. [hal. 280–281]",
+    "skill": "Diagnosis konsep, bukti dan penerapan"
   },
   {
-    "tm": 10,
-    "topic": "Analisis Jabatan",
+    "id": "mnu108-uas-tm09-06",
+    "tm": 9,
+    "topic": "Organization development",
     "difficulty": "medium",
-    "q": "Dokumen yang memuat rincian kualifikasi minimal pelamar kerja seperti tingkat pendidikan, sertifikasi profesional, dan pengalaman kerja 5 tahun disebut...",
+    "q": "Apa ciri survey-feedback sebagai teknik OD?",
     "options": [
-      "Job Description",
-      "Job Specification",
-      "Job Evaluation",
-      "Performance Appraisal"
+      "Peserta dari seluruh lingkungan dihimpun untuk membuat keputusan sistem secara serentak.",
+      "Pendapat pegawai dikumpulkan, dibagikan kembali dan dipakai memecahkan masalah.",
+      "Anggota kelompok berlatih komunikasi serta tujuan bersama melalui kegiatan pembentukan tim.",
+      "Manajemen memaksa prosedur baru dan memberi sanksi sebelum pendapat pegawai dikumpulkan."
     ],
     "answer": 1,
-    "explanation": "Job Specification mendeskripsikan kualifikasi pengetahuan, keterampilan, dan karakteristik personal yang wajib dimiliki calon pemegang jabatan."
+    "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 283–284].",
+    "sourceAnchors": [
+      "Ch. 8; [hal. 283–284]; PDF 311–312"
+    ],
+    "explanation": "Survey bukan akhir kegiatan. Feedback dan pemecahan masalah berdasarkan data adalah bagian penting teknik ini. Alternatif lain: Kelompok besar dan team building menggambarkan teknik lain; paksaan sepihak tidak mendefinisikan survey-feedback. [hal. 283–284]",
+    "skill": "Diagnosis konsep, bukti dan penerapan"
   },
   {
-    "tm": 10,
-    "topic": "Metode Penilaian Kinerja",
-    "difficulty": "medium",
-    "q": "Penilaian kinerja yang menghimpun evaluasi dari atasan langsung, rekan kerja sejawat, bawahan, serta penilaian mandiri (self-assessment) dikenal sebagai...",
+    "id": "mnu108-uas-tm09-07",
+    "tm": 9,
+    "topic": "Lewin refreezing",
+    "difficulty": "advanced",
+    "q": "Sesudah pelatihan, perilaku baru dievaluasi, diberi penghargaan, dan dimasukkan ke kebiasaan kerja. Tahap mana yang paling tepat?",
     "options": [
-      "Graphic Rating Scale",
-      "Behaviorally Anchored Rating Scale (BARS)",
-      "360-Degree Feedback",
-      "Ranking Method"
+      "Unfreezing: menjelaskan kesenjangan dan membuat pegawai mengenali kebutuhan berubah.",
+      "Discovery: menciptakan gagasan produk baru melalui kebebasan bereksperimen.",
+      "Refreezing: memperkuat dan melembagakan perilaku serta nilai yang baru.",
+      "Changing: baru mulai mencoba perilaku dan mempelajari keterampilan yang dibutuhkan."
     ],
     "answer": 2,
-    "explanation": "360-degree feedback memberikan gambaran performa kerja yang komprehensif dan obyektif dari berbagai perspektif pemangku kepentingan interaksi kerja."
-  },
-  {
-    "tm": 10,
-    "topic": "Keragaman & Inklusi",
-    "difficulty": "medium",
-    "q": "Hambatan artifisial tak terlihat yang didasari oleh bias sikap atau stereotip organisasi yang menghalangi perempuan menduduki jabatan manajer puncak disebut...",
-    "options": [
-      "Glass Ceiling",
-      "Sticky Floor",
-      "Tokenism",
-      "Affirmative Action"
+    "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 285–286].",
+    "sourceAnchors": [
+      "Ch. 8; [hal. 285–286]; PDF 313–314"
     ],
-    "answer": 0,
-    "explanation": "Glass Ceiling merujuk pada batasan tak kasat mata yang mendiskriminasi perempuan dan minoritas untuk meraih posisi kepemimpinan eksekutif tertinggi."
+    "explanation": "Tindakan dalam soal menekankan penguatan serta integrasi perubahan menjadi praktik normal. Alternatif lain: Pilihan lain berkaitan dengan kesiapan, penciptaan gagasan atau tahap awal belajar, bukan penguatan pascapenerapan. [hal. 285–286]",
+    "skill": "Diagnosis konsep, bukti dan penerapan"
   },
   {
-    "tm": 10,
-    "topic": "Kompensasi Karyawan",
-    "difficulty": "basic",
-    "q": "Proses sistematis untuk menentukan nilai relatif suatu pekerjaan di dalam organisasi guna memastikan keadilan internal gaji disebut...",
-    "options": [
-      "Job Analysis",
-      "Job Evaluation (Evaluasi Jabatan)",
-      "Wage Survey",
-      "Benchmarking"
-    ],
-    "answer": 1,
-    "explanation": "Job Evaluation mengevaluasi bobot tanggung jawab dan kompleksitas setiap posisi untuk menetapkan struktur skala upah yang adil di internal perusahaan."
-  },
-  {
-    "tm": 10,
-    "topic": "Alat Seleksi Karyawan",
+    "id": "mnu108-uas-tm09-08",
+    "tm": 9,
+    "topic": "Chopper dan resistensi",
     "difficulty": "advanced",
-    "q": "Metode seleksi di mana pelamar disimulasikan menghadapi tugas manajerial nyata seperti latihan kotak surat masuk (in-basket exercise) dan permainan bisnis kelompok disebut...",
+    "q": "Apa manfaat utama task force lintas departemen bagi MRP Chopper's?",
     "options": [
-      "Wawancara Terstruktur",
-      "Assessment Center",
-      "Tes Bakat Kognitif",
-      "Pemeriksaan Latar Belakang"
-    ],
-    "answer": 1,
-    "explanation": "Assessment Center menggunakan serangkaian simulasi perilaku kerja riil untuk mengevaluasi potensi manajerial pelamar dengan validitas prediksi yang tinggi."
-  },
-  {
-    "tm": 11,
-    "topic": "Teori Kontinjensi Fiedler",
-    "difficulty": "advanced",
-    "q": "Menurut model kontinjensi Fred Fiedler, pemimpin yang berorientasi tugas (Task-Oriented) akan bekerja PALING EFEKTIF pada kondisi situasi kontrol yang...",
-    "options": [
-      "Sangat menguntungkan (highly favorable) atau sangat tidak menguntungkan (highly unfavorable)",
-      "Cukup menguntungkan (moderately favorable)",
-      "Netral tanpa pengawasan",
-      "Tidak bergantung pada situasi kontrol"
-    ],
-    "answer": 0,
-    "explanation": "Fiedler membuktikan pemimpin berorientasi tugas unggul pada situasi ekstrem (sangat baik atau sangat buruk), sedangkan pemimpin berorientasi hubungan unggul pada situasi moderat."
-  },
-  {
-    "tm": 11,
-    "topic": "Situational Leadership Hersey-Blanchard",
-    "difficulty": "medium",
-    "q": "Jika seorang karyawan memiliki kemampuan teknis yang tinggi tetapi merasa tidak yakin atau kurang termotivasi untuk menjalankan tugas mandiri, gaya kepemimpinan yang tepat adalah...",
-    "options": [
-      "Telling (Mengarahkan)",
-      "Selling (Melatih)",
-      "Participating (Mendukung)",
-      "Delegating (Mendelegasikan)"
-    ],
-    "answer": 2,
-    "explanation": "Gaya Participating / Supporting cocok untuk bawahan dengan tingkat kesiapan R3 (mampu tetapi ragu/kurang percaya diri), di mana pemimpin berbagi keputusan dan memberi dorongan moral."
-  },
-  {
-    "tm": 11,
-    "topic": "Kepemimpinan Transformasional",
-    "difficulty": "medium",
-    "q": "Pemimpin yang mampu mengartikulasikan visi masa depan yang memikat, merangsang pemikiran kreatif bawahan, dan membangkitkan komitmen luar biasa melampaui kepentingan pribadi adalah...",
-    "options": [
-      "Pemimpin Transaksional",
-      "Pemimpin Transformasional",
-      "Pemimpin Otokratis",
-      "Pemimpin Laissez-faire"
-    ],
-    "answer": 1,
-    "explanation": "Kepemimpinan Transformasional menginspirasi pengikut untuk mencapai hasil luar biasa melalui karisma, stimulasi intelektual, dan pertimbangan individual."
-  },
-  {
-    "tm": 11,
-    "topic": "Sumber Kekuasaan French & Raven",
-    "difficulty": "basic",
-    "q": "Kekuasaan yang bersumber dari keahlian teknis khusus, pengetahuan istimewa, atau keterampilan mendalam yang diakui oleh orang lain disebut...",
-    "options": [
-      "Legitimate Power",
-      "Reward Power",
-      "Coercive Power",
-      "Expert Power"
+      "Memastikan semua perkiraan penghematan menjadi kas tanpa memeriksa alur kerja pengguna.",
+      "Menghilangkan kebutuhan komunikasi karena semua fungsi sudah hadir dalam daftar anggota.",
+      "Memindahkan semua keputusan teknis kepada CFO agar fungsi operasi tidak ikut merancang.",
+      "Menggabungkan pengetahuan pengguna, menilai risiko dan membangun dukungan penerapan."
     ],
     "answer": 3,
-    "explanation": "Expert Power adalah salah satu bentuk kekuasaan personal (soft power) yang berasal dari kompetensi dan kapabilitas unggul seseorang."
+    "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 289–290, 295–296].",
+    "sourceAnchors": [
+      "Ch. 8; [hal. 289–290, 295–296]; PDF 317–318, 323–324"
+    ],
+    "explanation": "Task force menjawab kurangnya informasi dan keterlibatan serta mendukung horizontal collaboration dan participation. Alternatif lain: Penghematan tetap perkiraan; keanggotaan tidak menjamin komunikasi; keputusan sepihak mengabaikan fungsi yang terdampak. [hal. 289–290, 295–296]",
+    "skill": "Diagnosis konsep, bukti dan penerapan"
   },
   {
+    "id": "mnu108-uas-tm10-01",
+    "tm": 10,
+    "topic": "Strategic HRM",
+    "difficulty": "basic",
+    "q": "Apa makna matching process dalam HRM strategis?",
+    "options": [
+      "Strategi, kebutuhan organisasi dan pendekatan human capital diselaraskan secara terpadu.",
+      "Strategi dipilih setelah semua kandidat ditempatkan tanpa melihat kompetensi pekerjaan.",
+      "Kebijakan HR ditetapkan hanya untuk administrasi gaji dan data attendance pegawai.",
+      "Keberhasilan strategi ditentukan mesin saja, sementara kemampuan pegawai dianggap seragam."
+    ],
+    "answer": 0,
+    "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 300–304].",
+    "sourceAnchors": [
+      "Ch. 9; [hal. 300–304]; PDF 328–332"
+    ],
+    "explanation": "Strategi hanya dapat berjalan dengan orang dan sistem HR yang sesuai. Alternatif lain: Penempatan tanpa kebutuhan, reduksi administrasi dan pengabaian kemampuan tidak mencerminkan HRM strategis. [hal. 300–304]",
+    "skill": "Diagnosis konsep, bukti dan penerapan"
+  },
+  {
+    "id": "mnu108-uas-tm10-02",
+    "tm": 10,
+    "topic": "Social contract",
+    "difficulty": "basic",
+    "q": "Apa kewajiban perusahaan dalam aspirasi social contract baru pada Exhibit 9.5?",
+    "options": [
+      "Menjamin pegawai tetap pada tugas rutin yang sama sampai akhir masa kerja.",
+      "Memberi kesempatan belajar, tugas menantang dan sumber daya untuk pengembangan.",
+      "Menggantikan semua kesempatan pengembangan dengan janji loyalitas seumur hidup.",
+      "Membatasi informasi dan kewenangan agar pegawai tidak terlibat perbaikan bisnis."
+    ],
+    "answer": 1,
+    "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 308–309].",
+    "sourceAnchors": [
+      "Ch. 9; [hal. 308–309]; PDF 336–337"
+    ],
+    "explanation": "Employability melibatkan upaya kedua pihak, dengan pegawai membangun kemampuan dan perusahaan membuka kesempatan. Alternatif lain: Pilihan lain mencerminkan kontrak lama atau mengabaikan peran perusahaan dalam pengembangan. [hal. 308–309]",
+    "skill": "Diagnosis konsep, bukti dan penerapan"
+  },
+  {
+    "id": "mnu108-uas-tm10-03",
+    "tm": 10,
+    "topic": "Recruiting and selection",
+    "difficulty": "medium",
+    "q": "Pasangan istilah mana yang paling tepat?",
+    "options": [
+      "Job description menjelaskan syarat pribadi; job specification menjelaskan sumber kandidat.",
+      "Job description menetapkan benefit; job specification menetapkan urutan promosi karier.",
+      "Job description menjelaskan tugas; job specification menjelaskan syarat kompetensi.",
+      "Job description menetapkan hasil tes; job specification menetapkan jumlah kandidat pelamar."
+    ],
+    "answer": 2,
+    "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 313–320].",
+    "sourceAnchors": [
+      "Ch. 9; [hal. 313–320]; PDF 341–348"
+    ],
+    "explanation": "Job analysis menghasilkan informasi tugas serta persyaratan yang dibutuhkan untuk melakukan pekerjaan. Alternatif lain: Pilihan lain mencampur uraian pekerjaan dengan recruiting, rewards, promotion dan assessment. [hal. 313–320]",
+    "skill": "Diagnosis konsep, bukti dan penerapan"
+  },
+  {
+    "id": "mnu108-uas-tm10-04",
+    "tm": 10,
+    "topic": "Realistic job preview",
+    "difficulty": "medium",
+    "q": "Mengapa RJP menyajikan sisi positif sekaligus kesulitan pekerjaan?",
+    "options": [
+      "Agar semua kandidat menerima tawaran tanpa mempertimbangkan kebutuhan masing-masing.",
+      "Agar wawancara dan job analysis dihapus karena seluruh informasi sudah lengkap.",
+      "Agar perusahaan dapat menjamin tidak ada pegawai keluar selama kariernya berlangsung.",
+      "Agar kandidat dan perusahaan menilai kecocokan berdasarkan ekspektasi yang realistis."
+    ],
+    "answer": 3,
+    "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 314].",
+    "sourceAnchors": [
+      "Ch. 9; [hal. 314]; PDF 342"
+    ],
+    "explanation": "RJP membantu self-selection dan fit dengan informasi lengkap. Alternatif lain: RJP tidak menjamin penerimaan/retensi semua orang serta tidak menggantikan keseluruhan proses seleksi. [hal. 314]",
+    "skill": "Diagnosis konsep, bukti dan penerapan"
+  },
+  {
+    "id": "mnu108-uas-tm10-05",
+    "tm": 10,
+    "topic": "Training vs development",
+    "difficulty": "medium",
+    "q": "Apa perbedaan training dan development menurut bab 9?",
+    "options": [
+      "Training menyiapkan tugas sekarang; development mengembangkan kemampuan karier lebih luas.",
+      "Training menentukan bayaran; development hanya menetapkan nilai satu jabatan dalam organisasi.",
+      "Training menilai ranking relatif; development hanya menetapkan calon yang perlu diberhentikan.",
+      "Training memilih pelamar baru; development hanya memberi informasi pekerjaan sebelum seleksi."
+    ],
+    "answer": 0,
+    "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 321–325].",
+    "sourceAnchors": [
+      "Ch. 9; [hal. 321–325]; PDF 349–353"
+    ],
+    "explanation": "Perbedaan terletak pada fokus keterampilan tugas saat ini dan pertumbuhan kemampuan yang lebih luas. Alternatif lain: Pilihan lain adalah pay/evaluation, forced ranking atau recruiting/RJP. [hal. 321–325]",
+    "skill": "Diagnosis konsep, bukti dan penerapan"
+  },
+  {
+    "id": "mnu108-uas-tm10-06",
+    "tm": 10,
+    "topic": "Forced ranking",
+    "difficulty": "medium",
+    "q": "Apa risiko forced ranking yang relevan pada kasus Whether to Fire Employees?",
+    "options": [
+      "Penilaian relatif selalu menunjukkan apakah perusahaan mempunyai kas cukup untuk beroperasi.",
+      "Persaingan antarpegawai dapat merusak kerja sama dan mengabaikan tujuan pengembangan.",
+      "Posisi ranking otomatis mengukur kebutuhan setiap pekerjaan tanpa informasi dari unit kerja.",
+      "Proporsi ranking memastikan semua pegawai memiliki peluang promosi dan hasil kerja yang sama."
+    ],
+    "answer": 1,
+    "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 324–325, 358].",
+    "sourceAnchors": [
+      "Ch. 9; [hal. 324–325, 358]; PDF 352–353, 386"
+    ],
+    "explanation": "Buku menjelaskan kritik pada morale dan teamwork. Ranking bukan pengganti data kebutuhan bisnis, kemampuan dan pengembangan. Alternatif lain: Pilihan lain memberi ranking kemampuan yang tidak dimilikinya, seperti memastikan cash flow atau kesetaraan hasil. [hal. 324–325, 358]",
+    "skill": "Diagnosis konsep, bukti dan penerapan"
+  },
+  {
+    "id": "mnu108-uas-tm10-07",
+    "tm": 10,
+    "topic": "Diversity and inclusion",
+    "difficulty": "advanced",
+    "q": "Sebuah organisasi memiliki pegawai beragam, tetapi hanya kelompok tertentu didengar. Apa diagnosis yang tepat?",
+    "options": [
+      "Inclusion sudah terpenuhi karena jumlah kelompok dalam workforce sudah beragam.",
+      "Cognitive diversity pasti tidak ada karena semua anggota harus memikirkan hal yang sama.",
+      "Diversity ada, tetapi inclusion perlu diperbaiki agar keunikan anggota dihargai.",
+      "Discrimination pasti tidak dapat terjadi karena anggota kelompok berbeda telah direkrut."
+    ],
+    "answer": 2,
+    "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 335–342].",
+    "sourceAnchors": [
+      "Ch. 9; [hal. 335–342]; PDF 363–370"
+    ],
+    "explanation": "Komposisi bukan satu-satunya ukuran. Inclusion berhubungan dengan rasa diterima, dihargai dan dapat berkontribusi. Alternatif lain: Pilihan lain menganggap keberagaman komposisi menjamin inclusion, keseragaman pikiran atau tidak adanya diskriminasi. [hal. 335–342]",
+    "skill": "Diagnosis konsep, bukti dan penerapan"
+  },
+  {
+    "id": "mnu108-uas-tm10-08",
+    "tm": 10,
+    "topic": "Sponsor relationship",
+    "difficulty": "advanced",
+    "q": "Apa tindakan yang paling jelas membedakan sponsor dari mentor?",
+    "options": [
+      "Memberi petunjuk informal mengenai norma organisasi tanpa mengadvokasi kesempatan.",
+      "Mengisi survei kepuasan untuk mengetahui rata-rata tingkat happiness seluruh pegawai.",
+      "Mengumpulkan data alasan pegawai yang keluar untuk memperbaiki angka turnover organisasi.",
+      "Aktif memperjuangkan akses pegawai ke proyek penting dan peluang kemajuan karier."
+    ],
+    "answer": 3,
+    "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 350].",
+    "sourceAnchors": [
+      "Ch. 9; [hal. 350]; PDF 378"
+    ],
+    "explanation": "Sponsor menggunakan posisi/hubungannya untuk mendukung advancement, sedangkan mentor terutama memberi bimbingan. Alternatif lain: Pilihan lain menggambarkan mentoring, tracking happiness atau exit interview. [hal. 350]",
+    "skill": "Diagnosis konsep, bukti dan penerapan"
+  },
+  {
+    "id": "mnu108-uas-tm11-01",
     "tm": 11,
-    "topic": "Kisi-Kisi Manajerial Blake-Mouton",
-    "difficulty": "advanced",
-    "q": "Pada Managerial Grid Blake dan Mouton, gaya kepemimpinan 'Team Management' (posisi 9,9) ditandai oleh...",
+    "topic": "Self-awareness",
+    "difficulty": "basic",
+    "q": "Seorang manajer merasa selalu mendengarkan, tetapi anggota mengatakan sering dipotong. Tindakan awal yang sesuai?",
     "options": [
-      "Perhatian tinggi terhadap produksi dan perhatian tinggi terhadap manusia",
-      "Perhatian tinggi terhadap produksi tetapi mengabaikan manusia",
-      "Perhatian tinggi terhadap manusia tetapi mengabaikan produksi",
-      "Tingkat perhatian minimal terhadap kedua aspek"
+      "Membandingkan feedback spesifik dengan refleksi perilaku diri",
+      "Menolak feedback karena niatnya baik",
+      "Menyimpulkan anggota memiliki kepribadian buruk",
+      "Mengganti refleksi dengan tes kemampuan saja"
     ],
     "answer": 0,
-    "explanation": "Gaya 9,9 (Team Management) dianggap paling ideal karena mengintegrasikan dedikasi tinggi terhadap pencapaian target kerja dan komitmen mendalam terhadap kesejahteraan karyawan."
-  },
-  {
-    "tm": 12,
-    "topic": "Teori Dua Faktor Herzberg",
-    "difficulty": "medium",
-    "q": "Menurut Frederick Herzberg, menaikkan gaji karyawan dan memperbaiki kondisi pendingin ruangan kantor akan...",
-    "options": [
-      "Meningkatkan kepuasan dan motivasi kerja secara drastis",
-      "Menghilangkan ketidakpuasan kerja, namun TIDAK secara otomatis memotivasi kerja",
-      "Menurunkan produktivitas kerja",
-      "Memenuhi kebutuhan aktualisasi diri"
+    "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 362–363].",
+    "sourceAnchors": [
+      "Ch. 10; [hal. 362–363]; PDF 390–391"
     ],
-    "answer": 1,
-    "explanation": "Gaji dan kondisi fisik kerja adalah Hygiene Factors. Pemenuhannya hanya menetralkan rasa tidak puas, sedangkan motivasi sejati hanya dipicu oleh faktor Motivators (tanggung jawab, prestasi)."
+    "explanation": "Feedback membantu melihat blind spots dan self-assessment memeriksa pola diri. Alternatif lain: niat tidak membuktikan dampak; label anggota dan tes kemampuan tidak memeriksa kebiasaan mendengarkan. [hal. 362–363]",
+    "skill": "Diagnosis konsep, bukti dan penerapan"
   },
   {
-    "tm": 12,
-    "topic": "Teori Ekspektansi Vroom",
-    "difficulty": "advanced",
-    "q": "Karyawan merasa yakin bahwa jika ia bekerja lembur menyelesaikan proyek, kinerjanya akan dinilai sangat baik (E-ke-P tinggi). Namun ia pesimis bahwa kinerja baik tersebut akan diganjar bonus kenaikan gaji (P-ke-O rendah). Komponen yang lemah menurut Vroom adalah...",
-    "options": [
-      "Expectancy",
-      "Instrumentality",
-      "Valence",
-      "Equity"
-    ],
-    "answer": 1,
-    "explanation": "Instrumentality adalah keyakinan probabilitas bahwa pencapaian kinerja kerja yang sukses akan membuahkan hasil imbalan organisasi yang diharapkan."
-  },
-  {
-    "tm": 12,
-    "topic": "Job Characteristics Model",
-    "difficulty": "medium",
-    "q": "Pekerjaan seorang dokter bedah yang menyelamatkan nyawa pasien memiliki skor sangat tinggi pada dimensi inti pekerjaan...",
-    "options": [
-      "Skill Variety",
-      "Task Identity",
-      "Task Significance",
-      "Autonomy"
-    ],
-    "answer": 2,
-    "explanation": "Task Significance adalah sejauh mana pekerjaan tersebut memiliki dampak nyata dan bermakna bagi kehidupan atau kesejahteraan orang lain."
-  },
-  {
-    "tm": 12,
-    "topic": "Teori Keadilan Adams",
-    "difficulty": "medium",
-    "q": "Ketika karyawan merasa bahwa rasio antara pengorbanannya (waktu, tenaga) dan imbalannya (gaji) lebih rendah dibandingkan rekan kerjanya yang setara, karyawan tersebut akan cenderung...",
-    "options": [
-      "Meningkatkan kualitas kerjanya secara sukarela",
-      "Mengurangi usaha kerja atau meminta kenaikan imbalan untuk memulihkan keadilan",
-      "Merasa sangat bersyukur dan loyal",
-      "Mengabaikan perbedaan tersebut"
-    ],
-    "answer": 1,
-    "explanation": "Ketidakadilan yang dirasakan (underreward inequity) memicu ketegangan psikologis yang mendorong individu mengurangi input usahanya atau menuntut kompensasi lebih."
-  },
-  {
-    "tm": 12,
-    "topic": "Teori Penguatan Skinner",
+    "id": "mnu108-uas-tm11-02",
+    "tm": 11,
+    "topic": "Attitudes",
     "difficulty": "basic",
-    "q": "Manajer menghentikan teguran harian kepada karyawan setelah karyawan tersebut mulai hadir tepat waktu setiap pagi. Teknik penguatan ini disebut...",
+    "q": "Pegawai puas dengan tugasnya namun tidak merasa loyal pada perusahaan. Kesimpulan yang tepat?",
     "options": [
-      "Positive Reinforcement",
-      "Avoidance Learning (Negative Reinforcement)",
-      "Punishment",
-      "Extinction"
+      "Kedua sikap selalu identik",
+      "Job satisfaction dan organizational commitment berbeda",
+      "Pegawai pasti tidak produktif",
+      "Trust tidak relevan bagi commitment"
     ],
     "answer": 1,
-    "explanation": "Negative reinforcement (avoidance learning) memperkuat perilaku yang diinginkan dengan cara meniadakan atau menghentikan stimulus yang tidak menyenangkan."
+    "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 365–368].",
+    "sourceAnchors": [
+      "Ch. 10; [hal. 365–368]; PDF 393–396"
+    ],
+    "explanation": "Kepuasan mengarah pada pekerjaan, sedangkan commitment pada loyalitas/engagement dengan organisasi. Alternatif lain: kinerja belum diketahui dan trust dapat berkaitan dengan commitment. [hal. 365–368]",
+    "skill": "Diagnosis konsep, bukti dan penerapan"
   },
   {
-    "tm": 13,
-    "topic": "Kekayaan Saluran Komunikasi",
+    "id": "mnu108-uas-tm11-03",
+    "tm": 11,
+    "topic": "Perception",
     "difficulty": "medium",
-    "q": "Ketika seorang manajer harus menyampaikan berita duka atau pemutusan hubungan kerja (PHK) yang sarat muatan emosional, saluran komunikasi yang PALING tepat digunakan adalah...",
+    "q": "Urutan model perception pada Exhibit 10.3 adalah…",
     "options": [
-      "Surat Edaran Memo Tertulis",
-      "Pesan Singkat WhatsApp",
-      "Komunikasi Tatap Muka Langsung (Face-to-Face)",
-      "Pengumuman di Papan Buletin"
+      "Observe → Organize → Screen",
+      "Screen → Motivate → Reward",
+      "Observe → Screen → Organize",
+      "Encode → Channel → Decode"
     ],
     "answer": 2,
-    "explanation": "Face-to-face adalah saluran paling kaya (highest richness) karena memungkinkan transmisi isyarat visual non-verbal, nada suara personal, dan umpan balik empatik seketika."
+    "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 369].",
+    "sourceAnchors": [
+      "Ch. 10; [hal. 369]; PDF 397"
+    ],
+    "explanation": "Informasi diobservasi, disaring dan diorganisasi menjadi pola untuk penafsiran/respons. Alternatif lain: urutan kedua terbalik; motivasi dan komunikasi adalah model berbeda. [hal. 369]",
+    "skill": "Diagnosis konsep, bukti dan penerapan"
   },
   {
-    "tm": 13,
-    "topic": "Tahap Perkembangan Tim Tuckman",
+    "id": "mnu108-uas-tm11-04",
+    "tm": 11,
+    "topic": "Attribution",
     "difficulty": "medium",
-    "q": "Anggota tim proyek mulai berdebat sengit mengenai siapa yang berhak menjadi ketua dan bagaimana pembagian tugas kerja dilakukan. Tim ini sedang berada pada tahap...",
+    "q": "Manajer menyebut keterlambatan anggota sebagai sifat malas, tetapi keterlambatannya sendiri sebagai akibat situasi. Kecenderungan ini?",
     "options": [
-      "Forming",
-      "Storming",
-      "Norming",
-      "Performing"
-    ],
-    "answer": 1,
-    "explanation": "Tahap Storming ditandai oleh konflik intrapersonal, kompetisi peran, dan perebutan pengaruh kepemimpinan sebelum norma kebersamaan terbentuk."
-  },
-  {
-    "tm": 13,
-    "topic": "Manajemen Konflik Thomas-Kilmann",
-    "difficulty": "advanced",
-    "q": "Gaya penyelesaian konflik di mana kedua belah pihak bekerja sama secara terbuka untuk mencari solusi integratif yang memuaskan kepentingan kedua pihak sepenuhnya (Win-Win) adalah...",
-    "options": [
-      "Avoiding",
-      "Accommodating",
-      "Collaborating",
-      "Competing"
-    ],
-    "answer": 2,
-    "explanation": "Collaborating mencerminkan tingkat ketegasan (assertiveness) dan kerja sama (cooperativeness) yang sama-sama tinggi untuk mencapai integrasi tujuan bersama."
-  },
-  {
-    "tm": 13,
-    "topic": "Fenomena Social Loafing",
-    "difficulty": "basic",
-    "q": "Fenomena di mana anggota tim menurunkan kontribusi usahanya karena merasa kinerjanya tertutup oleh kerja kelompok disebut...",
-    "options": [
-      "Group Polarization",
-      "Social Loafing",
-      "Free-Rider Syndromic",
-      "Pilihan B dan C keduanya benar"
+      "Emotional stability: kestabilan respons emosi",
+      "Cognitive dissonance yang pasti terbukti",
+      "Grit: ketekunan pada tujuan jangka panjang",
+      "Fundamental attribution error"
     ],
     "answer": 3,
-    "explanation": "Social loafing (atau free-rider effect) adalah kecenderungan kemalasan sosial individu saat berada dalam tim jika tidak ada akuntabilitas kinerja individu yang jelas."
+    "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 370–371].",
+    "sourceAnchors": [
+      "Ch. 10; [hal. 370–371]; PDF 398–399"
+    ],
+    "explanation": "Bias memberi bobot sifat pribadi bagi kegagalan orang lain dan situasi bagi diri sendiri. Alternatif lain: stabilitas emosi dan grit merupakan karakteristik berbeda; dissonance membutuhkan ketidakselarasan cognition yang tidak dinyatakan. [hal. 370–371]",
+    "skill": "Diagnosis konsep, bukti dan penerapan"
   },
   {
-    "tm": 13,
-    "topic": "Komunikasi Organisasi",
+    "id": "mnu108-uas-tm11-05",
+    "tm": 11,
+    "topic": "Personality",
     "difficulty": "medium",
-    "q": "Arus komunikasi yang terjadi antara anggota dari departemen yang berbeda pada tingkat hierarki yang sama (misalnya manajer keuangan berdiskusi dengan manajer pemasaran) disebut...",
+    "q": "Dimensi yang paling langsung terkait dapat diandalkan, bertanggung jawab dan tekun?",
     "options": [
-      "Downward Communication",
-      "Upward Communication",
-      "Horizontal Communication",
-      "Diagonal Command"
+      "Conscientiousness",
+      "Extroversion",
+      "Openness to experience",
+      "Agreeableness"
+    ],
+    "answer": 0,
+    "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 372–375].",
+    "sourceAnchors": [
+      "Ch. 10; [hal. 372–375]; PDF 400–403"
+    ],
+    "explanation": "Conscientiousness mencakup tanggung jawab, dependability dan ketekunan. Alternatif lain: extroversion menyangkut interaksi; openness gagasan baru; agreeableness kerja sama/kepercayaan. [hal. 372–375]",
+    "skill": "Diagnosis konsep, bukti dan penerapan"
+  },
+  {
+    "id": "mnu108-uas-tm11-06",
+    "tm": 11,
+    "topic": "Emotional intelligence",
+    "difficulty": "medium",
+    "q": "Memahami perasaan anggota dan mempertimbangkan sudut pandangnya terutama menunjukkan…",
+    "options": [
+      "Self-management saja",
+      "Social awareness",
+      "Machiavellianism",
+      "Emotional contagion yang pasti terjadi"
+    ],
+    "answer": 1,
+    "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 382–383].",
+    "sourceAnchors": [
+      "Ch. 10; [hal. 382–383]; PDF 410–411"
+    ],
+    "explanation": "Social awareness mencakup empati dan pemahaman orang lain. Alternatif lain: self-management fokus emosi diri; manipulasi bukan empati; contagion berarti menyerap emosi dan tidak otomatis terjadi di situasi ini. [hal. 382–383]",
+    "skill": "Diagnosis konsep, bukti dan penerapan"
+  },
+  {
+    "id": "mnu108-uas-tm11-07",
+    "tm": 11,
+    "topic": "Self-management",
+    "difficulty": "advanced",
+    "q": "Setelah mengumpulkan komitmen, pegawai hanya memberi label “penting” kepada semuanya. Apa langkah yang hilang?",
+    "options": [
+      "Menambah jumlah daftar sebanyak mungkin",
+      "Menunda seluruh tugas tanpa review",
+      "Menentukan next action yang konkret sebelum mengorganisasi jadwal",
+      "Menyimpan kembali semua tugas di kepala"
     ],
     "answer": 2,
-    "explanation": "Horizontal communication adalah pertukaran pesan secara lateral di antara rekan kerja pada level yang setara untuk memfasilitasi koordinasi lintas fungsi."
-  },
-  {
-    "tm": 14,
-    "topic": "Jenis Pengendalian Manajerial",
-    "difficulty": "medium",
-    "q": "Pemeriksaan ketat atas mutu bahan baku gandum di pintu gudang sebelum diproses ke lini penggilingan merupakan contoh dari...",
-    "options": [
-      "Feedforward Control",
-      "Concurrent Control",
-      "Feedback Control",
-      "Post-action Audit"
+    "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 385–387].",
+    "sourceAnchors": [
+      "Ch. 10; [hal. 385–387]; PDF 413–415"
     ],
-    "answer": 0,
-    "explanation": "Feedforward control (pengendalian awal/input) berfokus pada pencegahan timbulnya cacat produk sebelum proses transformasi operasional dimulai."
+    "explanation": "Decide the next action membuat komitmen menjadi tindakan yang bisa dilakukan/delegasi/tunda. Alternatif lain: banyak daftar menambah kerumitan, penundaan tanpa review dan menyimpan di kepala bertentangan dengan prinsip sumber. [hal. 385–387]",
+    "skill": "Diagnosis konsep, bukti dan penerapan"
   },
   {
-    "tm": 14,
-    "topic": "Balanced Scorecard",
+    "id": "mnu108-uas-tm11-08",
+    "tm": 11,
+    "topic": "Stress",
     "difficulty": "advanced",
-    "q": "Pelatihan peningkatan kompetensi literasi digital karyawan dan perbaikan budaya kerja pada Balanced Scorecard dicatat dalam perspektif...",
+    "q": "Dua atasan memberi instruksi yang tidak kompatibel dan manajer meminta anggota lebih tahan tekanan. Tindakan yang lebih sesuai?",
     "options": [
-      "Perspektif Finansial",
-      "Perspektif Pelanggan",
-      "Perspektif Proses Bisnis Internal",
-      "Perspektif Pembelajaran dan Pertumbuhan (Learning & Growth)"
+      "Naikkan tekanan karena kurva menjamin stres selalu menaikkan hasil",
+      "Anggap role ambiguity pasti sama dengan role conflict",
+      "Tetapkan satu ambang stres numerik bagi semua anggota",
+      "Selaraskan tuntutan peran dan beri dukungan serta kontrol kerja yang wajar"
     ],
     "answer": 3,
-    "explanation": "Perspektif Pembelajaran dan Pertumbuhan berfokus pada modal manusia, budaya organisasi, dan infrastruktur sistem informasi yang menjadi pondasi kesuksesan jangka panjang."
+    "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 388–392].",
+    "sourceAnchors": [
+      "Ch. 10; [hal. 388–392]; PDF 416–420"
+    ],
+    "explanation": "Tuntutan tidak kompatibel adalah role conflict yang perlu diperbaiki, dengan dukungan dan kontrol relevan. Alternatif lain: kurva bukan jaminan linear, ambiguity berbeda dari konflik, dan sumber tidak memberi ambang universal. [hal. 388–392]",
+    "skill": "Diagnosis konsep, bukti dan penerapan"
   },
   {
-    "tm": 14,
-    "topic": "Total Quality Management (TQM)",
-    "difficulty": "medium",
-    "q": "Filosofi perbaikan berkesinambungan dan bertahap secara terus-menerus yang melibatkan setiap orang dalam organisasi disebut...",
+    "id": "mnu108-uas-tm12-01",
+    "tm": 12,
+    "topic": "Leadership",
+    "difficulty": "basic",
+    "q": "Seseorang tanpa jabatan diikuti karena mampu menjelaskan tujuan dan memberi inspirasi. Ia menunjukkan…",
     "options": [
-      "Kaizen",
-      "Benchmarking",
-      "Six Sigma Black Belt",
-      "Outsourcing"
+      "Informal leadership",
+      "Legitimate power yang otomatis ada",
+      "Tidak mungkin leadership",
+      "Management hanya karena popularitas"
     ],
     "answer": 0,
-    "explanation": "Kaizen adalah istilah Jepang untuk perbaikan terus-menerus (continuous improvement) yang menjadi pilar fundamental Total Quality Management (TQM)."
+    "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 403–406].",
+    "sourceAnchors": [
+      "Ch. 11; [hal. 403–406]; PDF 431–434"
+    ],
+    "explanation": "Informal leaders diikuti karena kualitas pribadi, bukan authority jabatan. Alternatif lain: jabatan tidak dinyatakan dan popularitas saja tidak membuktikan management. [hal. 403–406]",
+    "skill": "Diagnosis konsep, bukti dan penerapan"
   },
   {
-    "tm": 14,
-    "topic": "Proses Pengendalian",
+    "id": "mnu108-uas-tm12-02",
+    "tm": 12,
+    "topic": "Level 5",
     "difficulty": "basic",
-    "q": "Langkah pertama yang mutlak harus dilakukan dalam siklus pengendalian manajerial adalah...",
+    "q": "Dua kualitas inti Level 5 adalah…",
     "options": [
-      "Mengukur kinerja aktual karyawan",
-      "Menetapkan standar kinerja strategis",
-      "Membandingkan hasil dengan target",
-      "Mengambil tindakan disiplin"
+      "Ego tinggi dan popularitas",
+      "Humility dan professional will bagi organisasi",
+      "Coercion dan reward semata",
+      "Ketiadaan keputusan sulit"
     ],
     "answer": 1,
-    "explanation": "Tanpa penetapan standar kinerja (standards of performance) terlebih dahulu, manajer tidak memiliki tolok ukur acuan untuk menilai kinerja aktual."
+    "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 407].",
+    "sourceAnchors": [
+      "Ch. 11; [hal. 407]; PDF 435"
+    ],
+    "explanation": "Humility berpadu dengan tekad kuat bagi keberhasilan organisasi. Alternatif lain: ego, popularitas dan power posisi tidak mendefinisikan Level 5; will membutuhkan keputusan. [hal. 407]",
+    "skill": "Diagnosis konsep, bukti dan penerapan"
   },
   {
-    "tm": 14,
-    "topic": "Sintesis Pengendalian Strategis",
-    "difficulty": "advanced",
-    "q": "Bahaya utama dari sistem pengendalian organisasi yang terlalu kaku dan berorientasi sempit pada angka metrik jangka pendek adalah...",
+    "id": "mnu108-uas-tm12-03",
+    "tm": 12,
+    "topic": "Behavior",
+    "difficulty": "medium",
+    "q": "Mengklarifikasi tanggung jawab dan memonitor operasi terutama merupakan…",
     "options": [
-      "Biaya audit menjadi nol",
-      "Karyawan memanipulasi data untuk memenuhi target kuantitatif dan mematikan inovasi kreatif",
-      "Terjadinya desentralisasi total tanpa arahan",
-      "Meningkatnya kepuasan kerja karyawan secara drastis"
+      "Consideration saja",
+      "Referent power yang pasti terbukti",
+      "Initiating structure",
+      "Followership alienated"
+    ],
+    "answer": 2,
+    "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 415–416].",
+    "sourceAnchors": [
+      "Ch. 11; [hal. 415–416]; PDF 443–444"
+    ],
+    "explanation": "Initiating structure adalah task behavior menuju tujuan. Alternatif lain: consideration menyangkut relasi; perilaku ini tidak membuktikan basis power atau gaya pengikut. [hal. 415–416]",
+    "skill": "Diagnosis konsep, bukti dan penerapan"
+  },
+  {
+    "id": "mnu108-uas-tm12-04",
+    "tm": 12,
+    "topic": "Readiness",
+    "difficulty": "medium",
+    "q": "Anggota belum mampu melakukan tugas tetapi bersemangat belajar. Model sumber menyarankan…",
+    "options": [
+      "R1 → S4 delegating: task rendah, relationship rendah",
+      "R3 → S1 telling: task tinggi, relationship rendah",
+      "R4 → S3 participating: task rendah, relationship tinggi",
+      "R2 → S2 selling: task dan relationship tinggi"
+    ],
+    "answer": 3,
+    "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 416–417].",
+    "sourceAnchors": [
+      "Ch. 11; [hal. 416–417]; PDF 444–445"
+    ],
+    "explanation": "Unable tetapi willing/confident adalah R2; S2 memberi arahan serta penjelasan/klarifikasi. Alternatif lain: pasangan lain tidak cocok dengan readiness dan pemetaan sumber. [hal. 416–417]",
+    "skill": "Diagnosis konsep, bukti dan penerapan"
+  },
+  {
+    "id": "mnu108-uas-tm12-05",
+    "tm": 12,
+    "topic": "Readiness",
+    "difficulty": "medium",
+    "q": "Ahli mampu namun insecure terhadap tugas membutuhkan…",
+    "options": [
+      "S3 participating: relationship tinggi, task rendah",
+      "S4 karena ability saja cukup",
+      "S1 untuk seluruh ahli",
+      "S2 dengan relationship rendah"
+    ],
+    "answer": 0,
+    "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 417].",
+    "sourceAnchors": [
+      "Ch. 11; [hal. 417]; PDF 445"
+    ],
+    "explanation": "R3 able tetapi unwilling/insecure cocok dengan S3. Alternatif lain: R4 memerlukan willingness/confidence; S1 untuk R1; S2 relationship tinggi. [hal. 417]",
+    "skill": "Diagnosis konsep, bukti dan penerapan"
+  },
+  {
+    "id": "mnu108-uas-tm12-06",
+    "tm": 12,
+    "topic": "Fiedler",
+    "difficulty": "medium",
+    "q": "Apa yang menentukan favorability Fiedler?",
+    "options": [
+      "Ability, willingness dan jenis bonus saja",
+      "Leader–member relations, task structure dan position power",
+      "Gender, usia dan popularitas",
+      "Hanya tingkat struktur tugas"
     ],
     "answer": 1,
-    "explanation": "Pengendalian yang terlalu birokratis dan menuntut kepatuhan kaku sering memicu perilaku disfungsional (gaming the system) dan menghambat fleksibilitas inovasi."
+    "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 418–419].",
+    "sourceAnchors": [
+      "Ch. 11; [hal. 418–419]; PDF 446–447"
+    ],
+    "explanation": "Ketiga unsur situasi dipakai mencocokkan gaya relatif tetap. Alternatif lain: readiness model berbeda; atribut pribadi dan satu unsur saja belum menentukan favorability. [hal. 418–419]",
+    "skill": "Diagnosis konsep, bukti dan penerapan"
+  },
+  {
+    "id": "mnu108-uas-tm12-07",
+    "tm": 12,
+    "topic": "Substitutes",
+    "difficulty": "advanced",
+    "q": "Aturan tugas rinci memenuhi kebutuhan arah kerja sehingga leader tidak perlu mengulangnya. Ini…",
+    "options": [
+      "Neutralizer karena semua arahan terhambat",
+      "Bukti people-oriented tidak diperlukan",
+      "Substitute bagi task-oriented leadership",
+      "Coercive power yang pasti terjadi"
+    ],
+    "answer": 2,
+    "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 420].",
+    "sourceAnchors": [
+      "Ch. 11; [hal. 420]; PDF 448"
+    ],
+    "explanation": "Formalization dapat menyediakan fungsi pengganti task direction. Alternatif lain: neutralizer hanya menghambat; efek pada people berbeda; tidak ada hukuman disebut. [hal. 420]",
+    "skill": "Diagnosis konsep, bukti dan penerapan"
+  },
+  {
+    "id": "mnu108-uas-tm12-08",
+    "tm": 12,
+    "topic": "Followership",
+    "difficulty": "advanced",
+    "q": "Anggota berpikir kritis sekaligus aktif menawarkan solusi tergolong…",
+    "options": [
+      "Alienated follower",
+      "Conformist",
+      "Passive follower",
+      "Effective follower"
+    ],
+    "answer": 3,
+    "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 424–428].",
+    "sourceAnchors": [
+      "Ch. 11; [hal. 424–428]; PDF 452–456"
+    ],
+    "explanation": "Effective menggabungkan critical independent thinking dengan active engagement. Alternatif lain: alienated kritis tetapi pasif; conformist aktif tanpa kritis; passive keduanya rendah. [hal. 424–428]",
+    "skill": "Diagnosis konsep, bukti dan penerapan"
+  },
+  {
+    "id": "mnu108-uas-tm12-09",
+    "tm": 12,
+    "topic": "Power",
+    "difficulty": "advanced",
+    "q": "Analis memakai keahlian dan data untuk mengubah keputusan walau tidak berwenang memberi perintah. Kombinasi paling tepat?",
+    "options": [
+      "Expert power dan rational persuasion",
+      "Legitimate power dan coercion",
+      "Reward power dan hukuman",
+      "Referent power pasti karena setiap ahli dikagumi"
+    ],
+    "answer": 0,
+    "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 428–432].",
+    "sourceAnchors": [
+      "Ch. 11; [hal. 428–432]; PDF 456–460"
+    ],
+    "explanation": "Keahlian memberi expert power; fakta/alasan mendukung rational persuasion. Alternatif lain: jabatan, reward, hukuman dan kekaguman tidak dinyatakan. [hal. 428–432]",
+    "skill": "Diagnosis konsep, bukti dan penerapan"
+  },
+  {
+    "id": "mnu108-uas-tm13-01",
+    "tm": 13,
+    "topic": "Rewards",
+    "difficulty": "basic",
+    "q": "Manajer memberi pujian atas laporan; anggota merasa bangga karena memecahkan masalah. Pasangan yang tepat?",
+    "options": [
+      "Keduanya intrinsic karena tidak berupa uang",
+      "Pujian extrinsic, accomplishment intrinsic",
+      "Keduanya punishment",
+      "Pujian intrinsic, bangga extrinsic"
+    ],
+    "answer": 1,
+    "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 441–442].",
+    "sourceAnchors": [
+      "Ch. 12; [hal. 441–442]; PDF 469–470"
+    ],
+    "explanation": "Sumber pujian di luar diri; accomplishment muncul dari aktivitas. Alternatif lain: uang tidak mendefinisikan kategori, hukuman tidak terjadi, pasangan terakhir terbalik. [hal. 441–442]",
+    "skill": "Diagnosis konsep, bukti dan penerapan"
+  },
+  {
+    "id": "mnu108-uas-tm13-02",
+    "tm": 13,
+    "topic": "ERG",
+    "difficulty": "basic",
+    "q": "Growth terhambat lalu pegawai makin menekankan penghasilan. ERG menjelaskan ini sebagai…",
+    "options": [
+      "Kenaikan otomatis ke self-actualization",
+      "Punishment: konsekuensi buruk mengurangi perilaku",
+      "Frustration-regression",
+      "E→P tinggi yang pasti terjadi"
+    ],
+    "answer": 2,
+    "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 446–447].",
+    "sourceAnchors": [
+      "Ch. 12; [hal. 446–447]; PDF 474–475"
+    ],
+    "explanation": "Frustrasi kebutuhan lebih tinggi dapat mengarahkan ke kebutuhan lebih rendah. Alternatif lain: pilihan lain tidak menjelaskan perubahan perhatian kebutuhan. [hal. 446–447]",
+    "skill": "Diagnosis konsep, bukti dan penerapan"
+  },
+  {
+    "id": "mnu108-uas-tm13-03",
+    "tm": 13,
+    "topic": "Herzberg",
+    "difficulty": "medium",
+    "q": "Fasilitas diperbaiki tetapi pekerjaan tetap tanpa growth atau responsibility. Menurut Herzberg…",
+    "options": [
+      "Hygiene pasti menciptakan motivasi tinggi",
+      "Achievement adalah hygiene saja",
+      "Pay tidak termasuk model",
+      "Dissatisfaction dapat berkurang tanpa satisfaction tinggi"
+    ],
+    "answer": 3,
+    "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 447–448].",
+    "sourceAnchors": [
+      "Ch. 12; [hal. 447–448]; PDF 475–476"
+    ],
+    "explanation": "Hygiene dan motivators berperan pada area berbeda. Alternatif lain: hygiene tidak menjamin satisfaction; achievement motivator dan pay hygiene. [hal. 447–448]",
+    "skill": "Diagnosis konsep, bukti dan penerapan"
+  },
+  {
+    "id": "mnu108-uas-tm13-04",
+    "tm": 13,
+    "topic": "Goal setting",
+    "difficulty": "medium",
+    "q": "Kombinasi criteria motivational goals sumber ialah…",
+    "options": [
+      "Specific, challenging, accepted dan feedback",
+      "Kabur, mustahil, dipaksakan dan tanpa review",
+      "Bonus, senioritas dan gender",
+      "Specific saja tanpa acceptance"
+    ],
+    "answer": 0,
+    "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 451–452].",
+    "sourceAnchors": [
+      "Ch. 12; [hal. 451–452]; PDF 479–480"
+    ],
+    "explanation": "Empat kriteria membantu arah, tantangan, penerimaan dan kemajuan. Alternatif lain: target buruk dan atribut lain tidak menggantikan kriteria; specificity saja tidak lengkap. [hal. 451–452]",
+    "skill": "Diagnosis konsep, bukti dan penerapan"
+  },
+  {
+    "id": "mnu108-uas-tm13-05",
+    "tm": 13,
+    "topic": "Expectancy",
+    "difficulty": "medium",
+    "q": "Pegawai mampu mencapai target dan ingin bonus, tetapi tidak percaya bonus akan dibayar. Unsur terlemah?",
+    "options": [
+      "E→P expectancy yang pasti nol",
+      "P→O expectancy",
+      "Valence yang pasti rendah",
+      "Need for affiliation"
+    ],
+    "answer": 1,
+    "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 455–456].",
+    "sourceAnchors": [
+      "Ch. 12; [hal. 455–456]; PDF 483–484"
+    ],
+    "explanation": "P→O menghubungkan successful performance dengan outcome. Alternatif lain: ability/target mendukung E→P dan bonus diinginkan berarti valence tinggi; affiliation tidak dinyatakan. [hal. 455–456]",
+    "skill": "Diagnosis konsep, bukti dan penerapan"
+  },
+  {
+    "id": "mnu108-uas-tm13-06",
+    "tm": 13,
+    "topic": "Reinforcement",
+    "difficulty": "medium",
+    "q": "Teguran berhenti setelah keterlambatan anggota membaik. Mekanismenya…",
+    "options": [
+      "Punishment: konsekuensi buruk ditambahkan",
+      "Extinction atas reward positif",
+      "Avoidance learning / negative reinforcement",
+      "Positive reinforcement berupa penambahan reward"
+    ],
+    "answer": 2,
+    "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 457–458].",
+    "sourceAnchors": [
+      "Ch. 12; [hal. 457–458]; PDF 485–486"
+    ],
+    "explanation": "Konsekuensi buruk dihilangkan sehingga perilaku membaik diperkuat. Alternatif lain: punishment menambah konsekuensi buruk; extinction menghentikan positif; positive reinforcement menambah menyenangkan. [hal. 457–458]",
+    "skill": "Diagnosis konsep, bukti dan penerapan"
+  },
+  {
+    "id": "mnu108-uas-tm13-07",
+    "tm": 13,
+    "topic": "Job design",
+    "difficulty": "advanced",
+    "q": "Anggota mengerjakan bagian kerja lengkap tetapi belum melihat dampaknya pada pelanggan. Identifikasi tepat?",
+    "options": [
+      "Task identity dan significance dianggap selalu tinggi",
+      "Autonomy dianggap pasti nol tanpa memeriksa kewenangan",
+      "Enlargement selalu sama dengan enrichment",
+      "Task identity dapat tinggi, task significance belum jelas"
+    ],
+    "answer": 3,
+    "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 460–461].",
+    "sourceAnchors": [
+      "Ch. 12; [hal. 460–461]; PDF 488–489"
+    ],
+    "explanation": "Keutuhan kerja dan arti/dampaknya adalah dimensi berbeda. Alternatif lain: kondisi tidak memberi data autonomy atau memastikan enrichment. [hal. 460–461]",
+    "skill": "Diagnosis konsep, bukti dan penerapan"
+  },
+  {
+    "id": "mnu108-uas-tm13-08",
+    "tm": 13,
+    "topic": "Empowerment",
+    "difficulty": "advanced",
+    "q": "Authority keputusan diberikan tanpa data operasi dan training. Unsur empowerment yang perlu diperbaiki?",
+    "options": [
+      "Information serta knowledge/skills",
+      "Hanya jumlah tugas",
+      "Hapus seluruh authority tanpa diagnosis",
+      "Pujian saja menggantikan semua elemen"
+    ],
+    "answer": 0,
+    "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 462–463].",
+    "sourceAnchors": [
+      "Ch. 12; [hal. 462–463]; PDF 490–491"
+    ],
+    "explanation": "Keputusan substantif membutuhkan informasi dan kapasitas. Alternatif lain: jumlah tugas, pencabutan tanpa diagnosis dan pujian saja tidak memperbaiki dua kekurangan. [hal. 462–463]",
+    "skill": "Diagnosis konsep, bukti dan penerapan"
+  },
+  {
+    "id": "mnu108-uas-tm13-09",
+    "tm": 13,
+    "topic": "Morgan/equity",
+    "difficulty": "advanced",
+    "q": "Mengapa komisi atas belt USD50 dan dress USD2.800 belum dapat dihitung, tetapi fairness tetap dapat dianalisis?",
+    "options": [
+      "Karena kedua harga selalu memberi komisi sama",
+      "Tarif komisi tidak tersedia; perbedaan peluang/input-outcome perlu diperiksa",
+      "Karena harga adalah persentase komisi",
+      "Karena nominal berbeda otomatis membuktikan diskriminasi"
+    ],
+    "answer": 1,
+    "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 453–459, 470].",
+    "sourceAnchors": [
+      "Ch. 12; [hal. 453–459, 470]; PDF 481–487, 498"
+    ],
+    "explanation": "Kasus memberi harga dan keluhan peluang, tanpa rate komisi atau ukuran kontribusi lengkap. Alternatif lain: harga bukan rate, hasil tidak pasti sama, perbedaan nominal saja tidak membuktikan penyebab diskriminasi. [hal. 453–459, 470]",
+    "skill": "Diagnosis konsep, bukti dan penerapan"
+  },
+  {
+    "id": "mnu108-uas-tm14-01",
+    "tm": 14,
+    "topic": "Communication",
+    "difficulty": "basic",
+    "q": "Bukti paling langsung bahwa makna pesan dipahami bersama adalah…",
+    "options": [
+      "Notifikasi pesan terkirim saja",
+      "Panjang pesan yang diberikan sender kepada receiver",
+      "Feedback yang menunjukkan interpretasi dan dapat diklarifikasi",
+      "Jumlah emoji serta simbol yang dipakai dalam pesan"
+    ],
+    "answer": 2,
+    "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 476–478].",
+    "sourceAnchors": [
+      "Ch. 13–14; [hal. 476–478]; PDF 504–506"
+    ],
+    "explanation": "Feedback menghubungkan interpretasi receiver dengan sender. Alternatif lain: terkirim, panjang dan simbol tidak membuktikan mutual understanding. [hal. 476–478]",
+    "skill": "Diagnosis konsep, bukti dan penerapan"
+  },
+  {
+    "id": "mnu108-uas-tm14-02",
+    "tm": 14,
+    "topic": "Richness",
+    "difficulty": "basic",
+    "q": "Masalah sensitif dan ambigu dengan emosi tinggi paling memerlukan…",
+    "options": [
+      "Bulletin satu arah sebagai satu-satunya channel",
+      "Pesan paling panjang tanpa feedback",
+      "Channel dipilih hanya karena biaya termurah",
+      "Channel kaya dengan multiple cues dan rapid two-way feedback"
+    ],
+    "answer": 3,
+    "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 484–485].",
+    "sourceAnchors": [
+      "Ch. 13–14; [hal. 484–485]; PDF 512–513"
+    ],
+    "explanation": "Rich channel membantu klarifikasi cepat serta konteks emosional. Alternatif lain: bulletin/monolog miskin feedback dan panjang/biaya saja tidak menentukan kecocokan. [hal. 484–485]",
+    "skill": "Diagnosis konsep, bukti dan penerapan"
+  },
+  {
+    "id": "mnu108-uas-tm14-03",
+    "tm": 14,
+    "topic": "Candor",
+    "difficulty": "medium",
+    "q": "Pernyataan yang sesuai candor adalah…",
+    "options": [
+      "Saya kesulitan menutup laporan ketika data belum masuk; mohon kirim bagian ini sebelum waktu yang disepakati",
+      "Anda memang malas dan selalu menyusahkan; saya tidak perlu mendengar alasan Anda",
+      "Hindari menyampaikan masalah dan tetap memberi pujian agar anggota menerima pesan tanpa keberatan",
+      "Saya marah atas hasil ini, jadi semua anggota pasti bersalah dan perlu diberi tekanan"
+    ],
+    "answer": 0,
+    "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 487–488].",
+    "sourceAnchors": [
+      "Ch. 13–14; [hal. 487–488]; PDF 515–516"
+    ],
+    "explanation": "I statement, fakta/dampak dan permintaan spesifik disampaikan dengan respect. Alternatif lain: label, menghindari masalah dan generalisasi tidak membantu candor. [hal. 487–488]",
+    "skill": "Diagnosis konsep, bukti dan penerapan"
+  },
+  {
+    "id": "mnu108-uas-tm14-04",
+    "tm": 14,
+    "topic": "Channels",
+    "difficulty": "medium",
+    "q": "Laporan kendala dari staf kepada manajer melalui chat tugas termasuk…",
+    "options": [
+      "Downward karena menggunakan chat",
+      "Upward formal communication",
+      "Informal pasti karena digital",
+      "Horizontal karena isinya masalah"
+    ],
+    "answer": 1,
+    "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 498–500].",
+    "sourceAnchors": [
+      "Ch. 13–14; [hal. 498–500]; PDF 526–528"
+    ],
+    "explanation": "Arah bawah→atas mengikuti tanggung jawab tugas. Alternatif lain: medium tidak menentukan arah/status dan isi masalah tidak menjadikannya horizontal. [hal. 498–500]",
+    "skill": "Diagnosis konsep, bukti dan penerapan"
+  },
+  {
+    "id": "mnu108-uas-tm14-05",
+    "tm": 14,
+    "topic": "Team",
+    "difficulty": "medium",
+    "q": "Sekumpulan orang baru menjadi team ketika…",
+    "options": [
+      "Berada dalam ruangan sama dan menjalankan tugas sendiri tanpa tujuan bersama",
+      "Memiliki skill identik dan mengikuti arahan yang sama tanpa membutuhkan koordinasi kerja",
+      "Berinteraksi/berkoordinasi bagi common goal dengan commitment dan mutual accountability",
+      "Menghindari setiap perbedaan pendapat tanpa perlu koordinasi serta mutual accountability"
+    ],
+    "answer": 2,
+    "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 511].",
+    "sourceAnchors": [
+      "Ch. 13–14; [hal. 511]; PDF 539"
+    ],
+    "explanation": "Definisi memerlukan relasi kerja dan shared goal/accountability. Alternatif lain: lokasi/skill identik/harmoni tanpa disagreement tidak memenuhi definisi. [hal. 511]",
+    "skill": "Diagnosis konsep, bukti dan penerapan"
+  },
+  {
+    "id": "mnu108-uas-tm14-06",
+    "tm": 14,
+    "topic": "Effectiveness",
+    "difficulty": "medium",
+    "q": "Model work team effectiveness memakai tiga outcomes…",
+    "options": [
+      "Output, profit dan popularitas saja",
+      "Ukuran anggota, diversity keahlian dan roles sebagai ukuran hasil akhir tim",
+      "Forming, storming dan norming sebagai hasil akhir pekerjaan tim",
+      "Productive output, personal satisfaction, capacity to adapt and learn"
+    ],
+    "answer": 3,
+    "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 522–523].",
+    "sourceAnchors": [
+      "Ch. 13–14; [hal. 522–523]; PDF 550–551"
+    ],
+    "explanation": "Ketiga outcome menilai hasil, anggota serta kemampuan perkembangan. Alternatif lain: composition dan stages adalah faktor/proses, bukan outcome model. [hal. 522–523]",
+    "skill": "Diagnosis konsep, bukti dan penerapan"
+  },
+  {
+    "id": "mnu108-uas-tm14-07",
+    "tm": 14,
+    "topic": "Dysfunctions",
+    "difficulty": "advanced",
+    "q": "Tim menyetujui keputusan di rapat karena takut mengungkap keberatan, kemudian kurang mendukung pelaksanaan. Hubungan terdekat?",
+    "options": [
+      "Fear of conflict dapat melemahkan commitment",
+      "Semua agreement membuktikan trust tinggi",
+      "Free rider pasti terbukti pada semua anggota",
+      "Performing pasti sudah tercapai"
+    ],
+    "answer": 0,
+    "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 522].",
+    "sourceAnchors": [
+      "Ch. 13–14; [hal. 522]; PDF 550"
+    ],
+    "explanation": "Pendapat yang tidak diungkap menghambat buy-in. Alternatif lain: agreement saja tidak membuktikan trust, kontribusi/statusstage belum diketahui. [hal. 522]",
+    "skill": "Diagnosis konsep, bukti dan penerapan"
+  },
+  {
+    "id": "mnu108-uas-tm14-08",
+    "tm": 14,
+    "topic": "Norms",
+    "difficulty": "advanced",
+    "q": "Tim sangat kompak tetapi terbiasa menahan informasi dari bagian lain. Kesimpulan tepat?",
+    "options": [
+      "Cohesion menjamin output tinggi",
+      "Cohesion perlu dinilai bersama norms dan tujuan",
+      "Setiap cohesion selalu buruk",
+      "Norms hanya aturan tertulis"
+    ],
+    "answer": 1,
+    "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 530–532].",
+    "sourceAnchors": [
+      "Ch. 13–14; [hal. 530–532]; PDF 558–560"
+    ],
+    "explanation": "Kekompakan dapat menguatkan norma yang merugikan kerja. Cohesion menjelaskan keinginan bertahan dan relasi, sementara norms menentukan perilaku yang dianggap pantas; keduanya perlu dibandingkan dengan shared goals. Alternatif lain: baik/buruk tidak universal; norms dapat informal. [hal. 530–532]",
+    "skill": "Diagnosis konsep, bukti dan penerapan"
+  },
+  {
+    "id": "mnu108-uas-tm14-09",
+    "tm": 14,
+    "topic": "Conflict",
+    "difficulty": "advanced",
+    "q": "Dua concerns penting perlu dipenuhi bersama, dengan waktu mengeksplorasi opsi. Style yang paling cocok?",
+    "options": [
+      "Accommodating dengan assertiveness tinggi",
+      "Avoiding dengan cooperativeness tinggi",
+      "Collaborating: assertive dan cooperative tinggi",
+      "Dominating demi dua pihak tanpa diskusi"
+    ],
+    "answer": 2,
+    "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 535–537].",
+    "sourceAnchors": [
+      "Ch. 13–14; [hal. 535–537]; PDF 563–565"
+    ],
+    "explanation": "Collaboration menggabungkan perhatian pada concern diri dan pihak lain. Alternatif lain: kombinasi dimensi pilihan lain salah atau tidak memenuhi kedua concerns. [hal. 535–537]",
+    "skill": "Diagnosis konsep, bukti dan penerapan"
+  },
+  {
+    "id": "mnu108-uas-tm14-10",
+    "tm": 14,
+    "topic": "Brainchild",
+    "difficulty": "advanced",
+    "q": "Mengapa email yang meminta kejujuran tetapi mengancam semua manajer dapat gagal?",
+    "options": [
+      "Karena email selalu dilarang dalam organisasi",
+      "Karena kasus membuktikan seluruh manajer pelaku",
+      "Karena apology pasti menghapus seluruh dampak",
+      "Threat menghambat feedback/trust dan pesan miskin cues mudah salah tafsir"
+    ],
+    "answer": 3,
+    "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 476–488, 506].",
+    "sourceAnchors": [
+      "Ch. 13–14; [hal. 476–488, 506]; PDF 504–516, 534"
+    ],
+    "explanation": "Tujuan dan encoding bertentangan; rich channel/feedback serta proses adil diperlukan. Alternatif lain: larangan universal, pelaku dan jaminan pemulihan tidak ada dalam teks. [hal. 476–488, 506]",
+    "skill": "Diagnosis konsep, bukti dan penerapan"
+  },
+  {
+    "id": "mnu108-uas-tm15-01",
+    "tm": 15,
+    "topic": "Feedback control",
+    "difficulty": "basic",
+    "q": "Setelah mengukur actual performance, langkah berikutnya adalah…",
+    "options": [
+      "Membandingkan dengan standards dan memeriksa variance",
+      "Langsung menghukum semua anggota",
+      "Mengubah target agar sama dengan hasil aktual yang baru diukur",
+      "Mengabaikan hasil pengukuran dan memakai standar yang lama"
+    ],
+    "answer": 0,
+    "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 549–551].",
+    "sourceAnchors": [
+      "Ch. 15; [hal. 549–551]; PDF 577–579"
+    ],
+    "explanation": "Compare memberi dasar diagnosis sebelum tindakan. Selisih dapat berasal dari proses, sumber daya atau ukuran yang tidak tepat; periksa penyebab sebelum menentukan koreksi performance atau standards. Alternatif lain: hukuman, penghapusan target dan pengabaian data melewati diagnosis. [hal. 549–551]",
+    "skill": "Diagnosis konsep, bukti dan penerapan"
+  },
+  {
+    "id": "mnu108-uas-tm15-02",
+    "tm": 15,
+    "topic": "Scorecard",
+    "difficulty": "basic",
+    "q": "Perspektif balanced scorecard sumber meliputi…",
+    "options": [
+      "Cash, inventory, sales dan tax saja",
+      "Financial, customers, internal processes, learning/growth",
+      "Personality, gender, age dan income",
+      "Empat divisi yang otomatis berbobot sama"
+    ],
+    "answer": 1,
+    "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 552–554].",
+    "sourceAnchors": [
+      "Ch. 15; [hal. 552–554]; PDF 580–582"
+    ],
+    "explanation": "Empat perspektif melengkapi ukuran financial sesuai mission/goals. Alternatif lain: pos akun/atribut bukan perspektif dan equal weights tidak ditentukan. [hal. 552–554]",
+    "skill": "Diagnosis konsep, bukti dan penerapan"
+  },
+  {
+    "id": "mnu108-uas-tm15-03",
+    "tm": 15,
+    "topic": "Control philosophy",
+    "difficulty": "medium",
+    "q": "Decentralized control terutama mengandalkan…",
+    "options": [
+      "Kebebasan tanpa standards atau accountability kerja",
+      "Seluruh keputusan software tanpa review",
+      "Shared goals/values, norms, socialization dan self-control",
+      "Formal inspection dan instruksi terperinci sebagai satu-satunya mekanisme kontrol"
+    ],
+    "answer": 2,
+    "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 554–558].",
+    "sourceAnchors": [
+      "Ch. 15; [hal. 554–558]; PDF 582–586"
+    ],
+    "explanation": "Budaya/norma serta goals mendukung self-control dengan accountability. Alternatif lain: decentralized bukan tanpa standar; algorithmic dan formal inspection tidak mendefinisikannya. [hal. 554–558]",
+    "skill": "Diagnosis konsep, bukti dan penerapan"
+  },
+  {
+    "id": "mnu108-uas-tm15-04",
+    "tm": 15,
+    "topic": "TQM",
+    "difficulty": "medium",
+    "q": "Urutan benchmarking sumber adalah…",
+    "options": [
+      "Collect → Improve → Plan → Find → Analyze",
+      "Define → Punish → Reward → Close",
+      "Salin competitor tanpa data",
+      "Plan → Find → Collect → Analyze → Improve"
+    ],
+    "answer": 3,
+    "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 560–561].",
+    "sourceAnchors": [
+      "Ch. 15; [hal. 560–561]; PDF 588–589"
+    ],
+    "explanation": "Lima langkah memulai tujuan/sumber dan berakhir implementasi/monitoring. Alternatif lain: urutan kedua salah; punishment dan copying tidak menggantikan proses. [hal. 560–561]",
+    "skill": "Diagnosis konsep, bukti dan penerapan"
+  },
+  {
+    "id": "mnu108-uas-tm15-05",
+    "tm": 15,
+    "topic": "Budget",
+    "difficulty": "medium",
+    "q": "Bisnis mempunyai sales tinggi tetapi cash receipts terlambat. Budget paling langsung memeriksa kemampuan membayar minggu ini?",
+    "options": [
+      "Cash budget: jadwal receipts dan payments",
+      "Revenue budget: forecast dan actual sales saja",
+      "Capital budget tanpa receipts",
+      "ZBB berarti cash selalu nol"
+    ],
+    "answer": 0,
+    "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 563–566].",
+    "sourceAnchors": [
+      "Ch. 15; [hal. 563–566]; PDF 591–594"
+    ],
+    "explanation": "Cash budget mengestimasi timing penerimaan/pembayaran. Alternatif lain: sales bukan cash, investasi saja tidak menjawab timing dan titik nol ZBB bukan saldo cash. [hal. 563–566]",
+    "skill": "Diagnosis konsep, bukti dan penerapan"
+  },
+  {
+    "id": "mnu108-uas-tm15-06",
+    "tm": 15,
+    "topic": "Financial ratios",
+    "difficulty": "medium",
+    "q": "Dengan current assets 600.000, inventory 500.000, cash 25.000, receivables 75.000 dan current liabilities 250.000, pasangan rasio sumber?",
+    "options": [
+      "Current 0,4; quick 2,4",
+      "Current 2,4; quick 0,4",
+      "Keduanya 2,4 karena inventory cash",
+      "Current 4; quick 0,24"
+    ],
+    "answer": 1,
+    "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 567–569].",
+    "sourceAnchors": [
+      "Ch. 15; [hal. 567–569]; PDF 595–597"
+    ],
+    "explanation": "Current=600.000/250.000; quick=(25.000+75.000)/250.000. Alternatif lain: pasangan lain tertukar, memasukkan inventory ke quick atau salah aritmetika. [hal. 567–569]",
+    "skill": "Diagnosis konsep, bukti dan penerapan"
+  },
+  {
+    "id": "mnu108-uas-tm15-07",
+    "tm": 15,
+    "topic": "Financial data",
+    "difficulty": "advanced",
+    "q": "Mengapa inventory turnover belum bisa dihitung dari inventory akhir USD500.000 saja?",
+    "options": [
+      "Ending inventory selalu average",
+      "Karena turnover sama dengan current ratio",
+      "Average inventory belum tersedia dan basis sales/COGS harus dinyatakan",
+      "Karena semua rumus turnover selalu identik"
+    ],
+    "answer": 2,
+    "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 568–569].",
+    "sourceAnchors": [
+      "Ch. 15; [hal. 568–569]; PDF 596–597"
+    ],
+    "explanation": "Sumber memakai average inventory; bedakan sales-based buku dari cost-based SEC. Alternatif lain: ending belum average dan turnover bukan liquidity ratio. [hal. 568–569]",
+    "skill": "Diagnosis konsep, bukti dan penerapan"
+  },
+  {
+    "id": "mnu108-uas-tm15-08",
+    "tm": 15,
+    "topic": "Teacher control",
+    "difficulty": "advanced",
+    "q": "Mengapa rating 1–5 saja belum menjamin fairness evaluasi guru?",
+    "options": [
+      "Karena semua angka selalu tidak berguna",
+      "Karena kasus membuktikan semua principal curang",
+      "Karena bobot boleh otomatis diubah menjadi 100% principal",
+      "Rubric, evidence, observer calibration dan context tetap perlu diperiksa"
+    ],
+    "answer": 3,
+    "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 549–556, 574–575].",
+    "sourceAnchors": [
+      "Ch. 15; [hal. 549–556, 574–575]; PDF 577–584, 602–603"
+    ],
+    "explanation": "Skala perlu proses pengukuran yang valid serta konsisten. Alternatif lain: angka masih dapat berguna, dugaan bukan temuan semua orang dan bobot kasus asli40/30/30. [hal. 549–556, 574–575]",
+    "skill": "Diagnosis konsep, bukti dan penerapan"
   }
 ];
 

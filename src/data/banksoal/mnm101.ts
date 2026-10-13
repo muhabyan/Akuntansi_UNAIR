@@ -1,7 +1,7 @@
 // src/data/banksoal/mnm101.ts
 // Bank Soal Esai & Studi Kasus Pengantar Manajemen (MNU108; nama variabel dan file masih MNM101)
 // Sumber: Daft & Marcic, Understanding Management 12e (2023)
-// 7 kasus Pra-UTS (satu Ethical Dilemma per TM 1-7, diparafrasekan; panduan jawaban lima langkah) dan 7 kasus Pra-UAS (belum disinkronkan ke 12e)
+// 7 kasus Pra-UTS (satu Ethical Dilemma per TM 1-7, diparafrasekan; panduan jawaban lima langkah) dan 14 kasus Pra-UAS (7 kasus RPP buku dan 7 latihan berasumsi, TM 9-15)
 import type { BankSoal } from '../../types';
 
 export const MNM101_BANK_UTS: BankSoal[] = [
@@ -241,205 +241,416 @@ export const MNM101_BANK_UTS: BankSoal[] = [
 export const MNM101_BANK_UAS: BankSoal[] = [
   {
     "type": "analysis",
-    "scope": "TM 8: Pemantapan Review Terpadu Silabus Pra-UTS",
-    "difficulty": "Komprehensif",
-    "estimatedTime": "35–45 menit",
-    "question": "Studi Kasus 8: Simulasi Ujian Kasus Integratif Pra-UTS Transformasi Retail Hero Group",
-    "context": "Hero Group menghadapi guncangan disrupsi belanja e-commerce dan perubahan preferensi belanja konsumen yang beralih dari hypermarket besar (Giant) ke gerai minimarket dekat rumah. Manajemen puncak harus merumuskan arah baru: menutup gerai Giant yang merugi, mengalihkan modal ke gerai Hero Supermarket premium dan IKEA, merampingkan organisasi dari struktur birokrasi piramida menjadi tim lincah, serta menyelaraskan budaya kerja para karyawan veteran.",
+    "scope": "TM 9: Chopper's Sausage House: MRP tertahan",
+    "difficulty": "Menengah",
+    "estimatedTime": "20–30 menit",
+    "question": "Chopper's Sausage House: MRP tertahan",
+    "context": "Kasus buku yang ditugaskan RPP, diparafrasekan. Wakil presiden operasi mengembangkan proyek material requirements planning terutama seorang diri. Komite eksekutif menolak peluncuran: keuangan ragu, penjualan mempertanyakan perkiraan kebutuhan bahan, dan logistik mengingat gangguan di tempat kerja sebelumnya. CEO mengusulkan task force lintas departemen, tetapi pengusul merasa tim itu akan memperlambat proyek. [hal. 285–290, 295–296]",
     "data": [
-      "Dimensi Analisis: Integrasi POAC, Analisis SWOT & PESTEL, Matriks BCG, dan Desain Organisasi.",
-      "Konteks: Transformasi korporasi ritel modern Indonesia."
+      "350 pegawai; setidaknya 25 manajer/pegawai perlu mengubah cara kerja.",
+      "Perkiraan pengusul: kenaikan kas tahunan USD600.000 dan penghematan waste sampai USD200.000. Keduanya belum merupakan hasil realisasi.",
+      "Data untuk mock-up sulit didapat; sebagian manajer tidak menghadiri pertemuan.",
+      "Dasar konsep: Daft dan Marcic 12e [hal. 285–290, 295–296]."
     ],
     "instructions": [
-      "Lakukan sintesis bagaimana keempat fungsi manajemen POAC bekerja saling terkait dalam proses transformasi Hero Group.",
-      "Berdasarkan Matriks BCG, jelaskan status Giant Hypermarket dan justifikasi logis keputusan manajemen untuk melakukan divestasi/penutupan.",
-      "Jelaskan bagaimana manajer puncak harus menggunakan perpaduan Keterampilan Konseptual dan Keterampilan Hubungan Manusia (Katz) saat mengumumkan keputusan restrukturisasi yang berdampak pada penutupan gerai."
+      "Jelaskan resistensi dengan bukti yang berbeda untuk tiap pihak.",
+      "Nilai kegunaan task force lintas departemen.",
+      "Pilih taktik implementasi dan susun tahapan Lewin yang dapat dievaluasi."
     ],
     "outputFormat": [
-      "Sintesis Alur Siklus POAC",
-      "Analisis Portofolio BCG & Divestasi",
-      "Penerapan Keterampilan Katz dalam Manajemen Krisis"
+      "Pisahkan fakta/asumsi dan penafsiran.",
+      "Tulis keputusan dengan bukti dan dasar konsep.",
+      "Jelaskan kelemahan alternatif dan cara mengevaluasi keputusan."
     ],
     "rubric": [
-      "Kerapian integrasi 4 fungsi POAC (35%)",
-      "Ketepatan analisis BCG dan justifikasi divestasi Dog (35%)",
-      "Aplikabilitas penerapan kepemimpinan Katz (30%)"
+      "Ketepatan fakta/asumsi dan konsep (30%)",
+      "Alasan keputusan serta kelemahan alternatif (45%)",
+      "Kelayakan tindak lanjut dan evaluasi (25%)"
     ],
-    "answerGuide": "1. Sintesis Alur Siklus POAC:\n• Planning: Menetapkan visi baru beralih dari mass-hypermarket ke specialty premium grocery (Hero) dan perabot rumah tangga (IKEA).\n• Organizing: Merestrukturisasi portofolio toko, menutup badan usaha Giant, dan menata ulang rantai pasok logistik terpusat.\n• Leading: Berkomunikasi secara jujur dan empatik dengan serikat pekerja, memimpin program pelatihan transisi peran karyawan, dan meredam kepanikan.\n• Controlling: Menetapkan metrik kinerja baru per meter persegi ruang ritel (sales per square meter) dan memantau pemotongan kerugian secara mingguan.\n\n2. Analisis Matriks BCG:\n• Giant Hypermarket berada pada kuadran DOGS. Pertumbuhan pasar hypermarket di Indonesia negatif/menurun drastis (konsumen enggan berkeliling toko raksasa), dan pangsa pasar Giant terus tergerus oleh Indomaret/Alfamart.\n• Keputusan divestasi/penutupan total adalah tindakan manajerial yang tepat dan rasional menurut teori BCG untuk menghentikan pendarahan kas (cash drain) dan memfokuskan sumber daya ke unit bisnis yang prospektif (IKEA sebagai Star).\n\n3. Keterampilan Katz dalam Krisis:\n• Conceptual Skills digunakan untuk melihat gambaran besar pergeseran tren demografi konsumen Indonesia 5-10 tahun ke depan dan berani mengambil keputusan strategis yang menyakitkan demi kelangsungan hidup induk korporasi.\n• Human Skills digunakan untuk memperlakukan karyawan terdampak penutupan secara manusiawi: memastikan pemenuhan hak pesangon di atas standar regulasi ketenagakerjaan, mengadakan program alih profesi/outplacement, dan menjaga moral tim yang bertahan."
+    "answerGuide": "Hasil analisis untuk pembanding jawaban: 1. Kekhawatiran penjualan/logistik menunjukkan penilaian manfaat dan risiko yang berbeda; riwayat implementasi gagal mendukung ketidakpercayaan atau ketidakpastian. Ketidakhadiran merupakan tanda keterlibatan lemah, tetapi teks tidak membuktikan semua pihak sengaja menyabotase. 2. Task force menambah informasi dari pengguna dan koordinasi, serta membantu menguji kebutuhan bahan, forecast dan pengiriman. Waktu rapat adalah biaya yang perlu ditimbang terhadap risiko peluncuran sepihak. 3. Dukungan CEO memberi legitimasi; komunikasi/pendidikan menjawab kekhawatiran teknis; participation melibatkan pengguna dalam rancangan. Unfreezing menguji kebutuhan serta masalah, changing melakukan uji coba/pelatihan, refreezing mengevaluasi dan mempertahankan perilaku yang berhasil. Memaksa peluncuran sebelum kendala diketahui dapat meningkatkan risiko operasi. Perkiraan kas/penghematan perlu diuji dan tidak otomatis dijumlahkan sebagai manfaat bersih. [hal. 285–290, 295–296]"
   },
   {
     "type": "analysis",
-    "scope": "TM 9: Manajemen Perubahan & Inovasi (Kurt Lewin & Ambidextrous)",
+    "scope": "TM 9: Latihan: ide banyak, penerapan tersendat",
     "difficulty": "Menengah",
-    "estimatedTime": "25–35 menit",
-    "question": "Studi Kasus 9: Mengatasi Resistensi Perubahan Digitalisasi Pabrik PT Semen Padang",
-    "context": "PT Semen Padang meluncurkan program otomatisasi pabrik berbasis Internet of Things (IoT) untuk menggantikan pencatatan manual suhu kiln semen. Namun, para operator pabrik senior yang sudah bekerja lebih dari 20 tahun menolak menggunakan tablet digital. Mereka mengeluhkan sistem baru 'terlalu ribet', sengaja mengabaikan alarm tablet, dan tetap memakai buku catatan kertas lama.",
+    "estimatedTime": "20–30 menit",
+    "question": "Latihan: ide banyak, penerapan tersendat",
+    "context": "Latihan buatan: situasi berikut adalah asumsi untuk berlatih, tanpa klaim perusahaan nyata. Sebuah unit layanan menerima usulan perbaikan antrean dari staf. Tim kreatif bebas menguji ide, tetapi belum ada pemilik implementasi dan koordinasi antara layanan, teknologi dan administrasi. Staf khawatir cara baru akan menambah pekerjaan. [hal. 270–281, 285–290]",
     "data": [
-      "Inovasi: Digitalisasi pencatatan operasional pabrik via sensor IoT dan tablet.",
-      "Resistensi: Penolakan operator senior, kebiasaan lama yang mengakar, ketakutan dianggap tidak kompeten.",
-      "Model Acuan: Model Tiga Tahap Perubahan Kurt Lewin & Taktik Kotter-Schlesinger."
+      "Asumsi latihan: kebutuhan layanan dan kewenangan masing-masing unit masih perlu diklarifikasi.",
+      "Tidak ada data yang membuktikan besarnya penghematan.",
+      "Dasar konsep: Daft dan Marcic 12e [hal. 270–281, 285–290]."
     ],
     "instructions": [
-      "Analisis akar penyebab penolakan operator senior berdasarkan teori resistensi perubahan.",
-      "Rancang tahapan implementasi perubahan menggunakan Model 3 Tahap Kurt Lewin (Unfreezing, Changing, Refreezing).",
-      "Pilihlah dua taktik penanganan resistensi perubahan dari Kotter dan Schlesinger yang paling manusiawi dan efektif untuk diterapkan manajer pabrik."
+      "Pisahkan kebutuhan exploration dan exploitation.",
+      "Pilih peran/struktur untuk membawa ide ke penerapan.",
+      "Rancang diagnosis resistensi dan indikator keberhasilan."
     ],
     "outputFormat": [
-      "Diagnosis Sumber Resistensi",
-      "Rencana Aksi 3 Tahap Kurt Lewin",
-      "Taktik Penanganan Resistensi Terpilih"
+      "Pisahkan fakta/asumsi dan penafsiran.",
+      "Tulis keputusan dengan bukti dan dasar konsep.",
+      "Jelaskan kelemahan alternatif dan cara mengevaluasi keputusan."
     ],
     "rubric": [
-      "Ketajaman diagnosis resistensi psikologis karyawan (30%)",
-      "Kesesuaian penerapan 3 tahap Kurt Lewin (40%)",
-      "Realisme taktik Kotter-Schlesinger (30%)"
+      "Ketepatan fakta/asumsi dan konsep (30%)",
+      "Alasan keputusan serta kelemahan alternatif (45%)",
+      "Kelayakan tindak lanjut dan evaluasi (25%)"
     ],
-    "answerGuide": "1. Diagnosis Sumber Resistensi:\n• Kebiasaan yang Mengakar (Habit): Operator telah bekerja dengan buku kertas selama 20 tahun; mengubah kebiasaan fisik menimbulkan disorientasi kenyamanan.\n• Ketakutan akan Ketidakmampuan (Fear of Incompetence): Operator senior khawatir dianggap gagap teknologi dan takut posisi mereka akan digantikan oleh mesin otomatis.\n• Ketidakpastian: Kurangnya pemahaman bahwa tablet bukan untuk mengawasi/menghukum mereka, melainkan mencegah kegagalan mesin yang berbahaya.\n\n2. Model 3 Tahap Kurt Lewin:\n• Unfreezing (Pencairan): Tunjukkan data nyata insiden kerusakan mesin kiln masa lalu yang disebabkan keterlambatan membaca suhu buku kertas. Sadarkan operator bahwa metode manual membahayakan keselamatan seluruh pabrik dan kelangsungan kerja mereka.\n• Changing (Perubahan): Berikan pelatihan antarmuka tablet dengan pendampingan personal (buddy system) dari staf muda; buat desain aplikasi sangat sederhana dengan tombol besar dan panduan visual.\n• Refreezing (Pembekuan Ulang): Tarik seluruh buku catatan kertas dari area pabrik; jadikan pencatatan digital sebagai satu-satunya prosedur resmi (SOP); berikan penghargaan 'Operator Teladan Digital' bulanan.\n\n3. Taktik Kotter & Schlesinger:\n• Edukasi & Komunikasi: Menjelaskan manfaat sistem bagi keamanan kerja operator secara sabar dan berkelanjutan.\n• Partisipasi & Keterlibatan: Libatkan operator senior dalam mendesain tata letak menu tablet agar sesuai dengan alur kerja nyata mereka, sehingga mereka merasa memiliki sistem tersebut."
-  },
-  {
-    "type": "framework",
-    "scope": "TM 10: Manajemen Sumber Daya Manusia & Penilaian Kinerja",
-    "difficulty": "Komprehensif",
-    "estimatedTime": "30–40 menit",
-    "question": "Studi Kasus 10: Redesain Sistem Evaluasi Kinerja Karyawan PT Telkom Menuju 360-Degree Feedback",
-    "context": "PT Telkom Indonesia bertransformasi dari perusahaan telekomunikasi kabel menjadi perusahaan digital telecommunication terdepan. Namun, sistem evaluasi kinerja yang ada masih bersifat tradisional (top-down rating oleh satu atasan langsung). Akibatnya, banyak karyawan berperilaku mencari muka (kiss-up to boss) tetapi tidak kooperatif dengan rekan kerja lintas divisi dan bersikap arogan terhadap bawahan.",
-    "data": [
-      "Sistem Lama: Penilaian tahunan sepihak oleh atasan langsung (rentan bias halo effect dan subjektivitas).",
-      "Kebutuhan Baru: Kolaborasi agile lintas unit, kepemimpinan memberdayakan, dan budaya inovasi.",
-      "Solusi yang Diusulkan: Penerapan 360-Degree Performance Appraisal."
-    ],
-    "instructions": [
-      "Jelaskan kelemahan sistem penilaian tradisional satu arah dan mengapa sistem tersebut memicu perilaku disfungsional dalam tim kerja digital.",
-      "Rancang mekanisme penilaian 360-Degree Feedback yang mencakup 5 sumber evaluator.",
-      "Uraikan langkah-langkah mitigasi agar sistem 360 derajat tidak disalahgunakan menjadi ajang balas dendam pribadi antar-karyawan."
-    ],
-    "outputFormat": [
-      "Evaluasi Kelemahan Sistem Tradisional",
-      "Desain 5 Sumber Penilai 360-Degree",
-      "Protokol Keamanan & Objektivitas Penilaian"
-    ],
-    "rubric": [
-      "Ketajaman diagnosis kelemahan penilaian searah (30%)",
-      "Kelengkapan rancangan 5 sumber 360 derajat (35%)",
-      "Kualitas protokol mitigasi bias dan balas dendam (35%)"
-    ],
-    "answerGuide": "1. Kelemahan Sistem Tradisional:\n• Penilaian atasan tunggal sering terkena 'Halo Effect' (kesan umum positif/negatif mendikte seluruh skor) dan 'Recency Bias' (hanya mengingat kejadian 2 minggu terakhir sebelum penilaian).\n• Memicu perilaku politis karyawan yang hanya rajin saat dilihat atasan, namun enggan membantu rekan kerja dan bersikap tiran terhadap bawahan karena bawahan tidak memiliki hak suara.\n\n2. Rancangan 5 Sumber Evaluator 360-Degree:\n• Atasan Langsung (Immediate Supervisor): Menilai ketercapaian target KPI strategis dan kepatuhan arah divisi.\n• Rekan Sejawat (Peers/Coworkers): Menilai kemampuan kolaborasi tim, keandalan menuntaskan tugas bersama, dan komunikasi horizontal.\n• Bawahan Langsung (Subordinates): Menilai gaya kepemimpinan, keadilan delegasi tugas, empati, dan bimbingan pengembangan karier.\n• Pelanggan Internal/Eksternal: Menilai responsivitas layanan dan orientasi kepuasan pengguna.\n• Penilaian Diri Sendiri (Self-Appraisal): Refleksi mandiri karyawan mengenai pencapaian dan area perbaikan diri.\n\n3. Protokol Mitigasi Balas Dendam:\n• Jaminan Anonimitas Penuh: Skor dari rekan sejawat dan bawahan diagregasikan tanpa menampilkan identitas individu (hanya skor rata-rata).\n• Fokus pada Pengembangan (Developmental Tool), Bukan Semata-mata Pemotongan Gaji: Gunakan 360 derajat terutama untuk rencana pelatihan dan pembinaan kepemimpinan.\n• Pelatihan Memberikan Umpan Balik Konstruktif: Berikan panduan bahwa komentar harus berbasis perilaku kerja konkret, bukan serangan personal."
+    "answerGuide": "Hasil analisis untuk pembanding jawaban: Exploration memerlukan kesempatan mencoba gagasan; exploitation memerlukan rutinitas, tanggung jawab dan dukungan implementasi. Idea champion dapat membawa gagasan dan membangun dukungan, sementara hubungan horizontal menyelaraskan kebutuhan pengguna dan kelayakan teknis. Libatkan staf untuk memetakan beban kerja dan lakukan pelatihan sebelum penggunaan penuh. Evaluasi waktu layanan, kesalahan dan beban kerja dengan ukuran awal yang disepakati. Menambah kontes ide tanpa pemilik implementasi tidak menyelesaikan hambatan tersebut; penggunaan paksaan tanpa diagnosis dapat menurunkan keterlibatan. [hal. 270–281, 285–290]"
   },
   {
     "type": "analysis",
-    "scope": "TM 11: Teori Kepemimpinan Kontinjensi Fiedler & Transformasional",
-    "difficulty": "Komprehensif",
-    "estimatedTime": "30–40 menit",
-    "question": "Studi Kasus 11: Transformasi Kepemimpinan Satya Nadella di Microsoft",
-    "context": "Ketika Satya Nadella diangkat menjadi CEO Microsoft pada 2014, perusahaan sedang terpuruk: internal sarat permusuhan antar divisi (dog-eat-dog culture akibat sistem rating berjenjang), tertinggal dalam revolusi mobile dan komputasi awan (cloud), serta dipandang arogan oleh industri. Nadella mengubah kultur 'Know-it-all' (merasa tahu segalanya) menjadi 'Learn-it-all' (kultur pembelajar yang rendah hati), menghentikan perselisihan internal, dan mengarahkan fokus ke Azure Cloud.",
-    "data": [
-      "Era Sebelumnya (Steve Ballmer): Sangat fokus tugas, agresif, kompetitif internal, kepemimpinan transaksional keras.",
-      "Era Nadella: Empatik, kepemimpinan transformasional, kolaboratif, orientasi pertumbuhan jangka panjang.",
-      "Hasil: Nilai kapitalisasi pasar Microsoft melesat dari $300 miliar menjadi lebih dari $3 triliun."
-    ],
-    "instructions": [
-      "Bandingkan gaya kepemimpinan Transaksional Ballmer vs Transformasional Nadella menggunakan 4 pilar kepemimpinan transformasional (Idealized Influence, Inspirational Motivation, Intellectual Stimulation, Individualized Consideration).",
-      "Analisis situasi Microsoft tahun 2014 menggunakan Model Kontinjensi Fred Fiedler: mengapa gaya kepemimpinan hubungan (Relationship-Oriented) Nadella jauh lebih sukses memulihkan organisasi?",
-      "Jelaskan bagaimana konsep 'Servant Leadership' diterapkan Nadella dalam memulihkan moral insinyur Microsoft."
-    ],
-    "outputFormat": [
-      "Matriks Komparasi 4 Pilar Transformasional",
-      "Analisis Situasi Kontrol Fiedler",
-      "Penerapan Konsep Servant Leadership"
-    ],
-    "rubric": [
-      "Penerapan mendalam 4 pilar transformasional (35%)",
-      "Kesesuaian penerapan teori kontinjensi Fiedler (35%)",
-      "Kualitas ulasan Servant Leadership (30%)"
-    ],
-    "answerGuide": "1. Empat Pilar Transformasional Nadella:\n• Idealized Influence (Pengaruh Ideal/Karisma): Menjadi teladan kerendahan hati; mengakui kesalahan Microsoft di masa lalu dan menjalin kemitraan dengan rival (seperti membawa Office ke Apple iOS).\n• Inspirational Motivation: Mengartikulasikan visi mulia baru: 'Memberdayakan setiap orang dan setiap organisasi di planet ini untuk mencapai lebih banyak.'\n• Intellectual Stimulation: Mendorong kultur 'Growth Mindset' di mana kegagalan eksperimen dipandang sebagai proses belajar, bukan aib yang dihukum.\n• Individualized Consideration: Mendengarkan kegelisahan para insinyur, mempraktikkan empati mendalam (berakar dari pengalaman membesarkan putranya yang berkebutuhan khusus).\n\n2. Model Kontinjensi Fiedler:\n• Situasi Microsoft tahun 2014 berada pada tingkat kontrol 'Moderat': Struktur tugas sedang bertransformasi ke cloud yang belum terdefinisi pasti, dan hubungan pemimpin-anggota retak akibat perang saudara antar-divisi Windows vs Hardware.\n• Fiedler membuktikan bahwa pada situasi kontrol moderat, pemimpin berorientasi hubungan (Relationship-Oriented / High LPC) seperti Nadella jauh lebih efektif karena mampu merekatkan kembali hubungan antar-manusia, meredakan kecurigaan internal, dan membangun kepercayaan tim.\n\n3. Servant Leadership:\n• Nadella membalik piramida organisasi: Peran CEO bukan dilayani oleh para wakil presiden dan staf, melainkan melayani dan menyingkirkan hambatan birokrasi agar para pengembang perangkat lunak garda depan dapat berinovasi secara leluasa bagi konsumen."
-  },
-  {
-    "type": "framework",
-    "scope": "TM 12: Teori Motivasi (Herzberg, Vroom, Hackman-Oldham)",
-    "difficulty": "Komprehensif",
-    "estimatedTime": "30–35 menit",
-    "question": "Studi Kasus 12: Mengatasi Demotivasi Desainer Grafis Menggunakan Job Characteristics Model",
-    "context": "Sebuah agensi periklanan digital mengalami eksodus desainer grafis muda. Manajemen mengira masalahnya adalah gaji, lalu menaikkan upah sebesar 15%. Namun sebulan kemudian, pergantian staf tetap tinggi dan desainer mengeluh bosan. Investigasi mengungkap bahwa para desainer hanya disuruh memotong gambar banner sederhana secara berulang-ulang tanpa tahu untuk kampanye iklan apa, tidak pernah bertemu klien, dan seluruh revisi ditentukan sepihak oleh manajer akun.",
-    "data": [
-      "Tindakan Manajemen: Menaikkan gaji 15% (hanya menyentuh Hygiene Factors Herzberg).",
-      "Kondisi Pekerjaan: Monoton, tugas terpecah-pecah (tanpa Task Identity), tidak memahami dampak karyanya (tanpa Task Significance), dan nol otonomi.",
-      "Model Solusi: Job Characteristics Model (Hackman & Oldham)."
-    ],
-    "instructions": [
-      "Jelaskan kegagalan kebijakan kenaikan gaji manajemen menggunakan Teori Dua Faktor Frederick Herzberg.",
-      "Evaluasi pekerjaan desainer menggunakan 5 Dimensi Inti Pekerjaan Hackman & Oldham (Skill Variety, Task Identity, Task Significance, Autonomy, Feedback).",
-      "Rancang program 'Job Enrichment' konkret untuk mendesain ulang pekerjaan desainer agar memicu motivasi internal yang tinggi."
-    ],
-    "outputFormat": [
-      "Analisis Hygiene vs Motivators Herzberg",
-      "Audit 5 Dimensi Hackman-Oldham",
-      "Rancangan Program Job Enrichment"
-    ],
-    "rubric": [
-      "Ketepatan analisis Herzberg (30%)",
-      "Akurasi audit 5 dimensi JCM (35%)",
-      "Kreativitas dan aplikabilitas program Job Enrichment (35%)"
-    ],
-    "answerGuide": "1. Analisis Teori Dua Faktor Herzberg:\n• Gaji merupakan faktor pemeliharaan (Hygiene Factor). Menaikkan gaji 15% hanya menghilangkan ketidakpuasan gaji, tetapi TIDAK menghasilkan motivasi kerja atau kepuasan intrinsik.\n• Manajemen mengabaikan faktor Motivators: desainer kekurangan rasa berprestasi (achievement), tanggung jawab (responsibility), dan pengakuan (recognition) atas karya kreatif mereka.\n\n2. Audit 5 Dimensi Hackman & Oldham:\n• Skill Variety: SANGAT RENDAH (hanya memotong ukuran gambar secara repetitif).\n• Task Identity: SANGAT RENDAH (tidak mengerjakan proyek kampanye dari hulu ke hilir).\n• Task Significance: SANGAT RENDAH (tidak tahu dampak karyanya bagi kesuksesan merek klien).\n• Autonomy: NOL (semua keputusan kreatif didikte sepihak oleh manajer akun).\n• Feedback: RENDAH (hanya menerima komplain revisi tanpa tahu data konversi penjualan iklan).\n\n3. Program Job Enrichment Konkret:\n• Membentuk Tim Proyek Utuh (Task Identity): Berikan tanggung jawab satu kampanye iklan utuh kepada seorang desainer dari tahap konsep hingga visual final.\n• Hubungan Klien Langsung (Autonomy & Significance): Libatkan desainer dalam sesi pitching presentasi ide langsung kepada klien.\n• Dashboard Analitik Iklan (Feedback): Berikan akses analitik kampanye kepada desainer untuk melihat seberapa viral dan efektif desain yang mereka ciptakan."
-  },
-  {
-    "type": "decision",
-    "scope": "TM 13: Dinamika Tim (Tuckman), Komunikasi & Manajemen Konflik",
+    "scope": "TM 10: Whether to Fire Employees?: keputusan saat krisis",
     "difficulty": "Menengah",
-    "estimatedTime": "25–35 menit",
-    "question": "Studi Kasus 13: Resolusi Konflik Destruktif pada Tim Proyek Merger Finansial",
-    "context": "Sebuah tim proyek merger beranggotakan 8 analis senior dari dua bank yang berbeda dibentuk untuk menyatukan sistem akuntansi. Pada minggu ke-4, proyek macet total. Rapat diwarnai adu mulut sengit, sindir-menyindir personal, saling menahan dokumen rahasia antar kelompok asal bank, dan dua analis menolak hadir rapat.",
+    "estimatedTime": "20–30 menit",
+    "question": "Whether to Fire Employees?: keputusan saat krisis",
+    "context": "Kasus buku yang ditugaskan RPP, diparafrasekan. Perusahaan pemasok otomotif mengalami penurunan keuangan setelah pandemi mengganggu produksi dan pemenuhan pesanan. Seorang manajer senior ingin mempertahankan sebanyak mungkin pegawai melalui penyederhanaan kerja, evaluasi situasi individu dan kemungkinan pengurangan gaji. Manajer lain mengusulkan pemotongan pegawai segera melalui forced ranking. [hal. 308–309, 324–328, 358]",
     "data": [
-      "Usia Tim: 4 minggu pasca pembentukan.",
-      "Status: Perdebatan peran kepemimpinan, norma kerja belum disepakati, timbul permusuhan emosional (Relationship Conflict).",
-      "Model Analisis: 5 Tahap Tuckman dan Manajemen Konflik Thomas-Kilmann."
+      "Teks tidak menyediakan angka kas, besarnya pengurangan biaya yang wajib, atau data kinerja tiap pegawai.",
+      "Ada dua pandangan mengenai relasi perusahaan-pegawai dan cara menjaga kinerja.",
+      "Dasar konsep: Daft dan Marcic 12e [hal. 308–309, 324–328, 358]."
     ],
     "instructions": [
-      "Identifikasi tahap perkembangan tim mana yang sedang dialami kelompok ini menurut model Bruce Tuckman dan jelaskan karakteristiknya.",
-      "Bedakan antara Konflik Tugas (Task Conflict) dan Konflik Hubungan (Relationship Conflict) dalam kasus ini.",
-      "Sebagai Manajer Proyek, terapkan Gaya Kolaborasi (Collaborating) dari Thomas-Kilmann untuk menyelesaikan kemelut tersebut."
+      "Identifikasi social contract yang diasumsikan kedua pihak.",
+      "Pilih rekomendasi sebagai manajer HR dengan alasan dan syarat pelaksanaan.",
+      "Jelaskan dampak pada human capital dan performance, serta kelemahan alternatif."
     ],
     "outputFormat": [
-      "Identifikasi Tahap Tuckman",
-      "Pembedaan Jenis Konflik",
-      "Protokol Resolusi Konflik Win-Win"
+      "Pisahkan fakta/asumsi dan penafsiran.",
+      "Tulis keputusan dengan bukti dan dasar konsep.",
+      "Jelaskan kelemahan alternatif dan cara mengevaluasi keputusan."
     ],
     "rubric": [
-      "Ketepatan identifikasi tahap Storming Tuckman (30%)",
-      "Ketajaman pembedaan Task vs Relationship Conflict (35%)",
-      "Aplikasi konkret metode Collaborating Thomas-Kilmann (35%)"
+      "Ketepatan fakta/asumsi dan konsep (30%)",
+      "Alasan keputusan serta kelemahan alternatif (45%)",
+      "Kelayakan tindak lanjut dan evaluasi (25%)"
     ],
-    "answerGuide": "1. Tahap Perkembangan Tim Tuckman:\n• Tim berada pada tahap STORMING.\n• Karakteristik: Munculnya konflik peran kepemimpinan, benturan ego budaya kerja asal perusahaan, persaingan kekuasaan, dan resistensi terhadap kendali tim sebelum norma kebersamaan terbentuk. Jika tahap ini gagal dikelola, tim akan hancur sebelum mencapai tahap Norming apalagi Performing.\n\n2. Pembedaan Konflik:\n• Konflik Tugas (Task Conflict): Perbedaan sudut pandang teknis mengenai modul akuntansi mana yang lebih efisien untuk diadopsi (bersifat sehat jika diarahkan pada data).\n• Konflik Hubungan (Relationship Conflict): Permusuhan personal, saling sindir, ketidakpercayaan emosional, dan menahan dokumen (sangat destruktif dan menjadi biang keladi kebuntuan proyek).\n\n3. Protokol Resolusi Kolaborasi (Thomas-Kilmann - Collaborating Style):\n• Fasilitasi Off-site Workshop Khusus: Kumpulkan seluruh anggota di luar kantor, sepakati aturan dasar (ground rules) bahwa tujuan proyek adalah keberhasilan merger bersama, bukan menang-kalahan bank asal.\n• Pisahkan Masalah dari Orang: Redakan konflik hubungan dengan mendengarkan keluhan masing-masing pihak tanpa menghakimi.\n• Fokus pada Sasaran Integratif (Superordinate Goal): Satukan analis ke dalam sub-tim campuran (1 orang Bank A + 1 orang Bank B) untuk menyelesaikan modul bersama, sehingga memecah kubu kelompok dan memicu empati kolegial."
+    "answerGuide": "Hasil analisis untuk pembanding jawaban: Manajer senior mencerminkan kontrak yang menekankan loyalitas, keamanan kerja dan hubungan jangka panjang; usul lain menekankan kecocokan kebutuhan perusahaan dan fleksibilitas tenaga kerja. Rekomendasi yang kuat memulai evaluasi kebutuhan bisnis dan kinerja dengan data, mempertimbangkan streamlining serta alternatif penghematan, dan menetapkan kriteria keputusan yang relevan pekerjaan. Pendekatan mempertahankan talenta lebih dekat dengan investasi human capital, selama perusahaan mampu menjalankan alternatif tersebut. Data kasus tidak cukup untuk menjamin semua pekerjaan dapat dipertahankan atau menyatakan pemotongan pasti tidak perlu. Forced ranking mendadak dapat mengorbankan pengetahuan, kerja sama dan trust; mempertahankan setiap orang tanpa evaluasi juga berisiko bagi kelangsungan organisasi. Komunikasi, evaluasi yang konsisten dan dukungan bagi pegawai perlu menyertai keputusan. [hal. 308–309, 324–328, 358]"
   },
   {
-    "type": "framework",
-    "scope": "TM 14: Sistem Pengendalian Organisasi & Balanced Scorecard",
-    "difficulty": "Komprehensif",
-    "estimatedTime": "30–40 menit",
-    "question": "Studi Kasus 14: Perancangan Balanced Scorecard Rumah Sakit Menghadapi Akreditasi Internasional",
-    "context": "RSUD Sehat Mandiri selama ini hanya mengendalikan rumah sakit menggunakan metrik keuangan tradisional (Realisasi Anggaran & Pendapatan Retribusi Pasien). Akibatnya, meskipun laba tercapai, antrean pasien membludak, perawat kelelahan (burnout) hingga mengundurkan diri massal, dan angka infeksi nosokomial pasca operasi meningkat. Direktur baru memutuskan mengadopsi kerangka Balanced Scorecard (Kaplan & Norton).",
+    "type": "analysis",
+    "scope": "TM 10: Latihan: seleksi relevan, pengembangan dan inclusion",
+    "difficulty": "Menengah",
+    "estimatedTime": "20–30 menit",
+    "question": "Latihan: seleksi relevan, pengembangan dan inclusion",
+    "context": "Latihan buatan: situasi berikut adalah asumsi untuk berlatih, tanpa klaim perusahaan nyata. Unit layanan membutuhkan staf untuk menangani keluhan pelanggan dan memeriksa dokumen. Panel seleksi menilai kandidat berdasarkan kesan pribadi, sementara pegawai baru menerima sedikit feedback dan tidak mendapat akses proyek untuk berkembang. [hal. 312–325, 335–342, 350]",
     "data": [
-      "Kondisi Saat Ini: Pengendalian murni finansial (lagging indicators).",
-      "Dampak Negatif: Kualitas layanan klinis merosot, komplain pasien melonjak, modal manusia (perawat/dokter) terabaikan.",
-      "Kerangka Solusi: Balanced Scorecard dengan 4 Perspektif Berimbang."
+      "Asumsi: tugas memerlukan ketelitian, komunikasi dan kemampuan mempelajari sistem.",
+      "Belum ada data yang membuktikan kesan panel memprediksi hasil kerja.",
+      "Dasar konsep: Daft dan Marcic 12e [hal. 312–325, 335–342, 350]."
     ],
     "instructions": [
-      "Jelaskan mengapa pengendalian berbasis finansial semata dapat merusak kelangsungan hidup jangka panjang organisasi jasa pelayanan.",
-      "Rancang minimal 2 Key Performance Indicators (KPI) terukur untuk masing-masing 4 perspektif Balanced Scorecard (Finansial, Pelanggan, Proses Internal, Pembelajaran & Pertumbuhan).",
-      "Gambarkan rantai sebab-akibat (Strategy Map) yang menghubungkan Perspektif Pembelajaran & Pertumbuhan hingga bermuara pada Kinerja Finansial."
+      "Susun dasar seleksi yang relevan dan cara mengurangi bias.",
+      "Hubungkan program pengembangan dengan kebutuhan unit.",
+      "Bedakan mentor, sponsor dan coaching serta ukuran inclusion."
     ],
     "outputFormat": [
-      "Kritik Pengendalian Finansial Tunggal",
-      "Tabel 8 KPI Balanced Scorecard",
-      "Uraian Naratif Peta Strategi (Cause-and-Effect Chain)"
+      "Pisahkan fakta/asumsi dan penafsiran.",
+      "Tulis keputusan dengan bukti dan dasar konsep.",
+      "Jelaskan kelemahan alternatif dan cara mengevaluasi keputusan."
     ],
     "rubric": [
-      "Ketajaman kritik keterbatasan metrik keuangan tradisional (30%)",
-      "Ketepatan dan keterukuran 8 indikator KPI 4 perspektif (40%)",
-      "Kelogisan rantai sebab-akibat Strategy Map (30%)"
+      "Ketepatan fakta/asumsi dan konsep (30%)",
+      "Alasan keputusan serta kelemahan alternatif (45%)",
+      "Kelayakan tindak lanjut dan evaluasi (25%)"
     ],
-    "answerGuide": "1. Bahaya Pengendalian Finansial Tunggal:\n• Metrik keuangan bersifat 'Lagging Indicators' (indikator historis masa lalu) yang hanya mencatat hasil akhir tanpa menunjukkan pemicu masa depan (leading indicators).\n• Memangkas biaya pelatihan dan menekan rasio perawat demi laba jangka pendek justru merusak kepuasan pasien dan meningkatkan malpraktik, yang pada akhirnya akan menghancurkan reputasi dan keuangan rumah sakit di masa depan.\n\n2. Tabel Indikator Kunci (KPI) 4 Perspektif Balanced Scorecard:\n• 1. Perspektif Finansial:\n  - Rasio Efisiensi Biaya Operasional terhadap Pendapatan (BOPO < 80%).\n  - Pertumbuhan Pendapatan Layanan Medis Non-Subsidi (+10% per tahun).\n• 2. Perspektif Pelanggan:\n  - Skor Indeks Kepuasan Pasien (Net Promoter Score > 85%).\n  - Rata-rata waktu tunggu antrean layanan rawat jalan (< 30 menit).\n• 3. Perspektif Proses Bisnis Internal:\n  - Angka Kejadian Infeksi Nosokomial Rumah Sakit (< 1,5%).\n  - Waktu tunggu hasil laboratorium kritis (< 45 menit).\n• 4. Perspektif Pembelajaran & Pertumbuhan:\n  - Jam pelatihan kompetensi klinis per perawat per tahun (minimal 40 jam).\n  - Skor kepuasan kerja dan retensi tenaga medis spesialis (> 90%).\n\n3. Rantai Sebab-Akibat (Strategy Map):\nPelatihan klinis perawat yang intensif (Pembelajaran & Pertumbuhan) -> meningkatkan kecermatan sanitasi dan mempercepat proses diagnostik (Proses Internal) -> menghasilkan kesembuhan pasien yang lebih cepat dan bebas infeksi (Pelanggan) -> meningkatkan reputasi rumah sakit, lonjakan kunjungan rujukan, dan kepatuhan pembayaran (Finansial yang Berkelanjutan)."
+    "answerGuide": "Hasil analisis untuk pembanding jawaban: Gunakan job analysis untuk merumuskan tugas dan job specification, kemudian wawancara terstruktur dan work sample pemeriksaan dokumen/penanganan keluhan. Berikan realistic job preview agar kedua pihak memahami kecocokan pekerjaan. Training menangani tugas sekarang; development menyiapkan kemampuan lebih luas. Mentor memberi arahan; sponsor memperjuangkan akses ke kesempatan/pengembangan karier; coaching memberikan percakapan serta feedback teratur. Tinjau apakah staf mendapat suara, feedback spesifik dan kesempatan yang relevan. Menyamakan inclusion dengan komposisi pegawai saja atau memilih berdasarkan stereotip belum menjawab mutu proses. [hal. 312–325, 335–342, 350]"
+  },
+  {
+    "type": "analysis",
+    "scope": "TM 11: Conficio Industries: nice, tanggung jawab dan promosi",
+    "difficulty": "Menengah",
+    "estimatedTime": "20–30 menit",
+    "question": "Conficio Industries: nice, tanggung jawab dan promosi",
+    "context": "Kasus buku yang ditugaskan RPP, diparafrasekan. Panel menilai kandidat promosi manajemen di San Antonio setelah mengamati kerja, menerima peer feedback dan mewawancarai kandidat. Salah satu kandidat memulihkan morale serta trust ketika beredar rumor PHK. Pegawai menyebutnya nice dan selalu membantu. Panel mempertanyakan apakah bantuan itu mengambil alih tugas, membiarkan tenggat longgar dan menghindari batas. Panel dalam teks memilih melanjutkan seleksi serta mengembangkan kandidat ini untuk kesempatan berikutnya. [hal. 367–375, 382–383, 398–399]",
+    "data": [
+      "Nice merupakan penilaian sosial; catatan panel memuat bukti positif dan kekhawatiran yang perlu dibedakan.",
+      "Teks tidak membuktikan profil Big Five atau skor EI kandidat.",
+      "Dasar konsep: Daft dan Marcic 12e [hal. 367–375, 382–383, 398–399]."
+    ],
+    "instructions": [
+      "Jelaskan makna nice bagi manajer dengan menghubungkan agreeableness, conscientiousness dan EI.",
+      "Pisahkan pengamatan dan atribusi panel.",
+      "Usulkan pengembangan yang mempertahankan trust sekaligus meningkatkan akuntabilitas."
+    ],
+    "outputFormat": [
+      "Pisahkan fakta/asumsi dan penafsiran.",
+      "Tulis keputusan dengan bukti dan dasar konsep.",
+      "Jelaskan kelemahan alternatif dan cara mengevaluasi keputusan."
+    ],
+    "rubric": [
+      "Ketepatan fakta/asumsi dan konsep (30%)",
+      "Alasan keputusan serta kelemahan alternatif (45%)",
+      "Kelayakan tindak lanjut dan evaluasi (25%)"
+    ],
+    "answerGuide": "Hasil analisis untuk pembanding jawaban: Agreeableness membantu kerja sama dan relasi, tetapi popularitas belum membuktikan pengelolaan tugas. Conscientiousness menuntut tanggung jawab, ketekunan dan pencapaian. EI dapat membantu memahami kebutuhan pegawai, mengatur emosi saat berkata tidak, dan memberi feedback dengan hormat. Rumor PHK yang diredakan adalah bukti trust; dugaan menutupi kelemahan atau mengambil alih kerja perlu dikonfirmasi lewat deadline, pembagian tanggung jawab dan contoh keputusan. Jangan menyimpulkan kelemahan bawaan hanya dari label nice. Saran: delegasi dengan ekspektasi jelas, pemeriksaan kemajuan, coaching atas kekurangan, batas yang konsisten serta latihan percakapan sulit. Evaluasi hasil dan perilaku bersama; keputusan panel yang tertulis tidak sama dengan pembuktian bahwa kandidat pasti gagal sebagai pemimpin. [hal. 367–375, 382–383, 398–399]"
+  },
+  {
+    "type": "analysis",
+    "scope": "TM 11: Latihan: keterlambatan, atribusi dan beban kerja",
+    "difficulty": "Menengah",
+    "estimatedTime": "20–30 menit",
+    "question": "Latihan: keterlambatan, atribusi dan beban kerja",
+    "context": "Latihan buatan: situasi berikut adalah asumsi untuk berlatih, tanpa klaim perusahaan nyata. Seorang anggota terlambat menyerahkan laporan. Manajer langsung menyebutnya malas, namun ketika laporan manajer sendiri terlambat ia menyalahkan perubahan permintaan. Anggota menerima instruksi berbeda dari dua atasan. [hal. 369–371, 382–387, 388–392]",
+    "data": [
+      "Asumsi: kedua atasan memberi prioritas yang saling bertentangan.",
+      "Belum tersedia bukti penyebab keterlambatan atau sifat anggota.",
+      "Dasar konsep: Daft dan Marcic 12e [hal. 369–371, 382–387, 388–392]."
+    ],
+    "instructions": [
+      "Identifikasi bias dan jenis masalah peran.",
+      "Susun pemeriksaan fakta dan tindakan pengelolaan stres.",
+      "Tunjukkan penggunaan EI dan self-management."
+    ],
+    "outputFormat": [
+      "Pisahkan fakta/asumsi dan penafsiran.",
+      "Tulis keputusan dengan bukti dan dasar konsep.",
+      "Jelaskan kelemahan alternatif dan cara mengevaluasi keputusan."
+    ],
+    "rubric": [
+      "Ketepatan fakta/asumsi dan konsep (30%)",
+      "Alasan keputusan serta kelemahan alternatif (45%)",
+      "Kelayakan tindak lanjut dan evaluasi (25%)"
+    ],
+    "answerGuide": "Hasil analisis untuk pembanding jawaban: Penilaian kegagalan orang lain sebagai sifat dan kegagalan sendiri sebagai keadaan menunjukkan fundamental attribution error. Mengambil kredit pribadi untuk keberhasilan sambil menolak tanggung jawab kegagalan akan menunjukkan self-serving bias; ilustrasi belum menyebut keberhasilan, sehingga label kedua ini perlu bukti tambahan. Instruksi yang tidak kompatibel merupakan role conflict, sementara role ambiguity membutuhkan bukti ketidakjelasan ekspektasi. Periksa urutan instruksi, kapasitas dan deadline; selaraskan prioritas dua atasan. Gunakan empati, feedback yang spesifik, dukungan dan kontrol yang wajar atas pekerjaan. Catat komitmen, tentukan next action dan jadwal, lalu review. Menambah tekanan tanpa memperbaiki konflik tidak menyelesaikan penyebab. [hal. 369–371, 382–387, 388–392]"
+  },
+  {
+    "type": "analysis",
+    "scope": "TM 12: Pulse Exercise Systems: tenggat CRM dan kepemimpinan",
+    "difficulty": "Menengah",
+    "estimatedTime": "20–30 menit",
+    "question": "Pulse Exercise Systems: tenggat CRM dan kepemimpinan",
+    "context": "Kasus buku yang ditugaskan RPP, diparafrasekan. Perusahaan perlu memperbaiki follow-up layanan penjualan melalui CRM. Pemimpin proyek menangani implementasi untuk Los Angeles dan Chicago dengan tenggat sepuluh minggu, termasuk instalasi dan training. Ia memprioritaskan kemampuan teknis, kurang menghargai people/team skills, dan seorang anggota mengundurkan diri. Anggota Chicago yang tersisa bertengkar atau saling menghindar; pemimpin baru mengetahui dari pihak sales. [hal. 415–420, 428–432, 435–437]",
+    "data": [
+      "Teks menyebut sales force 310 orang, bukan 310 anggota tim implementasi.",
+      "Tim proyek awal terdiri dari dua orang Los Angeles dan tiga Chicago; satu Chicago keluar.",
+      "Tenggat sepuluh minggu adalah target, bukan bukti proyek selesai.",
+      "Dasar konsep: Daft dan Marcic 12e [hal. 415–420, 428–432, 435–437]."
+    ],
+    "instructions": [
+      "Nilai task-oriented dan people-oriented behavior dengan bukti.",
+      "Susun langkah pemulihan kerja sama dan komunikasi.",
+      "Jelaskan pengembangan pemimpin untuk tanggung jawab yang lebih luas."
+    ],
+    "outputFormat": [
+      "Pisahkan fakta/asumsi dan penafsiran.",
+      "Tulis keputusan dengan bukti dan dasar konsep.",
+      "Jelaskan kelemahan alternatif dan cara mengevaluasi keputusan."
+    ],
+    "rubric": [
+      "Ketepatan fakta/asumsi dan konsep (30%)",
+      "Alasan keputusan serta kelemahan alternatif (45%)",
+      "Kelayakan tindak lanjut dan evaluasi (25%)"
+    ],
+    "answerGuide": "Hasil analisis untuk pembanding jawaban: Pemimpin sangat menekankan keahlian teknis, urgency dan hasil tetapi kurang consideration serta pemantauan relasi. Tekanan, kehilangan anggota dan perbedaan situasi tim perlu diagnosis, bukan tuduhan kurang passion. Saran: dengarkan kedua lokasi, tetapkan prioritas/ruang lingkup dan tanggung jawab, periksa kapasitas serta negosiasikan sumber daya/tenggat bila diperlukan. Adakan komunikasi dan feedback lintas lokasi, bantu konflik Chicago secara spesifik, dan beri pengakuan pada kontribusi teknis maupun kerja sama. Gaya dapat disesuaikan dengan readiness tiap tugas; teks tidak cukup untuk memberi semua anggota satu kode R. Untuk jabatan lebih tinggi, kembangkan delegasi, consideration, hubungan lintas fungsi dan penilaian risiko. Tidak ada jaminan rekomendasi membuat deadline terpenuhi. [hal. 415–420, 428–432, 435–437]"
+  },
+  {
+    "type": "analysis",
+    "scope": "TM 12: Latihan: readiness berbeda dan pengaruh tanpa jabatan",
+    "difficulty": "Menengah",
+    "estimatedTime": "20–30 menit",
+    "question": "Latihan: readiness berbeda dan pengaruh tanpa jabatan",
+    "context": "Latihan buatan: situasi berikut adalah asumsi untuk berlatih, tanpa klaim perusahaan nyata. Tim mempunyai anggota baru yang bersemangat tetapi belum mampu memakai sistem, serta ahli yang mampu namun ragu mengambil keputusan. Seorang analis tanpa jabatan membantu menjelaskan risiko dengan data. [hal. 416–417, 428–432]",
+    "data": [
+      "Asumsi: kemampuan dan willingness diamati untuk tugas sistem yang sama.",
+      "Ahli belum menunjukkan willingness/confidence tinggi.",
+      "Dasar konsep: Daft dan Marcic 12e [hal. 416–417, 428–432]."
+    ],
+    "instructions": [
+      "Pilih gaya bagi dua anggota dengan dua dimensi perilaku.",
+      "Identifikasi power analis dan taktik pengaruhnya.",
+      "Jelaskan tindak lanjut ketika readiness berubah."
+    ],
+    "outputFormat": [
+      "Pisahkan fakta/asumsi dan penafsiran.",
+      "Tulis keputusan dengan bukti dan dasar konsep.",
+      "Jelaskan kelemahan alternatif dan cara mengevaluasi keputusan."
+    ],
+    "rubric": [
+      "Ketepatan fakta/asumsi dan konsep (30%)",
+      "Alasan keputusan serta kelemahan alternatif (45%)",
+      "Kelayakan tindak lanjut dan evaluasi (25%)"
+    ],
+    "answerGuide": "Hasil analisis untuk pembanding jawaban: Anggota unable tetapi willing termasuk R2: S2 selling, task dan relationship tinggi, dengan penjelasan serta kesempatan klarifikasi. Ahli able tetapi insecure termasuk R3: S3 participating, relationship tinggi dan task rendah, dengan fasilitasi keputusan. Analis menggunakan expert power dan rational persuasion; pengaruh tidak harus bersumber dari legitimate power. Evaluasi kemampuan, confidence dan hasil tugas; sesuaikan dukungan/instruksi ketika readiness berubah. Delegating untuk semua orang atau telling kepada ahli tanpa diagnosis dapat merusak morale. [hal. 416–417, 428–432]"
+  },
+  {
+    "type": "analysis",
+    "scope": "TM 13: Morgan’s Department Store: komisi, layanan dan keadilan",
+    "difficulty": "Menengah",
+    "estimatedTime": "20–30 menit",
+    "question": "Morgan’s Department Store: komisi, layanan dan keadilan",
+    "context": "Kasus buku yang ditugaskan RPP, diparafrasekan. Toko mengubah seluruh sales team dari hourly pay ke straight commission untuk mendorong layanan personal serta clientele. Eksperimen dua tahun mendapat respons positif dan peningkatan penjualan, tetapi muncul penjualan agresif, kompetisi, penolakan tugas di luar sales floor serta ketimpangan peluang antarbagian. [hal. 451–459, 462–466, 469–470]",
+    "data": [
+      "Kasus membandingkan belt USD50 dan designer dress USD2.800, tanpa memberi tarif komisi.",
+      "Komisi per transaksi tidak dapat dihitung hanya dari harga tersebut.",
+      "Customer referrals, repeat business, sales dan comment cards dipantau selama program.",
+      "Dasar konsep: Daft dan Marcic 12e [hal. 451–459, 462–466, 469–470]."
+    ],
+    "instructions": [
+      "Nilai manfaat/risiko melalui expectancy, equity dan reinforcement.",
+      "Usulkan penyesuaian insentif yang tetap mendorong layanan personal dan kerja sama.",
+      "Jelaskan risiko loyalitas pelanggan pada individu dan rencana evaluasi."
+    ],
+    "outputFormat": [
+      "Pisahkan fakta/asumsi dan penafsiran.",
+      "Tulis keputusan dengan bukti dan dasar konsep.",
+      "Jelaskan kelemahan alternatif dan cara mengevaluasi keputusan."
+    ],
+    "rubric": [
+      "Ketepatan fakta/asumsi dan konsep (30%)",
+      "Alasan keputusan serta kelemahan alternatif (45%)",
+      "Kelayakan tindak lanjut dan evaluasi (25%)"
+    ],
+    "answerGuide": "Hasil analisis untuk pembanding jawaban: Komisi memperjelas hubungan performance–outcome dan memberi autonomy/ownership psikologis, tetapi E→P dipengaruhi kesempatan menjual dan kemampuan. Valence pendapatan pasti berbeda dari valence penghasilan berisiko. Keluhan bagian berharga rendah layak diperiksa sebagai perbedaan peluang serta persepsi rasio input/outcome. Rewards penjualan individu saja dapat memperkuat pushy selling dan mengabaikan bantuan tim. Saran: evaluasi peluang dan kontribusi antarbagian, pertimbangkan komponen penghasilan dasar serta insentif individu/tim dan ukuran layanan/kerja sama, dengan aturan transparan. Ini rekomendasi analisis, bukan program final dalam teks. Pantau referrals, repeat business, keluhan, mutu layanan, tugas pendukung dan turnover. Pelanggan dapat mengikuti sales associate favorit ketika ia pindah; perkuat hubungan pelanggan dengan layanan serta informasi organisasi dengan menjaga privasi, tanpa menyatakan perpindahan pasti terjadi. [hal. 451–459, 462–466, 469–470]"
+  },
+  {
+    "type": "analysis",
+    "scope": "TM 13: Latihan: reward menarik, tetapi jalur usaha tidak jelas",
+    "difficulty": "Menengah",
+    "estimatedTime": "20–30 menit",
+    "question": "Latihan: reward menarik, tetapi jalur usaha tidak jelas",
+    "context": "Latihan buatan: situasi berikut adalah asumsi untuk berlatih, tanpa klaim perusahaan nyata. Unit layanan menawarkan bonus atas target penyelesaian. Pegawai menghargai bonus tetapi merasa sistem sering rusak, standar berubah dan manajer kadang membatalkan reward setelah target tercapai. [hal. 447–448, 451–456, 460–461]",
+    "data": [
+      "Asumsi: pegawai ingin bonus, jadi valence tinggi.",
+      "Tidak tersedia angka probabilitas effort/performance/outcome.",
+      "Dasar konsep: Daft dan Marcic 12e [hal. 447–448, 451–456, 460–461]."
+    ],
+    "instructions": [
+      "Diagnosis E→P, P→O dan valence.",
+      "Bedakan perbaikan fasilitas dengan job enrichment.",
+      "Susun goal dan feedback yang masuk akal."
+    ],
+    "outputFormat": [
+      "Pisahkan fakta/asumsi dan penafsiran.",
+      "Tulis keputusan dengan bukti dan dasar konsep.",
+      "Jelaskan kelemahan alternatif dan cara mengevaluasi keputusan."
+    ],
+    "rubric": [
+      "Ketepatan fakta/asumsi dan konsep (30%)",
+      "Alasan keputusan serta kelemahan alternatif (45%)",
+      "Kelayakan tindak lanjut dan evaluasi (25%)"
+    ],
+    "answerGuide": "Hasil analisis untuk pembanding jawaban: Sistem rusak menghambat E→P; reward dibatalkan melemahkan P→O. Valence tinggi tidak menutup dua kelemahan ini. Perbaiki fasilitas, sumber daya dan standar; pastikan kaitan performance/reward konsisten serta dapat dipercaya. Fasilitas memadai termasuk hygiene; enrichment menambah responsibility, growth dan achievement dalam kerja. Gunakan tujuan specific, challenging namun realistis, accepted serta feedback kemajuan. Tidak ada dasar menghitung motivational force numerik; evaluasi persepsi dan perilaku sebelum mengubah skema. [hal. 447–448, 451–456, 460–461]"
+  },
+  {
+    "type": "analysis",
+    "scope": "TM 14: Brainchild: mencari fakta tanpa menghancurkan trust",
+    "difficulty": "Menengah",
+    "estimatedTime": "20–30 menit",
+    "question": "Brainchild: mencari fakta tanpa menghancurkan trust",
+    "context": "Kasus buku yang ditugaskan RPP, diparafrasekan. CEO perusahaan mainan marah setelah merasa desain produk rahasia bocor. Ia mengirim pesan emosional kepada penasihat dan pesan bernada ancaman kepada semua manajer sambil meminta TOTALLY HONEST findings. Manajer merasa diserang. Pesan privat ikut beredar kepada pegawai dan pers; email permintaan maaf berikutnya belum menghentikan dampak. [hal. 475–488, 494–500, 511, 519–523, 506]",
+    "data": [
+      "Kasus tidak mengungkap pelaku atau bukti lengkap kebocoran.",
+      "Informasi desain dikembangkan piecemeal antarbagian untuk kerahasiaan.",
+      "Stock price disebut mendapat minor hit, tanpa angka persentase.",
+      "Dasar konsep: Daft dan Marcic 12e [hal. 475–488, 494–500, 511, 519–523, 506]."
+    ],
+    "instructions": [
+      "Diagnosis masalah pesan, channel, emosi dan feedback.",
+      "Susun komunikasi awal yang lebih sesuai.",
+      "Usulkan pemulihan trust dan kerja sama tanpa menyimpulkan semua manajer bersalah."
+    ],
+    "outputFormat": [
+      "Pisahkan fakta/asumsi dan penafsiran.",
+      "Tulis keputusan dengan bukti dan dasar konsep.",
+      "Jelaskan kelemahan alternatif dan cara mengevaluasi keputusan."
+    ],
+    "rubric": [
+      "Ketepatan fakta/asumsi dan konsep (30%)",
+      "Alasan keputusan serta kelemahan alternatif (45%)",
+      "Kelayakan tindak lanjut dan evaluasi (25%)"
+    ],
+    "answerGuide": "Hasil analisis untuk pembanding jawaban: Tujuan mencari fakta dilemahkan encoding yang mengancam dan generalisasi semua orang suspect. Email mudah beredar, miskin cues dan berisiko salah tafsir pada isu emosional. Ancaman mengurangi psychological safety serta kejujuran upward communication. Awali pertemuan/rich channel dengan pihak relevan, sampaikan fakta yang diketahui, batas informasi, kebutuhan investigasi dan proses yang adil. Ikuti dengan catatan tertulis yang jelas, akses terbatas sesuai kebutuhan dan saluran feedback. Kini akui kesalahan pesan serta dampaknya, hentikan tuduhan tanpa bukti, dengarkan kekhawatiran, klarifikasi proses dan lakukan tindak lanjut konsisten. Jaga kebutuhan security dan koordinasi lintas bagian; jangan menganggap apology email saja memulihkan trust atau menemukan pelaku. Teks berakhir dengan pertanyaan tindakan berikutnya; solusi ini adalah analisis. [hal. 475–488, 494–500, 511, 519–523, 506]"
+  },
+  {
+    "type": "analysis",
+    "scope": "TM 14: Latihan: tim lintas fungsi, konflik dan feedback",
+    "difficulty": "Menengah",
+    "estimatedTime": "20–30 menit",
+    "question": "Latihan: tim lintas fungsi, konflik dan feedback",
+    "context": "Latihan buatan: situasi berikut adalah asumsi untuk berlatih, tanpa klaim perusahaan nyata. Tim layanan jarak jauh berisi staf operasi dan administrasi. Instruksi hanya disiarkan lewat chat; anggota tidak memeriksa pemahaman. Mereka berbeda pendapat tentang prioritas, menyimpan informasi perbagian dan berusaha menghindari konflik agar tampak kompak. [hal. 476–490, 519–523, 525–537]",
+    "data": [
+      "Asumsi: mereka mempunyai tujuan bersama dan tugas interdependent.",
+      "Belum ada data yang membuktikan stage atau penyebab tunggal masalah.",
+      "Dasar konsep: Daft dan Marcic 12e [hal. 476–490, 519–523, 525–537]."
+    ],
+    "instructions": [
+      "Pilih channel serta siklus feedback untuk isu kompleks.",
+      "Hubungkan dysfunction, norms dan pembagian roles.",
+      "Bedakan collaborating, compromising dan pola ekspresi konflik."
+    ],
+    "outputFormat": [
+      "Pisahkan fakta/asumsi dan penafsiran.",
+      "Tulis keputusan dengan bukti dan dasar konsep.",
+      "Jelaskan kelemahan alternatif dan cara mengevaluasi keputusan."
+    ],
+    "rubric": [
+      "Ketepatan fakta/asumsi dan konsep (30%)",
+      "Alasan keputusan serta kelemahan alternatif (45%)",
+      "Kelayakan tindak lanjut dan evaluasi (25%)"
+    ],
+    "answerGuide": "Hasil analisis untuk pembanding jawaban: Gunakan video/percakapan untuk isu ambigu, minta paraphrase dan pertanyaan, lalu catat keputusan secara tertulis. Fear of conflict dapat menghalangi commitment; withholding information dapat mencerminkan norma serta orientasi perbagian. Tetapkan mission, roles, sharing norms dan accountability; bangun safety untuk berbeda pendapat. Task-specialist membantu fakta/solusi; socioemotional membantu relasi dan rekonsiliasi. Collaborating mencari solusi bagi dua kepentingan penting, sedangkan compromising membagi perbedaan. Ekspresikan konflik dengan high directness–low intensity: jelas, tenang, berbasis masalah. Label stage hanya diberi setelah bukti proses tambahan. Evaluasi output, satisfaction dan adaptation/learning bersama. [hal. 476–490, 519–523, 525–537]"
+  },
+  {
+    "type": "analysis",
+    "scope": "TM 15: Grading the Teachers: feedback yang fair dan akurat",
+    "difficulty": "Menengah",
+    "estimatedTime": "20–30 menit",
+    "question": "Grading the Teachers: feedback yang fair dan akurat",
+    "context": "Kasus buku yang ditugaskan RPP, diparafrasekan. Sistem evaluasi memakai observasi principal, observasi master teacher dan gains tes siswa. Tiga guru dari distrik metropolitan, upper-income dan rural membahas perbedaan context serta rating. Mereka mengkhawatirkan subjektivitas, tekanan ekspektasi, observasi yang tidak lengkap dan kebutuhan siswa yang berbeda. [hal. 549–556, 573–575]",
+    "data": [
+      "Bobot dalam kasus: principal 40%, master teacher 30%, gains tes 30%; rating 1–5.",
+      "Kasus menyebut rencana observasi principal dua pada fall dan dua pada spring; master teacher dua setahun.",
+      "Dugaan principal memalsukan observasi disampaikan salah satu tokoh, belum hasil investigasi.",
+      "Angka 60% rating 5 pada distrik affluent adalah pernyataan tokoh kasus, bukan statistik semua sekolah.",
+      "Dasar konsep: Daft dan Marcic 12e [hal. 549–556, 573–575]."
+    ],
+    "instructions": [
+      "Petakan empat langkah feedback control dan kelemahan pengukurannya.",
+      "Nilai fungsi rating 1–5 dan bobot evaluasi.",
+      "Usulkan kontrol atas proses principal serta feedback pengembangan."
+    ],
+    "outputFormat": [
+      "Pisahkan fakta/asumsi dan penafsiran.",
+      "Tulis keputusan dengan bukti dan dasar konsep.",
+      "Jelaskan kelemahan alternatif dan cara mengevaluasi keputusan."
+    ],
+    "rubric": [
+      "Ketepatan fakta/asumsi dan konsep (30%)",
+      "Alasan keputusan serta kelemahan alternatif (45%)",
+      "Kelayakan tindak lanjut dan evaluasi (25%)"
+    ],
+    "answerGuide": "Hasil analisis untuk pembanding jawaban: Standards dan performance goals sudah ada; pengukuran menggabungkan tiga sumber sehingga tidak bergantung satu indikator. Namun reliability, kelengkapan observasi, expertise observer dan comparability context dipertanyakan. Rating 1–5 dapat menjadi bagian sistem jika tiap level memiliki rubric operasional, bukti dan kalibrasi; angka saja memberi kesan presisi tanpa menjamin akurasi. Saran: jadwalkan/documentasikan observasi, latih serta kalibrasi observer, audit sampel catatan, sediakan review/appeal, periksa bias dan gunakan ukuran progress yang mempertimbangkan starting point serta kebutuhan siswa. Bedakan dugaan dari temuan audit. Beri feedback spesifik dan rencana pengembangan; jangan menggunakan context sebagai alasan menghapus semua accountability atau rating untuk hukuman semata. Bobot asli tetap 40/30/30; rekomendasi perubahan bobot memerlukan alasan/data, bukan angka rekaan. [hal. 549–556, 573–575]"
+  },
+  {
+    "type": "analysis",
+    "scope": "TM 15: Latihan: standar layanan dan scorecard seimbang",
+    "difficulty": "Menengah",
+    "estimatedTime": "20–30 menit",
+    "question": "Latihan: standar layanan dan scorecard seimbang",
+    "context": "Latihan buatan: situasi berikut adalah asumsi untuk berlatih, tanpa klaim perusahaan nyata. Unit layanan menargetkan ketepatan penyelesaian 95%. Hasil minggu ini 90%, tetapi biaya turun karena pemeriksaan dokumen dipersingkat. Keluhan pengguna naik dan pegawai belum mendapat training prosedur baru. [hal. 549–554, 560–563]",
+    "data": [
+      "Asumsi: definisi ketepatan dan periode pembanding sama.",
+      "Selisih 90%−95%=−5 percentage points, bukan otomatis penurunan relatif 5%.",
+      "Belum ada data yang membuktikan pemeriksaan singkat satu-satunya penyebab keluhan.",
+      "Dasar konsep: Daft dan Marcic 12e [hal. 549–554, 560–563]."
+    ],
+    "instructions": [
+      "Petakan feedback control dengan tindakan setelah diagnosis.",
+      "Susun empat perspektif balanced scorecard.",
+      "Pilih langkah improvement dan evaluasinya."
+    ],
+    "outputFormat": [
+      "Pisahkan fakta/asumsi dan penafsiran.",
+      "Tulis keputusan dengan bukti dan dasar konsep.",
+      "Jelaskan kelemahan alternatif dan cara mengevaluasi keputusan."
+    ],
+    "rubric": [
+      "Ketepatan fakta/asumsi dan konsep (30%)",
+      "Alasan keputusan serta kelemahan alternatif (45%)",
+      "Kelayakan tindak lanjut dan evaluasi (25%)"
+    ],
+    "answerGuide": "Hasil analisis untuk pembanding jawaban: Tetapkan standards dari strategy, ukur actual performance serta mutu data, bandingkan −5 percentage points dan periksa penyebab sebelum tindakan. Evaluasi prosedur, kapasitas/training dan dampak pada accuracy. Scorecard: financial biaya layanan; customer keluhan/satisfaction; internal process ketepatan/error; learning/growth penguasaan prosedur dan training. Tentukan target serta cara mengukur, lalu evaluasi outcomes/corrections. Benchmarking atau DMAIC dapat membantu perbaikan proses; pilih sesuai masalah. Biaya turun sendiri belum membuktikan keberhasilan. Standard hanya diubah bila bukti menunjukkan target/ukuran tidak sesuai, bukan agar hasil tampak memenuhi target. [hal. 549–554, 560–563]"
   }
 ];
 

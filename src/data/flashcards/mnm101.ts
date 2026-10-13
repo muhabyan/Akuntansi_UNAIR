@@ -1,7 +1,7 @@
 // src/data/flashcards/mnm101.ts
-// Flashcard Pengantar Manajemen (MNU108; nama variabel dan file masih MNM101) — 105 kartu
+// Flashcard Pengantar Manajemen (MNU108; nama variabel dan file masih MNM101) (111 kartu)
 // Sumber: Daft & Marcic, Understanding Management 12e (2023)
-// Pra-UTS: 61 kartu TM 1-7 ditambah 8 kartu review (tm 8), setiap kartu memuat [hal. X]. Pra-UAS: 36 kartu TM 9-14 (belum disinkronkan ke 12e).
+// Pra-UTS: 61 kartu TM 1-7 ditambah 8 kartu review (tm 8), setiap kartu memuat [hal. X]. Pra-UAS: 42 kartu TM 9-15 sesuai RPP 2026.
 import type { AdvancedStudyCard } from '../../types';
 
 export const MNM101_FC: AdvancedStudyCard[] = [
@@ -627,327 +627,381 @@ export const MNM101_FC: AdvancedStudyCard[] = [
     "back": "General environment: enam dimensi, bukan lima [hal. 54–58]. Labor market = task environment [hal. 55, 57].\nHofstede 4 + 1; GLOBE sembilan dimensi tetapi hanya lima diuraikan [hal. 102–104].\nEtika: lima pendekatan normatif; moral development tiga level [hal. 124–128].\nBCG: istilah buku untuk pangsa kecil di industri tumbuh cepat adalah bright prospect [hal. 180]. Porter: tiga strategi, focus punya dua bentuk [hal. 183–185].\nDepartmentalization: lima pendekatan [hal. 238]."
   },
   {
-    "id": "mnm101-tm09-01",
-    "phase": "pra-uas",
-    "tm": 9,
-    "topic": "Model Perubahan Lewin",
-    "category": "Teori",
-    "front": "Model Tiga Tahap Perubahan Kurt Lewin",
-    "back": "1. Unfreezing: Menyadarkan karyawan akan perlunya perubahan dan mendobrak status quo.\n2. Changing / Moving: Mengimplementasikan perilaku, sistem, atau teknologi baru.\n3. Refreezing: Memperkuat dan menginstitusionalisasikan perubahan baru ke dalam budaya organisasi agar permanen."
-  },
-  {
-    "id": "mnm101-tm09-02",
-    "phase": "pra-uas",
-    "tm": 9,
-    "topic": "Analisis Medan Kekuatan",
-    "category": "Teori",
-    "front": "Force Field Analysis (Kurt Lewin)",
-    "back": "Perubahan ditentukan oleh keseimbangan antara Kekuatan Pendorong (Driving Forces: persaingan, teknologi) dan Kekuatan Penghambat (Restraining Forces: kenyamanan tradisi, ketakutan rugi). Perubahan berhasil dengan memperkuat pendorong dan mereduksi penghambat."
-  },
-  {
-    "id": "mnm101-tm09-03",
-    "phase": "pra-uas",
-    "tm": 9,
-    "topic": "Jenis Inovasi Organisasi",
-    "category": "Konsep",
-    "front": "Inovasi Eksplorasi: Ambidextrous Approach",
-    "back": "Kemampuan organisasi menciptakan struktur terpisah untuk memicu ide radikal baru yang bebas (eksplorasi), sekaligus mempertahankan struktur mekanistik untuk memproduksi barang yang sudah ada secara efisien (eksploitasi)."
-  },
-  {
-    "id": "mnm101-tm09-04",
-    "phase": "pra-uas",
-    "tm": 9,
-    "topic": "Resistensi Perubahan",
-    "category": "Konsep",
-    "front": "Sumber Utama Resistensi Karyawan terhadap Perubahan",
-    "back": "Ketakutan kehilangan status/pekerjaan, ketidakpastian masa depan, persepsi informasi yang berbeda dengan manajemen, kebiasaan lama yang nyaman, dan ancaman terhadap hubungan sosial yang mapan."
-  },
-  {
-    "id": "mnm101-tm09-05",
-    "phase": "pra-uas",
-    "tm": 9,
-    "topic": "Taktik Mengatasi Resistensi",
-    "category": "Prosedur",
-    "front": "5 Taktik Mengatasi Resistensi Perubahan (Kotter & Schlesinger)",
-    "back": "1. Komunikasi & Edukasi.\n2. Partisipasi & Keterlibatan Karyawan.\n3. Fasilitasi & Dukungan Emosional.\n4. Negosiasi & Kompensasi.\n5. Koersi/Paksaan Eksplisit (hanya dalam situasi krisis darurat)."
-  },
-  {
-    "id": "mnm101-tm09-06",
-    "phase": "pra-uas",
-    "tm": 9,
-    "topic": "Pengembangan Organisasi",
-    "category": "Konsep",
-    "front": "Organizational Development (OD)",
-    "back": "Upaya terencana jangka panjang yang berfokus pada penerapan ilmu perilaku (behavioral science) untuk meningkatkan kesehatan, kapasitas pemecahan masalah, dan efektivitas organisasi secara menyeluruh."
-  },
-  {
-    "id": "mnm101-tm10-01",
-    "phase": "pra-uas",
-    "tm": 10,
-    "topic": "Analisis Jabatan",
-    "category": "Konsep",
-    "front": "Deskripsi Jabatan (Job Description) vs Spesifikasi Jabatan (Job Specification)",
-    "back": "• Job Description: Uraian ringkas mengenai tugas pokok, tanggung jawab, wewenang, dan kondisi kerja suatu jabatan.\n• Job Specification: Kualifikasi minimal manusia (pendidikan, pengalaman kerja, keahlian teknis, kepribadian) yang dibutuhkan untuk memegang jabatan tersebut."
-  },
-  {
-    "id": "mnm101-tm10-02",
-    "phase": "pra-uas",
-    "tm": 10,
-    "topic": "Rekrutmen & Seleksi",
-    "category": "Konsep",
-    "front": "Validitas & Reliabilitas Alat Seleksi Karyawan",
-    "back": "• Validitas: Sejauh mana instrumen tes benar-benar mengukur kemampuan yang berhubungan dengan performa kerja di masa depan.\n• Reliabilitas: Konsistensi hasil tes dari waktu ke waktu saat diujikan ulang kepada pelamar yang sama."
-  },
-  {
-    "id": "mnm101-tm10-03",
-    "phase": "pra-uas",
-    "tm": 10,
-    "topic": "Penilaian Kinerja",
-    "category": "Teori",
-    "front": "Umpan Balik Kinerja 360 Derajat (360-Degree Feedback)",
-    "back": "Evaluasi kinerja multi-sumber yang mengumpulkan masukan komprehensif dari atasan langsung, rekan kerja sejawat, bawahan, pelanggan eksternal, dan evaluasi diri sendiri (self-assessment)."
-  },
-  {
-    "id": "mnm101-tm10-04",
-    "phase": "pra-uas",
-    "tm": 10,
-    "topic": "Kompensasi & Benefit",
-    "category": "Konsep",
-    "front": "Keadilan Internal vs Keadilan Eksternal Kompensasi",
-    "back": "• Keadilan Internal: Hubungan gaji antar jabatan dalam perusahaan sebanding dengan bobot tanggung jawab (ditentukan via Job Evaluation).\n• Keadilan Eksternal: Standar gaji kompetitif dibandingkan rata-rata industri di pasar tenaga kerja (ditentukan via Wage Surveys)."
-  },
-  {
-    "id": "mnm101-tm10-05",
-    "phase": "pra-uas",
-    "tm": 10,
-    "topic": "Keragaman Tenaga Kerja",
-    "category": "Konsep",
-    "front": "Fenomena Glass Ceiling",
-    "back": "Hambatan tak terlihat (invisible barrier) yang menghalangi perempuan dan kelompok minoritas untuk naik ke posisi eksekutif puncak dalam hierarki korporasi."
-  },
-  {
-    "id": "mnm101-tm10-06",
-    "phase": "pra-uas",
-    "tm": 10,
-    "topic": "Manajemen Talenta Strategis",
-    "category": "Prosedur",
-    "front": "Strategic Human Resource Management (SHRM)",
-    "back": "Penyelarasan seluruh kebijakan rekrutmen, pelatihan, penilaian, dan retensi talenta secara langsung dengan sasaran strategis jangka panjang korporasi guna menciptakan keunggulan bersaing."
-  },
-  {
-    "id": "mnm101-tm11-01",
-    "phase": "pra-uas",
-    "tm": 11,
-    "topic": "Kepemimpinan vs Manajemen",
-    "category": "Konsep",
-    "front": "Perbedaan Mendasar Pemimpin vs Manajer (John Kotter)",
-    "back": "• Manajer: Menciptakan ketertiban, stabilitas, perencanaan terinci, penataan struktur, dan pengendalian proses.\n• Pemimpin: Menciptakan perubahan, visi masa depan, penyelarasan orang, inspirasi, dan motivasi menghadapi tantangan."
-  },
-  {
-    "id": "mnm101-tm11-02",
-    "phase": "pra-uas",
-    "tm": 11,
-    "topic": "Teori Kontinjensi Fiedler",
-    "category": "Teori",
-    "front": "Model Kontinjensi Kepemimpinan Fred Fiedler",
-    "back": "Gaya kepemimpinan (Task-oriented vs Relationship-oriented, diukur dengan skala LPC) bersifat kaku/tetap. Efektivitas kepemimpinan bergantung pada kesesuaian gaya dengan Situasi Kontrol yang dinilai dari: Hubungan Pemimpin-Anggota, Struktur Tugas, dan Kekuasaan Posisi."
-  },
-  {
-    "id": "mnm101-tm11-03",
-    "phase": "pra-uas",
-    "tm": 11,
-    "topic": "Situational Leadership Hersey-Blanchard",
-    "category": "Teori",
-    "front": "Empat Gaya Kepemimpinan Situasional Hersey & Blanchard",
-    "back": "Disesuaikan dengan Kematangan Bawahan (Follower Readiness):\n1. Telling/Directing (Bawahan tidak mampu & tidak mau).\n2. Selling/Coaching (Bawahan tidak mampu tapi mau).\n3. Participating/Supporting (Bawahan mampu tapi ragu/tidak mau).\n4. Delegating (Bawahan sangat mampu & sangat mau)."
-  },
-  {
-    "id": "mnm101-tm11-04",
-    "phase": "pra-uas",
-    "tm": 11,
-    "topic": "Transformasional vs Transaksional",
-    "category": "Teori",
-    "front": "Kepemimpinan Transformasional vs Transaksional",
-    "back": "• Transaksional: Memperjelas peran dan target, memotivasi melalui sistem imbalan kontinjensi dan koreksi kesalahan.\n• Transformasional: Membawa pengikut melampaui kepentingan pribadi demi visi luhur organisasi melalui pengaruh ideal, stimulasi intelektual, dan kepedulian individual."
-  },
-  {
-    "id": "mnm101-tm11-05",
-    "phase": "pra-uas",
-    "tm": 11,
-    "topic": "Sumber Kekuasaan",
-    "category": "Konsep",
-    "front": "Lima Sumber Kekuasaan Pemimpin (French & Raven)",
-    "back": "• Kekuasaan Posisi (Hard Power): Legitimate Power (jabatan resmi), Reward Power (imbalan), Coercive Power (hukuman).\n• Kekuasaan Personal (Soft Power): Expert Power (keahlian khusus), Referent Power (karisma dan kekaguman pribadi)."
-  },
-  {
-    "id": "mnm101-tm11-06",
-    "phase": "pra-uas",
-    "tm": 11,
-    "topic": "Servant Leadership",
-    "category": "Konsep",
-    "front": "Kepemimpinan Melayani (Servant Leadership)",
-    "back": "Pemimpin yang melampaui kepentingan pribadi untuk memprioritaskan melayani kebutuhan perkembangan bawahan dan tujuan komunitas, membangun organisasi yang etis dan memberdayakan."
-  },
-  {
-    "id": "mnm101-tm12-01",
-    "phase": "pra-uas",
-    "tm": 12,
-    "topic": "Teori Hierarki Kebutuhan",
-    "category": "Teori",
-    "front": "Hierarki Kebutuhan Abraham Maslow",
-    "back": "1. Kebutuhan Fisiologis (makanan, tempat tinggal, gaji pokok).\n2. Kebutuhan Rasa Aman (stabilitas kerja, asuransi, lingkungan aman).\n3. Kebutuhan Sosial/Kasih Sayang (teman kerja, penerimaan kelompok).\n4. Kebutuhan Penghargaan (pujian, pengakuan, status jabatan).\n5. Kebutuhan Aktualisasi Diri (realisasi potensi maksimal, kreativitas)."
-  },
-  {
-    "id": "mnm101-tm12-02",
-    "phase": "pra-uas",
-    "tm": 12,
-    "topic": "Teori Dua Faktor Herzberg",
-    "category": "Teori",
-    "front": "Faktor Hygiene vs Motivator (Frederick Herzberg)",
-    "back": "• Hygiene Factors: Gaji, kondisi kerja, kebijakan perusahaan, supervisi. Jika tidak terpenuhi timbul ketidakpuasan, namun jika terpenuhi HANYA mencegah ketidakpuasan (tidak memotivasi!).\n• Motivators: Prestasi, pengakuan, tanggung jawab besar, pertumbuhan karier. Faktor inilah yang benar-benar memicu motivasi dan kepuasan kerja sejati."
-  },
-  {
-    "id": "mnm101-tm12-03",
-    "phase": "pra-uas",
-    "tm": 12,
-    "topic": "Teori Ekspektansi Vroom",
-    "category": "Teori",
-    "front": "Teori Ekspektansi Victor Vroom",
-    "back": "Motivasi = Expectancy (E-ke-P: Usaha menghasilkan performa) × Instrumentality (P-ke-O: Performa menghasilkan imbalan) × Valence (Nilai ketertarikan individu terhadap imbalan). Jika salah satu komponen nol, motivasi akan runtuh."
-  },
-  {
-    "id": "mnm101-tm12-04",
-    "phase": "pra-uas",
-    "tm": 12,
-    "topic": "Teori Keadilan Adams",
-    "category": "Teori",
-    "front": "Teori Keadilan (Equity Theory) J. Stacy Adams",
-    "back": "Karyawan membandingkan rasio Input/Output diri sendiri dengan rasio orang lain. Jika merasa tidak adil (underreward), karyawan akan mereduksi usaha, menuntut kenaikan gaji, mengubah pembanding, atau mengundurkan diri."
-  },
-  {
-    "id": "mnm101-tm12-05",
-    "phase": "pra-uas",
-    "tm": 12,
-    "topic": "Job Characteristics Model",
-    "category": "Teori",
-    "front": "5 Dimensi Inti Pekerjaan Hackman & Oldham",
-    "back": "1. Skill Variety (Keragaman Keahlian)\n2. Task Identity (Keutuhan Tugas)\n3. Task Significance (Dampak Positif bagi Orang Lain)\n4. Autonomy (Otonomi dan Kebebasan Kerja)\n5. Feedback (Umpan Balik Hasil Kerja Langsung)."
-  },
-  {
-    "id": "mnm101-tm12-06",
-    "phase": "pra-uas",
-    "tm": 12,
-    "topic": "Penguatan Perilaku",
-    "category": "Konsep",
-    "front": "Empat Jenis Penguatan (Reinforcement Theory)",
-    "back": "1. Positive Reinforcement: Imbalan menyenangkan untuk memperkuat perilaku baik.\n2. Avoidance Learning (Negative Reinforcement): Menghentikan hal tidak menyenangkan saat perilaku baik muncul.\n3. Punishment: Hukuman untuk menghentikan perilaku buruk.\n4. Extinction: Mengabaikan perilaku agar hilang dengan sendirinya."
-  },
-  {
-    "id": "mnm101-tm13-01",
-    "phase": "pra-uas",
-    "tm": 13,
-    "topic": "Model Komunikasi",
-    "category": "Konsep",
-    "front": "Elemen Pokok Proses Komunikasi",
-    "back": "Pengirim (Sender) -> Pengodean (Encoding) -> Pesan (Message) -> Saluran (Channel) -> Dekode (Decoding) -> Penerima (Receiver) -> Umpan Balik (Feedback). Gangguan (Noise) dapat terjadi di setiap tahap."
-  },
-  {
-    "id": "mnm101-tm13-02",
-    "phase": "pra-uas",
-    "tm": 13,
-    "topic": "Kekayaan Saluran Komunikasi",
-    "category": "Teori",
-    "front": "Hirarki Kekayaan Saluran (Channel Richness)",
-    "back": "Saluran Paling Kaya: Tatap Muka Langsung (Face-to-Face) -> Video Call -> Telepon -> Surat Pribadi/Email -> Surat Edaran/Laporan Standar (Saluran Paling Rendah). Pesan rumit dan emosional butuh saluran kaya."
-  },
-  {
-    "id": "mnm101-tm13-03",
-    "phase": "pra-uas",
-    "tm": 13,
-    "topic": "Tahap Perkembangan Tim",
-    "category": "Teori",
-    "front": "5 Tahap Perkembangan Tim Bruce Tuckman",
-    "back": "1. Forming: Masa orientasi, ketidakpastian tinggi, mencari peran.\n2. Storming: Konflik kepribadian dan perebutan kekuasaan/posisi.\n3. Norming: Resolusi konflik, norma disepakati, kohesivitas tim tumbuh.\n4. Performing: Kolaborasi sinergis penuh fokus menyelesaikan tugas.\n5. Adjourning: Pembubaran tim proyek pasca target tercapai."
-  },
-  {
-    "id": "mnm101-tm13-04",
-    "phase": "pra-uas",
-    "tm": 13,
-    "topic": "Dinamika Konflik Tim",
-    "category": "Konsep",
-    "front": "Konflik Tugas (Task) vs Konflik Hubungan (Relationship)",
-    "back": "• Konflik Tugas: Perbedaan pendapat mengenai konten kerja dan ide (bersifat konstruktif jika dikelola baik).\n• Konflik Hubungan: Permusuhan personal dan emosional antar anggota tim (selalu merusak kinerja dan harus dihindari)."
-  },
-  {
-    "id": "mnm101-tm13-05",
-    "phase": "pra-uas",
-    "tm": 13,
-    "topic": "Gaya Manajemen Konflik",
-    "category": "Teori",
-    "front": "5 Gaya Manajemen Konflik (Thomas-Kilmann)",
-    "back": "1. Competing / Forcing (Tegas, Tidak Kooperatif).\n2. Collaborating (Tegas, Kooperatif - Win-Win Solution).\n3. Compromising (Titik Tengah Kedua Pihak).\n4. Avoiding (Menghindar, Menunda Masalah).\n5. Accommodating (Mengalah demi Menjaga Hubungan)."
-  },
-  {
-    "id": "mnm101-tm13-06",
-    "phase": "pra-uas",
-    "tm": 13,
-    "topic": "Social Loafing",
-    "category": "Konsep",
-    "front": "Fenomena Social Loafing & Solusinya",
-    "back": "Kecenderungan individu menurunkan usaha saat bekerja dalam kelompok dibandingkan saat bekerja sendirian. Diatasi dengan membuat kontribusi individu transparan dan menetapkan akuntabilitas tugas spesifik."
-  },
-  {
-    "id": "mnm101-tm14-01",
-    "phase": "pra-uas",
-    "tm": 14,
-    "topic": "Proses Pengendalian",
-    "category": "Konsep",
-    "front": "Empat Langkah Siklus Pengendalian Organisasi",
-    "back": "1. Menetapkan Standar Kinerja (Establish Standards).\n2. Mengukur Kinerja Aktual (Measure Actual Performance).\n3. Membandingkan Kinerja Aktual dengan Standar (Compare Performance to Standards).\n4. Mengambil Tindakan Korektif jika Terjadi Deviasi (Take Corrective Action)."
-  },
-  {
-    "id": "mnm101-tm14-02",
-    "phase": "pra-uas",
-    "tm": 14,
-    "topic": "Tipe Pengendalian",
-    "category": "Konsep",
-    "front": "Feedforward, Concurrent, dan Feedback Control",
-    "back": "• Feedforward Control: Mencegah masalah sebelum terjadi dengan mengawasi kualitas input.\n• Concurrent Control: Memantau dan mengkoreksi aktivitas saat proses berlangsung secara real-time.\n• Feedback Control: Mengevaluasi output hasil akhir setelah proses selesai."
-  },
-  {
-    "id": "mnm101-tm14-03",
-    "phase": "pra-uas",
-    "tm": 14,
-    "topic": "Balanced Scorecard",
-    "category": "Teori",
-    "front": "Empat Perspektif Balanced Scorecard (Kaplan & Norton)",
-    "back": "1. Perspektif Finansial (ROI, Profitabilitas, Arus Kas).\n2. Perspektif Pelanggan (Kepuasan, Retensi, Pangsa Pasar).\n3. Perspektif Proses Bisnis Internal (Efisiensi, Kualitas, Inovasi Siklus).\n4. Perspektif Pembelajaran & Pertumbuhan (Kompetensi SDM, Budaya, Infrastruktur TI)."
-  },
-  {
-    "id": "mnm101-tm14-04",
-    "phase": "pra-uas",
-    "tm": 14,
-    "topic": "Total Quality Management",
-    "category": "Teori",
-    "front": "Pilar Total Quality Management (TQM)",
-    "back": "Fokus pada kepuasan pelanggan, keterlibatan seluruh karyawan (employee empowerment), benchmarking terhadap praktik terbaik industri, dan perbaikan berkesinambungan tanpa henti (Kaizen)."
-  },
-  {
-    "id": "mnm101-tm14-05",
-    "phase": "pra-uas",
-    "tm": 14,
-    "topic": "Audit Manajemen",
-    "category": "Prosedur",
-    "front": "Audit Manajemen (Management Audit)",
-    "back": "Pemeriksaan independen atas seluruh sistem operasi, prosedur kerja, dan efektivitas struktur kepemimpinan guna menilai sejauh mana sasaran strategis organisasi tercapai."
-  },
-  {
-    "id": "mnm101-tm14-06",
-    "phase": "pra-uas",
-    "tm": 14,
-    "topic": "Sintesis Sukses UAS",
-    "category": "Prosedur",
-    "front": "Kunci Penguasaan Ujian Akhir Semester Pengantar Manajemen",
-    "back": "Mengintegrasikan aspek 'Leading' dan 'Controlling': bagaimana pemimpin menggerakkan tim (Tuckman, Fiedler, Herzberg) dan memastikan sistem kendali (Balanced Scorecard, Feedforward) mengawal ketercapaian visi tanpa mematikan inovasi."
-  }
+  "topic": "Innovation",
+  "front": "Apa beda innovation, creativity dan change?",
+  "back": "Creativity menghasilkan gagasan baru. Innovation mencakup penciptaan dan penerapan gagasan/perilaku. Change adalah adopsi ide baru, yang dapat berasal dari luar. [hal. 268, 273, 285]",
+  "category": "Perbandingan",
+  "id": "mnu108-uas-tm09-01",
+  "phase": "pra-uas",
+  "tm": 9
+},
+{
+  "topic": "Ambidextrous",
+  "front": "Bagaimana exploration dan exploitation saling melengkapi?",
+  "back": "Exploration memberi ruang eksperimen dan kreativitas. Exploitation memakai kemampuan/rutinitas untuk penerapan. Organisasi menyesuaikan struktur dan proses agar kedua fungsi berjalan. [hal. 270–271]",
+  "category": "Konsep",
+  "id": "mnu108-uas-tm09-02",
+  "phase": "pra-uas",
+  "tm": 9
+},
+{
+  "topic": "Innovation strategies",
+  "front": "Apa tiga strategi inovasi pada Exhibit 8.1?",
+  "back": "Discovery; horizontal collaboration dan open innovation; innovation roles and structures. Ketiganya membantu gagasan menjadi produk, layanan dan proses yang digunakan. [hal. 272]",
+  "category": "Konsep",
+  "id": "mnu108-uas-tm09-03",
+  "phase": "pra-uas",
+  "tm": 9
+},
+{
+  "topic": "Open innovation",
+  "front": "Apa pembeda open innovation, crowdsourcing dan acquisition?",
+  "back": "Open innovation memperluas pencarian/komersialisasi ke luar organisasi. Crowdsourcing mengambil masukan dari kelompok besar. Acquisition membeli start-up untuk memperoleh inovasi dan sering juga talentanya. [hal. 279–280]",
+  "category": "Perbandingan",
+  "id": "mnu108-uas-tm09-04",
+  "phase": "pra-uas",
+  "tm": 9
+},
+{
+  "topic": "Organization development",
+  "front": "Apa teknik OD dan bagaimana memilihnya?",
+  "back": "Team building memperbaiki kerja kelompok; survey-feedback memakai pendapat pegawai dan data masalah; large-group intervention melibatkan berbagai bagian/sumber luar untuk perubahan sistem. [hal. 283–284]",
+  "category": "Konsep",
+  "id": "mnu108-uas-tm09-05",
+  "phase": "pra-uas",
+  "tm": 9
+},
+{
+  "topic": "Implementation",
+  "front": "Bagaimana menghubungkan Lewin, resistensi dan taktik?",
+  "back": "Bangun kesiapan, jalankan/pelajari perubahan, lalu perkuatnya. Diagnosis self-interest, pemahaman/trust, uncertainty dan perbedaan penilaian/tujuan membantu memilih dukungan pimpinan, pendidikan, partisipasi, negosiasi atau paksaan sesuai kondisi. [hal. 285–290]",
+  "category": "Konsep",
+  "id": "mnu108-uas-tm09-06",
+  "phase": "pra-uas",
+  "tm": 9
+},
+{
+  "topic": "Strategic HRM",
+  "front": "Bagaimana human capital menjadi dasar HRM strategis?",
+  "back": "Human capital mencakup nilai ekonomi pengetahuan, pengalaman dan kemampuan pegawai. HRM menyelaraskan pencarian, pengembangan dan pemeliharaan workforce dengan strategi; semua manajer ikut bertanggung jawab. [hal. 300–304]",
+  "category": "Konsep",
+  "id": "mnu108-uas-tm10-01",
+  "phase": "pra-uas",
+  "tm": 10
+},
+{
+  "topic": "Social contract",
+  "front": "Apa inti employability pada social contract baru?",
+  "back": "Pegawai membangun kemampuan dan menjadi partner perbaikan. Perusahaan menyediakan kesempatan belajar, tugas menantang, informasi dan sumber daya. Hubungan ini membawa peluang sekaligus risiko yang perlu ditimbang. [hal. 308–311]",
+  "category": "Konsep",
+  "id": "mnu108-uas-tm10-02",
+  "phase": "pra-uas",
+  "tm": 10
+},
+{
+  "topic": "Selection",
+  "front": "Apa peran job analysis, RJP dan structured interview?",
+  "back": "Job analysis mengidentifikasi tugas/kompetensi. RJP memberi informasi kerja yang realistis. Structured interview menggunakan pertanyaan standar agar kandidat dibandingkan menurut bukti yang relevan. [hal. 313–320]",
+  "category": "Konsep",
+  "id": "mnu108-uas-tm10-03",
+  "phase": "pra-uas",
+  "tm": 10
+},
+{
+  "topic": "Development",
+  "front": "Apa beda training, development dan appraisal?",
+  "back": "Training berfokus tugas sekarang; development mengembangkan kemampuan lebih luas. Appraisal mengamati, menilai, mencatat dan memberi feedback; pengelolaan performance yang berkelanjutan mengutamakan perbaikan kemampuan. [hal. 321–325]",
+  "category": "Perbandingan",
+  "id": "mnu108-uas-tm10-04",
+  "phase": "pra-uas",
+  "tm": 10
+},
+{
+  "topic": "Inclusion",
+  "front": "Mengapa workforce beragam belum memastikan inclusion?",
+  "back": "Inclusion memerlukan rasa diterima dan penghargaan atas keunikan anggota. Periksa suara, feedback, kesempatan serta bias keputusan, bukan hanya komposisi. [hal. 335–342]",
+  "category": "Konsep",
+  "id": "mnu108-uas-tm10-05",
+  "phase": "pra-uas",
+  "tm": 10
+},
+{
+  "topic": "Career barriers",
+  "front": "Bagaimana first rung, glass ceiling dan sponsor berkaitan?",
+  "back": "First rung adalah promosi pertama ke manajemen; glass ceiling membatasi mobilitas ke atas. Sponsor aktif mengadvokasi kesempatan, sedangkan mentor terutama membimbing dan memberi informasi. [hal. 345–350]",
+  "category": "Konsep",
+  "id": "mnu108-uas-tm10-06",
+  "phase": "pra-uas",
+  "tm": 10
+},
+{
+  "topic": "Awareness",
+  "front": "Apa dua jalan self-awareness?",
+  "back": "Soliciting feedback dan using self-assessment. Bandingkan niat/pola diri dengan dampak yang diamati orang lain. [hal. 363]",
+  "category": "Konsep",
+  "id": "mnu108-uas-tm11-01",
+  "phase": "pra-uas",
+  "tm": 11
+},
+{
+  "topic": "Perception",
+  "front": "Apa urutan perception sumber?",
+  "back": "Observe → Screen → Organize. Organize membentuk pola untuk penafsiran dan respons. [hal. 369]",
+  "category": "Mekanisme",
+  "id": "mnu108-uas-tm11-02",
+  "phase": "pra-uas",
+  "tm": 11
+},
+{
+  "topic": "Attribution",
+  "front": "Bedakan fundamental attribution error dan self-serving bias.",
+  "back": "Yang pertama menekankan sifat bagi kegagalan orang lain dan situasi bagi diri; yang kedua mengambil kredit sukses diri serta menyalahkan luar untuk kegagalan. [hal. 370–371]",
+  "category": "Perbandingan",
+  "id": "mnu108-uas-tm11-03",
+  "phase": "pra-uas",
+  "tm": 11
+},
+{
+  "topic": "Personality",
+  "front": "Apa lima dimensi Big Five?",
+  "back": "Extroversion, agreeableness, conscientiousness, emotional stability dan openness to experience. Dimensi tidak memberi satu profil terbaik universal. [hal. 372–375]",
+  "category": "Konsep",
+  "id": "mnu108-uas-tm11-04",
+  "phase": "pra-uas",
+  "tm": 11
+},
+{
+  "topic": "EI",
+  "front": "Apa empat komponen EI?",
+  "back": "Self-awareness, self-management, social awareness dan relationship management. [hal. 382–383]",
+  "category": "Konsep",
+  "id": "mnu108-uas-tm11-05",
+  "phase": "pra-uas",
+  "tm": 11
+},
+{
+  "topic": "Stress",
+  "front": "Bedakan role ambiguity dan role conflict.",
+  "back": "Ambiguity: ekspektasi peran tidak jelas. Conflict: tuntutan peran tidak kompatibel. Dukungan dan kontrol membantu, sambil memperbaiki penyebab. [hal. 388–392]",
+  "category": "Perbandingan",
+  "id": "mnu108-uas-tm11-06",
+  "phase": "pra-uas",
+  "tm": 11
+},
+{
+  "topic": "Leadership",
+  "front": "Apa beda formal dan informal leader?",
+  "back": "Formal diberi authority berdasarkan peran; informal diikuti karena kualitas pribadi dan pengaruh. [hal. 403]",
+  "category": "Perbandingan",
+  "id": "mnu108-uas-tm12-01",
+  "phase": "pra-uas",
+  "tm": 12
+},
+{
+  "topic": "Level 5",
+  "front": "Apa inti Level 5?",
+  "back": "Humility serta professional will untuk keunggulan organisasi; kredit kepada tim dan tanggung jawab atas kesalahan. [hal. 407]",
+  "category": "Konsep",
+  "id": "mnu108-uas-tm12-02",
+  "phase": "pra-uas",
+  "tm": 12
+},
+{
+  "topic": "Situational",
+  "front": "Pasangkan R1–R4 dan S1–S4.",
+  "back": "R1 unable/unwilling → telling; R2 unable/willing → selling; R3 able/unwilling → participating; R4 able/willing → delegating. Confidence/insecurity juga diperiksa. [hal. 416–417]",
+  "category": "Mekanisme",
+  "id": "mnu108-uas-tm12-03",
+  "phase": "pra-uas",
+  "tm": 12
+},
+{
+  "topic": "Contingency",
+  "front": "Apa beda Fiedler dan situational?",
+  "back": "Fiedler mencocokkan gaya relatif tetap dengan relations, structure, power; situational menyesuaikan task/relationship behavior dengan readiness per tugas. [hal. 416–420]",
+  "category": "Perbandingan",
+  "id": "mnu108-uas-tm12-04",
+  "phase": "pra-uas",
+  "tm": 12
+},
+{
+  "topic": "Followership",
+  "front": "Apa dua dimensi followership?",
+  "back": "Independent critical thinking dan active engagement. Effective tinggi pada keduanya; pragmatic survivor berada di tengah. [hal. 425–428]",
+  "category": "Konsep",
+  "id": "mnu108-uas-tm12-05",
+  "phase": "pra-uas",
+  "tm": 12
+},
+{
+  "topic": "Power",
+  "front": "Apa lima basis power?",
+  "back": "Legitimate, reward, coercive: hard/position. Expert, referent: soft/personal. Influence ialah efek nyata kapasitas tersebut. [hal. 428–430]",
+  "category": "Konsep",
+  "id": "mnu108-uas-tm12-06",
+  "phase": "pra-uas",
+  "tm": 12
+},
+{
+  "topic": "Rewards",
+  "front": "Bedakan intrinsic/extrinsic.",
+  "back": "Intrinsic ialah kepuasan dari aktivitas; extrinsic diberikan pihak luar, termasuk pujian dan uang. [hal. 441]",
+  "category": "Perbandingan",
+  "id": "mnu108-uas-tm13-01",
+  "phase": "pra-uas",
+  "tm": 13
+},
+{
+  "topic": "Herzberg",
+  "front": "Apa fungsi hygiene vs motivators?",
+  "back": "Hygiene mengurangi dissatisfaction; motivators seperti achievement, responsibility dan growth meningkatkan satisfaction. [hal. 447–448]",
+  "category": "Perbandingan",
+  "id": "mnu108-uas-tm13-02",
+  "phase": "pra-uas",
+  "tm": 13
+},
+{
+  "topic": "Expectancy",
+  "front": "Apa tiga unsur expectancy?",
+  "back": "E→P: usaha menghasilkan performance. P→O: performance menghasilkan outcome. Valence: nilai outcome bagi individu. [hal. 455–456]",
+  "category": "Konsep",
+  "id": "mnu108-uas-tm13-03",
+  "phase": "pra-uas",
+  "tm": 13
+},
+{
+  "topic": "Reinforcement",
+  "front": "Mengapa negative reinforcement berbeda dari punishment?",
+  "back": "Negative reinforcement menghilangkan konsekuensi buruk untuk memperkuat perilaku; punishment memberi konsekuensi buruk untuk mengurangi perilaku. [hal. 457–458]",
+  "category": "Perbandingan",
+  "id": "mnu108-uas-tm13-04",
+  "phase": "pra-uas",
+  "tm": 13
+},
+{
+  "topic": "Job design",
+  "front": "Pasangkan lima job dimensions dengan states.",
+  "back": "Variety/identity/significance → meaningfulness; autonomy → responsibility; feedback → knowledge of results. Growth-need strength memengaruhi respons. [hal. 460–461]",
+  "category": "Mekanisme",
+  "id": "mnu108-uas-tm13-05",
+  "phase": "pra-uas",
+  "tm": 13
+},
+{
+  "topic": "Empowerment",
+  "front": "Apa empat elemen empowerment?",
+  "back": "Information, knowledge/skills, power atas keputusan dan rewards selaras performance. Engagement juga membutuhkan meaning, connection dan growth. [hal. 462–466]",
+  "category": "Konsep",
+  "id": "mnu108-uas-tm13-06",
+  "phase": "pra-uas",
+  "tm": 13
+},
+{
+  "topic": "Communication",
+  "front": "Apa siklus komunikasi?",
+  "back": "Sender encode → message/channel → receiver decode → feedback dengan peran berbalik; error dapat terjadi di seluruh proses. [hal. 476–478]",
+  "category": "Mekanisme",
+  "id": "mnu108-uas-tm14-01",
+  "phase": "pra-uas",
+  "tm": 14
+},
+{
+  "topic": "Richness",
+  "front": "Apa tiga karakteristik richness?",
+  "back": "Multiple cues, rapid two-way feedback dan personal focus. Pilih berdasarkan kebutuhan pesan. [hal. 484]",
+  "category": "Konsep",
+  "id": "mnu108-uas-tm14-02",
+  "phase": "pra-uas",
+  "tm": 14
+},
+{
+  "topic": "Direction",
+  "front": "Bedakan upward, downward dan horizontal.",
+  "back": "Upward bawah→atas; downward atas→bawah; horizontal lateral/diagonal untuk koordinasi. Medium digital tidak menentukan formal/informal. [hal. 498–500]",
+  "category": "Perbandingan",
+  "id": "mnu108-uas-tm14-03",
+  "phase": "pra-uas",
+  "tm": 14
+},
+{
+  "topic": "Team",
+  "front": "Apa tiga outcome efektivitas tim?",
+  "back": "Productive output, personal satisfaction, capacity to adapt and learn. Context, characteristics dan processes memengaruhi ketiganya. [hal. 522–523]",
+  "category": "Konsep",
+  "id": "mnu108-uas-tm14-04",
+  "phase": "pra-uas",
+  "tm": 14
+},
+{
+  "topic": "Stages",
+  "front": "Apa lima stages team development?",
+  "back": "Forming, storming, norming, performing, adjourning. Periksa bukti proses, tanpa menganggap tahap otomatis mengikuti waktu. [hal. 528–530]",
+  "category": "Mekanisme",
+  "id": "mnu108-uas-tm14-05",
+  "phase": "pra-uas",
+  "tm": 14
+},
+{
+  "topic": "Conflict",
+  "front": "Apa dua dimensi dan lima conflict styles?",
+  "back": "Assertiveness/cooperativeness: dominating tinggi/rendah, collaborating tinggi/tinggi, avoiding rendah/rendah, accommodating rendah/tinggi, compromising moderate/moderate. [hal. 535–536]",
+  "category": "Konsep",
+  "id": "mnu108-uas-tm14-06",
+  "phase": "pra-uas",
+  "tm": 14
+},
+{
+  "topic": "Feedback",
+  "front": "Apa empat langkah feedback control?",
+  "back": "Establish standards, measure actual performance, compare dengan standards, pilih tindakan. Adequate dapat tanpa perubahan/reinforcement; inadequate memerlukan diagnosis/koreksi. [hal. 549–551]",
+  "category": "Mekanisme",
+  "id": "mnu108-uas-tm15-01",
+  "phase": "pra-uas",
+  "tm": 15
+},
+{
+  "topic": "Scorecard",
+  "front": "Apa empat perspektif scorecard?",
+  "back": "Financial, customers, internal business processes, learning/growth; mission/goals mengarahkan targets, measures, outcomes dan corrections. [hal. 552–554]",
+  "category": "Konsep",
+  "id": "mnu108-uas-tm15-02",
+  "phase": "pra-uas",
+  "tm": 15
+},
+{
+  "topic": "TQM",
+  "front": "Bedakan benchmarking, DMAIC dan kaizen.",
+  "back": "Benchmarking membandingkan praktik melalui plan/find/collect/analyze/improve. DMAIC define/measure/analyze/improve/control. Kaizen perubahan kecil ongoing. [hal. 560–563]",
+  "category": "Perbandingan",
+  "id": "mnu108-uas-tm15-03",
+  "phase": "pra-uas",
+  "tm": 15
+},
+{
+  "topic": "Budget",
+  "front": "Mengapa revenue dan cash budget berbeda?",
+  "back": "Revenue mencatat forecast/actual sales; cash memeriksa timing receipts/payment untuk kewajiban. Sales belum tentu sudah diterima sebagai cash. [hal. 564–566]",
+  "category": "Perbandingan",
+  "id": "mnu108-uas-tm15-04",
+  "phase": "pra-uas",
+  "tm": 15
+},
+{
+  "topic": "Liquidity",
+  "front": "Apa current dan quick ratio sumber?",
+  "back": "Current assets/current liabilities; quick=(cash+receivables)/current liabilities. Contoh:2,4 dan0,4; inventory dikeluarkan dari quick. [hal. 567–569]",
+  "category": "Konsep",
+  "id": "mnu108-uas-tm15-05",
+  "phase": "pra-uas",
+  "tm": 15
+},
+{
+  "topic": "Financial terms",
+  "front": "Apa batas rumus turnover dan gross margin pada buku?",
+  "back": "Turnover buku sales/average inventory, SEC cost of sales/average inventory. Gross income label buku berbeda dari gross profit net sales−COGS. Nyatakan definisi, jangan mencampur numerator. [hal. 568–569]",
+  "category": "Perbandingan",
+  "id": "mnu108-uas-tm15-06",
+  "phase": "pra-uas",
+  "tm": 15
+}
 ];

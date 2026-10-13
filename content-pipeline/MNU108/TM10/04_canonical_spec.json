@@ -1,0 +1,1806 @@
+{
+  "course": "MNU108",
+  "tm": 10,
+  "reading": {
+    "tm": 10,
+    "title": "Talenta, HRM strategis dan inclusion",
+    "ref": "Daft dan Marcic, Understanding Management 12e (2023), Ch. 9, hal. 298–359 (PDF 326–387); RPP Excel 2026, TM 10.",
+    "intro": "Perusahaan dalam kasus RPP harus menghemat biaya tanpa kehilangan kemampuan untuk pulih. Memilih orang, mengembangkan talenta dan merawat lingkungan kerja perlu dipikirkan bersama. [hal. 358]",
+    "layout": "layered",
+    "coreReadingMinutes": 20,
+    "objectives": [
+      "HRM menghubungkan talenta dengan strategi dan kinerja.",
+      "Social contract menjelaskan kontribusi serta kesempatan kedua pihak.",
+      "Job analysis, recruiting dan selection membantu menilai fit.",
+      "Training, development dan feedback mempunyai fokus berbeda.",
+      "Rewards, fairness dan exit information memengaruhi retensi.",
+      "Diversity dan inclusion perlu dinilai terpisah."
+    ],
+    "blocks": [
+      {
+        "kind": "h2",
+        "text": "1. Kilat: Talenta, HRM strategis dan inclusion"
+      },
+      {
+        "kind": "figure",
+        "spec": {
+          "id": "MNU108-10-OV",
+          "title": "Strategi organisasi memerlukan orang dan lingkungan yang sesuai",
+          "type": "parallel",
+          "nodes": [
+            {
+              "title": "Find the right people",
+              "items": [
+                "HR planning, job analysis dan forecasting",
+                "Recruiting dan selecting"
+              ]
+            },
+            {
+              "title": "Manage talent",
+              "items": [
+                "Training dan development",
+                "Appraisal serta feedback"
+              ]
+            },
+            {
+              "title": "Maintain an effective workforce",
+              "items": [
+                "Wages/salary dan benefits",
+                "Labor relations dan terminations"
+              ]
+            }
+          ],
+          "source": "Daft dan Marcic, Understanding Management 12e, [hal. 300–351].",
+          "alt": "Strategi perusahaan menghubungkan pencarian, pengembangan dan pemeliharaan tenaga kerja. Inclusion membentuk lingkungan tempat ketiganya berjalan.",
+          "result": "Strategi, kinerja dan inclusion"
+        }
+      },
+      {
+        "kind": "ul",
+        "items": [
+          "HRM menghubungkan talenta dengan strategi dan kinerja.",
+          "Social contract menjelaskan kontribusi serta kesempatan kedua pihak.",
+          "Job analysis, recruiting dan selection membantu menilai fit.",
+          "Training, development dan feedback mempunyai fokus berbeda.",
+          "Rewards, fairness dan exit information memengaruhi retensi.",
+          "Diversity dan inclusion perlu dinilai terpisah.",
+          "Bias, hambatan promosi dan akses kesempatan perlu diperiksa."
+        ]
+      },
+      {
+        "kind": "pendalaman",
+        "title": "Istilah Inggris yang digunakan",
+        "blocks": [
+          {
+            "kind": "table",
+            "title": "Istilah dan makna",
+            "headers": [
+              "Istilah",
+              "Makna dalam bab"
+            ],
+            "rows": [
+              [
+                "Human capital",
+                "Nilai pengetahuan, pengalaman, skills serta kemampuan orang."
+              ],
+              [
+                "Employability",
+                "Kemampuan tetap layak mendapat pekerjaan."
+              ],
+              [
+                "Inclusion",
+                "Lingkungan yang memberi akses, suara dan rasa diterima."
+              ],
+              [
+                "Sponsor",
+                "Pihak yang aktif memperjuangkan kesempatan karier seseorang."
+              ]
+            ],
+            "caption": "Daft dan Marcic, Understanding Management 12e (2023), Ch. 9, hal. 298–359 (PDF 326–387); RPP Excel 2026, TM 10.",
+            "stackOnMobile": true
+          }
+        ]
+      },
+      {
+        "kind": "h2",
+        "text": "2. HRM strategis dan human capital"
+      },
+      {
+        "kind": "p",
+        "text": "Mengapa keputusan HR memengaruhi strategi? Human capital adalah nilai ekonomi pengetahuan, pengalaman, kemampuan dan keterampilan pegawai. HRM merancang sistem untuk memakai talenta secara efektif/efisien. Semua manajer ikut bertanggung jawab, dan kebijakan HR perlu cocok dengan sasaran organisasi. [hal. 300–304]"
+      },
+      {
+        "kind": "figure",
+        "spec": {
+          "id": "MNU108-10-9-2",
+          "title": "Strategic Human Resource Management",
+          "type": "parallel",
+          "nodes": [
+            {
+              "title": "Find the right people",
+              "items": [
+                "HR planning, job analysis dan forecasting",
+                "Recruiting dan selecting"
+              ]
+            },
+            {
+              "title": "Manage talent",
+              "items": [
+                "Training dan development",
+                "Appraisal serta feedback"
+              ]
+            },
+            {
+              "title": "Maintain an effective workforce",
+              "items": [
+                "Wages/salary dan benefits",
+                "Labor relations dan terminations"
+              ]
+            }
+          ],
+          "source": "Daft dan Marcic, Understanding Management 12e, [hal. 303].",
+          "alt": "Tiga fungsi HR mengelilingi dan mendukung strategi perusahaan.",
+          "result": "Company strategy terhubung dengan tenaga kerja"
+        }
+      },
+      {
+        "kind": "figure",
+        "spec": {
+          "id": "MNU108-10-9-3",
+          "title": "The Role and Value of Human Capital Investments",
+          "type": "process",
+          "nodes": [
+            {
+              "title": "Level 3: Human capital processes",
+              "items": [
+                "Workforce planning, recruiting dan human capital strategy",
+                "Career development, appraisal, rewards/recognition"
+              ]
+            },
+            {
+              "title": "Level 2: Key performance drivers",
+              "items": [
+                "Productivity, quality, innovation dan customer service"
+              ]
+            },
+            {
+              "title": "Level 1: Business results",
+              "items": [
+                "Revenue growth",
+                "ROIC atau ROE; total return to shareholders"
+              ]
+            }
+          ],
+          "source": "Daft dan Marcic, Understanding Management 12e, [hal. 303–304].",
+          "alt": "The Role and Value of Human Capital Investments. Level 3: Human capital processes; Level 2: Key performance drivers; Level 1: Business results",
+          "footer": "Ini kerangka keterkaitan untuk evaluasi, tanpa jaminan setiap investasi otomatis menghasilkan angka tertentu."
+        }
+      },
+      {
+        "kind": "pendalaman",
+        "title": "Data historis dan konteks hukum sumber",
+        "blocks": [
+          {
+            "kind": "figure",
+            "spec": {
+              "id": "MNU108-10-9-1",
+              "title": "Faktor keberhasilan kompetitif: survei IBM 2012",
+              "type": "bar",
+              "nodes": [],
+              "source": "Daft dan Marcic, Understanding Management 12e, [hal. 301].",
+              "alt": "Survei sumber 2012: human capital 71%, customer relationships 66%, product/service innovation 52%.",
+              "unit": "Persen (%)",
+              "max": 100,
+              "data": [
+                {
+                  "label": "Human capital",
+                  "value": 71
+                },
+                {
+                  "label": "Customer relationships",
+                  "value": 66
+                },
+                {
+                  "label": "Product/service innovation",
+                  "value": 52
+                }
+              ],
+              "footer": "Persentase CEO yang menyebut faktor penting. Kategori tidak dijumlahkan menjadi komposisi 100%."
+            }
+          },
+          {
+            "kind": "table",
+            "title": "Exhibit 9.4: hukum federal historis dalam buku",
+            "headers": [
+              "Kelompok",
+              "Nama dan tahun pada sumber",
+              "Pokok bahasan"
+            ],
+            "rows": [
+              [
+                "Kesempatan setara",
+                "Civil Rights Act Title VII (1964); amendment (1991)",
+                "Diskriminasi dan pemulihan kerugian"
+              ],
+              [
+                "Kesempatan setara",
+                "ADA (1990); Vocational Rehabilitation Act (1973)",
+                "Disabilitas dan accommodation"
+              ],
+              [
+                "Kesempatan setara",
+                "ADEA (1967; amendemen 1978/1986)",
+                "Usia dan pembatasan retirement wajib"
+              ],
+              [
+                "Kompensasi/benefit",
+                "HIPAA (1996); FMLA (1993)",
+                "Kesehatan dan leave bagi yang memenuhi syarat"
+              ],
+              [
+                "Kompensasi/benefit",
+                "Equal Pay Act (1963)",
+                "Pembayaran untuk pekerjaan yang secara substansial sama"
+              ],
+              [
+                "Kesehatan/keselamatan",
+                "PPACA (2010); COBRA (1985 menurut label buku)",
+                "Cakupan kesehatan; detail tergantung syarat dan periode hukum"
+              ],
+              [
+                "Kesehatan/keselamatan",
+                "Occupational Safety and Health Act (1970)",
+                "Keselamatan dan kesehatan kerja"
+              ]
+            ],
+            "caption": "[hal. 305–306]",
+            "stackOnMobile": true
+          },
+          {
+            "kind": "p",
+            "text": "Konteks bagian ini adalah hukum Amerika dalam buku 2023. Ada koreksi: hal.351 menulis Title VIII untuk pendidikan, sedangkan DOJ menyebut Title IX. Pertanyaan disabilitas pada Exhibit 9.8 juga perlu batas tahap seleksi: EEOC membatasi pertanyaan terkait disabilitas sebelum conditional job offer. [DOJ, Title IX](https://www.justice.gov/crt/fcs/TitleIX-SexDiscrimination); [EEOC, Pre-Employment Inquiries and Disability](https://www.eeoc.gov/pre-employment-inquiries-and-disability), dibaca 13 Oktober 2026. [hal. 317, 351]"
+          }
+        ]
+      },
+      {
+        "kind": "self-check",
+        "question": "Mengapa HRM strategis mempunyai fungsi lebih luas dari administrasi personalia?",
+        "answer": [
+          {
+            "kind": "p",
+            "text": "Strategi memerlukan orang, kemampuan, rewards dan lingkungan kerja yang sesuai. HRM menghubungkan pencarian, pengembangan dan pemeliharaan tenaga kerja dengan hasil organisasi. [hal. 300–304]"
+          }
+        ],
+        "signal": "Jawaban menyebut konsep, bukti, dan alasan; nama teori saja belum cukup."
+      },
+      {
+        "kind": "h2",
+        "text": "3. Social contract dan employability"
+      },
+      {
+        "kind": "p",
+        "text": "Perusahaan dan pegawai saling menawarkan kontribusi serta kesempatan. Kontrak lama menekankan keamanan kerja dan hubungan panjang. Aspirasi kontrak baru menekankan kemampuan tetap layak bekerja, tanggung jawab pengembangan, serta kerja sama untuk memperbaiki bisnis. Risiko dan kewajiban kedua pihak perlu dibaca bersama. [hal. 308–311]"
+      },
+      {
+        "kind": "table",
+        "title": "The Changing Social Contract",
+        "headers": [
+          "Pihak",
+          "Kontrak lama",
+          "Aspirasi baru"
+        ],
+        "rows": [
+          [
+            "Pegawai",
+            "Job security; peran rutin; mengetahui tugas",
+            "Employability; tanggung jawab pribadi; partner perbaikan; belajar"
+          ],
+          [
+            "Perusahaan",
+            "Training standar; kompensasi tradisional; informasi/otoritas terbatas",
+            "Kesempatan pengembangan; perpindahan lateral; tugas menantang; informasi dan keputusan"
+          ]
+        ],
+        "caption": "[hal. 309]",
+        "stackOnMobile": true
+      },
+      {
+        "kind": "p",
+        "text": "Gig economy melibatkan pekerjaan dengan masa dan komitmen relatif pendek. Contingent workers bekerja sesuai kebutuhan dan dapat menjadi shadow workforce. Fleksibilitas dapat memberi peluang, tetapi juga memindahkan risiko ekonomi kepada pegawai dan menimbulkan pertanyaan tentang pemenuhan kontrak sosial. [hal. 309–311]"
+      },
+      {
+        "kind": "self-check",
+        "question": "Apakah employability menghapus tanggung jawab perusahaan mengembangkan pegawai?",
+        "answer": [
+          {
+            "kind": "p",
+            "text": "Tidak. Aspirasi baru menempatkan pengembangan pada kedua pihak: pegawai membangun kemampuan, sementara perusahaan menyediakan tugas, informasi dan kesempatan belajar yang bermakna. [hal. 308–311]"
+          }
+        ],
+        "signal": "Jawaban menyebut konsep, bukti, dan alasan; nama teori saja belum cukup."
+      },
+      {
+        "kind": "h2",
+        "text": "4. Finding the right people: cocok bagi dua pihak"
+      },
+      {
+        "kind": "p",
+        "text": "Memilih orang dimulai dari kebutuhan pekerjaan. HR planning memperkirakan kebutuhan dan kekosongan jabatan. Matching model menilai kecocokan kebutuhan, kepentingan dan nilai perusahaan sekaligus individu. Rekrutmen mencari kandidat; selection menilai kecocokan berdasarkan bukti. [hal. 312–320]"
+      },
+      {
+        "kind": "figure",
+        "spec": {
+          "id": "MNU108-10-9-6",
+          "title": "Attracting an Effective Workforce",
+          "type": "process",
+          "nodes": [
+            {
+              "title": "HR planning",
+              "items": [
+                "Pertumbuhan, resignations dan retirements",
+                "Job analysis dan kompetensi yang diperlukan"
+              ]
+            },
+            {
+              "title": "Choose recruiting sources",
+              "items": [
+                "Sumber kandidat yang relevan",
+                "Berikan realistic job preview"
+              ]
+            },
+            {
+              "title": "Select the candidate",
+              "items": [
+                "Application, interview dan tests",
+                "Bandingkan kebutuhan serta kontribusi dua pihak"
+              ]
+            },
+            {
+              "title": "Welcome the new employee",
+              "items": [
+                "Pegawai masuk dengan ekspektasi yang lebih jelas"
+              ]
+            }
+          ],
+          "source": "Daft dan Marcic, Understanding Management 12e, [hal. 312–320].",
+          "alt": "Attracting an Effective Workforce. HR planning; Choose recruiting sources; Select the candidate; Welcome the new employee",
+          "footer": "Matching mencakup company needs ↔ employee contributions dan company inducements ↔ employee needs."
+        }
+      },
+      {
+        "kind": "table",
+        "title": "Perangkat seleksi",
+        "headers": [
+          "Perangkat",
+          "Apa yang diperiksa"
+        ],
+        "rows": [
+          [
+            "Job description",
+            "Tugas dan tanggung jawab pekerjaan"
+          ],
+          [
+            "Job specification",
+            "Pengetahuan, keterampilan dan syarat yang relevan"
+          ],
+          [
+            "Realistic job preview",
+            "Informasi positif/negatif yang realistis tentang pekerjaan"
+          ],
+          [
+            "Structured interview",
+            "Pertanyaan standar agar kandidat dapat dibandingkan"
+          ],
+          [
+            "Behavioral question",
+            "Contoh perilaku/tindakan yang pernah dilakukan"
+          ],
+          [
+            "Situational question",
+            "Cara kandidat menangani situasi hipotetis"
+          ],
+          [
+            "Work sample",
+            "Contoh kerja nyata atau simulasi tugas"
+          ],
+          [
+            "Employment tests",
+            "Kemampuan/atribut yang relevan; metode dan konteks perlu sesuai"
+          ]
+        ],
+        "caption": "[hal. 313–320]",
+        "stackOnMobile": true
+      },
+      {
+        "kind": "pendalaman",
+        "title": "Detail DBS, wawancara dan batas legal",
+        "blocks": [
+          {
+            "kind": "figure",
+            "spec": {
+              "id": "MNU108-10-9-7",
+              "title": "DBS: kapasitas keterampilan digital",
+              "type": "matrix",
+              "nodes": [
+                {
+                  "title": "Digital communications",
+                  "items": []
+                },
+                {
+                  "title": "Teamwork",
+                  "items": []
+                },
+                {
+                  "title": "Risk management",
+                  "items": []
+                },
+                {
+                  "title": "Using digital work technologies",
+                  "items": []
+                },
+                {
+                  "title": "People-focused intention",
+                  "items": []
+                },
+                {
+                  "title": "Data-driven decision making",
+                  "items": []
+                },
+                {
+                  "title": "Digital business view",
+                  "items": []
+                }
+              ],
+              "source": "Daft dan Marcic, Understanding Management 12e, [hal. 314].",
+              "alt": "DBS: kapasitas keterampilan digital. Digital communications; Teamwork; Risk management; Using digital work technologies; People-focused intention; Data-driven decision making; Digital business view",
+              "footer": "Contoh DBS: setiap orang diharapkan mampu mengembangkan kapasitas, tanpa kewajiban menjadi ahli pada semua bidang."
+            }
+          },
+          {
+            "kind": "table",
+            "title": "Exhibit 9.8: relevansi pertanyaan dan batas konteks AS",
+            "headers": [
+              "Kategori sumber",
+              "Fokus yang relevan pekerjaan",
+              "Batas"
+            ],
+            "rows": [
+              [
+                "Nama/national origin",
+                "Identifikasi nama/riwayat kerja",
+                "Jangan menganggap asal nama sebagai bukti kemampuan."
+              ],
+              [
+                "Race/religion",
+                "Kualifikasi dan persyaratan pekerjaan",
+                "Kategori pribadi tidak otomatis relevan seleksi."
+              ],
+              [
+                "Disability",
+                "Tugas pekerjaan dan accommodation yang dibutuhkan",
+                "Batas pertanyaan sebelum/selepas conditional offer mengikuti EEOC; tabel buku terlalu luas."
+              ],
+              [
+                "Age",
+                "Persyaratan usia yang relevan",
+                "Usia rinci tidak otomatis memprediksi kinerja."
+              ],
+              [
+                "Criminal record",
+                "Konteks relevansi tugas",
+                "Riwayat arrest berbeda dari conviction; periksa aturan yang berlaku."
+              ],
+              [
+                "Marital/family status",
+                "Persyaratan tugas",
+                "Status/anak bukan pengganti informasi kemampuan."
+              ],
+              [
+                "Education/experience",
+                "Pendidikan dan pengalaman terkait",
+                "Tahun kelulusan dapat mengungkap usia."
+              ],
+              [
+                "Citizenship",
+                "Hak legal bekerja pada konteks AS",
+                "Kewarganegaraan asing sendiri berbeda dari hak bekerja."
+              ]
+            ],
+            "caption": "[hal. 317]",
+            "stackOnMobile": true
+          },
+          {
+            "kind": "p",
+            "text": "Bias dapat masuk ke wawancara, interpretasi tes dan online checks. Menambah teknologi atau algoritma tidak membuat seleksi otomatis adil. Pilih informasi yang relevan, terapkan kriteria konsisten dan periksa hasilnya. [hal. 316–320]"
+          }
+        ]
+      },
+      {
+        "kind": "self-check",
+        "question": "Mengapa realistic job preview menjelaskan sisi positif dan negatif pekerjaan?",
+        "answer": [
+          {
+            "kind": "p",
+            "text": "Informasi lengkap membantu kandidat dan organisasi menilai fit. Menampilkan hanya sisi menarik dapat menciptakan ekspektasi yang tidak sesuai dan meningkatkan risiko keluar. [hal. 312–320]"
+          }
+        ],
+        "signal": "Jawaban menyebut konsep, bukti, dan alasan; nama teori saja belum cukup."
+      },
+      {
+        "kind": "h2",
+        "text": "5. Developing talent dan performance management"
+      },
+      {
+        "kind": "p",
+        "text": "Sesudah rekrutmen, orang masih perlu belajar dan menerima feedback. Training berfokus pada kemampuan pekerjaan sekarang; development memperluas kemampuan karier. Performance appraisal mengamati/menilai, mencatat dan memberi feedback, sedangkan pengelolaan performance dapat berlangsung terus-menerus. [hal. 321–325]"
+      },
+      {
+        "kind": "table",
+        "title": "Cara membangun dan menilai kemampuan",
+        "headers": [
+          "Cara",
+          "Fungsi dan batas"
+        ],
+        "rows": [
+          [
+            "On-the-job training",
+            "Pegawai berpengalaman mengajarkan tugas kerja"
+          ],
+          [
+            "Corporate university",
+            "Fasilitas/program pembelajaran internal yang lebih luas"
+          ],
+          [
+            "Social learning",
+            "Belajar informal lewat jaringan dan alat sosial"
+          ],
+          [
+            "Promotion from within",
+            "Kesempatan tumbuh lewat tugas serta tanggung jawab baru"
+          ],
+          [
+            "360-degree feedback",
+            "Banyak penilai, termasuk diri sendiri; mendukung pemahaman dan pengembangan"
+          ],
+          [
+            "Forced ranking",
+            "Peringkat relatif dapat mengidentifikasi performa, tetapi berisiko merusak kolaborasi/morale"
+          ]
+        ],
+        "caption": "[hal. 321–325]",
+        "stackOnMobile": true
+      },
+      {
+        "kind": "table",
+        "title": "Changes in Performance Management, Exhibit 9.12",
+        "headers": [
+          "Lama",
+          "Pendekatan baru sumber"
+        ],
+        "rows": [
+          [
+            "Pertemuan tahunan",
+            "Continuous feedback"
+          ],
+          [
+            "Annual goals",
+            "Shorter-term goals"
+          ],
+          [
+            "Single-element assessment",
+            "Multidimensional ratings"
+          ],
+          [
+            "Subjective opinions",
+            "Objective data"
+          ],
+          [
+            "Individual work",
+            "Multiple cross-functional teams"
+          ],
+          [
+            "Work activity",
+            "Developing new skills"
+          ]
+        ],
+        "caption": "[hal. 325]",
+        "stackOnMobile": true
+      },
+      {
+        "kind": "pendalaman",
+        "title": "Grafik dan variasi feedback sumber",
+        "blocks": [
+          {
+            "kind": "figure",
+            "spec": {
+              "id": "MNU108-10-9-10",
+              "title": "Bidang perbaikan kandidat: analisis SkillSurvey 2016",
+              "type": "bar",
+              "nodes": [],
+              "source": "Daft dan Marcic, Understanding Management 12e, [hal. 321].",
+              "alt": "Sepuluh bidang perbaikan pada sumber, dari confidence 7,3% sampai attention to detail 2,8%.",
+              "unit": "Persen (%)",
+              "max": 10,
+              "data": [
+                {
+                  "label": "Confidence",
+                  "value": 7.3
+                },
+                {
+                  "label": "Communication",
+                  "value": 7
+                },
+                {
+                  "label": "Experience",
+                  "value": 5.8
+                },
+                {
+                  "label": "Knowledge",
+                  "value": 5.3
+                },
+                {
+                  "label": "Time management",
+                  "value": 4.3
+                },
+                {
+                  "label": "Delegating",
+                  "value": 3.8
+                },
+                {
+                  "label": "Works too much",
+                  "value": 3.7
+                },
+                {
+                  "label": "Further education/certification",
+                  "value": 3.2
+                },
+                {
+                  "label": "Handling stress",
+                  "value": 2.9
+                },
+                {
+                  "label": "Attention to detail/accuracy",
+                  "value": 2.8
+                }
+              ],
+              "footer": "Data historis 12.800 references. Angka menggambarkan sampel sumber, tanpa diagnosis tiap pegawai."
+            }
+          },
+          {
+            "kind": "table",
+            "title": "Exhibit 9.11: contoh pola feedback pada sumber",
+            "headers": [
+              "Konteks contoh",
+              "Pola dalam ilustrasi buku"
+            ],
+            "rows": [
+              [
+                "Amerika",
+                "Feedback positif lebih eksplisit; kritik sering dibungkus pujian"
+              ],
+              [
+                "China",
+                "Tingkat langsungnya kritik dapat berbeda menurut hierarki"
+              ],
+              [
+                "Jepang",
+                "Kritik dalam ilustrasi sangat tidak langsung"
+              ],
+              [
+                "Meksiko",
+                "Perbedaan pendapat sering disampaikan secara halus"
+              ],
+              [
+                "Ghana",
+                "Contoh memakai perantara untuk menghindari konfrontasi langsung"
+              ],
+              [
+                "Jerman",
+                "Kritik dalam ilustrasi lebih langsung"
+              ]
+            ],
+            "caption": "[hal. 323]",
+            "stackOnMobile": true
+          },
+          {
+            "kind": "p",
+            "text": "Exhibit 9.11 adalah ilustrasi budaya dari sumber, tanpa klaim semua individu suatu negara bertindak sama. Cek pemahaman penerima dan konteks hubungan sebelum memilih cara menyampaikan feedback. [hal. 323]"
+          }
+        ]
+      },
+      {
+        "kind": "self-check",
+        "question": "Apa manfaat dan batas 360-degree feedback dibandingkan forced ranking?",
+        "answer": [
+          {
+            "kind": "p",
+            "text": "Banyak penilai menambah perspektif untuk development, tetapi mutu feedback tetap perlu dijaga. Forced ranking membandingkan orang secara relatif dan dapat mendorong persaingan yang merusak kerja bersama. [hal. 321–325]"
+          }
+        ],
+        "signal": "Jawaban menyebut konsep, bukti, dan alasan; nama teori saja belum cukup."
+      },
+      {
+        "kind": "h2",
+        "text": "6. Maintaining: rewards, fairness dan departure"
+      },
+      {
+        "kind": "p",
+        "text": "Merekrut orang bagus belum cukup bila sistem rewards dan kondisi kerja membuatnya ingin keluar. Total rewards mencakup pembayaran, insentif serta benefits. Job evaluation menilai nilai pekerjaan secara internal, sedangkan survei upah memberi pembanding eksternal. [hal. 326–330]"
+      },
+      {
+        "kind": "table",
+        "title": "Bedakan dasar keputusan HR",
+        "headers": [
+          "Konsep",
+          "Makna"
+        ],
+        "rows": [
+          [
+            "Job-based pay",
+            "Bayaran terkait tugas pekerjaan"
+          ],
+          [
+            "Skill-based pay",
+            "Bayaran terkait tingkat keterampilan/kompetensi"
+          ],
+          [
+            "Pay-for-performance",
+            "Sebagian rewards dikaitkan dengan effort/performance"
+          ],
+          [
+            "Compensation equity",
+            "Kewajaran struktur rewards internal/eksternal"
+          ],
+          [
+            "Benefits",
+            "Komponen non-gaji yang relevan kebutuhan pegawai"
+          ],
+          [
+            "Exit interview",
+            "Memahami alasan keluar dan masalah organisasi"
+          ]
+        ],
+        "caption": "[hal. 326–330]",
+        "stackOnMobile": true
+      },
+      {
+        "kind": "p",
+        "text": "Pengakhiran hubungan kerja dapat terjadi karena kinerja, pengurangan tenaga, retirement atau keputusan pegawai sendiri. Exit interview menjadi sumber informasi untuk memperbaiki retensi, dengan perhatian pada kemungkinan pegawai tidak nyaman mengungkapkan alasan secara langsung. [hal. 328]"
+      },
+      {
+        "kind": "self-check",
+        "question": "Mengapa kenaikan gaji saja belum tentu menyelesaikan turnover?",
+        "answer": [
+          {
+            "kind": "p",
+            "text": "Rewards adalah satu unsur. Kebutuhan, kepuasan, kesempatan berkembang, fairness dan kondisi kerja juga memengaruhi pilihan pegawai; diagnosis perlu memakai data. [hal. 326–330]"
+          }
+        ],
+        "signal": "Jawaban menyebut konsep, bukti, dan alasan; nama teori saja belum cukup."
+      },
+      {
+        "kind": "h2",
+        "text": "7. Diversity, inclusion dan bias"
+      },
+      {
+        "kind": "p",
+        "text": "Diversity mencakup semua cara orang berbeda. Inclusion menekankan perasaan diterima serta dihargai sebagai anggota dengan keunikan masing-masing. Memiliki anggota beragam belum otomatis membuat setiap orang mempunyai suara dan kesempatan. [hal. 330–343]"
+      },
+      {
+        "kind": "figure",
+        "spec": {
+          "id": "MNU108-10-9-16",
+          "title": "Traditional Versus Inclusive Models of Diversity",
+          "type": "parallel",
+          "nodes": [
+            {
+              "title": "Traditional dimensions",
+              "items": [
+                "Age, race, gender",
+                "Pay level, disability dan lifestyle"
+              ]
+            },
+            {
+              "title": "Inclusive dimensions",
+              "items": [
+                "Juga function, competency, income dan position",
+                "Parent, language, work style, nationality",
+                "Military experience dan personality"
+              ]
+            }
+          ],
+          "source": "Daft dan Marcic, Understanding Management 12e, [hal. 335–336].",
+          "alt": "Model inclusive memperluas perhatian pada berbagai perbedaan, termasuk yang berkembang selama hidup."
+        }
+      },
+      {
+        "kind": "figure",
+        "spec": {
+          "id": "MNU108-10-9-17",
+          "title": "Dividends of Workplace Diversity",
+          "type": "parallel",
+          "nodes": [
+            {
+              "title": "Talent dan pasar",
+              "items": [
+                "Memakai kemampuan pegawai",
+                "Memahami kebutuhan pasar"
+              ]
+            },
+            {
+              "title": "Perspektif dan solusi",
+              "items": [
+                "Memperluas pemahaman manajer",
+                "Meningkatkan problem solving tim"
+              ]
+            },
+            {
+              "title": "Retensi dan biaya",
+              "items": [
+                "Mengurangi potensi biaya turnover",
+                "Absenteeism dan perkara diskriminasi"
+              ]
+            }
+          ],
+          "source": "Daft dan Marcic, Understanding Management 12e, [hal. 337–338].",
+          "alt": "Dividends of Workplace Diversity. Talent dan pasar; Perspektif dan solusi; Retensi dan biaya",
+          "result": "Potensi kontribusi pada kinerja",
+          "footer": "Manfaat membutuhkan inclusion dan pengelolaan perbedaan; tabel/diagram tidak menjamin hasil setiap organisasi."
+        }
+      },
+      {
+        "kind": "table",
+        "title": "Jenis bias dan respons",
+        "headers": [
+          "Konsep",
+          "Pembeda"
+        ],
+        "rows": [
+          [
+            "Unconscious bias",
+            "Asosiasi yang memengaruhi keputusan tanpa disadari"
+          ],
+          [
+            "Prejudice",
+            "Sikap/penilaian terhadap kelompok"
+          ],
+          [
+            "Discrimination",
+            "Tindakan/keputusan yang merugikan berdasarkan kriteria tidak relevan"
+          ],
+          [
+            "Stereotype",
+            "Keyakinan kaku, berlebihan mengenai anggota kelompok"
+          ],
+          [
+            "Ethnocentrism",
+            "Menganggap kelompok/subculture sendiri lebih unggul"
+          ],
+          [
+            "Valuing cultural differences",
+            "Mengenali pola secara kritis sambil menilai keunikan individu"
+          ]
+        ],
+        "caption": "[hal. 339–342]",
+        "stackOnMobile": true
+      },
+      {
+        "kind": "pendalaman",
+        "title": "Data historis diversity dalam buku",
+        "blocks": [
+          {
+            "kind": "figure",
+            "spec": {
+              "id": "MNU108-10-9-15-RACE",
+              "title": "Komposisi race: 2004 dan proyeksi 2024 dalam buku",
+              "type": "bar",
+              "nodes": [],
+              "source": "Daft dan Marcic, Understanding Management 12e, [hal. 333].",
+              "alt": "Komposisi race: 2004 dan proyeksi 2024 dalam buku. ",
+              "unit": "Persen (%)",
+              "max": 100,
+              "seriesLabels": [
+                "2004",
+                "2024 (proyeksi)"
+              ],
+              "data": [
+                {
+                  "label": "White",
+                  "value": 82.1,
+                  "value2": 77
+                },
+                {
+                  "label": "Black",
+                  "value": 11.3,
+                  "value2": 12.7
+                },
+                {
+                  "label": "Asian",
+                  "value": 4.3,
+                  "value2": 6.6
+                },
+                {
+                  "label": "All other race groups",
+                  "value": 2.3,
+                  "value2": 3.7
+                }
+              ],
+              "footer": "Empat kategori menjumlah 100% pada tiap periode. Proyeksi sumber tidak dinyatakan sebagai realisasi 2024."
+            }
+          },
+          {
+            "kind": "figure",
+            "spec": {
+              "id": "MNU108-10-9-15-ORIGIN",
+              "title": "Ethnic origin: dua kategori terpisah dari race",
+              "type": "bar",
+              "nodes": [],
+              "source": "Daft dan Marcic, Understanding Management 12e, [hal. 333].",
+              "alt": "Ethnic origin: dua kategori terpisah dari race. ",
+              "unit": "Persen (%)",
+              "max": 100,
+              "seriesLabels": [
+                "2004",
+                "2024 (proyeksi)"
+              ],
+              "data": [
+                {
+                  "label": "Other than Hispanic origin",
+                  "value": 86.9,
+                  "value2": 80.2
+                },
+                {
+                  "label": "Hispanic origin",
+                  "value": 13.1,
+                  "value2": 19.8
+                }
+              ],
+              "footer": "Hispanic dapat berasal dari race mana pun; kelompok origin tidak ditambahkan ke total kelompok race."
+            }
+          },
+          {
+            "kind": "table",
+            "title": "Exhibit 9.13: ranking historis sumber Fortune Januari 2020",
+            "headers": [
+              "Urutan / perusahaan",
+              "Women (%)",
+              "Minorities (%)",
+              "Disabilities (%)"
+            ],
+            "rows": [
+              [
+                "1 Stryker",
+                "35",
+                "26",
+                "2"
+              ],
+              [
+                "2 Cisco",
+                "28",
+                "48",
+                "5"
+              ],
+              [
+                "3 Progressive Insurance",
+                "N.A.",
+                "N.A.",
+                "11"
+              ],
+              [
+                "4 Accenture",
+                "38",
+                "51",
+                "9"
+              ],
+              [
+                "5 Synchrony",
+                "62",
+                "45",
+                "16"
+              ],
+              [
+                "6 Mohegan Sun",
+                "48",
+                "49",
+                "13"
+              ],
+              [
+                "7 Workday",
+                "42",
+                "45",
+                "4"
+              ],
+              [
+                "8 Adobe",
+                "36",
+                "39",
+                "5"
+              ],
+              [
+                "9 Ultimate Software",
+                "49",
+                "46",
+                "5"
+              ],
+              [
+                "10 Marriott",
+                "55",
+                "66",
+                "5"
+              ]
+            ],
+            "caption": "[hal. 331]",
+            "stackOnMobile": true
+          },
+          {
+            "kind": "p",
+            "text": "Ranking mempertimbangkan survei pegawai dan keragaman workforce/leadership. N.A. dipertahankan sebagai data tidak tersedia. Kelompok dalam tiga kolom dapat saling tumpang tindih. [hal. 331]"
+          },
+          {
+            "kind": "table",
+            "title": "Exhibit 9.14: contoh tonggak historis versi buku",
+            "headers": [
+              "Tahun sumber",
+              "Peristiwa ringkas"
+            ],
+            "rows": [
+              [
+                "2002",
+                "Merrill Lynch menunjuk CEO African American"
+              ],
+              [
+                "2004: label buku",
+                "Contoh Sony/Wolters Kluwer; koreksi tanggal primer: Stringer 22 Juni 2005, McKinstry 1 September 2003 (catatan di bawah)."
+              ],
+              [
+                "2006",
+                "Me Too dikemukakan; PepsiCo menunjuk CEO perempuan"
+              ],
+              [
+                "2009",
+                "Xerox menunjuk perempuan African American sebagai chairperson/CEO"
+              ],
+              [
+                "2011",
+                "IBM menunjuk CEO perempuan"
+              ],
+              [
+                "2013",
+                "Hashtag BlackLivesMatter mulai digunakan"
+              ],
+              [
+                "2014",
+                "GM dan Federal Reserve memiliki pimpinan perempuan; laporan diversity perusahaan teknologi berkembang"
+              ],
+              [
+                "2015",
+                "Deloitte menunjuk CEO perempuan; Toyota menunjuk executive vice president non-Jepang"
+              ],
+              [
+                "2019",
+                "Semua board perusahaan S&P500 mempunyai setidaknya satu perempuan menurut sumber"
+              ],
+              [
+                "2020",
+                "Contoh perubahan kepemimpinan militer dan perluasan gerakan BlackLivesMatter"
+              ]
+            ],
+            "caption": "[hal. 332]",
+            "stackOnMobile": true
+          }
+        ]
+      },
+      {
+        "kind": "self-check",
+        "question": "Mengapa diversity dan inclusion dinilai terpisah?",
+        "answer": [
+          {
+            "kind": "p",
+            "text": "Komposisi anggota yang berbeda menggambarkan diversity. Inclusion menilai apakah perbedaan itu dihargai dan orang merasa diterima serta dapat berkontribusi. [hal. 330–343]"
+          }
+        ],
+        "signal": "Jawaban menyebut konsep, bukti, dan alasan; nama teori saja belum cukup."
+      },
+      {
+        "kind": "h2",
+        "text": "8. Mengurangi hambatan karier dan membangun inclusion"
+      },
+      {
+        "kind": "p",
+        "text": "Hambatan tidak hanya muncul pada jabatan tertinggi. Missing the first rung berarti hambatan pada promosi awal ke manajemen; glass ceiling membatasi mobilitas ke atas. Sponsor, kebijakan yang adil dan feedback yang berguna dapat membantu membuka kesempatan karier. [hal. 344–352]"
+      },
+      {
+        "kind": "table",
+        "title": "Hambatan dan tindakan",
+        "headers": [
+          "Konsep/tindakan",
+          "Makna sumber"
+        ],
+        "rows": [
+          [
+            "Glass ceiling",
+            "Hambatan tak terlihat pada mobilitas ke jabatan atas"
+          ],
+          [
+            "First rung",
+            "Kesempatan promosi awal ke jalur manajemen"
+          ],
+          [
+            "Double jeopardy / bamboo ceiling",
+            "Istilah sumber untuk kombinasi hambatan serta kendala kemajuan kelompok tertentu"
+          ],
+          [
+            "Business-line positions dan development",
+            "Memberi pengalaman/peran yang membuka peluang karier"
+          ],
+          [
+            "Mentor",
+            "Memberi arahan informal dan informasi"
+          ],
+          [
+            "Sponsor",
+            "Aktif memperjuangkan kesempatan dan hubungan yang membantu advancement"
+          ],
+          [
+            "Coaching",
+            "Percakapan teratur untuk memperkuat kemampuan dan mengatasi hambatan"
+          ],
+          [
+            "Employee resource groups",
+            "Jaringan dukungan/afiliasi pegawai"
+          ]
+        ],
+        "caption": "[hal. 345–352]",
+        "stackOnMobile": true
+      },
+      {
+        "kind": "p",
+        "text": "Bagian female advantage membahas contoh/pola perilaku kolaboratif dan inklusif dalam penelitian sumber. Pola agregat tersebut tidak menentukan kualitas setiap individu. Nilai kandidat/manajer menurut kemampuan dan perilaku yang relevan. [hal. 346–347]"
+      },
+      {
+        "kind": "figure",
+        "spec": {
+          "id": "MNU108-10-9-19",
+          "title": "Inisiatif diversity: responden Fortune 1000 dalam sumber",
+          "type": "bar",
+          "nodes": [],
+          "source": "Daft dan Marcic, Understanding Management 12e, [hal. 349].",
+          "alt": "Inisiatif diversity: responden Fortune 1000 dalam sumber. ",
+          "unit": "Persen (%)",
+          "max": 100,
+          "data": [
+            {
+              "label": "Diversity-focused recruiting",
+              "value": 75
+            },
+            {
+              "label": "Training and education",
+              "value": 66
+            },
+            {
+              "label": "Community outreach",
+              "value": 61
+            }
+          ],
+          "footer": "Persentase responden survei yang dikutip. Tahun pengumpulan data tidak dinyatakan di caption; kategori dapat tumpang tindih."
+        }
+      },
+      {
+        "kind": "table",
+        "title": "Diversity initiatives and programs",
+        "headers": [
+          "Tindakan",
+          "Penerapan"
+        ],
+        "rows": [
+          [
+            "Structures/policies",
+            "Periksa kriteria, saluran keluhan dan akuntabilitas"
+          ],
+          [
+            "Expand recruitment",
+            "Perluas jaringan kandidat yang memenuhi kualifikasi"
+          ],
+          [
+            "Sponsor relationships",
+            "Dukung akses ke peran dan kesempatan advancement"
+          ],
+          [
+            "Coaching/feedback",
+            "Gunakan feedback spesifik untuk pengembangan"
+          ],
+          [
+            "Sexual harassment awareness",
+            "Buat pemahaman dan penanganan perilaku yang merugikan"
+          ],
+          [
+            "Employee resource groups",
+            "Sediakan jaringan dukungan dan partisipasi"
+          ]
+        ],
+        "caption": "[hal. 348–352]",
+        "stackOnMobile": true
+      },
+      {
+        "kind": "self-check",
+        "question": "Apa pembeda sponsor dan mentor dalam kemajuan karier?",
+        "answer": [
+          {
+            "kind": "p",
+            "text": "Mentor memberi bimbingan dan informasi. Sponsor aktif memperjuangkan pegawai ketika kesempatan proyek atau promosi muncul. [hal. 344–352]"
+          }
+        ],
+        "signal": "Jawaban menyebut konsep, bukti, dan alasan; nama teori saja belum cukup."
+      },
+      {
+        "kind": "h2",
+        "text": "Persiapan ujian"
+      },
+      {
+        "kind": "table",
+        "title": "Jangan tertukar",
+        "headers": [
+          "Pasangan",
+          "Pembeda"
+        ],
+        "rows": [
+          [
+            "Recruiting / selecting",
+            "Mencari kandidat / menilai fit."
+          ],
+          [
+            "Training / development",
+            "Tugas sekarang / kemampuan karier lebih luas."
+          ],
+          [
+            "Job evaluation / performance appraisal",
+            "Nilai pekerjaan / penilaian performa pegawai."
+          ],
+          [
+            "Diversity / inclusion",
+            "Perbedaan anggota / rasa diterima dan dihargai."
+          ],
+          [
+            "Mentor / sponsor",
+            "Bimbingan / advokasi peluang karier."
+          ]
+        ],
+        "caption": "[hal. 312–350]",
+        "stackOnMobile": true
+      },
+      {
+        "kind": "p",
+        "text": "Analisis kasus memakai kebutuhan strategi, data kinerja dan kemampuan organisasi. Jumlah orang yang harus dipangkas tidak dapat ditebak dari narasi tanpa data keuangan. [hal. 358]"
+      },
+      {
+        "kind": "solution-reveal",
+        "title": "Whether to Fire Employees?: keputusan saat krisis",
+        "prompt": "Kasus buku yang ditugaskan RPP, diparafrasekan. Perusahaan pemasok otomotif mengalami penurunan keuangan setelah pandemi mengganggu produksi dan pemenuhan pesanan. Seorang manajer senior ingin mempertahankan sebanyak mungkin pegawai melalui penyederhanaan kerja, evaluasi situasi individu dan kemungkinan pengurangan gaji. Manajer lain mengusulkan pemotongan pegawai segera melalui forced ranking. [hal. 308–309, 324–328, 358]",
+        "promptBlocks": [
+          {
+            "kind": "ul",
+            "items": [
+              "Identifikasi social contract yang diasumsikan kedua pihak.",
+              "Pilih rekomendasi sebagai manajer HR dengan alasan dan syarat pelaksanaan.",
+              "Jelaskan dampak pada human capital dan performance, serta kelemahan alternatif."
+            ]
+          }
+        ],
+        "blocks": [
+          {
+            "kind": "p",
+            "text": "Hasil analisis untuk pembanding jawaban: Manajer senior mencerminkan kontrak yang menekankan loyalitas, keamanan kerja dan hubungan jangka panjang; usul lain menekankan kecocokan kebutuhan perusahaan dan fleksibilitas tenaga kerja. Rekomendasi yang kuat memulai evaluasi kebutuhan bisnis dan kinerja dengan data, mempertimbangkan streamlining serta alternatif penghematan, dan menetapkan kriteria keputusan yang relevan pekerjaan. Pendekatan mempertahankan talenta lebih dekat dengan investasi human capital, selama perusahaan mampu menjalankan alternatif tersebut. Data kasus tidak cukup untuk menjamin semua pekerjaan dapat dipertahankan atau menyatakan pemotongan pasti tidak perlu. Forced ranking mendadak dapat mengorbankan pengetahuan, kerja sama dan trust; mempertahankan setiap orang tanpa evaluasi juga berisiko bagi kelangsungan organisasi. Komunikasi, evaluasi yang konsisten dan dukungan bagi pegawai perlu menyertai keputusan. [hal. 308–309, 324–328, 358]"
+          }
+        ]
+      },
+      {
+        "kind": "solution-reveal",
+        "title": "Latihan: seleksi relevan, pengembangan dan inclusion",
+        "prompt": "Latihan buatan: situasi berikut adalah asumsi untuk berlatih, tanpa klaim perusahaan nyata. Unit layanan membutuhkan staf untuk menangani keluhan pelanggan dan memeriksa dokumen. Panel seleksi menilai kandidat berdasarkan kesan pribadi, sementara pegawai baru menerima sedikit feedback dan tidak mendapat akses proyek untuk berkembang. [hal. 312–325, 335–342, 350]",
+        "promptBlocks": [
+          {
+            "kind": "ul",
+            "items": [
+              "Susun dasar seleksi yang relevan dan cara mengurangi bias.",
+              "Hubungkan program pengembangan dengan kebutuhan unit.",
+              "Bedakan mentor, sponsor dan coaching serta ukuran inclusion."
+            ]
+          }
+        ],
+        "blocks": [
+          {
+            "kind": "p",
+            "text": "Hasil analisis untuk pembanding jawaban: Gunakan job analysis untuk merumuskan tugas dan job specification, kemudian wawancara terstruktur dan work sample pemeriksaan dokumen/penanganan keluhan. Berikan realistic job preview agar kedua pihak memahami kecocokan pekerjaan. Training menangani tugas sekarang; development menyiapkan kemampuan lebih luas. Mentor memberi arahan; sponsor memperjuangkan akses ke kesempatan/pengembangan karier; coaching memberikan percakapan serta feedback teratur. Tinjau apakah staf mendapat suara, feedback spesifik dan kesempatan yang relevan. Menyamakan inclusion dengan komposisi pegawai saja atau memilih berdasarkan stereotip belum menjawab mutu proses. [hal. 312–325, 335–342, 350]"
+          }
+        ]
+      },
+      {
+        "kind": "pendalaman",
+        "title": "Koreksi tahun Exhibit 9.14",
+        "blocks": [
+          {
+            "kind": "p",
+            "text": "Label 2004 pada halaman 332 menggabungkan peristiwa dengan tahun yang berbeda. Laporan tahunan Wolters Kluwer 2005, halaman cetak 8 (PDF12), menyebut Nancy McKinstry menjadi CEO sejak 1 September 2003; pengumuman Sony 7 Maret 2005 menyebut appointment Howard Stringer efektif 22 Juni 2005. Gunakan tanggal primer untuk sejarah, dan kenali label yang keliru bila membandingkan exhibit buku. [Wolters Kluwer, Annual Report 2005](https://assets.contenthub.wolterskluwer.com/api/public/content/c9a3ece9a20f403db0166653756f3d5a); [Sony, New Management Structure](https://www.sony.com/en/SonyInfo/News/Press/200503/05-014E/). Diperiksa 13 Oktober 2026. [hal. 332]"
+          }
+        ]
+      }
+    ]
+  },
+  "quiz": [
+    {
+      "id": "mnu108-uas-tm10-01",
+      "tm": 10,
+      "topic": "Strategic HRM",
+      "difficulty": "basic",
+      "q": "Apa makna matching process dalam HRM strategis?",
+      "options": [
+        "Strategi, kebutuhan organisasi dan pendekatan human capital diselaraskan secara terpadu.",
+        "Strategi dipilih setelah semua kandidat ditempatkan tanpa melihat kompetensi pekerjaan.",
+        "Kebijakan HR ditetapkan hanya untuk administrasi gaji dan data attendance pegawai.",
+        "Keberhasilan strategi ditentukan mesin saja, sementara kemampuan pegawai dianggap seragam."
+      ],
+      "answer": 0,
+      "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 300–304].",
+      "sourceAnchors": [
+        "Ch. 9; [hal. 300–304]; PDF 328–332"
+      ],
+      "explanation": "Strategi hanya dapat berjalan dengan orang dan sistem HR yang sesuai. Alternatif lain: Penempatan tanpa kebutuhan, reduksi administrasi dan pengabaian kemampuan tidak mencerminkan HRM strategis. [hal. 300–304]",
+      "skill": "Diagnosis konsep, bukti dan penerapan"
+    },
+    {
+      "id": "mnu108-uas-tm10-02",
+      "tm": 10,
+      "topic": "Social contract",
+      "difficulty": "basic",
+      "q": "Apa kewajiban perusahaan dalam aspirasi social contract baru pada Exhibit 9.5?",
+      "options": [
+        "Menjamin pegawai tetap pada tugas rutin yang sama sampai akhir masa kerja.",
+        "Memberi kesempatan belajar, tugas menantang dan sumber daya untuk pengembangan.",
+        "Menggantikan semua kesempatan pengembangan dengan janji loyalitas seumur hidup.",
+        "Membatasi informasi dan kewenangan agar pegawai tidak terlibat perbaikan bisnis."
+      ],
+      "answer": 1,
+      "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 308–309].",
+      "sourceAnchors": [
+        "Ch. 9; [hal. 308–309]; PDF 336–337"
+      ],
+      "explanation": "Employability melibatkan upaya kedua pihak, dengan pegawai membangun kemampuan dan perusahaan membuka kesempatan. Alternatif lain: Pilihan lain mencerminkan kontrak lama atau mengabaikan peran perusahaan dalam pengembangan. [hal. 308–309]",
+      "skill": "Diagnosis konsep, bukti dan penerapan"
+    },
+    {
+      "id": "mnu108-uas-tm10-03",
+      "tm": 10,
+      "topic": "Recruiting and selection",
+      "difficulty": "medium",
+      "q": "Pasangan istilah mana yang paling tepat?",
+      "options": [
+        "Job description menjelaskan syarat pribadi; job specification menjelaskan sumber kandidat.",
+        "Job description menetapkan benefit; job specification menetapkan urutan promosi karier.",
+        "Job description menjelaskan tugas; job specification menjelaskan syarat kompetensi.",
+        "Job description menetapkan hasil tes; job specification menetapkan jumlah kandidat pelamar."
+      ],
+      "answer": 2,
+      "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 313–320].",
+      "sourceAnchors": [
+        "Ch. 9; [hal. 313–320]; PDF 341–348"
+      ],
+      "explanation": "Job analysis menghasilkan informasi tugas serta persyaratan yang dibutuhkan untuk melakukan pekerjaan. Alternatif lain: Pilihan lain mencampur uraian pekerjaan dengan recruiting, rewards, promotion dan assessment. [hal. 313–320]",
+      "skill": "Diagnosis konsep, bukti dan penerapan"
+    },
+    {
+      "id": "mnu108-uas-tm10-04",
+      "tm": 10,
+      "topic": "Realistic job preview",
+      "difficulty": "medium",
+      "q": "Mengapa RJP menyajikan sisi positif sekaligus kesulitan pekerjaan?",
+      "options": [
+        "Agar semua kandidat menerima tawaran tanpa mempertimbangkan kebutuhan masing-masing.",
+        "Agar wawancara dan job analysis dihapus karena seluruh informasi sudah lengkap.",
+        "Agar perusahaan dapat menjamin tidak ada pegawai keluar selama kariernya berlangsung.",
+        "Agar kandidat dan perusahaan menilai kecocokan berdasarkan ekspektasi yang realistis."
+      ],
+      "answer": 3,
+      "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 314].",
+      "sourceAnchors": [
+        "Ch. 9; [hal. 314]; PDF 342"
+      ],
+      "explanation": "RJP membantu self-selection dan fit dengan informasi lengkap. Alternatif lain: RJP tidak menjamin penerimaan/retensi semua orang serta tidak menggantikan keseluruhan proses seleksi. [hal. 314]",
+      "skill": "Diagnosis konsep, bukti dan penerapan"
+    },
+    {
+      "id": "mnu108-uas-tm10-05",
+      "tm": 10,
+      "topic": "Training vs development",
+      "difficulty": "medium",
+      "q": "Apa perbedaan training dan development menurut bab 9?",
+      "options": [
+        "Training menyiapkan tugas sekarang; development mengembangkan kemampuan karier lebih luas.",
+        "Training menentukan bayaran; development hanya menetapkan nilai satu jabatan dalam organisasi.",
+        "Training menilai ranking relatif; development hanya menetapkan calon yang perlu diberhentikan.",
+        "Training memilih pelamar baru; development hanya memberi informasi pekerjaan sebelum seleksi."
+      ],
+      "answer": 0,
+      "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 321–325].",
+      "sourceAnchors": [
+        "Ch. 9; [hal. 321–325]; PDF 349–353"
+      ],
+      "explanation": "Perbedaan terletak pada fokus keterampilan tugas saat ini dan pertumbuhan kemampuan yang lebih luas. Alternatif lain: Pilihan lain adalah pay/evaluation, forced ranking atau recruiting/RJP. [hal. 321–325]",
+      "skill": "Diagnosis konsep, bukti dan penerapan"
+    },
+    {
+      "id": "mnu108-uas-tm10-06",
+      "tm": 10,
+      "topic": "Forced ranking",
+      "difficulty": "medium",
+      "q": "Apa risiko forced ranking yang relevan pada kasus Whether to Fire Employees?",
+      "options": [
+        "Penilaian relatif selalu menunjukkan apakah perusahaan mempunyai kas cukup untuk beroperasi.",
+        "Persaingan antarpegawai dapat merusak kerja sama dan mengabaikan tujuan pengembangan.",
+        "Posisi ranking otomatis mengukur kebutuhan setiap pekerjaan tanpa informasi dari unit kerja.",
+        "Proporsi ranking memastikan semua pegawai memiliki peluang promosi dan hasil kerja yang sama."
+      ],
+      "answer": 1,
+      "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 324–325, 358].",
+      "sourceAnchors": [
+        "Ch. 9; [hal. 324–325, 358]; PDF 352–353, 386"
+      ],
+      "explanation": "Buku menjelaskan kritik pada morale dan teamwork. Ranking bukan pengganti data kebutuhan bisnis, kemampuan dan pengembangan. Alternatif lain: Pilihan lain memberi ranking kemampuan yang tidak dimilikinya, seperti memastikan cash flow atau kesetaraan hasil. [hal. 324–325, 358]",
+      "skill": "Diagnosis konsep, bukti dan penerapan"
+    },
+    {
+      "id": "mnu108-uas-tm10-07",
+      "tm": 10,
+      "topic": "Diversity and inclusion",
+      "difficulty": "advanced",
+      "q": "Sebuah organisasi memiliki pegawai beragam, tetapi hanya kelompok tertentu didengar. Apa diagnosis yang tepat?",
+      "options": [
+        "Inclusion sudah terpenuhi karena jumlah kelompok dalam workforce sudah beragam.",
+        "Cognitive diversity pasti tidak ada karena semua anggota harus memikirkan hal yang sama.",
+        "Diversity ada, tetapi inclusion perlu diperbaiki agar keunikan anggota dihargai.",
+        "Discrimination pasti tidak dapat terjadi karena anggota kelompok berbeda telah direkrut."
+      ],
+      "answer": 2,
+      "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 335–342].",
+      "sourceAnchors": [
+        "Ch. 9; [hal. 335–342]; PDF 363–370"
+      ],
+      "explanation": "Komposisi bukan satu-satunya ukuran. Inclusion berhubungan dengan rasa diterima, dihargai dan dapat berkontribusi. Alternatif lain: Pilihan lain menganggap keberagaman komposisi menjamin inclusion, keseragaman pikiran atau tidak adanya diskriminasi. [hal. 335–342]",
+      "skill": "Diagnosis konsep, bukti dan penerapan"
+    },
+    {
+      "id": "mnu108-uas-tm10-08",
+      "tm": 10,
+      "topic": "Sponsor relationship",
+      "difficulty": "advanced",
+      "q": "Apa tindakan yang paling jelas membedakan sponsor dari mentor?",
+      "options": [
+        "Memberi petunjuk informal mengenai norma organisasi tanpa mengadvokasi kesempatan.",
+        "Mengisi survei kepuasan untuk mengetahui rata-rata tingkat happiness seluruh pegawai.",
+        "Mengumpulkan data alasan pegawai yang keluar untuk memperbaiki angka turnover organisasi.",
+        "Aktif memperjuangkan akses pegawai ke proyek penting dan peluang kemajuan karier."
+      ],
+      "answer": 3,
+      "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 350].",
+      "sourceAnchors": [
+        "Ch. 9; [hal. 350]; PDF 378"
+      ],
+      "explanation": "Sponsor menggunakan posisi/hubungannya untuk mendukung advancement, sedangkan mentor terutama memberi bimbingan. Alternatif lain: Pilihan lain menggambarkan mentoring, tracking happiness atau exit interview. [hal. 350]",
+      "skill": "Diagnosis konsep, bukti dan penerapan"
+    }
+  ],
+  "cards": [
+    {
+      "topic": "Strategic HRM",
+      "front": "Bagaimana human capital menjadi dasar HRM strategis?",
+      "back": "Human capital mencakup nilai ekonomi pengetahuan, pengalaman dan kemampuan pegawai. HRM menyelaraskan pencarian, pengembangan dan pemeliharaan workforce dengan strategi; semua manajer ikut bertanggung jawab. [hal. 300–304]",
+      "category": "Konsep",
+      "id": "mnu108-uas-tm10-01",
+      "phase": "pra-uas",
+      "tm": 10
+    },
+    {
+      "topic": "Social contract",
+      "front": "Apa inti employability pada social contract baru?",
+      "back": "Pegawai membangun kemampuan dan menjadi partner perbaikan. Perusahaan menyediakan kesempatan belajar, tugas menantang, informasi dan sumber daya. Hubungan ini membawa peluang sekaligus risiko yang perlu ditimbang. [hal. 308–311]",
+      "category": "Konsep",
+      "id": "mnu108-uas-tm10-02",
+      "phase": "pra-uas",
+      "tm": 10
+    },
+    {
+      "topic": "Selection",
+      "front": "Apa peran job analysis, RJP dan structured interview?",
+      "back": "Job analysis mengidentifikasi tugas/kompetensi. RJP memberi informasi kerja yang realistis. Structured interview menggunakan pertanyaan standar agar kandidat dibandingkan menurut bukti yang relevan. [hal. 313–320]",
+      "category": "Konsep",
+      "id": "mnu108-uas-tm10-03",
+      "phase": "pra-uas",
+      "tm": 10
+    },
+    {
+      "topic": "Development",
+      "front": "Apa beda training, development dan appraisal?",
+      "back": "Training berfokus tugas sekarang; development mengembangkan kemampuan lebih luas. Appraisal mengamati, menilai, mencatat dan memberi feedback; pengelolaan performance yang berkelanjutan mengutamakan perbaikan kemampuan. [hal. 321–325]",
+      "category": "Perbandingan",
+      "id": "mnu108-uas-tm10-04",
+      "phase": "pra-uas",
+      "tm": 10
+    },
+    {
+      "topic": "Inclusion",
+      "front": "Mengapa workforce beragam belum memastikan inclusion?",
+      "back": "Inclusion memerlukan rasa diterima dan penghargaan atas keunikan anggota. Periksa suara, feedback, kesempatan serta bias keputusan, bukan hanya komposisi. [hal. 335–342]",
+      "category": "Konsep",
+      "id": "mnu108-uas-tm10-05",
+      "phase": "pra-uas",
+      "tm": 10
+    },
+    {
+      "topic": "Career barriers",
+      "front": "Bagaimana first rung, glass ceiling dan sponsor berkaitan?",
+      "back": "First rung adalah promosi pertama ke manajemen; glass ceiling membatasi mobilitas ke atas. Sponsor aktif mengadvokasi kesempatan, sedangkan mentor terutama membimbing dan memberi informasi. [hal. 345–350]",
+      "category": "Konsep",
+      "id": "mnu108-uas-tm10-06",
+      "phase": "pra-uas",
+      "tm": 10
+    }
+  ],
+  "bank": [
+    {
+      "type": "analysis",
+      "scope": "TM 10: Whether to Fire Employees?: keputusan saat krisis",
+      "difficulty": "Menengah",
+      "estimatedTime": "20–30 menit",
+      "question": "Whether to Fire Employees?: keputusan saat krisis",
+      "context": "Kasus buku yang ditugaskan RPP, diparafrasekan. Perusahaan pemasok otomotif mengalami penurunan keuangan setelah pandemi mengganggu produksi dan pemenuhan pesanan. Seorang manajer senior ingin mempertahankan sebanyak mungkin pegawai melalui penyederhanaan kerja, evaluasi situasi individu dan kemungkinan pengurangan gaji. Manajer lain mengusulkan pemotongan pegawai segera melalui forced ranking. [hal. 308–309, 324–328, 358]",
+      "data": [
+        "Teks tidak menyediakan angka kas, besarnya pengurangan biaya yang wajib, atau data kinerja tiap pegawai.",
+        "Ada dua pandangan mengenai relasi perusahaan-pegawai dan cara menjaga kinerja.",
+        "Dasar konsep: Daft dan Marcic 12e [hal. 308–309, 324–328, 358]."
+      ],
+      "instructions": [
+        "Identifikasi social contract yang diasumsikan kedua pihak.",
+        "Pilih rekomendasi sebagai manajer HR dengan alasan dan syarat pelaksanaan.",
+        "Jelaskan dampak pada human capital dan performance, serta kelemahan alternatif."
+      ],
+      "outputFormat": [
+        "Pisahkan fakta/asumsi dan penafsiran.",
+        "Tulis keputusan dengan bukti dan dasar konsep.",
+        "Jelaskan kelemahan alternatif dan cara mengevaluasi keputusan."
+      ],
+      "rubric": [
+        "Ketepatan fakta/asumsi dan konsep (30%)",
+        "Alasan keputusan serta kelemahan alternatif (45%)",
+        "Kelayakan tindak lanjut dan evaluasi (25%)"
+      ],
+      "answerGuide": "Hasil analisis untuk pembanding jawaban: Manajer senior mencerminkan kontrak yang menekankan loyalitas, keamanan kerja dan hubungan jangka panjang; usul lain menekankan kecocokan kebutuhan perusahaan dan fleksibilitas tenaga kerja. Rekomendasi yang kuat memulai evaluasi kebutuhan bisnis dan kinerja dengan data, mempertimbangkan streamlining serta alternatif penghematan, dan menetapkan kriteria keputusan yang relevan pekerjaan. Pendekatan mempertahankan talenta lebih dekat dengan investasi human capital, selama perusahaan mampu menjalankan alternatif tersebut. Data kasus tidak cukup untuk menjamin semua pekerjaan dapat dipertahankan atau menyatakan pemotongan pasti tidak perlu. Forced ranking mendadak dapat mengorbankan pengetahuan, kerja sama dan trust; mempertahankan setiap orang tanpa evaluasi juga berisiko bagi kelangsungan organisasi. Komunikasi, evaluasi yang konsisten dan dukungan bagi pegawai perlu menyertai keputusan. [hal. 308–309, 324–328, 358]"
+    },
+    {
+      "type": "analysis",
+      "scope": "TM 10: Latihan: seleksi relevan, pengembangan dan inclusion",
+      "difficulty": "Menengah",
+      "estimatedTime": "20–30 menit",
+      "question": "Latihan: seleksi relevan, pengembangan dan inclusion",
+      "context": "Latihan buatan: situasi berikut adalah asumsi untuk berlatih, tanpa klaim perusahaan nyata. Unit layanan membutuhkan staf untuk menangani keluhan pelanggan dan memeriksa dokumen. Panel seleksi menilai kandidat berdasarkan kesan pribadi, sementara pegawai baru menerima sedikit feedback dan tidak mendapat akses proyek untuk berkembang. [hal. 312–325, 335–342, 350]",
+      "data": [
+        "Asumsi: tugas memerlukan ketelitian, komunikasi dan kemampuan mempelajari sistem.",
+        "Belum ada data yang membuktikan kesan panel memprediksi hasil kerja.",
+        "Dasar konsep: Daft dan Marcic 12e [hal. 312–325, 335–342, 350]."
+      ],
+      "instructions": [
+        "Susun dasar seleksi yang relevan dan cara mengurangi bias.",
+        "Hubungkan program pengembangan dengan kebutuhan unit.",
+        "Bedakan mentor, sponsor dan coaching serta ukuran inclusion."
+      ],
+      "outputFormat": [
+        "Pisahkan fakta/asumsi dan penafsiran.",
+        "Tulis keputusan dengan bukti dan dasar konsep.",
+        "Jelaskan kelemahan alternatif dan cara mengevaluasi keputusan."
+      ],
+      "rubric": [
+        "Ketepatan fakta/asumsi dan konsep (30%)",
+        "Alasan keputusan serta kelemahan alternatif (45%)",
+        "Kelayakan tindak lanjut dan evaluasi (25%)"
+      ],
+      "answerGuide": "Hasil analisis untuk pembanding jawaban: Gunakan job analysis untuk merumuskan tugas dan job specification, kemudian wawancara terstruktur dan work sample pemeriksaan dokumen/penanganan keluhan. Berikan realistic job preview agar kedua pihak memahami kecocokan pekerjaan. Training menangani tugas sekarang; development menyiapkan kemampuan lebih luas. Mentor memberi arahan; sponsor memperjuangkan akses ke kesempatan/pengembangan karier; coaching memberikan percakapan serta feedback teratur. Tinjau apakah staf mendapat suara, feedback spesifik dan kesempatan yang relevan. Menyamakan inclusion dengan komposisi pegawai saja atau memilih berdasarkan stereotip belum menjawab mutu proses. [hal. 312–325, 335–342, 350]"
+    }
+  ],
+  "visualInventory": [
+    {
+      "id": "MNU108-10-OV",
+      "title": "Strategi organisasi memerlukan orang dan lingkungan yang sesuai",
+      "type": "parallel",
+      "source": "Daft dan Marcic, Understanding Management 12e, [hal. 300–351].",
+      "mobile": "SVG 360 unit dengan teks yang mengalir sesuai ruang; makna hubungan sama dengan desktop."
+    },
+    {
+      "id": "MNU108-10-9-2",
+      "title": "Strategic Human Resource Management",
+      "type": "parallel",
+      "source": "Daft dan Marcic, Understanding Management 12e, [hal. 303].",
+      "mobile": "SVG 360 unit dengan teks yang mengalir sesuai ruang; makna hubungan sama dengan desktop."
+    },
+    {
+      "id": "MNU108-10-9-3",
+      "title": "The Role and Value of Human Capital Investments",
+      "type": "process",
+      "source": "Daft dan Marcic, Understanding Management 12e, [hal. 303–304].",
+      "mobile": "SVG 360 unit dengan teks yang mengalir sesuai ruang; makna hubungan sama dengan desktop."
+    },
+    {
+      "id": "MNU108-10-9-1",
+      "title": "Faktor keberhasilan kompetitif: survei IBM 2012",
+      "type": "bar",
+      "source": "Daft dan Marcic, Understanding Management 12e, [hal. 301].",
+      "mobile": "SVG 360 unit dengan teks yang mengalir sesuai ruang; makna hubungan sama dengan desktop."
+    },
+    {
+      "id": "MNU108-10-9-6",
+      "title": "Attracting an Effective Workforce",
+      "type": "process",
+      "source": "Daft dan Marcic, Understanding Management 12e, [hal. 312–320].",
+      "mobile": "SVG 360 unit dengan teks yang mengalir sesuai ruang; makna hubungan sama dengan desktop."
+    },
+    {
+      "id": "MNU108-10-9-7",
+      "title": "DBS: kapasitas keterampilan digital",
+      "type": "matrix",
+      "source": "Daft dan Marcic, Understanding Management 12e, [hal. 314].",
+      "mobile": "SVG 360 unit dengan teks yang mengalir sesuai ruang; makna hubungan sama dengan desktop."
+    },
+    {
+      "id": "MNU108-10-9-10",
+      "title": "Bidang perbaikan kandidat: analisis SkillSurvey 2016",
+      "type": "bar",
+      "source": "Daft dan Marcic, Understanding Management 12e, [hal. 321].",
+      "mobile": "SVG 360 unit dengan teks yang mengalir sesuai ruang; makna hubungan sama dengan desktop."
+    },
+    {
+      "id": "MNU108-10-9-16",
+      "title": "Traditional Versus Inclusive Models of Diversity",
+      "type": "parallel",
+      "source": "Daft dan Marcic, Understanding Management 12e, [hal. 335–336].",
+      "mobile": "SVG 360 unit dengan teks yang mengalir sesuai ruang; makna hubungan sama dengan desktop."
+    },
+    {
+      "id": "MNU108-10-9-17",
+      "title": "Dividends of Workplace Diversity",
+      "type": "parallel",
+      "source": "Daft dan Marcic, Understanding Management 12e, [hal. 337–338].",
+      "mobile": "SVG 360 unit dengan teks yang mengalir sesuai ruang; makna hubungan sama dengan desktop."
+    },
+    {
+      "id": "MNU108-10-9-15-RACE",
+      "title": "Komposisi race: 2004 dan proyeksi 2024 dalam buku",
+      "type": "bar",
+      "source": "Daft dan Marcic, Understanding Management 12e, [hal. 333].",
+      "mobile": "SVG 360 unit dengan teks yang mengalir sesuai ruang; makna hubungan sama dengan desktop."
+    },
+    {
+      "id": "MNU108-10-9-15-ORIGIN",
+      "title": "Ethnic origin: dua kategori terpisah dari race",
+      "type": "bar",
+      "source": "Daft dan Marcic, Understanding Management 12e, [hal. 333].",
+      "mobile": "SVG 360 unit dengan teks yang mengalir sesuai ruang; makna hubungan sama dengan desktop."
+    },
+    {
+      "id": "MNU108-10-9-19",
+      "title": "Inisiatif diversity: responden Fortune 1000 dalam sumber",
+      "type": "bar",
+      "source": "Daft dan Marcic, Understanding Management 12e, [hal. 349].",
+      "mobile": "SVG 360 unit dengan teks yang mengalir sesuai ruang; makna hubungan sama dengan desktop."
+    }
+  ],
+  "exhibits": [
+    {
+      "id": "9.1",
+      "page": 301,
+      "action": "Grafik historis dengan tiga angka sumber."
+    },
+    {
+      "id": "9.2",
+      "page": 303,
+      "action": "Visual tiga fungsi HR dan strategi."
+    },
+    {
+      "id": "9.3",
+      "page": 304,
+      "action": "Diagram tiga tingkat human capital ke business results."
+    },
+    {
+      "id": "9.4",
+      "page": 306,
+      "action": "Tabel hukum historis AS dan batas konteks."
+    },
+    {
+      "id": "9.5",
+      "page": 309,
+      "action": "Tabel social contract dua pihak."
+    },
+    {
+      "id": "9.6",
+      "page": 312,
+      "action": "Proses recruiting/selection dan relasi matching dijelaskan."
+    },
+    {
+      "id": "9.7",
+      "page": 314,
+      "action": "Peta tujuh kapasitas digital DBS."
+    },
+    {
+      "id": "9.8",
+      "page": 317,
+      "action": "Tabel relevansi dan koreksi batas pertanyaan disability menurut EEOC."
+    },
+    {
+      "id": "9.9",
+      "page": 320,
+      "action": "Aktivitas brain teaser di Lampiran A."
+    },
+    {
+      "id": "9.10",
+      "page": 321,
+      "action": "Grafik sepuluh angka sumber."
+    },
+    {
+      "id": "9.11",
+      "page": 323,
+      "action": "Tabel pola feedback dengan batas generalisasi individu."
+    },
+    {
+      "id": "9.12",
+      "page": 325,
+      "action": "Tabel perubahan performance management."
+    },
+    {
+      "id": "9.13",
+      "page": 331,
+      "action": "Tabel sepuluh perusahaan: nilai dan N.A. dipertahankan."
+    },
+    {
+      "id": "9.14",
+      "page": 332,
+      "action": "Tabel ringkasan tonggak historis versi sumber."
+    },
+    {
+      "id": "9.15",
+      "page": 333,
+      "action": "Dua grafik periodisasi: race terpisah dari ethnic origin, 2024 tetap proyeksi."
+    },
+    {
+      "id": "9.16",
+      "page": 336,
+      "action": "Visual perbandingan cakupan diversity."
+    },
+    {
+      "id": "9.17",
+      "page": 338,
+      "action": "Visual manfaat potensial dengan batas."
+    },
+    {
+      "id": "9.18",
+      "page": 342,
+      "action": "Tabel bias dan penilaian individu."
+    },
+    {
+      "id": "9.19",
+      "page": 349,
+      "action": "Grafik 75/66/61%; tahun data tidak direka."
+    }
+  ],
+  "audit": {
+    "findings": [
+      "Bab 9 edisi 12 digunakan penuh untuk topik RPP; contoh lama yang tidak mempunyai rujukan diganti.",
+      "Halaman model 303,304,312,336 dan grafik 301,321,333,349 diperiksa sebagai gambar. Angka historis dipertahankan dan proyeksi 2024 tidak dinyatakan sebagai realisasi.",
+      "Buku hal.351 menyebut Title VIII pendidikan; sumber DOJ mendukung Title IX. Hal.317 mempunyai pertanyaan disability terlalu luas; batas conditional offer dikoreksi dengan EEOC.",
+      "Kasus hal.358 tidak memberi kebutuhan cash/pemotongan; jawaban memilih evaluasi berbukti tanpa menjanjikan semua pekerjaan pasti selamat.",
+      "Tahun 2004 pada milestone Sony/Wolters Kluwer bertentangan dengan sumber perusahaan: 2005 dan 2003. Koreksi ditampilkan terbuka dengan tautan primer; fakta historis tidak ditampilkan sebagai pejabat saat ini."
+    ],
+    "appendix": [
+      "Interview brain teasers Exhibit9.9, hal.320: latihan eksplorasi proses berpikir, tanpa satu kunci baku untuk semua situasi.",
+      "Know Yourself dan dilema/discussion tambahan, hal.307,328,340,353-357: kegiatan sumber di luar kuis penilaian.",
+      "Catatan legal adalah konteks AS, bukan aturan Indonesia; sumber resmi tambahan untuk koreksi disebut pada bacaan."
+    ],
+    "sourceReview": "Teks bab 9 dan halaman diagram diperiksa langsung; nomor cetak dan PDF dibedakan.",
+    "constraints": "Pra-UTS dipertahankan. Data historis mengikuti tahun buku. Latihan buatan ditandai dan hasil analisis tidak diklaim sebagai tindakan nyata tokoh."
+  }
+}

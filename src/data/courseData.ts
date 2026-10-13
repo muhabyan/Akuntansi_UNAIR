@@ -81,12 +81,12 @@ const MNU108_TM1_7 = materi([
   ['Desain Struktur Organisasi', 'Daft Ch. 7'],
 ], 1);
 const MNU108_TM8_14 = materi([
-  ['Mengelola Inovasi & Perubahan Organisasi (Lewin)', 'Daft Ch. 9'],
-  ['Manajemen Sumber Daya Manusia & Keragaman Inklusif (DEI)', 'Daft Ch. 10'],
-  ['Memahami Perilaku Individu, Kepribadian & Sikap Kerja', 'Daft Ch. 11'],
-  ['Kepemimpinan Manajerial (Situational & Grid)', 'Daft Ch. 12'],
-  ['Memotivasi Karyawan (Maslow, Herzberg, Vroom)', 'Daft Ch. 13'],
-  ['Komunikasi dan Tim Kerja yang Berkinerja Tinggi', 'Daft Ch. 14'],
+  ['Mengelola Inovasi & Perubahan Organisasi (Lewin)', 'Daft & Marcic 12e Ch. 8'],
+  ['Manajemen Sumber Daya Manusia & Keragaman Inklusif (DEI)', 'Daft & Marcic 12e Ch. 9'],
+  ['Memahami Perilaku Individu, Kepribadian & Sikap Kerja', 'Daft & Marcic 12e Ch. 10'],
+  ['Kepemimpinan Manajerial', 'Daft & Marcic 12e Ch. 11'],
+  ['Memotivasi Karyawan (Maslow, Herzberg, Vroom)', 'Daft & Marcic 12e Ch. 12'],
+  ['Komunikasi dan Tim Kerja yang Berkinerja Tinggi', 'Daft & Marcic 12e Ch. 13–14'],
   ['Mengelola Mutu & Kinerja: Sistem Pengendalian dan TQM', 'Daft Ch. 15'],
 ], 9);
 const MNU108_REF = [
@@ -618,7 +618,7 @@ export const SEMESTERS: Semester[] = [
             code: 'MNU108', newCode: 'FEB25603011', name: 'Pengantar Manajemen', sks: 3, iconKey: 'briefcase', prasyarat: 'MNU101 (L)',
             references: MNU108_REF,
             materiTM1_7: MNU108_TM1_7, materiTM8_14: MNU108_TM8_14,
-            flashcardCount: 105, featureBadge: 'Flashcard + Bank Soal + Kuis',
+            flashcardCount: 111, featureBadge: 'Flashcard + Bank Soal + Kuis',
           },
           {
             code: 'AKK203', newCode: 'FEB25603014', name: 'Akuntansi Sektor Publik', sks: 3, iconKey: 'book', prasyarat: 'AKK106 (L)',

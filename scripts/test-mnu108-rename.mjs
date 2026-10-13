@@ -84,12 +84,13 @@ for (const pathname of ['/course/MNU108', '/course/FEB25603011', '/course/MNM101
 
 // ---- The renamed data: content is served under MNU108 and the legacy codes
 const content = await loadCourseContent('MNU108');
-assert.deepEqual(Object.keys(content.readings).map(Number).sort((a, b) => a - b), [1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14]); // TM 8 = UTS (jadi ulasan), materi baru mulai TM 9 sesuai kontrak
-assert.deepEqual(Object.keys(content.reviews).sort(), ['uts']); // TM14 sudah TM biasa, tidak lagi ditiru sebagai kartu Review UAS
+assert.deepEqual(Object.keys(content.readings).map(Number).sort((a, b) => a - b), [1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15]); // TM8 UTS; TM9–15 mengikuti RPP.
+assert.deepEqual(Object.keys(content.reviews).sort(), ['uas','uts']);
+assert.equal(content.reviews.uas.tm,16);
 const cards = getFlashcards('MNU108');
 assert.ok(cards.length > 0, 'the deck is served under MNU108');
 assert.equal(pengantarManajemen[0].flashcardCount, cards.length, 'catalog flashcardCount matches the deck');
-for (const card of cards) assert.match(card.id, /^mnm101-tm\d{2}-\d{2}$/, 'flashcard ids keep the legacy prefix');
+for (const card of cards) assert.match(card.id, card.phase==='pra-uts'?/^mnm101-tm\d{2}-\d{2}$/:/^mnu108-uas-tm\d{2}-\d{2}$/, 'Original UTS ids preserved; revised UAS concepts get new SRS ids');
 assert.deepEqual(getQuizSets('MNU108').map((set) => set.id), ['uts', 'uas', 'all']);
 assert.ok(getQuizSets('MNU108').every((set) => set.items.length > 0) && getQuiz('MNU108').length > 0);
 assert.deepEqual(getBankSoalSets('MNU108').map((set) => set.id), ['uts', 'uas', 'all']);
@@ -98,7 +99,7 @@ assert.ok(getBankSoalSets('MNU108').every((set) => set.items.length > 0) && getB
 // Legacy access also works via the compatibility layer
 for (const legacy of ['MNM101', 'MNM201']) {
   const legacyContent = await loadCourseContent(legacy);
-  assert.equal(Object.keys(legacyContent.readings).length, 13, `${legacy} readings`);
+  assert.deepEqual(legacyContent.readings,content.readings,`${legacy} serves the complete canonical reading set`);
   assert.equal(getFlashcards(legacy).length, cards.length, `${legacy} flashcards`);
   assert.equal(getQuiz(legacy).length, getQuiz('MNU108').length, `${legacy} quiz`);
   assert.deepEqual(getQuizSets(legacy).map((set) => set.id), ['uts', 'uas', 'all'], `${legacy} quiz sets`);

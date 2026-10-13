@@ -121,7 +121,7 @@ function checkFlashcards(data) {
   const utsCards = deck.filter((card) => card.tm <= 8);
   deck.forEach((card, index) => {
     const at = `flashcard #${index + 1} (${card.id})`;
-    assert.match(card.id, /^mnm101-tm\d{2}-\d{2}$/, `${at}: id format`);
+    assert.match(card.id, card.phase==='pra-uts'?/^mnm101-tm\d{2}-\d{2}$/:/^mnu108-uas-tm\d{2}-\d{2}$/, `${at}: original UTS ids / revised UAS ids`);
     assert.ok(!ids.has(card.id), `${at}: duplicate id`);
     ids.add(card.id);
     assert.ok(card.front.trim() && card.back.trim(), `${at}: front and back`);

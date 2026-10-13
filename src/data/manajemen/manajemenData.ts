@@ -3,9 +3,8 @@
 // Sumber TM01-TM07: Daft & Marcic, Understanding Management 12e (2023), Ch. 1-7 — buku teks resmi RPP MNU108.
 //         TM01-TM07 dibangun dari paket konten MNU108/TM01-TM07 dan hanya memuat fakta dari buku itu.
 //         TM08 (review UTS) merangkum bacaan TM01-TM07 (Quick Reference dan Exam Traps disalin dari bacaan itu).
-// Sumber TM09-TM14 (belum disinkronkan ke 12e): Richard L. Daft (Management 13e/14e),
-//         Stephen P. Robbins (Management 15e/16e), Henry Mintzberg, Peter Drucker, Michael Porter,
-//         Geert Hofstede, Herbert Simon, Kurt Lewin, Bruce Tuckman, Hackman & Oldham.
+// Sumber TM09-TM15: Daft & Marcic, Understanding Management 12e (2023), Ch. 8-15,
+//         sesuai RPP 2026; dibangun dari paket kanonik content-pipeline/MNU108.
 import type { Reading } from '../../types';
 import { TM1_READING } from './modules/tm1';
 import { TM2_READING } from './modules/tm2';
@@ -21,6 +20,8 @@ import { TM11_READING } from './modules/tm11';
 import { TM12_READING } from './modules/tm12';
 import { TM13_READING } from './modules/tm13';
 import { TM14_READING } from './modules/tm14';
+import { TM15_READING } from './modules/tm15';
+import { MNU108_UAS_REVIEW } from './modules/reviewUas';
 
 export const MANAJEMEN_READINGS: Record<number, Reading> = {
   1: TM1_READING,
@@ -37,9 +38,10 @@ export const MANAJEMEN_READINGS: Record<number, Reading> = {
   12: TM12_READING,
   13: TM13_READING,
   14: TM14_READING,
+  15: TM15_READING,
 };
 
 export const MANAJEMEN_REVIEW_READINGS: Record<string, Reading> = {
   uts: TM8_READING,
-  uas: TM14_READING,
+  uas: MNU108_UAS_REVIEW,
 };

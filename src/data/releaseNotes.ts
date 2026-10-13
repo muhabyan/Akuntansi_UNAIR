@@ -12,6 +12,17 @@ export interface AppRelease {
 
 export const RELEASES: AppRelease[] = [
   {
+    version: 'v1.3.8',
+    date: '13 Oktober 2026',
+    headline: 'Pengantar Manajemen menuju UAS sesuai RPP',
+    notes: [
+      'MNU108 TM9–15 mengikuti Understanding Management edisi 12: perubahan, SDM, perilaku individu, leadership, motivasi, komunikasi/tim dan pengendalian. Ulasan UAS tersedia terpisah.',
+      'Tersedia 60 kuis, 42 flashcard dan 14 kasus. Kasus yang ditugaskan RPP dibedakan dari latihan buatan dengan asumsi dan panduan analisis.',
+      'Diagram dan tabel menjelaskan model, data historis serta batas penerapan. Istilah rasio keuangan, contoh hitungan dan beberapa kesalahan sumber mendapat catatan koreksi.',
+      'Bacaan, ulasan UTS dan latihan pra-UTS dipertahankan. Materi ASP tetap ditunda.',
+    ],
+  },
+  {
     version: 'v1.3.7',
     date: '12 Oktober 2026',
     headline: 'Audit sumber dan grafik materi setelah UTS',

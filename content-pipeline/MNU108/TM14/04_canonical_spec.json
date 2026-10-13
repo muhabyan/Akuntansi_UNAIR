@@ -1,0 +1,1614 @@
+{
+  "course": "MNU108",
+  "tm": 14,
+  "reading": {
+    "tm": 14,
+    "title": "Managing Communication and Leading Teams",
+    "ref": "Daft dan Marcic, Understanding Management 12e (2023), Ch. 13–14, hal. 472–543 (PDF 500–571); RPP Excel 2026, TM 14.",
+    "intro": "RPP menggabungkan komunikasi dan tim: kualitas pesan memengaruhi trust, sedangkan proses tim menentukan apakah informasi menjadi tindakan bersama. Hubungkan kedua bab saat menganalisis Brainchild.",
+    "layout": "layered",
+    "coreReadingMinutes": 25,
+    "objectives": [
+      "Komunikasi memerlukan pertukaran serta mutual understanding.",
+      "Pilih channel menurut ambiguitas, emosi, feedback dan kebutuhan record.",
+      "Candor menggunakan fakta serta permintaan jelas dengan respect.",
+      "Bedakan arah formal dengan medium dan jaringan informal.",
+      "Tim memerlukan mission, interdependence, trust serta mutual accountability.",
+      "Kelola development, norms, conflict dan outcomes secara bersama."
+    ],
+    "blocks": [
+      {
+        "kind": "h2",
+        "text": "1. Kilat: Managing Communication and Leading Teams"
+      },
+      {
+        "kind": "figure",
+        "spec": {
+          "id": "MNU108-14-OV",
+          "title": "Informasi menjadi tindakan bersama",
+          "type": "process",
+          "nodes": [
+            {
+              "title": "Purpose dan message",
+              "items": [
+                "Encode, channel, decode dan feedback"
+              ]
+            },
+            {
+              "title": "Trust serta coordination",
+              "items": [
+                "Open climate, listening, sharing dan roles"
+              ]
+            },
+            {
+              "title": "Team processes dan outcomes",
+              "items": [
+                "Development, norms, conflict",
+                "Output, satisfaction, adaptation/learning"
+              ]
+            }
+          ],
+          "source": "Daft dan Marcic, Understanding Management 12e, [hal. 475–538].",
+          "alt": "Informasi menjadi tindakan bersama. Purpose dan message; Trust serta coordination; Team processes dan outcomes"
+        }
+      },
+      {
+        "kind": "ul",
+        "items": [
+          "Komunikasi memerlukan pertukaran serta mutual understanding.",
+          "Pilih channel menurut ambiguitas, emosi, feedback dan kebutuhan record.",
+          "Candor menggunakan fakta serta permintaan jelas dengan respect.",
+          "Bedakan arah formal dengan medium dan jaringan informal.",
+          "Tim memerlukan mission, interdependence, trust serta mutual accountability.",
+          "Kelola development, norms, conflict dan outcomes secara bersama."
+        ]
+      },
+      {
+        "kind": "pendalaman",
+        "title": "Istilah Inggris yang digunakan",
+        "blocks": [
+          {
+            "kind": "table",
+            "title": "Istilah dan makna",
+            "headers": [
+              "Istilah",
+              "Makna dalam bab"
+            ],
+            "rows": [
+              [
+                "Channel richness",
+                "Kapasitas channel membawa cues, feedback cepat dan personal focus."
+              ],
+              [
+                "Candor",
+                "Komunikasi jujur, jelas dan langsung dengan respect."
+              ],
+              [
+                "Cohesiveness",
+                "Daya tarik serta keinginan anggota bertahan dalam tim."
+              ],
+              [
+                "Faultlines",
+                "Garis pembagian kelompok menurut karakteristik/identitas yang dapat menghambat kolaborasi."
+              ]
+            ],
+            "caption": "Daft dan Marcic, Understanding Management 12e (2023), Ch. 13–14, hal. 472–543 (PDF 500–571); RPP Excel 2026, TM 14.",
+            "stackOnMobile": true
+          }
+        ]
+      },
+      {
+        "kind": "h2",
+        "text": "2. Communication champion dan siklus komunikasi"
+      },
+      {
+        "kind": "p",
+        "text": "Communication menukar informasi sekaligus membangun pemahaman antara dua atau lebih orang. Communication champion menghubungkan informasi internal/eksternal dengan vision, values dan desired outcomes. Pesan yang dikirim belum membuktikan maknanya dipahami. [hal. 474–478]"
+      },
+      {
+        "kind": "figure",
+        "spec": {
+          "id": "MNU108-14-13-1",
+          "title": "Manager as Communication Champion",
+          "type": "process",
+          "nodes": [
+            {
+              "title": "Internal dan external information",
+              "items": [
+                "Dengar dan periksa informasi relevan"
+              ]
+            },
+            {
+              "title": "Purpose-directed communication",
+              "items": [
+                "Vision, values, outcomes dan pengaruh perilaku"
+              ]
+            },
+            {
+              "title": "Effective methods",
+              "items": [
+                "Open climate, questions, listening, feedback",
+                "Rich channels, social media, formal/personal networks"
+              ]
+            }
+          ],
+          "source": "Daft dan Marcic, Understanding Management 12e, [hal. 475].",
+          "alt": "Manager as Communication Champion. Internal dan external information; Purpose-directed communication; Effective methods"
+        }
+      },
+      {
+        "kind": "figure",
+        "spec": {
+          "id": "MNU108-14-13-2",
+          "title": "A Model of Communication",
+          "type": "process",
+          "nodes": [
+            {
+              "title": "Sender: formulate / encode",
+              "items": [
+                "Pilih simbol verbal/nonverbal serta channel"
+              ]
+            },
+            {
+              "title": "Message melalui channel",
+              "items": [
+                "Informasi dapat salah ditafsirkan di tiap tahap"
+              ]
+            },
+            {
+              "title": "Receiver: interpret / decode",
+              "items": [
+                "Pahami simbol serta konteks"
+              ]
+            },
+            {
+              "title": "Feedback: receiver menjadi sender",
+              "items": [
+                "Formulate pesan balasan melalui channel",
+                "Sender awal menginterpretasikan feedback"
+              ]
+            }
+          ],
+          "source": "Daft dan Marcic, Understanding Management 12e, [hal. 476–478].",
+          "alt": "A Model of Communication. Sender: formulate / encode; Message melalui channel; Receiver: interpret / decode; Feedback: receiver menjadi sender",
+          "feedback": true,
+          "footer": "Siklus dua arah. Potential error/misunderstanding dapat muncul sepanjang proses, bukan hanya pada penerima."
+        }
+      },
+      {
+        "kind": "self-check",
+        "question": "Mengapa “sudah kirim pesan” belum cukup?",
+        "answer": [
+          {
+            "kind": "p",
+            "text": "Receiver dapat memahami simbol secara berbeda. Feedback memeriksa mutual understanding dan membantu memperbaiki pesan. [hal. 474–478]"
+          }
+        ],
+        "signal": "Jawaban menyebut konsep, bukti, dan alasan; nama teori saja belum cukup."
+      },
+      {
+        "kind": "h2",
+        "text": "3. Purpose, persuasion dan open climate"
+      },
+      {
+        "kind": "p",
+        "text": "Vision/mission/values perlu disampaikan dengan cara yang memberi arah serta makna. Persuasion membutuhkan credibility/trust, common ground, emotional connection dan multiple media untuk pesan penting. Communication apprehension ialah kecemasan terhadap komunikasi nyata atau yang diantisipasi; latihan serta dukungan dapat membantu. [hal. 478–482]"
+      },
+      {
+        "kind": "table",
+        "title": "Persuasion dengan alasan",
+        "headers": [
+          "Cara",
+          "Tindakan"
+        ],
+        "rows": [
+          [
+            "Credibility dan trust",
+            "Keputusan berpengetahuan, jujur dan konsisten"
+          ],
+          [
+            "Common ground",
+            "Tunjukkan manfaat/kepentingan yang dapat dipertemukan"
+          ],
+          [
+            "Emotional connection",
+            "Dengar kebutuhan dan sesuaikan cara menyampaikan"
+          ],
+          [
+            "Multiple media",
+            "Ulangi pesan penting dengan makna konsisten melalui channel berbeda"
+          ]
+        ],
+        "caption": "[hal. 479–480]",
+        "stackOnMobile": true
+      },
+      {
+        "kind": "p",
+        "text": "Open communication membagikan informasi relevan melintasi batas fungsi/hierarki dan memberi ruang pertanyaan. Keterbukaan tetap memperhatikan informasi yang harus dilindungi. Bahas perbedaan gaya komunikasi dengan melihat individu serta konteks; generalisasi gender pada contoh historis tidak membuktikan gaya setiap orang. [hal. 481–482]"
+      },
+      {
+        "kind": "self-check",
+        "question": "Apa guna common ground ketika meminta perubahan?",
+        "answer": [
+          {
+            "kind": "p",
+            "text": "Orang memahami kaitan perubahan dengan kepentingan/tujuan bersama. Jika manfaat bersama tidak ditemukan, rencana perlu ditinjau, bukan sekadar pesan dibuat lebih keras. [hal. 478–482]"
+          }
+        ],
+        "signal": "Jawaban menyebut konsep, bukti, dan alasan; nama teori saja belum cukup."
+      },
+      {
+        "kind": "h2",
+        "text": "4. Networks dan channel richness"
+      },
+      {
+        "kind": "p",
+        "text": "Centralized network menyalurkan komunikasi melalui satu pusat untuk keputusan/problem solving. Decentralized network memungkinkan anggota saling berkomunikasi. Kecocokan bergantung tugas: pusat dapat efisien bagi persoalan sederhana; interaksi langsung membantu persoalan kompleks, dengan biaya koordinasi yang perlu dikelola. [hal. 482–485]"
+      },
+      {
+        "kind": "figure",
+        "spec": {
+          "id": "MNU108-14-13-3",
+          "title": "Centralized dan decentralized networks",
+          "type": "networks",
+          "nodes": [],
+          "source": "Daft dan Marcic, Understanding Management 12e, [hal. 483].",
+          "alt": "Centralized: tiap anggota berhubungan melalui satu pusat. Decentralized: anggota berhubungan langsung satu sama lain."
+        }
+      },
+      {
+        "kind": "figure",
+        "spec": {
+          "id": "MNU108-14-13-4",
+          "title": "Channel richness: tinggi menuju rendah",
+          "type": "process",
+          "nodes": [
+            {
+              "title": "Face-to-face",
+              "items": [
+                "Multiple cues, cepat two-way feedback, personal focus"
+              ]
+            },
+            {
+              "title": "Video chat/conference → telephone",
+              "items": [
+                "Kurangi sebagian cues; pertahankan percakapan"
+              ]
+            },
+            {
+              "title": "Electronic messages → letters/memos",
+              "items": [
+                "Lebih mudah didokumentasikan/disebarkan"
+              ]
+            },
+            {
+              "title": "Reports/bulletins",
+              "items": [
+                "Cocok untuk pesan rutin jelas",
+                "Feedback lebih lambat dan impersonal"
+              ]
+            }
+          ],
+          "source": "Daft dan Marcic, Understanding Management 12e, [hal. 484–485].",
+          "alt": "Channel richness: tinggi menuju rendah. Face-to-face; Video chat/conference → telephone; Electronic messages → letters/memos; Reports/bulletins",
+          "footer": "Richness berbeda dari panjang pesan atau kecepatan mengirim. Pilih channel berdasarkan ambiguitas, emosi, kebutuhan record dan audience."
+        }
+      },
+      {
+        "kind": "self-check",
+        "question": "Apakah channel paling kaya selalu wajib untuk semua pesan?",
+        "answer": [
+          {
+            "kind": "p",
+            "text": "Tidak. Isu emosional/ambigu membutuhkan rich channel; informasi rutin dapat memakai tulisan yang mudah didistribusikan serta menjadi record. [hal. 482–485]"
+          }
+        ],
+        "signal": "Jawaban menyebut konsep, bukti, dan alasan; nama teori saja belum cukup."
+      },
+      {
+        "kind": "h2",
+        "text": "5. Feedback, candor, questions, listening dan nonverbal cues"
+      },
+      {
+        "kind": "p",
+        "text": "Feedback membantu orang belajar dan berkembang melalui komunikasi/evaluasi yang ongoing. Candor berarti direct, honest dan clear dengan care serta respect. Gunakan I statements, fakta dibanding judgments dan permintaan spesifik. Pertanyaan perlu diikuti mendengarkan jawaban. [hal. 486–491]"
+      },
+      {
+        "kind": "table",
+        "title": "Ten Keys to Effective Listening",
+        "headers": [
+          "Kunci",
+          "Tindakan baik"
+        ],
+        "rows": [
+          [
+            "Listen actively",
+            "Tunjukkan minat, tanya dan paraphrase"
+          ],
+          [
+            "Keep open mind",
+            "Cari peluang belajar"
+          ],
+          [
+            "Resist distractions",
+            "Fokus dan kendalikan gangguan"
+          ],
+          [
+            "Use thought speed",
+            "Antisipasi, ringkas dan periksa asumsi"
+          ],
+          [
+            "Seek understanding",
+            "Cari common ground dan makna baru"
+          ],
+          [
+            "Judge content, not delivery",
+            "Periksa isi meski penyajian kurang rapi"
+          ],
+          [
+            "Hold fire",
+            "Pahami sebelum menilai/memberi solusi"
+          ],
+          [
+            "Listen for ideas",
+            "Cari tema utama"
+          ],
+          [
+            "Work at listening",
+            "Berikan energi dan perhatian"
+          ],
+          [
+            "Show respect",
+            "Biarkan orang lain selesai; hindari memotong"
+          ]
+        ],
+        "caption": "[hal. 490]",
+        "stackOnMobile": true
+      },
+      {
+        "kind": "p",
+        "text": "Nonverbal communication meliputi tindakan, ekspresi, gestures dan body language. Jika kata dan perilaku bertentangan, orang dapat ragu pada pesan. Periksa keselarasan dan konteks; jangan menafsirkan satu gesture sebagai bukti niat, bohong atau karakter. Angka persentase nonverbal dan efek hormonal “power pose” pada contoh lama tidak dijadikan aturan universal atau jaminan hasil. [hal. 490–491]"
+      },
+      {
+        "kind": "self-check",
+        "question": "Apa beda candor dari menyebut anggota malas?",
+        "answer": [
+          {
+            "kind": "p",
+            "text": "Candor menyampaikan fakta perilaku, dampak dan permintaan jelas dengan hormat. Label malas adalah judgment yang perlu bukti dan dapat menutup feedback. [hal. 486–491]"
+          }
+        ],
+        "signal": "Jawaban menyebut konsep, bukti, dan alasan; nama teori saja belum cukup."
+      },
+      {
+        "kind": "h2",
+        "text": "6. Workplace communication: formal, informal dan digital"
+      },
+      {
+        "kind": "p",
+        "text": "Social media membantu user-generated content, kolaborasi serta mendengarkan customers; tools tidak menjamin komunikasi efektif. Personal networking membangun relasi melewati batas departemen/hierarki/organisasi. Grapevine adalah jalur informal yang tidak resmi disahkan; dapat memberi peringatan awal maupun menyebarkan rumor. [hal. 492–500]"
+      },
+      {
+        "kind": "figure",
+        "spec": {
+          "id": "MNU108-14-13-6",
+          "title": "Relasi dapat melintasi batas departemen",
+          "type": "parallel",
+          "nodes": [
+            {
+              "title": "Marketing",
+              "items": [
+                "Kontak serta kebutuhan pasar"
+              ]
+            },
+            {
+              "title": "Manufacturing",
+              "items": [
+                "Pengetahuan proses dan kapasitas"
+              ]
+            },
+            {
+              "title": "Engineering",
+              "items": [
+                "Pengetahuan desain dan sistem"
+              ]
+            }
+          ],
+          "source": "Daft dan Marcic, Understanding Management 12e, [hal. 494–495].",
+          "alt": "Relasi dapat melintasi batas departemen. Marketing; Manufacturing; Engineering",
+          "result": "Personal network dan pertukaran lintas fungsi",
+          "footer": "Adaptasi konsep Exhibit 13.6. Contoh nama/koneksi individual sumber tidak diklaim direproduksi satu per satu."
+        }
+      },
+      {
+        "kind": "figure",
+        "spec": {
+          "id": "MNU108-14-13-7",
+          "title": "Tiga arah formal communication",
+          "type": "matrix",
+          "nodes": [
+            {
+              "title": "Upward: bawah → atas",
+              "items": [
+                "Problems/exceptions; suggestions",
+                "Performance, grievances, financial information"
+              ]
+            },
+            {
+              "title": "Downward: atas → bawah",
+              "items": [
+                "Goals/strategies; job instructions/rationale",
+                "Procedures, feedback, indoctrination"
+              ]
+            },
+            {
+              "title": "Horizontal: lateral/diagonal",
+              "items": [
+                "Problem solving di departemen",
+                "Coordination dan change lintas bagian"
+              ]
+            }
+          ],
+          "source": "Daft dan Marcic, Understanding Management 12e, [hal. 498–500].",
+          "alt": "Tiga arah formal communication. Upward: bawah → atas; Downward: atas → bawah; Horizontal: lateral/diagonal",
+          "footer": "Formal mengikuti chain of command/task responsibility. Arah pesan berbeda dari medium yang dipakai."
+        }
+      },
+      {
+        "kind": "pendalaman",
+        "title": "Kejelasan tulisan dan kebiasaan digital",
+        "blocks": [
+          {
+            "kind": "p",
+            "text": "Tulisan perlu jelas, ringkas, sesuai audience serta diperiksa sebelum dikirim. Informasi elektronik dapat menyebar di luar tujuan awal. Gunakan prosedur akses, audience yang relevan dan jejak keputusan yang jelas. Rumor perlu ditangani dengan informasi akurat, kesempatan bertanya dan tindakan konsisten, bukan otomatis menganggap semua informasi informal salah. [hal. 493–497]"
+          }
+        ]
+      },
+      {
+        "kind": "self-check",
+        "question": "Apakah pesan pada aplikasi chat selalu informal?",
+        "answer": [
+          {
+            "kind": "p",
+            "text": "Tidak. Pesan chat dapat menjadi formal bila menjalankan chain of command atau task responsibility. Medium berbeda dari status formal/informal. [hal. 492–500]"
+          }
+        ],
+        "signal": "Jawaban menyebut konsep, bukti, dan alasan; nama teori saja belum cukup."
+      },
+      {
+        "kind": "h2",
+        "text": "7. Teamwork dan tipe tim"
+      },
+      {
+        "kind": "p",
+        "text": "Team adalah dua atau lebih orang yang berinteraksi dan mengoordinasikan kerja bagi common goal, dengan commitment serta mutual accountability. Sekumpulan orang tanpa interaksi/tujuan bersama belum menjadi team. Interdependence membuat information sharing dan koordinasi penting. [hal. 510–518]"
+      },
+      {
+        "kind": "figure",
+        "spec": {
+          "id": "MNU108-14-14-1",
+          "title": "Requirements of Teamwork",
+          "type": "matrix",
+          "nodes": [
+            {
+              "title": "Shared mission",
+              "items": [
+                "Tujuan bersama yang jelas"
+              ]
+            },
+            {
+              "title": "Trust",
+              "items": [
+                "Percaya pihak lain juga berkontribusi"
+              ]
+            },
+            {
+              "title": "Communicate objectives/needs",
+              "items": [
+                "Informasi ke semua arah relevan"
+              ]
+            },
+            {
+              "title": "Pull together",
+              "items": [
+                "Sejalan menuju hasil bersama"
+              ]
+            },
+            {
+              "title": "Willing to sacrifice for team",
+              "items": [
+                "Kepentingan individu dapat disesuaikan"
+              ]
+            }
+          ],
+          "source": "Daft dan Marcic, Understanding Management 12e, [hal. 511].",
+          "alt": "Requirements of Teamwork. Shared mission; Trust; Communicate objectives/needs; Pull together; Willing to sacrifice for team"
+        }
+      },
+      {
+        "kind": "figure",
+        "spec": {
+          "id": "MNU108-14-14-2",
+          "title": "Five contributions teams can make",
+          "type": "matrix",
+          "nodes": [
+            {
+              "title": "Creativity/innovation",
+              "items": []
+            },
+            {
+              "title": "Quality",
+              "items": []
+            },
+            {
+              "title": "Speed",
+              "items": []
+            },
+            {
+              "title": "Productivity / lower costs",
+              "items": []
+            },
+            {
+              "title": "Employee satisfaction",
+              "items": []
+            }
+          ],
+          "source": "Daft dan Marcic, Understanding Management 12e, [hal. 512–513].",
+          "alt": "Five contributions teams can make. Creativity/innovation; Quality; Speed; Productivity / lower costs; Employee satisfaction",
+          "footer": "Dapat mendukung competitive advantage/performance jika team efektif; manfaat tidak otomatis dari pembentukan kelompok."
+        }
+      },
+      {
+        "kind": "figure",
+        "spec": {
+          "id": "MNU108-14-14-3",
+          "title": "Functional dan cross-functional teams",
+          "type": "matrix",
+          "nodes": [
+            {
+              "title": "Functional: dalam satu fungsi",
+              "items": [
+                "Manager dan subordinates dalam chain of command",
+                "Contoh engineering team sumber"
+              ]
+            },
+            {
+              "title": "Cross-functional: lintas fungsi",
+              "items": [
+                "Anggota dari keahlian berbeda pada level relatif setara",
+                "Project control, finance, engineering, production, marketing"
+              ]
+            }
+          ],
+          "source": "Daft dan Marcic, Understanding Management 12e, [hal. 514–515].",
+          "alt": "Functional dan cross-functional teams. Functional: dalam satu fungsi; Cross-functional: lintas fungsi",
+          "footer": "Gambar sumber menampilkan functional engineering team vertikal dan project L21 lintas lima departemen secara horizontal."
+        }
+      },
+      {
+        "kind": "table",
+        "title": "Tipe tim tambahan",
+        "headers": [
+          "Tipe",
+          "Ciri"
+        ],
+        "rows": [
+          [
+            "Task force",
+            "Lintas departemen untuk tugas tertentu; berakhir setelah tugas selesai"
+          ],
+          [
+            "Special-purpose/project team",
+            "Di luar struktur formal untuk proyek penting dengan skills pelengkap"
+          ],
+          [
+            "Self-managed",
+            "Multiskilled; keputusan, monitoring serta penyesuaian kerja oleh tim"
+          ],
+          [
+            "Agile",
+            "Kecil, multidisiplin, fokus komponen masalah, dekat customer dan empowered"
+          ],
+          [
+            "Virtual/remote",
+            "Anggota tersebar bekerja melalui teknologi; dapat bertumpang tindih dengan tipe lainnya"
+          ]
+        ],
+        "caption": "[hal. 515–518]",
+        "stackOnMobile": true
+      },
+      {
+        "kind": "p",
+        "text": "Social facilitation berarti kehadiran orang lain memengaruhi motivation/performance, tanpa selalu memberi peningkatan. Ukuran tim perlu cukup bagi skills tetapi memungkinkan koordinasi; rentang 3–6 agile dan 5–20 self-managed adalah karakterisasi buku, bukan batas universal. [hal. 513, 516–517, 525]"
+      },
+      {
+        "kind": "self-check",
+        "question": "Apakah tim virtual dan cross-functional selalu kategori terpisah?",
+        "answer": [
+          {
+            "kind": "p",
+            "text": "Tidak. Virtual menjelaskan cara/lokasi kolaborasi; cross-functional menjelaskan asal keahlian. Satu tim dapat memiliki kedua ciri. [hal. 510–518]"
+          }
+        ],
+        "signal": "Jawaban menyebut konsep, bukti, dan alasan; nama teori saja belum cukup."
+      },
+      {
+        "kind": "h2",
+        "text": "8. Virtual leadership, dilemmas dan effectiveness"
+      },
+      {
+        "kind": "p",
+        "text": "Keahlian individu belum menghasilkan tim efektif. Dilemma tim mencakup ketergantungan pada hasil orang lain, dysfunction dan free rider yang menikmati manfaat tanpa kontribusi proporsional. Leader perlu membangun proses, bukan hanya mengumpulkan orang berbakat. [hal. 519–527]"
+      },
+      {
+        "kind": "table",
+        "title": "Virtual leaders: Exhibit 14.4",
+        "headers": [
+          "Area",
+          "Praktik"
+        ],
+        "rows": [
+          [
+            "Trust/relationships",
+            "Pertemuan bila mungkin, respek beragam pengalaman, equal participation"
+          ],
+          [
+            "Team culture",
+            "Psychological safety, berbagi strengths, jadwal adil lintas time zones"
+          ],
+          [
+            "Monitor progress",
+            "Pantau kerja, beri recognition dan reward yang sesuai melalui interaksi digital"
+          ]
+        ],
+        "caption": "[hal. 519–520]",
+        "stackOnMobile": true
+      },
+      {
+        "kind": "table",
+        "title": "Five common dysfunctions → keadaan efektif",
+        "headers": [
+          "Dysfunction",
+          "Perbaikan"
+        ],
+        "rows": [
+          [
+            "Lack of trust",
+            "Aman untuk vulnerability, kesalahan dan concerns"
+          ],
+          [
+            "Fear of conflict",
+            "Healthy disagreement demi solusi"
+          ],
+          [
+            "Lack of commitment",
+            "Pendapat didengar dan buy-in pada keputusan"
+          ],
+          [
+            "Avoidance of accountability",
+            "Mutual responsibility atas outcomes"
+          ],
+          [
+            "Inattention to results",
+            "Collective results dibanding agenda pribadi/bagian"
+          ]
+        ],
+        "caption": "[hal. 522]",
+        "stackOnMobile": true
+      },
+      {
+        "kind": "figure",
+        "spec": {
+          "id": "MNU108-14-14-6",
+          "title": "Work Team Effectiveness Model",
+          "type": "process",
+          "nodes": [
+            {
+              "title": "Organizational context",
+              "items": [
+                "Leadership/vision, environment, culture",
+                "Strategy, reward/control systems"
+              ]
+            },
+            {
+              "title": "Team characteristics dalam context",
+              "items": [
+                "Type dan composition: size, diversity, roles"
+              ]
+            },
+            {
+              "title": "Team processes",
+              "items": [
+                "Development, cohesiveness, norms, conflict resolution"
+              ]
+            },
+            {
+              "title": "Work team effectiveness",
+              "items": [
+                "Productive output; personal satisfaction",
+                "Capacity to adapt and learn"
+              ]
+            }
+          ],
+          "source": "Daft dan Marcic, Understanding Management 12e, [hal. 522–523].",
+          "alt": "Work Team Effectiveness Model. Organizational context; Team characteristics dalam context; Team processes; Work team effectiveness",
+          "footer": "Context memengaruhi characteristics dan processes; characteristics juga membentuk processes. Evaluasi ketiga outcomes, bukan output saja."
+        }
+      },
+      {
+        "kind": "table",
+        "title": "Member roles",
+        "headers": [
+          "Role",
+          "Perilaku"
+        ],
+        "rows": [
+          [
+            "Task specialist",
+            "Initiate ideas, give opinions, seek information, summarize, energize"
+          ],
+          [
+            "Socioemotional",
+            "Encourage, harmonize, reduce tension, follow, compromise"
+          ]
+        ],
+        "caption": "[hal. 525–527]",
+        "stackOnMobile": true
+      },
+      {
+        "kind": "p",
+        "text": "Diversity menyediakan skills dan perspektif berbeda, tetapi memerlukan komunikasi yang membantu memahami perbedaan. Cohesiveness dan outcomes dipengaruhi norma serta context. Hindari menyatakan jenis kelamin atau ukuran tim tertentu pasti menjamin hasil. [hal. 525–527]"
+      },
+      {
+        "kind": "self-check",
+        "question": "Apa tiga outcome efektivitas tim?",
+        "answer": [
+          {
+            "kind": "p",
+            "text": "Productive output, personal satisfaction dan capacity to adapt/learn. Output tinggi yang merusak anggota atau kemampuan belajar belum mencakup seluruh model. [hal. 519–527]"
+          }
+        ],
+        "signal": "Jawaban menyebut konsep, bukti, dan alasan; nama teori saja belum cukup."
+      },
+      {
+        "kind": "h2",
+        "text": "9. Development, cohesiveness dan norms"
+      },
+      {
+        "kind": "p",
+        "text": "Tim berubah melalui proses, dan leader perlu membaca perilaku aktual. Forming mengorientasikan anggota; storming menampakkan konflik; norming membangun kejelasan/norma; performing menekankan problem solving; adjourning menyelesaikan tugas serta transisi. Tahap adalah model umum, bukan kalender yang otomatis berlaku bagi semua tim. [hal. 528–532]"
+      },
+      {
+        "kind": "figure",
+        "spec": {
+          "id": "MNU108-14-14-7",
+          "title": "Five Stages of Team Development",
+          "type": "process",
+          "nodes": [
+            {
+              "title": "Forming",
+              "items": [
+                "Orientation, getting acquainted"
+              ]
+            },
+            {
+              "title": "Storming",
+              "items": [
+                "Conflict dan disagreement"
+              ]
+            },
+            {
+              "title": "Norming",
+              "items": [
+                "Order, cohesion, roles/norms"
+              ]
+            },
+            {
+              "title": "Performing",
+              "items": [
+                "Cooperation dan problem solving"
+              ]
+            },
+            {
+              "title": "Adjourning",
+              "items": [
+                "Task completion dan penutupan"
+              ]
+            }
+          ],
+          "source": "Daft dan Marcic, Understanding Management 12e, [hal. 528–530].",
+          "alt": "Five Stages of Team Development. Forming; Storming; Norming; Performing; Adjourning"
+        }
+      },
+      {
+        "kind": "figure",
+        "spec": {
+          "id": "MNU108-14-14-8",
+          "title": "Empat jalan terbentuknya norms",
+          "type": "matrix",
+          "nodes": [
+            {
+              "title": "Primacy",
+              "items": [
+                "Perilaku awal menjadi precedent"
+              ]
+            },
+            {
+              "title": "Critical events",
+              "items": [
+                "Peristiwa penting dalam sejarah tim"
+              ]
+            },
+            {
+              "title": "Explicit statements",
+              "items": [
+                "Pernyataan leader atau members"
+              ]
+            },
+            {
+              "title": "Carryover",
+              "items": [
+                "Pengalaman/norma dari lingkungan lain"
+              ]
+            }
+          ],
+          "source": "Daft dan Marcic, Understanding Management 12e, [hal. 531].",
+          "alt": "Empat jalan terbentuknya norms. Primacy; Critical events; Explicit statements; Carryover",
+          "footer": "Empat sumber norma tidak diberi bobot persentase; bentuk lingkaran source adalah pengelompokan, bukan data pie chart."
+        }
+      },
+      {
+        "kind": "p",
+        "text": "Team cohesiveness ialah daya tarik dan motivasi anggota bertahan dalam tim. Relasi positif dapat membantu satisfaction, namun kelompok kompak dengan norma anti-management atau performance rendah dapat merugikan output. Evaluasi cohesion bersama norma dan tujuan. [hal. 530–532]"
+      },
+      {
+        "kind": "self-check",
+        "question": "Apakah tim yang kompak pasti performance tinggi?",
+        "answer": [
+          {
+            "kind": "p",
+            "text": "Tidak. Cohesion membantu relasi, tetapi norma dan orientasi tujuan menentukan arah perilaku bersama. Tim dapat kompak sekaligus menolak standar kerja. [hal. 528–532]"
+          }
+        ],
+        "signal": "Jawaban menyebut konsep, bukti, dan alasan; nama teori saja belum cukup."
+      },
+      {
+        "kind": "h2",
+        "text": "10. Conflict dan negotiation"
+      },
+      {
+        "kind": "p",
+        "text": "Task conflict tentang tujuan/isi kerja berbeda dari relationship conflict yang berfokus pada relasi personal. Konflik yang dikelola dapat membuka ide; terlalu kuat atau personal dapat merusak trust. Penyebab dapat berupa resources, goals, communication breakdown atau faultlines yang membagi kelompok. [hal. 532–538]"
+      },
+      {
+        "kind": "figure",
+        "spec": {
+          "id": "MNU108-14-14-9",
+          "title": "Balancing conflict and cooperation",
+          "type": "curve",
+          "nodes": [],
+          "source": "Daft dan Marcic, Understanding Management 12e, [hal. 534].",
+          "alt": "Balancing conflict and cooperation. ",
+          "xLabel": "Amount of conflict",
+          "yLabel": "Team performance",
+          "footer": "Model konseptual: konflik terlalu rendah/tinggi dapat merugikan. Tingkat moderate perlu dikelola; bukan angka target atau izin membuat konflik personal."
+        }
+      },
+      {
+        "kind": "figure",
+        "spec": {
+          "id": "MNU108-14-14-10",
+          "title": "Conflict styles: assertiveness × cooperativeness",
+          "type": "matrix",
+          "nodes": [
+            {
+              "title": "Dominating: my way",
+              "items": [
+                "Assertive tinggi; cooperative rendah"
+              ]
+            },
+            {
+              "title": "Collaborating: our way",
+              "items": [
+                "Keduanya tinggi"
+              ]
+            },
+            {
+              "title": "Avoiding: no way",
+              "items": [
+                "Keduanya rendah"
+              ]
+            },
+            {
+              "title": "Accommodating: your way",
+              "items": [
+                "Assertive rendah; cooperative tinggi"
+              ]
+            },
+            {
+              "title": "Compromising: half way",
+              "items": [
+                "Keduanya moderate; tengah model"
+              ]
+            }
+          ],
+          "source": "Daft dan Marcic, Understanding Management 12e, [hal. 535–536].",
+          "alt": "Conflict styles: assertiveness × cooperativeness. Dominating: my way; Collaborating: our way; Avoiding: no way; Accommodating: your way; Compromising: half way",
+          "footer": "Baris atas assertiveness tinggi, bawah rendah. Kolom kiri cooperativeness rendah, kanan tinggi. Pilih berdasarkan pentingnya isu, waktu dan kebutuhan kedua pihak.",
+          "centerLast": true
+        }
+      },
+      {
+        "kind": "table",
+        "title": "Ekspresi konflik",
+        "headers": [
+          "Directness/intensity",
+          "Pola"
+        ],
+        "rows": [
+          [
+            "High directness / low intensity",
+            "Jelas, tenang, bertanya dan mendengar; biasanya lebih konstruktif"
+          ],
+          [
+            "High directness / high intensity",
+            "Jelas tetapi agresif/antagonistik"
+          ],
+          [
+            "Low directness / high intensity",
+            "Tidak langsung tetapi menyerang atau undermining"
+          ],
+          [
+            "Low directness / low intensity",
+            "Ambigu/low-key; misalnya menahan informasi"
+          ]
+        ],
+        "caption": "[hal. 536–537]",
+        "stackOnMobile": true
+      },
+      {
+        "kind": "table",
+        "title": "Negotiation",
+        "headers": [
+          "Pendekatan",
+          "Asumsi"
+        ],
+        "rows": [
+          [
+            "Integrative",
+            "Cari solusi kreatif dan expand the pie bagi kedua pihak"
+          ],
+          [
+            "Distributive",
+            "Pie dianggap tetap; rebut bagian sebesar mungkin"
+          ]
+        ],
+        "caption": "[hal. 537–538]",
+        "stackOnMobile": true
+      },
+      {
+        "kind": "p",
+        "text": "Untuk integrative negotiation: pisahkan people/problem, fokus underlying interests dibanding demands, listen/ask questions, dan gunakan objective standards. Interests menjelaskan alasan di balik tuntutan; kompromi membagi perbedaan, sedangkan solusi integrative dapat memenuhi kepentingan dengan cara baru. [hal. 537–538]"
+      },
+      {
+        "kind": "self-check",
+        "question": "Mengapa collaborating tidak sama dengan sekadar membagi dua permintaan?",
+        "answer": [
+          {
+            "kind": "p",
+            "text": "Collaborating mencari solusi yang memenuhi dua concerns penting. Compromising memakai concessions atau pembagian perbedaan; integrative negotiation dapat menemukan opsi baru lewat interests. [hal. 532–538]"
+          }
+        ],
+        "signal": "Jawaban menyebut konsep, bukti, dan alasan; nama teori saja belum cukup."
+      },
+      {
+        "kind": "h2",
+        "text": "Persiapan ujian"
+      },
+      {
+        "kind": "table",
+        "title": "Jebakan gabungan komunikasi/tim",
+        "headers": [
+          "Klaim",
+          "Perbaikan"
+        ],
+        "rows": [
+          [
+            "Pesan terkirim = dipahami",
+            "Periksa decode dan feedback."
+          ],
+          [
+            "Chat selalu informal",
+            "Formal ditentukan chain/task responsibility."
+          ],
+          [
+            "Tidak ada disagreement = tim sehat",
+            "Fear of conflict dapat menghambat commitment."
+          ],
+          [
+            "Cohesion menjamin performance",
+            "Periksa norma, tujuan dan context."
+          ],
+          [
+            "Collaboration = kompromi",
+            "Dua strategi mengelola concerns dengan cara berbeda."
+          ]
+        ],
+        "caption": "[hal. 476–538]",
+        "stackOnMobile": true
+      },
+      {
+        "kind": "solution-reveal",
+        "title": "Brainchild: mencari fakta tanpa menghancurkan trust",
+        "prompt": "Kasus buku yang ditugaskan RPP, diparafrasekan. CEO perusahaan mainan marah setelah merasa desain produk rahasia bocor. Ia mengirim pesan emosional kepada penasihat dan pesan bernada ancaman kepada semua manajer sambil meminta TOTALLY HONEST findings. Manajer merasa diserang. Pesan privat ikut beredar kepada pegawai dan pers; email permintaan maaf berikutnya belum menghentikan dampak. [hal. 475–488, 494–500, 511, 519–523, 506]",
+        "promptBlocks": [
+          {
+            "kind": "ul",
+            "items": [
+              "Diagnosis masalah pesan, channel, emosi dan feedback.",
+              "Susun komunikasi awal yang lebih sesuai.",
+              "Usulkan pemulihan trust dan kerja sama tanpa menyimpulkan semua manajer bersalah."
+            ]
+          }
+        ],
+        "blocks": [
+          {
+            "kind": "p",
+            "text": "Hasil analisis untuk pembanding jawaban: Tujuan mencari fakta dilemahkan encoding yang mengancam dan generalisasi semua orang suspect. Email mudah beredar, miskin cues dan berisiko salah tafsir pada isu emosional. Ancaman mengurangi psychological safety serta kejujuran upward communication. Awali pertemuan/rich channel dengan pihak relevan, sampaikan fakta yang diketahui, batas informasi, kebutuhan investigasi dan proses yang adil. Ikuti dengan catatan tertulis yang jelas, akses terbatas sesuai kebutuhan dan saluran feedback. Kini akui kesalahan pesan serta dampaknya, hentikan tuduhan tanpa bukti, dengarkan kekhawatiran, klarifikasi proses dan lakukan tindak lanjut konsisten. Jaga kebutuhan security dan koordinasi lintas bagian; jangan menganggap apology email saja memulihkan trust atau menemukan pelaku. Teks berakhir dengan pertanyaan tindakan berikutnya; solusi ini adalah analisis. [hal. 475–488, 494–500, 511, 519–523, 506]"
+          }
+        ]
+      },
+      {
+        "kind": "solution-reveal",
+        "title": "Latihan: tim lintas fungsi, konflik dan feedback",
+        "prompt": "Latihan buatan: situasi berikut adalah asumsi untuk berlatih, tanpa klaim perusahaan nyata. Tim layanan jarak jauh berisi staf operasi dan administrasi. Instruksi hanya disiarkan lewat chat; anggota tidak memeriksa pemahaman. Mereka berbeda pendapat tentang prioritas, menyimpan informasi perbagian dan berusaha menghindari konflik agar tampak kompak. [hal. 476–490, 519–523, 525–537]",
+        "promptBlocks": [
+          {
+            "kind": "ul",
+            "items": [
+              "Pilih channel serta siklus feedback untuk isu kompleks.",
+              "Hubungkan dysfunction, norms dan pembagian roles.",
+              "Bedakan collaborating, compromising dan pola ekspresi konflik."
+            ]
+          }
+        ],
+        "blocks": [
+          {
+            "kind": "p",
+            "text": "Hasil analisis untuk pembanding jawaban: Gunakan video/percakapan untuk isu ambigu, minta paraphrase dan pertanyaan, lalu catat keputusan secara tertulis. Fear of conflict dapat menghalangi commitment; withholding information dapat mencerminkan norma serta orientasi perbagian. Tetapkan mission, roles, sharing norms dan accountability; bangun safety untuk berbeda pendapat. Task-specialist membantu fakta/solusi; socioemotional membantu relasi dan rekonsiliasi. Collaborating mencari solusi bagi dua kepentingan penting, sedangkan compromising membagi perbedaan. Ekspresikan konflik dengan high directness–low intensity: jelas, tenang, berbasis masalah. Label stage hanya diberi setelah bukti proses tambahan. Evaluasi output, satisfaction dan adaptation/learning bersama. [hal. 476–490, 519–523, 525–537]"
+          }
+        ]
+      }
+    ]
+  },
+  "quiz": [
+    {
+      "id": "mnu108-uas-tm14-01",
+      "tm": 14,
+      "topic": "Communication",
+      "difficulty": "basic",
+      "q": "Bukti paling langsung bahwa makna pesan dipahami bersama adalah…",
+      "options": [
+        "Notifikasi pesan terkirim saja",
+        "Panjang pesan yang diberikan sender kepada receiver",
+        "Feedback yang menunjukkan interpretasi dan dapat diklarifikasi",
+        "Jumlah emoji serta simbol yang dipakai dalam pesan"
+      ],
+      "answer": 2,
+      "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 476–478].",
+      "sourceAnchors": [
+        "Ch. 13–14; [hal. 476–478]; PDF 504–506"
+      ],
+      "explanation": "Feedback menghubungkan interpretasi receiver dengan sender. Alternatif lain: terkirim, panjang dan simbol tidak membuktikan mutual understanding. [hal. 476–478]",
+      "skill": "Diagnosis konsep, bukti dan penerapan"
+    },
+    {
+      "id": "mnu108-uas-tm14-02",
+      "tm": 14,
+      "topic": "Richness",
+      "difficulty": "basic",
+      "q": "Masalah sensitif dan ambigu dengan emosi tinggi paling memerlukan…",
+      "options": [
+        "Bulletin satu arah sebagai satu-satunya channel",
+        "Pesan paling panjang tanpa feedback",
+        "Channel dipilih hanya karena biaya termurah",
+        "Channel kaya dengan multiple cues dan rapid two-way feedback"
+      ],
+      "answer": 3,
+      "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 484–485].",
+      "sourceAnchors": [
+        "Ch. 13–14; [hal. 484–485]; PDF 512–513"
+      ],
+      "explanation": "Rich channel membantu klarifikasi cepat serta konteks emosional. Alternatif lain: bulletin/monolog miskin feedback dan panjang/biaya saja tidak menentukan kecocokan. [hal. 484–485]",
+      "skill": "Diagnosis konsep, bukti dan penerapan"
+    },
+    {
+      "id": "mnu108-uas-tm14-03",
+      "tm": 14,
+      "topic": "Candor",
+      "difficulty": "medium",
+      "q": "Pernyataan yang sesuai candor adalah…",
+      "options": [
+        "Saya kesulitan menutup laporan ketika data belum masuk; mohon kirim bagian ini sebelum waktu yang disepakati",
+        "Anda memang malas dan selalu menyusahkan; saya tidak perlu mendengar alasan Anda",
+        "Hindari menyampaikan masalah dan tetap memberi pujian agar anggota menerima pesan tanpa keberatan",
+        "Saya marah atas hasil ini, jadi semua anggota pasti bersalah dan perlu diberi tekanan"
+      ],
+      "answer": 0,
+      "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 487–488].",
+      "sourceAnchors": [
+        "Ch. 13–14; [hal. 487–488]; PDF 515–516"
+      ],
+      "explanation": "I statement, fakta/dampak dan permintaan spesifik disampaikan dengan respect. Alternatif lain: label, menghindari masalah dan generalisasi tidak membantu candor. [hal. 487–488]",
+      "skill": "Diagnosis konsep, bukti dan penerapan"
+    },
+    {
+      "id": "mnu108-uas-tm14-04",
+      "tm": 14,
+      "topic": "Channels",
+      "difficulty": "medium",
+      "q": "Laporan kendala dari staf kepada manajer melalui chat tugas termasuk…",
+      "options": [
+        "Downward karena menggunakan chat",
+        "Upward formal communication",
+        "Informal pasti karena digital",
+        "Horizontal karena isinya masalah"
+      ],
+      "answer": 1,
+      "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 498–500].",
+      "sourceAnchors": [
+        "Ch. 13–14; [hal. 498–500]; PDF 526–528"
+      ],
+      "explanation": "Arah bawah→atas mengikuti tanggung jawab tugas. Alternatif lain: medium tidak menentukan arah/status dan isi masalah tidak menjadikannya horizontal. [hal. 498–500]",
+      "skill": "Diagnosis konsep, bukti dan penerapan"
+    },
+    {
+      "id": "mnu108-uas-tm14-05",
+      "tm": 14,
+      "topic": "Team",
+      "difficulty": "medium",
+      "q": "Sekumpulan orang baru menjadi team ketika…",
+      "options": [
+        "Berada dalam ruangan sama dan menjalankan tugas sendiri tanpa tujuan bersama",
+        "Memiliki skill identik dan mengikuti arahan yang sama tanpa membutuhkan koordinasi kerja",
+        "Berinteraksi/berkoordinasi bagi common goal dengan commitment dan mutual accountability",
+        "Menghindari setiap perbedaan pendapat tanpa perlu koordinasi serta mutual accountability"
+      ],
+      "answer": 2,
+      "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 511].",
+      "sourceAnchors": [
+        "Ch. 13–14; [hal. 511]; PDF 539"
+      ],
+      "explanation": "Definisi memerlukan relasi kerja dan shared goal/accountability. Alternatif lain: lokasi/skill identik/harmoni tanpa disagreement tidak memenuhi definisi. [hal. 511]",
+      "skill": "Diagnosis konsep, bukti dan penerapan"
+    },
+    {
+      "id": "mnu108-uas-tm14-06",
+      "tm": 14,
+      "topic": "Effectiveness",
+      "difficulty": "medium",
+      "q": "Model work team effectiveness memakai tiga outcomes…",
+      "options": [
+        "Output, profit dan popularitas saja",
+        "Ukuran anggota, diversity keahlian dan roles sebagai ukuran hasil akhir tim",
+        "Forming, storming dan norming sebagai hasil akhir pekerjaan tim",
+        "Productive output, personal satisfaction, capacity to adapt and learn"
+      ],
+      "answer": 3,
+      "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 522–523].",
+      "sourceAnchors": [
+        "Ch. 13–14; [hal. 522–523]; PDF 550–551"
+      ],
+      "explanation": "Ketiga outcome menilai hasil, anggota serta kemampuan perkembangan. Alternatif lain: composition dan stages adalah faktor/proses, bukan outcome model. [hal. 522–523]",
+      "skill": "Diagnosis konsep, bukti dan penerapan"
+    },
+    {
+      "id": "mnu108-uas-tm14-07",
+      "tm": 14,
+      "topic": "Dysfunctions",
+      "difficulty": "advanced",
+      "q": "Tim menyetujui keputusan di rapat karena takut mengungkap keberatan, kemudian kurang mendukung pelaksanaan. Hubungan terdekat?",
+      "options": [
+        "Fear of conflict dapat melemahkan commitment",
+        "Semua agreement membuktikan trust tinggi",
+        "Free rider pasti terbukti pada semua anggota",
+        "Performing pasti sudah tercapai"
+      ],
+      "answer": 0,
+      "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 522].",
+      "sourceAnchors": [
+        "Ch. 13–14; [hal. 522]; PDF 550"
+      ],
+      "explanation": "Pendapat yang tidak diungkap menghambat buy-in. Alternatif lain: agreement saja tidak membuktikan trust, kontribusi/statusstage belum diketahui. [hal. 522]",
+      "skill": "Diagnosis konsep, bukti dan penerapan"
+    },
+    {
+      "id": "mnu108-uas-tm14-08",
+      "tm": 14,
+      "topic": "Norms",
+      "difficulty": "advanced",
+      "q": "Tim sangat kompak tetapi terbiasa menahan informasi dari bagian lain. Kesimpulan tepat?",
+      "options": [
+        "Cohesion menjamin output tinggi",
+        "Cohesion perlu dinilai bersama norms dan tujuan",
+        "Setiap cohesion selalu buruk",
+        "Norms hanya aturan tertulis"
+      ],
+      "answer": 1,
+      "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 530–532].",
+      "sourceAnchors": [
+        "Ch. 13–14; [hal. 530–532]; PDF 558–560"
+      ],
+      "explanation": "Kekompakan dapat menguatkan norma yang merugikan kerja. Cohesion menjelaskan keinginan bertahan dan relasi, sementara norms menentukan perilaku yang dianggap pantas; keduanya perlu dibandingkan dengan shared goals. Alternatif lain: baik/buruk tidak universal; norms dapat informal. [hal. 530–532]",
+      "skill": "Diagnosis konsep, bukti dan penerapan"
+    },
+    {
+      "id": "mnu108-uas-tm14-09",
+      "tm": 14,
+      "topic": "Conflict",
+      "difficulty": "advanced",
+      "q": "Dua concerns penting perlu dipenuhi bersama, dengan waktu mengeksplorasi opsi. Style yang paling cocok?",
+      "options": [
+        "Accommodating dengan assertiveness tinggi",
+        "Avoiding dengan cooperativeness tinggi",
+        "Collaborating: assertive dan cooperative tinggi",
+        "Dominating demi dua pihak tanpa diskusi"
+      ],
+      "answer": 2,
+      "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 535–537].",
+      "sourceAnchors": [
+        "Ch. 13–14; [hal. 535–537]; PDF 563–565"
+      ],
+      "explanation": "Collaboration menggabungkan perhatian pada concern diri dan pihak lain. Alternatif lain: kombinasi dimensi pilihan lain salah atau tidak memenuhi kedua concerns. [hal. 535–537]",
+      "skill": "Diagnosis konsep, bukti dan penerapan"
+    },
+    {
+      "id": "mnu108-uas-tm14-10",
+      "tm": 14,
+      "topic": "Brainchild",
+      "difficulty": "advanced",
+      "q": "Mengapa email yang meminta kejujuran tetapi mengancam semua manajer dapat gagal?",
+      "options": [
+        "Karena email selalu dilarang dalam organisasi",
+        "Karena kasus membuktikan seluruh manajer pelaku",
+        "Karena apology pasti menghapus seluruh dampak",
+        "Threat menghambat feedback/trust dan pesan miskin cues mudah salah tafsir"
+      ],
+      "answer": 3,
+      "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 476–488, 506].",
+      "sourceAnchors": [
+        "Ch. 13–14; [hal. 476–488, 506]; PDF 504–516, 534"
+      ],
+      "explanation": "Tujuan dan encoding bertentangan; rich channel/feedback serta proses adil diperlukan. Alternatif lain: larangan universal, pelaku dan jaminan pemulihan tidak ada dalam teks. [hal. 476–488, 506]",
+      "skill": "Diagnosis konsep, bukti dan penerapan"
+    }
+  ],
+  "cards": [
+    {
+      "topic": "Communication",
+      "front": "Apa siklus komunikasi?",
+      "back": "Sender encode → message/channel → receiver decode → feedback dengan peran berbalik; error dapat terjadi di seluruh proses. [hal. 476–478]",
+      "category": "Mekanisme",
+      "id": "mnu108-uas-tm14-01",
+      "phase": "pra-uas",
+      "tm": 14
+    },
+    {
+      "topic": "Richness",
+      "front": "Apa tiga karakteristik richness?",
+      "back": "Multiple cues, rapid two-way feedback dan personal focus. Pilih berdasarkan kebutuhan pesan. [hal. 484]",
+      "category": "Konsep",
+      "id": "mnu108-uas-tm14-02",
+      "phase": "pra-uas",
+      "tm": 14
+    },
+    {
+      "topic": "Direction",
+      "front": "Bedakan upward, downward dan horizontal.",
+      "back": "Upward bawah→atas; downward atas→bawah; horizontal lateral/diagonal untuk koordinasi. Medium digital tidak menentukan formal/informal. [hal. 498–500]",
+      "category": "Perbandingan",
+      "id": "mnu108-uas-tm14-03",
+      "phase": "pra-uas",
+      "tm": 14
+    },
+    {
+      "topic": "Team",
+      "front": "Apa tiga outcome efektivitas tim?",
+      "back": "Productive output, personal satisfaction, capacity to adapt and learn. Context, characteristics dan processes memengaruhi ketiganya. [hal. 522–523]",
+      "category": "Konsep",
+      "id": "mnu108-uas-tm14-04",
+      "phase": "pra-uas",
+      "tm": 14
+    },
+    {
+      "topic": "Stages",
+      "front": "Apa lima stages team development?",
+      "back": "Forming, storming, norming, performing, adjourning. Periksa bukti proses, tanpa menganggap tahap otomatis mengikuti waktu. [hal. 528–530]",
+      "category": "Mekanisme",
+      "id": "mnu108-uas-tm14-05",
+      "phase": "pra-uas",
+      "tm": 14
+    },
+    {
+      "topic": "Conflict",
+      "front": "Apa dua dimensi dan lima conflict styles?",
+      "back": "Assertiveness/cooperativeness: dominating tinggi/rendah, collaborating tinggi/tinggi, avoiding rendah/rendah, accommodating rendah/tinggi, compromising moderate/moderate. [hal. 535–536]",
+      "category": "Konsep",
+      "id": "mnu108-uas-tm14-06",
+      "phase": "pra-uas",
+      "tm": 14
+    }
+  ],
+  "bank": [
+    {
+      "type": "analysis",
+      "scope": "TM 14: Brainchild: mencari fakta tanpa menghancurkan trust",
+      "difficulty": "Menengah",
+      "estimatedTime": "20–30 menit",
+      "question": "Brainchild: mencari fakta tanpa menghancurkan trust",
+      "context": "Kasus buku yang ditugaskan RPP, diparafrasekan. CEO perusahaan mainan marah setelah merasa desain produk rahasia bocor. Ia mengirim pesan emosional kepada penasihat dan pesan bernada ancaman kepada semua manajer sambil meminta TOTALLY HONEST findings. Manajer merasa diserang. Pesan privat ikut beredar kepada pegawai dan pers; email permintaan maaf berikutnya belum menghentikan dampak. [hal. 475–488, 494–500, 511, 519–523, 506]",
+      "data": [
+        "Kasus tidak mengungkap pelaku atau bukti lengkap kebocoran.",
+        "Informasi desain dikembangkan piecemeal antarbagian untuk kerahasiaan.",
+        "Stock price disebut mendapat minor hit, tanpa angka persentase.",
+        "Dasar konsep: Daft dan Marcic 12e [hal. 475–488, 494–500, 511, 519–523, 506]."
+      ],
+      "instructions": [
+        "Diagnosis masalah pesan, channel, emosi dan feedback.",
+        "Susun komunikasi awal yang lebih sesuai.",
+        "Usulkan pemulihan trust dan kerja sama tanpa menyimpulkan semua manajer bersalah."
+      ],
+      "outputFormat": [
+        "Pisahkan fakta/asumsi dan penafsiran.",
+        "Tulis keputusan dengan bukti dan dasar konsep.",
+        "Jelaskan kelemahan alternatif dan cara mengevaluasi keputusan."
+      ],
+      "rubric": [
+        "Ketepatan fakta/asumsi dan konsep (30%)",
+        "Alasan keputusan serta kelemahan alternatif (45%)",
+        "Kelayakan tindak lanjut dan evaluasi (25%)"
+      ],
+      "answerGuide": "Hasil analisis untuk pembanding jawaban: Tujuan mencari fakta dilemahkan encoding yang mengancam dan generalisasi semua orang suspect. Email mudah beredar, miskin cues dan berisiko salah tafsir pada isu emosional. Ancaman mengurangi psychological safety serta kejujuran upward communication. Awali pertemuan/rich channel dengan pihak relevan, sampaikan fakta yang diketahui, batas informasi, kebutuhan investigasi dan proses yang adil. Ikuti dengan catatan tertulis yang jelas, akses terbatas sesuai kebutuhan dan saluran feedback. Kini akui kesalahan pesan serta dampaknya, hentikan tuduhan tanpa bukti, dengarkan kekhawatiran, klarifikasi proses dan lakukan tindak lanjut konsisten. Jaga kebutuhan security dan koordinasi lintas bagian; jangan menganggap apology email saja memulihkan trust atau menemukan pelaku. Teks berakhir dengan pertanyaan tindakan berikutnya; solusi ini adalah analisis. [hal. 475–488, 494–500, 511, 519–523, 506]"
+    },
+    {
+      "type": "analysis",
+      "scope": "TM 14: Latihan: tim lintas fungsi, konflik dan feedback",
+      "difficulty": "Menengah",
+      "estimatedTime": "20–30 menit",
+      "question": "Latihan: tim lintas fungsi, konflik dan feedback",
+      "context": "Latihan buatan: situasi berikut adalah asumsi untuk berlatih, tanpa klaim perusahaan nyata. Tim layanan jarak jauh berisi staf operasi dan administrasi. Instruksi hanya disiarkan lewat chat; anggota tidak memeriksa pemahaman. Mereka berbeda pendapat tentang prioritas, menyimpan informasi perbagian dan berusaha menghindari konflik agar tampak kompak. [hal. 476–490, 519–523, 525–537]",
+      "data": [
+        "Asumsi: mereka mempunyai tujuan bersama dan tugas interdependent.",
+        "Belum ada data yang membuktikan stage atau penyebab tunggal masalah.",
+        "Dasar konsep: Daft dan Marcic 12e [hal. 476–490, 519–523, 525–537]."
+      ],
+      "instructions": [
+        "Pilih channel serta siklus feedback untuk isu kompleks.",
+        "Hubungkan dysfunction, norms dan pembagian roles.",
+        "Bedakan collaborating, compromising dan pola ekspresi konflik."
+      ],
+      "outputFormat": [
+        "Pisahkan fakta/asumsi dan penafsiran.",
+        "Tulis keputusan dengan bukti dan dasar konsep.",
+        "Jelaskan kelemahan alternatif dan cara mengevaluasi keputusan."
+      ],
+      "rubric": [
+        "Ketepatan fakta/asumsi dan konsep (30%)",
+        "Alasan keputusan serta kelemahan alternatif (45%)",
+        "Kelayakan tindak lanjut dan evaluasi (25%)"
+      ],
+      "answerGuide": "Hasil analisis untuk pembanding jawaban: Gunakan video/percakapan untuk isu ambigu, minta paraphrase dan pertanyaan, lalu catat keputusan secara tertulis. Fear of conflict dapat menghalangi commitment; withholding information dapat mencerminkan norma serta orientasi perbagian. Tetapkan mission, roles, sharing norms dan accountability; bangun safety untuk berbeda pendapat. Task-specialist membantu fakta/solusi; socioemotional membantu relasi dan rekonsiliasi. Collaborating mencari solusi bagi dua kepentingan penting, sedangkan compromising membagi perbedaan. Ekspresikan konflik dengan high directness–low intensity: jelas, tenang, berbasis masalah. Label stage hanya diberi setelah bukti proses tambahan. Evaluasi output, satisfaction dan adaptation/learning bersama. [hal. 476–490, 519–523, 525–537]"
+    }
+  ],
+  "visualInventory": [
+    {
+      "id": "MNU108-14-OV",
+      "title": "Informasi menjadi tindakan bersama",
+      "type": "process",
+      "source": "Daft dan Marcic, Understanding Management 12e, [hal. 475–538].",
+      "mobile": "SVG 360 unit dengan teks yang mengalir sesuai ruang; makna hubungan sama dengan desktop."
+    },
+    {
+      "id": "MNU108-14-13-1",
+      "title": "Manager as Communication Champion",
+      "type": "process",
+      "source": "Daft dan Marcic, Understanding Management 12e, [hal. 475].",
+      "mobile": "SVG 360 unit dengan teks yang mengalir sesuai ruang; makna hubungan sama dengan desktop."
+    },
+    {
+      "id": "MNU108-14-13-2",
+      "title": "A Model of Communication",
+      "type": "process",
+      "source": "Daft dan Marcic, Understanding Management 12e, [hal. 476–478].",
+      "mobile": "SVG 360 unit dengan teks yang mengalir sesuai ruang; makna hubungan sama dengan desktop."
+    },
+    {
+      "id": "MNU108-14-13-3",
+      "title": "Centralized dan decentralized networks",
+      "type": "networks",
+      "source": "Daft dan Marcic, Understanding Management 12e, [hal. 483].",
+      "mobile": "SVG 360 unit dengan teks yang mengalir sesuai ruang; makna hubungan sama dengan desktop."
+    },
+    {
+      "id": "MNU108-14-13-4",
+      "title": "Channel richness: tinggi menuju rendah",
+      "type": "process",
+      "source": "Daft dan Marcic, Understanding Management 12e, [hal. 484–485].",
+      "mobile": "SVG 360 unit dengan teks yang mengalir sesuai ruang; makna hubungan sama dengan desktop."
+    },
+    {
+      "id": "MNU108-14-13-6",
+      "title": "Relasi dapat melintasi batas departemen",
+      "type": "parallel",
+      "source": "Daft dan Marcic, Understanding Management 12e, [hal. 494–495].",
+      "mobile": "SVG 360 unit dengan teks yang mengalir sesuai ruang; makna hubungan sama dengan desktop."
+    },
+    {
+      "id": "MNU108-14-13-7",
+      "title": "Tiga arah formal communication",
+      "type": "matrix",
+      "source": "Daft dan Marcic, Understanding Management 12e, [hal. 498–500].",
+      "mobile": "SVG 360 unit dengan teks yang mengalir sesuai ruang; makna hubungan sama dengan desktop."
+    },
+    {
+      "id": "MNU108-14-14-1",
+      "title": "Requirements of Teamwork",
+      "type": "matrix",
+      "source": "Daft dan Marcic, Understanding Management 12e, [hal. 511].",
+      "mobile": "SVG 360 unit dengan teks yang mengalir sesuai ruang; makna hubungan sama dengan desktop."
+    },
+    {
+      "id": "MNU108-14-14-2",
+      "title": "Five contributions teams can make",
+      "type": "matrix",
+      "source": "Daft dan Marcic, Understanding Management 12e, [hal. 512–513].",
+      "mobile": "SVG 360 unit dengan teks yang mengalir sesuai ruang; makna hubungan sama dengan desktop."
+    },
+    {
+      "id": "MNU108-14-14-3",
+      "title": "Functional dan cross-functional teams",
+      "type": "matrix",
+      "source": "Daft dan Marcic, Understanding Management 12e, [hal. 514–515].",
+      "mobile": "SVG 360 unit dengan teks yang mengalir sesuai ruang; makna hubungan sama dengan desktop."
+    },
+    {
+      "id": "MNU108-14-14-6",
+      "title": "Work Team Effectiveness Model",
+      "type": "process",
+      "source": "Daft dan Marcic, Understanding Management 12e, [hal. 522–523].",
+      "mobile": "SVG 360 unit dengan teks yang mengalir sesuai ruang; makna hubungan sama dengan desktop."
+    },
+    {
+      "id": "MNU108-14-14-7",
+      "title": "Five Stages of Team Development",
+      "type": "process",
+      "source": "Daft dan Marcic, Understanding Management 12e, [hal. 528–530].",
+      "mobile": "SVG 360 unit dengan teks yang mengalir sesuai ruang; makna hubungan sama dengan desktop."
+    },
+    {
+      "id": "MNU108-14-14-8",
+      "title": "Empat jalan terbentuknya norms",
+      "type": "matrix",
+      "source": "Daft dan Marcic, Understanding Management 12e, [hal. 531].",
+      "mobile": "SVG 360 unit dengan teks yang mengalir sesuai ruang; makna hubungan sama dengan desktop."
+    },
+    {
+      "id": "MNU108-14-14-9",
+      "title": "Balancing conflict and cooperation",
+      "type": "curve",
+      "source": "Daft dan Marcic, Understanding Management 12e, [hal. 534].",
+      "mobile": "SVG 360 unit dengan teks yang mengalir sesuai ruang; makna hubungan sama dengan desktop."
+    },
+    {
+      "id": "MNU108-14-14-10",
+      "title": "Conflict styles: assertiveness × cooperativeness",
+      "type": "matrix",
+      "source": "Daft dan Marcic, Understanding Management 12e, [hal. 535–536].",
+      "mobile": "SVG 360 unit dengan teks yang mengalir sesuai ruang; makna hubungan sama dengan desktop."
+    }
+  ],
+  "exhibits": [
+    {
+      "id": "13.1",
+      "page": 475,
+      "action": "Visual champion/purpose/methods"
+    },
+    {
+      "id": "13.2",
+      "page": 476,
+      "action": "Visual dua arah dan error di tiap tahap"
+    },
+    {
+      "id": "13.3",
+      "page": 483,
+      "action": "Visual topologi centralized/decentralized"
+    },
+    {
+      "id": "13.4",
+      "page": 484,
+      "action": "Visual continuum richness"
+    },
+    {
+      "id": "13.5",
+      "page": 490,
+      "action": "Tabel sepuluh listening keys"
+    },
+    {
+      "id": "13.6",
+      "page": 495,
+      "action": "Visual adaptasi lintas departemen; tidak menyalin nama/edge individu"
+    },
+    {
+      "id": "13.7",
+      "page": 498,
+      "action": "Visual arah serta isi formal communication"
+    },
+    {
+      "id": "14.1",
+      "page": 511,
+      "action": "Visual lima teamwork requirements"
+    },
+    {
+      "id": "14.2",
+      "page": 512,
+      "action": "Visual lima kontribusi potential"
+    },
+    {
+      "id": "14.3",
+      "page": 515,
+      "action": "Visual functional/cross-functional dan arah organisasi"
+    },
+    {
+      "id": "14.4",
+      "page": 519,
+      "action": "Tabel virtual practices"
+    },
+    {
+      "id": "14.5",
+      "page": 522,
+      "action": "Tabel dysfunction dan keadaan efektif"
+    },
+    {
+      "id": "14.6",
+      "page": 523,
+      "action": "Visual context/characteristics/process/outcomes"
+    },
+    {
+      "id": "14.7",
+      "page": 528,
+      "action": "Visual lima stages"
+    },
+    {
+      "id": "14.8",
+      "page": 531,
+      "action": "Visual empat sumber norms tanpa persen palsu"
+    },
+    {
+      "id": "14.9",
+      "page": 534,
+      "action": "Kurva konflik kualitatif"
+    },
+    {
+      "id": "14.10",
+      "page": 536,
+      "action": "Matriks styles/dimensi dengan compromising tengah"
+    }
+  ],
+  "audit": {
+    "findings": [
+      "RPP TM14 menggabungkan Ch.13–14 dan menugaskan Brainchild pada 506. Superstars? pada 541–542 tetap aktivitas tambahan; tidak keliru mengganti kasus RPP.",
+      "Channel richness dibedakan dari kecepatan/panjang pesan; formal communication dibedakan dari medium. Curve konflik kualitatif tanpa angka optimal.",
+      "Batas pada gender, nonverbal percentages dan power pose mencegah generalisasi biologis/hasil yang tidak dapat dijamin. Seluruh framework mempunyai visual/tabel; personal-network visual menyatakan adaptasi konsep."
+    ],
+    "appendix": [
+      "Communication apprehension (501–502), Communication Competence (503–504): refleksi sukarela instrumen buku, bukan diagnosis.",
+      "Ethical Dilemma A Language Problem (505): bahas job requirements, language barriers, support dan fairness tanpa stereotip national origin.",
+      "Team role self-assessment (526–527), Conflict style (538–539): bandingkan refleksi dengan perilaku, tidak menetapkan style permanen.",
+      "Team development activity (540) dan dilema The Study Group (540–541): diskusikan mutual accountability serta tanggung jawab individu.",
+      "Superstars? (541–542): CIO mewarisi 14 regional/department heads dengan talent tinggi, sharing rendah dan agenda perbagian. Analisis norms, trust, cohesion, diversity dan collective results sebagai kasus tambahan sumber.",
+      "Gender/communication (481–482) dan contoh power pose (491): digunakan untuk membaca keterbatasan generalisasi riset lama, tanpa klaim sebab biologis individual atau jaminan perubahan hormone/performance."
+    ],
+    "sourceReview": "Teks bab 13–14 dan halaman diagram diperiksa langsung; nomor cetak dan PDF dibedakan.",
+    "constraints": "Pra-UTS dipertahankan. Data historis mengikuti tahun buku. Latihan buatan ditandai dan hasil analisis tidak diklaim sebagai tindakan nyata tokoh."
+  }
+}
