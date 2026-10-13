@@ -81,5 +81,6 @@ assert.match(m.MNK201_READINGS[13].ref,/Bab 18/);
 const financeReleaseIndex=m.RELEASES.findIndex(r=>r.version==='v1.3.6');
 assert.ok(financeReleaseIndex>=0,'original finance release remains in history');
 assert.equal(m.RELEASES[financeReleaseIndex+1].version,'v1.3.5');
-assert.equal(m.RELEASES[0].version,'v1.3.7','source audit release precedes the unchanged history');
+const auditRelease=m.RELEASES.findIndex(r=>r.version==='v1.3.7');
+assert.ok(auditRelease>=0);assert.equal(m.RELEASES[auditRelease+1].version,'v1.3.6','source audit release precedes the unchanged finance history');
 console.log('MNK102 UAS PASS: source coverage, 60/42/14, independent numeric keys, answer balance, seven rendered formula sets, exact original pre-UTS preservation and corrected chapter mapping.');

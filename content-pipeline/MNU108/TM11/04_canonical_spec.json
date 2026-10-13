@@ -1,0 +1,1170 @@
+{
+  "course": "MNU108",
+  "tm": 11,
+  "reading": {
+    "tm": 11,
+    "title": "Understanding Individual Behavior",
+    "ref": "Daft dan Marcic, Understanding Management 12e (2023), Ch. 10, hal. 360–399 (PDF 388–427); RPP Excel 2026, TM 11.",
+    "intro": "Dua orang dapat menafsirkan kejadian yang sama secara berbeda. Pelajari cara memeriksa persepsi, memahami pola diri dan mengelola emosi serta tuntutan kerja dengan bukti.",
+    "layout": "layered",
+    "coreReadingMinutes": 20,
+    "objectives": [
+      "Gunakan feedback dan self-assessment untuk mengenali blind spots.",
+      "Pisahkan job satisfaction, commitment dan trust.",
+      "Perception: observe, screen, organize; attribution memerlukan bukti.",
+      "Big Five adalah dimensi, sementara MBTI adalah preferensi.",
+      "EI memiliki empat komponen yang saling melengkapi.",
+      "Kelola komitmen melalui lima langkah dan perbaiki sumber stres."
+    ],
+    "blocks": [
+      {
+        "kind": "h2",
+        "text": "1. Kilat: Understanding Individual Behavior"
+      },
+      {
+        "kind": "figure",
+        "spec": {
+          "id": "MNU108-11-OV",
+          "title": "Dari pengenalan diri ke tindakan kerja",
+          "type": "process",
+          "nodes": [
+            {
+              "title": "Kenali diri dan sikap",
+              "items": [
+                "Self-awareness, satisfaction dan trust"
+              ]
+            },
+            {
+              "title": "Periksa penafsiran",
+              "items": [
+                "Perception, attribution dan personality"
+              ]
+            },
+            {
+              "title": "Kelola tindakan dan tuntutan",
+              "items": [
+                "Emotions/EI, self-management, stress/resilience"
+              ]
+            }
+          ],
+          "source": "Daft dan Marcic, Understanding Management 12e, [hal. 362–392].",
+          "alt": "Dari pengenalan diri ke tindakan kerja. Kenali diri dan sikap; Periksa penafsiran; Kelola tindakan dan tuntutan"
+        }
+      },
+      {
+        "kind": "ul",
+        "items": [
+          "Gunakan feedback dan self-assessment untuk mengenali blind spots.",
+          "Pisahkan job satisfaction, commitment dan trust.",
+          "Perception: observe, screen, organize; attribution memerlukan bukti.",
+          "Big Five adalah dimensi, sementara MBTI adalah preferensi.",
+          "EI memiliki empat komponen yang saling melengkapi.",
+          "Kelola komitmen melalui lima langkah dan perbaiki sumber stres."
+        ]
+      },
+      {
+        "kind": "pendalaman",
+        "title": "Istilah Inggris yang digunakan",
+        "blocks": [
+          {
+            "kind": "table",
+            "title": "Istilah dan makna",
+            "headers": [
+              "Istilah",
+              "Makna dalam bab"
+            ],
+            "rows": [
+              [
+                "Self-awareness",
+                "Kesadaran tentang karakteristik, emosi dan pola diri."
+              ],
+              [
+                "Attribution",
+                "Penjelasan penyebab suatu perilaku."
+              ],
+              [
+                "Grit",
+                "Ketekunan dan passion untuk tujuan jangka panjang."
+              ],
+              [
+                "Resilience",
+                "Kapasitas bertahan serta bangkit dari kesulitan."
+              ]
+            ],
+            "caption": "Daft dan Marcic, Understanding Management 12e (2023), Ch. 10, hal. 360–399 (PDF 388–427); RPP Excel 2026, TM 11.",
+            "stackOnMobile": true
+          }
+        ]
+      },
+      {
+        "kind": "h2",
+        "text": "2. Self-awareness, attitudes dan trust"
+      },
+      {
+        "kind": "p",
+        "text": "Memahami perilaku dimulai dari mengenali diri, bukan menempelkan label kepada orang lain. Self-awareness mencakup kesadaran tentang kepribadian, keyakinan, nilai dan kecenderungan diri. Blind spots dapat membuat dampak tindakan berbeda dari yang dibayangkan. Attitude adalah penilaian positif/negatif terhadap objek, orang atau peristiwa; komponennya cognition, affect dan behavior. [hal. 362–368]"
+      },
+      {
+        "kind": "figure",
+        "spec": {
+          "id": "MNU108-11-10-1",
+          "title": "Dua jalan menuju self-awareness",
+          "type": "parallel",
+          "nodes": [
+            {
+              "title": "Soliciting feedback",
+              "items": [
+                "Minta pandangan orang lain",
+                "Dengarkan dampak perilaku diri"
+              ]
+            },
+            {
+              "title": "Using self-assessment",
+              "items": [
+                "Refleksi nilai, pola dan kemampuan",
+                "Bandingkan dengan pengalaman nyata"
+              ]
+            }
+          ],
+          "source": "Daft dan Marcic, Understanding Management 12e, [hal. 363].",
+          "alt": "Dua jalan menuju self-awareness. Soliciting feedback; Using self-assessment",
+          "result": "Greater self-awareness"
+        }
+      },
+      {
+        "kind": "table",
+        "title": "Sikap kerja yang berhubungan tetapi berbeda",
+        "headers": [
+          "Konsep",
+          "Makna",
+          "Batas kesimpulan"
+        ],
+        "rows": [
+          [
+            "Job satisfaction",
+            "Sikap positif terhadap pekerjaan",
+            "Kepuasan tidak mengukur seluruh kinerja."
+          ],
+          [
+            "Organizational commitment",
+            "Loyalitas dan engagement dengan organisasi",
+            "Mendukung organisasi tidak menuntut menyetujui semua keputusan."
+          ],
+          [
+            "Trust",
+            "Keyakinan pada keandalan dan niat pihak lain",
+            "Dibangun melalui tindakan konsisten dan komunikasi jujur."
+          ]
+        ],
+        "caption": "[hal. 365–368]",
+        "stackOnMobile": true
+      },
+      {
+        "kind": "p",
+        "text": "Cognitive dissonance adalah ketegangan ketika cognition tidak konsisten, misalnya tindakan bertentangan dengan sikap. Orang dapat mengubah sikap, perilaku atau cara menafsirkan keadaan untuk mengurangi ketegangan. Memahami proses ini membantu memeriksa alasan yang masuk akal sekaligus rasionalisasi. [hal. 364–365]"
+      },
+      {
+        "kind": "self-check",
+        "question": "Mengapa feedback dan self-assessment perlu dipakai bersama?",
+        "answer": [
+          {
+            "kind": "p",
+            "text": "Refleksi mengenali niat dan pola diri; feedback menunjukkan dampak yang mungkin tidak terlihat. Keduanya memberi peluang memeriksa blind spots, dengan tetap menilai mutu bukti. [hal. 362–368]"
+          }
+        ],
+        "signal": "Jawaban menyebut konsep, bukti, dan alasan; nama teori saja belum cukup."
+      },
+      {
+        "kind": "h2",
+        "text": "3. Perception dan attribution"
+      },
+      {
+        "kind": "p",
+        "text": "Perception adalah proses memberi makna pada lingkungan. Orang dapat menerima rangsangan yang sama tetapi menyaring serta menyusun informasi dengan cara berbeda. Perceptual selectivity memusatkan perhatian pada sebagian rangsangan; perceptual organization membentuk pola. Stereotyping menyederhanakan orang berdasarkan kelompok, sementara halo effect membiarkan kesan satu sifat memengaruhi penilaian sifat lain. [hal. 368–371]"
+      },
+      {
+        "kind": "figure",
+        "spec": {
+          "id": "MNU108-11-10-3",
+          "title": "The Perception Process",
+          "type": "process",
+          "nodes": [
+            {
+              "title": "Observe",
+              "items": [
+                "Terima informasi melalui indra"
+              ]
+            },
+            {
+              "title": "Screen",
+              "items": [
+                "Pilih data yang diperhatikan"
+              ]
+            },
+            {
+              "title": "Organize",
+              "items": [
+                "Susun pola untuk penafsiran dan respons"
+              ]
+            }
+          ],
+          "source": "Daft dan Marcic, Understanding Management 12e, [hal. 369].",
+          "alt": "The Perception Process. Observe; Screen; Organize",
+          "footer": "Model sumber mempunyai tiga langkah. Penafsiran dan respons tercakup dalam organize."
+        }
+      },
+      {
+        "kind": "p",
+        "text": "Exhibit 10.4 memperlihatkan gambar anjing, sosok tua/muda dan susunan blok ambigu. Halaman gambar diperiksa langsung: pengalaman serta konteks mengubah apa yang terlihat. Ilustrasi sumber digunakan untuk diskusi, tanpa mengklaim gambar tersebut diterbitkan ulang di sini. [hal. 369]"
+      },
+      {
+        "kind": "figure",
+        "spec": {
+          "id": "MNU108-11-10-6",
+          "title": "Bias dalam menjelaskan perilaku",
+          "type": "matrix",
+          "nodes": [
+            {
+              "title": "Fundamental attribution error: orang lain",
+              "items": [
+                "Kegagalan dihubungkan dengan sifat pribadi",
+                "Pengaruh situasi dapat diabaikan"
+              ]
+            },
+            {
+              "title": "Fundamental attribution error: diri",
+              "items": [
+                "Kegagalan dihubungkan dengan situasi"
+              ]
+            },
+            {
+              "title": "Self-serving bias: sukses diri",
+              "items": [
+                "Kredit diberikan kepada kualitas pribadi"
+              ]
+            },
+            {
+              "title": "Self-serving bias: kegagalan diri",
+              "items": [
+                "Tanggung jawab dipindah ke keadaan luar"
+              ]
+            }
+          ],
+          "source": "Daft dan Marcic, Understanding Management 12e, [hal. 370–371].",
+          "alt": "Bias dalam menjelaskan perilaku. Fundamental attribution error: orang lain; Fundamental attribution error: diri; Self-serving bias: sukses diri; Self-serving bias: kegagalan diri",
+          "footer": "Diagram merangkum kecenderungan bias, bukan penjelasan yang selalu benar."
+        }
+      },
+      {
+        "kind": "table",
+        "title": "Memeriksa attribution",
+        "headers": [
+          "Penjelasan",
+          "Makna",
+          "Cara memeriksa"
+        ],
+        "rows": [
+          [
+            "Internal attribution",
+            "Perilaku disebabkan karakteristik pribadi",
+            "Butuh bukti perilaku dan kemampuan yang konsisten."
+          ],
+          [
+            "External attribution",
+            "Perilaku disebabkan situasi",
+            "Periksa sumber daya, tuntutan, instruksi dan hambatan."
+          ]
+        ],
+        "caption": "[hal. 370–371]",
+        "stackOnMobile": true
+      },
+      {
+        "kind": "self-check",
+        "question": "Apakah setiap kegagalan yang dijelaskan dengan situasi merupakan bias?",
+        "answer": [
+          {
+            "kind": "p",
+            "text": "Tidak. Situasi dapat benar-benar berpengaruh. Bias muncul ketika penjelasan dipilih secara sistematis tanpa bukti memadai atau standar bagi diri dan orang lain berbeda. [hal. 368–371]"
+          }
+        ],
+        "signal": "Jawaban menyebut konsep, bukti, dan alasan; nama teori saja belum cukup."
+      },
+      {
+        "kind": "h2",
+        "text": "4. Personality: dimensi, ketekunan dan cara memecahkan masalah"
+      },
+      {
+        "kind": "p",
+        "text": "Personality adalah pola karakteristik relatif stabil yang memengaruhi perilaku dan interaksi. Big Five memetakan dimensi, tanpa satu profil yang otomatis paling cocok bagi semua tugas. Buku menekankan bahwa introvert juga dapat memimpin dan conscientiousness relevan bagi tanggung jawab serta pencapaian. [hal. 372–380]"
+      },
+      {
+        "kind": "table",
+        "title": "Big Five",
+        "headers": [
+          "Dimensi",
+          "Ciri pada sisi tinggi"
+        ],
+        "rows": [
+          [
+            "Extroversion",
+            "Sociable, assertive dan nyaman berinteraksi"
+          ],
+          [
+            "Agreeableness",
+            "Kooperatif, mudah memaafkan dan percaya"
+          ],
+          [
+            "Conscientiousness",
+            "Bertanggung jawab, dapat diandalkan dan tekun"
+          ],
+          [
+            "Emotional stability",
+            "Tenang dan percaya diri dibanding mudah tegang"
+          ],
+          [
+            "Openness to experience",
+            "Minat luas, kreatif dan terbuka pada gagasan"
+          ]
+        ],
+        "caption": "[hal. 372–375]",
+        "stackOnMobile": true
+      },
+      {
+        "kind": "table",
+        "title": "Karakteristik tambahan",
+        "headers": [
+          "Konsep",
+          "Makna dan batas"
+        ],
+        "rows": [
+          [
+            "Grit",
+            "Passion dan perseverance untuk tujuan jangka panjang; mencakup konsistensi minat dan ketekunan usaha."
+          ],
+          [
+            "Authoritarianism",
+            "Kepercayaan bahwa perbedaan kekuasaan/status perlu ada; dapat memengaruhi cara menggunakan serta menerima otoritas."
+          ],
+          [
+            "Machiavellianism",
+            "Kecenderungan memperoleh kuasa dan memanipulasi demi kepentingan pribadi; satu kejadian tidak cukup untuk memberi label seseorang."
+          ]
+        ],
+        "caption": "[hal. 375–378]",
+        "stackOnMobile": true
+      },
+      {
+        "kind": "pendalaman",
+        "title": "Preferensi MBTI dan problem-solving",
+        "blocks": [
+          {
+            "kind": "table",
+            "title": "Empat pasangan preferensi MBTI",
+            "headers": [
+              "Pasangan",
+              "Apa yang dibedakan"
+            ],
+            "rows": [
+              [
+                "Introversion / Extraversion",
+                "Orientasi energi/perhatian"
+              ],
+              [
+                "Sensing / Intuition",
+                "Informasi konkret dibanding pola serta kemungkinan"
+              ],
+              [
+                "Thinking / Feeling",
+                "Penilaian impersonal dibanding pertimbangan nilai/relasi"
+              ],
+              [
+                "Judging / Perceiving",
+                "Kepastian/closure dibanding fleksibilitas dan informasi tambahan"
+              ]
+            ],
+            "caption": "[hal. 379–380]",
+            "stackOnMobile": true
+          },
+          {
+            "kind": "figure",
+            "spec": {
+              "id": "MNU108-11-10-10",
+              "title": "Empat gaya problem-solving",
+              "type": "matrix",
+              "nodes": [
+                {
+                  "title": "Sensation–Thinking",
+                  "items": [
+                    "Fakta konkret dan analisis",
+                    "Praktis, detail dan aturan"
+                  ]
+                },
+                {
+                  "title": "Intuitive–Thinking",
+                  "items": [
+                    "Pola/kemungkinan dan analisis",
+                    "Sistem serta teori"
+                  ]
+                },
+                {
+                  "title": "Sensation–Feeling",
+                  "items": [
+                    "Fakta konkret dan nilai/relasi",
+                    "Masalah orang secara praktis"
+                  ]
+                },
+                {
+                  "title": "Intuitive–Feeling",
+                  "items": [
+                    "Pola/kemungkinan dan nilai/relasi",
+                    "Tema luas dan partisipasi"
+                  ]
+                }
+              ],
+              "source": "Daft dan Marcic, Understanding Management 12e, [hal. 380].",
+              "alt": "Empat gaya problem-solving. Sensation–Thinking; Intuitive–Thinking; Sensation–Feeling; Intuitive–Feeling",
+              "footer": "Sensing/intuition mengumpulkan informasi; thinking/feeling menilainya. Preferensi tidak membuktikan kompetensi atau menentukan pekerjaan secara mutlak."
+            }
+          }
+        ]
+      },
+      {
+        "kind": "self-check",
+        "question": "Mengapa nice belum cukup untuk menyimpulkan calon manajer efektif?",
+        "answer": [
+          {
+            "kind": "p",
+            "text": "Nice dapat mencerminkan agreeableness dan relasi yang baik. Perlu bukti conscientiousness, pengelolaan tanggung jawab, EI dan hasil; label tunggal tidak mencakup seluruh tuntutan pekerjaan. [hal. 372–380]"
+          }
+        ],
+        "signal": "Jawaban menyebut konsep, bukti, dan alasan; nama teori saja belum cukup."
+      },
+      {
+        "kind": "h2",
+        "text": "5. Emotions dan emotional intelligence"
+      },
+      {
+        "kind": "p",
+        "text": "Emosi memengaruhi sikap serta perilaku kerja dan sering disertai respons fisiologis. Dalam model sumber, kemajuan mencapai kebutuhan/tujuan berkaitan dengan emosi positif; hambatan dapat memicu emosi negatif. Emotional contagion adalah penyerapan/ekspresi emosi orang sekitar; negativity bias membuat kejadian buruk memperoleh perhatian dan respons lebih kuat. [hal. 381–384]"
+      },
+      {
+        "kind": "figure",
+        "spec": {
+          "id": "MNU108-11-10-11",
+          "title": "Kelompok emosi pada sumber",
+          "type": "matrix",
+          "nodes": [
+            {
+              "title": "Positive emotions",
+              "items": [
+                "Happiness/joy; pride",
+                "Love/affection; relief"
+              ]
+            },
+            {
+              "title": "Negative emotions",
+              "items": [
+                "Disgust; envy/jealousy; sadness",
+                "Guilt/shame; fright/anxiety; anger"
+              ]
+            }
+          ],
+          "source": "Daft dan Marcic, Understanding Management 12e, [hal. 381].",
+          "alt": "Kelompok emosi pada sumber. Positive emotions; Negative emotions",
+          "footer": "Kategori membantu membaca pengalaman, tanpa menilai setiap emosi sebagai salah atau menentukan diagnosis."
+        }
+      },
+      {
+        "kind": "figure",
+        "spec": {
+          "id": "MNU108-11-EI",
+          "title": "Empat komponen emotional intelligence",
+          "type": "matrix",
+          "nodes": [
+            {
+              "title": "Self-awareness",
+              "items": [
+                "Kenali emosi, kekuatan dan batas diri"
+              ]
+            },
+            {
+              "title": "Self-management",
+              "items": [
+                "Kelola emosi yang mengganggu tindakan"
+              ]
+            },
+            {
+              "title": "Social awareness",
+              "items": [
+                "Pahami orang lain melalui empati"
+              ]
+            },
+            {
+              "title": "Relationship management",
+              "items": [
+                "Bangun relasi, dengarkan dan komunikasikan dengan hormat"
+              ]
+            }
+          ],
+          "source": "Daft dan Marcic, Understanding Management 12e, [hal. 382–383].",
+          "alt": "Empat komponen emotional intelligence. Self-awareness; Self-management; Social awareness; Relationship management"
+        }
+      },
+      {
+        "kind": "p",
+        "text": "Manajer dapat memengaruhi suasana tim melalui ekspresi emosi dan cara memberi feedback. Positif tidak berarti menutupi masalah: sampaikan masalah dengan fakta, dengarkan kebutuhan orang lain, lalu putuskan tindakan. Empat komponen EI dapat dilatih; skor atau cerita singkat tidak cukup untuk diagnosis individu. [hal. 382–384]"
+      },
+      {
+        "kind": "self-check",
+        "question": "Komponen EI apa yang terlibat ketika manajer mendengar kekhawatiran anggota lalu memberi batas kerja dengan tenang?",
+        "answer": [
+          {
+            "kind": "p",
+            "text": "Social awareness memahami kekhawatiran; self-awareness mengenali emosi diri; self-management menjaga respons; relationship management membantu komunikasi dan relasi. Satu tindakan dapat melibatkan lebih dari satu komponen. [hal. 381–384]"
+          }
+        ],
+        "signal": "Jawaban menyebut konsep, bukti, dan alasan; nama teori saja belum cukup."
+      },
+      {
+        "kind": "h2",
+        "text": "6. Managing yourself: komitmen menjadi tindakan"
+      },
+      {
+        "kind": "p",
+        "text": "Self-management mengatur pikiran dan perilaku agar tugas selesai serta situasi sulit tertangani. Tiga prinsip sumber ialah clarity of mind, clarity of objectives dan organized system. Komitmen yang hanya disimpan di kepala membuat perhatian mudah terpecah; sistem eksternal membantu membuat langkah berikutnya jelas. [hal. 385–387]"
+      },
+      {
+        "kind": "figure",
+        "spec": {
+          "id": "MNU108-11-10-12",
+          "title": "Lima langkah mengorganisasi pekerjaan",
+          "type": "process",
+          "nodes": [
+            {
+              "title": "Empty your head",
+              "items": [
+                "Catat komitmen pada sistem tepercaya"
+              ]
+            },
+            {
+              "title": "Decide the next action",
+              "items": [
+                "Tentukan tindakan konkret",
+                "Do it, delegate it atau defer it"
+              ]
+            },
+            {
+              "title": "Get organized",
+              "items": [
+                "Gunakan kalender dan action lists"
+              ]
+            },
+            {
+              "title": "Perform a weekly review",
+              "items": [
+                "Perbarui daftar dan proses item baru"
+              ]
+            },
+            {
+              "title": "Do it",
+              "items": [
+                "Pertimbangkan waktu/konteks, energi dan prioritas"
+              ]
+            }
+          ],
+          "source": "Daft dan Marcic, Understanding Management 12e, [hal. 386–387].",
+          "alt": "Lima langkah mengorganisasi pekerjaan. Empty your head; Decide the next action; Get organized; Perform a weekly review; Do it",
+          "feedback": true,
+          "footer": "Review menjaga sistem tetap sesuai keadaan; daftar tanpa tindakan belum menyelesaikan tugas."
+        }
+      },
+      {
+        "kind": "self-check",
+        "question": "Apa bedanya menulis “proyek selesai” dengan menentukan next action?",
+        "answer": [
+          {
+            "kind": "p",
+            "text": "Proyek selesai adalah hasil. Next action menyebut tindakan konkret yang bisa dilakukan, misalnya menyusun bagian tertentu atau menghubungi pihak yang perlu memberi data. [hal. 385–387]"
+          }
+        ],
+        "signal": "Jawaban menyebut konsep, bukti, dan alasan; nama teori saja belum cukup."
+      },
+      {
+        "kind": "h2",
+        "text": "7. Stress, resilience dan tanggung jawab organisasi"
+      },
+      {
+        "kind": "p",
+        "text": "Stress adalah respons fisiologis/emosional ketika tuntutan eksternal melampaui pengetahuan, kemampuan atau sumber daya pada hasil yang penting. Challenge stress dapat meningkatkan energi; threat stress menguras kemampuan. Resilience ialah kapasitas bertahan dan bangkit dari kesulitan, konflik atau kegagalan. [hal. 388–392]"
+      },
+      {
+        "kind": "figure",
+        "spec": {
+          "id": "MNU108-11-10-13",
+          "title": "Yerkes-Dodson Stress Curve",
+          "type": "curve",
+          "nodes": [],
+          "source": "Daft dan Marcic, Understanding Management 12e, [hal. 389].",
+          "alt": "Yerkes-Dodson Stress Curve. ",
+          "xLabel": "Stress",
+          "yLabel": "Performance",
+          "footer": "Kurva konseptual: terlalu sedikit atau terlalu banyak stres dapat menurunkan performance. Tidak ada angka ambang universal atau rekomendasi menaikkan stres semua orang."
+        }
+      },
+      {
+        "kind": "table",
+        "title": "Sumber stres kerja",
+        "headers": [
+          "Sumber",
+          "Makna",
+          "Tindakan yang relevan"
+        ],
+        "rows": [
+          [
+            "Task demands",
+            "Tuntutan tugas, waktu atau pengetahuan",
+            "Periksa workload, kapasitas dan prioritas."
+          ],
+          [
+            "Role ambiguity",
+            "Tidak jelas perilaku/hasil yang diharapkan",
+            "Perjelas tanggung jawab dan ekspektasi."
+          ],
+          [
+            "Role conflict",
+            "Tuntutan peran saling bertentangan",
+            "Selaraskan instruksi dan kewenangan."
+          ],
+          [
+            "Interpersonal demands",
+            "Tekanan dalam relasi kerja",
+            "Perbaiki komunikasi, dukungan dan penanganan konflik."
+          ]
+        ],
+        "caption": "[hal. 388–390]",
+        "stackOnMobile": true
+      },
+      {
+        "kind": "p",
+        "text": "Individu dapat mengurangi stressors yang dapat diubah, mencari dukungan, memelihara kebiasaan sehat dan menggunakan kegiatan relaksasi yang sesuai. Organisasi berperan menyediakan social support, beban kerja wajar serta kontrol yang relevan atas pekerjaan. Resilience tidak membebaskan manajer dari kewajiban memperbaiki sumber tekanan. Latihan meditasi sumber bersifat opsional dan ditempatkan pada Lampiran A. [hal. 390–392]"
+      },
+      {
+        "kind": "self-check",
+        "question": "Mengapa dukungan dan kontrol atas pekerjaan dapat membantu menghadapi stress?",
+        "answer": [
+          {
+            "kind": "p",
+            "text": "Dukungan menyediakan informasi, relasi dan sumber daya; kontrol memberi ruang menata cara/waktu kerja. Keduanya membantu menghadapi tuntutan, sementara konflik instruksi atau workload tetap harus diselesaikan. [hal. 388–392]"
+          }
+        ],
+        "signal": "Jawaban menyebut konsep, bukti, dan alasan; nama teori saja belum cukup."
+      },
+      {
+        "kind": "h2",
+        "text": "Persiapan ujian"
+      },
+      {
+        "kind": "table",
+        "title": "Jebakan ujian",
+        "headers": [
+          "Pernyataan terlalu cepat",
+          "Perbaikan"
+        ],
+        "rows": [
+          [
+            "Nice pasti efektif",
+            "Periksa relasi, tanggung jawab, keputusan dan hasil."
+          ],
+          [
+            "Introvert tidak bisa memimpin",
+            "Dimensi dan tuntutan pekerjaan perlu dibaca bersama."
+          ],
+          [
+            "EI sama dengan selalu tersenyum",
+            "EI mencakup memahami dan mengelola emosi/relasi."
+          ],
+          [
+            "Stres selalu buruk atau selalu baik",
+            "Jenis, tingkat dan konteks tuntutan memengaruhi hasil."
+          ]
+        ],
+        "caption": "[hal. 372–392]",
+        "stackOnMobile": true
+      },
+      {
+        "kind": "solution-reveal",
+        "title": "Conficio Industries: nice, tanggung jawab dan promosi",
+        "prompt": "Kasus buku yang ditugaskan RPP, diparafrasekan. Panel menilai kandidat promosi manajemen di San Antonio setelah mengamati kerja, menerima peer feedback dan mewawancarai kandidat. Salah satu kandidat memulihkan morale serta trust ketika beredar rumor PHK. Pegawai menyebutnya nice dan selalu membantu. Panel mempertanyakan apakah bantuan itu mengambil alih tugas, membiarkan tenggat longgar dan menghindari batas. Panel dalam teks memilih melanjutkan seleksi serta mengembangkan kandidat ini untuk kesempatan berikutnya. [hal. 367–375, 382–383, 398–399]",
+        "promptBlocks": [
+          {
+            "kind": "ul",
+            "items": [
+              "Jelaskan makna nice bagi manajer dengan menghubungkan agreeableness, conscientiousness dan EI.",
+              "Pisahkan pengamatan dan atribusi panel.",
+              "Usulkan pengembangan yang mempertahankan trust sekaligus meningkatkan akuntabilitas."
+            ]
+          }
+        ],
+        "blocks": [
+          {
+            "kind": "p",
+            "text": "Hasil analisis untuk pembanding jawaban: Agreeableness membantu kerja sama dan relasi, tetapi popularitas belum membuktikan pengelolaan tugas. Conscientiousness menuntut tanggung jawab, ketekunan dan pencapaian. EI dapat membantu memahami kebutuhan pegawai, mengatur emosi saat berkata tidak, dan memberi feedback dengan hormat. Rumor PHK yang diredakan adalah bukti trust; dugaan menutupi kelemahan atau mengambil alih kerja perlu dikonfirmasi lewat deadline, pembagian tanggung jawab dan contoh keputusan. Jangan menyimpulkan kelemahan bawaan hanya dari label nice. Saran: delegasi dengan ekspektasi jelas, pemeriksaan kemajuan, coaching atas kekurangan, batas yang konsisten serta latihan percakapan sulit. Evaluasi hasil dan perilaku bersama; keputusan panel yang tertulis tidak sama dengan pembuktian bahwa kandidat pasti gagal sebagai pemimpin. [hal. 367–375, 382–383, 398–399]"
+          }
+        ]
+      },
+      {
+        "kind": "solution-reveal",
+        "title": "Latihan: keterlambatan, atribusi dan beban kerja",
+        "prompt": "Latihan buatan: situasi berikut adalah asumsi untuk berlatih, tanpa klaim perusahaan nyata. Seorang anggota terlambat menyerahkan laporan. Manajer langsung menyebutnya malas, namun ketika laporan manajer sendiri terlambat ia menyalahkan perubahan permintaan. Anggota menerima instruksi berbeda dari dua atasan. [hal. 369–371, 382–387, 388–392]",
+        "promptBlocks": [
+          {
+            "kind": "ul",
+            "items": [
+              "Identifikasi bias dan jenis masalah peran.",
+              "Susun pemeriksaan fakta dan tindakan pengelolaan stres.",
+              "Tunjukkan penggunaan EI dan self-management."
+            ]
+          }
+        ],
+        "blocks": [
+          {
+            "kind": "p",
+            "text": "Hasil analisis untuk pembanding jawaban: Penilaian kegagalan orang lain sebagai sifat dan kegagalan sendiri sebagai keadaan menunjukkan fundamental attribution error. Mengambil kredit pribadi untuk keberhasilan sambil menolak tanggung jawab kegagalan akan menunjukkan self-serving bias; ilustrasi belum menyebut keberhasilan, sehingga label kedua ini perlu bukti tambahan. Instruksi yang tidak kompatibel merupakan role conflict, sementara role ambiguity membutuhkan bukti ketidakjelasan ekspektasi. Periksa urutan instruksi, kapasitas dan deadline; selaraskan prioritas dua atasan. Gunakan empati, feedback yang spesifik, dukungan dan kontrol yang wajar atas pekerjaan. Catat komitmen, tentukan next action dan jadwal, lalu review. Menambah tekanan tanpa memperbaiki konflik tidak menyelesaikan penyebab. [hal. 369–371, 382–387, 388–392]"
+          }
+        ]
+      }
+    ]
+  },
+  "quiz": [
+    {
+      "id": "mnu108-uas-tm11-01",
+      "tm": 11,
+      "topic": "Self-awareness",
+      "difficulty": "basic",
+      "q": "Seorang manajer merasa selalu mendengarkan, tetapi anggota mengatakan sering dipotong. Tindakan awal yang sesuai?",
+      "options": [
+        "Membandingkan feedback spesifik dengan refleksi perilaku diri",
+        "Menolak feedback karena niatnya baik",
+        "Menyimpulkan anggota memiliki kepribadian buruk",
+        "Mengganti refleksi dengan tes kemampuan saja"
+      ],
+      "answer": 0,
+      "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 362–363].",
+      "sourceAnchors": [
+        "Ch. 10; [hal. 362–363]; PDF 390–391"
+      ],
+      "explanation": "Feedback membantu melihat blind spots dan self-assessment memeriksa pola diri. Alternatif lain: niat tidak membuktikan dampak; label anggota dan tes kemampuan tidak memeriksa kebiasaan mendengarkan. [hal. 362–363]",
+      "skill": "Diagnosis konsep, bukti dan penerapan"
+    },
+    {
+      "id": "mnu108-uas-tm11-02",
+      "tm": 11,
+      "topic": "Attitudes",
+      "difficulty": "basic",
+      "q": "Pegawai puas dengan tugasnya namun tidak merasa loyal pada perusahaan. Kesimpulan yang tepat?",
+      "options": [
+        "Kedua sikap selalu identik",
+        "Job satisfaction dan organizational commitment berbeda",
+        "Pegawai pasti tidak produktif",
+        "Trust tidak relevan bagi commitment"
+      ],
+      "answer": 1,
+      "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 365–368].",
+      "sourceAnchors": [
+        "Ch. 10; [hal. 365–368]; PDF 393–396"
+      ],
+      "explanation": "Kepuasan mengarah pada pekerjaan, sedangkan commitment pada loyalitas/engagement dengan organisasi. Alternatif lain: kinerja belum diketahui dan trust dapat berkaitan dengan commitment. [hal. 365–368]",
+      "skill": "Diagnosis konsep, bukti dan penerapan"
+    },
+    {
+      "id": "mnu108-uas-tm11-03",
+      "tm": 11,
+      "topic": "Perception",
+      "difficulty": "medium",
+      "q": "Urutan model perception pada Exhibit 10.3 adalah…",
+      "options": [
+        "Observe → Organize → Screen",
+        "Screen → Motivate → Reward",
+        "Observe → Screen → Organize",
+        "Encode → Channel → Decode"
+      ],
+      "answer": 2,
+      "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 369].",
+      "sourceAnchors": [
+        "Ch. 10; [hal. 369]; PDF 397"
+      ],
+      "explanation": "Informasi diobservasi, disaring dan diorganisasi menjadi pola untuk penafsiran/respons. Alternatif lain: urutan kedua terbalik; motivasi dan komunikasi adalah model berbeda. [hal. 369]",
+      "skill": "Diagnosis konsep, bukti dan penerapan"
+    },
+    {
+      "id": "mnu108-uas-tm11-04",
+      "tm": 11,
+      "topic": "Attribution",
+      "difficulty": "medium",
+      "q": "Manajer menyebut keterlambatan anggota sebagai sifat malas, tetapi keterlambatannya sendiri sebagai akibat situasi. Kecenderungan ini?",
+      "options": [
+        "Emotional stability: kestabilan respons emosi",
+        "Cognitive dissonance yang pasti terbukti",
+        "Grit: ketekunan pada tujuan jangka panjang",
+        "Fundamental attribution error"
+      ],
+      "answer": 3,
+      "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 370–371].",
+      "sourceAnchors": [
+        "Ch. 10; [hal. 370–371]; PDF 398–399"
+      ],
+      "explanation": "Bias memberi bobot sifat pribadi bagi kegagalan orang lain dan situasi bagi diri sendiri. Alternatif lain: stabilitas emosi dan grit merupakan karakteristik berbeda; dissonance membutuhkan ketidakselarasan cognition yang tidak dinyatakan. [hal. 370–371]",
+      "skill": "Diagnosis konsep, bukti dan penerapan"
+    },
+    {
+      "id": "mnu108-uas-tm11-05",
+      "tm": 11,
+      "topic": "Personality",
+      "difficulty": "medium",
+      "q": "Dimensi yang paling langsung terkait dapat diandalkan, bertanggung jawab dan tekun?",
+      "options": [
+        "Conscientiousness",
+        "Extroversion",
+        "Openness to experience",
+        "Agreeableness"
+      ],
+      "answer": 0,
+      "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 372–375].",
+      "sourceAnchors": [
+        "Ch. 10; [hal. 372–375]; PDF 400–403"
+      ],
+      "explanation": "Conscientiousness mencakup tanggung jawab, dependability dan ketekunan. Alternatif lain: extroversion menyangkut interaksi; openness gagasan baru; agreeableness kerja sama/kepercayaan. [hal. 372–375]",
+      "skill": "Diagnosis konsep, bukti dan penerapan"
+    },
+    {
+      "id": "mnu108-uas-tm11-06",
+      "tm": 11,
+      "topic": "Emotional intelligence",
+      "difficulty": "medium",
+      "q": "Memahami perasaan anggota dan mempertimbangkan sudut pandangnya terutama menunjukkan…",
+      "options": [
+        "Self-management saja",
+        "Social awareness",
+        "Machiavellianism",
+        "Emotional contagion yang pasti terjadi"
+      ],
+      "answer": 1,
+      "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 382–383].",
+      "sourceAnchors": [
+        "Ch. 10; [hal. 382–383]; PDF 410–411"
+      ],
+      "explanation": "Social awareness mencakup empati dan pemahaman orang lain. Alternatif lain: self-management fokus emosi diri; manipulasi bukan empati; contagion berarti menyerap emosi dan tidak otomatis terjadi di situasi ini. [hal. 382–383]",
+      "skill": "Diagnosis konsep, bukti dan penerapan"
+    },
+    {
+      "id": "mnu108-uas-tm11-07",
+      "tm": 11,
+      "topic": "Self-management",
+      "difficulty": "advanced",
+      "q": "Setelah mengumpulkan komitmen, pegawai hanya memberi label “penting” kepada semuanya. Apa langkah yang hilang?",
+      "options": [
+        "Menambah jumlah daftar sebanyak mungkin",
+        "Menunda seluruh tugas tanpa review",
+        "Menentukan next action yang konkret sebelum mengorganisasi jadwal",
+        "Menyimpan kembali semua tugas di kepala"
+      ],
+      "answer": 2,
+      "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 385–387].",
+      "sourceAnchors": [
+        "Ch. 10; [hal. 385–387]; PDF 413–415"
+      ],
+      "explanation": "Decide the next action membuat komitmen menjadi tindakan yang bisa dilakukan/delegasi/tunda. Alternatif lain: banyak daftar menambah kerumitan, penundaan tanpa review dan menyimpan di kepala bertentangan dengan prinsip sumber. [hal. 385–387]",
+      "skill": "Diagnosis konsep, bukti dan penerapan"
+    },
+    {
+      "id": "mnu108-uas-tm11-08",
+      "tm": 11,
+      "topic": "Stress",
+      "difficulty": "advanced",
+      "q": "Dua atasan memberi instruksi yang tidak kompatibel dan manajer meminta anggota lebih tahan tekanan. Tindakan yang lebih sesuai?",
+      "options": [
+        "Naikkan tekanan karena kurva menjamin stres selalu menaikkan hasil",
+        "Anggap role ambiguity pasti sama dengan role conflict",
+        "Tetapkan satu ambang stres numerik bagi semua anggota",
+        "Selaraskan tuntutan peran dan beri dukungan serta kontrol kerja yang wajar"
+      ],
+      "answer": 3,
+      "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 388–392].",
+      "sourceAnchors": [
+        "Ch. 10; [hal. 388–392]; PDF 416–420"
+      ],
+      "explanation": "Tuntutan tidak kompatibel adalah role conflict yang perlu diperbaiki, dengan dukungan dan kontrol relevan. Alternatif lain: kurva bukan jaminan linear, ambiguity berbeda dari konflik, dan sumber tidak memberi ambang universal. [hal. 388–392]",
+      "skill": "Diagnosis konsep, bukti dan penerapan"
+    }
+  ],
+  "cards": [
+    {
+      "topic": "Awareness",
+      "front": "Apa dua jalan self-awareness?",
+      "back": "Soliciting feedback dan using self-assessment. Bandingkan niat/pola diri dengan dampak yang diamati orang lain. [hal. 363]",
+      "category": "Konsep",
+      "id": "mnu108-uas-tm11-01",
+      "phase": "pra-uas",
+      "tm": 11
+    },
+    {
+      "topic": "Perception",
+      "front": "Apa urutan perception sumber?",
+      "back": "Observe → Screen → Organize. Organize membentuk pola untuk penafsiran dan respons. [hal. 369]",
+      "category": "Mekanisme",
+      "id": "mnu108-uas-tm11-02",
+      "phase": "pra-uas",
+      "tm": 11
+    },
+    {
+      "topic": "Attribution",
+      "front": "Bedakan fundamental attribution error dan self-serving bias.",
+      "back": "Yang pertama menekankan sifat bagi kegagalan orang lain dan situasi bagi diri; yang kedua mengambil kredit sukses diri serta menyalahkan luar untuk kegagalan. [hal. 370–371]",
+      "category": "Perbandingan",
+      "id": "mnu108-uas-tm11-03",
+      "phase": "pra-uas",
+      "tm": 11
+    },
+    {
+      "topic": "Personality",
+      "front": "Apa lima dimensi Big Five?",
+      "back": "Extroversion, agreeableness, conscientiousness, emotional stability dan openness to experience. Dimensi tidak memberi satu profil terbaik universal. [hal. 372–375]",
+      "category": "Konsep",
+      "id": "mnu108-uas-tm11-04",
+      "phase": "pra-uas",
+      "tm": 11
+    },
+    {
+      "topic": "EI",
+      "front": "Apa empat komponen EI?",
+      "back": "Self-awareness, self-management, social awareness dan relationship management. [hal. 382–383]",
+      "category": "Konsep",
+      "id": "mnu108-uas-tm11-05",
+      "phase": "pra-uas",
+      "tm": 11
+    },
+    {
+      "topic": "Stress",
+      "front": "Bedakan role ambiguity dan role conflict.",
+      "back": "Ambiguity: ekspektasi peran tidak jelas. Conflict: tuntutan peran tidak kompatibel. Dukungan dan kontrol membantu, sambil memperbaiki penyebab. [hal. 388–392]",
+      "category": "Perbandingan",
+      "id": "mnu108-uas-tm11-06",
+      "phase": "pra-uas",
+      "tm": 11
+    }
+  ],
+  "bank": [
+    {
+      "type": "analysis",
+      "scope": "TM 11: Conficio Industries: nice, tanggung jawab dan promosi",
+      "difficulty": "Menengah",
+      "estimatedTime": "20–30 menit",
+      "question": "Conficio Industries: nice, tanggung jawab dan promosi",
+      "context": "Kasus buku yang ditugaskan RPP, diparafrasekan. Panel menilai kandidat promosi manajemen di San Antonio setelah mengamati kerja, menerima peer feedback dan mewawancarai kandidat. Salah satu kandidat memulihkan morale serta trust ketika beredar rumor PHK. Pegawai menyebutnya nice dan selalu membantu. Panel mempertanyakan apakah bantuan itu mengambil alih tugas, membiarkan tenggat longgar dan menghindari batas. Panel dalam teks memilih melanjutkan seleksi serta mengembangkan kandidat ini untuk kesempatan berikutnya. [hal. 367–375, 382–383, 398–399]",
+      "data": [
+        "Nice merupakan penilaian sosial; catatan panel memuat bukti positif dan kekhawatiran yang perlu dibedakan.",
+        "Teks tidak membuktikan profil Big Five atau skor EI kandidat.",
+        "Dasar konsep: Daft dan Marcic 12e [hal. 367–375, 382–383, 398–399]."
+      ],
+      "instructions": [
+        "Jelaskan makna nice bagi manajer dengan menghubungkan agreeableness, conscientiousness dan EI.",
+        "Pisahkan pengamatan dan atribusi panel.",
+        "Usulkan pengembangan yang mempertahankan trust sekaligus meningkatkan akuntabilitas."
+      ],
+      "outputFormat": [
+        "Pisahkan fakta/asumsi dan penafsiran.",
+        "Tulis keputusan dengan bukti dan dasar konsep.",
+        "Jelaskan kelemahan alternatif dan cara mengevaluasi keputusan."
+      ],
+      "rubric": [
+        "Ketepatan fakta/asumsi dan konsep (30%)",
+        "Alasan keputusan serta kelemahan alternatif (45%)",
+        "Kelayakan tindak lanjut dan evaluasi (25%)"
+      ],
+      "answerGuide": "Hasil analisis untuk pembanding jawaban: Agreeableness membantu kerja sama dan relasi, tetapi popularitas belum membuktikan pengelolaan tugas. Conscientiousness menuntut tanggung jawab, ketekunan dan pencapaian. EI dapat membantu memahami kebutuhan pegawai, mengatur emosi saat berkata tidak, dan memberi feedback dengan hormat. Rumor PHK yang diredakan adalah bukti trust; dugaan menutupi kelemahan atau mengambil alih kerja perlu dikonfirmasi lewat deadline, pembagian tanggung jawab dan contoh keputusan. Jangan menyimpulkan kelemahan bawaan hanya dari label nice. Saran: delegasi dengan ekspektasi jelas, pemeriksaan kemajuan, coaching atas kekurangan, batas yang konsisten serta latihan percakapan sulit. Evaluasi hasil dan perilaku bersama; keputusan panel yang tertulis tidak sama dengan pembuktian bahwa kandidat pasti gagal sebagai pemimpin. [hal. 367–375, 382–383, 398–399]"
+    },
+    {
+      "type": "analysis",
+      "scope": "TM 11: Latihan: keterlambatan, atribusi dan beban kerja",
+      "difficulty": "Menengah",
+      "estimatedTime": "20–30 menit",
+      "question": "Latihan: keterlambatan, atribusi dan beban kerja",
+      "context": "Latihan buatan: situasi berikut adalah asumsi untuk berlatih, tanpa klaim perusahaan nyata. Seorang anggota terlambat menyerahkan laporan. Manajer langsung menyebutnya malas, namun ketika laporan manajer sendiri terlambat ia menyalahkan perubahan permintaan. Anggota menerima instruksi berbeda dari dua atasan. [hal. 369–371, 382–387, 388–392]",
+      "data": [
+        "Asumsi: kedua atasan memberi prioritas yang saling bertentangan.",
+        "Belum tersedia bukti penyebab keterlambatan atau sifat anggota.",
+        "Dasar konsep: Daft dan Marcic 12e [hal. 369–371, 382–387, 388–392]."
+      ],
+      "instructions": [
+        "Identifikasi bias dan jenis masalah peran.",
+        "Susun pemeriksaan fakta dan tindakan pengelolaan stres.",
+        "Tunjukkan penggunaan EI dan self-management."
+      ],
+      "outputFormat": [
+        "Pisahkan fakta/asumsi dan penafsiran.",
+        "Tulis keputusan dengan bukti dan dasar konsep.",
+        "Jelaskan kelemahan alternatif dan cara mengevaluasi keputusan."
+      ],
+      "rubric": [
+        "Ketepatan fakta/asumsi dan konsep (30%)",
+        "Alasan keputusan serta kelemahan alternatif (45%)",
+        "Kelayakan tindak lanjut dan evaluasi (25%)"
+      ],
+      "answerGuide": "Hasil analisis untuk pembanding jawaban: Penilaian kegagalan orang lain sebagai sifat dan kegagalan sendiri sebagai keadaan menunjukkan fundamental attribution error. Mengambil kredit pribadi untuk keberhasilan sambil menolak tanggung jawab kegagalan akan menunjukkan self-serving bias; ilustrasi belum menyebut keberhasilan, sehingga label kedua ini perlu bukti tambahan. Instruksi yang tidak kompatibel merupakan role conflict, sementara role ambiguity membutuhkan bukti ketidakjelasan ekspektasi. Periksa urutan instruksi, kapasitas dan deadline; selaraskan prioritas dua atasan. Gunakan empati, feedback yang spesifik, dukungan dan kontrol yang wajar atas pekerjaan. Catat komitmen, tentukan next action dan jadwal, lalu review. Menambah tekanan tanpa memperbaiki konflik tidak menyelesaikan penyebab. [hal. 369–371, 382–387, 388–392]"
+    }
+  ],
+  "visualInventory": [
+    {
+      "id": "MNU108-11-OV",
+      "title": "Dari pengenalan diri ke tindakan kerja",
+      "type": "process",
+      "source": "Daft dan Marcic, Understanding Management 12e, [hal. 362–392].",
+      "mobile": "SVG 360 unit dengan teks yang mengalir sesuai ruang; makna hubungan sama dengan desktop."
+    },
+    {
+      "id": "MNU108-11-10-1",
+      "title": "Dua jalan menuju self-awareness",
+      "type": "parallel",
+      "source": "Daft dan Marcic, Understanding Management 12e, [hal. 363].",
+      "mobile": "SVG 360 unit dengan teks yang mengalir sesuai ruang; makna hubungan sama dengan desktop."
+    },
+    {
+      "id": "MNU108-11-10-3",
+      "title": "The Perception Process",
+      "type": "process",
+      "source": "Daft dan Marcic, Understanding Management 12e, [hal. 369].",
+      "mobile": "SVG 360 unit dengan teks yang mengalir sesuai ruang; makna hubungan sama dengan desktop."
+    },
+    {
+      "id": "MNU108-11-10-6",
+      "title": "Bias dalam menjelaskan perilaku",
+      "type": "matrix",
+      "source": "Daft dan Marcic, Understanding Management 12e, [hal. 370–371].",
+      "mobile": "SVG 360 unit dengan teks yang mengalir sesuai ruang; makna hubungan sama dengan desktop."
+    },
+    {
+      "id": "MNU108-11-10-10",
+      "title": "Empat gaya problem-solving",
+      "type": "matrix",
+      "source": "Daft dan Marcic, Understanding Management 12e, [hal. 380].",
+      "mobile": "SVG 360 unit dengan teks yang mengalir sesuai ruang; makna hubungan sama dengan desktop."
+    },
+    {
+      "id": "MNU108-11-10-11",
+      "title": "Kelompok emosi pada sumber",
+      "type": "matrix",
+      "source": "Daft dan Marcic, Understanding Management 12e, [hal. 381].",
+      "mobile": "SVG 360 unit dengan teks yang mengalir sesuai ruang; makna hubungan sama dengan desktop."
+    },
+    {
+      "id": "MNU108-11-EI",
+      "title": "Empat komponen emotional intelligence",
+      "type": "matrix",
+      "source": "Daft dan Marcic, Understanding Management 12e, [hal. 382–383].",
+      "mobile": "SVG 360 unit dengan teks yang mengalir sesuai ruang; makna hubungan sama dengan desktop."
+    },
+    {
+      "id": "MNU108-11-10-12",
+      "title": "Lima langkah mengorganisasi pekerjaan",
+      "type": "process",
+      "source": "Daft dan Marcic, Understanding Management 12e, [hal. 386–387].",
+      "mobile": "SVG 360 unit dengan teks yang mengalir sesuai ruang; makna hubungan sama dengan desktop."
+    },
+    {
+      "id": "MNU108-11-10-13",
+      "title": "Yerkes-Dodson Stress Curve",
+      "type": "curve",
+      "source": "Daft dan Marcic, Understanding Management 12e, [hal. 389].",
+      "mobile": "SVG 360 unit dengan teks yang mengalir sesuai ruang; makna hubungan sama dengan desktop."
+    }
+  ],
+  "exhibits": [
+    {
+      "id": "10.1",
+      "page": 363,
+      "action": "Visual dua jalan self-awareness"
+    },
+    {
+      "id": "10.2",
+      "page": 365,
+      "action": "Self-assessment: Lampiran A"
+    },
+    {
+      "id": "10.3",
+      "page": 369,
+      "action": "Visual tiga langkah sumber"
+    },
+    {
+      "id": "10.4",
+      "page": 369,
+      "action": "Gambar diperiksa langsung; penjelasan dan diskusi Lampiran A, tanpa reproduksi gambar asli"
+    },
+    {
+      "id": "10.5",
+      "page": 370,
+      "action": "Self-assessment: Lampiran A"
+    },
+    {
+      "id": "10.6",
+      "page": 371,
+      "action": "Visual bias atribusi"
+    },
+    {
+      "id": "10.7",
+      "page": 373,
+      "action": "Tabel konsep Big Five; instrumen Lampiran A"
+    },
+    {
+      "id": "10.8",
+      "page": 377,
+      "action": "Grit: konsep inti dan refleksi Lampiran A"
+    },
+    {
+      "id": "10.9",
+      "page": 378,
+      "action": "Machiavellianism: konsep inti dan refleksi Lampiran A"
+    },
+    {
+      "id": "10.10",
+      "page": 380,
+      "action": "Visual gaya problem-solving"
+    },
+    {
+      "id": "10.11",
+      "page": 381,
+      "action": "Visual kelompok emosi"
+    },
+    {
+      "id": "10.12",
+      "page": 386,
+      "action": "Visual lima langkah"
+    },
+    {
+      "id": "10.13",
+      "page": 389,
+      "action": "Kurva konseptual tanpa angka ambang"
+    },
+    {
+      "id": "10.14",
+      "page": 391,
+      "action": "Meditasi opsional: Lampiran A"
+    }
+  ],
+  "audit": {
+    "findings": [
+      "Model perception menggunakan tiga langkah dan EI empat komponen sesuai 12e. Kelley attribution dan profil MBTI sebagai penentu kompetensi tidak dimasukkan karena tidak didukung bab ini.",
+      "Conficio menggunakan fakta halaman 398–399 dan membedakan keputusan panel yang tercetak dari rekomendasi analisis. Kuis menguji perbedaan bias tanpa menyimpulkan kepribadian dari satu kejadian.",
+      "Rasio komentar positif/negatif pada contoh riset lama tidak dijadikan ambang optimal atau resep manajemen. Kurva stress bersifat kualitatif; dukungan organisasi tetap diperlukan."
+    ],
+    "appendix": [
+      "Exhibit 10.2 (365): refleksikan kepuasan pekerjaan dan alasan; skor instrumen sumber bukan pengukuran kinerja atau diagnosis.",
+      "Exhibit 10.4–10.5 (369–370): lihat gambar sumber dan diskusikan perbedaan persepsi; catat bukti sebelum membuat atribusi. Gambar asli tidak disalin ke repo.",
+      "Exhibit 10.7–10.9 (373, 377–378): gunakan instrumen buku secara sukarela untuk refleksi Big Five, grit dan Mach; hindari label atau keputusan promosi berdasarkan skor saja.",
+      "Take a Moment (383–384): catat ekspresi emosi seminggu dan cara memberi feedback; tidak ada jawaban benar/salah tunggal.",
+      "Exhibit 10.14 (391): aktivitas meditasi opsional dari sumber; pilih kegiatan relaksasi yang sesuai.",
+      "Ethical Dilemma MicroFone (397–398): diskusikan etika menyampaikan perubahan dan konflik kebutuhan individu/organisasi; tidak menggantikan kasus Conficio RPP."
+    ],
+    "sourceReview": "Teks bab 10 dan halaman diagram diperiksa langsung; nomor cetak dan PDF dibedakan.",
+    "constraints": "Pra-UTS dipertahankan. Data historis mengikuti tahun buku. Latihan buatan ditandai dan hasil analisis tidak diklaim sebagai tindakan nyata tokoh."
+  }
+}

@@ -7,6 +7,7 @@ scripts/fixtures/akk203/tm04.md -text
 scripts/fixtures/akk203/tm05.md -text
 scripts/fixtures/akk203/tm06.md -text
 scripts/fixtures/akk203/tm07.md -text
+content-pipeline/MNU108/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 
 # Preserve final MNU307 student sources byte-for-byte.
 scripts/fixtures/mnu307/*.md -text

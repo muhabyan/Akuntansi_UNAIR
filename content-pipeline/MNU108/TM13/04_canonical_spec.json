@@ -1,0 +1,1388 @@
+{
+  "course": "MNU108",
+  "tm": 13,
+  "reading": {
+    "tm": 13,
+    "title": "Motivating Employees",
+    "ref": "Daft dan Marcic, Understanding Management 12e (2023), Ch. 12, hal. 438–471 (PDF 466–499); RPP Excel 2026, TM 13.",
+    "intro": "Bonus dapat memotivasi sebagian orang sekaligus merusak kerja sama. Pelajari kebutuhan, persepsi fairness, hubungan usaha/reward dan desain pekerjaan untuk memilih tindakan yang sesuai.",
+    "layout": "layered",
+    "coreReadingMinutes": 20,
+    "objectives": [
+      "Pisahkan intrinsic satisfaction dari reward yang diberikan pihak luar.",
+      "Content theories memeriksa kebutuhan; process theories memeriksa pilihan tindakan.",
+      "Hygiene mengurangi dissatisfaction, motivators meningkatkan satisfaction.",
+      "Expectancy memerlukan E→P, P→O dan valence.",
+      "Negative reinforcement memperkuat perilaku; punishment mengurangi perilaku.",
+      "Job design, empowerment dan engagement memerlukan dukungan yang nyata."
+    ],
+    "blocks": [
+      {
+        "kind": "h2",
+        "text": "1. Kilat: Motivating Employees"
+      },
+      {
+        "kind": "figure",
+        "spec": {
+          "id": "MNU108-13-OV",
+          "title": "Empat lensa diagnosis motivasi",
+          "type": "matrix",
+          "nodes": [
+            {
+              "title": "Needs",
+              "items": [
+                "Maslow, ERG, Herzberg, acquired needs"
+              ]
+            },
+            {
+              "title": "Choice/process",
+              "items": [
+                "Goals, equity dan expectancy"
+              ]
+            },
+            {
+              "title": "Consequences",
+              "items": [
+                "Reinforcement dan social learning"
+              ]
+            },
+            {
+              "title": "Work environment",
+              "items": [
+                "Job design, empowerment, engagement"
+              ]
+            }
+          ],
+          "source": "Daft dan Marcic, Understanding Management 12e, [hal. 440–466].",
+          "alt": "Empat lensa diagnosis motivasi. Needs; Choice/process; Consequences; Work environment"
+        }
+      },
+      {
+        "kind": "ul",
+        "items": [
+          "Pisahkan intrinsic satisfaction dari reward yang diberikan pihak luar.",
+          "Content theories memeriksa kebutuhan; process theories memeriksa pilihan tindakan.",
+          "Hygiene mengurangi dissatisfaction, motivators meningkatkan satisfaction.",
+          "Expectancy memerlukan E→P, P→O dan valence.",
+          "Negative reinforcement memperkuat perilaku; punishment mengurangi perilaku.",
+          "Job design, empowerment dan engagement memerlukan dukungan yang nyata."
+        ]
+      },
+      {
+        "kind": "pendalaman",
+        "title": "Istilah Inggris yang digunakan",
+        "blocks": [
+          {
+            "kind": "table",
+            "title": "Istilah dan makna",
+            "headers": [
+              "Istilah",
+              "Makna dalam bab"
+            ],
+            "rows": [
+              [
+                "Valence",
+                "Nilai atau daya tarik outcome bagi individu."
+              ],
+              [
+                "Hygiene factors",
+                "Kondisi yang mengurangi dissatisfaction."
+              ],
+              [
+                "Job enrichment",
+                "Penambahan responsibility, growth dan achievement pada kerja."
+              ],
+              [
+                "Empowerment",
+                "Delegasi power/authority dengan informasi, kemampuan dan rewards."
+              ]
+            ],
+            "caption": "Daft dan Marcic, Understanding Management 12e (2023), Ch. 12, hal. 438–471 (PDF 466–499); RPP Excel 2026, TM 13.",
+            "stackOnMobile": true
+          }
+        ]
+      },
+      {
+        "kind": "h2",
+        "text": "2. Needs, behavior, rewards dan feedback"
+      },
+      {
+        "kind": "p",
+        "text": "Motivation ialah kekuatan yang membangkitkan arah dan ketekunan perilaku. Kebutuhan menciptakan dorongan bertindak; reward yang memenuhi kebutuhan memberi feedback mengenai perilaku. Intrinsic rewards adalah kepuasan dari melakukan aktivitas, sementara extrinsic rewards berasal dari pihak luar seperti bonus atau pujian. [hal. 440–444]"
+      },
+      {
+        "kind": "figure",
+        "spec": {
+          "id": "MNU108-13-12-1",
+          "title": "A Simple Model of Motivation",
+          "type": "process",
+          "nodes": [
+            {
+              "title": "Need",
+              "items": [
+                "Kebutuhan menciptakan keinginan bertindak"
+              ]
+            },
+            {
+              "title": "Behavior",
+              "items": [
+                "Tindakan untuk memenuhi kebutuhan"
+              ]
+            },
+            {
+              "title": "Rewards",
+              "items": [
+                "Kepuasan intrinsic atau extrinsic"
+              ]
+            }
+          ],
+          "source": "Daft dan Marcic, Understanding Management 12e, [hal. 441].",
+          "alt": "A Simple Model of Motivation. Need; Behavior; Rewards",
+          "feedback": true,
+          "footer": "Feedback reward memberi informasi apakah perilaku layak digunakan kembali."
+        }
+      },
+      {
+        "kind": "figure",
+        "spec": {
+          "id": "MNU108-13-12-2",
+          "title": "Empat kategori motives",
+          "type": "matrix",
+          "nodes": [
+            {
+              "title": "Extrinsic × pain/fear",
+              "items": [
+                "Ancaman dan hukuman"
+              ]
+            },
+            {
+              "title": "Extrinsic × pleasure/growth",
+              "items": [
+                "Pay raise, bonus dan pujian"
+              ]
+            },
+            {
+              "title": "Intrinsic × pain/fear",
+              "items": [
+                "Memanfaatkan keraguan diri"
+              ]
+            },
+            {
+              "title": "Intrinsic × pleasure/growth",
+              "items": [
+                "Menikmati pekerjaan dan accomplishment"
+              ]
+            }
+          ],
+          "source": "Daft dan Marcic, Understanding Management 12e, [hal. 441].",
+          "alt": "Empat kategori motives. Extrinsic × pain/fear; Extrinsic × pleasure/growth; Intrinsic × pain/fear; Intrinsic × pleasure/growth",
+          "footer": "Baris: sumber reward; kolom: pain/fear atau pleasure/growth. Matriks menjelaskan pendekatan, tanpa membenarkan ancaman/manipulasi."
+        }
+      },
+      {
+        "kind": "self-check",
+        "question": "Apakah pujian selalu intrinsic karena tidak berbentuk uang?",
+        "answer": [
+          {
+            "kind": "p",
+            "text": "Tidak. Pujian yang diberikan orang lain merupakan extrinsic reward; rasa bangga atau accomplishment dari melakukan kerja merupakan intrinsic reward. [hal. 440–444]"
+          }
+        ],
+        "signal": "Jawaban menyebut konsep, bukti, dan alasan; nama teori saja belum cukup."
+      },
+      {
+        "kind": "h2",
+        "text": "3. Content theories: kebutuhan apa yang hendak dipenuhi?"
+      },
+      {
+        "kind": "p",
+        "text": "Content theories memeriksa kebutuhan yang memotivasi. Maslow menawarkan hierarki lima kebutuhan; ERG mengelompokkan menjadi tiga dan memberi ruang frustration-regression. Model adalah lensa diagnosis, tanpa jaminan semua orang mengikuti urutan yang sama dalam seluruh keadaan. [hal. 444–450]"
+      },
+      {
+        "kind": "figure",
+        "spec": {
+          "id": "MNU108-13-12-3",
+          "title": "Maslow: kebutuhan dari dasar ke tinggi",
+          "type": "pyramid",
+          "nodes": [
+            {
+              "title": "Self-actualization",
+              "items": [
+                "Growth, autonomy, creativity"
+              ]
+            },
+            {
+              "title": "Esteem",
+              "items": [
+                "Recognition, status, responsibility"
+              ]
+            },
+            {
+              "title": "Belongingness",
+              "items": [
+                "Relasi dan keanggotaan kelompok"
+              ]
+            },
+            {
+              "title": "Safety",
+              "items": [
+                "Keamanan kerja dan lingkungan"
+              ]
+            },
+            {
+              "title": "Physiological",
+              "items": [
+                "Kebutuhan fisik dan base salary"
+              ]
+            }
+          ],
+          "source": "Daft dan Marcic, Understanding Management 12e, [hal. 445–446].",
+          "alt": "Maslow: kebutuhan dari dasar ke tinggi. Self-actualization; Esteem; Belongingness; Safety; Physiological",
+          "footer": "Menurut model, lower needs mendapat prioritas sebelum higher needs; ini proposisi teori, bukan urutan universal yang sudah dipastikan."
+        }
+      },
+      {
+        "kind": "figure",
+        "spec": {
+          "id": "MNU108-13-ERG",
+          "title": "ERG dan frustration-regression",
+          "type": "process",
+          "nodes": [
+            {
+              "title": "Existence",
+              "items": [
+                "Physical well-being"
+              ]
+            },
+            {
+              "title": "Relatedness",
+              "items": [
+                "Relasi memuaskan dengan orang lain"
+              ]
+            },
+            {
+              "title": "Growth",
+              "items": [
+                "Potensi, perkembangan dan competence"
+              ]
+            }
+          ],
+          "source": "Daft dan Marcic, Understanding Management 12e, [hal. 446–447].",
+          "alt": "ERG dan frustration-regression. Existence; Relatedness; Growth",
+          "feedback": true,
+          "footer": "Kebutuhan lebih tinggi yang terhambat dapat mengarahkan perhatian kembali ke kebutuhan lebih rendah; kebutuhan tidak dibaca sebagai tangga kaku."
+        }
+      },
+      {
+        "kind": "table",
+        "title": "McClelland: acquired needs",
+        "headers": [
+          "Kebutuhan",
+          "Fokus"
+        ],
+        "rows": [
+          [
+            "Achievement",
+            "Menyelesaikan hal sulit, standar tinggi dan penguasaan tugas"
+          ],
+          [
+            "Affiliation",
+            "Relasi dekat, persahabatan dan menghindari konflik"
+          ],
+          [
+            "Power",
+            "Memengaruhi/mengarahkan orang serta tanggung jawab"
+          ]
+        ],
+        "caption": "[hal. 449–450]",
+        "stackOnMobile": true
+      },
+      {
+        "kind": "p",
+        "text": "Acquired needs berkembang melalui pengalaman hidup. Satu orang dapat mempunyai beberapa kebutuhan dengan kekuatan berbeda; jangan menetapkan satu kebutuhan permanen berdasarkan satu tindakan. [hal. 449–450]"
+      },
+      {
+        "kind": "self-check",
+        "question": "Bagaimana ERG menjelaskan pegawai yang kecewa pada kesempatan growth lalu lebih menuntut reward materi?",
+        "answer": [
+          {
+            "kind": "p",
+            "text": "Frustration-regression: kebutuhan tingkat lebih tinggi yang terhambat dapat menguatkan perhatian pada kebutuhan lebih rendah. Ini penafsiran yang perlu bukti kebutuhan serta situasi. [hal. 444–450]"
+          }
+        ],
+        "signal": "Jawaban menyebut konsep, bukti, dan alasan; nama teori saja belum cukup."
+      },
+      {
+        "kind": "h2",
+        "text": "4. Herzberg: menghilangkan dissatisfaction dan menumbuhkan satisfaction"
+      },
+      {
+        "kind": "p",
+        "text": "Herzberg membedakan hygiene factors dengan motivators. Hygiene yang buruk menciptakan dissatisfaction; memperbaikinya mengurangi dissatisfaction. Motivators seperti achievement dan responsibility membantu satisfaction. Menghilangkan keluhan belum sama dengan membangun pengalaman kerja yang memotivasi. [hal. 447–448]"
+      },
+      {
+        "kind": "figure",
+        "spec": {
+          "id": "MNU108-13-12-4",
+          "title": "Herzberg: dua area yang berbeda",
+          "type": "matrix",
+          "nodes": [
+            {
+              "title": "Area dissatisfaction: hygiene",
+              "items": [
+                "Working conditions; pay/security",
+                "Company policies; supervisors; relationships",
+                "Buruk → dissatisfied; memadai → berkurang keluhan"
+              ]
+            },
+            {
+              "title": "Area satisfaction: motivators",
+              "items": [
+                "Achievement; recognition; responsibility",
+                "Work itself; personal growth",
+                "Hadir → satisfaction lebih tinggi"
+              ]
+            }
+          ],
+          "source": "Daft dan Marcic, Understanding Management 12e, [hal. 448].",
+          "alt": "Herzberg: dua area yang berbeda. Area dissatisfaction: hygiene; Area satisfaction: motivators",
+          "footer": "Neutral: neither satisfied nor dissatisfied. Dua faktor tidak diperlakukan sebagai satu garis “gaji rendah → motivasi rendah” untuk semua konteks."
+        }
+      },
+      {
+        "kind": "p",
+        "text": "Mars dalam sumber menyediakan compensation/benefit sekaligus mentoring, belajar dan kesempatan volunteering. Analisis perlu menjelaskan fungsi masing-masing, bukan mengelompokkan seluruh fasilitas sebagai motivator. [hal. 448]"
+      },
+      {
+        "kind": "self-check",
+        "question": "Apakah menaikkan gaji pasti menghasilkan satisfaction tinggi menurut model ini?",
+        "answer": [
+          {
+            "kind": "p",
+            "text": "Gaji memadai mengurangi dissatisfaction pada area hygiene. Satisfaction tinggi juga memerlukan motivators pada pekerjaan; prediksi perlu dibaca dalam konteks model. [hal. 447–448]"
+          }
+        ],
+        "signal": "Jawaban menyebut konsep, bukti, dan alasan; nama teori saja belum cukup."
+      },
+      {
+        "kind": "h2",
+        "text": "5. Process theories: goal setting dan equity"
+      },
+      {
+        "kind": "p",
+        "text": "Process theories menjelaskan bagaimana orang memilih tindakan dan menilai keberhasilannya. Goal-setting memakai tujuan specific dan challenging, acceptance serta feedback. Equity memeriksa persepsi perbandingan kontribusi/reward dengan pihak referensi. Fairness bukan sekadar setiap orang menerima nominal yang sama. [hal. 451–454]"
+      },
+      {
+        "kind": "figure",
+        "spec": {
+          "id": "MNU108-13-12-5",
+          "title": "Kriteria motivational goals",
+          "type": "parallel",
+          "nodes": [
+            {
+              "title": "Specific",
+              "items": [
+                "Konkret dan tidak ambigu"
+              ]
+            },
+            {
+              "title": "Challenging + accepted",
+              "items": [
+                "Menantang dan diterima pelaksana"
+              ]
+            },
+            {
+              "title": "Provide feedback",
+              "items": [
+                "Kemajuan terlihat tepat waktu"
+              ]
+            }
+          ],
+          "source": "Daft dan Marcic, Understanding Management 12e, [hal. 451–452].",
+          "alt": "Kriteria motivational goals. Specific; Challenging + accepted; Provide feedback",
+          "result": "Higher motivation, jika konteks mendukung"
+        }
+      },
+      {
+        "kind": "table",
+        "title": "Equity: input, outcome dan perbandingan",
+        "headers": [
+          "Bagian",
+          "Isi",
+          "Interpretasi"
+        ],
+        "rows": [
+          [
+            "Inputs",
+            "Education, experience, effort, ability",
+            "Kontribusi yang dipersepsikan"
+          ],
+          [
+            "Outcomes",
+            "Pay, recognition, benefits, promotions",
+            "Hasil yang dipersepsikan"
+          ],
+          [
+            "Referent comparison",
+            "Perbandingan rasio kontribusi/reward diri dengan orang/kelompok",
+            "Equity ketika rasio dianggap setara; nominal sama belum tentu fair."
+          ],
+          [
+            "Respons inequity",
+            "Ubah effort, outcomes, perceptions atau tinggalkan pekerjaan",
+            "Persepsi ketidakadilan memengaruhi tindakan."
+          ]
+        ],
+        "caption": "[hal. 453–454]",
+        "stackOnMobile": true
+      },
+      {
+        "kind": "p",
+        "text": "Buku menuliskan input-to-outcome ratio. Kesetaraan rasio juga dapat dibaca melalui kebalikannya jika kedua pihak menggunakan arah yang sama dan nilai pembagi sah. Jangan membandingkan input/outcome seseorang dengan outcome/input orang lain atau menganggap input berbeda otomatis dapat dijumlahkan tanpa ukuran yang jelas. [hal. 453–454]"
+      },
+      {
+        "kind": "self-check",
+        "question": "Mengapa target menantang saja belum cukup?",
+        "answer": [
+          {
+            "kind": "p",
+            "text": "Orang perlu memahami serta menerima tujuan, mempunyai sumber daya/kemampuan yang relevan dan mendapat feedback kemajuan. Tujuan kabur atau mustahil dapat menghambat kerja. [hal. 451–454]"
+          }
+        ],
+        "signal": "Jawaban menyebut konsep, bukti, dan alasan; nama teori saja belum cukup."
+      },
+      {
+        "kind": "h2",
+        "text": "6. Expectancy: effort, performance dan outcome"
+      },
+      {
+        "kind": "p",
+        "text": "Expectancy theory menempatkan tiga pertanyaan: apakah usaha dapat menghasilkan performance, apakah performance menghasilkan outcome yang diinginkan, dan apakah outcome bernilai bagi individu? Reward yang dianggap menarik tidak cukup bila orang tidak percaya dua hubungan sebelumnya. [hal. 454–456]"
+      },
+      {
+        "kind": "figure",
+        "spec": {
+          "id": "MNU108-13-12-6",
+          "title": "Major Elements of Expectancy Theory",
+          "type": "expectancy",
+          "nodes": [
+            {
+              "title": "Effort → Performance",
+              "items": [
+                "E→P expectancy",
+                "Kemampuan, pengalaman, tools dan kesempatan"
+              ]
+            },
+            {
+              "title": "Performance → Outcomes",
+              "items": [
+                "P→O expectancy",
+                "Percaya performance menghasilkan reward"
+              ]
+            },
+            {
+              "title": "Valence",
+              "items": [
+                "Nilai outcome bagi individu",
+                "Pay, recognition atau reward lain"
+              ]
+            }
+          ],
+          "source": "Daft dan Marcic, Understanding Management 12e, [hal. 455–456].",
+          "alt": "Major Elements of Expectancy Theory. Effort → Performance; Performance → Outcomes; Valence",
+          "footer": "Valence melekat pada outcome, bukan langkah sesudah reward diterima. Diagram membaca dua hubungan lalu penilaian outcome; sumber tidak memberi angka kasus untuk dihitung."
+        }
+      },
+      {
+        "kind": "table",
+        "title": "Diagnosis yang berbeda",
+        "headers": [
+          "Hambatan",
+          "Unsur",
+          "Tindakan"
+        ],
+        "rows": [
+          [
+            "Kurang tools/skill",
+            "E→P rendah",
+            "Training, sumber daya dan kesempatan"
+          ],
+          [
+            "Reward tidak dipercaya",
+            "P→O rendah",
+            "Aturan konsisten dan pemenuhan komitmen"
+          ],
+          [
+            "Reward tidak diminati",
+            "Valence rendah",
+            "Pahami preferensi outcome individu"
+          ]
+        ],
+        "caption": "[hal. 455–456]",
+        "stackOnMobile": true
+      },
+      {
+        "kind": "self-check",
+        "question": "Apa masalah jika bonus menarik tetapi pegawai tidak punya alat menyelesaikan tugas?",
+        "answer": [
+          {
+            "kind": "p",
+            "text": "Valence bisa tinggi, namun E→P rendah. Perbaiki kapasitas serta alat sebelum mengandalkan kenaikan bonus. [hal. 454–456]"
+          }
+        ],
+        "signal": "Jawaban menyebut konsep, bukti, dan alasan; nama teori saja belum cukup."
+      },
+      {
+        "kind": "h2",
+        "text": "7. Reinforcement dan social learning"
+      },
+      {
+        "kind": "p",
+        "text": "Reinforcement melihat hubungan perilaku dengan konsekuensinya. Positive reinforcement dan avoidance learning/negative reinforcement meningkatkan kemungkinan perilaku yang diinginkan; punishment dan extinction mengurangi perilaku yang tidak diinginkan. Nama negative menunjuk penghilangan konsekuensi tidak menyenangkan, bukan tujuan menurunkan perilaku. [hal. 457–459]"
+      },
+      {
+        "kind": "figure",
+        "spec": {
+          "id": "MNU108-13-12-7",
+          "title": "Empat reinforcement tools",
+          "type": "matrix",
+          "nodes": [
+            {
+              "title": "Positive reinforcement",
+              "items": [
+                "Tambah konsekuensi menyenangkan",
+                "Desired behavior meningkat"
+              ]
+            },
+            {
+              "title": "Avoidance / negative reinforcement",
+              "items": [
+                "Hilangkan konsekuensi tidak menyenangkan setelah perbaikan",
+                "Desired behavior meningkat"
+              ]
+            },
+            {
+              "title": "Punishment",
+              "items": [
+                "Tambahkan konsekuensi tidak menyenangkan",
+                "Undesired behavior berkurang"
+              ]
+            },
+            {
+              "title": "Extinction",
+              "items": [
+                "Hentikan positive reward yang mempertahankan perilaku",
+                "Undesired behavior berkurang"
+              ]
+            }
+          ],
+          "source": "Daft dan Marcic, Understanding Management 12e, [hal. 457–458].",
+          "alt": "Empat reinforcement tools. Positive reinforcement; Avoidance / negative reinforcement; Punishment; Extinction",
+          "footer": "Tentukan perilaku dan konsekuensi yang benar-benar terjadi; jangan menilai dari kata “positif/negatif” saja."
+        }
+      },
+      {
+        "kind": "p",
+        "text": "Social learning menambahkan pengamatan terhadap perilaku serta reward orang lain. Vicarious learning memerlukan kesempatan mengamati, persepsi akurat, ingatan, kemampuan melakukan perilaku dan melihat bahwa organisasi menghargainya. Reward atas sales saja dapat memperkuat perilaku yang merusak layanan bila perilaku benar tidak ditentukan. [hal. 457–459]"
+      },
+      {
+        "kind": "p",
+        "text": "Catatan sumber: ringkasan hal.459 memakai frasa negatively reinforced pada pernyataan inhibition, tetapi definisi hal.457–458 dan Exhibit 12.7 menunjukkan avoidance learning memperkuat perilaku. Materi mengikuti definisi dan diagram terperinci agar negative reinforcement tidak tertukar dengan punishment. [hal. 457–459]"
+      },
+      {
+        "kind": "self-check",
+        "question": "Supervisor berhenti mengomel setelah anggota bekerja tepat waktu. Mengapa ini berbeda dari punishment?",
+        "answer": [
+          {
+            "kind": "p",
+            "text": "Konsekuensi tidak menyenangkan dihilangkan setelah perilaku membaik, sehingga perilaku tepat waktu diperkuat. Punishment menambahkan konsekuensi tidak menyenangkan setelah perilaku yang tidak diinginkan. [hal. 457–459]"
+          }
+        ],
+        "signal": "Jawaban menyebut konsep, bukti, dan alasan; nama teori saja belum cukup."
+      },
+      {
+        "kind": "h2",
+        "text": "8. Job design dan Job Characteristics Model"
+      },
+      {
+        "kind": "p",
+        "text": "Job design memakai gagasan motivasi pada struktur pekerjaan. Rotation memindahkan orang antarjob; enlargement memperluas aktivitas pada job; enrichment memasukkan responsibility, recognition, growth dan achievement. Menambah tugas rutin belum otomatis memberi enrichment. [hal. 459–462]"
+      },
+      {
+        "kind": "figure",
+        "spec": {
+          "id": "MNU108-13-12-8",
+          "title": "Job Characteristics Model: hubungan spesifik",
+          "type": "process",
+          "nodes": [
+            {
+              "title": "Skill variety + task identity + task significance",
+              "items": [
+                "Beragam skills; bagian kerja utuh; dampak bermakna",
+                "→ Experienced meaningfulness"
+              ]
+            },
+            {
+              "title": "Autonomy",
+              "items": [
+                "Kebebasan/discretion dalam kerja",
+                "→ Experienced responsibility"
+              ]
+            },
+            {
+              "title": "Feedback",
+              "items": [
+                "Hasil kerja terlihat",
+                "→ Knowledge of actual results"
+              ]
+            },
+            {
+              "title": "Personal/work outcomes",
+              "items": [
+                "Internal motivation, quality performance, satisfaction",
+                "Lebih sedikit absenteeism dan turnover"
+              ]
+            }
+          ],
+          "source": "Daft dan Marcic, Understanding Management 12e, [hal. 460–461].",
+          "alt": "Job Characteristics Model: hubungan spesifik. Skill variety + task identity + task significance; Autonomy; Feedback; Personal/work outcomes",
+          "parallel": true,
+          "result": "Personal/work outcomes",
+          "footer": "Tiga cabang memberi psychological states yang berbeda. Employee growth-need strength memengaruhi respons atas job design; hasil bukan jaminan universal."
+        }
+      },
+      {
+        "kind": "p",
+        "text": "Task identity mengukur sejauh mana seseorang mengerjakan bagian lengkap yang dapat dikenali; task significance mengukur arti/dampaknya. Feedback pada model ini berasal dari kerja yang memberi pengetahuan tentang hasil, tidak terbatas pada evaluasi supervisor. Growth-need strength membantu menjelaskan mengapa desain yang sama tidak memberi respons identik pada semua orang. [hal. 460–461]"
+      },
+      {
+        "kind": "self-check",
+        "question": "Apa bedanya memberi pegawai lebih banyak tugas sejenis dan memberi kendali keputusan kerja?",
+        "answer": [
+          {
+            "kind": "p",
+            "text": "Lebih banyak aktivitas dapat berupa enlargement. Kendali, responsibility dan peluang berkembang mendukung enrichment/autonomy, selama disertai sumber daya yang sesuai. [hal. 459–462]"
+          }
+        ],
+        "signal": "Jawaban menyebut konsep, bukti, dan alasan; nama teori saja belum cukup."
+      },
+      {
+        "kind": "h2",
+        "text": "9. Incentive compensation, empowerment dan engagement"
+      },
+      {
+        "kind": "p",
+        "text": "Lump-sum bonus, ESOP, gain sharing dan pay for performance memberi bentuk insentif berbeda. Insentif perlu mendorong perilaku yang mendukung tujuan serta etika. Empowerment mendelegasikan power/authority; engagement melibatkan keterlibatan emosional/mental, kontribusi antusias serta belonging dan commitment. [hal. 462–466]"
+      },
+      {
+        "kind": "table",
+        "title": "Bentuk incentive compensation",
+        "headers": [
+          "Bentuk",
+          "Basis"
+        ],
+        "rows": [
+          [
+            "Lump-sum bonus",
+            "Pembayaran cash sekali berdasarkan performance"
+          ],
+          [
+            "ESOP",
+            "Kepemilikan bagian perusahaan"
+          ],
+          [
+            "Gain sharing",
+            "Rewards unit ketika target bersama terpenuhi"
+          ],
+          [
+            "Pay for performance / merit pay",
+            "Reward individu sebanding kontribusi performance"
+          ]
+        ],
+        "caption": "[hal. 462]",
+        "stackOnMobile": true
+      },
+      {
+        "kind": "figure",
+        "spec": {
+          "id": "MNU108-13-EMP",
+          "title": "Empowerment memerlukan empat elemen",
+          "type": "matrix",
+          "nodes": [
+            {
+              "title": "Information",
+              "items": [
+                "Informasi performance keuangan/operasi"
+              ]
+            },
+            {
+              "title": "Knowledge and skills",
+              "items": [
+                "Kemampuan memberi kontribusi"
+              ]
+            },
+            {
+              "title": "Power",
+              "items": [
+                "Authority atas keputusan substantif"
+              ]
+            },
+            {
+              "title": "Rewards",
+              "items": [
+                "Kaitan hasil perusahaan dengan rewards"
+              ]
+            }
+          ],
+          "source": "Daft dan Marcic, Understanding Management 12e, [hal. 462–463].",
+          "alt": "Empowerment memerlukan empat elemen. Information; Knowledge and skills; Power; Rewards"
+        }
+      },
+      {
+        "kind": "figure",
+        "spec": {
+          "id": "MNU108-13-ENG",
+          "title": "Lingkungan yang mendukung engagement",
+          "type": "parallel",
+          "nodes": [
+            {
+              "title": "Meaningfulness",
+              "items": [
+                "Kontribusi penting dan bernilai"
+              ]
+            },
+            {
+              "title": "Connection",
+              "items": [
+                "Belonging serta relasi"
+              ]
+            },
+            {
+              "title": "Growth/competence",
+              "items": [
+                "Kesempatan belajar dan kemampuan"
+              ]
+            }
+          ],
+          "source": "Daft dan Marcic, Understanding Management 12e, [hal. 463–466].",
+          "alt": "Lingkungan yang mendukung engagement. Meaningfulness; Connection; Growth/competence",
+          "result": "Kontribusi dan commitment yang lebih kuat"
+        }
+      },
+      {
+        "kind": "pendalaman",
+        "title": "Exhibit 12.9: data engagement historis sumber",
+        "blocks": [
+          {
+            "kind": "table",
+            "title": "Persentase yang mengalami kondisi tertentu",
+            "headers": [
+              "Kondisi",
+              "Low/no engagement (%)",
+              "Highly engaged (%)"
+            ],
+            "rows": [
+              [
+                "Pembicaraan progress",
+                "13",
+                "92"
+              ],
+              [
+                "Dorongan development",
+                "10",
+                "97"
+              ],
+              [
+                "Pujian baru-baru ini",
+                "13",
+                "88"
+              ],
+              [
+                "Kesempatan learn/grow",
+                "13",
+                "98"
+              ],
+              [
+                "Best friend at work",
+                "19",
+                "74"
+              ],
+              [
+                "Manager cares",
+                "20",
+                "98"
+              ],
+              [
+                "Job penting bagi company",
+                "22",
+                "98"
+              ],
+              [
+                "Opini dihitung",
+                "19",
+                "91"
+              ],
+              [
+                "Kolega berkomitmen pada quality",
+                "44",
+                "93"
+              ],
+              [
+                "Dapat melakukan best work tiap hari",
+                "53",
+                "99"
+              ],
+              [
+                "Equipment memadai",
+                "70",
+                "98"
+              ],
+              [
+                "Tahu ekspektasi kerja",
+                "89",
+                "99"
+              ]
+            ],
+            "caption": "[hal. 465]",
+            "stackOnMobile": true
+          },
+          {
+            "kind": "p",
+            "text": "Gambar sumber tidak memberi tahun survei; angka ini dilabeli data dalam buku, bukan statistik terbaru. Perbedaan kelompok merupakan association, tidak membuktikan bahwa satu tindakan sendirian menyebabkan persentase hasil. [hal. 465]"
+          }
+        ]
+      },
+      {
+        "kind": "self-check",
+        "question": "Apakah empowerment cukup dengan mengatakan “silakan memutuskan sendiri”?",
+        "answer": [
+          {
+            "kind": "p",
+            "text": "Belum. Authority perlu disertai information, knowledge/skills dan rewards yang selaras. Tanpa elemen tersebut, keputusan dapat menjadi beban tanpa kemampuan nyata. [hal. 462–466]"
+          }
+        ],
+        "signal": "Jawaban menyebut konsep, bukti, dan alasan; nama teori saja belum cukup."
+      },
+      {
+        "kind": "h2",
+        "text": "Persiapan ujian"
+      },
+      {
+        "kind": "table",
+        "title": "Konsep yang mudah tertukar",
+        "headers": [
+          "Pasangan",
+          "Perbedaan"
+        ],
+        "rows": [
+          [
+            "Intrinsic/extrinsic",
+            "Sumber kepuasan, bukan uang/nonuang."
+          ],
+          [
+            "Negative reinforcement/punishment",
+            "Yang pertama memperkuat perilaku dengan penghilangan; kedua mengurangi melalui konsekuensi buruk."
+          ],
+          [
+            "Task identity/significance",
+            "Keutuhan bagian kerja berbeda dari arti dampaknya."
+          ],
+          [
+            "Equity/equal pay",
+            "Fairness memeriksa kontribusi dan referent, bukan nominal saja."
+          ]
+        ],
+        "caption": "[hal. 441–461]",
+        "stackOnMobile": true
+      },
+      {
+        "kind": "solution-reveal",
+        "title": "Morgan’s Department Store: komisi, layanan dan keadilan",
+        "prompt": "Kasus buku yang ditugaskan RPP, diparafrasekan. Toko mengubah seluruh sales team dari hourly pay ke straight commission untuk mendorong layanan personal serta clientele. Eksperimen dua tahun mendapat respons positif dan peningkatan penjualan, tetapi muncul penjualan agresif, kompetisi, penolakan tugas di luar sales floor serta ketimpangan peluang antarbagian. [hal. 451–459, 462–466, 469–470]",
+        "promptBlocks": [
+          {
+            "kind": "ul",
+            "items": [
+              "Nilai manfaat/risiko melalui expectancy, equity dan reinforcement.",
+              "Usulkan penyesuaian insentif yang tetap mendorong layanan personal dan kerja sama.",
+              "Jelaskan risiko loyalitas pelanggan pada individu dan rencana evaluasi."
+            ]
+          }
+        ],
+        "blocks": [
+          {
+            "kind": "p",
+            "text": "Hasil analisis untuk pembanding jawaban: Komisi memperjelas hubungan performance–outcome dan memberi autonomy/ownership psikologis, tetapi E→P dipengaruhi kesempatan menjual dan kemampuan. Valence pendapatan pasti berbeda dari valence penghasilan berisiko. Keluhan bagian berharga rendah layak diperiksa sebagai perbedaan peluang serta persepsi rasio input/outcome. Rewards penjualan individu saja dapat memperkuat pushy selling dan mengabaikan bantuan tim. Saran: evaluasi peluang dan kontribusi antarbagian, pertimbangkan komponen penghasilan dasar serta insentif individu/tim dan ukuran layanan/kerja sama, dengan aturan transparan. Ini rekomendasi analisis, bukan program final dalam teks. Pantau referrals, repeat business, keluhan, mutu layanan, tugas pendukung dan turnover. Pelanggan dapat mengikuti sales associate favorit ketika ia pindah; perkuat hubungan pelanggan dengan layanan serta informasi organisasi dengan menjaga privasi, tanpa menyatakan perpindahan pasti terjadi. [hal. 451–459, 462–466, 469–470]"
+          }
+        ]
+      },
+      {
+        "kind": "solution-reveal",
+        "title": "Latihan: reward menarik, tetapi jalur usaha tidak jelas",
+        "prompt": "Latihan buatan: situasi berikut adalah asumsi untuk berlatih, tanpa klaim perusahaan nyata. Unit layanan menawarkan bonus atas target penyelesaian. Pegawai menghargai bonus tetapi merasa sistem sering rusak, standar berubah dan manajer kadang membatalkan reward setelah target tercapai. [hal. 447–448, 451–456, 460–461]",
+        "promptBlocks": [
+          {
+            "kind": "ul",
+            "items": [
+              "Diagnosis E→P, P→O dan valence.",
+              "Bedakan perbaikan fasilitas dengan job enrichment.",
+              "Susun goal dan feedback yang masuk akal."
+            ]
+          }
+        ],
+        "blocks": [
+          {
+            "kind": "p",
+            "text": "Hasil analisis untuk pembanding jawaban: Sistem rusak menghambat E→P; reward dibatalkan melemahkan P→O. Valence tinggi tidak menutup dua kelemahan ini. Perbaiki fasilitas, sumber daya dan standar; pastikan kaitan performance/reward konsisten serta dapat dipercaya. Fasilitas memadai termasuk hygiene; enrichment menambah responsibility, growth dan achievement dalam kerja. Gunakan tujuan specific, challenging namun realistis, accepted serta feedback kemajuan. Tidak ada dasar menghitung motivational force numerik; evaluasi persepsi dan perilaku sebelum mengubah skema. [hal. 447–448, 451–456, 460–461]"
+          }
+        ]
+      }
+    ]
+  },
+  "quiz": [
+    {
+      "id": "mnu108-uas-tm13-01",
+      "tm": 13,
+      "topic": "Rewards",
+      "difficulty": "basic",
+      "q": "Manajer memberi pujian atas laporan; anggota merasa bangga karena memecahkan masalah. Pasangan yang tepat?",
+      "options": [
+        "Keduanya intrinsic karena tidak berupa uang",
+        "Pujian extrinsic, accomplishment intrinsic",
+        "Keduanya punishment",
+        "Pujian intrinsic, bangga extrinsic"
+      ],
+      "answer": 1,
+      "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 441–442].",
+      "sourceAnchors": [
+        "Ch. 12; [hal. 441–442]; PDF 469–470"
+      ],
+      "explanation": "Sumber pujian di luar diri; accomplishment muncul dari aktivitas. Alternatif lain: uang tidak mendefinisikan kategori, hukuman tidak terjadi, pasangan terakhir terbalik. [hal. 441–442]",
+      "skill": "Diagnosis konsep, bukti dan penerapan"
+    },
+    {
+      "id": "mnu108-uas-tm13-02",
+      "tm": 13,
+      "topic": "ERG",
+      "difficulty": "basic",
+      "q": "Growth terhambat lalu pegawai makin menekankan penghasilan. ERG menjelaskan ini sebagai…",
+      "options": [
+        "Kenaikan otomatis ke self-actualization",
+        "Punishment: konsekuensi buruk mengurangi perilaku",
+        "Frustration-regression",
+        "E→P tinggi yang pasti terjadi"
+      ],
+      "answer": 2,
+      "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 446–447].",
+      "sourceAnchors": [
+        "Ch. 12; [hal. 446–447]; PDF 474–475"
+      ],
+      "explanation": "Frustrasi kebutuhan lebih tinggi dapat mengarahkan ke kebutuhan lebih rendah. Alternatif lain: pilihan lain tidak menjelaskan perubahan perhatian kebutuhan. [hal. 446–447]",
+      "skill": "Diagnosis konsep, bukti dan penerapan"
+    },
+    {
+      "id": "mnu108-uas-tm13-03",
+      "tm": 13,
+      "topic": "Herzberg",
+      "difficulty": "medium",
+      "q": "Fasilitas diperbaiki tetapi pekerjaan tetap tanpa growth atau responsibility. Menurut Herzberg…",
+      "options": [
+        "Hygiene pasti menciptakan motivasi tinggi",
+        "Achievement adalah hygiene saja",
+        "Pay tidak termasuk model",
+        "Dissatisfaction dapat berkurang tanpa satisfaction tinggi"
+      ],
+      "answer": 3,
+      "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 447–448].",
+      "sourceAnchors": [
+        "Ch. 12; [hal. 447–448]; PDF 475–476"
+      ],
+      "explanation": "Hygiene dan motivators berperan pada area berbeda. Alternatif lain: hygiene tidak menjamin satisfaction; achievement motivator dan pay hygiene. [hal. 447–448]",
+      "skill": "Diagnosis konsep, bukti dan penerapan"
+    },
+    {
+      "id": "mnu108-uas-tm13-04",
+      "tm": 13,
+      "topic": "Goal setting",
+      "difficulty": "medium",
+      "q": "Kombinasi criteria motivational goals sumber ialah…",
+      "options": [
+        "Specific, challenging, accepted dan feedback",
+        "Kabur, mustahil, dipaksakan dan tanpa review",
+        "Bonus, senioritas dan gender",
+        "Specific saja tanpa acceptance"
+      ],
+      "answer": 0,
+      "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 451–452].",
+      "sourceAnchors": [
+        "Ch. 12; [hal. 451–452]; PDF 479–480"
+      ],
+      "explanation": "Empat kriteria membantu arah, tantangan, penerimaan dan kemajuan. Alternatif lain: target buruk dan atribut lain tidak menggantikan kriteria; specificity saja tidak lengkap. [hal. 451–452]",
+      "skill": "Diagnosis konsep, bukti dan penerapan"
+    },
+    {
+      "id": "mnu108-uas-tm13-05",
+      "tm": 13,
+      "topic": "Expectancy",
+      "difficulty": "medium",
+      "q": "Pegawai mampu mencapai target dan ingin bonus, tetapi tidak percaya bonus akan dibayar. Unsur terlemah?",
+      "options": [
+        "E→P expectancy yang pasti nol",
+        "P→O expectancy",
+        "Valence yang pasti rendah",
+        "Need for affiliation"
+      ],
+      "answer": 1,
+      "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 455–456].",
+      "sourceAnchors": [
+        "Ch. 12; [hal. 455–456]; PDF 483–484"
+      ],
+      "explanation": "P→O menghubungkan successful performance dengan outcome. Alternatif lain: ability/target mendukung E→P dan bonus diinginkan berarti valence tinggi; affiliation tidak dinyatakan. [hal. 455–456]",
+      "skill": "Diagnosis konsep, bukti dan penerapan"
+    },
+    {
+      "id": "mnu108-uas-tm13-06",
+      "tm": 13,
+      "topic": "Reinforcement",
+      "difficulty": "medium",
+      "q": "Teguran berhenti setelah keterlambatan anggota membaik. Mekanismenya…",
+      "options": [
+        "Punishment: konsekuensi buruk ditambahkan",
+        "Extinction atas reward positif",
+        "Avoidance learning / negative reinforcement",
+        "Positive reinforcement berupa penambahan reward"
+      ],
+      "answer": 2,
+      "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 457–458].",
+      "sourceAnchors": [
+        "Ch. 12; [hal. 457–458]; PDF 485–486"
+      ],
+      "explanation": "Konsekuensi buruk dihilangkan sehingga perilaku membaik diperkuat. Alternatif lain: punishment menambah konsekuensi buruk; extinction menghentikan positif; positive reinforcement menambah menyenangkan. [hal. 457–458]",
+      "skill": "Diagnosis konsep, bukti dan penerapan"
+    },
+    {
+      "id": "mnu108-uas-tm13-07",
+      "tm": 13,
+      "topic": "Job design",
+      "difficulty": "advanced",
+      "q": "Anggota mengerjakan bagian kerja lengkap tetapi belum melihat dampaknya pada pelanggan. Identifikasi tepat?",
+      "options": [
+        "Task identity dan significance dianggap selalu tinggi",
+        "Autonomy dianggap pasti nol tanpa memeriksa kewenangan",
+        "Enlargement selalu sama dengan enrichment",
+        "Task identity dapat tinggi, task significance belum jelas"
+      ],
+      "answer": 3,
+      "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 460–461].",
+      "sourceAnchors": [
+        "Ch. 12; [hal. 460–461]; PDF 488–489"
+      ],
+      "explanation": "Keutuhan kerja dan arti/dampaknya adalah dimensi berbeda. Alternatif lain: kondisi tidak memberi data autonomy atau memastikan enrichment. [hal. 460–461]",
+      "skill": "Diagnosis konsep, bukti dan penerapan"
+    },
+    {
+      "id": "mnu108-uas-tm13-08",
+      "tm": 13,
+      "topic": "Empowerment",
+      "difficulty": "advanced",
+      "q": "Authority keputusan diberikan tanpa data operasi dan training. Unsur empowerment yang perlu diperbaiki?",
+      "options": [
+        "Information serta knowledge/skills",
+        "Hanya jumlah tugas",
+        "Hapus seluruh authority tanpa diagnosis",
+        "Pujian saja menggantikan semua elemen"
+      ],
+      "answer": 0,
+      "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 462–463].",
+      "sourceAnchors": [
+        "Ch. 12; [hal. 462–463]; PDF 490–491"
+      ],
+      "explanation": "Keputusan substantif membutuhkan informasi dan kapasitas. Alternatif lain: jumlah tugas, pencabutan tanpa diagnosis dan pujian saja tidak memperbaiki dua kekurangan. [hal. 462–463]",
+      "skill": "Diagnosis konsep, bukti dan penerapan"
+    },
+    {
+      "id": "mnu108-uas-tm13-09",
+      "tm": 13,
+      "topic": "Morgan/equity",
+      "difficulty": "advanced",
+      "q": "Mengapa komisi atas belt USD50 dan dress USD2.800 belum dapat dihitung, tetapi fairness tetap dapat dianalisis?",
+      "options": [
+        "Karena kedua harga selalu memberi komisi sama",
+        "Tarif komisi tidak tersedia; perbedaan peluang/input-outcome perlu diperiksa",
+        "Karena harga adalah persentase komisi",
+        "Karena nominal berbeda otomatis membuktikan diskriminasi"
+      ],
+      "answer": 1,
+      "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 453–459, 470].",
+      "sourceAnchors": [
+        "Ch. 12; [hal. 453–459, 470]; PDF 481–487, 498"
+      ],
+      "explanation": "Kasus memberi harga dan keluhan peluang, tanpa rate komisi atau ukuran kontribusi lengkap. Alternatif lain: harga bukan rate, hasil tidak pasti sama, perbedaan nominal saja tidak membuktikan penyebab diskriminasi. [hal. 453–459, 470]",
+      "skill": "Diagnosis konsep, bukti dan penerapan"
+    }
+  ],
+  "cards": [
+    {
+      "topic": "Rewards",
+      "front": "Bedakan intrinsic/extrinsic.",
+      "back": "Intrinsic ialah kepuasan dari aktivitas; extrinsic diberikan pihak luar, termasuk pujian dan uang. [hal. 441]",
+      "category": "Perbandingan",
+      "id": "mnu108-uas-tm13-01",
+      "phase": "pra-uas",
+      "tm": 13
+    },
+    {
+      "topic": "Herzberg",
+      "front": "Apa fungsi hygiene vs motivators?",
+      "back": "Hygiene mengurangi dissatisfaction; motivators seperti achievement, responsibility dan growth meningkatkan satisfaction. [hal. 447–448]",
+      "category": "Perbandingan",
+      "id": "mnu108-uas-tm13-02",
+      "phase": "pra-uas",
+      "tm": 13
+    },
+    {
+      "topic": "Expectancy",
+      "front": "Apa tiga unsur expectancy?",
+      "back": "E→P: usaha menghasilkan performance. P→O: performance menghasilkan outcome. Valence: nilai outcome bagi individu. [hal. 455–456]",
+      "category": "Konsep",
+      "id": "mnu108-uas-tm13-03",
+      "phase": "pra-uas",
+      "tm": 13
+    },
+    {
+      "topic": "Reinforcement",
+      "front": "Mengapa negative reinforcement berbeda dari punishment?",
+      "back": "Negative reinforcement menghilangkan konsekuensi buruk untuk memperkuat perilaku; punishment memberi konsekuensi buruk untuk mengurangi perilaku. [hal. 457–458]",
+      "category": "Perbandingan",
+      "id": "mnu108-uas-tm13-04",
+      "phase": "pra-uas",
+      "tm": 13
+    },
+    {
+      "topic": "Job design",
+      "front": "Pasangkan lima job dimensions dengan states.",
+      "back": "Variety/identity/significance → meaningfulness; autonomy → responsibility; feedback → knowledge of results. Growth-need strength memengaruhi respons. [hal. 460–461]",
+      "category": "Mekanisme",
+      "id": "mnu108-uas-tm13-05",
+      "phase": "pra-uas",
+      "tm": 13
+    },
+    {
+      "topic": "Empowerment",
+      "front": "Apa empat elemen empowerment?",
+      "back": "Information, knowledge/skills, power atas keputusan dan rewards selaras performance. Engagement juga membutuhkan meaning, connection dan growth. [hal. 462–466]",
+      "category": "Konsep",
+      "id": "mnu108-uas-tm13-06",
+      "phase": "pra-uas",
+      "tm": 13
+    }
+  ],
+  "bank": [
+    {
+      "type": "analysis",
+      "scope": "TM 13: Morgan’s Department Store: komisi, layanan dan keadilan",
+      "difficulty": "Menengah",
+      "estimatedTime": "20–30 menit",
+      "question": "Morgan’s Department Store: komisi, layanan dan keadilan",
+      "context": "Kasus buku yang ditugaskan RPP, diparafrasekan. Toko mengubah seluruh sales team dari hourly pay ke straight commission untuk mendorong layanan personal serta clientele. Eksperimen dua tahun mendapat respons positif dan peningkatan penjualan, tetapi muncul penjualan agresif, kompetisi, penolakan tugas di luar sales floor serta ketimpangan peluang antarbagian. [hal. 451–459, 462–466, 469–470]",
+      "data": [
+        "Kasus membandingkan belt USD50 dan designer dress USD2.800, tanpa memberi tarif komisi.",
+        "Komisi per transaksi tidak dapat dihitung hanya dari harga tersebut.",
+        "Customer referrals, repeat business, sales dan comment cards dipantau selama program.",
+        "Dasar konsep: Daft dan Marcic 12e [hal. 451–459, 462–466, 469–470]."
+      ],
+      "instructions": [
+        "Nilai manfaat/risiko melalui expectancy, equity dan reinforcement.",
+        "Usulkan penyesuaian insentif yang tetap mendorong layanan personal dan kerja sama.",
+        "Jelaskan risiko loyalitas pelanggan pada individu dan rencana evaluasi."
+      ],
+      "outputFormat": [
+        "Pisahkan fakta/asumsi dan penafsiran.",
+        "Tulis keputusan dengan bukti dan dasar konsep.",
+        "Jelaskan kelemahan alternatif dan cara mengevaluasi keputusan."
+      ],
+      "rubric": [
+        "Ketepatan fakta/asumsi dan konsep (30%)",
+        "Alasan keputusan serta kelemahan alternatif (45%)",
+        "Kelayakan tindak lanjut dan evaluasi (25%)"
+      ],
+      "answerGuide": "Hasil analisis untuk pembanding jawaban: Komisi memperjelas hubungan performance–outcome dan memberi autonomy/ownership psikologis, tetapi E→P dipengaruhi kesempatan menjual dan kemampuan. Valence pendapatan pasti berbeda dari valence penghasilan berisiko. Keluhan bagian berharga rendah layak diperiksa sebagai perbedaan peluang serta persepsi rasio input/outcome. Rewards penjualan individu saja dapat memperkuat pushy selling dan mengabaikan bantuan tim. Saran: evaluasi peluang dan kontribusi antarbagian, pertimbangkan komponen penghasilan dasar serta insentif individu/tim dan ukuran layanan/kerja sama, dengan aturan transparan. Ini rekomendasi analisis, bukan program final dalam teks. Pantau referrals, repeat business, keluhan, mutu layanan, tugas pendukung dan turnover. Pelanggan dapat mengikuti sales associate favorit ketika ia pindah; perkuat hubungan pelanggan dengan layanan serta informasi organisasi dengan menjaga privasi, tanpa menyatakan perpindahan pasti terjadi. [hal. 451–459, 462–466, 469–470]"
+    },
+    {
+      "type": "analysis",
+      "scope": "TM 13: Latihan: reward menarik, tetapi jalur usaha tidak jelas",
+      "difficulty": "Menengah",
+      "estimatedTime": "20–30 menit",
+      "question": "Latihan: reward menarik, tetapi jalur usaha tidak jelas",
+      "context": "Latihan buatan: situasi berikut adalah asumsi untuk berlatih, tanpa klaim perusahaan nyata. Unit layanan menawarkan bonus atas target penyelesaian. Pegawai menghargai bonus tetapi merasa sistem sering rusak, standar berubah dan manajer kadang membatalkan reward setelah target tercapai. [hal. 447–448, 451–456, 460–461]",
+      "data": [
+        "Asumsi: pegawai ingin bonus, jadi valence tinggi.",
+        "Tidak tersedia angka probabilitas effort/performance/outcome.",
+        "Dasar konsep: Daft dan Marcic 12e [hal. 447–448, 451–456, 460–461]."
+      ],
+      "instructions": [
+        "Diagnosis E→P, P→O dan valence.",
+        "Bedakan perbaikan fasilitas dengan job enrichment.",
+        "Susun goal dan feedback yang masuk akal."
+      ],
+      "outputFormat": [
+        "Pisahkan fakta/asumsi dan penafsiran.",
+        "Tulis keputusan dengan bukti dan dasar konsep.",
+        "Jelaskan kelemahan alternatif dan cara mengevaluasi keputusan."
+      ],
+      "rubric": [
+        "Ketepatan fakta/asumsi dan konsep (30%)",
+        "Alasan keputusan serta kelemahan alternatif (45%)",
+        "Kelayakan tindak lanjut dan evaluasi (25%)"
+      ],
+      "answerGuide": "Hasil analisis untuk pembanding jawaban: Sistem rusak menghambat E→P; reward dibatalkan melemahkan P→O. Valence tinggi tidak menutup dua kelemahan ini. Perbaiki fasilitas, sumber daya dan standar; pastikan kaitan performance/reward konsisten serta dapat dipercaya. Fasilitas memadai termasuk hygiene; enrichment menambah responsibility, growth dan achievement dalam kerja. Gunakan tujuan specific, challenging namun realistis, accepted serta feedback kemajuan. Tidak ada dasar menghitung motivational force numerik; evaluasi persepsi dan perilaku sebelum mengubah skema. [hal. 447–448, 451–456, 460–461]"
+    }
+  ],
+  "visualInventory": [
+    {
+      "id": "MNU108-13-OV",
+      "title": "Empat lensa diagnosis motivasi",
+      "type": "matrix",
+      "source": "Daft dan Marcic, Understanding Management 12e, [hal. 440–466].",
+      "mobile": "SVG 360 unit dengan teks yang mengalir sesuai ruang; makna hubungan sama dengan desktop."
+    },
+    {
+      "id": "MNU108-13-12-1",
+      "title": "A Simple Model of Motivation",
+      "type": "process",
+      "source": "Daft dan Marcic, Understanding Management 12e, [hal. 441].",
+      "mobile": "SVG 360 unit dengan teks yang mengalir sesuai ruang; makna hubungan sama dengan desktop."
+    },
+    {
+      "id": "MNU108-13-12-2",
+      "title": "Empat kategori motives",
+      "type": "matrix",
+      "source": "Daft dan Marcic, Understanding Management 12e, [hal. 441].",
+      "mobile": "SVG 360 unit dengan teks yang mengalir sesuai ruang; makna hubungan sama dengan desktop."
+    },
+    {
+      "id": "MNU108-13-12-3",
+      "title": "Maslow: kebutuhan dari dasar ke tinggi",
+      "type": "pyramid",
+      "source": "Daft dan Marcic, Understanding Management 12e, [hal. 445–446].",
+      "mobile": "SVG 360 unit dengan teks yang mengalir sesuai ruang; makna hubungan sama dengan desktop."
+    },
+    {
+      "id": "MNU108-13-ERG",
+      "title": "ERG dan frustration-regression",
+      "type": "process",
+      "source": "Daft dan Marcic, Understanding Management 12e, [hal. 446–447].",
+      "mobile": "SVG 360 unit dengan teks yang mengalir sesuai ruang; makna hubungan sama dengan desktop."
+    },
+    {
+      "id": "MNU108-13-12-4",
+      "title": "Herzberg: dua area yang berbeda",
+      "type": "matrix",
+      "source": "Daft dan Marcic, Understanding Management 12e, [hal. 448].",
+      "mobile": "SVG 360 unit dengan teks yang mengalir sesuai ruang; makna hubungan sama dengan desktop."
+    },
+    {
+      "id": "MNU108-13-12-5",
+      "title": "Kriteria motivational goals",
+      "type": "parallel",
+      "source": "Daft dan Marcic, Understanding Management 12e, [hal. 451–452].",
+      "mobile": "SVG 360 unit dengan teks yang mengalir sesuai ruang; makna hubungan sama dengan desktop."
+    },
+    {
+      "id": "MNU108-13-12-6",
+      "title": "Major Elements of Expectancy Theory",
+      "type": "expectancy",
+      "source": "Daft dan Marcic, Understanding Management 12e, [hal. 455–456].",
+      "mobile": "SVG 360 unit dengan teks yang mengalir sesuai ruang; makna hubungan sama dengan desktop."
+    },
+    {
+      "id": "MNU108-13-12-7",
+      "title": "Empat reinforcement tools",
+      "type": "matrix",
+      "source": "Daft dan Marcic, Understanding Management 12e, [hal. 457–458].",
+      "mobile": "SVG 360 unit dengan teks yang mengalir sesuai ruang; makna hubungan sama dengan desktop."
+    },
+    {
+      "id": "MNU108-13-12-8",
+      "title": "Job Characteristics Model: hubungan spesifik",
+      "type": "process",
+      "source": "Daft dan Marcic, Understanding Management 12e, [hal. 460–461].",
+      "mobile": "SVG 360 unit dengan teks yang mengalir sesuai ruang; makna hubungan sama dengan desktop."
+    },
+    {
+      "id": "MNU108-13-EMP",
+      "title": "Empowerment memerlukan empat elemen",
+      "type": "matrix",
+      "source": "Daft dan Marcic, Understanding Management 12e, [hal. 462–463].",
+      "mobile": "SVG 360 unit dengan teks yang mengalir sesuai ruang; makna hubungan sama dengan desktop."
+    },
+    {
+      "id": "MNU108-13-ENG",
+      "title": "Lingkungan yang mendukung engagement",
+      "type": "parallel",
+      "source": "Daft dan Marcic, Understanding Management 12e, [hal. 463–466].",
+      "mobile": "SVG 360 unit dengan teks yang mengalir sesuai ruang; makna hubungan sama dengan desktop."
+    }
+  ],
+  "exhibits": [
+    {
+      "id": "12.1",
+      "page": 441,
+      "action": "Visual need–behavior–reward–feedback"
+    },
+    {
+      "id": "12.2",
+      "page": 441,
+      "action": "Matriks dua dimensi motive"
+    },
+    {
+      "id": "12.3",
+      "page": 445,
+      "action": "Visual hierarki kebutuhan"
+    },
+    {
+      "id": "12.4",
+      "page": 448,
+      "action": "Visual dua area hygiene/motivators"
+    },
+    {
+      "id": "12.5",
+      "page": 451,
+      "action": "Visual kriteria goal"
+    },
+    {
+      "id": "12.6",
+      "page": 455,
+      "action": "Visual E→P, P→O dan valence"
+    },
+    {
+      "id": "12.7",
+      "page": 458,
+      "action": "Visual empat reinforcement tools"
+    },
+    {
+      "id": "12.8",
+      "page": 460,
+      "action": "Visual hubungan dimensi–states–outcomes dan moderator"
+    },
+    {
+      "id": "12.9",
+      "page": 465,
+      "action": "Tabel seluruh dua kelompok data, batas association"
+    }
+  ],
+  "audit": {
+    "findings": [
+      "Definisi avoidance learning pada 457–458 dijadikan acuan, sehingga kekeliruan frasa pada ringkasan 459 tidak membuat negative reinforcement tertukar dengan punishment.",
+      "Expectancy memakai notasi E→P/P→O sumber; rumus skor numerik tanpa data sumber tidak ditambahkan. Valence ditempatkan sebagai evaluasi outcome.",
+      "Kasus Morgan memakai eksperimen dua tahun dan harga USD50/USD2.800 sesuai teks; tidak mengarang tarif/angka komisi atau keputusan akhir. Data engagement lengkap dilabeli tanpa tahun dan association."
+    ],
+    "appendix": [
+      "Self-assessment acquired needs (449–450), Equity Sensitivity (452), Engagement (464): refleksi sukarela memakai instrumen sumber; tidak menilai kemampuan secara tunggal.",
+      "Discussion (466–467) dan Needs at Work (467–468): identifikasi kebutuhan serta alternatif tindakan, dengan alasan dari model.",
+      "Ethical Dilemma Tacoma Building Materials (469): bandingkan kewajiban yang disebut dalam fakta cerita dengan trust, P→O dan keberlanjutan finansial; bukan nasihat hukum kontrak nyata."
+    ],
+    "sourceReview": "Teks bab 12 dan halaman diagram diperiksa langsung; nomor cetak dan PDF dibedakan.",
+    "constraints": "Pra-UTS dipertahankan. Data historis mengikuti tahun buku. Latihan buatan ditandai dan hasil analisis tidak diklaim sebagai tindakan nyata tokoh."
+  }
+}

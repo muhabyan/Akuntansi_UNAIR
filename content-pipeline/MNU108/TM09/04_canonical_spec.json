@@ -1,0 +1,1236 @@
+{
+  "course": "MNU108",
+  "tm": 9,
+  "reading": {
+    "tm": 9,
+    "title": "Mengelola inovasi dan perubahan",
+    "ref": "Daft dan Marcic, Understanding Management 12e (2023), Ch. 8, hal. 266–297 (PDF 294–325); RPP Excel 2026, TM 9.",
+    "intro": "Proyek MRP Chopper's tertahan meskipun pengusul yakin manfaatnya besar. Bab ini membantu kamu melihat mengapa ide dan kesiapan orang harus diurus bersama. [hal. 295–296]",
+    "layout": "layered",
+    "coreReadingMinutes": 20,
+    "objectives": [
+      "Innovation mencakup ide yang diciptakan dan dipakai.",
+      "Product/service, process, people dan culture change mempunyai sasaran berbeda.",
+      "Exploration dan exploitation memerlukan dukungan yang sesuai.",
+      "Discovery, collaboration dan peran/struktur membawa ide ke penggunaan.",
+      "OD mengubah relasi dan budaya melalui proses terencana.",
+      "Lewin: unfreezing, changing, refreezing."
+    ],
+    "blocks": [
+      {
+        "kind": "h2",
+        "text": "1. Kilat: Mengelola inovasi dan perubahan"
+      },
+      {
+        "kind": "figure",
+        "spec": {
+          "id": "MNU108-09-OV",
+          "title": "Ide baru harus sampai digunakan",
+          "type": "parallel",
+          "nodes": [
+            {
+              "title": "Apa yang berubah?",
+              "items": [
+                "Products, services atau processes",
+                "People dan culture"
+              ]
+            },
+            {
+              "title": "Bagaimana ide dikembangkan?",
+              "items": [
+                "Discovery",
+                "Kolaborasi dan peran inovasi"
+              ]
+            },
+            {
+              "title": "Bagaimana perubahan berjalan?",
+              "items": [
+                "Unfreezing, changing, refreezing",
+                "Diagnosis resistensi dan taktik implementasi"
+              ]
+            }
+          ],
+          "source": "Daft dan Marcic, Understanding Management 12e, [hal. 268–290].",
+          "alt": "Tiga pertanyaan menghubungkan jenis perubahan, pengembangan ide, dan implementasi dengan hasil inovasi.",
+          "result": "Inovasi yang diterapkan dan dievaluasi"
+        }
+      },
+      {
+        "kind": "ul",
+        "items": [
+          "Innovation mencakup ide yang diciptakan dan dipakai.",
+          "Product/service, process, people dan culture change mempunyai sasaran berbeda.",
+          "Exploration dan exploitation memerlukan dukungan yang sesuai.",
+          "Discovery, collaboration dan peran/struktur membawa ide ke penggunaan.",
+          "OD mengubah relasi dan budaya melalui proses terencana.",
+          "Lewin: unfreezing, changing, refreezing.",
+          "Diagnosis resistensi menentukan taktik implementasi."
+        ]
+      },
+      {
+        "kind": "pendalaman",
+        "title": "Istilah Inggris yang digunakan",
+        "blocks": [
+          {
+            "kind": "table",
+            "title": "Istilah dan makna",
+            "headers": [
+              "Istilah",
+              "Makna dalam bab"
+            ],
+            "rows": [
+              [
+                "Ambidextrous approach",
+                "Memisahkan ruang eksplorasi ide dari implementasi yang efisien."
+              ],
+              [
+                "Open innovation",
+                "Memakai ide/pengetahuan melintasi batas perusahaan."
+              ],
+              [
+                "Champion",
+                "Orang yang memperjuangkan ide agar memperoleh dukungan."
+              ],
+              [
+                "Organizational development (OD)",
+                "Perubahan terencana melalui pendekatan perilaku dan proses organisasi."
+              ]
+            ],
+            "caption": "Daft dan Marcic, Understanding Management 12e (2023), Ch. 8, hal. 266–297 (PDF 294–325); RPP Excel 2026, TM 9.",
+            "stackOnMobile": true
+          }
+        ]
+      },
+      {
+        "kind": "h2",
+        "text": "2. Inovasi dan perubahan: ide harus dipakai"
+      },
+      {
+        "kind": "p",
+        "text": "Sebuah organisasi bisa mempunyai ide bagus yang belum pernah dijalankan. Innovation mencakup penciptaan dan penerapan ide, solusi atau perilaku baru. Change adalah adopsi ide baru; ide itu dapat dikembangkan di tempat lain. Nilai manfaat baru dapat dinilai setelah gagasan digunakan. [hal. 268, 285]"
+      },
+      {
+        "kind": "table",
+        "title": "Jenis perubahan",
+        "headers": [
+          "Konsep",
+          "Yang berubah",
+          "Cara mengenali"
+        ],
+        "rows": [
+          [
+            "Product/service innovation",
+            "Keluaran produk atau layanan",
+            "Nilai atau layanan yang diterima pelanggan berubah."
+          ],
+          [
+            "Process innovation",
+            "Cara kerja/produksi",
+            "Alur menghasilkan keluaran berubah."
+          ],
+          [
+            "People change",
+            "Sikap/perilaku beberapa orang",
+            "Kelompok tertentu belajar dan bekerja dengan cara baru."
+          ],
+          [
+            "Culture change",
+            "Norma, nilai dan cara berpikir organisasi",
+            "Pola bersama di seluruh organisasi berubah."
+          ]
+        ],
+        "caption": "[hal. 271, 282]",
+        "stackOnMobile": true
+      },
+      {
+        "kind": "p",
+        "text": "Disruptive innovation dapat berawal kecil dan menggantikan teknologi produk/layanan yang ada. Reverse innovation membalik arah penyebaran: gagasan berbiaya rendah dari pasar berkembang dibawa ke pasar maju. Dua istilah ini menjelaskan sisi berbeda, sehingga perubahan yang kecil belum otomatis disruptive. [hal. 268–270]"
+      },
+      {
+        "kind": "self-check",
+        "question": "Apa bedanya kreativitas dengan innovation?",
+        "answer": [
+          {
+            "kind": "p",
+            "text": "Kreativitas menghasilkan ide baru. Innovation menuntut ide atau perilaku itu juga diterapkan; daftar ide saja belum menunjukkan manfaat organisasi. [hal. 268, 285]"
+          }
+        ],
+        "signal": "Jawaban menyebut konsep, bukti, dan alasan; nama teori saja belum cukup."
+      },
+      {
+        "kind": "h2",
+        "text": "3. Ambidextrous: ruang mencoba dan disiplin menjalankan"
+      },
+      {
+        "kind": "p",
+        "text": "Kebebasan membantu orang mengembangkan gagasan, tetapi penerapan juga membutuhkan koordinasi dan rutinitas. Ambidextrous approach menyiapkan struktur/proses untuk kedua kebutuhan. Exploration menekankan kreativitas, eksperimen dan risiko; exploitation menggunakan kemampuan serta rutinitas yang sudah ada. [hal. 270–271]"
+      },
+      {
+        "kind": "figure",
+        "spec": {
+          "id": "MNU108-09-AMB",
+          "title": "Ambidextrous approach: dua kebutuhan organisasi",
+          "type": "parallel",
+          "nodes": [
+            {
+              "title": "Exploration",
+              "items": [
+                "Kebebasan mencoba dan mengusulkan",
+                "Struktur lebih longgar"
+              ]
+            },
+            {
+              "title": "Exploitation",
+              "items": [
+                "Standar, koordinasi dan rutinitas",
+                "Penerapan dengan sumber daya organisasi"
+              ]
+            }
+          ],
+          "source": "Daft dan Marcic, Understanding Management 12e, [hal. 270–271].",
+          "alt": "Exploration dan exploitation adalah dua fungsi yang saling melengkapi, bukan pilihan tunggal.",
+          "result": "Ide dapat lahir dan diterapkan",
+          "footer": "Kedua kebutuhan dijalankan bersama, dengan struktur yang sesuai."
+        }
+      },
+      {
+        "kind": "p",
+        "text": "Buku menggunakan innovation labs sebagai ruang bereksperimen, dengan penerapan dilakukan melalui sistem organisasi yang lebih terstruktur. Pemisahan fungsi membantu, tetapi perpindahan ide antarfungsi tetap harus diurus. [hal. 270]"
+      },
+      {
+        "kind": "self-check",
+        "question": "Mengapa aturan kerja yang sama belum tentu cocok untuk exploration dan exploitation?",
+        "answer": [
+          {
+            "kind": "p",
+            "text": "Kreativitas terbantu oleh kelonggaran, sedangkan penerapan membutuhkan koordinasi dan kepatuhan pada standar. Ambidextrous menyesuaikan struktur untuk keduanya. [hal. 270–271]"
+          }
+        ],
+        "signal": "Jawaban menyebut konsep, bukti, dan alasan; nama teori saja belum cukup."
+      },
+      {
+        "kind": "h2",
+        "text": "4. Tiga strategi untuk produk dan proses baru"
+      },
+      {
+        "kind": "p",
+        "text": "Bagaimana ide melewati tahap usulan? Discovery membuat kondisi agar gagasan muncul. Horizontal collaboration dan open innovation menyediakan pertukaran pengetahuan. Innovation roles and structures membantu ide memperoleh dukungan dan diterapkan. [hal. 272–281]"
+      },
+      {
+        "kind": "figure",
+        "spec": {
+          "id": "MNU108-09-8-1",
+          "title": "Three Innovation Strategies for New Products and Processes",
+          "type": "parallel",
+          "nodes": [
+            {
+              "title": "Discovery",
+              "items": [
+                "Creativity dan bottom-up approach",
+                "Internal contests dan idea incubators"
+              ]
+            },
+            {
+              "title": "Horizontal collaboration and open innovation",
+              "items": [
+                "Koordinasi antardepartemen",
+                "Customers, partners dan sumber ide luar"
+              ]
+            },
+            {
+              "title": "Innovation roles and structures",
+              "items": [
+                "Idea champions",
+                "New-venture teams, skunkworks dan pendanaan"
+              ]
+            }
+          ],
+          "source": "Daft dan Marcic, Understanding Management 12e, [hal. 272].",
+          "alt": "Discovery, kolaborasi/open innovation, dan peran/struktur inovasi bersama mendukung keluaran baru.",
+          "result": "New products, services, and processes"
+        }
+      },
+      {
+        "kind": "table",
+        "title": "Creativity: orang dan lingkungan kerjanya",
+        "headers": [
+          "Ciri individu",
+          "Dukungan organisasi"
+        ],
+        "rows": [
+          [
+            "Conceptual fluency dan open-mindedness",
+            "Libatkan orang dengan pengalaman berbeda; beri ruang untuk pemikiran tak biasa."
+          ],
+          [
+            "Originality dan kesediaan mempertanyakan otoritas",
+            "Terima risiko/kesalahan dan beri kesempatan menantang gagasan atasan."
+          ],
+          [
+            "Independence dan self-confidence",
+            "Berikan pilihan masalah dan otonomi yang sesuai."
+          ],
+          [
+            "Playfulness dan eksplorasi",
+            "Ciptakan lingkungan yang memungkinkan percobaan."
+          ],
+          [
+            "Curiosity",
+            "Buka komunikasi dan kontak dengan sumber luar."
+          ],
+          [
+            "Persistence, commitment dan fokus",
+            "Sediakan sumber daya/waktu, serta penghargaan bagi inovasi."
+          ]
+        ],
+        "caption": "[hal. 273]",
+        "stackOnMobile": true
+      },
+      {
+        "kind": "pendalaman",
+        "title": "Detail sumber: kreativitas dan Six Thinking Hats",
+        "blocks": [
+          {
+            "kind": "p",
+            "text": "Bottom-up approach mengalirkan ide dari tingkat bawah agar didengar dan ditindaklanjuti manajemen. Internal contests mengajak pegawai menawarkan solusi atas masalah organisasi. Pada contoh 3M, waktu untuk experimental doodling membantu pegawai mengeksplorasi ide; persentase tersebut adalah kebijakan contoh perusahaan. [hal. 273–276]"
+          },
+          {
+            "kind": "figure",
+            "spec": {
+              "id": "MNU108-09-HATS",
+              "title": "Six Thinking Hats: perspektif untuk menilai ide",
+              "type": "matrix",
+              "nodes": [
+                {
+                  "title": "White",
+                  "items": [
+                    "Fakta dan informasi"
+                  ]
+                },
+                {
+                  "title": "Red",
+                  "items": [
+                    "Perasaan dan intuisi"
+                  ]
+                },
+                {
+                  "title": "Green",
+                  "items": [
+                    "Ide serta alternatif baru"
+                  ]
+                },
+                {
+                  "title": "Black",
+                  "items": [
+                    "Kelemahan dan asumsi yang salah"
+                  ]
+                },
+                {
+                  "title": "Yellow",
+                  "items": [
+                    "Nilai serta manfaat"
+                  ]
+                },
+                {
+                  "title": "Blue",
+                  "items": [
+                    "Proses diskusi dan fasilitasi"
+                  ]
+                }
+              ],
+              "source": "Daft dan Marcic, Understanding Management 12e, [hal. 275].",
+              "alt": "Six Thinking Hats: perspektif untuk menilai ide. White; Red; Green; Black; Yellow; Blue",
+              "footer": "Dalam teknik buku, kelompok memakai perspektif yang sama pada waktu yang dijadwalkan."
+            }
+          },
+          {
+            "kind": "table",
+            "title": "Contoh historis Exhibit 8.3, daftar tahun 2021",
+            "headers": [
+              "Peringkat",
+              "Perusahaan",
+              "Alasan ringkas sumber"
+            ],
+            "rows": [
+              [
+                "1",
+                "Snap",
+                "Agenda sosial"
+              ],
+              [
+                "2",
+                "Microsoft",
+                "Menyatukan tim"
+              ],
+              [
+                "3",
+                "Tesla",
+                "Posisi kendaraan"
+              ],
+              [
+                "4",
+                "Big Hit Entertainment",
+                "Menggerakkan penggemar musik"
+              ],
+              [
+                "5",
+                "HackerOne",
+                "Melibatkan hacker"
+              ],
+              [
+                "6",
+                "White Claw",
+                "Fenomena produk lintas gender"
+              ],
+              [
+                "7",
+                "Shopify",
+                "Mendukung pelaku toko"
+              ],
+              [
+                "8",
+                "Canva",
+                "Kreativitas perusahaan"
+              ],
+              [
+                "9",
+                "Roblox",
+                "Permainan berbasis pengalaman"
+              ],
+              [
+                "10",
+                "Zipline",
+                "Pengiriman barang penting"
+              ]
+            ],
+            "caption": "[hal. 274]",
+            "stackOnMobile": true
+          },
+          {
+            "kind": "p",
+            "text": "Exhibit 8.3 menyebut daftar Fast Company 2021. Remember This pada hal. 277 menyebut daftar 2020 dan kelompok perusahaan berbeda. Catat kedua lokasi secara terpisah; tabel ini mempertahankan tahun/cakupan Exhibit 8.3. [hal. 274, 277]"
+          }
+        ]
+      },
+      {
+        "kind": "self-check",
+        "question": "Apakah mempunyai pegawai kreatif sudah cukup untuk menjalankan inovasi?",
+        "answer": [
+          {
+            "kind": "p",
+            "text": "Discovery menyediakan ide; organisasi juga memerlukan koordinasi, sumber luar yang relevan, pemilik gagasan dan struktur implementasi. [hal. 272–281]"
+          }
+        ],
+        "signal": "Jawaban menyebut konsep, bukti, dan alasan; nama teori saja belum cukup."
+      },
+      {
+        "kind": "h2",
+        "text": "5. Hubungan horizontal dan open innovation"
+      },
+      {
+        "kind": "p",
+        "text": "Riset bisa mengetahui teknologi yang belum dipahami pemasaran, sedangkan pemasaran mengetahui kebutuhan pelanggan. Manufacturing menilai apakah ide dapat diproduksi dalam batas biaya. Pertukaran dua arah membantu ketiga fungsi mengembangkan solusi bersama. [hal. 277–280]"
+      },
+      {
+        "kind": "figure",
+        "spec": {
+          "id": "MNU108-09-8-4",
+          "title": "Coordination Model for Innovation",
+          "type": "coordination",
+          "nodes": [],
+          "source": "Daft dan Marcic, Understanding Management 12e, [hal. 278].",
+          "alt": "Sumber luar memberi masukan organisasi. Riset, manufaktur dan pemasaran saling bertukar informasi dua arah.",
+          "internal": [
+            {
+              "title": "Research department",
+              "items": [
+                "Teknologi dan rancangan"
+              ]
+            },
+            {
+              "title": "Manufacturing department",
+              "items": [
+                "Kelayakan produksi dan biaya"
+              ]
+            },
+            {
+              "title": "Marketing department",
+              "items": [
+                "Kebutuhan pelanggan dan pasar"
+              ]
+            }
+          ],
+          "external": [
+            {
+              "title": "New technologies",
+              "items": []
+            },
+            {
+              "title": "Open innovation mechanisms",
+              "items": []
+            },
+            {
+              "title": "Formal innovation partners",
+              "items": []
+            },
+            {
+              "title": "Customers, market needs",
+              "items": []
+            }
+          ]
+        }
+      },
+      {
+        "kind": "table",
+        "title": "Batas pencarian ide",
+        "headers": [
+          "Pendekatan",
+          "Makna"
+        ],
+        "rows": [
+          [
+            "Closed innovation",
+            "Ide dikembangkan dan dikomersialkan terutama di dalam perusahaan."
+          ],
+          [
+            "Open innovation",
+            "Pencarian dan komersialisasi melampaui batas organisasi/industri."
+          ],
+          [
+            "Crowdsourcing",
+            "Informasi, ide atau opini diperoleh dari kelompok besar."
+          ],
+          [
+            "Internal crowdsourcing",
+            "Pegawai mengusulkan ide dan ikut menilai proyek di dalam organisasi."
+          ],
+          [
+            "Innovation by acquisition",
+            "Perusahaan membeli start-up untuk memperoleh inovasi dan sering juga talenta."
+          ]
+        ],
+        "caption": "[hal. 279–280]",
+        "stackOnMobile": true
+      },
+      {
+        "kind": "p",
+        "text": "Dalam contoh Pringles, P&G menemukan teknologi cetak makanan dari sebuah bakery melalui jaringan luar. Pelajaran contoh ini adalah pencarian kompetensi melampaui organisasi; keberhasilan satu proyek tidak menjamin semua kerja sama luar akan berhasil. [hal. 279]"
+      },
+      {
+        "kind": "self-check",
+        "question": "Apa beda horizontal collaboration dan open innovation?",
+        "answer": [
+          {
+            "kind": "p",
+            "text": "Horizontal collaboration menghubungkan fungsi dalam organisasi. Open innovation memperluas pencarian/pengembangan dan komersialisasi kepada pihak luar; keduanya dapat berlangsung bersama. [hal. 277–280]"
+          }
+        ],
+        "signal": "Jawaban menyebut konsep, bukti, dan alasan; nama teori saja belum cukup."
+      },
+      {
+        "kind": "h2",
+        "text": "6. Peran dan struktur yang membawa gagasan"
+      },
+      {
+        "kind": "p",
+        "text": "Ide membutuhkan orang yang mempertahankannya serta ruang untuk dikembangkan. Corporate intrapreneurship membangun semangat dan struktur kewirausahaan di dalam perusahaan. Bentuk dukungannya mempunyai fungsi berbeda. [hal. 280–282]"
+      },
+      {
+        "kind": "table",
+        "title": "Pilih fungsi dukungan yang dibutuhkan",
+        "headers": [
+          "Istilah",
+          "Fungsi"
+        ],
+        "rows": [
+          [
+            "Idea champion",
+            "Orang yang melihat kebutuhan dan memperjuangkan perubahan produktif."
+          ],
+          [
+            "Idea incubator",
+            "Program/pusat yang melindungi pengembangan ide dari birokrasi dan politik."
+          ],
+          [
+            "New-venture team",
+            "Unit terpisah yang mengembangkan dan memulai inovasi penting."
+          ],
+          [
+            "Skunkworks",
+            "Tim kecil, informal, sangat otonom, dan sering rahasia untuk ide terobosan."
+          ],
+          [
+            "In-house venture",
+            "Start-up yang diluncurkan di dalam perusahaan untuk menumbuhkan bisnis dan kewirausahaan."
+          ]
+        ],
+        "caption": "[hal. 280–282]",
+        "stackOnMobile": true
+      },
+      {
+        "kind": "self-check",
+        "question": "Mengapa idea champion tidak sama dengan idea incubator?",
+        "answer": [
+          {
+            "kind": "p",
+            "text": "Champion adalah orang yang memberi energi dan dukungan terhadap gagasan. Incubator adalah mekanisme/program organisasi untuk mengembangkan gagasan. [hal. 280–282]"
+          }
+        ],
+        "signal": "Jawaban menyebut konsep, bukti, dan alasan; nama teori saja belum cukup."
+      },
+      {
+        "kind": "h2",
+        "text": "7. Mengubah people dan culture melalui OD"
+      },
+      {
+        "kind": "p",
+        "text": "Pelatihan dapat memperbaiki kemampuan dan sikap orang. Organization development memakai pengetahuan behavioral science untuk perubahan terencana dan sistematis pada relasi, sikap serta budaya. OD juga dapat membangun keterbukaan dan kepercayaan, sehingga organisasi lebih siap menyesuaikan diri. [hal. 282–285]"
+      },
+      {
+        "kind": "table",
+        "title": "Tiga teknik OD",
+        "headers": [
+          "Teknik",
+          "Cara kerja"
+        ],
+        "rows": [
+          [
+            "Team building",
+            "Melatih anggota kelompok bekerja bersama, berkomunikasi dan menyepakati tujuan."
+          ],
+          [
+            "Survey feedback",
+            "Mengumpulkan pendapat pegawai, membagikan hasil dan menyelesaikan masalah berdasarkan data."
+          ],
+          [
+            "Large-group intervention",
+            "Mengumpulkan berbagai bagian organisasi, sering juga pemangku kepentingan luar, untuk menyusun perubahan bersama."
+          ]
+        ],
+        "caption": "[hal. 283–284]",
+        "stackOnMobile": true
+      },
+      {
+        "kind": "figure",
+        "spec": {
+          "id": "MNU108-09-8-5",
+          "title": "OD Approaches to Culture Change",
+          "type": "parallel",
+          "nodes": [
+            {
+              "title": "Traditional OD",
+              "items": [
+                "Masalah/kelompok tertentu",
+                "Informasi organisasi terbatas",
+                "Bertahap; pembelajaran individu/kelompok",
+                "Incremental change"
+              ]
+            },
+            {
+              "title": "Large-group intervention",
+              "items": [
+                "Seluruh sistem dan lingkungannya",
+                "Informasi dibagikan luas",
+                "Lebih cepat; pembelajaran seluruh organisasi",
+                "Rapid transformation"
+              ]
+            }
+          ],
+          "source": "Daft dan Marcic, Understanding Management 12e, [hal. 284].",
+          "alt": "Dua pendekatan OD dibandingkan menurut lingkup tindakan, informasi, waktu, pembelajaran dan proses perubahan."
+        }
+      },
+      {
+        "kind": "self-check",
+        "question": "Kapan organisasi memerlukan large-group intervention?",
+        "answer": [
+          {
+            "kind": "p",
+            "text": "Saat perubahan berkaitan dengan seluruh sistem dan memerlukan perspektif serta keputusan lintas bagian. Luasnya peserta sendiri tidak menjamin keberhasilan; proses dialog dan tindak lanjut tetap penting. [hal. 282–285]"
+          }
+        ],
+        "signal": "Jawaban menyebut konsep, bukti, dan alasan; nama teori saja belum cukup."
+      },
+      {
+        "kind": "h2",
+        "text": "8. Lewin, resistensi dan taktik implementasi"
+      },
+      {
+        "kind": "p",
+        "text": "Penolakan dapat mengungkap masalah implementasi yang belum terlihat. Sebelum memilih taktik, periksa sumber kekhawatiran dan siapa yang terdampak. Model Lewin membantu mengurus kesiapan, pembelajaran perilaku baru dan penguatannya. [hal. 285–290]"
+      },
+      {
+        "kind": "figure",
+        "spec": {
+          "id": "MNU108-09-8-6",
+          "title": "Lewin's Three-Stage Model for Implementing Change",
+          "type": "process",
+          "nodes": [
+            {
+              "title": "Unfreezing",
+              "items": [
+                "Diagnosis masalah atau peluang",
+                "Kenali kebutuhan dan bangun motivasi berubah"
+              ]
+            },
+            {
+              "title": "Changing",
+              "items": [
+                "Rencanakan dan komunikasikan",
+                "Latih perilaku/keterampilan baru lalu implementasikan"
+              ]
+            },
+            {
+              "title": "Refreezing",
+              "items": [
+                "Hargai perilaku baru dan evaluasi dampaknya",
+                "Rayakan keberhasilan serta masukkan perubahan ke kebiasaan kerja"
+              ]
+            }
+          ],
+          "source": "Daft dan Marcic, Understanding Management 12e, [hal. 285–286].",
+          "alt": "Tiga tahap: membangun kesiapan, menerapkan/mempelajari perubahan, kemudian mengevaluasi serta memperkuatnya."
+        }
+      },
+      {
+        "kind": "table",
+        "title": "Diagnosis alasan resistensi",
+        "headers": [
+          "Alasan",
+          "Apa yang diperiksa"
+        ],
+        "rows": [
+          [
+            "Self-interest",
+            "Kehilangan atau beban yang dipersepsikan: kekuasaan, prestise, pendapatan atau tugas."
+          ],
+          [
+            "Lack of understanding and trust",
+            "Tujuan perubahan dan kepercayaan terhadap pengusul."
+          ],
+          [
+            "Uncertainty",
+            "Informasi mengenai dampak dan kemampuan menjalankan cara baru."
+          ],
+          [
+            "Different assessments and goals",
+            "Perbedaan penilaian manfaat/risiko serta tujuan antardepartemen."
+          ]
+        ],
+        "caption": "[hal. 286–287]",
+        "stackOnMobile": true
+      },
+      {
+        "kind": "table",
+        "title": "Tactics for Implementing Change",
+        "headers": [
+          "Taktik",
+          "Situasi dalam Exhibit 8.7"
+        ],
+        "rows": [
+          [
+            "Top management support",
+            "Lintas departemen, alokasi ulang sumber daya atau legitimasi diragukan."
+          ],
+          [
+            "Communication and education",
+            "Perubahan teknis atau pengguna memerlukan informasi/analisis."
+          ],
+          [
+            "Participation",
+            "Pengguna perlu terlibat, mempunyai informasi, atau dapat menolak."
+          ],
+          [
+            "Negotiation",
+            "Kelompok berkuasa atas implementasi atau akan kehilangan manfaat."
+          ],
+          [
+            "Coercion",
+            "Krisis; pengusul memiliki kuasa; teknik lain gagal."
+          ]
+        ],
+        "caption": "[hal. 289–290]",
+        "stackOnMobile": true
+      },
+      {
+        "kind": "p",
+        "text": "Sense of urgency membantu orang memahami kebutuhan perubahan. Pilih informasi dan gambaran yang membuat kebutuhan itu terasa, lalu tanggapi kekhawatiran dengan taktik yang cocok. Coercion dapat memaksa penerimaan, tetapi membawa risiko bagi dukungan terhadap perubahan. [hal. 287–291]"
+      },
+      {
+        "kind": "self-check",
+        "question": "Apa kesalahan bila manajer memakai coercion sebagai jawaban awal bagi semua resistensi?",
+        "answer": [
+          {
+            "kind": "p",
+            "text": "Paksaan belum menjawab kurangnya pemahaman, informasi atau penilaian risiko yang sah. Buku menempatkannya dalam kondisi krisis, adanya kuasa dan kegagalan teknik lain, sehingga diagnosis harus mendahului pemilihan taktik. [hal. 285–290]"
+          }
+        ],
+        "signal": "Jawaban menyebut konsep, bukti, dan alasan; nama teori saja belum cukup."
+      },
+      {
+        "kind": "h2",
+        "text": "Persiapan ujian"
+      },
+      {
+        "kind": "table",
+        "title": "Jangan tertukar",
+        "headers": [
+          "Istilah",
+          "Pembeda"
+        ],
+        "rows": [
+          [
+            "Creativity / innovation",
+            "Ide baru / ide sekaligus diterapkan."
+          ],
+          [
+            "Product / process innovation",
+            "Keluaran pelanggan / cara menghasilkan keluaran."
+          ],
+          [
+            "Champion / incubator",
+            "Orang pendukung / program pengembangan."
+          ],
+          [
+            "People / culture change",
+            "Beberapa orang / pola seluruh organisasi."
+          ],
+          [
+            "Tahapan Lewin / taktik perubahan",
+            "Proses kesiapan-penerapan-penguatan / cara menangani hambatan."
+          ]
+        ],
+        "caption": "[hal. 268–290]",
+        "stackOnMobile": true
+      },
+      {
+        "kind": "p",
+        "text": "Prioritas latihan diturunkan dari RPP dan kasus Chopper's, tanpa klaim merupakan bocoran ujian. Gunakan bukti spesifik, jelaskan keputusan dan kelemahan alternatif. [hal. 295–296]"
+      },
+      {
+        "kind": "solution-reveal",
+        "title": "Chopper's Sausage House: MRP tertahan",
+        "prompt": "Kasus buku yang ditugaskan RPP, diparafrasekan. Wakil presiden operasi mengembangkan proyek material requirements planning terutama seorang diri. Komite eksekutif menolak peluncuran: keuangan ragu, penjualan mempertanyakan perkiraan kebutuhan bahan, dan logistik mengingat gangguan di tempat kerja sebelumnya. CEO mengusulkan task force lintas departemen, tetapi pengusul merasa tim itu akan memperlambat proyek. [hal. 285–290, 295–296]",
+        "promptBlocks": [
+          {
+            "kind": "ul",
+            "items": [
+              "Jelaskan resistensi dengan bukti yang berbeda untuk tiap pihak.",
+              "Nilai kegunaan task force lintas departemen.",
+              "Pilih taktik implementasi dan susun tahapan Lewin yang dapat dievaluasi."
+            ]
+          }
+        ],
+        "blocks": [
+          {
+            "kind": "p",
+            "text": "Hasil analisis untuk pembanding jawaban: 1. Kekhawatiran penjualan/logistik menunjukkan penilaian manfaat dan risiko yang berbeda; riwayat implementasi gagal mendukung ketidakpercayaan atau ketidakpastian. Ketidakhadiran merupakan tanda keterlibatan lemah, tetapi teks tidak membuktikan semua pihak sengaja menyabotase. 2. Task force menambah informasi dari pengguna dan koordinasi, serta membantu menguji kebutuhan bahan, forecast dan pengiriman. Waktu rapat adalah biaya yang perlu ditimbang terhadap risiko peluncuran sepihak. 3. Dukungan CEO memberi legitimasi; komunikasi/pendidikan menjawab kekhawatiran teknis; participation melibatkan pengguna dalam rancangan. Unfreezing menguji kebutuhan serta masalah, changing melakukan uji coba/pelatihan, refreezing mengevaluasi dan mempertahankan perilaku yang berhasil. Memaksa peluncuran sebelum kendala diketahui dapat meningkatkan risiko operasi. Perkiraan kas/penghematan perlu diuji dan tidak otomatis dijumlahkan sebagai manfaat bersih. [hal. 285–290, 295–296]"
+          }
+        ]
+      },
+      {
+        "kind": "solution-reveal",
+        "title": "Latihan: ide banyak, penerapan tersendat",
+        "prompt": "Latihan buatan: situasi berikut adalah asumsi untuk berlatih, tanpa klaim perusahaan nyata. Sebuah unit layanan menerima usulan perbaikan antrean dari staf. Tim kreatif bebas menguji ide, tetapi belum ada pemilik implementasi dan koordinasi antara layanan, teknologi dan administrasi. Staf khawatir cara baru akan menambah pekerjaan. [hal. 270–281, 285–290]",
+        "promptBlocks": [
+          {
+            "kind": "ul",
+            "items": [
+              "Pisahkan kebutuhan exploration dan exploitation.",
+              "Pilih peran/struktur untuk membawa ide ke penerapan.",
+              "Rancang diagnosis resistensi dan indikator keberhasilan."
+            ]
+          }
+        ],
+        "blocks": [
+          {
+            "kind": "p",
+            "text": "Hasil analisis untuk pembanding jawaban: Exploration memerlukan kesempatan mencoba gagasan; exploitation memerlukan rutinitas, tanggung jawab dan dukungan implementasi. Idea champion dapat membawa gagasan dan membangun dukungan, sementara hubungan horizontal menyelaraskan kebutuhan pengguna dan kelayakan teknis. Libatkan staf untuk memetakan beban kerja dan lakukan pelatihan sebelum penggunaan penuh. Evaluasi waktu layanan, kesalahan dan beban kerja dengan ukuran awal yang disepakati. Menambah kontes ide tanpa pemilik implementasi tidak menyelesaikan hambatan tersebut; penggunaan paksaan tanpa diagnosis dapat menurunkan keterlibatan. [hal. 270–281, 285–290]"
+          }
+        ]
+      }
+    ]
+  },
+  "quiz": [
+    {
+      "id": "mnu108-uas-tm09-01",
+      "tm": 9,
+      "topic": "Innovation vs creativity",
+      "difficulty": "basic",
+      "q": "Apa pembeda paling tepat antara creativity dan organizational innovation?",
+      "options": [
+        "Creativity menghasilkan ide; innovation mencakup penciptaan sekaligus penerapannya.",
+        "Creativity menerapkan ide; innovation hanya menyusun alternatif tanpa pemakaian.",
+        "Creativity mengadopsi teknologi luar; innovation hanya memperbaiki gagasan lama.",
+        "Creativity mengubah seluruh budaya; innovation hanya mengubah sikap individu."
+      ],
+      "answer": 0,
+      "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 268, 273, 285].",
+      "sourceAnchors": [
+        "Ch. 8; [hal. 268, 273, 285]; PDF 296, 301, 313"
+      ],
+      "explanation": "Manfaat organisasi menuntut ide digunakan. Creativity menjelaskan lahirnya gagasan, sedangkan innovation juga memuat implementation. Alternatif lain: Pilihan lain membalik hubungan, mempersempit asal ide atau membatasi jenis perubahan. [hal. 268, 273, 285]",
+      "skill": "Diagnosis konsep, bukti dan penerapan"
+    },
+    {
+      "id": "mnu108-uas-tm09-02",
+      "tm": 9,
+      "topic": "Reverse innovation",
+      "difficulty": "basic",
+      "q": "Dalam reverse innovation, bagaimana arah utama penyebaran produk yang dijelaskan buku?",
+      "options": [
+        "Dikembangkan untuk pasar negara maju, lalu dipindahkan ke pasar berkembang.",
+        "Dikembangkan untuk pasar berkembang, lalu disesuaikan untuk pasar negara maju.",
+        "Dikembangkan hanya untuk unit internal, lalu dihentikan saat mencapai pasar.",
+        "Dikembangkan oleh marketing dahulu, lalu diserahkan kepada research perusahaan."
+      ],
+      "answer": 1,
+      "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 270].",
+      "sourceAnchors": [
+        "Ch. 8; [hal. 270]; PDF 298"
+      ],
+      "explanation": "Arah ini membalik pola tradisional inovasi dari negara makmur ke pasar berkembang. Alternatif lain: Pola tradisional mempunyai arah kebalikan; dua pilihan terakhir membahas fungsi internal, bukan geografi pasar. [hal. 270]",
+      "skill": "Diagnosis konsep, bukti dan penerapan"
+    },
+    {
+      "id": "mnu108-uas-tm09-03",
+      "tm": 9,
+      "topic": "Ambidextrous approach",
+      "difficulty": "medium",
+      "q": "Mengapa organisasi ambidextrous dapat memakai ruang eksplorasi yang longgar dan penerapan yang lebih terstruktur?",
+      "options": [
+        "Penciptaan ide dan implementasi membutuhkan kebebasan yang sama pada semua kegiatan.",
+        "Penciptaan ide harus terpusat ketat, sedangkan implementasi harus tanpa standar kerja.",
+        "Penciptaan ide dan implementasi mempunyai kebutuhan struktur serta rutinitas berbeda.",
+        "Penciptaan ide dilakukan marketing saja, sedangkan implementasi dilakukan research saja."
+      ],
+      "answer": 2,
+      "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 270–271].",
+      "sourceAnchors": [
+        "Ch. 8; [hal. 270–271]; PDF 298–299"
+      ],
+      "explanation": "Exploration mendukung kreativitas/eksperimen; exploitation memakai kemampuan dan rutinitas untuk menjalankan ide. Alternatif lain: Kesamaan struktur mengabaikan kebutuhan yang berbeda; pembalikan dan pembatasan departemen tidak sesuai model. [hal. 270–271]",
+      "skill": "Diagnosis konsep, bukti dan penerapan"
+    },
+    {
+      "id": "mnu108-uas-tm09-04",
+      "tm": 9,
+      "topic": "Three innovation strategies",
+      "difficulty": "medium",
+      "q": "Sebuah proyek mempunyai ide baru, tetapi antarfungsi tidak bertukar informasi dan tidak ada pemilik gagasan. Apa diagnosis menurut Exhibit 8.1?",
+      "options": [
+        "Collaboration telah berjalan; discovery dan penciptaan gagasan masih belum terjadi.",
+        "Innovation roles telah lengkap; discovery saja yang menentukan keberhasilan proyek.",
+        "Ketiga strategi telah berjalan; penerapan otomatis mengikuti adanya ide baru saja.",
+        "Discovery telah berjalan; collaboration dan peran/struktur implementasi masih lemah."
+      ],
+      "answer": 3,
+      "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 272].",
+      "sourceAnchors": [
+        "Ch. 8; [hal. 272]; PDF 300"
+      ],
+      "explanation": "Tiga strategi saling melengkapi. Kehadiran gagasan belum menggantikan koordinasi dan dukungan untuk membawanya ke penerapan. Alternatif lain: Pilihan lain mengabaikan bukti tentang ide, memusatkan keberhasilan pada discovery atau menganggap implementasi otomatis. [hal. 272]",
+      "skill": "Diagnosis konsep, bukti dan penerapan"
+    },
+    {
+      "id": "mnu108-uas-tm09-05",
+      "tm": 9,
+      "topic": "Idea champion",
+      "difficulty": "medium",
+      "q": "Dalam contoh L'Oréal, peran staf yang terus memperjuangkan pengembangan foundation sesuai kebutuhan pelanggan paling dekat dengan...",
+      "options": [
+        "Idea champion: orang yang mendorong penerimaan serta pengembangan perubahan.",
+        "Idea incubator: program organisasi yang menyediakan ruang pengembangan ide.",
+        "New-venture fund: sumber pembiayaan yang mendanai usulan produk perusahaan.",
+        "Innovation by acquisition: pembelian usaha lain untuk mendapatkan teknologinya."
+      ],
+      "answer": 0,
+      "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 280–281].",
+      "sourceAnchors": [
+        "Ch. 8; [hal. 280–281]; PDF 308–309"
+      ],
+      "explanation": "Peran orang yang mendukung dan memperjuangkan gagasan sesuai definisi idea champion. Alternatif lain: Incubator dan fund adalah mekanisme dukungan; acquisition adalah cara memperoleh inovasi melalui pembelian usaha. [hal. 280–281]",
+      "skill": "Diagnosis konsep, bukti dan penerapan"
+    },
+    {
+      "id": "mnu108-uas-tm09-06",
+      "tm": 9,
+      "topic": "Organization development",
+      "difficulty": "medium",
+      "q": "Apa ciri survey-feedback sebagai teknik OD?",
+      "options": [
+        "Peserta dari seluruh lingkungan dihimpun untuk membuat keputusan sistem secara serentak.",
+        "Pendapat pegawai dikumpulkan, dibagikan kembali dan dipakai memecahkan masalah.",
+        "Anggota kelompok berlatih komunikasi serta tujuan bersama melalui kegiatan pembentukan tim.",
+        "Manajemen memaksa prosedur baru dan memberi sanksi sebelum pendapat pegawai dikumpulkan."
+      ],
+      "answer": 1,
+      "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 283–284].",
+      "sourceAnchors": [
+        "Ch. 8; [hal. 283–284]; PDF 311–312"
+      ],
+      "explanation": "Survey bukan akhir kegiatan. Feedback dan pemecahan masalah berdasarkan data adalah bagian penting teknik ini. Alternatif lain: Kelompok besar dan team building menggambarkan teknik lain; paksaan sepihak tidak mendefinisikan survey-feedback. [hal. 283–284]",
+      "skill": "Diagnosis konsep, bukti dan penerapan"
+    },
+    {
+      "id": "mnu108-uas-tm09-07",
+      "tm": 9,
+      "topic": "Lewin refreezing",
+      "difficulty": "advanced",
+      "q": "Sesudah pelatihan, perilaku baru dievaluasi, diberi penghargaan, dan dimasukkan ke kebiasaan kerja. Tahap mana yang paling tepat?",
+      "options": [
+        "Unfreezing: menjelaskan kesenjangan dan membuat pegawai mengenali kebutuhan berubah.",
+        "Discovery: menciptakan gagasan produk baru melalui kebebasan bereksperimen.",
+        "Refreezing: memperkuat dan melembagakan perilaku serta nilai yang baru.",
+        "Changing: baru mulai mencoba perilaku dan mempelajari keterampilan yang dibutuhkan."
+      ],
+      "answer": 2,
+      "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 285–286].",
+      "sourceAnchors": [
+        "Ch. 8; [hal. 285–286]; PDF 313–314"
+      ],
+      "explanation": "Tindakan dalam soal menekankan penguatan serta integrasi perubahan menjadi praktik normal. Alternatif lain: Pilihan lain berkaitan dengan kesiapan, penciptaan gagasan atau tahap awal belajar, bukan penguatan pascapenerapan. [hal. 285–286]",
+      "skill": "Diagnosis konsep, bukti dan penerapan"
+    },
+    {
+      "id": "mnu108-uas-tm09-08",
+      "tm": 9,
+      "topic": "Chopper dan resistensi",
+      "difficulty": "advanced",
+      "q": "Apa manfaat utama task force lintas departemen bagi MRP Chopper's?",
+      "options": [
+        "Memastikan semua perkiraan penghematan menjadi kas tanpa memeriksa alur kerja pengguna.",
+        "Menghilangkan kebutuhan komunikasi karena semua fungsi sudah hadir dalam daftar anggota.",
+        "Memindahkan semua keputusan teknis kepada CFO agar fungsi operasi tidak ikut merancang.",
+        "Menggabungkan pengetahuan pengguna, menilai risiko dan membangun dukungan penerapan."
+      ],
+      "answer": 3,
+      "sourceRef": "Daft dan Marcic, Understanding Management 12e [hal. 289–290, 295–296].",
+      "sourceAnchors": [
+        "Ch. 8; [hal. 289–290, 295–296]; PDF 317–318, 323–324"
+      ],
+      "explanation": "Task force menjawab kurangnya informasi dan keterlibatan serta mendukung horizontal collaboration dan participation. Alternatif lain: Penghematan tetap perkiraan; keanggotaan tidak menjamin komunikasi; keputusan sepihak mengabaikan fungsi yang terdampak. [hal. 289–290, 295–296]",
+      "skill": "Diagnosis konsep, bukti dan penerapan"
+    }
+  ],
+  "cards": [
+    {
+      "topic": "Innovation",
+      "front": "Apa beda innovation, creativity dan change?",
+      "back": "Creativity menghasilkan gagasan baru. Innovation mencakup penciptaan dan penerapan gagasan/perilaku. Change adalah adopsi ide baru, yang dapat berasal dari luar. [hal. 268, 273, 285]",
+      "category": "Perbandingan",
+      "id": "mnu108-uas-tm09-01",
+      "phase": "pra-uas",
+      "tm": 9
+    },
+    {
+      "topic": "Ambidextrous",
+      "front": "Bagaimana exploration dan exploitation saling melengkapi?",
+      "back": "Exploration memberi ruang eksperimen dan kreativitas. Exploitation memakai kemampuan/rutinitas untuk penerapan. Organisasi menyesuaikan struktur dan proses agar kedua fungsi berjalan. [hal. 270–271]",
+      "category": "Konsep",
+      "id": "mnu108-uas-tm09-02",
+      "phase": "pra-uas",
+      "tm": 9
+    },
+    {
+      "topic": "Innovation strategies",
+      "front": "Apa tiga strategi inovasi pada Exhibit 8.1?",
+      "back": "Discovery; horizontal collaboration dan open innovation; innovation roles and structures. Ketiganya membantu gagasan menjadi produk, layanan dan proses yang digunakan. [hal. 272]",
+      "category": "Konsep",
+      "id": "mnu108-uas-tm09-03",
+      "phase": "pra-uas",
+      "tm": 9
+    },
+    {
+      "topic": "Open innovation",
+      "front": "Apa pembeda open innovation, crowdsourcing dan acquisition?",
+      "back": "Open innovation memperluas pencarian/komersialisasi ke luar organisasi. Crowdsourcing mengambil masukan dari kelompok besar. Acquisition membeli start-up untuk memperoleh inovasi dan sering juga talentanya. [hal. 279–280]",
+      "category": "Perbandingan",
+      "id": "mnu108-uas-tm09-04",
+      "phase": "pra-uas",
+      "tm": 9
+    },
+    {
+      "topic": "Organization development",
+      "front": "Apa teknik OD dan bagaimana memilihnya?",
+      "back": "Team building memperbaiki kerja kelompok; survey-feedback memakai pendapat pegawai dan data masalah; large-group intervention melibatkan berbagai bagian/sumber luar untuk perubahan sistem. [hal. 283–284]",
+      "category": "Konsep",
+      "id": "mnu108-uas-tm09-05",
+      "phase": "pra-uas",
+      "tm": 9
+    },
+    {
+      "topic": "Implementation",
+      "front": "Bagaimana menghubungkan Lewin, resistensi dan taktik?",
+      "back": "Bangun kesiapan, jalankan/pelajari perubahan, lalu perkuatnya. Diagnosis self-interest, pemahaman/trust, uncertainty dan perbedaan penilaian/tujuan membantu memilih dukungan pimpinan, pendidikan, partisipasi, negosiasi atau paksaan sesuai kondisi. [hal. 285–290]",
+      "category": "Konsep",
+      "id": "mnu108-uas-tm09-06",
+      "phase": "pra-uas",
+      "tm": 9
+    }
+  ],
+  "bank": [
+    {
+      "type": "analysis",
+      "scope": "TM 9: Chopper's Sausage House: MRP tertahan",
+      "difficulty": "Menengah",
+      "estimatedTime": "20–30 menit",
+      "question": "Chopper's Sausage House: MRP tertahan",
+      "context": "Kasus buku yang ditugaskan RPP, diparafrasekan. Wakil presiden operasi mengembangkan proyek material requirements planning terutama seorang diri. Komite eksekutif menolak peluncuran: keuangan ragu, penjualan mempertanyakan perkiraan kebutuhan bahan, dan logistik mengingat gangguan di tempat kerja sebelumnya. CEO mengusulkan task force lintas departemen, tetapi pengusul merasa tim itu akan memperlambat proyek. [hal. 285–290, 295–296]",
+      "data": [
+        "350 pegawai; setidaknya 25 manajer/pegawai perlu mengubah cara kerja.",
+        "Perkiraan pengusul: kenaikan kas tahunan USD600.000 dan penghematan waste sampai USD200.000. Keduanya belum merupakan hasil realisasi.",
+        "Data untuk mock-up sulit didapat; sebagian manajer tidak menghadiri pertemuan.",
+        "Dasar konsep: Daft dan Marcic 12e [hal. 285–290, 295–296]."
+      ],
+      "instructions": [
+        "Jelaskan resistensi dengan bukti yang berbeda untuk tiap pihak.",
+        "Nilai kegunaan task force lintas departemen.",
+        "Pilih taktik implementasi dan susun tahapan Lewin yang dapat dievaluasi."
+      ],
+      "outputFormat": [
+        "Pisahkan fakta/asumsi dan penafsiran.",
+        "Tulis keputusan dengan bukti dan dasar konsep.",
+        "Jelaskan kelemahan alternatif dan cara mengevaluasi keputusan."
+      ],
+      "rubric": [
+        "Ketepatan fakta/asumsi dan konsep (30%)",
+        "Alasan keputusan serta kelemahan alternatif (45%)",
+        "Kelayakan tindak lanjut dan evaluasi (25%)"
+      ],
+      "answerGuide": "Hasil analisis untuk pembanding jawaban: 1. Kekhawatiran penjualan/logistik menunjukkan penilaian manfaat dan risiko yang berbeda; riwayat implementasi gagal mendukung ketidakpercayaan atau ketidakpastian. Ketidakhadiran merupakan tanda keterlibatan lemah, tetapi teks tidak membuktikan semua pihak sengaja menyabotase. 2. Task force menambah informasi dari pengguna dan koordinasi, serta membantu menguji kebutuhan bahan, forecast dan pengiriman. Waktu rapat adalah biaya yang perlu ditimbang terhadap risiko peluncuran sepihak. 3. Dukungan CEO memberi legitimasi; komunikasi/pendidikan menjawab kekhawatiran teknis; participation melibatkan pengguna dalam rancangan. Unfreezing menguji kebutuhan serta masalah, changing melakukan uji coba/pelatihan, refreezing mengevaluasi dan mempertahankan perilaku yang berhasil. Memaksa peluncuran sebelum kendala diketahui dapat meningkatkan risiko operasi. Perkiraan kas/penghematan perlu diuji dan tidak otomatis dijumlahkan sebagai manfaat bersih. [hal. 285–290, 295–296]"
+    },
+    {
+      "type": "analysis",
+      "scope": "TM 9: Latihan: ide banyak, penerapan tersendat",
+      "difficulty": "Menengah",
+      "estimatedTime": "20–30 menit",
+      "question": "Latihan: ide banyak, penerapan tersendat",
+      "context": "Latihan buatan: situasi berikut adalah asumsi untuk berlatih, tanpa klaim perusahaan nyata. Sebuah unit layanan menerima usulan perbaikan antrean dari staf. Tim kreatif bebas menguji ide, tetapi belum ada pemilik implementasi dan koordinasi antara layanan, teknologi dan administrasi. Staf khawatir cara baru akan menambah pekerjaan. [hal. 270–281, 285–290]",
+      "data": [
+        "Asumsi latihan: kebutuhan layanan dan kewenangan masing-masing unit masih perlu diklarifikasi.",
+        "Tidak ada data yang membuktikan besarnya penghematan.",
+        "Dasar konsep: Daft dan Marcic 12e [hal. 270–281, 285–290]."
+      ],
+      "instructions": [
+        "Pisahkan kebutuhan exploration dan exploitation.",
+        "Pilih peran/struktur untuk membawa ide ke penerapan.",
+        "Rancang diagnosis resistensi dan indikator keberhasilan."
+      ],
+      "outputFormat": [
+        "Pisahkan fakta/asumsi dan penafsiran.",
+        "Tulis keputusan dengan bukti dan dasar konsep.",
+        "Jelaskan kelemahan alternatif dan cara mengevaluasi keputusan."
+      ],
+      "rubric": [
+        "Ketepatan fakta/asumsi dan konsep (30%)",
+        "Alasan keputusan serta kelemahan alternatif (45%)",
+        "Kelayakan tindak lanjut dan evaluasi (25%)"
+      ],
+      "answerGuide": "Hasil analisis untuk pembanding jawaban: Exploration memerlukan kesempatan mencoba gagasan; exploitation memerlukan rutinitas, tanggung jawab dan dukungan implementasi. Idea champion dapat membawa gagasan dan membangun dukungan, sementara hubungan horizontal menyelaraskan kebutuhan pengguna dan kelayakan teknis. Libatkan staf untuk memetakan beban kerja dan lakukan pelatihan sebelum penggunaan penuh. Evaluasi waktu layanan, kesalahan dan beban kerja dengan ukuran awal yang disepakati. Menambah kontes ide tanpa pemilik implementasi tidak menyelesaikan hambatan tersebut; penggunaan paksaan tanpa diagnosis dapat menurunkan keterlibatan. [hal. 270–281, 285–290]"
+    }
+  ],
+  "visualInventory": [
+    {
+      "id": "MNU108-09-OV",
+      "title": "Ide baru harus sampai digunakan",
+      "type": "parallel",
+      "source": "Daft dan Marcic, Understanding Management 12e, [hal. 268–290].",
+      "mobile": "SVG 360 unit dengan teks yang mengalir sesuai ruang; makna hubungan sama dengan desktop."
+    },
+    {
+      "id": "MNU108-09-AMB",
+      "title": "Ambidextrous approach: dua kebutuhan organisasi",
+      "type": "parallel",
+      "source": "Daft dan Marcic, Understanding Management 12e, [hal. 270–271].",
+      "mobile": "SVG 360 unit dengan teks yang mengalir sesuai ruang; makna hubungan sama dengan desktop."
+    },
+    {
+      "id": "MNU108-09-8-1",
+      "title": "Three Innovation Strategies for New Products and Processes",
+      "type": "parallel",
+      "source": "Daft dan Marcic, Understanding Management 12e, [hal. 272].",
+      "mobile": "SVG 360 unit dengan teks yang mengalir sesuai ruang; makna hubungan sama dengan desktop."
+    },
+    {
+      "id": "MNU108-09-HATS",
+      "title": "Six Thinking Hats: perspektif untuk menilai ide",
+      "type": "matrix",
+      "source": "Daft dan Marcic, Understanding Management 12e, [hal. 275].",
+      "mobile": "SVG 360 unit dengan teks yang mengalir sesuai ruang; makna hubungan sama dengan desktop."
+    },
+    {
+      "id": "MNU108-09-8-4",
+      "title": "Coordination Model for Innovation",
+      "type": "coordination",
+      "source": "Daft dan Marcic, Understanding Management 12e, [hal. 278].",
+      "mobile": "SVG 360 unit dengan teks yang mengalir sesuai ruang; makna hubungan sama dengan desktop."
+    },
+    {
+      "id": "MNU108-09-8-5",
+      "title": "OD Approaches to Culture Change",
+      "type": "parallel",
+      "source": "Daft dan Marcic, Understanding Management 12e, [hal. 284].",
+      "mobile": "SVG 360 unit dengan teks yang mengalir sesuai ruang; makna hubungan sama dengan desktop."
+    },
+    {
+      "id": "MNU108-09-8-6",
+      "title": "Lewin's Three-Stage Model for Implementing Change",
+      "type": "process",
+      "source": "Daft dan Marcic, Understanding Management 12e, [hal. 285–286].",
+      "mobile": "SVG 360 unit dengan teks yang mengalir sesuai ruang; makna hubungan sama dengan desktop."
+    }
+  ],
+  "exhibits": [
+    {
+      "id": "8.1",
+      "page": 272,
+      "action": "Visual tiga strategi dan hasil bersama."
+    },
+    {
+      "id": "8.2",
+      "page": 273,
+      "action": "Tabel sifat kreatif dan dukungan organisasi, rincian sumber diparafrasekan."
+    },
+    {
+      "id": "8.3",
+      "page": 274,
+      "action": "Tabel sepuluh peringkat 2021; konflik tahun Remember This dijelaskan."
+    },
+    {
+      "id": "8.4",
+      "page": 278,
+      "action": "Diagram hubungan internal dua arah dan masukan luar."
+    },
+    {
+      "id": "8.5",
+      "page": 284,
+      "action": "Visual perbandingan dua pendekatan OD."
+    },
+    {
+      "id": "8.6",
+      "page": 286,
+      "action": "Diagram tiga tahap Lewin dengan tindakan sesuai sumber."
+    },
+    {
+      "id": "8.7",
+      "page": 290,
+      "action": "Tabel lima taktik dan kondisi penggunaan."
+    }
+  ],
+  "audit": {
+    "findings": [
+      "Materi lama mencampur tahap Lewin dengan unsur Kotter tambahan. Tiga tahapan dan lima taktik kini mengikuti bab 8 edisi 12.",
+      "Sumber cetak 266-297 / PDF 294-325 dicocokkan. Halaman 272,278,284,286 diperiksa secara visual.",
+      "Kasus Chopper's pada hal.295-296 diparafrasekan; manfaat keuangan ditandai sebagai perkiraan.",
+      "Pertentangan tahun daftar inovasi pada hal.274/277 ditampilkan sebagai batas sumber, tanpa menyatukan ranking."
+    ],
+    "appendix": [
+      "How Creative Are You?, hal.276: self-assessment; tidak dihitung sebagai kuis penilaian.",
+      "Ethical dilemma dan discussion questions sisa, hal.292-294: kegiatan pendalaman sumber.",
+      "New Rental Negotiation, hal.295-297: aktivitas role play di luar kasus RPP, tidak dicampur dengan fakta Chopper's."
+    ],
+    "sourceReview": "Teks bab 8 dan halaman diagram diperiksa langsung; nomor cetak dan PDF dibedakan.",
+    "constraints": "Pra-UTS dipertahankan. Data historis mengikuti tahun buku. Latihan buatan ditandai dan hasil analisis tidak diklaim sebagai tindakan nyata tokoh."
+  }
+}

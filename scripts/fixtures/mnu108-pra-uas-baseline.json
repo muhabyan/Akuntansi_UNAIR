@@ -1,0 +1,22 @@
+{
+  "base": "3317fb382caee79a2ef8d6432ed30f36a55abbba",
+  "modules": {
+    "src/data/manajemen/modules/tm1.ts": "33eb954f813eaef176696b02adbb4c83c8c3fbcae8914f04682346b2bf6b877a",
+    "src/data/manajemen/modules/tm2.ts": "72a7b711ec84c953dc8ac4bd0deb398e8df5c555c500975e5305e37b708e6ffc",
+    "src/data/manajemen/modules/tm3.ts": "40a4fb00c0ff835d3f825e5b52c05a32f113d3833d6062655bf4a12889225663",
+    "src/data/manajemen/modules/tm4.ts": "8146487cf732794e2b14ce87b67f43c2fc4d097eba0887409675e959207c7812",
+    "src/data/manajemen/modules/tm5.ts": "25a6762837104d99c7c756322d6fd606cfd3509eea687dc256c42a6563d33b80",
+    "src/data/manajemen/modules/tm6.ts": "969f6176f6b85897d8ee2545d8aa0227b6c206dd29d3bafa7082531bba1b88db",
+    "src/data/manajemen/modules/tm7.ts": "0323dba6dffad7fa17bf0fdd346cdefd2f69e570c9af85312c08288d86cc45f7",
+    "src/data/manajemen/modules/tm8.ts": "929cda9a0000253375fef34ade1d782e8107242abdb6ab37d9b650bf2b6bfdef"
+  },
+  "preCards": "40ae32c0a59f68f947f3e67c4d9834f6ff69d9f872e63fdaee955e428351a0c7",
+  "utsQuestions": "f0681c342b59a8a73e4445d8731448cbb3293e6e24df137785cb0217d83aa9b7",
+  "utsCases": "5dacd0957d9dd23226b8eef950f22e26049e520b044337864bf27724c9a36d34",
+  "utsReview": "9294f4416bb16b9881cb9312d54a46d992a46a1a0f2d1ac778f696c98dadfe28",
+  "sources": {
+    "C:/cek/Pengantar Manajemen/Materi/E-book-Daft-Understanding Management.pdf": "2897c5412aa10392c654465dc113ac344db095d2c7572ec2f15b6c339f05964b",
+    "C:/cek/Pengantar Manajemen/Materi/2026-RPP-Pengantar Manajemen-IUP-Akt.xlsx": "3701c8841f6875767dd98a9c2d1c47aa0cc38bab3657153803ef32ae2a5c2cab"
+  },
+  "catalogOutsidePost": "92e02a65cb724275f120297f87fd4b2e80ee1b008268b24417944ed765e7c232"
+}
