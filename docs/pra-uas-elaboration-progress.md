@@ -12,8 +12,9 @@ Semester 3 selain SIA, ditambah Manajemen Stratejik: AKA201 PBR I, AKK202 AKM II
 - TM09 PBR I selesai: sumber, narasi bertahap, pendalaman, preservasi dan pemeriksaan. Commit awal `bb2381c`; 78/78 tes standar, lint, build, serta 25/25 pemeriksaan navigasi lulus. Visual desktop diperiksa; capture layar sempit bermasalah dan belum dinyatakan lulus visual.
 - TM10 dan TM11: revisi isi selesai. TM10 menguraikan keandalan bukti, pemilihan item, konfirmasi dan empat langkah analitis; TM11 menguraikan hubungan dokumentasi dengan kesimpulan, permanent/current file, lima ciri kertas kerja, perakitan dan kerahasiaan. Sumber authoring dan peta perubahan berada pada content-pipeline/AKA201/TM10 dan TM11.
 - TM12–TM15: revisi kedalaman terarah selesai ditulis. Risiko per asersi/faktor inheren/fraud, 17 prinsip COSO dan ITGC, desain/implementasi/operasi dan deviasi kontrol, serta pemilihan CAATs dan langkah program dijelaskan. Tabel sumber dipertahankan, beberapa dipindah ke pendalaman. Artikel primer Jakšić2009 diperiksa dan catatan keliru bahwa istilah embedded audit module tidak digunakan telah dikoreksi.
-- TM10–TM15: guard layered, latihan, TypeScript dan lint terarah lulus; semua tabel, angka dalam tabel, SVG, kasus dan uji lama lolos preservasi. Setiap TM ditambah satu uji elaborasi. Visual dan pemeriksaan seluruh batch berikutnya masih pending; jangan menyatakan sudah tayang.
-- Aktif berikutnya: selesaikan pemeriksaan batch PBR I, lalu periksa satu TM pra-UAS pada enam mata kuliah lain. Prioritas berikutnya AKM II dengan sumber Kieso yang sesuai, kemudian sesuaikan urutan berdasarkan sumber yang tersedia. Belum ada revisi kedalaman pada enam mata kuliah lainnya.
+- TM10–TM15: guard layered, latihan, TypeScript dan lint terarah lulus; semua tabel, angka dalam tabel, SVG, kasus dan uji lama lolos preservasi. Setiap TM ditambah satu uji elaborasi. Batch PBR I: 78/78 tes standar, lint seluruh repo, dan build lulus. Chrome membuka keenam bacaan, DOM mengonfirmasi judul dan pendalaman, tanpa overflow desktop; TM10 diperiksa visual serta pendalaman konfirmasi dibuka. Bukti lokal `../tmp/pra-uas-elaboration/pbri-tm10-desktop.png`. Bukan klaim visual setiap bagian pada semua ukuran layar; belum tayang utama.
+- Inventaris aktual tersimpan di `docs/pra-uas-elaboration-inventory.json`, dapat diperbarui lewat `scripts/inventory-pra-uas-elaboration.mjs`: 48 bacaan aktif pada tujuh mata kuliah, termasuk enam bacaan ASP (TM12 tersendiri belum ada). Hitungan adalah alat navigasi, bukan bukti kelengkapan.
+- Aktif berikutnya: AKM II TM09 lalu TM10–TM15. Buku primer ditemukan di `C:/cek/AKM I/Intermediate Accounting IFRS 5th Edition (Donald Kieso) (z-library.sk, 1lib.sk, z-lib.sk)_compressed.pdf` (2484 halaman). Ekstraksi terpilih tujuh TM tersimpan di `../tmp/pra-uas-elaboration/kieso-tm*.txt`. Belum ada revisi kedalaman tersimpan pada enam mata kuliah lainnya.
 
 ## Sumber dan lingkungan
 
@@ -23,7 +24,7 @@ Semester 3 selain SIA, ditambah Manajemen Stratejik: AKA201 PBR I, AKK202 AKM II
 - `../tmp/pra-uas-elaboration/pbri-inventory.json` merangkum judul bagian dan tabel per TM. Ringkasan ini membantu navigasi, bukan bukti verifikasi isi.
 - Modul PBR I lama dihasilkan converter di luar repo. Untuk revisi, gunakan sumber authoring dan pembangun di dalam repo; jangan mengedit sumber pribadi di luar workspace.
 - Jalankan tes terarah PBR I, lint dan build pada perubahan substansial. Jalankan seluruh tes pada akhir batch; hasil tes teknis bukan bukti kelengkapan atau kebenaran sumber.
-- Pratinjau terdahulu menggunakan port5197; proses sudah dihentikan. Port5186 menampilkan versi lain dan jangan dianggap checkout ini. Browser Chrome dapat mengakses server dengan akses lokal normal; sandbox menyebabkan masalah socket/cache. Jangan melewati penolakan izin browser.
+- Pratinjau menggunakan port5197; periksa apakah proses masih berjalan sebelum memulai ulang. Port5186 menampilkan versi lain dan jangan dianggap checkout ini. Browser Chrome dapat mengakses server dengan akses lokal normal; sandbox menyebabkan masalah socket/cache. Jangan melewati penolakan izin browser.
 
 ## Cara melanjutkan
 
