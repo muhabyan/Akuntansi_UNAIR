@@ -924,8 +924,8 @@
             "Rujukan yang dapat ditelusuri"
           ],
           "denseTables": [],
-          "closedDepth": 0,
-          "status": "awaiting source and depth review"
+          "closedDepth": 1,
+          "status": "revision-written; see progress checkpoint for validation and source limits"
         },
         {
           "tm": 10,
@@ -950,8 +950,8 @@
               "columns": 3
             }
           ],
-          "closedDepth": 0,
-          "status": "awaiting source and depth review"
+          "closedDepth": 1,
+          "status": "revision-written; see progress checkpoint for validation and source limits"
         },
         {
           "tm": 11,
@@ -974,8 +974,8 @@
               "columns": 2
             }
           ],
-          "closedDepth": 0,
-          "status": "awaiting source and depth review"
+          "closedDepth": 1,
+          "status": "revision-written; see progress checkpoint for validation and source limits"
         },
         {
           "tm": 12,
@@ -993,8 +993,8 @@
             "Rujukan yang dapat ditelusuri"
           ],
           "denseTables": [],
-          "closedDepth": 0,
-          "status": "awaiting source and depth review"
+          "closedDepth": 1,
+          "status": "revision-written; see progress checkpoint for validation and source limits"
         },
         {
           "tm": 13,
@@ -1017,8 +1017,8 @@
               "columns": 3
             }
           ],
-          "closedDepth": 0,
-          "status": "awaiting source and depth review"
+          "closedDepth": 1,
+          "status": "revision-written; see progress checkpoint for validation and source limits"
         },
         {
           "tm": 14,
@@ -1035,8 +1035,8 @@
             "Rujukan yang dapat ditelusuri"
           ],
           "denseTables": [],
-          "closedDepth": 0,
-          "status": "awaiting source and depth review"
+          "closedDepth": 1,
+          "status": "revision-written; see progress checkpoint for validation and source limits"
         },
         {
           "tm": 15,
@@ -1060,8 +1060,8 @@
               "columns": 3
             }
           ],
-          "closedDepth": 0,
-          "status": "awaiting source and depth review"
+          "closedDepth": 1,
+          "status": "revision-written; see progress checkpoint for validation and source limits"
         }
       ]
     },
