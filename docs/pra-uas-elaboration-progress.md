@@ -11,8 +11,9 @@ Semester 3 selain SIA, ditambah Manajemen Stratejik: AKA201 PBR I, AKK202 AKM II
 - Cabang: `improve/pbri-tm09-elaboration`; draf PR #62: https://github.com/muhabyan/Akuntansi_UNAIR/pull/62.
 - TM09 PBR I selesai: sumber, narasi bertahap, pendalaman, preservasi dan pemeriksaan. Commit awal `bb2381c`; 78/78 tes standar, lint, build, serta 25/25 pemeriksaan navigasi lulus. Visual desktop diperiksa; capture layar sempit bermasalah dan belum dinyatakan lulus visual.
 - TM10 dan TM11: revisi isi selesai. TM10 menguraikan keandalan bukti, pemilihan item, konfirmasi dan empat langkah analitis; TM11 menguraikan hubungan dokumentasi dengan kesimpulan, permanent/current file, lima ciri kertas kerja, perakitan dan kerahasiaan. Sumber authoring dan peta perubahan berada pada content-pipeline/AKA201/TM10 dan TM11.
-- Aktif berikutnya: PBR I TM12–TM15. Sesudahnya periksa satu TM pra-UAS pada enam mata kuliah lain, tentukan kekurangan berdasarkan sumber, lalu lanjut per mata kuliah.
-- TM10–TM11: guard layered, latihan, TypeScript dan lint terarah lulus; angka, diagram, tabel sumber dan kasus lama diperiksa melalui preservasi. Visual dan pemeriksaan seluruh batch berikutnya masih pending. Belum menyatakan TM12–TM15 atau mata kuliah lain selesai direvisi.
+- TM12–TM15: revisi kedalaman terarah selesai ditulis. Risiko per asersi/faktor inheren/fraud, 17 prinsip COSO dan ITGC, desain/implementasi/operasi dan deviasi kontrol, serta pemilihan CAATs dan langkah program dijelaskan. Tabel sumber dipertahankan, beberapa dipindah ke pendalaman. Artikel primer Jakšić2009 diperiksa dan catatan keliru bahwa istilah embedded audit module tidak digunakan telah dikoreksi.
+- TM10–TM15: guard layered, latihan, TypeScript dan lint terarah lulus; semua tabel, angka dalam tabel, SVG, kasus dan uji lama lolos preservasi. Setiap TM ditambah satu uji elaborasi. Visual dan pemeriksaan seluruh batch berikutnya masih pending; jangan menyatakan sudah tayang.
+- Aktif berikutnya: selesaikan pemeriksaan batch PBR I, lalu periksa satu TM pra-UAS pada enam mata kuliah lain. Prioritas berikutnya AKM II dengan sumber Kieso yang sesuai, kemudian sesuaikan urutan berdasarkan sumber yang tersedia. Belum ada revisi kedalaman pada enam mata kuliah lainnya.
 
 ## Sumber dan lingkungan
 
