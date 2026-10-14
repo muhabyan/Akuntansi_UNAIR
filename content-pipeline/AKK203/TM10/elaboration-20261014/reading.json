@@ -1,0 +1,147 @@
+{
+  "tm": 10,
+  "layout": "layered",
+  "title": "Audit Organisasi Pemerintah: APIP, BPK, Opini dan Tindak Lanjut",
+  "ref": "Kontrak ASP TM10; UU 15/2004; PP 60/2008; SPKN dan tanggal penerapannya",
+  "intro": "Bedakan pihak pemeriksa, tujuan penugasan, kriteria yang dipakai, dan bentuk hasilnya. Opini atas laporan keuangan, simpulan kinerja, temuan kepatuhan dan tindak lanjut tidak boleh dipadatkan menjadi satu label keberhasilan.",
+  "objectives": [
+    "Membedakan pengawasan intern APIP dari pemeriksaan eksternal BPK.",
+    "Membedakan tiga jenis pemeriksaan dan hasilnya.",
+    "Menjelaskan empat kriteria opini, batas simpulan dan kewajiban tindak lanjut."
+  ],
+  "blocks": [
+    {
+      "kind": "section",
+      "layer": "main",
+      "title": "1. Fondasi: pengawasan intern dan pemeriksaan eksternal",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "APIP membantu pengawasan intern untuk kepentingan pimpinan. Kegiatannya mencakup audit, reviu, evaluasi, pemantauan dan kegiatan pengawasan lain. Reviu laporan bukan penerbitan opini pemeriksaan BPK. Sumber: [PP 60/2008, Pasal 1 dan 48](https://jdih.kemenkeu.go.id/api/download/fulltext/2008/60tahun2008pp.htm)."
+        },
+        {
+          "kind": "p",
+          "text": "BPK memeriksa pengelolaan dan tanggung jawab keuangan negara secara eksternal. Pilihan jenis pemeriksaan mengikuti tujuan pertanyaan: kewajaran informasi keuangan, kinerja pengelolaan, atau tujuan tertentu. Sumber: UU 15/2004, Pasal 4, 16 dan 20 serta penjelasan Pasal 16 (salinan materi kelas, halaman PDF 4–5, 8, 10 dan 26–27)."
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "layer": "main",
+      "title": "2. Tujuan, kriteria dan bentuk hasil",
+      "blocks": [
+        {
+          "kind": "table",
+          "title": "Tiga jenis pemeriksaan menurut UU 15/2004",
+          "headers": [
+            "Jenis",
+            "Tujuan pokok",
+            "Bentuk hasil"
+          ],
+          "rows": [
+            [
+              "Keuangan",
+              "Kewajaran informasi dalam laporan keuangan",
+              "Laporan memuat opini"
+            ],
+            [
+              "Kinerja",
+              "Aspek ekonomi, efisiensi dan efektivitas",
+              "Temuan, kesimpulan dan rekomendasi"
+            ],
+            [
+              "Dengan tujuan tertentu",
+              "Tujuan di luar pemeriksaan keuangan dan kinerja",
+              "Laporan memuat kesimpulan"
+            ]
+          ],
+          "caption": "UU 15/2004 Pasal 4 dan 16. PDTT tidak otomatis berarti pemeriksaan investigatif atau laporan untuk penegak hukum.",
+          "stackOnMobile": true
+        },
+        {
+          "kind": "p",
+          "text": "SAP menjadi dasar penyusunan dan kriteria kewajaran laporan keuangan. SPKN mengatur pemeriksaannya. Pada pemeriksaan kinerja, gunakan kriteria yang cocok dengan tujuan dan objek yang diuji; membandingkan realisasi dengan target saja belum menggantikan seluruh penilaian. Sumber: UU 15/2004 Pasal 5 dan penjelasan Pasal 16; [INTOSAI, ISSAI 300 paras. 11 dan 27](https://www.issai.org/wp-content/uploads/2019/08/ISSAI-300.pdf)"
+        },
+        {
+          "kind": "pendalaman",
+          "title": "Tanggal ditetapkan berbeda dari tanggal mulai berlaku",
+          "blocks": [
+            {
+              "kind": "p",
+              "text": "Peraturan BPK 1/2026 ditetapkan dan diundangkan 10 April 2026, dengan mulai berlaku 10 April 2028. Saat belajar pada Oktober 2026, bedakan standar yang masih diterapkan dari ketentuan baru yang sudah ditetapkan. Sumber: [JDIH BPK, Peraturan BPK 1/2026](https://jdih.bpk.go.id/Dokumen/Peraturan/275160ed-be4b-4c07-ba71-2a75fff2d017)."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "layer": "main",
+      "title": "3. Opini: empat kriteria dan dua masalah berbeda",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Penjelasan Pasal 16 menyebut kesesuaian dengan SAP, kecukupan pengungkapan, kepatuhan terhadap peraturan, dan efektivitas sistem pengendalian intern. Ini dasar pertimbangan kewajaran informasi keuangan. WTP tidak memberikan jaminan bahwa setiap transaksi bebas kecurangan. Sumber: UU 15/2004, Pasal 4, 16 dan 20 serta penjelasan Pasal 16 (salinan materi kelas, halaman PDF 4–5, 8, 10 dan 26–27)."
+        },
+        {
+          "kind": "p",
+          "text": "Bedakan salah saji yang telah ditemukan dari ketidakmampuan memperoleh bukti. Untuk masalah material yang tidak meluas, pertimbangkan pengecualian. Masalah salah saji yang material dan meluas mengarah pada opini tidak wajar; keterbatasan bukti dengan kemungkinan dampak material dan meluas mengarah pada tidak menyatakan pendapat. Persentase satu akun saja tidak menentukan opini. Sumber penjelasan jenis opini: [BPK Sumatera Barat, Apa itu opini BPK?](https://sumbar.bpk.go.id/apa-itu-opini-bpk/)."
+        },
+        {
+          "kind": "pendalaman",
+          "title": "Bukti yang perlu ditambah sebelum menyimpulkan opini",
+          "blocks": [
+            {
+              "kind": "p",
+              "text": "Periksa akun lain yang terpengaruh, pengungkapan, apakah dampaknya terbatas, dan apakah prosedur alternatif menyediakan bukti. Istilah material dan pervasif memerlukan pertimbangan konteks. Kerangka ini melanjutkan pembahasan jenis opini dalam penjelasan Pasal 16; untuk penugasan nyata, baca persyaratan lengkap standar pemeriksaan yang berlaku."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "layer": "main",
+      "title": "4. Temuan sampai tindak lanjut",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Setelah menerima hasil, pejabat wajib menindaklanjuti rekomendasi. Jawaban atau penjelasan pelaksanaan tindak lanjut disampaikan kepada BPK paling lambat 60 hari setelah LHP diterima; BPK memantau tindak lanjutnya. Tenggat jawaban ini tidak dapat dibaca sebagai jaminan bahwa seluruh persoalan sudah selesai secara substansial. Sumber: UU 15/2004 Pasal 20, halaman PDF 10."
+        },
+        {
+          "kind": "solution-reveal",
+          "title": "Kekurangan bukti aset",
+          "prompt": "Ilustrasi penulis: catatan lama menyebut Rp800 miliar atau 15% total aset tidak didukung bukti memadai. Apakah angka 15% otomatis berarti TMP?",
+          "blocks": [
+            {
+              "kind": "p",
+              "text": "Tidak. Tentukan bukti alternatif, materialitas dan keluasan kemungkinan dampaknya. WDP dapat relevan untuk keterbatasan material yang tidak meluas; TMP memerlukan kemungkinan dampak material dan meluas. Rasio 15% adalah informasi kasus, bukan ambang hukum otomatis."
+            }
+          ]
+        },
+        {
+          "kind": "solution-reveal",
+          "title": "Temuan proyek dan administrasi tanah",
+          "prompt": "Ilustrasi penulis, bukan LHP aktual suatu kabupaten: terdapat kelebihan bayar proyek Rp2,5 miliar dan tanah fasilitas umum 50 hektar belum bersertifikat. Apa langkah analisis berikutnya?",
+          "blocks": [
+            {
+              "kind": "p",
+              "text": "Pisahkan bukti pembayaran dan volume pekerjaan, pengukuran kelebihan bayar, serta tindak lanjut pemulihan dari bukti hak/penguasaan dan administrasi tanah. Rekomendasi dan pelaksanaannya harus menjawab masalah masing-masing. Adanya temuan saja belum menentukan satu opini tanpa menilai dampak pada laporan."
+            }
+          ]
+        },
+        {
+          "kind": "self-check",
+          "question": "Mengapa opini WTP tidak sama dengan simpulan bahwa program efektif?",
+          "answer": [
+            {
+              "kind": "p",
+              "text": "Opini keuangan menilai kewajaran informasi laporan; efektivitas menilai pencapaian tujuan program. Pertanyaannya, bukti dan bentuk hasil berbeda menurut UU 15/2004 Pasal 4 dan 16."
+            }
+          ],
+          "signal": "Tulis alasan dengan menyebut dasar perbandingan atau batas entitas sebelum membuka jawaban."
+        }
+      ]
+    }
+  ]
+}

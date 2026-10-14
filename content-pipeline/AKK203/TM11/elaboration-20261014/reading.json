@@ -1,0 +1,162 @@
+{
+  "tm": 11,
+  "layout": "layered",
+  "title": "Laporan Keuangan LSM dan Organisasi Nonlaba: Sumber Daya, Pembatasan dan Laporan",
+  "ref": "Kontrak ASP TM11; IAI ISAK 335 (sebelumnya ISAK 35); ilustrasi penyusunan penulis",
+  "intro": "Kembalikan fokus TM11 pada laporan LSM: identifikasi sumber daya, pahami pembatasan donor, lalu hubungkan perubahan aset neto dengan kas dan posisi keuangan. Pelaporan bantuan partai politik diperkenalkan terpisah sebagai jembatan menuju TM12.",
+  "objectives": [
+    "Memisahkan standar penyajian dari pengakuan dan pengukuran transaksi.",
+    "Menjelaskan aset neto dengan dan tanpa pembatasan donor.",
+    "Menyusun hubungan angka laporan dalam ilustrasi sederhana LSM."
+  ],
+  "blocks": [
+    {
+      "kind": "section",
+      "layer": "main",
+      "title": "1. Fondasi: pilih kerangka pelaporan dahulu",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Entitas nonlaba menerima sumber daya dari pihak yang tidak mengharapkan pembayaran kembali atau manfaat ekonomi sebanding. Status LSM saja tidak menetapkan seluruh jurnal. Pilih kerangka pelaporan yang digunakan dan baca syarat transaksi. ISAK 335 membahas penyajian, sedangkan pengakuan serta pengukuran mengikuti standar terkait dalam kerangka itu. Sumber penjelasan: [IAI, Discussion Paper PIR ISAK 335, 2025, paras. 1–4](https://web.iaiglobal.or.id/assets/files/file_sak/1.%20Discussion%20Paper%20PIR%20ISAK%20335%20%282025%2C%20Maret%2017%29.pdf)"
+        },
+        {
+          "kind": "p",
+          "text": "Nomor lama ISAK 35 masih dapat muncul di materi kelas. Gunakan nomor dan versi yang jelas ketika menyebut standar. IAI telah mengesahkan amendemen ISAK 335 pada 3 Juni 2026; pengumuman tersebut menjelaskan pembaruan rujukan dan contoh agar selaras dengan PSAK 118. Tanggal pengesahan tidak otomatis menjadi tanggal penerapan. Sumber: [IAI, pengesahan amendemen ISAK 335](https://web.iaiglobal.or.id/Berita-IAI/detail/pengesahan_amendemen_isak_335)."
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "layer": "main",
+      "title": "2. Pembatasan donor dan penggunaan dana",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Dalam ilustrasi pembelajaran ini, bedakan sumber daya yang bebas dipakai sesuai misi dari sumber daya yang dibatasi pemberi untuk program tertentu. Pembatasan penggunaan perlu ditelusuri melalui surat pemberian dan realisasi program. Jangan menyamakan pembatasan donor dengan keputusan internal pengurus."
+        },
+        {
+          "kind": "p",
+          "text": "Pelepasan pembatasan menggambarkan terpenuhinya tujuan pembatasan, bukan penerimaan kas baru. Total aset neto tidak bertambah hanya karena pemindahan kelas. Ilustrasi disederhanakan untuk memahami hubungan laporan; syarat pengembalian dana, pendapatan bersyarat, dan transaksi kompleks harus dianalisis tersendiri."
+        },
+        {
+          "kind": "pendalaman",
+          "title": "Dokumen dan laporan yang perlu dihubungkan",
+          "blocks": [
+            {
+              "kind": "p",
+              "text": "Susun daftar sumber dana, pembatasan, pengeluaran program, aset dan kewajiban. Posisi keuangan menjelaskan saldo; laporan kinerja menjelaskan pendapatan/beban; perubahan aset neto menjelaskan gerak kelas; arus kas menjelaskan penerimaan dan pembayaran; CaLK menjelaskan kebijakan serta rincian pembatasan. Contoh judul dan kelas aset neto dapat dipelajari pada [IAI, contoh ilustratif dalam DE ISAK 35, 2018](https://web.iaiglobal.or.id/assets/files/file_sak/exposure-draft/DE%20ISAK%2035.pdf). Dokumen tersebut adalah draf historis untuk menelaah contoh, bukan pengganti teks final yang berlaku."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "layer": "main",
+      "title": "3. Kasus penyusunan LSM",
+      "blocks": [
+        {
+          "kind": "solution-reveal",
+          "title": "Dari transaksi menuju saldo laporan",
+          "prompt": "Ilustrasi penulis; semua angka dalam juta rupiah. Saldo awal nol. Donasi tanpa pembatasan 40 dan donasi untuk program 60 diterima tunai; keduanya diasumsikan telah memenuhi pengakuan pendapatan dan tidak mempunyai kewajiban pengembalian. Program menghabiskan 25 dari dana terbatas; administrasi memakai 10 dana bebas. Semua dibayar tunai, tanpa piutang, utang, aset tetap, pajak atau OCI. Susun hubungan saldo.",
+          "blocks": [
+            {
+              "kind": "table",
+              "title": "Rekonsiliasi aset neto ilustratif",
+              "headers": [
+                "Uraian",
+                "Tanpa pembatasan",
+                "Dengan pembatasan",
+                "Total"
+              ],
+              "rows": [
+                [
+                  "Saldo awal",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                [
+                  "Donasi",
+                  "40",
+                  "60",
+                  "100"
+                ],
+                [
+                  "Pelepasan pembatasan program",
+                  "25",
+                  "(25)",
+                  "0"
+                ],
+                [
+                  "Beban program",
+                  "(25)",
+                  "0",
+                  "(25)"
+                ],
+                [
+                  "Beban administrasi",
+                  "(10)",
+                  "0",
+                  "(10)"
+                ],
+                [
+                  "Saldo akhir",
+                  "30",
+                  "35",
+                  "65"
+                ]
+              ],
+              "caption": "Angka ilustrasi penulis, bukan contoh resmi IAI. Pelepasan ditunjukkan terpisah agar alur pembatasan terlihat.",
+              "stackOnMobile": true
+            },
+            {
+              "kind": "p",
+              "text": "Total pendapatan 100 dikurangi beban 35 menghasilkan surplus 65. Kas masuk 100 dikurangi kas keluar 35 menghasilkan kas akhir 65. Posisi akhir: kas 65, kewajiban nol, aset neto 65 yang terdiri dari 30 tanpa pembatasan dan 35 dengan pembatasan. Tidak semua surplus berarti kas bebas: 35 masih untuk tujuan donor."
+            },
+            {
+              "kind": "p",
+              "text": "CaLK ilustratif menjelaskan tujuan dana program, dasar pelepasan 25, sisa pembatasan 35, dan asumsi pengakuan donasi. Jika transaksi kredit atau aset tetap ditambahkan, surplus dan kenaikan kas tidak lagi harus sama."
+            }
+          ]
+        },
+        {
+          "kind": "self-check",
+          "question": "Apakah pelepasan pembatasan sebesar 25 menciptakan pendapatan kas kedua?",
+          "answer": [
+            {
+              "kind": "p",
+              "text": "Tidak. Ini pemindahan kelas setelah tujuan pembatasan dipenuhi pada asumsi ilustrasi. Total aset neto tidak berubah oleh pemindahan; beban program tetap mengurangi total sebesar 25."
+            }
+          ],
+          "signal": "Tulis alasan dengan menyebut dasar perbandingan atau batas entitas sebelum membuka jawaban."
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "layer": "main",
+      "title": "4. Pendalaman entitas khusus dan jembatan TM12",
+      "blocks": [
+        {
+          "kind": "pendalaman",
+          "title": "LSM, yayasan, bantuan parpol dan kampanye mempunyai tujuan laporan berbeda",
+          "blocks": [
+            {
+              "kind": "p",
+              "text": "Laporan umum organisasi, laporan pertanggungjawaban bantuan pemerintah, dan laporan dana kampanye tidak boleh dianggap satu dokumen. Tentukan objek dana, penerima laporan, periode, pemeriksa serta aturan sektoralnya. Materi parpol tersendiri berada pada lingkup TM12 kontrak kuliah; TM12 belum tersedia sebagai bacaan terpisah di website."
+            },
+            {
+              "kind": "p",
+              "text": "Permendagri 36/2018 Pasal 27 memprioritaskan bantuan parpol untuk pendidikan politik dan juga mengizinkan operasional sekretariat. Teks pasal tersebut tidak menetapkan rumus universal 60/40. Permendagri 78/2020 mengubah beberapa ketentuan, sehingga pembacaan perlu mencakup aturan dasar dan perubahannya: [teks 36/2018](https://peraturan.bpk.go.id/Download/135117/Permendagri%20No.%2036%20Tahun%202018.pdf), [teks 78/2020](https://peraturan.bpk.go.id/Download/156015/Permendagri%20Nomor%2078%20Tahun%202020.pdf)."
+            },
+            {
+              "kind": "p",
+              "text": "Angka bantuan Rp5 miliar dalam latihan lama tetap dapat digunakan untuk latihan anggaran. Jika soal secara eksplisit mengasumsikan porsi pendidikan 60%, hasil hitungnya Rp3 miliar dan sisanya Rp2 miliar. Cantumkan bahwa 60% adalah asumsi soal; jangan menyebutnya kewajiban dari Pasal 27 tersebut."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

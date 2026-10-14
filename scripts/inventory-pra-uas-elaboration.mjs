@@ -18,6 +18,7 @@ const walk = blocks => blocks.flatMap(b => [b, ...walk(b.blocks ?? []), ...walk(
 const courses = [];
 for (const code of codes) {
   const { readings } = await loadCourseContent(code);
+  if (process.argv.includes(`--snapshot=${code}`)) fs.writeFileSync(`../tmp/pra-uas-elaboration/${code.toLowerCase()}-served-before.json`, JSON.stringify(readings, null, 2));
   const meetings = Object.entries(readings).filter(([key]) => Number(key) >= (code === 'AKK203' ? 8 : 9) && Number(key) <= 15).map(([key, reading]) => {
     const all = walk(reading.blocks);
     return {
@@ -25,7 +26,7 @@ for (const code of codes) {
       sections: all.filter(b => b.kind === 'section' || b.kind === 'h2').map(b => b.title ?? b.text),
       denseTables: all.filter(b => b.kind === 'table' && b.rows.length >= 5).map(b => ({ title: b.title, rows: b.rows.length, columns: b.headers.length })),
       closedDepth: all.filter(b => b.kind === 'pendalaman').length,
-      status: code === 'AKA201' ? 'revision-written; see progress checkpoint for validation' : 'awaiting source and depth review',
+      status: ['AKA201', 'AKK202'].includes(code) ? 'revision-written; see progress checkpoint for validation' : 'awaiting source and depth review',
     };
   });
   courses.push({ code, meetings });

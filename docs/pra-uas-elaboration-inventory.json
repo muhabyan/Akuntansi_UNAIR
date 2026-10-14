@@ -674,7 +674,7 @@
           "title": "Liabilitas Jangka Panjang: Harga Obligasi dan Suku Bunga Efektif",
           "sourceIntro": "TM09 melanjutkan fondasi liabilitas dengan penilaian obligasi, amortisasi diskonto dan premi, serta penerbitan di antara tanggal bunga. Fokusnya adalah memisahkan kas kupon dari beban bunga efektif.",
           "sections": [
-            "1. Orientation / Quick Map",
+            "1. Fondasi dan alur belajar",
             "2. Kontrak, jenis, dan risiko obligasi",
             "3. Penilaian dan konsistensi periode",
             "4. Kasus Evermaster: diskonto dan premi",
@@ -684,15 +684,15 @@
             "8. Exam Toolkit"
           ],
           "denseTables": [],
-          "closedDepth": 0,
-          "status": "awaiting source and depth review"
+          "closedDepth": 3,
+          "status": "revision-written; see progress checkpoint for validation"
         },
         {
           "tm": 10,
           "title": "Wesel Jangka Panjang, Pelunasan Utang, dan Opsi Nilai Wajar",
           "sourceIntro": "TM10 membahas long-term notes payable (wesel bayar jangka panjang), extinguishment (penghentian utang), modifikasi persyaratan, dan fair value option (opsi nilai wajar). Bedakan penghapusan utang dari pembayaran bunga dan pelepasan aset.",
           "sections": [
-            "1. Orientation / Quick Map",
+            "1. Fondasi dan alur belajar",
             "2. Wesel dan pengukuran awal",
             "3. Nilai kini dan penghentian utang",
             "4. Kasus wesel dan pelunasan Evermaster",
@@ -702,15 +702,15 @@
             "8. Exam Toolkit"
           ],
           "denseTables": [],
-          "closedDepth": 0,
-          "status": "awaiting source and depth review"
+          "closedDepth": 3,
+          "status": "revision-written; see progress checkpoint for validation"
         },
         {
           "tm": 11,
           "title": "Ekuitas Pemegang Saham, Saham Treasuri, dan Dividen",
           "sourceIntro": "TM11 membahas equity (ekuitas), penerbitan saham, treasury shares (saham treasuri), dan dividend policy (kebijakan dividen). Jurnal memakai aturan IFRS yang dijelaskan buku, termasuk dividen saham pada nilai nominal.",
           "sections": [
-            "1. Orientation / Quick Map",
+            "1. Fondasi dan alur belajar",
             "2. Komponen ekuitas dan penerbitan saham",
             "3. Saham preferen dan saham treasuri",
             "4. Kasus Pacific: penerbitan kembali treasuri",
@@ -720,15 +720,15 @@
             "8. Exam Toolkit"
           ],
           "denseTables": [],
-          "closedDepth": 0,
-          "status": "awaiting source and depth review"
+          "closedDepth": 3,
+          "status": "revision-written; see progress checkpoint for validation"
         },
         {
           "tm": 12,
           "title": "Sekuritas Dilutif: Konversi, Waran, dan Kompensasi Saham",
           "sourceIntro": "TM12 membedakan convertible debt (utang konversi), share warrants (waran saham), dan share compensation (kompensasi saham). Fokusnya pada pemisahan liabilitas dan ekuitas serta pengakuan jasa karyawan selama masa vesting.",
           "sections": [
-            "1. Orientation / Quick Map",
+            "1. Fondasi dan alur belajar",
             "2. Instrumen majemuk dan metode residual",
             "3. Pengukuran Roche dan amortisasi liabilitas",
             "4. Konversi, pembelian kembali, dan inducement",
@@ -738,15 +738,15 @@
             "8. Exam Toolkit"
           ],
           "denseTables": [],
-          "closedDepth": 0,
-          "status": "awaiting source and depth review"
+          "closedDepth": 3,
+          "status": "revision-written; see progress checkpoint for validation"
         },
         {
           "tm": 13,
           "title": "Earnings Per Share: EPS Dasar dan EPS Dilusian",
           "sourceIntro": "TM13 menghitung basic earnings per share (EPS dasar) dan diluted earnings per share (EPS dilusian). Penyelesaian dimulai dari laba untuk saham biasa dan rata-rata tertimbang saham, lalu menguji setiap instrumen potensial.",
           "sections": [
-            "1. Orientation / Quick Map",
+            "1. Fondasi dan alur belajar",
             "2. Pembilang dan penyebut EPS dasar",
             "3. Kasus Franks: pembobotan saham",
             "4. If-converted method untuk obligasi",
@@ -762,15 +762,15 @@
               "columns": 4
             }
           ],
-          "closedDepth": 0,
-          "status": "awaiting source and depth review"
+          "closedDepth": 3,
+          "status": "revision-written; see progress checkpoint for validation"
         },
         {
           "tm": 14,
           "title": "Investasi I: Efek Utang, Nilai Wajar, dan Kerugian Kredit",
           "sourceIntro": "TM14 membahas debt investments (investasi efek utang), pemilihan kategori pengukuran, pendapatan bunga efektif, perubahan nilai wajar, dan expected credit loss (kerugian kredit ekspektasian). TM15 melanjutkan investasi ekuitas dan metode ekuitas.",
           "sections": [
-            "1. Orientation / Quick Map",
+            "1. Fondasi dan alur belajar",
             "2. Klasifikasi efek utang",
             "3. Bunga efektif dan amortized cost",
             "4. Kasus Graff: bunga dan FVOCI",
@@ -780,15 +780,15 @@
             "8. Exam Toolkit"
           ],
           "denseTables": [],
-          "closedDepth": 0,
-          "status": "awaiting source and depth review"
+          "closedDepth": 3,
+          "status": "revision-written; see progress checkpoint for validation"
         },
         {
           "tm": 15,
           "title": "Investasi II: Efek Ekuitas, Metode Ekuitas, dan Konsolidasi",
           "sourceIntro": "TM15 melanjutkan investasi dengan equity investments (efek ekuitas), significant influence (pengaruh signifikan), equity method (metode ekuitas), dan pengantar consolidation (konsolidasi). Bedakan dividen sebagai pendapatan dengan dividen sebagai pengurang investasi.",
           "sections": [
-            "1. Orientation / Quick Map",
+            "1. Fondasi dan alur belajar",
             "2. Tingkat pengaruh dan metode pelaporan",
             "3. Nilai wajar efek ekuitas",
             "4. Penjualan ekuitas OCI tanpa recycling",
@@ -798,8 +798,8 @@
             "8. Exam Toolkit"
           ],
           "denseTables": [],
-          "closedDepth": 0,
-          "status": "awaiting source and depth review"
+          "closedDepth": 4,
+          "status": "revision-written; see progress checkpoint for validation"
         }
       ]
     },
@@ -808,102 +808,98 @@
       "meetings": [
         {
           "tm": 8,
-          "title": "Sistem Akuntansi Pemerintah Pusat (SAPP) & Daerah (SAPD): Konsolidasi & Rekening Koran HOBO",
-          "sourceIntro": "TM 9 membahas mekanisme operasional Sistem Akuntansi Pemerintah Daerah (SAPD) dan Sistem Akuntansi Pemerintah Pusat (SAPP): pembagian peran SKPD sebagai Entitas Akuntansi (Branch) dan PPKD/BUD sebagai Entitas Pelaporan (Home Office), perlakuan akun timbal balik (Reciprocal Accounts: RK-PPKD vs RK-SKPD), mekanisme pencairan kas UP/GU/TU/LS, serta teknik eliminasi akun resiprokal dalam penyusunan Laporan Keuangan Konsolidasian Pemda (LKPD).",
+          "title": "Sistem Akuntansi Pemerintah Pusat dan Daerah: Pencatatan sampai Konsolidasi",
+          "sourceIntro": "Mulai dari batas entitas, ikuti perpindahan kas dan pengakuan transaksi, lalu rekonsiliasi sebelum konsolidasi. Analogi kantor pusat–cabang membantu membaca akun internal, tetapi tidak mengubah SKPD menjadi anak perusahaan.",
           "sections": [
-            "Alur Belajar Cepat (Learning Flow Matrix) TM 9",
-            "Formula Sheet Fondasi: Jurnal Eliminasi Konsolidasi Akhir Tahun",
-            "Latihan Aktif Interaktif",
-            "Peta Submateri & Target Penguasaan Ujian TM 9",
-            "Rangkuman & Kunci Sukses Ujian (Key Takeaways)"
+            "1. Fondasi: siapa mencatat, siapa melaporkan?",
+            "2. Dua jalur SAPP dan alur SAPD",
+            "3. Rekening timbal balik dan rekonsiliasi",
+            "4. Kasus: dana UP Rp50 juta"
           ],
-          "denseTables": [
-            {
-              "rows": 5,
-              "columns": 4
-            }
-          ],
-          "closedDepth": 0,
+          "denseTables": [],
+          "closedDepth": 3,
           "status": "awaiting source and depth review"
         },
         {
           "tm": 9,
-          "title": "Pengukuran Kinerja Organisasi Pemerintah & Paradigma Value for Money (VFM)",
-          "sourceIntro": "TM 10 membahas sistem pengukuran kinerja sektor publik yang berfokus pada Paradigma Value for Money (VFM): prinsip 3E (Ekonomi, Efisiensi, dan Efektivitas) ditambah Equity dan Equality, penyusunan Indikator Kinerja Utama (IKU), pengukuran Indeks Kepuasan Masyarakat (IKM), serta penyusunan Laporan Kinerja Instansi Pemerintah (LKjIP) berbasis Sistem Akuntabilitas Kinerja Instansi Pemerintah (SAKIP).",
+          "title": "Pengukuran Kinerja Pemerintah: Input, Output, Outcome dan Value for Money",
+          "sourceIntro": "Anggaran yang tersisa belum cukup untuk membuktikan keberhasilan program. Pisahkan sumber daya yang dibeli, layanan yang dihasilkan, dan perubahan yang ingin dicapai sebelum menilai ekonomi, efisiensi, dan efektivitas.",
           "sections": [
-            "Alur Belajar Cepat (Learning Flow Matrix) TM 10",
-            "Formula Sheet Fondasi: Evaluasi Kinerja Program Publik",
-            "Latihan Aktif Interaktif",
-            "Peta Submateri & Target Penguasaan Ujian TM 10",
-            "Rangkuman & Kunci Sukses Ujian (Key Takeaways)"
+            "1. Fondasi: ukur tujuan program, bukan hanya pengeluaran",
+            "2. Tiga pertanyaan Value for Money",
+            "3. Dari indikator menuju evaluasi",
+            "4. Kasus bertahap"
           ],
           "denseTables": [],
-          "closedDepth": 0,
+          "closedDepth": 2,
           "status": "awaiting source and depth review"
         },
         {
           "tm": 10,
-          "title": "Audit Sektor Publik: Pengawasan Intern (APIP), Pemeriksaan Eksternal (BPK RI), & LHP",
-          "sourceIntro": "TM 11 membahas bagaimana keuangan negara diperiksa dan diawasi di Indonesia. Topiknya peran aparat pengawasan intern pemerintah (APIP: BPKP dan Inspektorat) dalam reviu laporan keuangan, kewenangan konstitusional Badan Pemeriksa Keuangan (BPK RI), Standar Pemeriksaan Keuangan Negara (SPKN), tiga jenis pemeriksaan (Audit Keuangan, Audit Kinerja, dan Audit Dengan Tujuan Tertentu / ADTT), empat opini audit keuangan BPK, serta batas waktu tindak lanjut temuan LHP.",
+          "title": "Audit Organisasi Pemerintah: APIP, BPK, Opini dan Tindak Lanjut",
+          "sourceIntro": "Bedakan pihak pemeriksa, tujuan penugasan, kriteria yang dipakai, dan bentuk hasilnya. Opini atas laporan keuangan, simpulan kinerja, temuan kepatuhan dan tindak lanjut tidak boleh dipadatkan menjadi satu label keberhasilan.",
           "sections": [
-            "Alur Belajar Cepat (Learning Flow Matrix) TM 11",
-            "Formula Sheet Fondasi: 4 Kriteria Pemberian Opini WTP oleh BPK RI",
-            "Latihan Aktif Interaktif",
-            "Peta Submateri & Target Penguasaan Ujian TM 11",
-            "Rangkuman & Kunci Sukses Ujian (Key Takeaways)"
+            "1. Fondasi: pengawasan intern dan pemeriksaan eksternal",
+            "2. Tujuan, kriteria dan bentuk hasil",
+            "3. Opini: empat kriteria dan dua masalah berbeda",
+            "4. Temuan sampai tindak lanjut"
           ],
           "denseTables": [],
-          "closedDepth": 0,
+          "closedDepth": 2,
           "status": "awaiting source and depth review"
         },
         {
           "tm": 11,
-          "title": "Akuntansi & Pelaporan Keuangan Organisasi Nirlaba Khusus (LSM, Parpol, & Yayasan)",
-          "sourceIntro": "TM 12 membahas akuntansi untuk entitas nirlaba khusus yang punya aturan sendiri di Indonesia. Ada yayasan pendidikan dan sosial (UU Yayasan, pembatasan remunerasi pengurus, audit publik), lembaga swadaya masyarakat / NGO (pengelolaan dana hibah donor asing dan transparansi proyek), serta akuntansi partai politik (bantuan keuangan dari APBN/APBD, porsi 60% untuk pendidikan politik, dan audit kepatuhan oleh BPK RI).",
+          "title": "Laporan Keuangan LSM dan Organisasi Nonlaba: Sumber Daya, Pembatasan dan Laporan",
+          "sourceIntro": "Kembalikan fokus TM11 pada laporan LSM: identifikasi sumber daya, pahami pembatasan donor, lalu hubungkan perubahan aset neto dengan kas dan posisi keuangan. Pelaporan bantuan partai politik diperkenalkan terpisah sebagai jembatan menuju TM12.",
           "sections": [
-            "Alur Belajar Cepat (Learning Flow Matrix) TM 12",
-            "Formula Sheet Fondasi: Alokasi Wajib Bantuan Keuangan Parpol",
-            "Latihan Aktif Interaktif",
-            "Peta Submateri & Target Penguasaan Ujian TM 12",
-            "Rangkuman & Kunci Sukses Ujian (Key Takeaways)"
+            "1. Fondasi: pilih kerangka pelaporan dahulu",
+            "2. Pembatasan donor dan penggunaan dana",
+            "3. Kasus penyusunan LSM",
+            "4. Pendalaman entitas khusus dan jembatan TM12"
           ],
-          "denseTables": [],
-          "closedDepth": 0,
+          "denseTables": [
+            {
+              "title": "Rekonsiliasi aset neto ilustratif",
+              "rows": 6,
+              "columns": 4
+            }
+          ],
+          "closedDepth": 2,
           "status": "awaiting source and depth review"
         },
         {
           "tm": 13,
-          "title": "Pengelolaan Keuangan Badan Layanan Umum (BLU & BLUD: Kasus RSUD & PTN-BH)",
-          "sourceIntro": "TM 13 membahas Pola Pengelolaan Keuangan Badan Layanan Umum (PPK-BLU) di tingkat pusat dan PPK-BLUD di tingkat daerah: landasan pembentukan unit quasi-pemerintah berorientasi layanan, fleksibilitas pendapatan (Direct Spending), fleksibilitas belanja dengan ambang batas (Flexibility Budget), pengelolaan kas dan investasi jangka pendek, penyusunan Rencana Bisnis dan Anggaran (RBA), serta skema remunerasi berbasis kinerja.",
+          "title": "Pengelolaan Keuangan BLU dan BLUD: Fleksibilitas, Layanan dan Pelaporan",
+          "sourceIntro": "Fleksibilitas keuangan diberikan untuk mendukung layanan. Pelajari status entitas, sumber dana dan otorisasinya sebelum menghitung belanja, kemudian hubungkan pendapatan layanan dengan kas serta laporan berbasis SAP.",
           "sections": [
-            "Alur Belajar Cepat (Learning Flow Matrix) TM 13",
-            "Formula Sheet Fondasi: Ambang Batas Fleksibilitas RBA",
-            "Latihan Aktif Interaktif",
-            "Peta Submateri & Target Penguasaan Ujian TM 13",
-            "Rangkuman & Kunci Sukses Ujian (Key Takeaways)"
+            "1. Fondasi: status entitas menentukan jalurnya",
+            "2. Fleksibilitas tetap memerlukan pertanggungjawaban",
+            "3. Dari layanan sampai laporan",
+            "4. Hubungkan ke kinerja layanan"
           ],
-          "denseTables": [
-            {
-              "rows": 5,
-              "columns": 3
-            }
-          ],
-          "closedDepth": 0,
+          "denseTables": [],
+          "closedDepth": 2,
           "status": "awaiting source and depth review"
         },
         {
           "tm": 14,
-          "title": "Topik Kontemporer & Tren Riset Akuntansi Sektor Publik (Digital Governance, Green Budgeting, Anti-Fraud)",
-          "sourceIntro": "TM 14 membahas arah akuntansi sektor publik ke depan. Topiknya sistem informasi digital berbasis cloud (SIPD-RI: Sistem Informasi Pemerintahan Daerah, dan SPAN: Sistem Perbendaharaan dan Anggaran Negara), standarisasi Bagan Akun Standar (BAS), Green Budgeting (Climate Budget Tagging dan Green Sukuk), akuntabilitas keberlanjutan sosial (SDGs), serta pencegahan kecurangan anggaran lewat Whistleblowing System (WBS) dan audit investigatif forensik digital.",
+          "title": "Topik Penelitian Akuntansi Sektor Publik: Dari Isu ke Pertanyaan dan Bukti",
+          "sourceIntro": "Topik riset perlu lebih dari daftar teknologi dan slogan transparansi. Mulai dari persoalan akuntansi publik, rumuskan mekanisme yang ingin diuji, pilih data, lalu batasi kesimpulan sesuai bukti.",
           "sections": [
-            "Alur Belajar Cepat (Learning Flow Matrix) TM 14",
-            "Formula Sheet Fondasi: Climate Budget Tagging & Integritas Fiskal",
-            "Latihan Aktif Interaktif",
-            "Peta Submateri & Target Penguasaan Ujian TM 14",
-            "Rangkuman & Kunci Sukses Ujian (Key Takeaways)"
+            "1. Fondasi: pisahkan kebijakan, pelaksanaan dan hasil",
+            "2. Digital governance: apa yang dapat diuji?",
+            "3. Green budgeting: penandaan bukan dampak",
+            "4. Kasus rancangan dan batas simpulan"
           ],
-          "denseTables": [],
-          "closedDepth": 0,
+          "denseTables": [
+            {
+              "title": "Dari isu digital menjadi rancangan pengujian",
+              "rows": 5,
+              "columns": 2
+            }
+          ],
+          "closedDepth": 2,
           "status": "awaiting source and depth review"
         }
       ]
