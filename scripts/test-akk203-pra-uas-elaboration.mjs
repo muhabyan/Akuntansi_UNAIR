@@ -2,10 +2,11 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
+import { createHash } from 'node:crypto';
 import { build } from 'esbuild';
 
 const result = await build({
-  stdin: { contents: "export {loadCourseContent} from './src/data/courses/courseRegistry'; export {AKS201_READINGS,AKS201_REVIEW_READINGS} from './src/data/asp/aspData';", resolveDir: process.cwd(), loader: 'ts' },
+  stdin: { contents: "export {loadCourseContent} from './src/data/courses/courseRegistry'; export {AKS201_READINGS,AKS201_REVIEW_READINGS} from './src/data/asp/aspData'; export * from './src/data/quizzes/aks201'; export * from './src/data/flashcards/aks201'; export * from './src/data/banksoal/aks201';", resolveDir: process.cwd(), loader: 'ts' },
   bundle: true, write: false, format: 'esm', platform: 'node', logLevel: 'silent', plugins: [{
     name: 'raw-reading', setup(b) {
       b.onResolve({ filter: /\?raw$/ }, a => ({ path: path.resolve(a.resolveDir, a.path.slice(0, -4)), namespace: 'raw' }));
@@ -17,6 +18,7 @@ const m = await import(`data:text/javascript;base64,${Buffer.from(result.outputF
 const course = await m.loadCourseContent('AKK203');
 const alias = await m.loadCourseContent('AKS201');
 assert.deepEqual(course, alias, 'Retired and current course codes serve the same revised material');
+assert.equal(course.readings, alias.readings, 'Alias must retain the same cached reading collection');
 for (let tm = 1; tm <= 7; tm++) assert.deepEqual(course.readings[tm], m.AKS201_READINGS[tm]);
 assert.deepEqual(course.reviews.uts, { ...m.AKS201_REVIEW_READINGS.uts, tm: 0 }, 'Existing registry normalizes the UTS review number to zero');
 assert.equal(course.readings[12], undefined, 'Do not invent a completed standalone TM12');
@@ -27,7 +29,7 @@ for (const tm of [8, 9, 10, 11, 13, 14]) {
   assert.notDeepEqual(r, m.AKS201_READINGS[tm], 'Active route must supersede the old abbreviated reading');
   const blocks = flat(r.blocks);
   assert.ok(blocks.some(b => b.kind === 'self-check') && blocks.some(b => b.kind === 'pendalaman'));
-  assert.ok(blocks.some(b => b.kind === 'solution-reveal' && /Ilustrasi penulis/.test(b.prompt)));
+  assert.ok(blocks.some(b => b.kind === 'example' && b.title.startsWith('Contoh terbimbing:') && b.blocks.some(c => c.kind === 'p' && /Ilustrasi penulis/.test(c.text))), 'Show the worked teaching case before the independent self-check');
   for (const b of blocks.filter(b => b.kind === 'table')) {
     assert.ok(b.title && b.caption);
     b.rows.forEach(row => assert.equal(row.length, b.headers.length));
@@ -48,4 +50,24 @@ assert.match(text(11), /60% adalah asumsi soal/);
 assert.doesNotMatch(text(11), /minimal 60% dana bantuan wajib/);
 assert.match(text(13), /PTN-BH mempunyai status hukum dan tata kelola berbeda/);
 assert.match(text(14), /belum membuktikan penurunan emisi/);
+const baseline = JSON.parse(fs.readFileSync('content-pipeline/AKK203/elaboration-20261014/pre-uts-baseline.json', 'utf8'));
+const hash = value => createHash('sha256').update(JSON.stringify(value)).digest('hex');
+assert.equal(hash(m.AKS201_QUIZ_UTS), baseline.quiz);
+assert.equal(hash(m.AKS201_FC.filter(c => c.phase !== 'pra-uas')), baseline.cards);
+assert.equal(hash(m.AKS201_BANK_UTS), baseline.bank);
+assert.equal(m.AKS201_QUIZ_UAS.length, 35);
+assert.equal(m.AKS201_FC.filter(c => c.phase === 'pra-uas').length, 42);
+assert.equal(m.AKS201_BANK_UAS.length, 7);
+for (const q of m.AKS201_QUIZ_UAS) {
+  assert.equal(new Set(q.options).size, 4);
+  assert.ok(q.answer >= 0 && q.answer < 4);
+  assert.doesNotMatch(q.q, /paling sedikit 60%/);
+  assert.ok(q.topic && q.explanation);
+}
+assert.ok(m.AKS201_QUIZ_UAS.filter(q => q.q.includes('SAPP')).every(q => q.tm === 8));
+assert.equal(new Set(m.AKS201_FC.map(c => c.id)).size, m.AKS201_FC.length);
+const partyCase = m.AKS201_BANK_UAS.find(b => b.scope.startsWith('TM 12:'));
+assert.equal(120 / 240 * 100, 50); assert.equal((55 + 20) / 240 * 100, 31.25);
+assert.match(partyCase.answerGuide, /50%/); assert.match(partyCase.answerGuide, /31,25%/);
+assert.doesNotMatch(partyCase.instructions.join(' '), /minimal 60%/);
 console.log('ASP active pra-UAS PASS: six revised readings, alias routing, pre-UTS preservation, net-asset rollforward and corrected source regressions.');

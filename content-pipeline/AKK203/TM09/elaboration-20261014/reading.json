@@ -109,10 +109,13 @@
       "title": "4. Kasus bertahap",
       "blocks": [
         {
-          "kind": "solution-reveal",
-          "title": "Pelatihan kerja",
-          "prompt": "Ilustrasi penulis: anggaran Rp200 juta untuk 100 peserta; realisasi Rp180 juta, output 100 peserta, 85 orang bekerja dari target 80. Hitung tiga ukuran dan batas kesimpulannya.",
+          "kind": "example",
+          "title": "Contoh terbimbing: Pelatihan kerja",
           "blocks": [
+            {
+              "kind": "p",
+              "text": "Ilustrasi penulis: anggaran Rp200 juta untuk 100 peserta; realisasi Rp180 juta, output 100 peserta, 85 orang bekerja dari target 80. Hitung tiga ukuran dan batas kesimpulannya."
+            },
             {
               "kind": "p",
               "text": "Penyerapan = 180/200 × 100% = 90%, sehingga ada selisih anggaran Rp20 juta. Biaya per peserta = Rp1,8 juta dibanding rencana Rp2 juta. Capaian penyerapan kerja = 85/80 × 100% = 106,25%."

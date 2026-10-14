@@ -3,7 +3,7 @@
   "layout": "layered",
   "title": "Laporan Keuangan LSM dan Organisasi Nonlaba: Sumber Daya, Pembatasan dan Laporan",
   "ref": "Kontrak ASP TM11; IAI ISAK 335 (sebelumnya ISAK 35); ilustrasi penyusunan penulis",
-  "intro": "Kembalikan fokus TM11 pada laporan LSM: identifikasi sumber daya, pahami pembatasan donor, lalu hubungkan perubahan aset neto dengan kas dan posisi keuangan. Pelaporan bantuan partai politik diperkenalkan terpisah sebagai jembatan menuju TM12.",
+  "intro": "TM11 membahas laporan LSM: identifikasi sumber daya, pahami pembatasan donor, lalu hubungkan perubahan aset neto dengan kas dan posisi keuangan. Pelaporan bantuan partai politik diperkenalkan terpisah sebagai jembatan menuju TM12.",
   "objectives": [
     "Memisahkan standar penyajian dari pengakuan dan pengukuran transaksi.",
     "Menjelaskan aset neto dengan dan tanpa pembatasan donor.",
@@ -39,6 +39,30 @@
           "text": "Pelepasan pembatasan menggambarkan terpenuhinya tujuan pembatasan, bukan penerimaan kas baru. Total aset neto tidak bertambah hanya karena pemindahan kelas. Ilustrasi disederhanakan untuk memahami hubungan laporan; syarat pengembalian dana, pendapatan bersyarat, dan transaksi kompleks harus dianalisis tersendiri."
         },
         {
+          "kind": "h3",
+          "text": "Lima bagian laporan menjawab lima pertanyaan"
+        },
+        {
+          "kind": "p",
+          "text": "Posisi keuangan menjawab apa yang masih dikuasai dan diwajibkan pada tanggal laporan. Bedakan kas, piutang, aset tetap dan kewajiban; selisihnya menjadi aset neto. Saldo aset neto dengan pembatasan tidak harus disimpan sebagai rekening bank terpisah agar dapat ditelusuri, tetapi pembukuan harus menyediakan rinciannya."
+        },
+        {
+          "kind": "p",
+          "text": "Laporan kinerja atau penghasilan komprehensif menjelaskan pendapatan, beban dan hasil periode. Mengelompokkan pengeluaran sebagai program atau administrasi memerlukan dasar yang konsisten. Pembelian aset yang dipakai beberapa periode tidak otomatis menjadi seluruh beban periode pembelian; contoh sederhana berikut sengaja tidak memuat aset tersebut."
+        },
+        {
+          "kind": "p",
+          "text": "Perubahan aset neto menjembatani saldo awal dengan saldo akhir tiap kelas. Tunjukkan hasil periode dan pemindahan akibat pembatasan yang telah terpenuhi. Pemindahan antar-kelas tidak menciptakan sumber daya baru, sehingga kolom total pemindahan harus nol."
+        },
+        {
+          "kind": "p",
+          "text": "Arus kas menelusuri penerimaan dan pembayaran. Pendapatan dapat timbul sebelum kas diterima, dan beban dapat timbul sebelum dibayar. Karena itu surplus tidak selalu sama dengan kenaikan kas. CaLK kemudian menjelaskan kebijakan, rincian saldo, pembatasan donor serta informasi yang diperlukan untuk memahami angka."
+        },
+        {
+          "kind": "p",
+          "text": "Lima pertanyaan ini adalah panduan membaca hubungan laporan. Nama dan format mengikuti kerangka serta versi standar yang diterapkan. Contoh historis penyajian dan hubungan aset neto ditunjukkan dalam dokumen IAI yang ditautkan pada pendalaman; rincian pengakuan tidak ditetapkan hanya dari judul ISAK 335."
+        },
+        {
           "kind": "pendalaman",
           "title": "Dokumen dan laporan yang perlu dihubungkan",
           "blocks": [
@@ -56,10 +80,13 @@
       "title": "3. Kasus penyusunan LSM",
       "blocks": [
         {
-          "kind": "solution-reveal",
-          "title": "Dari transaksi menuju saldo laporan",
-          "prompt": "Ilustrasi penulis; semua angka dalam juta rupiah. Saldo awal nol. Donasi tanpa pembatasan 40 dan donasi untuk program 60 diterima tunai; keduanya diasumsikan telah memenuhi pengakuan pendapatan dan tidak mempunyai kewajiban pengembalian. Program menghabiskan 25 dari dana terbatas; administrasi memakai 10 dana bebas. Semua dibayar tunai, tanpa piutang, utang, aset tetap, pajak atau OCI. Susun hubungan saldo.",
+          "kind": "example",
+          "title": "Contoh terbimbing: Dari transaksi menuju saldo laporan",
           "blocks": [
+            {
+              "kind": "p",
+              "text": "Ilustrasi penulis; semua angka dalam juta rupiah. Saldo awal nol. Donasi tanpa pembatasan 40 dan donasi untuk program 60 diterima tunai; keduanya diasumsikan telah memenuhi pengakuan pendapatan dan tidak mempunyai kewajiban pengembalian. Program menghabiskan 25 dari dana terbatas; administrasi memakai 10 dana bebas. Semua dibayar tunai, tanpa piutang, utang, aset tetap, pajak atau OCI. Susun hubungan saldo."
+            },
             {
               "kind": "table",
               "title": "Rekonsiliasi aset neto ilustratif",
@@ -152,7 +179,7 @@
             },
             {
               "kind": "p",
-              "text": "Angka bantuan Rp5 miliar dalam latihan lama tetap dapat digunakan untuk latihan anggaran. Jika soal secara eksplisit mengasumsikan porsi pendidikan 60%, hasil hitungnya Rp3 miliar dan sisanya Rp2 miliar. Cantumkan bahwa 60% adalah asumsi soal; jangan menyebutnya kewajiban dari Pasal 27 tersebut."
+              "text": "Angka bantuan Rp5 miliar dapat digunakan untuk latihan anggaran. Jika soal secara eksplisit mengasumsikan porsi pendidikan 60%, hasil hitungnya Rp3 miliar dan sisanya Rp2 miliar. Cantumkan bahwa 60% adalah asumsi soal; jangan menyebutnya kewajiban dari Pasal 27 tersebut."
             }
           ]
         }

@@ -4,4 +4,4 @@ Penjelasan lama digantikan pada jalur materi aktif. Nomor TM mengikuti kontrak, 
 
 Sumber: rujukan primer ditautkan per bagian; salinan lokal PP71, Permendagri77, UU15 dan kontrak kelas dibaca. Bab buku MD/DN yang tidak tersedia tidak diklaim telah diaudit. Dokumen IAI DE/PIR dibedakan dari teks final. Tanggal penerapan amendemen ISAK335 belum dikonfirmasi dari teks final; modul tidak mengasumsikannya. TM12 parpol masih belum bacaan tersendiri.
 
-Lingkup putaran ini bacaan. Kuis/kartu/bank lama perlu audit konsistensi tersendiri sebelum ASP dapat dinyatakan selesai keseluruhan. Validasi terbaru: lihat docs/pra-uas-elaboration-progress.md.
+Perbaikan latihan terkait tersimpan di content-pipeline/AKK203/elaboration-20261014/practice.json. Seluruh objek pra-UTS dibekukan lewat hash independen; hanya tiga berkas latihan ASP pasca-UTS diberi varian guard yang ditinjau. Kartu yang berubah makna memperoleh ID baru. Audit lengkap bab MD/DN tetap memerlukan salinan buku tersebut. Validasi terbaru: lihat docs/pra-uas-elaboration-progress.md.

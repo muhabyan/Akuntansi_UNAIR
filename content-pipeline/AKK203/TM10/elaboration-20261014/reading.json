@@ -109,10 +109,13 @@
           "text": "Setelah menerima hasil, pejabat wajib menindaklanjuti rekomendasi. Jawaban atau penjelasan pelaksanaan tindak lanjut disampaikan kepada BPK paling lambat 60 hari setelah LHP diterima; BPK memantau tindak lanjutnya. Tenggat jawaban ini tidak dapat dibaca sebagai jaminan bahwa seluruh persoalan sudah selesai secara substansial. Sumber: UU 15/2004 Pasal 20, halaman PDF 10."
         },
         {
-          "kind": "solution-reveal",
-          "title": "Kekurangan bukti aset",
-          "prompt": "Ilustrasi penulis: catatan lama menyebut Rp800 miliar atau 15% total aset tidak didukung bukti memadai. Apakah angka 15% otomatis berarti TMP?",
+          "kind": "example",
+          "title": "Contoh terbimbing: Kekurangan bukti aset",
           "blocks": [
+            {
+              "kind": "p",
+              "text": "Ilustrasi penulis: Rp800 miliar atau 15% total aset tidak didukung bukti memadai. Apakah angka 15% otomatis berarti TMP?"
+            },
             {
               "kind": "p",
               "text": "Tidak. Tentukan bukti alternatif, materialitas dan keluasan kemungkinan dampaknya. WDP dapat relevan untuk keterbatasan material yang tidak meluas; TMP memerlukan kemungkinan dampak material dan meluas. Rasio 15% adalah informasi kasus, bukan ambang hukum otomatis."

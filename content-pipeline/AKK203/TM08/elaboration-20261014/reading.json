@@ -99,10 +99,13 @@
       "title": "4. Kasus: dana UP Rp50 juta",
       "blocks": [
         {
-          "kind": "solution-reveal",
-          "title": "Dari dua buku ke satu laporan",
-          "prompt": "Ilustrasi penulis, bukan kejadian aktual suatu dinas: pada 5 Maret, PPKD menyalurkan UP Rp50 juta kepada bendahara SKPD. Belum ada belanja kepada pihak luar. Susun jurnal dua pihak dan jelaskan eliminasi.",
+          "kind": "example",
+          "title": "Contoh terbimbing: Dari dua buku ke satu laporan",
           "blocks": [
+            {
+              "kind": "p",
+              "text": "Ilustrasi penulis, bukan kejadian aktual suatu dinas: pada 5 Maret, PPKD menyalurkan UP Rp50 juta kepada bendahara SKPD. Belum ada belanja kepada pihak luar. Susun jurnal dua pihak dan jelaskan eliminasi."
+            },
             {
               "kind": "table",
               "title": "Pencatatan finansial ilustratif",

@@ -382,37 +382,37 @@ export const AKS201_FC: AdvancedStudyCard[] = [
     "back": "Pahami perbedaan akun-akun LRA (akhiran -LRA) dengan akun-akun LO (akhiran -LO), serta alur pengakuan pendapatan pajak dan transfer dana."
   },
   {
-    "id": "aks201-tm08-01",
+    "id": "akk203-depth-20261014-01",
     "phase": "pra-uas",
     "tm": 8,
-    "topic": "Sistem Akuntansi Pemerintah Pusat (SAPP) & Daerah (SAPD)",
+    "topic": "Sistem Akuntansi Pemerintah Pusat dan Daerah: Pencatatan sampai Konsolidasi",
     "category": "Klasifikasi",
-    "front": "Sistem Akuntansi Pemerintah Pusat (SAPP)",
-    "back": "Terdiri dari: SiAP (Sistem Akuntansi Bendahara Umum Negara) dan SAI (Sistem Akuntansi Instansi pada tiap Kementerian/Lembaga)."
+    "front": "Dua jalur utama SAPP",
+    "back": "SAPP terdiri dari SAI dan SABUN. SiAP merupakan salah satu subsistem SABUN, bukan nama penggantinya. Rujukan: PMK217/PMK.05/2022."
   },
   {
     "id": "aks201-tm08-02",
     "phase": "pra-uas",
     "tm": 8,
-    "topic": "Sistem Akuntansi Pemerintah Pusat (SAPP) & Daerah (SAPD)",
+    "topic": "Sistem Akuntansi Pemerintah Pusat dan Daerah: Pencatatan sampai Konsolidasi",
     "category": "Mekanisme",
     "front": "Aplikasi SPAN & SAKTI di Kemenkeu",
     "back": "Sistem Perbendaharaan dan Anggaran Negara (SPAN) dan SAKTI mengintegrasikan proses penganggaran, komitmen, pembayaran, dan akuntansi secara real-time."
   },
   {
-    "id": "aks201-tm08-03",
+    "id": "akk203-depth-20261014-03",
     "phase": "pra-uas",
     "tm": 8,
-    "topic": "Sistem Akuntansi Pemerintah Pusat (SAPP) & Daerah (SAPD)",
+    "topic": "Sistem Akuntansi Pemerintah Pusat dan Daerah: Pencatatan sampai Konsolidasi",
     "category": "Hukum",
-    "front": "Permendagri No. 77 Tahun 2020",
-    "back": "Pedoman Teknis Pengelolaan Keuangan Daerah terbaru yang mengatur siklus APBD, penatausahaan kas, dan sistem akuntansi pemerintah daerah."
+    "front": "Peran Permendagri77/2020",
+    "back": "Pedoman teknis pengelolaan keuangan daerah. Bedakan proses anggaran, kas, pengakuan transaksi dan pelaporan; dokumen pencairan tidak menentukan seluruh jurnal dengan sendirinya."
   },
   {
     "id": "aks201-tm08-04",
     "phase": "pra-uas",
     "tm": 8,
-    "topic": "Sistem Akuntansi Pemerintah Pusat (SAPP) & Daerah (SAPD)",
+    "topic": "Sistem Akuntansi Pemerintah Pusat dan Daerah: Pencatatan sampai Konsolidasi",
     "category": "Mekanisme",
     "front": "Pejabat Pengelola Keuangan Daerah (PPKD)",
     "back": "Kepala BPKAD yang bertindak sebagai Bendahara Umum Daerah (BUD) dan menyusun laporan keuangan konsolidasian Pemda."
@@ -421,7 +421,7 @@ export const AKS201_FC: AdvancedStudyCard[] = [
     "id": "aks201-tm08-05",
     "phase": "pra-uas",
     "tm": 8,
-    "topic": "Sistem Akuntansi Pemerintah Pusat (SAPP) & Daerah (SAPD)",
+    "topic": "Sistem Akuntansi Pemerintah Pusat dan Daerah: Pencatatan sampai Konsolidasi",
     "category": "Mekanisme",
     "front": "Satuan Kerja Perangkat Daerah (SKPD)",
     "back": "Entitas akuntansi di daerah (Dinas, Badan, Kantor) yang dipimpin Pengguna Anggaran (PA) dan wajib menyusun laporan keuangan unit kerja."
@@ -430,7 +430,7 @@ export const AKS201_FC: AdvancedStudyCard[] = [
     "id": "aks201-tm08-06",
     "phase": "pra-uas",
     "tm": 8,
-    "topic": "Sistem Akuntansi Pemerintah Pusat (SAPP) & Daerah (SAPD)",
+    "topic": "Sistem Akuntansi Pemerintah Pusat dan Daerah: Pencatatan sampai Konsolidasi",
     "category": "Mekanisme",
     "front": "Hubungan Kantor Pusat - Kantor Cabang (HO-BO)",
     "back": "Transaksi antara PPKD dan SKPD dicatat menggunakan akun timbal-balik (reciprocal accounts): Rekening Koran (RK) PPKD dan RK SKPD."
@@ -439,7 +439,7 @@ export const AKS201_FC: AdvancedStudyCard[] = [
     "id": "aks201-tm09-01",
     "phase": "pra-uas",
     "tm": 9,
-    "topic": "Pengukuran Kinerja Pemerintah & Value for Money (3E)",
+    "topic": "Pengukuran Kinerja Pemerintah: Input, Output, Outcome dan Value for Money",
     "category": "Definisi",
     "front": "Konsep Value for Money (3E)",
     "back": "Tiga indikator utama kinerja sektor publik: Ekonomis (kehematan biaya), Efisien (rasio output/input), dan Efektif (capaian target outcome)."
@@ -448,7 +448,7 @@ export const AKS201_FC: AdvancedStudyCard[] = [
     "id": "aks201-tm09-02",
     "phase": "pra-uas",
     "tm": 9,
-    "topic": "Pengukuran Kinerja Pemerintah & Value for Money (3E)",
+    "topic": "Pengukuran Kinerja Pemerintah: Input, Output, Outcome dan Value for Money",
     "category": "Konsep",
     "front": "Definisi Ekonomis (Economy)",
     "back": "Memperoleh input (sumber daya manusia, material, peralatan) dengan kualitas terbaik pada harga perolehan yang paling wajar/hemat."
@@ -457,7 +457,7 @@ export const AKS201_FC: AdvancedStudyCard[] = [
     "id": "aks201-tm09-03",
     "phase": "pra-uas",
     "tm": 9,
-    "topic": "Pengukuran Kinerja Pemerintah & Value for Money (3E)",
+    "topic": "Pengukuran Kinerja Pemerintah: Input, Output, Outcome dan Value for Money",
     "category": "Konsep",
     "front": "Definisi Efisiensi (Efficiency)",
     "back": "Memaksimalkan output yang dihasilkan dari jumlah input tertentu, atau meminimalkan input untuk memproduksi tingkat output yang ditargetkan."
@@ -466,7 +466,7 @@ export const AKS201_FC: AdvancedStudyCard[] = [
     "id": "aks201-tm09-04",
     "phase": "pra-uas",
     "tm": 9,
-    "topic": "Pengukuran Kinerja Pemerintah & Value for Money (3E)",
+    "topic": "Pengukuran Kinerja Pemerintah: Input, Output, Outcome dan Value for Money",
     "category": "Konsep",
     "front": "Definisi Efektivitas (Effectiveness)",
     "back": "Tingkat keberhasilan pencapaian tujuan dan dampak nyata (outcome) dari program terhadap kebutuhan masyarakat luas."
@@ -475,7 +475,7 @@ export const AKS201_FC: AdvancedStudyCard[] = [
     "id": "aks201-tm09-05",
     "phase": "pra-uas",
     "tm": 9,
-    "topic": "Pengukuran Kinerja Pemerintah & Value for Money (3E)",
+    "topic": "Pengukuran Kinerja Pemerintah: Input, Output, Outcome dan Value for Money",
     "category": "Hukum",
     "front": "Sistem Akuntabilitas Kinerja Instansi Pemerintah (SAKIP)",
     "back": "Sistem terintegrasi dari perencanaan kinerja, pengukuran kinerja, pelaporan kinerja (LAKIP), hingga evaluasi akuntabilitas instansi pemerintah."
@@ -484,7 +484,7 @@ export const AKS201_FC: AdvancedStudyCard[] = [
     "id": "aks201-tm09-06",
     "phase": "pra-uas",
     "tm": 9,
-    "topic": "Pengukuran Kinerja Pemerintah & Value for Money (3E)",
+    "topic": "Pengukuran Kinerja Pemerintah: Input, Output, Outcome dan Value for Money",
     "category": "Konsep",
     "front": "Indikator Kinerja Utama (IKU / KPI)",
     "back": "Ukuran keberhasilan kinerja kunci yang ditetapkan instansi untuk mengukur target prioritas organisasi pada perjanjian kinerja tahunan."
@@ -493,7 +493,7 @@ export const AKS201_FC: AdvancedStudyCard[] = [
     "id": "aks201-tm10-01",
     "phase": "pra-uas",
     "tm": 10,
-    "topic": "Audit Sektor Publik: APIP & BPK RI",
+    "topic": "Audit Organisasi Pemerintah: APIP, BPK, Opini dan Tindak Lanjut",
     "category": "Hukum",
     "front": "Peran BPK RI (Badan Pemeriksa Keuangan)",
     "back": "Lembaga negara independen yang berwenang memeriksa pengelolaan dan tanggung jawab keuangan negara (Pasal 23E UUD 1945)."
@@ -502,70 +502,70 @@ export const AKS201_FC: AdvancedStudyCard[] = [
     "id": "aks201-tm10-02",
     "phase": "pra-uas",
     "tm": 10,
-    "topic": "Audit Sektor Publik: APIP & BPK RI",
+    "topic": "Audit Organisasi Pemerintah: APIP, BPK, Opini dan Tindak Lanjut",
     "category": "Mekanisme",
     "front": "Aparat Pengawasan Intern Pemerintah (APIP)",
     "back": "Inspektorat Jenderal Kementerian, BPKP, dan Inspektorat Daerah yang bertugas melakukan pengawasan dan pembinaan intern."
   },
   {
-    "id": "aks201-tm10-03",
+    "id": "akk203-depth-20261014-15",
     "phase": "pra-uas",
     "tm": 10,
-    "topic": "Audit Sektor Publik: APIP & BPK RI",
+    "topic": "Audit Organisasi Pemerintah: APIP, BPK, Opini dan Tindak Lanjut",
     "category": "Standar",
-    "front": "Tiga Jenis Pemeriksaan BPK RI",
-    "back": "(1) Pemeriksaan Keuangan (opini atas LK), (2) Pemeriksaan Kinerja (efektivitas program), dan (3) Pemeriksaan dengan Tujuan Tertentu (PDTT/investigasi)."
+    "front": "Tiga jenis pemeriksaan BPK",
+    "back": "Keuangan menghasilkan opini; kinerja memuat temuan, kesimpulan dan rekomendasi; PDTT memuat kesimpulan dan tidak selalu investigatif. UU15/2004 Pasal 4 dan 16."
   },
   {
-    "id": "aks201-tm10-04",
+    "id": "akk203-depth-20261014-16",
     "phase": "pra-uas",
     "tm": 10,
-    "topic": "Audit Sektor Publik: APIP & BPK RI",
+    "topic": "Audit Organisasi Pemerintah: APIP, BPK, Opini dan Tindak Lanjut",
     "category": "Standar",
-    "front": "Empat Jenis Opini BPK atas Laporan Keuangan",
-    "back": "(1) Wajar Tanpa Pengecualian (WTP), (2) Wajar Dengan Pengecualian (WDP), (3) Tidak Wajar (Adverse), dan (4) Menolak Memberikan Opini (Disclaimer)."
+    "front": "Empat jenis opini keuangan BPK",
+    "back": "WTP, WDP, Tidak Wajar dan Tidak Menyatakan/Memberikan Pendapat. Bedakan salah saji dari keterbatasan bukti serta materialitas dan keluasan dampaknya."
   },
   {
-    "id": "aks201-tm10-05",
+    "id": "akk203-depth-20261014-17",
     "phase": "pra-uas",
     "tm": 10,
-    "topic": "Audit Sektor Publik: APIP & BPK RI",
+    "topic": "Audit Organisasi Pemerintah: APIP, BPK, Opini dan Tindak Lanjut",
     "category": "Hukum",
-    "front": "Standar Pemeriksaan Keuangan Negara (SPKN)",
-    "back": "Peraturan BPK No. 1/2017 yang menjadi panduan baku bagi seluruh auditor dalam melaksanakan penugasan pemeriksaan keuangan negara."
+    "front": "SPKN: pengesahan dan penerapan",
+    "back": "Peraturan BPK 1/2026 diundangkan10April2026 dan mulai berlaku10April2028. Pada Oktober 2026, jangan menyamakan pengesahan dengan penerapan standar baru."
   },
   {
-    "id": "aks201-tm10-06",
+    "id": "akk203-depth-20261014-18",
     "phase": "pra-uas",
     "tm": 10,
-    "topic": "Audit Sektor Publik: APIP & BPK RI",
+    "topic": "Audit Organisasi Pemerintah: APIP, BPK, Opini dan Tindak Lanjut",
     "category": "Konsep",
-    "front": "Tindak Lanjut Hasil Pemeriksaan (TLHP)",
-    "back": "Pejabat yang diperiksa wajib menindaklanjuti rekomendasi laporan pemeriksaan BPK dalam waktu paling lambat 60 hari."
+    "front": "Tenggat jawaban tindak lanjut",
+    "back": "Jawaban/penjelasan pelaksanaan tindak lanjut disampaikan paling lambat60 hari setelah LHP diterima. Ini berbeda dari klaim bahwa semua masalah pasti selesai60 hari. UU15/2004 Pasal 20."
   },
   {
-    "id": "aks201-tm11-01",
+    "id": "akk203-depth-20261014-19",
     "phase": "pra-uas",
     "tm": 11,
-    "topic": "Akuntansi Nirlaba, Parpol & Keuangan Desa",
+    "topic": "Laporan Keuangan LSM dan Organisasi Nonlaba: Sumber Daya, Pembatasan dan Laporan",
     "category": "Hukum",
-    "front": "Akuntansi Dana Desa (UU No. 6/2014)",
-    "back": "Pengelolaan keuangan dan pendapatan desa (APBDesa) bersumber dari Dana Desa (APBN), Alokasi Dana Desa (APBD), dan PADes."
+    "front": "Ruang lingkup ISAK 335",
+    "back": "Mengatur penyajian entitas nonlaba. Pengakuan dan pengukuran transaksi mengikuti standar dalam kerangka pelaporan yang diterapkan. Penjelasan: IAI, PIR ISAK 335(2025)."
   },
   {
-    "id": "aks201-tm11-02",
+    "id": "akk203-depth-20261014-20",
     "phase": "pra-uas",
     "tm": 11,
-    "topic": "Akuntansi Nirlaba, Parpol & Keuangan Desa",
+    "topic": "Laporan Keuangan LSM dan Organisasi Nonlaba: Sumber Daya, Pembatasan dan Laporan",
     "category": "Mekanisme",
-    "front": "Aplikasi SISKEUDES",
-    "back": "Sistem Informasi Keuangan Desa yang dikembangkan BPKP dan Kemendagri untuk memudahkan tata kelola dan pelaporan keuangan desa."
+    "front": "Pelepasan pembatasan donor",
+    "back": "Pemindahan dari kelas dengan pembatasan ke tanpa pembatasan ketika tujuannya terpenuhi. Tidak menciptakan kas baru atau menambah total aset neto dalam ilustrasi TM 11."
   },
   {
     "id": "aks201-tm11-03",
     "phase": "pra-uas",
-    "tm": 11,
-    "topic": "Akuntansi Nirlaba, Parpol & Keuangan Desa",
+    "tm": 12,
+    "topic": "Bantuan Keuangan Partai Politik dan Pertanggungjawaban",
     "category": "Hukum",
     "front": "Akuntansi Partai Politik (UU No. 2/2011)",
     "back": "Parpol wajib menyusun laporan pertanggungjawaban penerimaan dan penggunaan bantuan keuangan negara/daerah yang diaudit oleh BPK."
@@ -573,8 +573,8 @@ export const AKS201_FC: AdvancedStudyCard[] = [
   {
     "id": "aks201-tm11-04",
     "phase": "pra-uas",
-    "tm": 11,
-    "topic": "Akuntansi Nirlaba, Parpol & Keuangan Desa",
+    "tm": 12,
+    "topic": "Bantuan Keuangan Partai Politik dan Pertanggungjawaban",
     "category": "Hukum",
     "front": "Transparansi Donasi Politik",
     "back": "Partai politik dilarang menerima sumbangan dari pihak anonim, BUMN, atau asing, dan wajib membatasi batas sumbangan individu/korporasi."
@@ -582,26 +582,26 @@ export const AKS201_FC: AdvancedStudyCard[] = [
   {
     "id": "aks201-tm11-05",
     "phase": "pra-uas",
-    "tm": 11,
-    "topic": "Akuntansi Nirlaba, Parpol & Keuangan Desa",
+    "tm": 12,
+    "topic": "Bantuan Keuangan Partai Politik dan Pertanggungjawaban",
     "category": "Konsep",
     "front": "Laporan Dana Kampanye",
     "back": "Laporan Awal Dana Kampanye (LADK) dan Laporan Penerimaan dan Pengeluaran Dana Kampanye (LPPDK) yang diaudit KAP independen."
   },
   {
-    "id": "aks201-tm11-06",
+    "id": "akk203-depth-20261014-24",
     "phase": "pra-uas",
     "tm": 11,
-    "topic": "Akuntansi Nirlaba, Parpol & Keuangan Desa",
+    "topic": "Laporan Keuangan LSM dan Organisasi Nonlaba: Sumber Daya, Pembatasan dan Laporan",
     "category": "Konsep",
-    "front": "Akuntansi Rumah Sakit Nonlaba",
-    "back": "Penerapan ISAK 35 dengan pemisahan pendapatan operasional pelayanan medis, hibah bersyarat, dan donasi alat kesehatan."
+    "front": "Rumah sakit nonlaba dan BLUD",
+    "back": "Tentukan status serta kerangka terlebih dahulu. Rumah sakit BLUD mengikuti SAP/PSAP 13; label pelayanan nonlaba saja tidak membuat semua rumah sakit memakai ISAK 335."
   },
   {
     "id": "aks201-tm12-01",
     "phase": "pra-uas",
-    "tm": 12,
-    "topic": "Pengelolaan Keuangan BLU & BLUD (PP 23/2005)",
+    "tm": 13,
+    "topic": "Pengelolaan Keuangan BLU dan BLUD: Fleksibilitas, Layanan dan Pelaporan",
     "category": "Hukum",
     "front": "Definisi Badan Layanan Umum (BLU/BLUD)",
     "back": "Instansi di lingkungan pemerintah yang dibentuk untuk memberikan pelayanan kepada masyarakat dengan pola pengelolaan keuangan fleksibel."
@@ -609,8 +609,8 @@ export const AKS201_FC: AdvancedStudyCard[] = [
   {
     "id": "aks201-tm12-02",
     "phase": "pra-uas",
-    "tm": 12,
-    "topic": "Pengelolaan Keuangan BLU & BLUD (PP 23/2005)",
+    "tm": 13,
+    "topic": "Pengelolaan Keuangan BLU dan BLUD: Fleksibilitas, Layanan dan Pelaporan",
     "category": "Konsep",
     "front": "Fleksibilitas Pengelolaan Keuangan BLU",
     "back": "Pendapatan fungsional non-pajak (tarif layanan) dapat langsung digunakan untuk belanja operasional tanpa harus disetor dulu ke kas negara."
@@ -618,8 +618,8 @@ export const AKS201_FC: AdvancedStudyCard[] = [
   {
     "id": "aks201-tm12-03",
     "phase": "pra-uas",
-    "tm": 12,
-    "topic": "Pengelolaan Keuangan BLU & BLUD (PP 23/2005)",
+    "tm": 13,
+    "topic": "Pengelolaan Keuangan BLU dan BLUD: Fleksibilitas, Layanan dan Pelaporan",
     "category": "Konsep",
     "front": "Remunerasi Pegawai BLU",
     "back": "BLU dapat memberikan remunerasi bagi pejabat dan pegawai berdasarkan tingkat tanggung jawab dan tuntutan profesionalisme."
@@ -627,8 +627,8 @@ export const AKS201_FC: AdvancedStudyCard[] = [
   {
     "id": "aks201-tm12-04",
     "phase": "pra-uas",
-    "tm": 12,
-    "topic": "Pengelolaan Keuangan BLU & BLUD (PP 23/2005)",
+    "tm": 13,
+    "topic": "Pengelolaan Keuangan BLU dan BLUD: Fleksibilitas, Layanan dan Pelaporan",
     "category": "Standar",
     "front": "PSAP 13: Akuntansi Badan Layanan Umum",
     "back": "Standar akuntansi yang mengatur penyusunan laporan keuangan BLU yang dikonsolidasikan ke kementerian pembina."
@@ -636,8 +636,8 @@ export const AKS201_FC: AdvancedStudyCard[] = [
   {
     "id": "aks201-tm12-05",
     "phase": "pra-uas",
-    "tm": 12,
-    "topic": "Pengelolaan Keuangan BLU & BLUD (PP 23/2005)",
+    "tm": 13,
+    "topic": "Pengelolaan Keuangan BLU dan BLUD: Fleksibilitas, Layanan dan Pelaporan",
     "category": "Contoh",
     "front": "Contoh Entitas BLU / BLUD",
     "back": "Perguruan Tinggi Negeri Badan Layanan Umum (PTN-BLU), Rumah Sakit Umum Daerah (RSUD BLUD), dan Politeknik Kedinasan."
@@ -645,8 +645,8 @@ export const AKS201_FC: AdvancedStudyCard[] = [
   {
     "id": "aks201-tm12-06",
     "phase": "pra-uas",
-    "tm": 12,
-    "topic": "Pengelolaan Keuangan BLU & BLUD (PP 23/2005)",
+    "tm": 13,
+    "topic": "Pengelolaan Keuangan BLU dan BLUD: Fleksibilitas, Layanan dan Pelaporan",
     "category": "Mekanisme",
     "front": "Ambang Batas Belanja (Flexibility Budget Threshold)",
     "back": "Persentase toleransi pelampauan pagu belanja anggaran operasional BLU yang ditetapkan Menteri Keuangan/Kepala Daerah."
@@ -654,8 +654,8 @@ export const AKS201_FC: AdvancedStudyCard[] = [
   {
     "id": "aks201-tm13-01",
     "phase": "pra-uas",
-    "tm": 13,
-    "topic": "Isu Kontemporer Akuntansi Sektor Publik",
+    "tm": 14,
+    "topic": "Topik Penelitian Akuntansi Sektor Publik: Dari Isu ke Pertanyaan dan Bukti",
     "category": "Konsep",
     "front": "Sistem Pemerintahan Berbasis Elektronik (SPBE)",
     "back": "Penyelenggaraan tata kelola pemerintahan yang memanfaatkan teknologi informasi dan komunikasi terintegrasi (Perpres 95/2018)."
@@ -663,8 +663,8 @@ export const AKS201_FC: AdvancedStudyCard[] = [
   {
     "id": "aks201-tm13-02",
     "phase": "pra-uas",
-    "tm": 13,
-    "topic": "Isu Kontemporer Akuntansi Sektor Publik",
+    "tm": 14,
+    "topic": "Topik Penelitian Akuntansi Sektor Publik: Dari Isu ke Pertanyaan dan Bukti",
     "category": "Konsep",
     "front": "Pengadaan Barang/Jasa Elektronik (e-Catalog LKPP)",
     "back": "Digitalisasi pengadaan pemerintah melalui e-Purchasing untuk menekan celah korupsi dan meningkatkan efisiensi belanja APBN/APBD."
@@ -672,8 +672,8 @@ export const AKS201_FC: AdvancedStudyCard[] = [
   {
     "id": "aks201-tm13-03",
     "phase": "pra-uas",
-    "tm": 13,
-    "topic": "Isu Kontemporer Akuntansi Sektor Publik",
+    "tm": 14,
+    "topic": "Topik Penelitian Akuntansi Sektor Publik: Dari Isu ke Pertanyaan dan Bukti",
     "category": "Konsep",
     "front": "Akuntansi Aset Warisan Budaya (Heritage Assets)",
     "back": "Perlakuan akuntansi atas monumen, candi, dan situs bersejarah yang sulit diukur nilai pasarnya namun wajib diungkapkan di CaLK."
@@ -681,8 +681,8 @@ export const AKS201_FC: AdvancedStudyCard[] = [
   {
     "id": "aks201-tm13-04",
     "phase": "pra-uas",
-    "tm": 13,
-    "topic": "Isu Kontemporer Akuntansi Sektor Publik",
+    "tm": 14,
+    "topic": "Topik Penelitian Akuntansi Sektor Publik: Dari Isu ke Pertanyaan dan Bukti",
     "category": "Konsep",
     "front": "Sustainability Reporting di Sektor Publik",
     "back": "Penerapan inisiatif Green Budgeting (Penandaan Anggaran Perubahan Iklim / Climate Budget Tagging) pada APBN."
@@ -690,62 +690,62 @@ export const AKS201_FC: AdvancedStudyCard[] = [
   {
     "id": "aks201-tm13-05",
     "phase": "pra-uas",
-    "tm": 13,
-    "topic": "Isu Kontemporer Akuntansi Sektor Publik",
+    "tm": 14,
+    "topic": "Topik Penelitian Akuntansi Sektor Publik: Dari Isu ke Pertanyaan dan Bukti",
     "category": "Konsep",
     "front": "Fraud di Sektor Publik & Pengadaan",
     "back": "Modus mark-up harga, proyek fiktif, gratifikasi tender, dan korupsi dana bantuan sosial yang ditangani oleh KPK, Kejaksaan, dan BPKP."
   },
   {
-    "id": "aks201-tm13-06",
-    "phase": "pra-uas",
-    "tm": 13,
-    "topic": "Isu Kontemporer Akuntansi Sektor Publik",
-    "category": "Konsep",
-    "front": "Penerapan PSAK Non-Laba Internasional (IPSAS)",
-    "back": "International Public Sector Accounting Standards (IPSAS) sebagai kiblat konvergensi SAP akrual Indonesia di masa depan."
-  },
-  {
-    "id": "aks201-tm14-01",
+    "id": "akk203-depth-20261014-36",
     "phase": "pra-uas",
     "tm": 14,
-    "topic": "Review Komprehensif UAS Akuntansi Sektor Publik",
+    "topic": "Topik Penelitian Akuntansi Sektor Publik: Dari Isu ke Pertanyaan dan Bukti",
     "category": "Konsep",
-    "front": "Fokus Utama Ujian Akhir Semester (UAS)",
-    "back": "Kuasai SAPP vs SAPD (Jurnal RK-PPKD dan RK-SKPD), Akuntansi BLU/BLUD, Audit BPK (SPKN & jenis opini), serta Indikator 3E Value for Money."
+    "front": "IPSAS dan SAP Indonesia",
+    "back": "IPSAS adalah standar sektor publik internasional. Penggunaannya sebagai pembanding tidak otomatis menjadikannya aturan yang berlaku bagi pemerintah Indonesia."
   },
   {
-    "id": "aks201-tm14-02",
+    "id": "akk203-depth-20261014-37",
     "phase": "pra-uas",
     "tm": 14,
-    "topic": "Review Komprehensif UAS Akuntansi Sektor Publik",
+    "topic": "Topik Penelitian Akuntansi Sektor Publik: Dari Isu ke Pertanyaan dan Bukti",
+    "category": "Konsep",
+    "front": "Peta ulangan pra-UAS ASP",
+    "back": "SAPP/SAPD, kinerja3E, pemeriksaan, laporan LSM, bantuan parpol, BLU/BLUD dan rancangan riset. Ini peta belajar sesuai topik kontrak, bukan jaminan isi ujian."
+  },
+  {
+    "id": "akk203-depth-20261014-38",
+    "phase": "pra-uas",
+    "tm": 14,
+    "topic": "Topik Penelitian Akuntansi Sektor Publik: Dari Isu ke Pertanyaan dan Bukti",
     "category": "Jurnal",
-    "front": "Jurnal Penerimaan Kas Pajak di Daerah",
-    "back": "SKPD mencatat: Debit Kas di Bendahara Penerimaan; Kredit Pendapatan Pajak-LO (Finansial) dan Perubahan SAL (Anggaran)."
+    "front": "Dua basis pada pendapatan pemerintah",
+    "back": "Pendapatan-LO mengikuti timbulnya hak/aliran sumber daya; pendapatan-LRA mengikuti basis serta mekanisme penerimaan yang berlaku. Jurnal harus menyebut peristiwa dan laporan yang dituju."
   },
   {
     "id": "aks201-tm14-03",
     "phase": "pra-uas",
     "tm": 14,
-    "topic": "Review Komprehensif UAS Akuntansi Sektor Publik",
+    "topic": "Topik Penelitian Akuntansi Sektor Publik: Dari Isu ke Pertanyaan dan Bukti",
     "category": "Jurnal",
     "front": "Jurnal Transfer Dana dari BUD ke SKPD",
     "back": "SKPD: Debit Kas di Bendahara Pengeluaran; Kredit RK PPKD. PPKD: Debit RK SKPD; Kredit Kas di Kas Daerah."
   },
   {
-    "id": "aks201-tm14-04",
+    "id": "akk203-depth-20261014-40",
     "phase": "pra-uas",
     "tm": 14,
-    "topic": "Review Komprehensif UAS Akuntansi Sektor Publik",
+    "topic": "Topik Penelitian Akuntansi Sektor Publik: Dari Isu ke Pertanyaan dan Bukti",
     "category": "Rumus",
-    "front": "Analisis Kasus Kinerja Value for Money",
-    "back": "Hitung rasio efisiensi (Biaya Aktual / Biaya Anggaran × 100%) dan efektivitas (Output Aktual / Target Output × 100%)."
+    "front": "Penyerapan dan efisiensi berbeda",
+    "back": "Realisasi/anggaran mengukur penyerapan. Efisiensi menghubungkan input dengan output bermutu sebanding; efektivitas memeriksa pencapaian tujuan/outcome. Jangan menukar ketiganya."
   },
   {
     "id": "aks201-tm14-05",
     "phase": "pra-uas",
     "tm": 14,
-    "topic": "Review Komprehensif UAS Akuntansi Sektor Publik",
+    "topic": "Topik Penelitian Akuntansi Sektor Publik: Dari Isu ke Pertanyaan dan Bukti",
     "category": "Konsep",
     "front": "Kriteria Perolehan Opini WTP BPK",
     "back": "(1) Kesesuaian dengan SAP, (2) Kecukupan pengungkapan, (3) Kepatuhan perundang-undangan, dan (4) Efektivitas sistem pengendalian intern (SPI)."
@@ -754,7 +754,7 @@ export const AKS201_FC: AdvancedStudyCard[] = [
     "id": "aks201-tm14-06",
     "phase": "pra-uas",
     "tm": 14,
-    "topic": "Review Komprehensif UAS Akuntansi Sektor Publik",
+    "topic": "Topik Penelitian Akuntansi Sektor Publik: Dari Isu ke Pertanyaan dan Bukti",
     "category": "Konsep",
     "front": "Saran Ujian Akhir Semester ASP",
     "back": "Pahami posisi akun dalam laporan keuangan: jangan mencampuradukkan pendapatan LRA dengan pendapatan LO pada lembar jawaban ujian."

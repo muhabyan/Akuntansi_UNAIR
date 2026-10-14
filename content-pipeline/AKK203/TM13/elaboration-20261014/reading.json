@@ -49,10 +49,13 @@
           "text": "Untuk soal anggaran, tentukan pagu yang menjadi dasar, persentase ambang yang benar-benar disetujui, sumber pendapatan, kebutuhan belanja, ketersediaan kas serta kewenangan revisi. Persentase angka soal tidak menetapkan aturan universal bagi semua BLU/BLUD. Kewenangan pengadaan, investasi kas dan remunerasi juga memerlukan aturan serta otorisasi tersendiri."
         },
         {
-          "kind": "solution-reveal",
-          "title": "Ambang anggaran sebagai asumsi soal",
-          "prompt": "Ilustrasi penulis: untuk komponen yang dinyatakan dalam soal berlaku pagu Rp50 miliar dan ambang 15%; kebutuhan Rp56 miliar. Hitung batas aritmetis. Asumsikan persentase telah disetujui untuk dasar tersebut.",
+          "kind": "example",
+          "title": "Contoh terbimbing: Ambang anggaran sebagai asumsi soal",
           "blocks": [
+            {
+              "kind": "p",
+              "text": "Ilustrasi penulis: untuk komponen yang dinyatakan dalam soal berlaku pagu Rp50 miliar dan ambang 15%; kebutuhan Rp56 miliar. Hitung batas aritmetis. Asumsikan persentase telah disetujui untuk dasar tersebut."
+            },
             {
               "kind": "p",
               "text": "Batas ilustratif = Rp50 miliar × 1,15 = Rp57,5 miliar. Rp56 miliar berada Rp1,5 miliar di bawah batas. Ini menyelesaikan perbandingan angka. Sebelum menyimpulkan boleh membelanjakan, periksa dasar ambang, sumber dana, kas, otorisasi dan prosedur. Hasil aritmetis tidak memberikan izin belanja dengan sendirinya."

@@ -113,10 +113,13 @@
       "title": "4. Kasus rancangan dan batas simpulan",
       "blocks": [
         {
-          "kind": "solution-reveal",
-          "title": "Jumlah koreksi turun setelah aplikasi digunakan",
-          "prompt": "Ilustrasi penulis: satu dinas melaporkan koreksi turun sesudah memakai aplikasi. Pada saat yang sama ada pelatihan dan pergantian staf. Apakah aplikasi terbukti menjadi penyebab?",
+          "kind": "example",
+          "title": "Contoh terbimbing: Jumlah koreksi turun setelah aplikasi digunakan",
           "blocks": [
+            {
+              "kind": "p",
+              "text": "Ilustrasi penulis: satu dinas melaporkan koreksi turun sesudah memakai aplikasi. Pada saat yang sama ada pelatihan dan pergantian staf. Apakah aplikasi terbukti menjadi penyebab?"
+            },
             {
               "kind": "p",
               "text": "Belum. Urutan waktu mendukung pertanyaan, tetapi pelatihan dan perubahan staf menjadi penjelasan alternatif. Periksa tren sebelum penerapan, konsistensi definisi koreksi, perubahan volume transaksi dan unit pembanding yang layak. Wawancara serta dokumen membantu menjelaskan mekanisme, tetapi tidak otomatis menghapus seluruh bias."

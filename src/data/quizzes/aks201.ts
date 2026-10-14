@@ -500,7 +500,7 @@ export const AKS201_QUIZ_UTS: QuizQuestion[] = [
 export const AKS201_QUIZ_UAS: QuizQuestion[] = [
   {
     "tm": 8,
-    "topic": "Sistem Akuntansi Keuangan Daerah Dualistis",
+    "topic": "Sistem Akuntansi Pemerintah Pusat dan Daerah: Pencatatan sampai Konsolidasi",
     "difficulty": "advanced",
     "q": "Dalam struktur akuntansi keuangan daerah, hubungan antara PPKD (selaku Kantor Pusat / Home Office) dan SKPD (selaku Kantor Cabang / Branch Office) dihubungkan melalui akun resiprokal...",
     "options": [
@@ -510,11 +510,11 @@ export const AKS201_QUIZ_UAS: QuizQuestion[] = [
       "Ekuitas Dana Lancar dan Ekuitas Dana Investasi"
     ],
     "answer": 1,
-    "explanation": "Sistem akuntansi pemda menggunakan konsep Home Office-Branch Office (HOBO), di mana transaksi antar-entitas dicatat resiprokal menggunakan akun RK-PPKD (ekuitas SKPD) dan RK-SKPD (aset PPKD)."
+    "explanation": "Dalam ilustrasi SAPD, RK-PPKD dan RK-SKPD menelusuri hubungan internal. Analogi HOBO membantu membaca pasangan akun; SKPD bukan anak perusahaan. Sumber konsep: PP 71/2010 PSAP 11 paras.6 dan 12."
   },
   {
     "tm": 8,
-    "topic": "Jurnal Belanja Modal SKPD",
+    "topic": "Sistem Akuntansi Pemerintah Pusat dan Daerah: Pencatatan sampai Konsolidasi",
     "difficulty": "advanced",
     "q": "Ketika SKPD membeli kendaraan dinas seharga Rp 350 juta melalui mekanisme SP2D-LS yang dibayarkan langsung oleh Kasda kepada rekanan dealer, jurnal yang dicatat SKPD adalah...",
     "options": [
@@ -528,7 +528,7 @@ export const AKS201_QUIZ_UAS: QuizQuestion[] = [
   },
   {
     "tm": 8,
-    "topic": "Jurnal Penyetoran Pendapatan Pajak Daerah",
+    "topic": "Sistem Akuntansi Pemerintah Pusat dan Daerah: Pencatatan sampai Konsolidasi",
     "difficulty": "medium",
     "q": "Bendahara Penerimaan Bapenda menyetor uang kas hasil penerimaan pajak hotel sebesar Rp 80 juta ke Kas Daerah (Kasda). Jurnal finansial yang dicatat oleh Bapenda adalah...",
     "options": [
@@ -542,7 +542,7 @@ export const AKS201_QUIZ_UAS: QuizQuestion[] = [
   },
   {
     "tm": 8,
-    "topic": "Mekanisme Uang Persediaan (UP / GU / TU)",
+    "topic": "Sistem Akuntansi Pemerintah Pusat dan Daerah: Pencatatan sampai Konsolidasi",
     "difficulty": "medium",
     "q": "Penerbitan SP2D Uang Persediaan (UP) sebesar Rp 50 juta dari Kasda ke Bendahara Pengeluaran SKPD dicatat oleh SKPD pada jurnal anggaran sebagai...",
     "options": [
@@ -556,7 +556,7 @@ export const AKS201_QUIZ_UAS: QuizQuestion[] = [
   },
   {
     "tm": 8,
-    "topic": "Rekonsiliasi Sisa Lebih Pembiayaan (SiLPA)",
+    "topic": "Sistem Akuntansi Pemerintah Pusat dan Daerah: Pencatatan sampai Konsolidasi",
     "difficulty": "advanced",
     "q": "Dalam Laporan Realisasi Anggaran (LRA), nilai SiLPA akhir tahun merupakan hasil dari penjumlahan matematis...",
     "options": [
@@ -566,11 +566,11 @@ export const AKS201_QUIZ_UAS: QuizQuestion[] = [
       "Total Pendapatan LO dikurangi Beban Operasional LO"
     ],
     "answer": 1,
-    "explanation": "SiLPA = Surplus/Defisit LRA + Pembiayaan Neto. Nilai SiLPA inilah yang menjadi saldo akhir pada Laporan Perubahan SAL (LP-SAL) dan membentuk saldo kas bebas pada tahun berikutnya."
+    "explanation": "SiLPA = surplus/defisit-LRA + pembiayaan neto. SAL akhir juga dipengaruhi SAL awal, penggunaan SAL dan penyesuaian lainnya; SiLPA bukan otomatis saldo SAL akhir atau seluruhnya kas bebas. Sumber: PP 71/2010 PSAP 01, bagian LPSAL."
   },
   {
-    "tm": 9,
-    "topic": "Sistem Akuntansi Pemerintah Pusat (SAPP)",
+    "tm": 8,
+    "topic": "Sistem Akuntansi Pemerintah Pusat dan Daerah: Pencatatan sampai Konsolidasi",
     "difficulty": "medium",
     "q": "Pada struktur Sistem Akuntansi Pemerintah Pusat (SAPP), sub-sistem yang bertanggung jawab mencatat transaksi penerimaan pembiayaan utang luar negeri dan belanja subsidi pemerintah pusat adalah...",
     "options": [
@@ -583,8 +583,8 @@ export const AKS201_QUIZ_UAS: QuizQuestion[] = [
     "explanation": "SA-BUN diproses oleh Kementerian Keuangan selaku BUN untuk mencatat transaksi fiskal strategis nasional seperti pengelolaan utang, investasi pemerintah, subsidi, dan transfer ke daerah."
   },
   {
-    "tm": 9,
-    "topic": "Jurnal Eliminasi Konsolidasi HOBO",
+    "tm": 8,
+    "topic": "Sistem Akuntansi Pemerintah Pusat dan Daerah: Pencatatan sampai Konsolidasi",
     "difficulty": "advanced",
     "q": "Pada saat menyusun Laporan Keuangan Konsolidasian Pemerintah Daerah di akhir tahun anggaran, Pejabat Pengelola Keuangan Daerah (PPKD) harus membuat jurnal eliminasi terhadap akun...",
     "options": [
@@ -597,8 +597,8 @@ export const AKS201_QUIZ_UAS: QuizQuestion[] = [
     "explanation": "Akun RK-PPKD di seluruh SKPD dan akun RK-SKPD di PPKD adalah akun perantara internal (resiprokal) yang wajib dieliminasi (saling menghapus) agar tidak terjadi pencatatan ganda dalam neraca konsolidasi pemda."
   },
   {
-    "tm": 9,
-    "topic": "Bagan Akun Standar (BAS) Pemda",
+    "tm": 8,
+    "topic": "Sistem Akuntansi Pemerintah Pusat dan Daerah: Pencatatan sampai Konsolidasi",
     "difficulty": "medium",
     "q": "Berdasarkan Permendagri No. 77 Tahun 2020 dan kodefikasi BAS daerah, digit kode akun pertama '1', '2', '3', '4', '5', '6', '7', dan '8' secara berturut-turut merepresentasikan...",
     "options": [
@@ -611,8 +611,8 @@ export const AKS201_QUIZ_UAS: QuizQuestion[] = [
     "explanation": "Kodefikasi BAS pemerintah daerah: 1=Aset, 2=Kewajiban, 3=Ekuitas, 4=Pendapatan-LRA, 5=Belanja, 6=Pembiayaan, 7=Pendapatan-LO, dan 8=Beban."
   },
   {
-    "tm": 9,
-    "topic": "Peran PPKD selaku Bendahara Umum Daerah (BUD)",
+    "tm": 8,
+    "topic": "Sistem Akuntansi Pemerintah Pusat dan Daerah: Pencatatan sampai Konsolidasi",
     "difficulty": "basic",
     "q": "Dalam pengelolaan keuangan daerah, pejabat yang memiliki kewenangan menerbitkan Surat Perintah Pencairan Dana (SP2D) atas beban rekening Kasda adalah...",
     "options": [
@@ -625,50 +625,50 @@ export const AKS201_QUIZ_UAS: QuizQuestion[] = [
     "explanation": "Kuasa BUD berwenang meneliti kelengkapan dokumen SPM yang diajukan Pengguna Anggaran (SKPD) dan menerbitkan SP2D sebagai perintah pembayaran kepada bank kas daerah."
   },
   {
-    "tm": 9,
-    "topic": "Ganti Uang (GU) Nihil di Akhir Tahun",
+    "tm": 8,
+    "topic": "Sistem Akuntansi Pemerintah Pusat dan Daerah: Pencatatan sampai Konsolidasi",
     "difficulty": "advanced",
-    "q": "Pada akhir tahun anggaran, seluruh sisa kas Uang Persediaan (UP) yang masih tersisa di tangan Bendahara Pengeluaran SKPD dan belum terpakai WAJIB...",
+    "q": "Dalam konsolidasi pemda, apakah eliminasi RK-PPKD dan RK-SKPD sekaligus menghapus kas yang masih dikuasai bendahara?",
     "options": [
-      "Dibagikan sebagai bonus kinerja bendahara pengeluaran",
-      "Disetorkan kembali secara utuh ke Kas Daerah (Kasda) paling lambat 31 Desember dengan bukti Surat Tanda Setoran (STS)",
-      "Disimpan di brankas kantor untuk belanja tahun anggaran berikutnya tanpa dilaporkan",
-      "Dikonversi menjadi persediaan alat tulis kantor"
+      "Ya, semua kas bendahara ikut menjadi nol",
+      "Tidak, yang dihapus adalah pasangan hubungan internal",
+      "Ya, karena SKPD tidak boleh memiliki aset",
+      "Tidak perlu eliminasi jika sudah ada SP2D"
     ],
     "answer": 1,
-    "explanation": "Sesuai asas tahunan dan regulasi penatausahaan keuangan, sisa kas UP pada penutupan tahun anggaran wajib disetorkan kembali ke Rekening Kas Umum Daerah (Kasda) sehingga saldo Kas di Bendahara Pengeluaran per 31 Desember bernilai nol."
+    "explanation": "Eliminasi menghapus akun timbal balik. Kas yang benar-benar masih dikuasai pemerintah tetap dilaporkan sesuai kondisinya. Sumber: PP 71/2010 PSAP 11 paras.6 dan 12."
   },
   {
-    "tm": 10,
-    "topic": "Pengukuran Kinerja Value for Money",
+    "tm": 9,
+    "topic": "Pengukuran Kinerja Pemerintah: Input, Output, Outcome dan Value for Money",
     "difficulty": "medium",
     "q": "Jika sebuah dinas berhasil membangun puskesmas dengan biaya 10% lebih rendah dari standar harga tanpa mengurangi spesifikasi teknis, namun puskesmas tersebut tidak dimanfaatkan oleh warga karena lokasinya di tengah hutan terpencil, maka program tersebut...",
     "options": [
       "Ekonomis dan Efektif, tetapi Tidak Efisien",
-      "Ekonomis dan Efisien, tetapi Tidak Efektif",
+      "Perolehan input mendukung ekonomi, tetapi tujuan akses layanan belum tercapai",
       "Efektif, tetapi Tidak Ekonomis",
       "Mencapai seluruh kriteria Value for Money"
     ],
     "answer": 1,
-    "explanation": "Dinas berhasil mencapai aspek ekonomis (input murah) dan efisiensi (output gedung terbangun sesuai biaya), tetapi gagal dalam efektivitas (outcome/tujuan pelayanan kesehatan warga tidak tercapai)."
+    "explanation": "Harga input lebih rendah dengan spesifikasi sama mendukung penilaian ekonomi pada asumsi soal. Output gedung belum memastikan outcome akses warga. Efisiensi perlu pembanding biaya dan output yang sebanding. Sumber: ISSAI 300 para.11."
   },
   {
-    "tm": 10,
-    "topic": "Rasio Efektivitas PAD",
+    "tm": 9,
+    "topic": "Pengukuran Kinerja Pemerintah: Input, Output, Outcome dan Value for Money",
     "difficulty": "medium",
-    "q": "Realisasi Pendapatan Asli Daerah (PAD) Kabupaten Makmur tahun 2025 adalah Rp 450 miliar, sedangkan target yang ditetapkan dalam APBD adalah Rp 500 miliar. Berapakah rasio efektivitas PAD daerah tersebut dan apa kriterianya?",
+    "q": "Realisasi PAD pada ilustrasi Rp 450 miliar dari target Rp 500 miliar. Tanpa memakai skala kategori tambahan, apa hasil perbandingannya?",
     "options": [
-      "90,0% (Kriteria: Cukup Efektif)",
+      "90,0%; realisasi berada 10% di bawah target",
       "111,1% (Kriteria: Sangat Efektif)",
       "80,0% (Kriteria: Kurang Efektif)",
       "90,0% (Kriteria: Tidak Efektif)"
     ],
     "answer": 0,
-    "explanation": "Rasio Efektivitas = (Realisasi / Target) × 100% = (Rp 450 M / Rp 500 M) × 100% = 90,0%. Menurut standar Kemendagri, rentang 90% - 99,9% tergolong Cukup Efektif (di atas 100% Sangat Efektif)."
+    "explanation": "450/500 ×100%=90%. Selisih terhadap target Rp 50 miliar atau10%. Soal tidak menyediakan dasar kategori seperti cukup efektif; kategori tersebut tidak ditambahkan sebagai ketentuan universal."
   },
   {
-    "tm": 10,
-    "topic": "Sistem Akuntabilitas Kinerja (SAKIP)",
+    "tm": 9,
+    "topic": "Pengukuran Kinerja Pemerintah: Input, Output, Outcome dan Value for Money",
     "difficulty": "basic",
     "q": "Laporan resmi yang wajib disusun oleh setiap pimpinan instansi pemerintah di akhir tahun untuk mempertanggungjawabkan keberhasilan dan kegagalan pencapaian target strategis organisasi disebut...",
     "options": [
@@ -681,8 +681,8 @@ export const AKS201_QUIZ_UAS: QuizQuestion[] = [
     "explanation": "LAKIP merupakan produk akhir siklus SAKIP yang memaparkan capaian target kinerja strategis (IKU) organisasi publik dibandingkan dengan rencana kerja dan perjanjian kinerjanya."
   },
   {
-    "tm": 10,
-    "topic": "Indikator Input, Output, dan Outcome",
+    "tm": 9,
+    "topic": "Pengukuran Kinerja Pemerintah: Input, Output, Outcome dan Value for Money",
     "difficulty": "medium",
     "q": "Dalam program imunisasi balita nasional: (1) Jumlah vaksin dan jarum suntik yang dibeli, (2) Jumlah balita yang berhasil disuntik vaksin, dan (3) Penurunan angka kejadian penyakit campak pada anak sebesar 80%, secara berurutan mencerminkan indikator...",
     "options": [
@@ -695,8 +695,8 @@ export const AKS201_QUIZ_UAS: QuizQuestion[] = [
     "explanation": "(1) Vaksin/jarum adalah Input (sumber daya), (2) Balita yang disuntik adalah Output (keluaran langsung kegiatan), dan (3) Penurunan kasus penyakit adalah Outcome (hasil manfaat nyata yang dirasakan masyarakat)."
   },
   {
-    "tm": 10,
-    "topic": "Standar Pelayanan Minimal (SPM)",
+    "tm": 9,
+    "topic": "Pengukuran Kinerja Pemerintah: Input, Output, Outcome dan Value for Money",
     "difficulty": "advanced",
     "q": "Ketentuan mengenai jenis dan mutu pelayanan dasar yang merupakan urusan pemerintahan wajib dan berhak diperoleh setiap warga negara secara minimal diatur dalam regulasi tentang...",
     "options": [
@@ -709,8 +709,8 @@ export const AKS201_QUIZ_UAS: QuizQuestion[] = [
     "explanation": "SPM (PP No. 2/2018) mengatur tolok ukur kinerja pelayanan dasar wajib (pendidikan, kesehatan, pekerjaan umum, perumahan rakyat, trantibumlinmas, dan sosial) yang harus diprioritaskan alokasi anggarannya oleh pemda."
   },
   {
-    "tm": 11,
-    "topic": "Audit Sektor Publik: Opini BPK",
+    "tm": 10,
+    "topic": "Audit Organisasi Pemerintah: APIP, BPK, Opini dan Tindak Lanjut",
     "difficulty": "medium",
     "q": "Laporan keuangan pemerintah daerah yang disajikan wajar dalam semua hal yang material, menyajikan informasi sesuai SAP secara konsisten, memiliki SPI yang memadai, dan tidak ada pelanggaran hukum material akan memperoleh opini BPK berupa...",
     "options": [
@@ -723,8 +723,8 @@ export const AKS201_QUIZ_UAS: QuizQuestion[] = [
     "explanation": "Opini Wajar Tanpa Pengecualian (WTP) adalah opini tertinggi BPK yang menyatakan bahwa laporan keuangan disajikan secara wajar dalam semua hal yang material sesuai SAP."
   },
   {
-    "tm": 11,
-    "topic": "Jenis-Jenis Pemeriksaan BPK",
+    "tm": 10,
+    "topic": "Audit Organisasi Pemerintah: APIP, BPK, Opini dan Tindak Lanjut",
     "difficulty": "medium",
     "q": "Berdasarkan UU No. 15 Tahun 2004, tiga jenis pemeriksaan yang memiliki kewenangan dilakukan oleh BPK RI adalah...",
     "options": [
@@ -734,13 +734,13 @@ export const AKS201_QUIZ_UAS: QuizQuestion[] = [
       "Pemeriksaan Kasda, Pemeriksaan Inventaris, dan Pemeriksaan Kepegawaian"
     ],
     "answer": 1,
-    "explanation": "Pasal 4 UU 15/2004 membagi audit BPK menjadi: (1) Pemeriksaan Keuangan (opini atas LK), (2) Pemeriksaan Kinerja (ekonomi, efisiensi, efektivitas), dan (3) Pemeriksaan Dengan Tujuan Tertentu / PDTT (investigatif)."
+    "explanation": "UU15/2004 Pasal 4 membagi pemeriksaan menjadi keuangan, kinerja dan tujuan tertentu. PDTT tidak selalu investigatif. Pasal 16 membedakan opini, temuan/kesimpulan/rekomendasi kinerja, dan kesimpulan PDTT."
   },
   {
-    "tm": 11,
-    "topic": "Standar Pemeriksaan Keuangan Negara (SPKN)",
+    "tm": 10,
+    "topic": "Audit Organisasi Pemerintah: APIP, BPK, Opini dan Tindak Lanjut",
     "difficulty": "advanced",
-    "q": "Standar mutu dan etika profesional yang wajib dipatuhi oleh seluruh pemeriksa BPK RI dan akuntan publik yang ditugaskan atas nama BPK dalam memeriksa keuangan negara adalah...",
+    "q": "Pada Oktober 2026, standar pemeriksaan BPK yang masih diterapkan sebelum Peraturan BPK 1/2026 mulai berlaku pada10April2028 adalah...",
     "options": [
       "Standar Profesional Akuntan Publik (SPAP) IAPI murni",
       "Standar Pemeriksaan Keuangan Negara (SPKN) yang ditetapkan dengan Peraturan BPK No. 1 Tahun 2017",
@@ -748,11 +748,11 @@ export const AKS201_QUIZ_UAS: QuizQuestion[] = [
       "Pedoman Audit Internal Sektor Publik (PAISP)"
     ],
     "answer": 1,
-    "explanation": "SPKN ditetapkan oleh BPK RI melalui Peraturan BPK No. 1/2017 sebagai standar pemeriksaan wajib atas pengelolaan dan pertanggungjawaban keuangan negara di Indonesia."
+    "explanation": "SPKN 2017 tetap menjadi rujukan penerapan sebelum ketentuan baru efektif. Peraturan BPK 1/2026 telah diundangkan10April2026 dan mulai berlaku10April2028. Sumber: JDIH BPK, Peraturan BPK 1/2026."
   },
   {
-    "tm": 11,
-    "topic": "Tindak Lanjut Rekomendasi LHP BPK",
+    "tm": 10,
+    "topic": "Audit Organisasi Pemerintah: APIP, BPK, Opini dan Tindak Lanjut",
     "difficulty": "basic",
     "q": "Berdasarkan UU No. 15 Tahun 2004 Pasal 20, pejabat pengelola keuangan entitas yang diperiksa WAJIB memberikan jawaban atau penjelasan mengenai tindak lanjut atas rekomendasi dalam Laporan Hasil Pemeriksaan (LHP) BPK selambat-lambatnya...",
     "options": [
@@ -762,27 +762,27 @@ export const AKS201_QUIZ_UAS: QuizQuestion[] = [
       "90 hari kalender"
     ],
     "answer": 2,
-    "explanation": "UU 15/2004 mewajibkan pejabat menindaklanjuti rekomendasi temuan BPK dalam waktu maksimal 60 (enam puluh) hari setelah LHP diterima secara resmi."
+    "explanation": "Pasal 20 ayat(3) UU15/2004 mengatur penyampaian jawaban atau penjelasan pelaksanaan tindak lanjut paling lambat60 hari setelah LHP diterima. Kewajiban menindaklanjuti tetap ada; batas jawaban bukan jaminan seluruh masalah selesai."
   },
   {
-    "tm": 11,
-    "topic": "Opini Disclaimer (TMP)",
+    "tm": 10,
+    "topic": "Audit Organisasi Pemerintah: APIP, BPK, Opini dan Tindak Lanjut",
     "difficulty": "advanced",
     "q": "BPK RI akan menerbitkan opini Tidak Memberikan Pendapat (Disclaimer / TMP) apabila...",
     "options": [
       "Terdapat satu kesalahan pembukuan kecil bernilai Rp 10 juta",
-      "Pemeriksa mengalami pembatasan lingkup pemeriksaan yang sangat material dan pervasif, atau sistem pencatatan begitu rusak sehingga pemeriksa tidak memperoleh bukti audit yang cukup",
+      "Bukti tidak cukup dan kemungkinan dampaknya material serta pervasif",
       "Pemerintah daerah tidak membagikan dividen kepada warganya",
       "DPRD menolak menghadiri sidang paripurna penyerahan LHP"
     ],
     "answer": 1,
-    "explanation": "Opini TMP (Disclaimer) diberikan jika terjadi pembatasan lingkup pemeriksaan secara pervasif (misal data utama tidak diserahkan, bencana yang menghilangkan buku besar), sehingga auditor tidak dapat menyatakan pendapat audit."
+    "explanation": "TMP berkaitan dengan tidak cukupnya bukti dengan kemungkinan dampak material dan pervasif. Pembatasan lingkup yang material tetapi tidak pervasif perlu dibedakan dari keadaan tersebut. Sumber penjelasan: BPK Sumatera Barat, Apa itu opini BPK?."
   },
   {
     "tm": 12,
-    "topic": "Bantuan Keuangan Partai Politik",
+    "topic": "Bantuan Keuangan Partai Politik dan Pertanggungjawaban",
     "difficulty": "medium",
-    "q": "Berdasarkan UU No. 2 Tahun 2011 dan Permendagri No. 78 Tahun 2020, bantuan keuangan dari APBN/APBD yang diterima oleh Partai Politik diprioritaskan paling sedikit 60% untuk kegiatan...",
+    "q": "Menurut Permendagri36/2018 Pasal 27, bantuan keuangan APBN/APBD kepada partai politik diprioritaskan untuk kegiatan...",
     "options": [
       "Kampanye pemilihan umum legislatif dan presiden",
       "Pendidikan politik bagi anggota partai dan masyarakat luas",
@@ -790,11 +790,11 @@ export const AKS201_QUIZ_UAS: QuizQuestion[] = [
       "Gaji tetap pengurus dewan pimpinan pusat"
     ],
     "answer": 1,
-    "explanation": "Regulasi parpol mewajibkan alokasi minimal 60% dari dana bantuan APBN/APBD untuk pendidikan politik masyarakat dan kader, sedangkan maksimal 40% sisanya untuk operasional kesekretariatan."
+    "explanation": "Pasal 27 memprioritaskan pendidikan politik dan juga mengatur operasional sekretariat. Rasio universal60/40 tidak ditetapkan dalam pasal yang dirujuk ini. Baca36/2018 bersama perubahannya78/2020."
   },
   {
     "tm": 12,
-    "topic": "Audit Dana Bantuan Parpol oleh BPK",
+    "topic": "Bantuan Keuangan Partai Politik dan Pertanggungjawaban",
     "difficulty": "medium",
     "q": "Pertanggungjawaban penerimaan dan penggunaan bantuan keuangan partai politik yang bersumber dari kas negara/daerah wajib diaudit secara berkala oleh...",
     "options": [
@@ -808,7 +808,7 @@ export const AKS201_QUIZ_UAS: QuizQuestion[] = [
   },
   {
     "tm": 12,
-    "topic": "Laporan Dana Kampanye (LPPDK)",
+    "topic": "Bantuan Keuangan Partai Politik dan Pertanggungjawaban",
     "difficulty": "advanced",
     "q": "Laporan Pertanggungjawaban Penerimaan dan Pengeluaran Dana Kampanye (LPPDK) yang disusun oleh tim kampanye peserta pemilu diaudit oleh...",
     "options": [
@@ -821,22 +821,22 @@ export const AKS201_QUIZ_UAS: QuizQuestion[] = [
     "explanation": "KPU menunjuk Kantor Akuntan Publik (KAP) independen yang terdaftar untuk melakukan audit kepatuhan atas LPPDK seluruh peserta pemilu."
   },
   {
-    "tm": 12,
-    "topic": "Akuntansi Hibah Terikat LSM (Donor Grants)",
+    "tm": 11,
+    "topic": "Laporan Keuangan LSM dan Organisasi Nonlaba: Sumber Daya, Pembatasan dan Laporan",
     "difficulty": "medium",
-    "q": "Lembaga Swadaya Masyarakat (LSM) menerima dana hibah donor luar negeri USD 100.000 yang secara spesifik diwajibkan untuk program konservasi mangrove selama 2 tahun. Dana kas tersebut dicatat oleh LSM sebagai...",
+    "q": "Ilustrasi LSM: donor memberi USD100.000 untuk konservasi mangrove dua tahun. Diasumsikan pengakuan sumbangan sudah terpenuhi dan tidak ada kewajiban pengembalian. Bagaimana pembatasan tujuan donor ditelusuri?",
     "options": [
       "Pendapatan jasa komersial tanpa pembatasan",
-      "Penerimaan sumbangan aset neto dengan pembatasan temporer (restricted fund)",
+      "Dalam kelas aset neto dengan pembatasan pemberi sumber daya",
       "Utang wesel bayar jangka panjang",
       "Ekuitas pemilik yang dapat dibagikan"
     ],
     "answer": 1,
-    "explanation": "Dana hibah donor yang terikat tujuan spesifik dibukukan sebagai Penerimaan Aset Neto Dengan Pembatasan, dan hanya direklasifikasi menjadi tanpa pembatasan seiring dengan realisasi belanja proyek konservasi tersebut."
+    "explanation": "Pada asumsi ilustrasi, sumber daya ditelusuri dalam kelas dengan pembatasan. Pemenuhan tujuan menjadi dasar pelepasan pembatasan; pengakuan pendapatan tetap memerlukan analisis syarat transaksi dan kerangka yang digunakan."
   },
   {
     "tm": 12,
-    "topic": "Larangan Sumber Sumbangan Parpol",
+    "topic": "Bantuan Keuangan Partai Politik dan Pertanggungjawaban",
     "difficulty": "basic",
     "q": "Partai politik di Indonesia dilarang keras menerima sumbangan dana keuangan dari pihak...",
     "options": [
@@ -850,7 +850,7 @@ export const AKS201_QUIZ_UAS: QuizQuestion[] = [
   },
   {
     "tm": 13,
-    "topic": "Fleksibilitas BLU dan BLUD",
+    "topic": "Pengelolaan Keuangan BLU dan BLUD: Fleksibilitas, Layanan dan Pelaporan",
     "difficulty": "medium",
     "q": "Fleksibilitas utama pengelolaan keuangan yang diberikan pemerintah kepada instansi berstatus Badan Layanan Umum (BLU) dan BLUD adalah...",
     "options": [
@@ -864,7 +864,7 @@ export const AKS201_QUIZ_UAS: QuizQuestion[] = [
   },
   {
     "tm": 13,
-    "topic": "Rencana Bisnis dan Anggaran (RBA)",
+    "topic": "Pengelolaan Keuangan BLU dan BLUD: Fleksibilitas, Layanan dan Pelaporan",
     "difficulty": "medium",
     "q": "Dokumen perencanaan bisnis dan penganggaran tahunan yang disusun oleh satuan kerja BLU/BLUD dengan memadukan pendekatan anggaran kinerja dan praktik bisnis yang sehat disebut...",
     "options": [
@@ -878,7 +878,7 @@ export const AKS201_QUIZ_UAS: QuizQuestion[] = [
   },
   {
     "tm": 13,
-    "topic": "Standar Akuntansi BLU (PSAP 13)",
+    "topic": "Pengelolaan Keuangan BLU dan BLUD: Fleksibilitas, Layanan dan Pelaporan",
     "difficulty": "advanced",
     "q": "Standar Akuntansi Pemerintahan yang mengatur secara khusus penyajian laporan keuangan Badan Layanan Umum (BLU) dan konsolidasinya pada entitas akuntansi kementerian/lembaga/pemda adalah...",
     "options": [
@@ -892,7 +892,7 @@ export const AKS201_QUIZ_UAS: QuizQuestion[] = [
   },
   {
     "tm": 13,
-    "topic": "Ambang Batas Fleksibilitas Belanja RBA",
+    "topic": "Pengelolaan Keuangan BLU dan BLUD: Fleksibilitas, Layanan dan Pelaporan",
     "difficulty": "advanced",
     "q": "Jika pendapatan operasional BLU melampaui target yang ditetapkan dalam RBA, BLU dapat melampaui pagu belanja operasionalnya sepanjang masih dalam...",
     "options": [
@@ -902,11 +902,11 @@ export const AKS201_QUIZ_UAS: QuizQuestion[] = [
       "Jumlah modal awal pendirian rumah sakit"
     ],
     "answer": 1,
-    "explanation": "Ambang batas fleksibilitas adalah persentase toleransi kelebihan belanja di atas pagu DPA (misal fleksibilitas 10%) yang dapat dibelanjakan langsung jika pendapatan BLU meningkat melampaui target."
+    "explanation": "Gunakan ambang yang benar-benar disetujui beserta dasar penghitungan, sumber dana, kas dan otorisasinya. Melewati target pendapatan atau berada di bawah angka ambang tidak otomatis memberikan izin semua jenis belanja."
   },
   {
     "tm": 13,
-    "topic": "Pengelolaan Kas dan Remunerasi BLU",
+    "topic": "Pengelolaan Keuangan BLU dan BLUD: Fleksibilitas, Layanan dan Pelaporan",
     "difficulty": "basic",
     "q": "Imbalan kerja berupa gaji, tunjangan, dan insentif berbasis kinerja yang dapat diberikan kepada pejabat pengelola dan pegawai BLU/BLUD di luar ketentuan PNS murni disebut sistem...",
     "options": [
@@ -920,21 +920,21 @@ export const AKS201_QUIZ_UAS: QuizQuestion[] = [
   },
   {
     "tm": 14,
-    "topic": "Digital Governance & SIPD",
+    "topic": "Topik Penelitian Akuntansi Sektor Publik: Dari Isu ke Pertanyaan dan Bukti",
     "difficulty": "medium",
-    "q": "Sistem informasi terpadu yang diwajibkan oleh Kementerian Dalam Negeri (Permendagri No. 70/2019) untuk mengintegrasikan data perencanaan pembangunan, penganggaran, penatausahaan kas, dan pelaporan keuangan seluruh pemda di Indonesia adalah...",
+    "q": "Untuk menguji apakah integrasi SIPD memperbaiki konsistensi perencanaan dan anggaran, bukti yang paling relevan adalah...",
     "options": [
-      "Sistem Informasi Manajemen Daerah (SIMDA) Desktop lama",
-      "Sistem Informasi Pemerintahan Daerah (SIPD)",
-      "Sistem Informasi Perbendaharaan dan Anggaran Negara (SPAN)",
-      "Sistem Akuntansi Instansi Berbasis Akrual (SAIBA)"
+      "Jumlah akun pengguna tanpa memeriksa transaksi",
+      "Tampilan halaman utama yang terlihat modern",
+      "Kesesuaian data antardokumen dan jejak perubahan berizin",
+      "Klaim bahwa semua kecurangan otomatis hilang"
     ],
-    "answer": 1,
-    "explanation": "SIPD adalah aplikasi berbasis cloud nasional yang menyatukan seluruh proses perencanaan hingga pertanggungjawaban APBD guna standardisasi data dan interoperabilitas fiskal nasional."
+    "answer": 2,
+    "explanation": "Usulan pengujian: telusuri data antardokumen, validasi dan perubahan aktual. Tujuan integrasi tidak sama dengan bukti bahwa semua kontrol otomatis berfungsi. Sumber desain: Kemendagri, penjelasan keterhubungan proses SIPD."
   },
   {
     "tm": 14,
-    "topic": "Green Budgeting & Climate Budget Tagging",
+    "topic": "Topik Penelitian Akuntansi Sektor Publik: Dari Isu ke Pertanyaan dan Bukti",
     "difficulty": "medium",
     "q": "Metodologi penandaan anggaran (tagging) dalam dokumen APBN/APBD yang melacak dan mengukur alokasi pengeluaran pemerintah yang dikhususkan untuk program aksi mitigasi dan adaptasi perubahan iklim disebut...",
     "options": [
@@ -948,7 +948,7 @@ export const AKS201_QUIZ_UAS: QuizQuestion[] = [
   },
   {
     "tm": 14,
-    "topic": "E-Procurement & Anti-Korupsi Pengadaan",
+    "topic": "Topik Penelitian Akuntansi Sektor Publik: Dari Isu ke Pertanyaan dan Bukti",
     "difficulty": "basic",
     "q": "Digitalisasi pengadaan barang dan jasa pemerintah yang dilakukan melalui portal LPSE dan Katalog Elektronik (E-Katalog) LKPP bertujuan utama untuk...",
     "options": [
@@ -958,11 +958,11 @@ export const AKS201_QUIZ_UAS: QuizQuestion[] = [
       "Mengurangi pajak pertambahan nilai yang disetor ke kas negara"
     ],
     "answer": 1,
-    "explanation": "E-procurement dan e-Katalog meniadakan pertemuan fisik tatap muka, memangkas potensi suap/kickback, membuka akses transparan bagi UMKM, dan memberikan harga pasar terbaik bagi negara."
+    "explanation": "Pengadaan elektronik ditujukan untuk transparansi dan efisiensi. Keberadaan sistem tidak membuktikan seluruh pertemuan, konflik kepentingan atau risiko suap hilang; fungsi kontrol dan pelaksanaannya tetap perlu diuji."
   },
   {
     "tm": 14,
-    "topic": "Sistem Pengendalian Intern Pemerintah (SPIP)",
+    "topic": "Topik Penelitian Akuntansi Sektor Publik: Dari Isu ke Pertanyaan dan Bukti",
     "difficulty": "advanced",
     "q": "Kerangka pengendalian intern pemerintah Indonesia yang diadopsi dari COSO Internal Control Framework dan diatur dalam PP No. 60 Tahun 2008 adalah...",
     "options": [
@@ -976,7 +976,7 @@ export const AKS201_QUIZ_UAS: QuizQuestion[] = [
   },
   {
     "tm": 14,
-    "topic": "Akuntansi Keuangan Desa (SISKEUDES)",
+    "topic": "Topik Penelitian Akuntansi Sektor Publik: Dari Isu ke Pertanyaan dan Bukti",
     "difficulty": "medium",
     "q": "Aplikasi resmi yang dikembangkan bersama oleh BPKP dan Kementerian Dalam Negeri untuk membantu pemerintah desa mengelola dan mempertanggungjawabkan Anggaran Pendapatan dan Belanja Desa (APBDes) adalah...",
     "options": [

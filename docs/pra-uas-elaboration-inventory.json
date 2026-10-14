@@ -81,7 +81,7 @@
             }
           ],
           "closedDepth": 17,
-          "status": "revision-written; see progress checkpoint for validation"
+          "status": "revision-written; see progress checkpoint for validation and source limits"
         },
         {
           "tm": 10,
@@ -153,7 +153,7 @@
             }
           ],
           "closedDepth": 9,
-          "status": "revision-written; see progress checkpoint for validation"
+          "status": "revision-written; see progress checkpoint for validation and source limits"
         },
         {
           "tm": 11,
@@ -224,7 +224,7 @@
             }
           ],
           "closedDepth": 5,
-          "status": "revision-written; see progress checkpoint for validation"
+          "status": "revision-written; see progress checkpoint for validation and source limits"
         },
         {
           "tm": 12,
@@ -311,7 +311,7 @@
             }
           ],
           "closedDepth": 11,
-          "status": "revision-written; see progress checkpoint for validation"
+          "status": "revision-written; see progress checkpoint for validation and source limits"
         },
         {
           "tm": 13,
@@ -451,7 +451,7 @@
             }
           ],
           "closedDepth": 9,
-          "status": "revision-written; see progress checkpoint for validation"
+          "status": "revision-written; see progress checkpoint for validation and source limits"
         },
         {
           "tm": 14,
@@ -570,7 +570,7 @@
             }
           ],
           "closedDepth": 10,
-          "status": "revision-written; see progress checkpoint for validation"
+          "status": "revision-written; see progress checkpoint for validation and source limits"
         },
         {
           "tm": 15,
@@ -662,7 +662,7 @@
             }
           ],
           "closedDepth": 8,
-          "status": "revision-written; see progress checkpoint for validation"
+          "status": "revision-written; see progress checkpoint for validation and source limits"
         }
       ]
     },
@@ -685,7 +685,7 @@
           ],
           "denseTables": [],
           "closedDepth": 3,
-          "status": "revision-written; see progress checkpoint for validation"
+          "status": "revision-written; see progress checkpoint for validation and source limits"
         },
         {
           "tm": 10,
@@ -703,7 +703,7 @@
           ],
           "denseTables": [],
           "closedDepth": 3,
-          "status": "revision-written; see progress checkpoint for validation"
+          "status": "revision-written; see progress checkpoint for validation and source limits"
         },
         {
           "tm": 11,
@@ -721,7 +721,7 @@
           ],
           "denseTables": [],
           "closedDepth": 3,
-          "status": "revision-written; see progress checkpoint for validation"
+          "status": "revision-written; see progress checkpoint for validation and source limits"
         },
         {
           "tm": 12,
@@ -739,7 +739,7 @@
           ],
           "denseTables": [],
           "closedDepth": 3,
-          "status": "revision-written; see progress checkpoint for validation"
+          "status": "revision-written; see progress checkpoint for validation and source limits"
         },
         {
           "tm": 13,
@@ -763,7 +763,7 @@
             }
           ],
           "closedDepth": 3,
-          "status": "revision-written; see progress checkpoint for validation"
+          "status": "revision-written; see progress checkpoint for validation and source limits"
         },
         {
           "tm": 14,
@@ -781,7 +781,7 @@
           ],
           "denseTables": [],
           "closedDepth": 3,
-          "status": "revision-written; see progress checkpoint for validation"
+          "status": "revision-written; see progress checkpoint for validation and source limits"
         },
         {
           "tm": 15,
@@ -799,7 +799,7 @@
           ],
           "denseTables": [],
           "closedDepth": 4,
-          "status": "revision-written; see progress checkpoint for validation"
+          "status": "revision-written; see progress checkpoint for validation and source limits"
         }
       ]
     },
@@ -818,7 +818,7 @@
           ],
           "denseTables": [],
           "closedDepth": 3,
-          "status": "awaiting source and depth review"
+          "status": "revision-written; see progress checkpoint for validation and source limits"
         },
         {
           "tm": 9,
@@ -832,7 +832,7 @@
           ],
           "denseTables": [],
           "closedDepth": 2,
-          "status": "awaiting source and depth review"
+          "status": "revision-written; see progress checkpoint for validation and source limits"
         },
         {
           "tm": 10,
@@ -846,12 +846,12 @@
           ],
           "denseTables": [],
           "closedDepth": 2,
-          "status": "awaiting source and depth review"
+          "status": "revision-written; see progress checkpoint for validation and source limits"
         },
         {
           "tm": 11,
           "title": "Laporan Keuangan LSM dan Organisasi Nonlaba: Sumber Daya, Pembatasan dan Laporan",
-          "sourceIntro": "Kembalikan fokus TM11 pada laporan LSM: identifikasi sumber daya, pahami pembatasan donor, lalu hubungkan perubahan aset neto dengan kas dan posisi keuangan. Pelaporan bantuan partai politik diperkenalkan terpisah sebagai jembatan menuju TM12.",
+          "sourceIntro": "TM11 membahas laporan LSM: identifikasi sumber daya, pahami pembatasan donor, lalu hubungkan perubahan aset neto dengan kas dan posisi keuangan. Pelaporan bantuan partai politik diperkenalkan terpisah sebagai jembatan menuju TM12.",
           "sections": [
             "1. Fondasi: pilih kerangka pelaporan dahulu",
             "2. Pembatasan donor dan penggunaan dana",
@@ -866,7 +866,7 @@
             }
           ],
           "closedDepth": 2,
-          "status": "awaiting source and depth review"
+          "status": "revision-written; see progress checkpoint for validation and source limits"
         },
         {
           "tm": 13,
@@ -880,7 +880,7 @@
           ],
           "denseTables": [],
           "closedDepth": 2,
-          "status": "awaiting source and depth review"
+          "status": "revision-written; see progress checkpoint for validation and source limits"
         },
         {
           "tm": 14,
@@ -900,7 +900,7 @@
             }
           ],
           "closedDepth": 2,
-          "status": "awaiting source and depth review"
+          "status": "revision-written; see progress checkpoint for validation and source limits"
         }
       ]
     },
