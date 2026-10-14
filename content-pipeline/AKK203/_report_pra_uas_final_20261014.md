@@ -1,5 +1,7 @@
 # Laporan akhir ASP pra-UAS, 14 Oktober 2026
 
+[PR draft #61](https://github.com/muhabyan/Akuntansi_UNAIR/pull/61), cabang audit/akk203-pra-uas. Commit implementasi: fe36cfa974199f4dfea5df9761eb2eaec5256fa1. PR terverifikasi OPEN, isDraft=true, auto-merge tidak aktif; tidak dilakukan merge.
+
 Implementasi khusus AKK203 / FEB25603014 semester 3 tersedia untuk tinjauan draft. Status teknis PASS; status akademik NEEDS_HUMAN_REVIEW pada seluruh TM. Buku RPP belum tersedia sehingga penyelesaian implementasi tidak berarti semua bab sumber selesai diaudit.
 
 ## Cakupan dan hasil
