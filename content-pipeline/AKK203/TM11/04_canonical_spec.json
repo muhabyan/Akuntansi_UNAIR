@@ -1,0 +1,1172 @@
+{
+  "course": "AKK 203",
+  "newCode": "FEB 25603014",
+  "tm": 11,
+  "rpp": "PSAK terkait; DN Bab 3; peraturan terkait, RPP PDF 5",
+  "reading": {
+    "tm": 11,
+    "title": "Laporan Keuangan Organisasi Nonlaba: LSM",
+    "ref": "[UU 16/2001 Ps.48-50; cetak/PDF 15-16; UU 28/2004 Ps. I angka 16 perubahanPs.52; cetak/PDF 9-10](https://peraturan.bpk.go.id/Download/30439/UU%20Nomor%2028%20Tahun%202004.pdf#page=15) | [IAI DE ISAK 35(2018) par.7-12, CI 01-04; cetak 35.1-35.5, PDF 15-19; contoh historis, bukan teks standar final](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=15) | [IAI DE ISAK 35(2018) contoh posisi keuangan/penghasilan/perubahan aset neto/arus kas/Ca LK; cetak 35.6-35.19, PDF 20-33; historis](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=20) | [IAI penomoran efektif 1 Januari 2024: ISAK 35→335; IAI pengesahan amendemen 3 Juni 2026; PSAK 118 efektif 1 Januari 2027 menurut pengumuman 18 Juni 2025](https://web.iaiglobal.or.id/Berita-IAI/detail/pengesahan_amendemen_isak_335)",
+    "intro": "Dana donor masih dibatasi dan kas tidak sama dengan surplus. Kamu akan menyusun hubungan laporan LSM, memeriksa syarat donor, dan membedakan contoh historis dari standar final yang harus dipakai entitas sebenarnya.",
+    "layout": "layered",
+    "coreReadingMinutes": 20,
+    "objectives": [
+      "LSM: tentukan bentuk badan dan kerangka laporan",
+      "ISAK 335: penyajian dan versi perlu dibaca terpisah",
+      "Aset neto: pahami asal pembatasan",
+      "Hubungan lima laporan dalam contoh historis",
+      "Menyusun angka: satu kasus, beberapa pemeriksaan",
+      "Audit dan transparansi yayasan"
+    ],
+    "blocks": [
+      {
+        "kind": "section",
+        "layer": "fondasi",
+        "title": "Kilat",
+        "blocks": [
+          {
+            "kind": "figure",
+            "spec": {
+              "id": "ASP-UAS-11-KILAT",
+              "type": "process",
+              "title": "Peta Laporan Keuangan Organisasi Nonlaba: LSM",
+              "nodes": [
+                {
+                  "title": "Tentukan konteks",
+                  "items": [
+                    "PSAK terkait; DN Bab 3; peraturan terkait, RPP PDF 5"
+                  ]
+                },
+                {
+                  "title": "LSM: tentukan bentuk badan dan kerangka laporan",
+                  "items": []
+                },
+                {
+                  "title": "ISAK 335: penyajian dan versi perlu dibaca terpisah",
+                  "items": []
+                },
+                {
+                  "title": "Aset neto: pahami asal pembatasan",
+                  "items": []
+                },
+                {
+                  "title": "Hubungan lima laporan dalam contoh historis",
+                  "items": []
+                },
+                {
+                  "title": "Menyusun angka: satu kasus, beberapa pemeriksaan",
+                  "items": []
+                },
+                {
+                  "title": "Audit dan transparansi yayasan",
+                  "items": []
+                }
+              ],
+              "source": "[UU 16/2001 Ps.48-50; cetak/PDF 15-16; UU 28/2004 Ps. I angka 16 perubahanPs.52; cetak/PDF 9-10](https://peraturan.bpk.go.id/Download/30439/UU%20Nomor%2028%20Tahun%202004.pdf#page=15)",
+              "alt": "Peta Laporan Keuangan Organisasi Nonlaba: LSM. Tentukan konteks → LSM: tentukan bentuk badan dan kerangka laporan → ISAK 335: penyajian dan versi perlu dibaca terpisah → Aset neto: pahami asal pembatasan → Hubungan lima laporan dalam contoh historis → Menyusun angka: satu kasus, beberapa pemeriksaan → Audit dan transparansi yayasan",
+              "footer": "Skematis: hubungan konsep, tanpa skala angka."
+            }
+          },
+          {
+            "kind": "ul",
+            "items": [
+              "Tentukan bentuk badan dan kerangka sebelum menyusun laporan.",
+              "ISAK 335 membahas penyajian; standar transaksi tetap diperlukan.",
+              "Pembatasan donor harus ditelusuri ke surat/kontrak.",
+              "Pembebasan pembatasan tidak menambah total aset neto.",
+              "Kas dan aset neto akhir harus cocok antar laporan.",
+              "DE 2018 dipakai sebagai ilustrasi historis dengan batas eksplisit."
+            ]
+          },
+          {
+            "kind": "p",
+            "text": "Kalau cuma sempat ingat satu hal: Tentukan bentuk badan dan kerangka sebelum menyusun laporan."
+          },
+          {
+            "kind": "callout",
+            "variant": "note",
+            "title": "Cakupan dan periode sumber",
+            "text": "RPP: PSAK terkait; DN Bab 3; peraturan terkait, RPP PDF 5. Teks final SAK/ISAK 335 dan amendemen 2026 belum tersedia utuh; ilustrasi DE 2018 tidak membuktikan kepatuhan aktual."
+          }
+        ]
+      },
+      {
+        "kind": "section",
+        "layer": "main",
+        "title": "LSM: tentukan bentuk badan dan kerangka laporan",
+        "source": "[UU 16/2001 Ps.48-50; cetak/PDF 15-16; UU 28/2004 Ps. I angka 16 perubahanPs.52; cetak/PDF 9-10](https://peraturan.bpk.go.id/Download/30439/UU%20Nomor%2028%20Tahun%202004.pdf#page=15) [IAI DE ISAK 35(2018) par.7-12, CI 01-04; cetak 35.1-35.5, PDF 15-19; contoh historis, bukan teks standar final](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=15)",
+        "blocks": [
+          {
+            "kind": "p",
+            "text": "Sebuah LSM menerima sumber daya untuk program sosial. Sebutan LSM menggambarkan kegiatan, sehingga kamu perlu memeriksa bentuk hukum, tujuan, sumber dana dan kewajiban laporan. Untuk latihan ini LSM diasumsikan berbentuk yayasan. Kewajiban yayasan menyimpan catatan serta dokumen dan menyusun laporan tahunan dibaca dari UU Yayasan. [UU 16/2001 Ps.48-50; cetak/PDF 15-16; UU 28/2004 Ps. I angka 16 perubahanPs.52; cetak/PDF 9-10](https://peraturan.bpk.go.id/Download/30439/UU%20Nomor%2028%20Tahun%202004.pdf#page=15) [IAI DE ISAK 35(2018) par.7-12, CI 01-04; cetak 35.1-35.5, PDF 15-19; contoh historis, bukan teks standar final](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=15)"
+          },
+          {
+            "kind": "p",
+            "text": "Yayasan menyusun laporan tahunan paling lambat lima bulan sejak tahun buku ditutup. Laporan ditandatangani pengurus dan pengawas serta disahkan pembina sesuai pasal terkait. Kerangka SAK yang dipakai ditentukan menurut kelayakan entitas dan periode. Status nonlaba tidak otomatis membuat semua transaksi diakui dengan cara yang sama atau bebas kewajiban audit. [UU 16/2001 Ps.48-50; cetak/PDF 15-16; UU 28/2004 Ps. I angka 16 perubahanPs.52; cetak/PDF 9-10](https://peraturan.bpk.go.id/Download/30439/UU%20Nomor%2028%20Tahun%202004.pdf#page=15) [IAI DE ISAK 35(2018) par.7-12, CI 01-04; cetak 35.1-35.5, PDF 15-19; contoh historis, bukan teks standar final](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=15)"
+          },
+          {
+            "kind": "figure",
+            "spec": {
+              "id": "ASP-UAS-11-KERANGKA",
+              "type": "process",
+              "title": "Menentukan dasar laporan LSM",
+              "nodes": [
+                {
+                  "title": "Bentuk hukum dan kegiatan",
+                  "items": []
+                },
+                {
+                  "title": "Kewajiban regulasi badan",
+                  "items": []
+                },
+                {
+                  "title": "Kerangka SAK dan periode",
+                  "items": []
+                },
+                {
+                  "title": "Kebijakan transaksi",
+                  "items": []
+                },
+                {
+                  "title": "Laporan dan pengungkapan",
+                  "items": []
+                }
+              ],
+              "source": "[UU 16/2001 Ps.48-50; cetak/PDF 15-16; UU 28/2004 Ps. I angka 16 perubahanPs.52; cetak/PDF 9-10](https://peraturan.bpk.go.id/Download/30439/UU%20Nomor%2028%20Tahun%202004.pdf#page=15) [IAI DE ISAK 35(2018) par.7-12, CI 01-04; cetak 35.1-35.5, PDF 15-19; contoh historis, bukan teks standar final](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=15)",
+              "alt": "Menentukan dasar laporan LSM. Bentuk hukum dan kegiatan → Kewajiban regulasi badan → Kerangka SAK dan periode → Kebijakan transaksi → Laporan dan pengungkapan",
+              "footer": "Skematis: hubungan konsep, tanpa skala angka."
+            }
+          },
+          {
+            "kind": "self-check",
+            "question": "Apakah semua LSM otomatis mempunyai kewajiban persis sama seperti yayasan?",
+            "answer": [
+              {
+                "kind": "p",
+                "text": "Tidak. Contoh ini mengasumsikan bentuk yayasan. Bentuk lain memerlukan regulasi badan serta kerangka laporan yang sesuai. [UU 16/2001 Ps.48-50; cetak/PDF 15-16; UU 28/2004 Ps. I angka 16 perubahanPs.52; cetak/PDF 9-10](https://peraturan.bpk.go.id/Download/30439/UU%20Nomor%2028%20Tahun%202004.pdf#page=15) [IAI DE ISAK 35(2018) par.7-12, CI 01-04; cetak 35.1-35.5, PDF 15-19; contoh historis, bukan teks standar final](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=15)"
+              }
+            ],
+            "signal": "Jika alasanmu berbeda, kembali ke sumber dan identifikasi fakta yang belum mendukung jawaban."
+          }
+        ]
+      },
+      {
+        "kind": "section",
+        "layer": "main",
+        "title": "ISAK 335: penyajian dan versi perlu dibaca terpisah",
+        "source": "[IAI DE ISAK 35(2018) par.7-12, CI 01-04; cetak 35.1-35.5, PDF 15-19; contoh historis, bukan teks standar final](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=15) [IAI penomoran efektif 1 Januari 2024: ISAK 35→335; IAI pengesahan amendemen 3 Juni 2026; PSAK 118 efektif 1 Januari 2027 menurut pengumuman 18 Juni 2025](https://web.iaiglobal.or.id/Berita-IAI/detail/pengesahan_amendemen_isak_335)",
+        "blocks": [
+          {
+            "kind": "p",
+            "text": "Interpretasi penyajian menjelaskan cara menyesuaikan deskripsi pos atau nama laporan bagi entitas berorientasi nonlaba. Pengakuan dan pengukuran transaksi tetap memerlukan standar transaksi serta kerangka SAK yang relevan. Menulis ISAK 335 pada judul laporan belum membuktikan seluruh perlakuan donasi, aset atau liabilitas telah benar. [IAI DE ISAK 35(2018) par.7-12, CI 01-04; cetak 35.1-35.5, PDF 15-19; contoh historis, bukan teks standar final](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=15) [IAI penomoran efektif 1 Januari 2024: ISAK 35→335; IAI pengesahan amendemen 3 Juni 2026; PSAK 118 efektif 1 Januari 2027 menurut pengumuman 18 Juni 2025](https://web.iaiglobal.or.id/Berita-IAI/detail/pengesahan_amendemen_isak_335)"
+          },
+          {
+            "kind": "p",
+            "text": "Materi terbuka yang tersedia adalah DE ISAK 35 tahun 2018, sebuah draf eksposur historis. Teks final yang lengkap dan amendemen 2026 belum tersedia dalam paket lokal. IAI mengubah nomor 35 menjadi 335 pada 2024 dan mengumumkan amendemen pada 3 Juni 2026 untuk menyesuaikan rujukan dengan PSAK 118. Pengumuman PSAK 118 menyebut efektif 1 Januari 2027; tanggal efektif khusus amendemen 335 tidak ditebak dari berita singkat. [IAI DE ISAK 35(2018) par.7-12, CI 01-04; cetak 35.1-35.5, PDF 15-19; contoh historis, bukan teks standar final](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=15) [IAI penomoran efektif 1 Januari 2024: ISAK 35→335; IAI pengesahan amendemen 3 Juni 2026; PSAK 118 efektif 1 Januari 2027 menurut pengumuman 18 Juni 2025](https://web.iaiglobal.or.id/Berita-IAI/detail/pengesahan_amendemen_isak_335)"
+          },
+          {
+            "kind": "table",
+            "title": "Status dokumen yang dipakai",
+            "headers": [
+              "Dokumen",
+              "Fungsi",
+              "Batas"
+            ],
+            "rows": [
+              [
+                "DE ISAK 35(2018)",
+                "Mempelajari contoh penyajian historis",
+                "Draf, bukan ketentuan final"
+              ],
+              [
+                "ISAK 35/335",
+                "Identitas interpretasi setelah penomoran",
+                "Teks final perlu akses sah"
+              ],
+              [
+                "Amendemen 335(2026)",
+                "Pembaruan rujukan dan ilustrasi",
+                "Tanggal penerapan khusus perlu teks final"
+              ],
+              [
+                "PSAK 118",
+                "Penyajian dan pengungkapan; efektif 2027",
+                "Tidak diberlakukan otomatis untuk semua kasus 2026"
+              ]
+            ],
+            "caption": "[IAI DE ISAK 35(2018) par.7-12, CI 01-04; cetak 35.1-35.5, PDF 15-19; contoh historis, bukan teks standar final](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=15) [IAI penomoran efektif 1 Januari 2024: ISAK 35→335; IAI pengesahan amendemen 3 Juni 2026; PSAK 118 efektif 1 Januari 2027 menurut pengumuman 18 Juni 2025](https://web.iaiglobal.or.id/Berita-IAI/detail/pengesahan_amendemen_isak_335)",
+            "stackOnMobile": true
+          },
+          {
+            "kind": "self-check",
+            "question": "Apakah DE 2018 dapat diklaim sebagai salinan lengkap ISAK 335 terkini?",
+            "answer": [
+              {
+                "kind": "p",
+                "text": "Tidak. Gunakan sebagai ilustrasi historis dan periksa standar final serta amendemen sebelum klaim kepatuhan aktual. [IAI DE ISAK 35(2018) par.7-12, CI 01-04; cetak 35.1-35.5, PDF 15-19; contoh historis, bukan teks standar final](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=15) [IAI penomoran efektif 1 Januari 2024: ISAK 35→335; IAI pengesahan amendemen 3 Juni 2026; PSAK 118 efektif 1 Januari 2027 menurut pengumuman 18 Juni 2025](https://web.iaiglobal.or.id/Berita-IAI/detail/pengesahan_amendemen_isak_335)"
+              }
+            ],
+            "signal": "Jika alasanmu berbeda, kembali ke sumber dan identifikasi fakta yang belum mendukung jawaban."
+          }
+        ]
+      },
+      {
+        "kind": "section",
+        "layer": "main",
+        "title": "Aset neto: pahami asal pembatasan",
+        "source": "[IAI DE ISAK 35(2018) contoh posisi keuangan/penghasilan/perubahan aset neto/arus kas/Ca LK; cetak 35.6-35.19, PDF 20-33; historis](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=20)",
+        "blocks": [
+          {
+            "kind": "p",
+            "text": "Without restrictions berarti tanpa pembatasan dari pemberi sumber daya. With restrictions berarti dengan pembatasan dari pemberi sumber daya, misalnya tujuan program atau periode. Pada contoh historis, kelas aset neto membantu pengguna melihat sumber daya yang belum bebas digunakan. [IAI DE ISAK 35(2018) contoh posisi keuangan/penghasilan/perubahan aset neto/arus kas/Ca LK; cetak 35.6-35.19, PDF 20-33; historis](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=20)"
+          },
+          {
+            "kind": "p",
+            "text": "Pembatasan pemberi sumber daya berbeda dari keputusan internal pengurus mencadangkan dana. Kamu harus membaca surat donor dan kebijakan organisasi. Penggunaan dana yang memenuhi tujuan atau waktu dapat menyebabkan pembebasan pembatasan pada contoh sumber. Pembebasan memindahkan klasifikasi dan tidak menambah total aset neto. Pembatasan penyajian juga perlu dibedakan dari syarat pengakuan transaksi yang dapat menimbulkan liabilitas. [IAI DE ISAK 35(2018) contoh posisi keuangan/penghasilan/perubahan aset neto/arus kas/Ca LK; cetak 35.6-35.19, PDF 20-33; historis](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=20)"
+          },
+          {
+            "kind": "figure",
+            "spec": {
+              "id": "ASP-UAS-11-NETO",
+              "type": "parallel",
+              "title": "Dua kelas aset neto pada contoh historis",
+              "nodes": [
+                {
+                  "title": "Tanpa pembatasan",
+                  "items": [
+                    "Penggunaan tidak dibatasi donor"
+                  ]
+                },
+                {
+                  "title": "Dengan pembatasan",
+                  "items": [
+                    "Tujuan atau periode donor masih berlaku"
+                  ]
+                }
+              ],
+              "source": "[IAI DE ISAK 35(2018) contoh posisi keuangan/penghasilan/perubahan aset neto/arus kas/Ca LK; cetak 35.6-35.19, PDF 20-33; historis](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=20)",
+              "alt": "Dua kelas aset neto pada contoh historis. Cabang terpisah dibandingkan sesuai label. Tidak menunjukkan urutan waktu.",
+              "footer": "Skematis: hubungan konsep, tanpa skala angka."
+            }
+          },
+          {
+            "kind": "table",
+            "title": "Pembatasan dan kewajiban",
+            "headers": [
+              "Keadaan",
+              "Pertanyaan"
+            ],
+            "rows": [
+              [
+                "Donor membatasi tujuan",
+                "Apakah tujuan/waktu sudah terpenuhi?"
+              ],
+              [
+                "Pengurus mencadangkan dana",
+                "Apakah sumber pembatasan internal atau donor?"
+              ],
+              [
+                "Dana wajib dikembalikan bila syarat gagal",
+                "Apa standar pengakuan dan kontrak yang berlaku?"
+              ],
+              [
+                "Pembatasan dibebaskan",
+                "Bagaimana reklasifikasi dan pengungkapan?"
+              ]
+            ],
+            "caption": "[IAI DE ISAK 35(2018) par.7-12, CI 01-04; cetak 35.1-35.5, PDF 15-19; contoh historis, bukan teks standar final](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=15) [IAI DE ISAK 35(2018) contoh posisi keuangan/penghasilan/perubahan aset neto/arus kas/Ca LK; cetak 35.6-35.19, PDF 20-33; historis](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=20)",
+            "stackOnMobile": true
+          },
+          {
+            "kind": "self-check",
+            "question": "Pada asumsi kasus, Rp 60 juta dibebaskan dari pembatasan. Apakah total aset neto naikRp 60 juta?",
+            "answer": [
+              {
+                "kind": "p",
+                "text": "Tidak. Satu kelas naik dan kelas lain turun dengan jumlah sama; total reklasifikasi nol. [IAI DE ISAK 35(2018) contoh posisi keuangan/penghasilan/perubahan aset neto/arus kas/Ca LK; cetak 35.6-35.19, PDF 20-33; historis](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=20)"
+              }
+            ],
+            "signal": "Jika alasanmu berbeda, kembali ke sumber dan identifikasi fakta yang belum mendukung jawaban."
+          }
+        ]
+      },
+      {
+        "kind": "section",
+        "layer": "main",
+        "title": "Hubungan lima laporan dalam contoh historis",
+        "source": "[IAI DE ISAK 35(2018) contoh posisi keuangan/penghasilan/perubahan aset neto/arus kas/Ca LK; cetak 35.6-35.19, PDF 20-33; historis](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=20)",
+        "blocks": [
+          {
+            "kind": "p",
+            "text": "Laporan posisi keuangan menyajikan aset, liabilitas dan aset neto pada tanggal tertentu. Laporan penghasilan komprehensif menggambarkan perubahan dari penghasilan dan beban pada periode. Laporan perubahan aset neto menghubungkan saldo awal dengan saldo akhir menurut kelas. [IAI DE ISAK 35(2018) contoh posisi keuangan/penghasilan/perubahan aset neto/arus kas/Ca LK; cetak 35.6-35.19, PDF 20-33; historis](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=20)"
+          },
+          {
+            "kind": "p",
+            "text": "Laporan arus kas menjelaskan penerimaan serta pembayaran operasi, investasi dan pendanaan. Ca LK menerangkan kebijakan, pembatasan dan rincian. Saldo kas akhir harus cocok dengan posisi keuangan. Saldo aset neto akhir harus cocok dengan perubahan aset neto. Surplus dan kas dapat berbeda ketika ada transaksi nonkas atau perubahan aset/liabilitas. Judul dan format contoh harus dibaca menurut periode sumber. [IAI DE ISAK 35(2018) contoh posisi keuangan/penghasilan/perubahan aset neto/arus kas/Ca LK; cetak 35.6-35.19, PDF 20-33; historis](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=20)"
+          },
+          {
+            "kind": "figure",
+            "spec": {
+              "id": "ASP-UAS-11-LAPORAN",
+              "type": "process",
+              "title": "Hubungan laporan LSM",
+              "nodes": [
+                {
+                  "title": "Transaksi dan kebijakan",
+                  "items": [
+                    "Identifikasi penghasilan, beban, aset, liabilitas"
+                  ]
+                },
+                {
+                  "title": "Penghasilan komprehensif",
+                  "items": [
+                    "Surplus/defisit serta OCI bila ada"
+                  ]
+                },
+                {
+                  "title": "Perubahan aset neto",
+                  "items": [
+                    "Saldo awal, perubahan dan reklasifikasi"
+                  ]
+                },
+                {
+                  "title": "Posisi keuangan",
+                  "items": [
+                    "Aset=liabilitas+aset neto"
+                  ]
+                }
+              ],
+              "source": "[IAI DE ISAK 35(2018) contoh posisi keuangan/penghasilan/perubahan aset neto/arus kas/Ca LK; cetak 35.6-35.19, PDF 20-33; historis](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=20)",
+              "alt": "Hubungan laporan LSM. Transaksi dan kebijakan → Penghasilan komprehensif → Perubahan aset neto → Posisi keuangan",
+              "footer": "Skematis: hubungan konsep, tanpa skala angka."
+            }
+          },
+          {
+            "kind": "table",
+            "title": "Arus kas dan Ca LK sebagai penghubung",
+            "headers": [
+              "Laporan",
+              "Pemeriksaan"
+            ],
+            "rows": [
+              [
+                "Arus kas",
+                "Kas awal+perubahan=kas akhir pada posisi keuangan"
+              ],
+              [
+                "Ca LK",
+                "Kebijakan, pembatasan donor, reklasifikasi dan rincian beban"
+              ],
+              [
+                "Perubahan aset neto",
+                "Saldo kelas akhir cocok dengan posisi keuangan"
+              ]
+            ],
+            "caption": "[IAI DE ISAK 35(2018) contoh posisi keuangan/penghasilan/perubahan aset neto/arus kas/Ca LK; cetak 35.6-35.19, PDF 20-33; historis](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=20)",
+            "stackOnMobile": true
+          },
+          {
+            "kind": "self-check",
+            "question": "Mengapa surplusRp 120 juta dapat berbeda dari kas akhirRp 70 juta pada latihan?",
+            "answer": [
+              {
+                "kind": "p",
+                "text": "PeralatanRp 50 juta dibeli sebagai aset, sehingga mengurangi kas tanpa menjadi beban langsung dalam asumsi kasus. [IAI DE ISAK 35(2018) contoh posisi keuangan/penghasilan/perubahan aset neto/arus kas/Ca LK; cetak 35.6-35.19, PDF 20-33; historis](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=20)"
+              }
+            ],
+            "signal": "Jika alasanmu berbeda, kembali ke sumber dan identifikasi fakta yang belum mendukung jawaban."
+          }
+        ]
+      },
+      {
+        "kind": "section",
+        "layer": "main",
+        "title": "Menyusun angka: satu kasus, beberapa pemeriksaan",
+        "source": "[IAI DE ISAK 35(2018) contoh posisi keuangan/penghasilan/perubahan aset neto/arus kas/Ca LK; cetak 35.6-35.19, PDF 20-33; historis](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=20)",
+        "blocks": [
+          {
+            "kind": "p",
+            "text": "Latihan buatan memakai juta rupiah, saldo awal nol, sumbangan tanpa pembatasan 200 dan dengan pembatasan program 100. Semua penerimaan diasumsikan sudah memenuhi pengakuan penghasilan. Beban umum 120 dan program 60 dibayar tunai. Program 60 memenuhi tujuan donor. Peralatan 50 dibeli tunai pada akhir periode dan belum siap digunakan, sehingga tidak ada penyusutan dalam latihan. [IAI DE ISAK 35(2018) contoh posisi keuangan/penghasilan/perubahan aset neto/arus kas/Ca LK; cetak 35.6-35.19, PDF 20-33; historis](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=20)"
+          },
+          {
+            "kind": "p",
+            "text": "Jumlah penghasilan 300 dikurangi beban 180 memberi surplus 120. Reklasifikasi 60 membuat saldo tanpa pembatasan 200+60-180=80 dan dengan pembatasan 100-60=40. Kas 300-180-50=70; peralatan 50 memberi aset 120. Liabilitas diasumsikan nol. Setiap angka adalah data buatan untuk memahami hubungan laporan, tidak berasal dari placeholderxxxx pada contoh IAI. [IAI DE ISAK 35(2018) contoh posisi keuangan/penghasilan/perubahan aset neto/arus kas/Ca LK; cetak 35.6-35.19, PDF 20-33; historis](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=20)"
+          },
+          {
+            "kind": "formula",
+            "text": "\\text{Aset neto akhir}=\\text{Aset neto awal}+\\text{Perubahan neto}",
+            "note": "Hubungan akuntansi pada latihan; reklasifikasi antar kelas tidak mengubah total."
+          },
+          {
+            "kind": "table",
+            "title": "Latihan buatan, dalam juta Rp",
+            "headers": [
+              "Pemeriksaan",
+              "Langkah",
+              "Hasil"
+            ],
+            "rows": [
+              [
+                "Surplus total",
+                "300-180",
+                "120"
+              ],
+              [
+                "Tanpa pembatasan",
+                "200+60-180",
+                "80"
+              ],
+              [
+                "Dengan pembatasan",
+                "100-60",
+                "40"
+              ],
+              [
+                "Kas akhir",
+                "300-180-50",
+                "70"
+              ],
+              [
+                "Posisi keuangan",
+                "Kas 70+peralatan 50=liabilitas 0+aset neto 120",
+                "Seimbang 120"
+              ]
+            ],
+            "caption": "[IAI DE ISAK 35(2018) contoh posisi keuangan/penghasilan/perubahan aset neto/arus kas/Ca LK; cetak 35.6-35.19, PDF 20-33; historis](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=20)",
+            "stackOnMobile": true
+          },
+          {
+            "kind": "self-check",
+            "question": "Jika reklasifikasi 60 dicatat kembali sebagai sumbangan baru, apa akibatnya?",
+            "answer": [
+              {
+                "kind": "p",
+                "text": "Total penghasilan dan aset neto akan berlebih 60. Reklasifikasi harus nol secara total. [IAI DE ISAK 35(2018) contoh posisi keuangan/penghasilan/perubahan aset neto/arus kas/Ca LK; cetak 35.6-35.19, PDF 20-33; historis](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=20)"
+              }
+            ],
+            "signal": "Jika alasanmu berbeda, kembali ke sumber dan identifikasi fakta yang belum mendukung jawaban."
+          }
+        ]
+      },
+      {
+        "kind": "section",
+        "layer": "main",
+        "title": "Audit dan transparansi yayasan",
+        "source": "[UU 16/2001 Ps.48-50; cetak/PDF 15-16; UU 28/2004 Ps. I angka 16 perubahanPs.52; cetak/PDF 9-10](https://peraturan.bpk.go.id/Download/30439/UU%20Nomor%2028%20Tahun%202004.pdf#page=15)",
+        "blocks": [
+          {
+            "kind": "p",
+            "text": "UU 28/2004 mengubah Pasal 52: yayasan yang menerima bantuan negara, luar negeri, dan/atau pihak lain paling sedikitRp 500 juta dalam satu tahun buku, atau memiliki kekayaan di luar wakaf paling sedikitRp 20 miliar, wajib memenuhi ketentuan publikasi ikhtisar keuangan dan audit oleh akuntan publik. Dua ambang dihubungkan dengan kata atau. [UU 16/2001 Ps.48-50; cetak/PDF 15-16; UU 28/2004 Ps. I angka 16 perubahanPs.52; cetak/PDF 9-10](https://peraturan.bpk.go.id/Download/30439/UU%20Nomor%2028%20Tahun%202004.pdf#page=15)"
+          },
+          {
+            "kind": "p",
+            "text": "Yayasan yang tidak memenuhi kedua ambang tetap perlu memeriksa kewajiban lain, termasuk kontrak donor dan regulasi badan/kegiatan. Jangan menyimpulkan bebas audit dari satu angka penerimaan saja jika kekayaan belum diketahui. Identifikasi tahun buku, jenis bantuan, kekayaan di luar wakaf dan hasil audit, kemudian jelaskan pihak penerima hasil serta kewajiban publikasinya. [UU 16/2001 Ps.48-50; cetak/PDF 15-16; UU 28/2004 Ps. I angka 16 perubahanPs.52; cetak/PDF 9-10](https://peraturan.bpk.go.id/Download/30439/UU%20Nomor%2028%20Tahun%202004.pdf#page=15)"
+          },
+          {
+            "kind": "figure",
+            "spec": {
+              "id": "ASP-UAS-11-AUDIT",
+              "type": "parallel",
+              "title": "Uji kewajiban audit yayasan",
+              "nodes": [
+                {
+                  "title": "Bantuan≥Rp 500 juta dalam 1 tahun buku",
+                  "items": [
+                    "ATAU"
+                  ]
+                },
+                {
+                  "title": "Kekayaan di luar wakaf≥Rp 20 miliar",
+                  "items": [
+                    "Salah satu terpenuhi"
+                  ]
+                }
+              ],
+              "source": "[UU 16/2001 Ps.48-50; cetak/PDF 15-16; UU 28/2004 Ps. I angka 16 perubahanPs.52; cetak/PDF 9-10](https://peraturan.bpk.go.id/Download/30439/UU%20Nomor%2028%20Tahun%202004.pdf#page=15)",
+              "alt": "Dua ambang alternatif; salah satu cukup, tidak harus keduanya.",
+              "footer": "Skematis: hubungan konsep, tanpa skala angka.",
+              "result": "Salah satu terpenuhi → audit akuntan publik dan publikasi ikhtisar"
+            }
+          },
+          {
+            "kind": "self-check",
+            "question": "BantuanRp 400 juta dan kekayaan di luar wakafRp 25 miliar. Apakah ambang audit terpenuhi?",
+            "answer": [
+              {
+                "kind": "p",
+                "text": "Ya, melalui ambang kekayaan. Syaratnya alternatif, tidak harus terpenuhi bersamaan. [UU 16/2001 Ps.48-50; cetak/PDF 15-16; UU 28/2004 Ps. I angka 16 perubahanPs.52; cetak/PDF 9-10](https://peraturan.bpk.go.id/Download/30439/UU%20Nomor%2028%20Tahun%202004.pdf#page=15)"
+              }
+            ],
+            "signal": "Jika alasanmu berbeda, kembali ke sumber dan identifikasi fakta yang belum mendukung jawaban."
+          }
+        ]
+      },
+      {
+        "kind": "pendalaman",
+        "title": "Pendalaman: format dan teks yang belum tersedia",
+        "blocks": [
+          {
+            "kind": "p",
+            "text": "FormatA/B posisi serta penghasilan pada DE 2018 adalah alternatif ilustratif. FormatA/B tidak dimaksudkan mencakup seluruh aspek SAK atau seluruh variasi entitas. Contoh arus kas langsung/tidak langsung pada PDF 27-28 dan rincian pembatasan serta beban pada PDF 29-33 perlu dibaca bersama fakta entitas."
+          },
+          {
+            "kind": "p",
+            "text": "Teks final ISAK 335 beserta amendemen 2026 dan standar transaksi belum tersedia utuh. Klaim bahwa model ini merupakan laporan aktual yang telah memenuhi seluruh SAK tidak dibuat. Bab DN 3 belum dapat diaudit."
+          }
+        ]
+      },
+      {
+        "kind": "section",
+        "layer": "latihan",
+        "title": "Persiapan ujian",
+        "blocks": [
+          {
+            "kind": "table",
+            "title": "Jebakan dan langkah koreksi",
+            "headers": [
+              "Jebakan",
+              "Langkah yang benar"
+            ],
+            "rows": [
+              [
+                "LSM, parpol dan desa tercampur dalam satu bacaan",
+                "Pisahkan LSM TM 11 dan parpol TM 12;desa tidak menjadi inti."
+              ],
+              [
+                "ISAK 35 digunakan sebagai semua standar donasi",
+                "Pisahkan penyajian, pengakuan dan syarat kontrak."
+              ],
+              [
+                "Donasi peralatan otomatis selalu dibebaskan",
+                "Periksa syarat donor;latihan hanya memakai asumsi program yang jelas."
+              ]
+            ],
+            "caption": "[UU 16/2001 Ps.48-50; cetak/PDF 15-16; UU 28/2004 Ps. I angka 16 perubahanPs.52; cetak/PDF 9-10](https://peraturan.bpk.go.id/Download/30439/UU%20Nomor%2028%20Tahun%202004.pdf#page=15)",
+            "stackOnMobile": true
+          }
+        ]
+      },
+      {
+        "kind": "solution-reveal",
+        "title": "Latihan buatan: susun lima laporan LSM",
+        "prompt": "Gunakan donasi 200 tanpa pembatasan,100 untuk program; beban 120 umum dan 60 program; pembelian peralatan 50. Pembatasan program 60 telah terpenuhi.",
+        "blocks": [
+          {
+            "kind": "table",
+            "title": "Penghasilan komprehensif, format latihan historis",
+            "headers": [
+              "Pos",
+              "Juta Rp"
+            ],
+            "rows": [
+              [
+                "Sumbangan tanpa pembatasan",
+                "200"
+              ],
+              [
+                "Sumbangan dengan pembatasan",
+                "100"
+              ],
+              [
+                "Total penghasilan",
+                "300"
+              ],
+              [
+                "Beban umum",
+                "(120)"
+              ],
+              [
+                "Beban program",
+                "(60)"
+              ],
+              [
+                "Surplus total",
+                "120"
+              ],
+              [
+                "OCI, asumsi nihil",
+                "0"
+              ]
+            ],
+            "caption": "Latihan buatan 20X1, satuan juta Rp; asumsi pengakuan sudah dipenuhi, liabilitas/OCI/saldo awal nol, peralatan belum siap digunakan. [IAI DE ISAK 35(2018) contoh posisi keuangan/penghasilan/perubahan aset neto/arus kas/Ca LK; cetak 35.6-35.19, PDF 20-33; historis](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=20)",
+            "stackOnMobile": true
+          },
+          {
+            "kind": "table",
+            "title": "Perubahan aset neto",
+            "headers": [
+              "Pos",
+              "Tanpa pembatasan",
+              "Dengan pembatasan",
+              "Total"
+            ],
+            "rows": [
+              [
+                "Saldo awal",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "Surplus sebelum reklasifikasi",
+                "20",
+                "100",
+                "120"
+              ],
+              [
+                "Pembebasan pembatasan",
+                "60",
+                "(60)",
+                "0"
+              ],
+              [
+                "Saldo akhir",
+                "80",
+                "40",
+                "120"
+              ]
+            ],
+            "caption": "Latihan buatan 20X1, satuan juta Rp; asumsi pengakuan sudah dipenuhi, liabilitas/OCI/saldo awal nol, peralatan belum siap digunakan. [IAI DE ISAK 35(2018) contoh posisi keuangan/penghasilan/perubahan aset neto/arus kas/Ca LK; cetak 35.6-35.19, PDF 20-33; historis](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=20)",
+            "stackOnMobile": true
+          },
+          {
+            "kind": "table",
+            "title": "Posisi keuangan",
+            "headers": [
+              "Pos",
+              "Juta Rp"
+            ],
+            "rows": [
+              [
+                "Kas",
+                "70"
+              ],
+              [
+                "Peralatan belum siap digunakan",
+                "50"
+              ],
+              [
+                "Total aset",
+                "120"
+              ],
+              [
+                "Liabilitas",
+                "0"
+              ],
+              [
+                "Aset neto tanpa pembatasan",
+                "80"
+              ],
+              [
+                "Aset neto dengan pembatasan",
+                "40"
+              ],
+              [
+                "Liabilitas+aset neto",
+                "120"
+              ]
+            ],
+            "caption": "Latihan buatan 20X1, satuan juta Rp; asumsi pengakuan sudah dipenuhi, liabilitas/OCI/saldo awal nol, peralatan belum siap digunakan. [IAI DE ISAK 35(2018) contoh posisi keuangan/penghasilan/perubahan aset neto/arus kas/Ca LK; cetak 35.6-35.19, PDF 20-33; historis](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=20)",
+            "stackOnMobile": true
+          },
+          {
+            "kind": "table",
+            "title": "Arus kas metode langsung",
+            "headers": [
+              "Pos",
+              "Juta Rp"
+            ],
+            "rows": [
+              [
+                "Penerimaan donasi operasi dalam asumsi kasus",
+                "300"
+              ],
+              [
+                "Pembayaran beban",
+                "(180)"
+              ],
+              [
+                "Kas neto operasi",
+                "120"
+              ],
+              [
+                "Pembelian peralatan, investasi",
+                "(50)"
+              ],
+              [
+                "Pendanaan, asumsi nihil",
+                "0"
+              ],
+              [
+                "Kenaikan kas",
+                "70"
+              ],
+              [
+                "Kas awal",
+                "0"
+              ],
+              [
+                "Kas akhir",
+                "70"
+              ]
+            ],
+            "caption": "Latihan buatan 20X1, satuan juta Rp; asumsi pengakuan sudah dipenuhi, liabilitas/OCI/saldo awal nol, peralatan belum siap digunakan. [IAI DE ISAK 35(2018) contoh posisi keuangan/penghasilan/perubahan aset neto/arus kas/Ca LK; cetak 35.6-35.19, PDF 20-33; historis](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=20)",
+            "stackOnMobile": true
+          },
+          {
+            "kind": "p",
+            "text": "Ca LK latihan: jelaskan bentukyayasan, periode 20X1, unit juta Rp, asumsi pengakuan, pembatasan program 100, pembebasan 60 dan sisa 40. Peralatan belum siap digunakan; tidak ada OCI, pajak atau liabilitas pada data. Total kedua kelas 80+40=120 cocok dengan aset 70+50=120. Kas akhir 70 cocok dengan arus kas. Tidak ada pembulatan. Ini model penyajian historis terbatas, belum klaim kepatuhan final SAK."
+          }
+        ],
+        "revealLabel": "Tampilkan langkah dan pemeriksaan"
+      },
+      {
+        "kind": "solution-reveal",
+        "title": "Latihan buatan: tentukan ruang audit",
+        "prompt": "BantuanRp 400 juta, kekayaan di luar wakafRp 25 miliar. Pengurus hanya melihat bantuan.",
+        "blocks": [
+          {
+            "kind": "p",
+            "text": "Ambang bantuan belum tercapai, tetapi kekayaan melampauiRp 20 miliar. Salah satu syarat cukup. Yayasan memenuhi ketentuan audit akuntan publik dan publikasi ikhtisar menurut Pasal 52. Angka adalah asumsi; ambang aturan berasal dari UU ."
+          },
+          {
+            "kind": "p",
+            "text": "Menyebut wajib audit hanya jika kedua syarat terpenuhi mengubah atau menjadi dan. Menghapus kebutuhan publikasi setelah audit mengabaikan kewajiban terpisah. [UU 16/2001 Ps.48-50; cetak/PDF 15-16; UU 28/2004 Ps. I angka 16 perubahanPs.52; cetak/PDF 9-10](https://peraturan.bpk.go.id/Download/30439/UU%20Nomor%2028%20Tahun%202004.pdf#page=15)"
+          }
+        ],
+        "revealLabel": "Tampilkan langkah dan pemeriksaan"
+      }
+    ]
+  },
+  "quiz": [
+    {
+      "id": "akk203-uas-tm11-01",
+      "tm": 11,
+      "topic": "LSM",
+      "skill": "Analisis dasar, mekanisme dan batas penerapan",
+      "difficulty": "medium",
+      "q": "LSM: data apa diperlukan sebelum memilih kewajiban badan?",
+      "options": [
+        "Sebutan LSM saja tanpa dokumen badan hukum",
+        "Jumlah pengikut media sosial dan logo LSM",
+        "Nama aplikasi yang digunakan mencatat kas",
+        "Bentuk hukum, kegiatan, periode dan kerangka SAK"
+      ],
+      "answer": 3,
+      "explanation": "LSM adalah label kegiatan; kewajiban badan memerlukan bentuk hukum dan kerangka. Logo, pengikut dan aplikasi tidak menentukan standar maupun kewajiban laporan yayasan. Rujukan: [UU 16/2001 Ps.48-50; cetak/PDF 15-16; UU 28/2004 Ps. I angka 16 perubahanPs.52; cetak/PDF 9-10](https://peraturan.bpk.go.id/Download/30439/UU%20Nomor%2028%20Tahun%202004.pdf#page=15) [IAI DE ISAK 35(2018) par.7-12, CI 01-04; cetak 35.1-35.5, PDF 15-19; contoh historis, bukan teks standar final](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=15)",
+      "sourceRef": "[UU 16/2001 Ps.48-50; cetak/PDF 15-16; UU 28/2004 Ps. I angka 16 perubahanPs.52; cetak/PDF 9-10](https://peraturan.bpk.go.id/Download/30439/UU%20Nomor%2028%20Tahun%202004.pdf#page=15) [IAI DE ISAK 35(2018) par.7-12, CI 01-04; cetak 35.1-35.5, PDF 15-19; contoh historis, bukan teks standar final](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=15)",
+      "sourceAnchors": [
+        "[UU 16/2001 Ps.48-50; cetak/PDF 15-16; UU 28/2004 Ps. I angka 16 perubahanPs.52; cetak/PDF 9-10](https://peraturan.bpk.go.id/Download/30439/UU%20Nomor%2028%20Tahun%202004.pdf#page=15) [IAI DE ISAK 35(2018) par.7-12, CI 01-04; cetak 35.1-35.5, PDF 15-19; contoh historis, bukan teks standar final](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=15)"
+      ]
+    },
+    {
+      "id": "akk203-uas-tm11-02",
+      "tm": 11,
+      "topic": "ISAK 335",
+      "skill": "Analisis dasar, mekanisme dan batas penerapan",
+      "difficulty": "medium",
+      "q": "ISAK 335: fungsi yang dipelajari dalam contoh historis?",
+      "options": [
+        "Penyesuaian penyajian dan deskripsi laporan",
+        "Seluruh pengakuan donasi tanpa standar lain",
+        "Seluruh pengukuran aset tanpa kebijakan lain",
+        "Penghapusan kewajiban audit seluruh yayasan"
+      ],
+      "answer": 0,
+      "explanation": "Interpretasi berfokus penyajian. Pengakuan/pengukuran memerlukan standar transaksi terkait; audit berasal regulasi atau perikatan. Opsi lain memperluas lingkup tanpa dasar. Rujukan: [IAI DE ISAK 35(2018) par.7-12, CI 01-04; cetak 35.1-35.5, PDF 15-19; contoh historis, bukan teks standar final](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=15)",
+      "sourceRef": "[IAI DE ISAK 35(2018) par.7-12, CI 01-04; cetak 35.1-35.5, PDF 15-19; contoh historis, bukan teks standar final](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=15)",
+      "sourceAnchors": [
+        "[IAI DE ISAK 35(2018) par.7-12, CI 01-04; cetak 35.1-35.5, PDF 15-19; contoh historis, bukan teks standar final](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=15)"
+      ]
+    },
+    {
+      "id": "akk203-uas-tm11-03",
+      "tm": 11,
+      "topic": "Versi dokumen",
+      "skill": "Analisis dasar, mekanisme dan batas penerapan",
+      "difficulty": "medium",
+      "q": "Versi dokumen: DE ISAK 35 tahun 2018 merupakan?",
+      "options": [
+        "Salinan lengkap amendemen ISAK 335 tahun 2026",
+        "Draf eksposur historis, perlu teks final terkini",
+        "Peraturan pemerintah untuk semua rumah sakit",
+        "Standar audit BPK efektif sejak April 2028"
+      ],
+      "answer": 1,
+      "explanation": "DE merupakan draf dengan contoh yang tidak mencakup seluruh SAK. Penomoran dan amendemen terkini tidak mengubah file 2018 menjadi final. Opsi pemerintah/audit salah jenis dokumen. Rujukan: [IAI DE ISAK 35(2018) par.7-12, CI 01-04; cetak 35.1-35.5, PDF 15-19; contoh historis, bukan teks standar final](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=15) [IAI penomoran efektif 1 Januari 2024: ISAK 35→335; IAI pengesahan amendemen 3 Juni 2026; PSAK 118 efektif 1 Januari 2027 menurut pengumuman 18 Juni 2025](https://web.iaiglobal.or.id/Berita-IAI/detail/pengesahan_amendemen_isak_335)",
+      "sourceRef": "[IAI DE ISAK 35(2018) par.7-12, CI 01-04; cetak 35.1-35.5, PDF 15-19; contoh historis, bukan teks standar final](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=15) [IAI penomoran efektif 1 Januari 2024: ISAK 35→335; IAI pengesahan amendemen 3 Juni 2026; PSAK 118 efektif 1 Januari 2027 menurut pengumuman 18 Juni 2025](https://web.iaiglobal.or.id/Berita-IAI/detail/pengesahan_amendemen_isak_335)",
+      "sourceAnchors": [
+        "[IAI DE ISAK 35(2018) par.7-12, CI 01-04; cetak 35.1-35.5, PDF 15-19; contoh historis, bukan teks standar final](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=15) [IAI penomoran efektif 1 Januari 2024: ISAK 35→335; IAI pengesahan amendemen 3 Juni 2026; PSAK 118 efektif 1 Januari 2027 menurut pengumuman 18 Juni 2025](https://web.iaiglobal.or.id/Berita-IAI/detail/pengesahan_amendemen_isak_335)"
+      ]
+    },
+    {
+      "id": "akk203-uas-tm11-04",
+      "tm": 11,
+      "topic": "Aset neto",
+      "skill": "Analisis dasar, mekanisme dan batas penerapan",
+      "difficulty": "medium",
+      "q": "Aset neto: pembatasan dalam kelas with restrictions berasal dari?",
+      "options": [
+        "Semua keputusan internal membuat danacadangan",
+        "Seluruh kas kecil tanpa memperhatikan donor",
+        "Pemberi sumber daya menurut syarat tujuan/waktu",
+        "Seluruh bebanadministrasi pada akhirperiode"
+      ],
+      "answer": 2,
+      "explanation": "Kelas contoh mengacu pembatasan donor. Dana cadangan internal, kas kecil dan beban tidak otomatis menjadi kelas tersebut. Kontrak tetap perlu dibaca untuk pengakuan transaksi. Rujukan: [IAI DE ISAK 35(2018) contoh posisi keuangan/penghasilan/perubahan aset neto/arus kas/Ca LK; cetak 35.6-35.19, PDF 20-33; historis](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=20)",
+      "sourceRef": "[IAI DE ISAK 35(2018) contoh posisi keuangan/penghasilan/perubahan aset neto/arus kas/Ca LK; cetak 35.6-35.19, PDF 20-33; historis](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=20)",
+      "sourceAnchors": [
+        "[IAI DE ISAK 35(2018) contoh posisi keuangan/penghasilan/perubahan aset neto/arus kas/Ca LK; cetak 35.6-35.19, PDF 20-33; historis](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=20)"
+      ]
+    },
+    {
+      "id": "akk203-uas-tm11-05",
+      "tm": 11,
+      "topic": "Latihan buatan",
+      "skill": "Analisis dasar, mekanisme dan batas penerapan",
+      "difficulty": "advanced",
+      "q": "Latihan buatan: reklasifikasi 60 antar kelas memberi perubahan total?",
+      "options": [
+        "Naik 60 karena dianggap sumbanganbaru",
+        "Turun 60 karena semua reklasifikasi adalahbeban",
+        "Naik 120 karena kedua kelas ditambahkan",
+        "Nol; satu kelas naik dan kelas lain turun"
+      ],
+      "answer": 3,
+      "explanation": "Reklasifikasi+60 dan-60 berjumlahnol. Sumbanganbaru, bebanbaru atau penjumlahan kedua kenaikan akan menduplikasi perubahan. aset neto total tetap mengikuti penghasilan dikurangi beban. Rujukan: [IAI DE ISAK 35(2018) contoh posisi keuangan/penghasilan/perubahan aset neto/arus kas/Ca LK; cetak 35.6-35.19, PDF 20-33; historis](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=20)",
+      "sourceRef": "[IAI DE ISAK 35(2018) contoh posisi keuangan/penghasilan/perubahan aset neto/arus kas/Ca LK; cetak 35.6-35.19, PDF 20-33; historis](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=20)",
+      "sourceAnchors": [
+        "[IAI DE ISAK 35(2018) contoh posisi keuangan/penghasilan/perubahan aset neto/arus kas/Ca LK; cetak 35.6-35.19, PDF 20-33; historis](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=20)"
+      ]
+    },
+    {
+      "id": "akk203-uas-tm11-06",
+      "tm": 11,
+      "topic": "Latihan buatan",
+      "skill": "Analisis dasar, mekanisme dan batas penerapan",
+      "difficulty": "advanced",
+      "q": "Latihan buatan: donasi 300, beban 180 dan peralatan 50. kas akhir?",
+      "options": [
+        "70 juta Rp pada asumsi semua transaksi tunai",
+        "120 juta Rp dengan peralatan diabaikan",
+        "170 juta Rp dengan biaya peralatan ditambah",
+        "250 juta Rp dengan bebanoperasi diabaikan"
+      ],
+      "answer": 0,
+      "explanation": "Kas=300-180-50=70 juta Rp.120 adalahsurplus sebelum pembelian aset;170 menambah pengeluaran;250 mengabaikan beban. Peralatan masih aset 50 pada asumsi yang ditetapkan. Rujukan: [IAI DE ISAK 35(2018) contoh posisi keuangan/penghasilan/perubahan aset neto/arus kas/Ca LK; cetak 35.6-35.19, PDF 20-33; historis](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=20)",
+      "sourceRef": "[IAI DE ISAK 35(2018) contoh posisi keuangan/penghasilan/perubahan aset neto/arus kas/Ca LK; cetak 35.6-35.19, PDF 20-33; historis](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=20)",
+      "sourceAnchors": [
+        "[IAI DE ISAK 35(2018) contoh posisi keuangan/penghasilan/perubahan aset neto/arus kas/Ca LK; cetak 35.6-35.19, PDF 20-33; historis](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=20)"
+      ]
+    },
+    {
+      "id": "akk203-uas-tm11-07",
+      "tm": 11,
+      "topic": "Latihan buatan",
+      "skill": "Analisis dasar, mekanisme dan batas penerapan",
+      "difficulty": "advanced",
+      "q": "Latihan buatan: tanpa pembatasan 200, donor 100, beban 180, pembebasan 60. Kelas akhir?",
+      "options": [
+        "Tanpa 20, dengan 100, total 120 juta Rp",
+        "Tanpa 80, dengan 40, total 120 juta Rp",
+        "Tanpa 140, dengan 100, total 240 juta Rp",
+        "Tanpa 80, dengan 100, total 180 juta Rp"
+      ],
+      "answer": 1,
+      "explanation": "Tanpa=200+60-180=80;dengan=100-60=40;total 120. Opsi 20/100 mengabaikan pembebasan;240 menduplikasi dan 180 tidak mengurangi kelasdonor. Rujukan: [IAI DE ISAK 35(2018) contoh posisi keuangan/penghasilan/perubahan aset neto/arus kas/Ca LK; cetak 35.6-35.19, PDF 20-33; historis](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=20)",
+      "sourceRef": "[IAI DE ISAK 35(2018) contoh posisi keuangan/penghasilan/perubahan aset neto/arus kas/Ca LK; cetak 35.6-35.19, PDF 20-33; historis](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=20)",
+      "sourceAnchors": [
+        "[IAI DE ISAK 35(2018) contoh posisi keuangan/penghasilan/perubahan aset neto/arus kas/Ca LK; cetak 35.6-35.19, PDF 20-33; historis](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=20)"
+      ]
+    },
+    {
+      "id": "akk203-uas-tm11-08",
+      "tm": 11,
+      "topic": "Audit yayasan",
+      "skill": "Analisis dasar, mekanisme dan batas penerapan",
+      "difficulty": "medium",
+      "q": "Audit yayasan: bantuan 400 juta, kekayaan di luar wakaf 25 miliar. Keputusan?",
+      "options": [
+        "Ambang audit belum terpenuhi karena bantuan kecil",
+        "Ambang audit harus memenuhi kedua syarat bersama",
+        "Ambang audit terpenuhi melalui kekayaan yayasan",
+        "Ambang audit digantikan oleh jumlah transaksi kas"
+      ],
+      "answer": 2,
+      "explanation": "Pasal 52 menggunakan atau. Kekayaan 25 miliar melampaui 20 miliar, meskipun bantuan di bawah 500 juta. Kedua syarat bersama dan jumlah transaksi bukan ketentuan ambang tersebut. Rujukan: [UU 16/2001 Ps.48-50; cetak/PDF 15-16; UU 28/2004 Ps. I angka 16 perubahanPs.52; cetak/PDF 9-10](https://peraturan.bpk.go.id/Download/30439/UU%20Nomor%2028%20Tahun%202004.pdf#page=15)",
+      "sourceRef": "[UU 16/2001 Ps.48-50; cetak/PDF 15-16; UU 28/2004 Ps. I angka 16 perubahanPs.52; cetak/PDF 9-10](https://peraturan.bpk.go.id/Download/30439/UU%20Nomor%2028%20Tahun%202004.pdf#page=15)",
+      "sourceAnchors": [
+        "[UU 16/2001 Ps.48-50; cetak/PDF 15-16; UU 28/2004 Ps. I angka 16 perubahanPs.52; cetak/PDF 9-10](https://peraturan.bpk.go.id/Download/30439/UU%20Nomor%2028%20Tahun%202004.pdf#page=15)"
+      ]
+    },
+    {
+      "id": "akk203-uas-tm11-09",
+      "tm": 11,
+      "topic": "Pembatasan dan pengakuan",
+      "skill": "Analisis dasar, mekanisme dan batas penerapan",
+      "difficulty": "medium",
+      "q": "Pembatasan dan pengakuan: dana wajib kembali jika syarat gagal. Langkah?",
+      "options": [
+        "Selalu akui penghasilan hanya dari labeldonasi",
+        "Selalu hapus seluruh kelas aset neto pembatasan",
+        "Gunakan DE 2018 sebagai semua standartransaksi",
+        "Baca kontrak dan standar pengakuan yang relevan"
+      ],
+      "answer": 3,
+      "explanation": "Syarat pengembalian perlu analisis kontrak dan standar pengakuan. Labeldonasi serta format penyajian tidak menyelesaikan kemungkinan liabilitas. Menghapuskelas atau memperluas DE tidak didukung sumber. Rujukan: [IAI DE ISAK 35(2018) par.7-12, CI 01-04; cetak 35.1-35.5, PDF 15-19; contoh historis, bukan teks standar final](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=15) [IAI DE ISAK 35(2018) contoh posisi keuangan/penghasilan/perubahan aset neto/arus kas/Ca LK; cetak 35.6-35.19, PDF 20-33; historis](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=20)",
+      "sourceRef": "[IAI DE ISAK 35(2018) par.7-12, CI 01-04; cetak 35.1-35.5, PDF 15-19; contoh historis, bukan teks standar final](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=15) [IAI DE ISAK 35(2018) contoh posisi keuangan/penghasilan/perubahan aset neto/arus kas/Ca LK; cetak 35.6-35.19, PDF 20-33; historis](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=20)",
+      "sourceAnchors": [
+        "[IAI DE ISAK 35(2018) par.7-12, CI 01-04; cetak 35.1-35.5, PDF 15-19; contoh historis, bukan teks standar final](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=15) [IAI DE ISAK 35(2018) contoh posisi keuangan/penghasilan/perubahan aset neto/arus kas/Ca LK; cetak 35.6-35.19, PDF 20-33; historis](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=20)"
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "id": "akk203-uas-tm11-01",
+      "phase": "pra-uas",
+      "tm": 11,
+      "topic": "ASP TM 11",
+      "category": "Hukum",
+      "front": "LSM dan badan hukum",
+      "back": "Sebutan LSM belum menentukan kewajiban; periksa bentuk badan, kegiatan, periode dan kerangka. UU 16/2001 Ps.48-50; cetak/PDF 15-16; UU 28/2004 Ps. I angka 16 perubahanPs.52; cetak/PDF 9-10"
+    },
+    {
+      "id": "akk203-uas-tm11-02",
+      "phase": "pra-uas",
+      "tm": 11,
+      "topic": "ASP TM 11",
+      "category": "Standar",
+      "front": "ISAK 335 dan pengakuan",
+      "back": "Penyajian tidak menggantikan standar pengakuan/pengukuran transaksi yang relevan. IAI DE ISAK 35(2018) par.7-12, CI 01-04; cetak 35.1-35.5, PDF 15-19; contoh historis, bukan teks standar final"
+    },
+    {
+      "id": "akk203-uas-tm11-03",
+      "phase": "pra-uas",
+      "tm": 11,
+      "topic": "ASP TM 11",
+      "category": "Klasifikasi",
+      "front": "Dua kelas aset neto",
+      "back": "Tanpa/dengan pembatasan dari pemberi sumber daya dalam contoh historis; periksa tujuan/waktu donor. IAI DE ISAK 35(2018) contoh posisi keuangan/penghasilan/perubahan aset neto/arus kas/Ca LK; cetak 35.6-35.19, PDF 20-33; historis"
+    },
+    {
+      "id": "akk203-uas-tm11-04",
+      "phase": "pra-uas",
+      "tm": 11,
+      "topic": "ASP TM 11",
+      "category": "Mekanisme",
+      "front": "Pembebasan pembatasan",
+      "back": "Reklasifikasi antar kelas setelah tujuan/waktu terpenuhi pada contoh historis; total perubahan reklasifikasi nol. IAI DE ISAK 35(2018) contoh posisi keuangan/penghasilan/perubahan aset neto/arus kas/Ca LK; cetak 35.6-35.19, PDF 20-33; historis"
+    },
+    {
+      "id": "akk203-uas-tm11-05",
+      "phase": "pra-uas",
+      "tm": 11,
+      "topic": "ASP TM 11",
+      "category": "Mekanisme",
+      "front": "Hubungan laporan nonlaba",
+      "back": "kas akhir cocok dengan arus kas; aset neto akhir cocok dengan perubahan aset neto. IAI DE ISAK 35(2018) contoh posisi keuangan/penghasilan/perubahan aset neto/arus kas/Ca LK; cetak 35.6-35.19, PDF 20-33; historis"
+    },
+    {
+      "id": "akk203-uas-tm11-06",
+      "phase": "pra-uas",
+      "tm": 11,
+      "topic": "ASP TM 11",
+      "category": "Hukum",
+      "front": "Ambang audit yayasan",
+      "back": "Bantuan≥Rp 500 juta dalam satu tahun buku ATAU kekayaan di luar wakaf≥Rp 20 miliar memicu ketentuan pasal 52. UU 16/2001 Ps.48-50; cetak/PDF 15-16; UU 28/2004 Ps. I angka 16 perubahanPs.52; cetak/PDF 9-10"
+    }
+  ],
+  "bank": [
+    {
+      "type": "case",
+      "scope": "TM 11: Latihan buatan: paket laporan LSM",
+      "difficulty": "Komprehensif",
+      "estimatedTime": "20-30 menit",
+      "question": "Latihan buatan: paket laporan LSM",
+      "context": "Model penyajian historis dalam juta Rp: donasi 200 tanpa pembatasan dan 100 untuk program, beban umum 120, program 60, peralatan 50. Rujukan: IAI DE ISAK 35(2018) contoh posisi keuangan/penghasilan/perubahan aset neto/arus kas/Ca LK; cetak 35.6-35.19, PDF 20-33; historis",
+      "data": [
+        "saldo awal/liabilitas/OCI nol; seluruh transaksi tunai.",
+        "Pengakuan penghasilan diasumsikan terpenuhi; peralatan belum siap digunakan.",
+        "Pembatasan program 60 terpenuhi."
+      ],
+      "instructions": [
+        "Susun surplus, perubahan aset neto, posisi, arus kas dan Ca LK.",
+        "Verifikasi keseimbangan dan batas klaim SAK."
+      ],
+      "outputFormat": [
+        "Pisahkan fakta, asumsi, analisis dan keputusan.",
+        "Tunjukkan hitungan atau bukti, lalu jelaskan batas kesimpulan."
+      ],
+      "rubric": [
+        "Ketepatan kerangka dan sumber: 30%.",
+        "Langkah, bukti dan pemeriksaan: 40%.",
+        "Keputusan serta kelemahan alternatif: 30%."
+      ],
+      "answerGuide": "Fakta: data kasus. Asumsi: pengakuan terpenuhi, tanpa OCI/liabilitas, peralatan belum siap digunakan. Surplus 300-180=120. Reklasifikasi 60 memberi tanpa 80 dan dengan 40; total 120. Kas 300-180-50=70;peralatan 50;aset 120=liabilitas 0+neto 120. Arusoperasi 120, investasi-50, pendanaan 0, kas akhir 70. Ca LK: kerangka/periode/satuan, kebijakan pengakuan yang diasumsikan, pembatasan 100, pembebasan 60 dan sisa 40, rincian beban/peralatan. Tidak ada pembulatan. Alternatif mengakui reklasifikasi sebagai donasi baru menduplikasi 60. Menganggap pembelian aset sebagai beban mengubah surplus tanpa dasar data. Ini latihan adaptasi DE 2018 dan tidak mengesahkan kepatuhan final SAK 2026. Rujukan: IAI DE ISAK 35(2018) contoh posisi keuangan/penghasilan/perubahan aset neto/arus kas/Ca LK; cetak 35.6-35.19, PDF 20-33; historis"
+    },
+    {
+      "type": "case",
+      "scope": "TM 11: Latihan buatan: laporan tahunan dan audit",
+      "difficulty": "Komprehensif",
+      "estimatedTime": "20-30 menit",
+      "question": "Latihan buatan: laporan tahunan dan audit",
+      "context": "Yayasan menerima bantuanRp 400 juta dalam satu tahun buku dan memiliki kekayaanRp 25 miliar di luar wakaf. Rujukan: UU 16/2001 Ps.48-50; cetak/PDF 15-16; UU 28/2004 Ps. I angka 16 perubahanPs.52; cetak/PDF 9-10",
+      "data": [
+        "Tidak ada informasi kontrak tambahan.",
+        "Data kekayaan diasumsikan benar."
+      ],
+      "instructions": [
+        "Tentukan kewajibanPasal 52.",
+        "Jelaskan dokumen dan pihak terkait."
+      ],
+      "outputFormat": [
+        "Pisahkan fakta, asumsi, analisis dan keputusan.",
+        "Tunjukkan hitungan atau bukti, lalu jelaskan batas kesimpulan."
+      ],
+      "rubric": [
+        "Ketepatan kerangka dan sumber: 30%.",
+        "Langkah, bukti dan pemeriksaan: 40%.",
+        "Keputusan serta kelemahan alternatif: 30%."
+      ],
+      "answerGuide": "Fakta: 400 juta dan 25 miliar. Asumsi: bantuan satu tahun buku, kekayaan mengecualikan wakaf. Bantuan tidak mencapai 500 juta, tetapi kekayaan melampaui 20 miliar. Pasal 52 menggunakan atau; ketentuan audit akuntan publik dan publikasi ikhtisar keuangan terpenuhi. Hasil audit disampaikan kepada Pembina dengan tembusan Menteri/instansi terkait. Laporan tahunan sesuai Pasal 49-50 tetap perlu disusun, ditandatangani dan disahkan. Meminta kedua syarat sekaligus meniadakan kewajiban yang ditetapkan UU. Membaca satu angka tanpa tahun buku/ruang kekayaan menghasilkan kesimpulan keliru. Rujukan: UU 16/2001 Ps.48-50; cetak/PDF 15-16; UU 28/2004 Ps. I angka 16 perubahanPs.52; cetak/PDF 9-10"
+    }
+  ],
+  "audit": {
+    "findings": [
+      "Awal: LSM, parpol dan desa tercampur dalam satu bacaan Perbaikan: Pisahkan LSM TM 11 dan parpol TM 12;desa tidak menjadi inti.",
+      "Awal: ISAK 35 digunakan sebagai semua standar donasi Perbaikan: Pisahkan penyajian, pengakuan dan syarat kontrak.",
+      "Awal: Donasi peralatan otomatis selalu dibebaskan Perbaikan: Periksa syarat donor;latihan hanya memakai asumsi program yang jelas."
+    ],
+    "limitations": [
+      "Teks final SAK/ISAK 335 dan amendemen 2026 belum tersedia utuh; ilustrasi DE 2018 tidak membuktikan kepatuhan aktual.",
+      "DN Bab 3 dan bahan dosen pasca-UTS belum tersedia; contoh buku belum teraudit."
+    ],
+    "appendix": [
+      "DE 2018 CatatanD tentang investasi/endowment: belum masuk latihan inti karena teks transaksi final belum tersedia.",
+      "DE 2018 FormatA/B dan arus kas tidak langsung dapat menjadi latihan penyajian tambahan;angka sumber berupa placeholder."
+    ],
+    "status": "NEEDS_HUMAN_REVIEW",
+    "practiceSources": [
+      {
+        "kind": "cards",
+        "id": "akk203-uas-tm11-01",
+        "field": "back",
+        "label": "UU 16/2001 Ps.48-50; cetak/PDF 15-16; UU 28/2004 Ps. I angka 16 perubahanPs.52; cetak/PDF 9-10",
+        "url": "https://peraturan.bpk.go.id/Download/30439/UU%20Nomor%2028%20Tahun%202004.pdf#page=15"
+      },
+      {
+        "kind": "cards",
+        "id": "akk203-uas-tm11-02",
+        "field": "back",
+        "label": "IAI DE ISAK 35(2018) par.7-12, CI 01-04; cetak 35.1-35.5, PDF 15-19; contoh historis, bukan teks standar final",
+        "url": "https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=15"
+      },
+      {
+        "kind": "cards",
+        "id": "akk203-uas-tm11-03",
+        "field": "back",
+        "label": "IAI DE ISAK 35(2018) contoh posisi keuangan/penghasilan/perubahan aset neto/arus kas/Ca LK; cetak 35.6-35.19, PDF 20-33; historis",
+        "url": "https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=20"
+      },
+      {
+        "kind": "cards",
+        "id": "akk203-uas-tm11-04",
+        "field": "back",
+        "label": "IAI DE ISAK 35(2018) contoh posisi keuangan/penghasilan/perubahan aset neto/arus kas/Ca LK; cetak 35.6-35.19, PDF 20-33; historis",
+        "url": "https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=20"
+      },
+      {
+        "kind": "cards",
+        "id": "akk203-uas-tm11-05",
+        "field": "back",
+        "label": "IAI DE ISAK 35(2018) contoh posisi keuangan/penghasilan/perubahan aset neto/arus kas/Ca LK; cetak 35.6-35.19, PDF 20-33; historis",
+        "url": "https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=20"
+      },
+      {
+        "kind": "cards",
+        "id": "akk203-uas-tm11-06",
+        "field": "back",
+        "label": "UU 16/2001 Ps.48-50; cetak/PDF 15-16; UU 28/2004 Ps. I angka 16 perubahanPs.52; cetak/PDF 9-10",
+        "url": "https://peraturan.bpk.go.id/Download/30439/UU%20Nomor%2028%20Tahun%202004.pdf#page=15"
+      },
+      {
+        "kind": "bank",
+        "id": "tm11-case1",
+        "field": "context",
+        "label": "IAI DE ISAK 35(2018) contoh posisi keuangan/penghasilan/perubahan aset neto/arus kas/Ca LK; cetak 35.6-35.19, PDF 20-33; historis",
+        "url": "https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=20"
+      },
+      {
+        "kind": "bank",
+        "id": "tm11-case1",
+        "field": "answerGuide",
+        "label": "IAI DE ISAK 35(2018) contoh posisi keuangan/penghasilan/perubahan aset neto/arus kas/Ca LK; cetak 35.6-35.19, PDF 20-33; historis",
+        "url": "https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=20"
+      },
+      {
+        "kind": "bank",
+        "id": "tm11-case2",
+        "field": "context",
+        "label": "UU 16/2001 Ps.48-50; cetak/PDF 15-16; UU 28/2004 Ps. I angka 16 perubahanPs.52; cetak/PDF 9-10",
+        "url": "https://peraturan.bpk.go.id/Download/30439/UU%20Nomor%2028%20Tahun%202004.pdf#page=15"
+      },
+      {
+        "kind": "bank",
+        "id": "tm11-case2",
+        "field": "answerGuide",
+        "label": "UU 16/2001 Ps.48-50; cetak/PDF 15-16; UU 28/2004 Ps. I angka 16 perubahanPs.52; cetak/PDF 9-10",
+        "url": "https://peraturan.bpk.go.id/Download/30439/UU%20Nomor%2028%20Tahun%202004.pdf#page=15"
+      }
+    ]
+  },
+  "coverage": [
+    {
+      "concept": "LSM: tentukan bentuk badan dan kerangka laporan",
+      "source": "[UU 16/2001 Ps.48-50; cetak/PDF 15-16; UU 28/2004 Ps. I angka 16 perubahanPs.52; cetak/PDF 9-10](https://peraturan.bpk.go.id/Download/30439/UU%20Nomor%2028%20Tahun%202004.pdf#page=15) [IAI DE ISAK 35(2018) par.7-12, CI 01-04; cetak 35.1-35.5, PDF 15-19; contoh historis, bukan teks standar final](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=15)",
+      "before": "Ringkas atau belum dipisahkan menurut konteks/versi",
+      "after": "Penjelasan mekanisme, perbandingan, cek pemahaman dan batas sumber",
+      "assumptions": "Angka buatan hanya pada latihan berlabel; aturan bergantung entitas/periode",
+      "sourceExercises": "Tidak ada nomor kasus khusus dalam RPP. Format/ilustrasi resmi digunakan bila tersedia."
+    },
+    {
+      "concept": "ISAK 335: penyajian dan versi perlu dibaca terpisah",
+      "source": "[IAI DE ISAK 35(2018) par.7-12, CI 01-04; cetak 35.1-35.5, PDF 15-19; contoh historis, bukan teks standar final](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=15) [IAI penomoran efektif 1 Januari 2024: ISAK 35→335; IAI pengesahan amendemen 3 Juni 2026; PSAK 118 efektif 1 Januari 2027 menurut pengumuman 18 Juni 2025](https://web.iaiglobal.or.id/Berita-IAI/detail/pengesahan_amendemen_isak_335)",
+      "before": "Ringkas atau belum dipisahkan menurut konteks/versi",
+      "after": "Penjelasan mekanisme, perbandingan, cek pemahaman dan batas sumber",
+      "assumptions": "Angka buatan hanya pada latihan berlabel; aturan bergantung entitas/periode",
+      "sourceExercises": "Tidak ada nomor kasus khusus dalam RPP. Format/ilustrasi resmi digunakan bila tersedia."
+    },
+    {
+      "concept": "Aset neto: pahami asal pembatasan",
+      "source": "[IAI DE ISAK 35(2018) contoh posisi keuangan/penghasilan/perubahan aset neto/arus kas/Ca LK; cetak 35.6-35.19, PDF 20-33; historis](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=20)",
+      "before": "Ringkas atau belum dipisahkan menurut konteks/versi",
+      "after": "Penjelasan mekanisme, perbandingan, cek pemahaman dan batas sumber",
+      "assumptions": "Angka buatan hanya pada latihan berlabel; aturan bergantung entitas/periode",
+      "sourceExercises": "Tidak ada nomor kasus khusus dalam RPP. Format/ilustrasi resmi digunakan bila tersedia."
+    },
+    {
+      "concept": "Hubungan lima laporan dalam contoh historis",
+      "source": "[IAI DE ISAK 35(2018) contoh posisi keuangan/penghasilan/perubahan aset neto/arus kas/Ca LK; cetak 35.6-35.19, PDF 20-33; historis](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=20)",
+      "before": "Ringkas atau belum dipisahkan menurut konteks/versi",
+      "after": "Penjelasan mekanisme, perbandingan, cek pemahaman dan batas sumber",
+      "assumptions": "Angka buatan hanya pada latihan berlabel; aturan bergantung entitas/periode",
+      "sourceExercises": "Tidak ada nomor kasus khusus dalam RPP. Format/ilustrasi resmi digunakan bila tersedia."
+    },
+    {
+      "concept": "Menyusun angka: satu kasus, beberapa pemeriksaan",
+      "source": "[IAI DE ISAK 35(2018) contoh posisi keuangan/penghasilan/perubahan aset neto/arus kas/Ca LK; cetak 35.6-35.19, PDF 20-33; historis](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=20)",
+      "before": "Ringkas atau belum dipisahkan menurut konteks/versi",
+      "after": "Penjelasan mekanisme, perbandingan, cek pemahaman dan batas sumber",
+      "assumptions": "Angka buatan hanya pada latihan berlabel; aturan bergantung entitas/periode",
+      "sourceExercises": "Tidak ada nomor kasus khusus dalam RPP. Format/ilustrasi resmi digunakan bila tersedia."
+    },
+    {
+      "concept": "Audit dan transparansi yayasan",
+      "source": "[UU 16/2001 Ps.48-50; cetak/PDF 15-16; UU 28/2004 Ps. I angka 16 perubahanPs.52; cetak/PDF 9-10](https://peraturan.bpk.go.id/Download/30439/UU%20Nomor%2028%20Tahun%202004.pdf#page=15)",
+      "before": "Ringkas atau belum dipisahkan menurut konteks/versi",
+      "after": "Penjelasan mekanisme, perbandingan, cek pemahaman dan batas sumber",
+      "assumptions": "Angka buatan hanya pada latihan berlabel; aturan bergantung entitas/periode",
+      "sourceExercises": "Tidak ada nomor kasus khusus dalam RPP. Format/ilustrasi resmi digunakan bila tersedia."
+    }
+  ]
+}

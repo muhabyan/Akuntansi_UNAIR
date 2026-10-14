@@ -1,0 +1,18 @@
+{
+  "tm": 11,
+  "canonicalSha256": "e2767664a3e1729859ab955f5167e4d587f132228a4eaea15f3e12b590d40027",
+  "sourceStatus": "NEEDS_HUMAN_REVIEW",
+  "sourceComplete": false,
+  "visuals": 5,
+  "quiz": 9,
+  "cards": 6,
+  "cases": 2,
+  "independentChecks": "scripts/test-akk203-pra-uas.mjs",
+  "renderChecks": "scripts/test-akk203-pra-uas-render.mjs",
+  "browserChecks": "scripts/test-akk203-pra-uas-browser.mjs",
+  "technicalEvidence": "../qa-evidence.json",
+  "limitations": [
+    "Teks final SAK/ISAK 335 dan amendemen 2026 belum tersedia utuh; ilustrasi DE 2018 tidak membuktikan kepatuhan aktual.",
+    "DN Bab 3 dan bahan dosen pasca-UTS belum tersedia; contoh buku belum teraudit."
+  ]
+}

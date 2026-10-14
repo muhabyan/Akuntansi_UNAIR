@@ -1,0 +1,1142 @@
+{
+  "course": "AKK 203",
+  "newCode": "FEB 25603014",
+  "tm": 13,
+  "rpp": "DN Bab 3; PSAP 13; PP 23/2005 jo. PP 74/2012, PP 12/2019; pembaruan atas Permendagri 61/2007 dan PMK 220/2016, RPP PDF 6",
+  "reading": {
+    "tm": 13,
+    "title": "Badan Layanan Umum dan BLUD Rumah Sakit",
+    "ref": "[SAP 2026, PSAP 13 par.6-12,17-31,76-88,116-123; cetak 250-266/PDF 257-273](https://www.ksap.org/sap/wp-content/uploads/2026/01/2026-0101-Buku-SAP-2026-Besar.pdf#page=257) | [PMK 128/2024, lampiran Sistem Akuntansi dan Pelaporan Keuangan BLU, PDF 17-20,168-175; berlaku untuk LK 2024 dan seterusnya](https://jdih.kemenkeu.go.id/download/c6ab0355-774d-4a2f-9190-363cdda2c9c6/2024pmkeuangan128.pdf#page=17) | [Permendagri 79/2018 Ps.50-54,74-75,99-100; cetak/PDF 31-34,36-38,47-50; mengganti 61/2007](https://peraturan.bpk.go.id/Download/102253/Permendagri%20Nomor%2079%20Tahun%202018.pdf#page=31)",
+    "intro": "Fokus belajar adalah hubungan layanan, pengakuan, tujuh laporan dan konsolidasi. Contoh rumah sakit menguji fleksibilitas dengan batas anggaran yang eksplisit.",
+    "layout": "layered",
+    "coreReadingMinutes": 20,
+    "objectives": [
+      "BLU dan BLUD: layanan, fleksibilitas dan batas entitas",
+      "Basis laporan: LRA dan LO menjawab pertanyaan berbeda",
+      "Tujuh laporan dan hubungan saldo",
+      "Mekanisme sistem: bukti, pengesahan dan rekonsiliasi",
+      "Konsolidasi: gabungkan dan eliminasi menurut jenis laporan",
+      "BLUD rumah sakit: ambang RBA dan tanggung jawab layanan"
+    ],
+    "blocks": [
+      {
+        "kind": "section",
+        "layer": "fondasi",
+        "title": "Kilat",
+        "blocks": [
+          {
+            "kind": "figure",
+            "spec": {
+              "id": "ASP-UAS-13-KILAT",
+              "type": "process",
+              "title": "Peta Badan Layanan Umum dan BLUD Rumah Sakit",
+              "nodes": [
+                {
+                  "title": "Tentukan konteks",
+                  "items": [
+                    "DN Bab 3; PSAP 13; PP 23/2005 jo. PP 74/2012, PP 12/2019; pembaruan atas Permendagri 61/2007 dan PMK 220/2016, RPP PDF 6"
+                  ]
+                },
+                {
+                  "title": "BLU dan BLUD: layanan, fleksibilitas dan batas entitas",
+                  "items": []
+                },
+                {
+                  "title": "Basis laporan: LRA dan LO menjawab pertanyaan berbeda",
+                  "items": []
+                },
+                {
+                  "title": "Tujuh laporan dan hubungan saldo",
+                  "items": []
+                },
+                {
+                  "title": "Mekanisme sistem: bukti, pengesahan dan rekonsiliasi",
+                  "items": []
+                },
+                {
+                  "title": "Konsolidasi: gabungkan dan eliminasi menurut jenis laporan",
+                  "items": []
+                },
+                {
+                  "title": "BLUD rumah sakit: ambang RBA dan tanggung jawab layanan",
+                  "items": []
+                }
+              ],
+              "source": "[SAP 2026, PSAP 13 par.6-12,17-31,76-88,116-123; cetak 250-266/PDF 257-273](https://www.ksap.org/sap/wp-content/uploads/2026/01/2026-0101-Buku-SAP-2026-Besar.pdf#page=257)",
+              "alt": "Peta Badan Layanan Umum dan BLUD Rumah Sakit. Tentukan konteks → BLU dan BLUD: layanan, fleksibilitas dan batas entitas → Basis laporan: LRA dan LO menjawab pertanyaan berbeda → Tujuh laporan dan hubungan saldo → Mekanisme sistem: bukti, pengesahan dan rekonsiliasi → Konsolidasi: gabungkan dan eliminasi menurut jenis laporan → BLUD rumah sakit: ambang RBA dan tanggung jawab layanan",
+              "footer": "Skematis: hubungan konsep, tanpa skala angka."
+            }
+          },
+          {
+            "kind": "ul",
+            "items": [
+              "Tentukan BLU pusat, BLUD daerah atau entitas swasta terlebih dahulu.",
+              "Bedakan kas/pengesahan LRA dari hak dan konsumsi pada LO.",
+              "Tujuh laporan saling diperiksa tanpa menyamakan semua saldo.",
+              "Sistem BLU pusat memakai PMK 128/2024 dalam periode yang disebut.",
+              "Konsolidasi bergantung jenis laporan dan lingkup internal.",
+              "Fleksibilitas BLUD mengikuti RBA/DPA dan persetujuan."
+            ]
+          },
+          {
+            "kind": "p",
+            "text": "Kalau cuma sempat ingat satu hal: Tentukan BLU pusat, BLUD daerah atau entitas swasta terlebih dahulu."
+          },
+          {
+            "kind": "callout",
+            "variant": "note",
+            "title": "Cakupan dan periode sumber",
+            "text": "RPP: DN Bab 3; PSAP 13; PP 23/2005 jo. PP 74/2012, PP 12/2019; pembaruan atas Permendagri 61/2007 dan PMK 220/2016, RPP PDF 6. DN Bab 3 dan aturan daerah/ambang aktual belum tersedia; sumber resmi dipakai dengan lingkup yang jelas."
+          }
+        ]
+      },
+      {
+        "kind": "section",
+        "layer": "main",
+        "title": "BLU dan BLUD: layanan, fleksibilitas dan batas entitas",
+        "source": "[SAP 2026, PSAP 13 par.6-12,17-31,76-88,116-123; cetak 250-266/PDF 257-273](https://www.ksap.org/sap/wp-content/uploads/2026/01/2026-0101-Buku-SAP-2026-Besar.pdf#page=257) [Permendagri 79/2018 Ps.50-54,74-75,99-100; cetak/PDF 31-34,36-38,47-50; mengganti 61/2007](https://peraturan.bpk.go.id/Download/102253/Permendagri%20Nomor%2079%20Tahun%202018.pdf#page=31)",
+        "blocks": [
+          {
+            "kind": "p",
+            "text": "Badan Layanan Umum (BLU) memberi layanan kepada masyarakat dengan fleksibilitas pengelolaan keuangan untuk meningkatkan pelayanan. Badan Layanan Umum Daerah (BLUD) berada pada pemerintahan daerah. Tujuan layanan harus tetap diuji bersama biaya, mutu dan akses; penerimaan layanan tidak membuat organisasi keluar dari pertanggungjawaban pemerintah. [SAP 2026, PSAP 13 par.6-12,17-31,76-88,116-123; cetak 250-266/PDF 257-273](https://www.ksap.org/sap/wp-content/uploads/2026/01/2026-0101-Buku-SAP-2026-Besar.pdf#page=257) [Permendagri 79/2018 Ps.50-54,74-75,99-100; cetak/PDF 31-34,36-38,47-50; mengganti 61/2007](https://peraturan.bpk.go.id/Download/102253/Permendagri%20Nomor%2079%20Tahun%202018.pdf#page=31)"
+          },
+          {
+            "kind": "p",
+            "text": "PSAP 13 mengatur pelaporan BLU dalam lingkungan pemerintah pusat/daerah. PMK 128/2024 mengatur sistem BLU pusat; BLUD perlu sistem dan kebijakan daerah berdasarkan aturan yang relevan. Rumah sakit dapat menjadi konteks BLU/BLUD, tetapi status kelembagaan harus dibuktikan. Rumah sakit swasta tidak otomatis memakai PSAP 13. [SAP 2026, PSAP 13 par.6-12,17-31,76-88,116-123; cetak 250-266/PDF 257-273](https://www.ksap.org/sap/wp-content/uploads/2026/01/2026-0101-Buku-SAP-2026-Besar.pdf#page=257) [Permendagri 79/2018 Ps.50-54,74-75,99-100; cetak/PDF 31-34,36-38,47-50; mengganti 61/2007](https://peraturan.bpk.go.id/Download/102253/Permendagri%20Nomor%2079%20Tahun%202018.pdf#page=31)"
+          },
+          {
+            "kind": "figure",
+            "spec": {
+              "id": "ASP-UAS-13-ENTITAS",
+              "type": "parallel",
+              "title": "Tentukan konteks sebelum memilih sistem",
+              "nodes": [
+                {
+                  "title": "BLU pusat",
+                  "items": [
+                    "PSAP 13 dan sistem PMK 128/2024"
+                  ]
+                },
+                {
+                  "title": "BLUD daerah",
+                  "items": [
+                    "PSAP 13 dan aturan/kebijakan daerah"
+                  ]
+                },
+                {
+                  "title": "Rumah sakit swasta",
+                  "items": [
+                    "Kerangka entitas swasta yang relevan"
+                  ]
+                }
+              ],
+              "source": "[SAP 2026, PSAP 13 par.6-12,17-31,76-88,116-123; cetak 250-266/PDF 257-273](https://www.ksap.org/sap/wp-content/uploads/2026/01/2026-0101-Buku-SAP-2026-Besar.pdf#page=257) [PMK 128/2024, lampiran Sistem Akuntansi dan Pelaporan Keuangan BLU, PDF 17-20,168-175; berlaku untuk LK 2024 dan seterusnya](https://jdih.kemenkeu.go.id/download/c6ab0355-774d-4a2f-9190-363cdda2c9c6/2024pmkeuangan128.pdf#page=17) [Permendagri 79/2018 Ps.50-54,74-75,99-100; cetak/PDF 31-34,36-38,47-50; mengganti 61/2007](https://peraturan.bpk.go.id/Download/102253/Permendagri%20Nomor%2079%20Tahun%202018.pdf#page=31)",
+              "alt": "Tentukan konteks sebelum memilih sistem. Cabang terpisah dibandingkan sesuai label. Tidak menunjukkan urutan waktu.",
+              "footer": "Skematis: hubungan konsep, tanpa skala angka."
+            }
+          },
+          {
+            "kind": "self-check",
+            "question": "Apakah semua rumah sakit menggunakan sistem BLU pusat?",
+            "answer": [
+              {
+                "kind": "p",
+                "text": "Tidak. Tentukan status entitas dan tingkat pemerintahan sebelum memilih aturan sistem. [SAP 2026, PSAP 13 par.6-12,17-31,76-88,116-123; cetak 250-266/PDF 257-273](https://www.ksap.org/sap/wp-content/uploads/2026/01/2026-0101-Buku-SAP-2026-Besar.pdf#page=257) [Permendagri 79/2018 Ps.50-54,74-75,99-100; cetak/PDF 31-34,36-38,47-50; mengganti 61/2007](https://peraturan.bpk.go.id/Download/102253/Permendagri%20Nomor%2079%20Tahun%202018.pdf#page=31)"
+              }
+            ],
+            "signal": "Jika alasanmu berbeda, kembali ke sumber dan identifikasi fakta yang belum mendukung jawaban."
+          }
+        ]
+      },
+      {
+        "kind": "section",
+        "layer": "main",
+        "title": "Basis laporan: LRA dan LO menjawab pertanyaan berbeda",
+        "source": "[SAP 2026, PSAP 13 par.6-12,17-31,76-88,116-123; cetak 250-266/PDF 257-273](https://www.ksap.org/sap/wp-content/uploads/2026/01/2026-0101-Buku-SAP-2026-Besar.pdf#page=257)",
+        "blocks": [
+          {
+            "kind": "p",
+            "text": "Laporan Realisasi Anggaran (LRA) menunjukkan anggaran dan realisasinya dengan basis kas sesuai ketentuan penerimaan/pengeluaran dan pengesahan BLU. Laporan Operasional (LO) mengakui pendapatan ketika hak timbul atau aliran sumber daya memenuhi ketentuan, serta beban ketika kewajiban timbul, konsumsi aset atau penurunan manfaat/potensi jasa terjadi. Penerimaan kas belum tentu seluruh pendapatan LO periode berjalan. [SAP 2026, PSAP 13 par.6-12,17-31,76-88,116-123; cetak 250-266/PDF 257-273](https://www.ksap.org/sap/wp-content/uploads/2026/01/2026-0101-Buku-SAP-2026-Besar.pdf#page=257)"
+          },
+          {
+            "kind": "p",
+            "text": "Untuk penerimaan layanan, telusuri layanan, hak tagih, kas dan pengesahan. Pendapatan-LRA yang dikelola BLU memerlukan pengesahan sesuai PSAP 13. Perbedaan kas dan akrual bukan kesalahan otomatis: piutang layanan, persediaan dan penyusutan dapat menjelaskan perbedaan LRA/LO. Analisis dimulai dari waktu serta substansi transaksi. [SAP 2026, PSAP 13 par.6-12,17-31,76-88,116-123; cetak 250-266/PDF 257-273](https://www.ksap.org/sap/wp-content/uploads/2026/01/2026-0101-Buku-SAP-2026-Besar.pdf#page=257)"
+          },
+          {
+            "kind": "table",
+            "title": "Kas dan akrual",
+            "headers": [
+              "Pertanyaan",
+              "LRA",
+              "LO"
+            ],
+            "rows": [
+              [
+                "Apa fokusnya?",
+                "Anggaran dan realisasi",
+                "Operasi berbasis hak/konsumsi"
+              ],
+              [
+                "Layanan belum dibayar",
+                "Belum penerimaan kas, cek pengesahan",
+                "Dapat menjadi pendapatan dan piutang bila hak timbul"
+              ],
+              [
+                "Pembelian aset",
+                "Pengeluaran sesuai anggaran",
+                "Kapitalisasi, kemudian beban penyusutan sesuai ketentuan"
+              ]
+            ],
+            "caption": "[SAP 2026, PSAP 13 par.6-12,17-31,76-88,116-123; cetak 250-266/PDF 257-273](https://www.ksap.org/sap/wp-content/uploads/2026/01/2026-0101-Buku-SAP-2026-Besar.pdf#page=257)",
+            "stackOnMobile": true
+          },
+          {
+            "kind": "figure",
+            "spec": {
+              "id": "ASP-UAS-13-BASIS",
+              "type": "parallel",
+              "title": "Satu transaksi, dua sudut laporan",
+              "nodes": [
+                {
+                  "title": "Hak layanan timbul",
+                  "items": [
+                    "LO dan piutang sesuai ketentuan"
+                  ]
+                },
+                {
+                  "title": "Kas diterima dan disahkan",
+                  "items": [
+                    "LRA sesuai mekanisme pengesahan"
+                  ]
+                }
+              ],
+              "source": "[SAP 2026, PSAP 13 par.6-12,17-31,76-88,116-123; cetak 250-266/PDF 257-273](https://www.ksap.org/sap/wp-content/uploads/2026/01/2026-0101-Buku-SAP-2026-Besar.pdf#page=257)",
+              "alt": "Satu transaksi, dua sudut laporan. Cabang terpisah dibandingkan sesuai label. Tidak menunjukkan urutan waktu.",
+              "footer": "Skematis: hubungan konsep, tanpa skala angka."
+            }
+          },
+          {
+            "kind": "self-check",
+            "question": "Mengapa layanan yang belum dibayar dapat muncul pada LO tetapi belum sebagai penerimaan kas LRA?",
+            "answer": [
+              {
+                "kind": "p",
+                "text": "LO menelusuri hak yang timbul, sedangkan penerimaan LRA mengikuti basis kas dan pengesahan yang disyaratkan. [SAP 2026, PSAP 13 par.6-12,17-31,76-88,116-123; cetak 250-266/PDF 257-273](https://www.ksap.org/sap/wp-content/uploads/2026/01/2026-0101-Buku-SAP-2026-Besar.pdf#page=257)"
+              }
+            ],
+            "signal": "Jika alasanmu berbeda, kembali ke sumber dan identifikasi fakta yang belum mendukung jawaban."
+          }
+        ]
+      },
+      {
+        "kind": "section",
+        "layer": "main",
+        "title": "Tujuh laporan dan hubungan saldo",
+        "source": "[SAP 2026, PSAP 13 par.6-12,17-31,76-88,116-123; cetak 250-266/PDF 257-273](https://www.ksap.org/sap/wp-content/uploads/2026/01/2026-0101-Buku-SAP-2026-Besar.pdf#page=257)",
+        "blocks": [
+          {
+            "kind": "p",
+            "text": "PSAP 13 menyebut LRA, Laporan Perubahan Saldo Anggaran Lebih (LPSAL), neraca, LO, laporan arus kas (LAK), Laporan Perubahan Ekuitas (LPE) dan Catatan atas Laporan Keuangan (Ca LK). LRA berhubungan dengan LPSAL; surplus/defisit LO memengaruhi LPE; neraca menunjukkan aset, kewajiban dan ekuitas; LAK menguraikan perubahan kas. Ca LK menjelaskan kebijakan, rincian dan perbedaan yang perlu dipahami. [SAP 2026, PSAP 13 par.6-12,17-31,76-88,116-123; cetak 250-266/PDF 257-273](https://www.ksap.org/sap/wp-content/uploads/2026/01/2026-0101-Buku-SAP-2026-Besar.pdf#page=257)"
+          },
+          {
+            "kind": "p",
+            "text": "Hubungan laporan tidak membuat semua saldo akhir sama. Ekuitas mencakup aset nonkas dikurangi kewajiban. SAL mengikuti mekanisme anggaran, sedangkan kas mengikuti arus masuk/keluar serta saldo awal. Latihan sederhana yang menghasilkan SAL sama dengan kas memerlukan asumsi eksplisit dan tidak boleh dijadikan identitas universal. [SAP 2026, PSAP 13 par.6-12,17-31,76-88,116-123; cetak 250-266/PDF 257-273](https://www.ksap.org/sap/wp-content/uploads/2026/01/2026-0101-Buku-SAP-2026-Besar.pdf#page=257)"
+          },
+          {
+            "kind": "figure",
+            "spec": {
+              "id": "ASP-UAS-13-LAPORAN",
+              "type": "parallel",
+              "title": "Hubungan laporan BLU",
+              "nodes": [
+                {
+                  "title": "Jalur anggaran",
+                  "items": [
+                    "LRA → LPSAL"
+                  ]
+                },
+                {
+                  "title": "Jalur operasi",
+                  "items": [
+                    "LO → LPE → ekuitas neraca"
+                  ]
+                },
+                {
+                  "title": "Jalur kas",
+                  "items": [
+                    "LAK → kas neraca"
+                  ]
+                },
+                {
+                  "title": "Penjelasan",
+                  "items": [
+                    "Ca LK untuk seluruh laporan"
+                  ]
+                }
+              ],
+              "source": "[SAP 2026, PSAP 13 par.6-12,17-31,76-88,116-123; cetak 250-266/PDF 257-273](https://www.ksap.org/sap/wp-content/uploads/2026/01/2026-0101-Buku-SAP-2026-Besar.pdf#page=257)",
+              "alt": "Hubungan laporan BLU. Cabang terpisah dibandingkan sesuai label. Tidak menunjukkan urutan waktu.",
+              "footer": "Skematis: hubungan konsep, tanpa skala angka."
+            }
+          },
+          {
+            "kind": "table",
+            "title": "Pemeriksaan dasar",
+            "headers": [
+              "Hubungan",
+              "Yang diperiksa"
+            ],
+            "rows": [
+              [
+                "Neraca",
+                "Aset = kewajiban + ekuitas"
+              ],
+              [
+                "LPE",
+                "Ekuitas awal + perubahan = ekuitas akhir"
+              ],
+              [
+                "LAK",
+                "Kas awal + arus bersih = kas akhir"
+              ],
+              [
+                "LPSAL",
+                "SAL awal + perubahan sesuai ketentuan = SAL akhir"
+              ]
+            ],
+            "caption": "[SAP 2026, PSAP 13 par.6-12,17-31,76-88,116-123; cetak 250-266/PDF 257-273](https://www.ksap.org/sap/wp-content/uploads/2026/01/2026-0101-Buku-SAP-2026-Besar.pdf#page=257)",
+            "stackOnMobile": true
+          },
+          {
+            "kind": "self-check",
+            "question": "Apakah ekuitas akhir selalu sama dengan kas akhir?",
+            "answer": [
+              {
+                "kind": "p",
+                "text": "Tidak. Aset nonkas dan kewajiban membuat ekuitas berbeda dari kas; periksa persamaan neraca. [SAP 2026, PSAP 13 par.6-12,17-31,76-88,116-123; cetak 250-266/PDF 257-273](https://www.ksap.org/sap/wp-content/uploads/2026/01/2026-0101-Buku-SAP-2026-Besar.pdf#page=257)"
+              }
+            ],
+            "signal": "Jika alasanmu berbeda, kembali ke sumber dan identifikasi fakta yang belum mendukung jawaban."
+          }
+        ]
+      },
+      {
+        "kind": "section",
+        "layer": "main",
+        "title": "Mekanisme sistem: bukti, pengesahan dan rekonsiliasi",
+        "source": "[PMK 128/2024, lampiran Sistem Akuntansi dan Pelaporan Keuangan BLU, PDF 17-20,168-175; berlaku untuk LK 2024 dan seterusnya](https://jdih.kemenkeu.go.id/download/c6ab0355-774d-4a2f-9190-363cdda2c9c6/2024pmkeuangan128.pdf#page=17)",
+        "blocks": [
+          {
+            "kind": "p",
+            "text": "Sistem BLU dimulai dari bukti transaksi serta subsistem yang relevan, kemudian penjurnalan, buku besar, neraca percobaan, laporan dan rekonsiliasi. Mekanisme pengesahan pendapatan/belanja BLU menghubungkan pengelolaan langsung dengan sistem perbendaharaan. Diagram resmi PMK 128/2024 memisahkan arus bisnis dan pelaporan; paket ini menyederhanakannya sebagai peta belajar, bukan formulir operasional pengganti. [PMK 128/2024, lampiran Sistem Akuntansi dan Pelaporan Keuangan BLU, PDF 17-20,168-175; berlaku untuk LK 2024 dan seterusnya](https://jdih.kemenkeu.go.id/download/c6ab0355-774d-4a2f-9190-363cdda2c9c6/2024pmkeuangan128.pdf#page=17)"
+          },
+          {
+            "kind": "p",
+            "text": "Rekonsiliasi membandingkan data dengan sistem/bukti yang relevan, mencari perbedaan waktu, klasifikasi dan pencatatan. Angka cocok perlu diikuti pengujian hak, kelengkapan, pengesahan dan penyajian. PMK 220/2016 serta perubahan 42/2017 telah diganti PMK 128/2024; daftar RPP dipertahankan sebagai jejak bahan lama dengan pembaruan versi dijelaskan. [PMK 128/2024, lampiran Sistem Akuntansi dan Pelaporan Keuangan BLU, PDF 17-20,168-175; berlaku untuk LK 2024 dan seterusnya](https://jdih.kemenkeu.go.id/download/c6ab0355-774d-4a2f-9190-363cdda2c9c6/2024pmkeuangan128.pdf#page=17)"
+          },
+          {
+            "kind": "figure",
+            "spec": {
+              "id": "ASP-UAS-13-SISTEM",
+              "type": "process",
+              "title": "Peta belajar sistem BLU",
+              "nodes": [
+                {
+                  "title": "Bukti dan subsistem",
+                  "items": []
+                },
+                {
+                  "title": "Jurnal serta buku besar",
+                  "items": []
+                },
+                {
+                  "title": "Pengesahan sesuai mekanisme",
+                  "items": []
+                },
+                {
+                  "title": "Neraca percobaan dan rekonsiliasi",
+                  "items": []
+                },
+                {
+                  "title": "Laporan serta Ca LK",
+                  "items": []
+                }
+              ],
+              "source": "[PMK 128/2024, lampiran Sistem Akuntansi dan Pelaporan Keuangan BLU, PDF 17-20,168-175; berlaku untuk LK 2024 dan seterusnya](https://jdih.kemenkeu.go.id/download/c6ab0355-774d-4a2f-9190-363cdda2c9c6/2024pmkeuangan128.pdf#page=17)",
+              "alt": "Peta belajar sistem BLU. Bukti dan subsistem → Jurnal serta buku besar → Pengesahan sesuai mekanisme → Neraca percobaan dan rekonsiliasi → Laporan serta Ca LK",
+              "footer": "Skematis: hubungan konsep, tanpa skala angka."
+            }
+          },
+          {
+            "kind": "self-check",
+            "question": "Apakah pengelolaan langsung pendapatan menghapus kebutuhan pengesahan?",
+            "answer": [
+              {
+                "kind": "p",
+                "text": "Tidak. Telusuri pengesahan dan pelaporan sesuai sistem yang berlaku. [PMK 128/2024, lampiran Sistem Akuntansi dan Pelaporan Keuangan BLU, PDF 17-20,168-175; berlaku untuk LK 2024 dan seterusnya](https://jdih.kemenkeu.go.id/download/c6ab0355-774d-4a2f-9190-363cdda2c9c6/2024pmkeuangan128.pdf#page=17)"
+              }
+            ],
+            "signal": "Jika alasanmu berbeda, kembali ke sumber dan identifikasi fakta yang belum mendukung jawaban."
+          }
+        ]
+      },
+      {
+        "kind": "section",
+        "layer": "main",
+        "title": "Konsolidasi: gabungkan dan eliminasi menurut jenis laporan",
+        "source": "[SAP 2026, PSAP 13 par.6-12,17-31,76-88,116-123; cetak 250-266/PDF 257-273](https://www.ksap.org/sap/wp-content/uploads/2026/01/2026-0101-Buku-SAP-2026-Besar.pdf#page=257) [PMK 128/2024, lampiran Sistem Akuntansi dan Pelaporan Keuangan BLU, PDF 17-20,168-175; berlaku untuk LK 2024 dan seterusnya](https://jdih.kemenkeu.go.id/download/c6ab0355-774d-4a2f-9190-363cdda2c9c6/2024pmkeuangan128.pdf#page=17)",
+        "blocks": [
+          {
+            "kind": "p",
+            "text": "Laporan BLU dikonsolidasikan pada laporan entitas yang membawahinya. PSAP 13 memberi aturan khusus: LRA digabung dan tidak dilakukan eliminasi akun pendapatan, belanja serta pembiayaan BLU yang bersangkutan; pada LO, akun transaksi internal dengan entitas pelaporan lain dalam satu entitas pelaporan dieliminasi sesuai ketentuan. Neraca mengikuti penggabungan dan eliminasi akun timbal balik yang relevan. [SAP 2026, PSAP 13 par.6-12,17-31,76-88,116-123; cetak 250-266/PDF 257-273](https://www.ksap.org/sap/wp-content/uploads/2026/01/2026-0101-Buku-SAP-2026-Besar.pdf#page=257) [PMK 128/2024, lampiran Sistem Akuntansi dan Pelaporan Keuangan BLU, PDF 17-20,168-175; berlaku untuk LK 2024 dan seterusnya](https://jdih.kemenkeu.go.id/download/c6ab0355-774d-4a2f-9190-363cdda2c9c6/2024pmkeuangan128.pdf#page=17)"
+          },
+          {
+            "kind": "p",
+            "text": "LAK BLU dikonsolidasikan dalam LAK BUN/BUD sesuai ketentuan, dan LPSAL BLU masuk LPSAL BUN/BUD, bukan disamakan dengan seluruh jalur konsolidasi kementerian/OPD. Jurnal eliminasi adalah kertas kerja konsolidasi, sehingga tidak otomatis merupakan transaksi kas baru di pembukuan entitas. Cocokkan pasangan, nilai dan lingkup sebelum menghapus saldo. [SAP 2026, PSAP 13 par.6-12,17-31,76-88,116-123; cetak 250-266/PDF 257-273](https://www.ksap.org/sap/wp-content/uploads/2026/01/2026-0101-Buku-SAP-2026-Besar.pdf#page=257) [PMK 128/2024, lampiran Sistem Akuntansi dan Pelaporan Keuangan BLU, PDF 17-20,168-175; berlaku untuk LK 2024 dan seterusnya](https://jdih.kemenkeu.go.id/download/c6ab0355-774d-4a2f-9190-363cdda2c9c6/2024pmkeuangan128.pdf#page=17)"
+          },
+          {
+            "kind": "table",
+            "title": "Pembedaan konsolidasi",
+            "headers": [
+              "Laporan",
+              "Perlakuan utama",
+              "Batas"
+            ],
+            "rows": [
+              [
+                "LRA",
+                "Digabung tanpa eliminasi akun yang disebut PSAP 13",
+                "Jangan menyalin eliminasi LO"
+              ],
+              [
+                "LO",
+                "Eliminasi transaksi internal yang memenuhi lingkup",
+                "Cocokkan pasangan transaksi"
+              ],
+              [
+                "Neraca",
+                "Eliminasi akun timbal balik relevan",
+                "Periksa entitas dan hak/kewajiban"
+              ],
+              [
+                "LAK dan LPSAL",
+                "Jalur BUN/BUD menurut PSAP 13",
+                "Tidak seluruhnya jalur kementerian/OPD"
+              ]
+            ],
+            "caption": "[SAP 2026, PSAP 13 par.6-12,17-31,76-88,116-123; cetak 250-266/PDF 257-273](https://www.ksap.org/sap/wp-content/uploads/2026/01/2026-0101-Buku-SAP-2026-Besar.pdf#page=257)",
+            "stackOnMobile": true
+          },
+          {
+            "kind": "figure",
+            "spec": {
+              "id": "ASP-UAS-13-KONSOL",
+              "type": "parallel",
+              "title": "Jenis laporan menentukan perlakuan",
+              "nodes": [
+                {
+                  "title": "LRA",
+                  "items": [
+                    "Gabungkan, ketentuan tanpa eliminasi"
+                  ]
+                },
+                {
+                  "title": "LO/neraca",
+                  "items": [
+                    "Periksa dan eliminasi internal yang relevan"
+                  ]
+                },
+                {
+                  "title": "LAK/LPSAL",
+                  "items": [
+                    "Jalur BUN/BUD sesuai PSAP 13"
+                  ]
+                }
+              ],
+              "source": "[SAP 2026, PSAP 13 par.6-12,17-31,76-88,116-123; cetak 250-266/PDF 257-273](https://www.ksap.org/sap/wp-content/uploads/2026/01/2026-0101-Buku-SAP-2026-Besar.pdf#page=257)",
+              "alt": "Jenis laporan menentukan perlakuan. Cabang terpisah dibandingkan sesuai label. Tidak menunjukkan urutan waktu.",
+              "footer": "Skematis: hubungan konsep, tanpa skala angka."
+            }
+          },
+          {
+            "kind": "self-check",
+            "question": "Mengapa jurnal eliminasi LO tidak langsung diterapkan pada LRA?",
+            "answer": [
+              {
+                "kind": "p",
+                "text": "PSAP 13 memberi ketentuan berbeda; LRA digabung tanpa eliminasi akun yang disebutkan. [SAP 2026, PSAP 13 par.6-12,17-31,76-88,116-123; cetak 250-266/PDF 257-273](https://www.ksap.org/sap/wp-content/uploads/2026/01/2026-0101-Buku-SAP-2026-Besar.pdf#page=257) [PMK 128/2024, lampiran Sistem Akuntansi dan Pelaporan Keuangan BLU, PDF 17-20,168-175; berlaku untuk LK 2024 dan seterusnya](https://jdih.kemenkeu.go.id/download/c6ab0355-774d-4a2f-9190-363cdda2c9c6/2024pmkeuangan128.pdf#page=17)"
+              }
+            ],
+            "signal": "Jika alasanmu berbeda, kembali ke sumber dan identifikasi fakta yang belum mendukung jawaban."
+          }
+        ]
+      },
+      {
+        "kind": "section",
+        "layer": "main",
+        "title": "BLUD rumah sakit: ambang RBA dan tanggung jawab layanan",
+        "source": "[Permendagri 79/2018 Ps.50-54,74-75,99-100; cetak/PDF 31-34,36-38,47-50; mengganti 61/2007](https://peraturan.bpk.go.id/Download/102253/Permendagri%20Nomor%2079%20Tahun%202018.pdf#page=31)",
+        "blocks": [
+          {
+            "kind": "p",
+            "text": "Rencana Bisnis dan Anggaran (RBA) menghubungkan target layanan, pendapatan, belanja dan kemampuan pendanaan. Dokumen Pelaksanaan Anggaran (DPA) menjadi dasar pelaksanaan. Fleksibilitas belanja BLUD memperhatikan perubahan pendapatan operasional, ambang batas RBA/DPA dan sumber dana yang diizinkan. Ambang ditetapkan berdasarkan ketentuan serta kondisi BLUD, tidak satu persentase tetap untuk semua rumah sakit. [Permendagri 79/2018 Ps.50-54,74-75,99-100; cetak/PDF 31-34,36-38,47-50; mengganti 61/2007](https://peraturan.bpk.go.id/Download/102253/Permendagri%20Nomor%2079%20Tahun%202018.pdf#page=31)"
+          },
+          {
+            "kind": "p",
+            "text": "Jika belanja melampaui ambang, diperlukan persetujuan kepala daerah sesuai ketentuan. Ketersediaan kas saja belum membuktikan belanja boleh dilakukan. Untuk rumah sakit, cek kebutuhan pasien, mutu, kapasitas, bukti pendapatan dan batas anggaran. Permendagri 79/2018 mengganti 61/2007; perkada dan angka ambang aktual belum tersedia dalam paket ini. [Permendagri 79/2018 Ps.50-54,74-75,99-100; cetak/PDF 31-34,36-38,47-50; mengganti 61/2007](https://peraturan.bpk.go.id/Download/102253/Permendagri%20Nomor%2079%20Tahun%202018.pdf#page=31)"
+          },
+          {
+            "kind": "table",
+            "title": "Keputusan belanja rumah sakit",
+            "headers": [
+              "Bukti",
+              "Pertanyaan"
+            ],
+            "rows": [
+              [
+                "Target layanan",
+                "Apakah tambahan layanan diperlukan dan bermutu?"
+              ],
+              [
+                "Pendapatan operasional",
+                "Apakah kenaikan yang mendasari fleksibilitas terbukti?"
+              ],
+              [
+                "RBA/DPA",
+                "Apakah belanja berada dalam ambang yang ditetapkan?"
+              ],
+              [
+                "Persetujuan",
+                "Jika melampaui ambang, apakah prosedur terpenuhi?"
+              ]
+            ],
+            "caption": "[Permendagri 79/2018 Ps.50-54,74-75,99-100; cetak/PDF 31-34,36-38,47-50; mengganti 61/2007](https://peraturan.bpk.go.id/Download/102253/Permendagri%20Nomor%2079%20Tahun%202018.pdf#page=31)",
+            "stackOnMobile": true
+          },
+          {
+            "kind": "self-check",
+            "question": "Apakah saldo bank yang cukup otomatis mengizinkan tambahan belanja BLUD?",
+            "answer": [
+              {
+                "kind": "p",
+                "text": "Tidak. Periksa sumber pendapatan, RBA/DPA, ambang dan persetujuan yang diperlukan. [Permendagri 79/2018 Ps.50-54,74-75,99-100; cetak/PDF 31-34,36-38,47-50; mengganti 61/2007](https://peraturan.bpk.go.id/Download/102253/Permendagri%20Nomor%2079%20Tahun%202018.pdf#page=31)"
+              }
+            ],
+            "signal": "Jika alasanmu berbeda, kembali ke sumber dan identifikasi fakta yang belum mendukung jawaban."
+          }
+        ]
+      },
+      {
+        "kind": "pendalaman",
+        "title": "Pendalaman: konsolidasi dan batas versi",
+        "blocks": [
+          {
+            "kind": "p",
+            "text": "PSAP 13 par.116-123 dan diagram PMK 128/2024 PDF 168-175 menjadi dasar pembedaan penggabungan/eliminasi. Diagram belajar mengurangi detail sistem, sehingga mahasiswa tetap perlu membuka diagram resmi saat menelaah prosedur. Bab DN 3 belum tersedia; paket ini tidak mengklaim audit semua contoh buku."
+          },
+          {
+            "kind": "figure",
+            "spec": {
+              "id": "ASP-UAS-13-KONTROL",
+              "type": "parallel",
+              "title": "Pemeriksaan sebelum menyimpulkan",
+              "nodes": [
+                {
+                  "title": "Entitas/periode",
+                  "items": [
+                    "Status dan versi aturan"
+                  ]
+                },
+                {
+                  "title": "Transaksi",
+                  "items": [
+                    "Hak, kas, klasifikasi dan pengesahan"
+                  ]
+                },
+                {
+                  "title": "Laporan",
+                  "items": [
+                    "Basis, hubungan dan eliminasi"
+                  ]
+                },
+                {
+                  "title": "Layanan",
+                  "items": [
+                    "Mutu, akses serta kemampuan pendanaan"
+                  ]
+                }
+              ],
+              "source": "[SAP 2026, PSAP 13 par.6-12,17-31,76-88,116-123; cetak 250-266/PDF 257-273](https://www.ksap.org/sap/wp-content/uploads/2026/01/2026-0101-Buku-SAP-2026-Besar.pdf#page=257) [PMK 128/2024, lampiran Sistem Akuntansi dan Pelaporan Keuangan BLU, PDF 17-20,168-175; berlaku untuk LK 2024 dan seterusnya](https://jdih.kemenkeu.go.id/download/c6ab0355-774d-4a2f-9190-363cdda2c9c6/2024pmkeuangan128.pdf#page=17) [Permendagri 79/2018 Ps.50-54,74-75,99-100; cetak/PDF 31-34,36-38,47-50; mengganti 61/2007](https://peraturan.bpk.go.id/Download/102253/Permendagri%20Nomor%2079%20Tahun%202018.pdf#page=31)",
+              "alt": "Pemeriksaan sebelum menyimpulkan. Cabang terpisah dibandingkan sesuai label. Tidak menunjukkan urutan waktu.",
+              "footer": "Skematis: hubungan konsep, tanpa skala angka."
+            }
+          }
+        ]
+      },
+      {
+        "kind": "section",
+        "layer": "latihan",
+        "title": "Persiapan ujian",
+        "blocks": [
+          {
+            "kind": "table",
+            "title": "Jebakan dan langkah koreksi",
+            "headers": [
+              "Jebakan",
+              "Langkah yang benar"
+            ],
+            "rows": [
+              [
+                "PMK 220/2016 danPermendagri 61/2007 masih dipakai tanpa status",
+                "Jelaskan penggantian oleh PMK 128/2024 danPermendagri 79/2018."
+              ],
+              [
+                "LRA dan LO disamakan",
+                "Tunjukkan piutang, kapitalisasi dan pemeriksaan tujuh laporan."
+              ],
+              [
+                "Fleksibilitas dianggap bebas atau berambang universal",
+                "Uji RBA/DPA, sumber pendapatan dan persetujuan."
+              ]
+            ],
+            "caption": "[SAP 2026, PSAP 13 par.6-12,17-31,76-88,116-123; cetak 250-266/PDF 257-273](https://www.ksap.org/sap/wp-content/uploads/2026/01/2026-0101-Buku-SAP-2026-Besar.pdf#page=257)",
+            "stackOnMobile": true
+          }
+        ]
+      },
+      {
+        "kind": "solution-reveal",
+        "title": "Latihan buatan: laporan BLU sederhana",
+        "prompt": "20X1, juta Rp. Saldo awal kas, SAL, ekuitas dan kewajiban nol. Layanan ditagih 120, kas diterima 100; seluruh hak sah. Beban tunai 70, aset dibeli 20; aset belum siap dipakai, penyusutan nihil. Semua kas disahkan, tanpa pendanaan/transaksi lain.",
+        "blocks": [
+          {
+            "kind": "p",
+            "text": "Langkah 1: LO mengakui penghasilan 120 dan beban 70, surplus 50. Piutang 120-100=20. Langkah 2: LRA latihan menerima 100 dan mengeluarkan 90 (operasi 70, aset 20), Si LPA 10; tanpa koreksi atau penggunaan SAL, LPSAL akhir 10. SAL sama dengan kas hanya pada asumsi kasus ini."
+          },
+          {
+            "kind": "table",
+            "title": "Laporan ringkas buatan 20X1, juta Rp",
+            "headers": [
+              "Laporan",
+              "Perhitungan/pemeriksaan"
+            ],
+            "rows": [
+              [
+                "LRA",
+                "Pendapatan 100 - belanja 90 = Si LPA 10"
+              ],
+              [
+                "LPSAL",
+                "Awal 0 + Si LPA 10 = akhir 10, tanpa koreksi lain"
+              ],
+              [
+                "LO",
+                "Pendapatan 120 - beban 70 = surplus 50"
+              ],
+              [
+                "LPE",
+                "Awal 0 + surplus 50 = ekuitas 50"
+              ],
+              [
+                "Neraca",
+                "Kas 10 + piutang 20 + aset 20 = kewajiban 0 + ekuitas 50"
+              ],
+              [
+                "LAK",
+                "Operasi 100-70=30; investasi-20; bersih 10; akhir 10"
+              ],
+              [
+                "Ca LK",
+                "Hak layanan, pengesahan, aset belum siap dipakai, seluruh asumsi kasus"
+              ]
+            ],
+            "caption": "[SAP 2026, PSAP 13 par.6-12,17-31,76-88,116-123; cetak 250-266/PDF 257-273](https://www.ksap.org/sap/wp-content/uploads/2026/01/2026-0101-Buku-SAP-2026-Besar.pdf#page=257)",
+            "stackOnMobile": true
+          },
+          {
+            "kind": "p",
+            "text": "Satuan juta Rp, seluruh nilai bulat, tanpa pembulatan. Aset 50=0+50, dan kas awal 0+30-20=10. Membebankan pembelian aset 20 seluruhnya pada LO akan mengabaikan kapitalisasi; menyamakan LO 120 dengan kas 100 mengabaikan piutang 20. Pada entitas aktual, klasifikasi anggaran, umur aset dan saldo awal harus diperiksa."
+          }
+        ],
+        "revealLabel": "Tampilkan langkah dan pemeriksaan"
+      },
+      {
+        "kind": "solution-reveal",
+        "title": "Latihan buatan: eliminasi internal dan keputusan BLUD",
+        "prompt": "BagianA: Dalam satu lingkup konsolidasi, BLU mencatat pendapatan layanan 40 dari satuan kerja, dan satuan kerja mencatat beban 40; tidak ada selisih. BagianB: rumah sakit BLUD memiliki ambang RBA yang ditetapkan 10%; belanja tambahan 12% dan kas cukup.",
+        "blocks": [
+          {
+            "kind": "journal",
+            "title": "Kertas kerja eliminasi LO, juta Rp",
+            "caption": "[SAP 2026, PSAP 13 par.6-12,17-31,76-88,116-123; cetak 250-266/PDF 257-273](https://www.ksap.org/sap/wp-content/uploads/2026/01/2026-0101-Buku-SAP-2026-Besar.pdf#page=257) [PMK 128/2024, lampiran Sistem Akuntansi dan Pelaporan Keuangan BLU, PDF 17-20,168-175; berlaku untuk LK 2024 dan seterusnya](https://jdih.kemenkeu.go.id/download/c6ab0355-774d-4a2f-9190-363cdda2c9c6/2024pmkeuangan128.pdf#page=17)",
+            "lines": [
+              {
+                "account": "Pendapatan layanan BLU",
+                "debit": 40
+              },
+              {
+                "account": "Beban layanan satuan kerja",
+                "credit": 40,
+                "isCredit": true
+              }
+            ]
+          },
+          {
+            "kind": "p",
+            "text": "BagianA: debit 40=kredit 40, menghapus pendapatan/beban internal dan tidak menciptakan arus kas baru. Pada LRA gunakan ketentuan penggabungan PSAP 13, jangan menyalin jurnal ini. Angka 40 buatan; pasangan dan lingkup diasumsikan telah cocok."
+          },
+          {
+            "kind": "p",
+            "text": "BagianB: angka 10% dan 12% adalah asumsi kasus, tidak tarif universal aturan. 12%-10%=2 poin persentase di atas ambang. Perlu persetujuan kepala daerah sesuai ketentuan serta penilaian layanan/pendapatan. Kas cukup tidak menggantikan persetujuan. Menolak semua fleksibilitas mengabaikan ruang BLUD; menyetujui hanya karena kas cukup mengabaikan RBA/DPA. [Permendagri 79/2018 Ps.50-54,74-75,99-100; cetak/PDF 31-34,36-38,47-50; mengganti 61/2007](https://peraturan.bpk.go.id/Download/102253/Permendagri%20Nomor%2079%20Tahun%202018.pdf#page=31)"
+          }
+        ],
+        "revealLabel": "Tampilkan langkah dan pemeriksaan"
+      }
+    ]
+  },
+  "quiz": [
+    {
+      "id": "akk203-uas-tm13-01",
+      "tm": 13,
+      "topic": "Entitas",
+      "skill": "Analisis dasar, mekanisme dan batas penerapan",
+      "difficulty": "medium",
+      "q": "Entitas: rumah sakit swasta dan BLUD memakai aturan sama otomatis?",
+      "options": [
+        "Semua rumah sakit otomatis BLU pusat",
+        "Tentukan status entitas dan kerangka terlebih dahulu",
+        "Semua rumah sakit memakai satu tarif APBN",
+        "Semua rumah sakit dibebaskan dari pelaporan"
+      ],
+      "answer": 1,
+      "explanation": "Status layanan tidak menentukan satu kerangka otomatis. Alternatif menyamakan status, tingkat atau menghapus pertanggungjawaban tanpa dasar. Rujukan: [SAP 2026, PSAP 13 par.6-12,17-31,76-88,116-123; cetak 250-266/PDF 257-273](https://www.ksap.org/sap/wp-content/uploads/2026/01/2026-0101-Buku-SAP-2026-Besar.pdf#page=257) [Permendagri 79/2018 Ps.50-54,74-75,99-100; cetak/PDF 31-34,36-38,47-50; mengganti 61/2007](https://peraturan.bpk.go.id/Download/102253/Permendagri%20Nomor%2079%20Tahun%202018.pdf#page=31)",
+      "sourceRef": "[SAP 2026, PSAP 13 par.6-12,17-31,76-88,116-123; cetak 250-266/PDF 257-273](https://www.ksap.org/sap/wp-content/uploads/2026/01/2026-0101-Buku-SAP-2026-Besar.pdf#page=257) [Permendagri 79/2018 Ps.50-54,74-75,99-100; cetak/PDF 31-34,36-38,47-50; mengganti 61/2007](https://peraturan.bpk.go.id/Download/102253/Permendagri%20Nomor%2079%20Tahun%202018.pdf#page=31)",
+      "sourceAnchors": [
+        "[SAP 2026, PSAP 13 par.6-12,17-31,76-88,116-123; cetak 250-266/PDF 257-273](https://www.ksap.org/sap/wp-content/uploads/2026/01/2026-0101-Buku-SAP-2026-Besar.pdf#page=257) [Permendagri 79/2018 Ps.50-54,74-75,99-100; cetak/PDF 31-34,36-38,47-50; mengganti 61/2007](https://peraturan.bpk.go.id/Download/102253/Permendagri%20Nomor%2079%20Tahun%202018.pdf#page=31)"
+      ]
+    },
+    {
+      "id": "akk203-uas-tm13-02",
+      "tm": 13,
+      "topic": "Basis",
+      "skill": "Analisis dasar, mekanisme dan batas penerapan",
+      "difficulty": "advanced",
+      "q": "Basis: hak layanan 120, kas 100 pada latihan. Pendapatan LO dan piutang?",
+      "options": [
+        "LO 100 dan piutang 0 karena belum ada kas",
+        "LO 20 dan piutang 120 karena hak tertukar",
+        "LO 120 dan piutang 20 jika hak terpenuhi",
+        "LO 120 dan piutang 100 karena kas diabaikan"
+      ],
+      "answer": 2,
+      "explanation": "Hak 120 dikurangi pembayaran 100 menyisakan piutang 20. LO 100 memakai kas sebagai seluruh akrual; opsi lain menukar saldo atau mengabaikan pembayaran. Rujukan: [SAP 2026, PSAP 13 par.6-12,17-31,76-88,116-123; cetak 250-266/PDF 257-273](https://www.ksap.org/sap/wp-content/uploads/2026/01/2026-0101-Buku-SAP-2026-Besar.pdf#page=257)",
+      "sourceRef": "[SAP 2026, PSAP 13 par.6-12,17-31,76-88,116-123; cetak 250-266/PDF 257-273](https://www.ksap.org/sap/wp-content/uploads/2026/01/2026-0101-Buku-SAP-2026-Besar.pdf#page=257)",
+      "sourceAnchors": [
+        "[SAP 2026, PSAP 13 par.6-12,17-31,76-88,116-123; cetak 250-266/PDF 257-273](https://www.ksap.org/sap/wp-content/uploads/2026/01/2026-0101-Buku-SAP-2026-Besar.pdf#page=257)"
+      ]
+    },
+    {
+      "id": "akk203-uas-tm13-03",
+      "tm": 13,
+      "topic": "Laporan",
+      "skill": "Analisis dasar, mekanisme dan batas penerapan",
+      "difficulty": "medium",
+      "q": "Laporan: pasangan pemeriksaan neraca yang benar?",
+      "options": [
+        "Kas selalu sama dengan seluruh ekuitas",
+        "SAL selalu sama dengan piutang layanan",
+        "LRA selalu sama dengan LO pada tiap periode",
+        "Aset sama dengan kewajiban ditambah ekuitas"
+      ],
+      "answer": 3,
+      "explanation": "Neraca menghubungkan aset, kewajiban dan ekuitas. Kas/SAL serta LRA/LO memiliki basis dan komponen berbeda sehingga persamaan alternatif tidak universal. Rujukan: [SAP 2026, PSAP 13 par.6-12,17-31,76-88,116-123; cetak 250-266/PDF 257-273](https://www.ksap.org/sap/wp-content/uploads/2026/01/2026-0101-Buku-SAP-2026-Besar.pdf#page=257)",
+      "sourceRef": "[SAP 2026, PSAP 13 par.6-12,17-31,76-88,116-123; cetak 250-266/PDF 257-273](https://www.ksap.org/sap/wp-content/uploads/2026/01/2026-0101-Buku-SAP-2026-Besar.pdf#page=257)",
+      "sourceAnchors": [
+        "[SAP 2026, PSAP 13 par.6-12,17-31,76-88,116-123; cetak 250-266/PDF 257-273](https://www.ksap.org/sap/wp-content/uploads/2026/01/2026-0101-Buku-SAP-2026-Besar.pdf#page=257)"
+      ]
+    },
+    {
+      "id": "akk203-uas-tm13-04",
+      "tm": 13,
+      "topic": "Konsolidasi",
+      "skill": "Analisis dasar, mekanisme dan batas penerapan",
+      "difficulty": "medium",
+      "q": "Konsolidasi: jurnal eliminasi pendapatan/beban internal LO diterapkan ke LRA?",
+      "options": [
+        "Periksa aturan berbeda, LRA digabung tanpa eliminasi tersebut",
+        "Salin seluruh eliminasi LO ke LRA tanpa pengecekan",
+        "Hapus seluruh pendapatan eksternal BLU dari LRA",
+        "Konsolidasi tidak pernah diperlukan bagi BLU"
+      ],
+      "answer": 0,
+      "explanation": "PSAP 13 membedakan perlakuan LRA dan LO. Menyalin jurnal mengabaikan aturan; transaksi eksternal tidak menjadi internal dan BLU tetap dikonsolidasikan. Rujukan: [SAP 2026, PSAP 13 par.6-12,17-31,76-88,116-123; cetak 250-266/PDF 257-273](https://www.ksap.org/sap/wp-content/uploads/2026/01/2026-0101-Buku-SAP-2026-Besar.pdf#page=257)",
+      "sourceRef": "[SAP 2026, PSAP 13 par.6-12,17-31,76-88,116-123; cetak 250-266/PDF 257-273](https://www.ksap.org/sap/wp-content/uploads/2026/01/2026-0101-Buku-SAP-2026-Besar.pdf#page=257)",
+      "sourceAnchors": [
+        "[SAP 2026, PSAP 13 par.6-12,17-31,76-88,116-123; cetak 250-266/PDF 257-273](https://www.ksap.org/sap/wp-content/uploads/2026/01/2026-0101-Buku-SAP-2026-Besar.pdf#page=257)"
+      ]
+    },
+    {
+      "id": "akk203-uas-tm13-05",
+      "tm": 13,
+      "topic": "Versi",
+      "skill": "Analisis dasar, mekanisme dan batas penerapan",
+      "difficulty": "medium",
+      "q": "Versi: sistem BLU pusat untuk LK 2024 dan sesudahnya?",
+      "options": [
+        "PMK 220/2016 selalu aktif tanpa perubahan",
+        "PMK 128/2024 mengganti PMK 220/2016 dan 42/2017",
+        "Permendagri 61/2007 mengatur seluruh BLU pusat",
+        "Draf ISAK 35 mengganti seluruh sistem perbendaharaan"
+      ],
+      "answer": 1,
+      "explanation": "PMK 128/2024 menyebut pencabutan dan periode penerapan. Alternatif memakai aturan diganti, tingkat berbeda atau draf nonlaba sebagai sistem pemerintah. Rujukan: [PMK 128/2024, lampiran Sistem Akuntansi dan Pelaporan Keuangan BLU, PDF 17-20,168-175; berlaku untuk LK 2024 dan seterusnya](https://jdih.kemenkeu.go.id/download/c6ab0355-774d-4a2f-9190-363cdda2c9c6/2024pmkeuangan128.pdf#page=17)",
+      "sourceRef": "[PMK 128/2024, lampiran Sistem Akuntansi dan Pelaporan Keuangan BLU, PDF 17-20,168-175; berlaku untuk LK 2024 dan seterusnya](https://jdih.kemenkeu.go.id/download/c6ab0355-774d-4a2f-9190-363cdda2c9c6/2024pmkeuangan128.pdf#page=17)",
+      "sourceAnchors": [
+        "[PMK 128/2024, lampiran Sistem Akuntansi dan Pelaporan Keuangan BLU, PDF 17-20,168-175; berlaku untuk LK 2024 dan seterusnya](https://jdih.kemenkeu.go.id/download/c6ab0355-774d-4a2f-9190-363cdda2c9c6/2024pmkeuangan128.pdf#page=17)"
+      ]
+    },
+    {
+      "id": "akk203-uas-tm13-06",
+      "tm": 13,
+      "topic": "Latihan buatan",
+      "skill": "Analisis dasar, mekanisme dan batas penerapan",
+      "difficulty": "advanced",
+      "q": "Latihan buatan: kas awal 0, penerimaan 100, operasi 70, aset 20. Kas akhir?",
+      "options": [
+        "30 juta Rp, pembelian aset tidak mengurangi kas",
+        "50 juta Rp, seluruh surplus LO dianggap kas",
+        "10 juta Rp, operasi 30 dikurangi investasi 20",
+        "90 juta Rp, pengeluaran dianggap penerimaan"
+      ],
+      "answer": 2,
+      "explanation": "100-70-20=10 juta Rp.30 mengabaikan investasi,50 memakai surplus akrual,90 mencampur pengeluaran dengan saldo. Tidak ada pembulatan. Rujukan: [SAP 2026, PSAP 13 par.6-12,17-31,76-88,116-123; cetak 250-266/PDF 257-273](https://www.ksap.org/sap/wp-content/uploads/2026/01/2026-0101-Buku-SAP-2026-Besar.pdf#page=257)",
+      "sourceRef": "[SAP 2026, PSAP 13 par.6-12,17-31,76-88,116-123; cetak 250-266/PDF 257-273](https://www.ksap.org/sap/wp-content/uploads/2026/01/2026-0101-Buku-SAP-2026-Besar.pdf#page=257)",
+      "sourceAnchors": [
+        "[SAP 2026, PSAP 13 par.6-12,17-31,76-88,116-123; cetak 250-266/PDF 257-273](https://www.ksap.org/sap/wp-content/uploads/2026/01/2026-0101-Buku-SAP-2026-Besar.pdf#page=257)"
+      ]
+    },
+    {
+      "id": "akk203-uas-tm13-07",
+      "tm": 13,
+      "topic": "BLUD",
+      "skill": "Analisis dasar, mekanisme dan batas penerapan",
+      "difficulty": "advanced",
+      "q": "BLUD: ambang kasus 10%, kenaikan 12%, kas cukup. Keputusan?",
+      "options": [
+        "Otomatis boleh karena saldo bank mencukupi",
+        "Otomatis boleh karena semua BLUD berambang 15%",
+        "Otomatis dilarang karena BLUD tidak punya fleksibilitas",
+        "Periksa persetujuan kepala daerah dan ketentuan RBA/DPA"
+      ],
+      "answer": 3,
+      "explanation": "12% melampaui ambang asumsi 10%. Ketentuan mengharuskan persetujuan terkait; kas cukup tidak menghapusnya.15% universal tidak didukung dan penolakan seluruh fleksibilitas berlebihan. Rujukan: [Permendagri 79/2018 Ps.50-54,74-75,99-100; cetak/PDF 31-34,36-38,47-50; mengganti 61/2007](https://peraturan.bpk.go.id/Download/102253/Permendagri%20Nomor%2079%20Tahun%202018.pdf#page=31)",
+      "sourceRef": "[Permendagri 79/2018 Ps.50-54,74-75,99-100; cetak/PDF 31-34,36-38,47-50; mengganti 61/2007](https://peraturan.bpk.go.id/Download/102253/Permendagri%20Nomor%2079%20Tahun%202018.pdf#page=31)",
+      "sourceAnchors": [
+        "[Permendagri 79/2018 Ps.50-54,74-75,99-100; cetak/PDF 31-34,36-38,47-50; mengganti 61/2007](https://peraturan.bpk.go.id/Download/102253/Permendagri%20Nomor%2079%20Tahun%202018.pdf#page=31)"
+      ]
+    },
+    {
+      "id": "akk203-uas-tm13-08",
+      "tm": 13,
+      "topic": "Eliminasi buatan 40",
+      "skill": "Analisis dasar, mekanisme dan batas penerapan",
+      "difficulty": "medium",
+      "q": "Eliminasi buatan 40:debit pendapatan dan kredit beban. Pemeriksaan?",
+      "options": [
+        "Debit 40=kredit 40, tanpa arus kas baru",
+        "Debit 40=kredit 0, karena beban boleh diabaikan",
+        "Debit 80=kredit 40, karena nilai dihitung ganda",
+        "Debit 40=kredit 40, selalu menciptakan kas 40"
+      ],
+      "answer": 0,
+      "explanation": "Kertas kerja eliminasi menghapus pasangan yang cocok. Opsi lain tidak seimbang atau menganggap eliminasi sebagai penerimaan kas. Lingkup dan bukti tetap harus diperiksa. Rujukan: [SAP 2026, PSAP 13 par.6-12,17-31,76-88,116-123; cetak 250-266/PDF 257-273](https://www.ksap.org/sap/wp-content/uploads/2026/01/2026-0101-Buku-SAP-2026-Besar.pdf#page=257) [PMK 128/2024, lampiran Sistem Akuntansi dan Pelaporan Keuangan BLU, PDF 17-20,168-175; berlaku untuk LK 2024 dan seterusnya](https://jdih.kemenkeu.go.id/download/c6ab0355-774d-4a2f-9190-363cdda2c9c6/2024pmkeuangan128.pdf#page=17)",
+      "sourceRef": "[SAP 2026, PSAP 13 par.6-12,17-31,76-88,116-123; cetak 250-266/PDF 257-273](https://www.ksap.org/sap/wp-content/uploads/2026/01/2026-0101-Buku-SAP-2026-Besar.pdf#page=257) [PMK 128/2024, lampiran Sistem Akuntansi dan Pelaporan Keuangan BLU, PDF 17-20,168-175; berlaku untuk LK 2024 dan seterusnya](https://jdih.kemenkeu.go.id/download/c6ab0355-774d-4a2f-9190-363cdda2c9c6/2024pmkeuangan128.pdf#page=17)",
+      "sourceAnchors": [
+        "[SAP 2026, PSAP 13 par.6-12,17-31,76-88,116-123; cetak 250-266/PDF 257-273](https://www.ksap.org/sap/wp-content/uploads/2026/01/2026-0101-Buku-SAP-2026-Besar.pdf#page=257) [PMK 128/2024, lampiran Sistem Akuntansi dan Pelaporan Keuangan BLU, PDF 17-20,168-175; berlaku untuk LK 2024 dan seterusnya](https://jdih.kemenkeu.go.id/download/c6ab0355-774d-4a2f-9190-363cdda2c9c6/2024pmkeuangan128.pdf#page=17)"
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "id": "aks201-tm12-01",
+      "phase": "pra-uas",
+      "tm": 13,
+      "topic": "ASP TM 13",
+      "category": "Konsep",
+      "front": "BLU/BLUD dan fokus layanan",
+      "back": "Fleksibilitas pengelolaan membantu layanan, dengan pertanggungjawaban pemerintah dan kerangka sesuai status entitas. SAP 2026, PSAP 13 par.6-12,17-31,76-88,116-123; cetak 250-266/PDF 257-273 Permendagri 79/2018 Ps.50-54,74-75,99-100; cetak/PDF 31-34,36-38,47-50; mengganti 61/2007"
+    },
+    {
+      "id": "akk203-uas-tm13-02",
+      "phase": "pra-uas",
+      "tm": 13,
+      "topic": "ASP TM 13",
+      "category": "Standar",
+      "front": "Tujuh laporan BLU",
+      "back": "LRA, LPSAL, neraca, LO, LAK, LPE dan Ca LK menurut PSAP 13, dengan basis serta hubungan berbeda. SAP 2026, PSAP 13 par.6-12,17-31,76-88,116-123; cetak 250-266/PDF 257-273"
+    },
+    {
+      "id": "akk203-uas-tm13-03",
+      "phase": "pra-uas",
+      "tm": 13,
+      "topic": "ASP TM 13",
+      "category": "Mekanisme",
+      "front": "LRA dan LO layanan",
+      "back": "LRA mengikuti kas/pengesahan; LO mengikuti hak atau aliran sumber daya sesuai ketentuan. Piutang dapat menjelaskan selisih. SAP 2026, PSAP 13 par.6-12,17-31,76-88,116-123; cetak 250-266/PDF 257-273"
+    },
+    {
+      "id": "akk203-uas-tm13-04",
+      "phase": "pra-uas",
+      "tm": 13,
+      "topic": "ASP TM 13",
+      "category": "Hukum",
+      "front": "Sistem BLU pusat terbaru dalam paket",
+      "back": "PMK 128/2024 mengganti PMK 220/2016 dan 42/2017, diterapkan mulai LK 2024. PMK 128/2024, lampiran Sistem Akuntansi dan Pelaporan Keuangan BLU, PDF 17-20,168-175; berlaku untuk LK 2024 dan seterusnya"
+    },
+    {
+      "id": "akk203-uas-tm13-05",
+      "phase": "pra-uas",
+      "tm": 13,
+      "topic": "ASP TM 13",
+      "category": "Mekanisme",
+      "front": "Konsolidasi BLU",
+      "back": "Bedakan LRA tanpa eliminasi yang ditentukan, LO/neraca dengan eliminasi internal relevan, serta jalur LAK/LPSAL BUN/BUD. SAP 2026, PSAP 13 par.6-12,17-31,76-88,116-123; cetak 250-266/PDF 257-273"
+    },
+    {
+      "id": "akk203-uas-tm13-06",
+      "phase": "pra-uas",
+      "tm": 13,
+      "topic": "ASP TM 13",
+      "category": "Hukum",
+      "front": "Ambang fleksibilitas BLUD",
+      "back": "Ikuti ambang RBA/DPA yang ditetapkan dan persetujuan ketika melampaui. Angka kasus bukan ambang universal. Permendagri 79/2018 Ps.50-54,74-75,99-100; cetak/PDF 31-34,36-38,47-50; mengganti 61/2007"
+    }
+  ],
+  "bank": [
+    {
+      "type": "case",
+      "scope": "TM 13: Latihan buatan: tujuh laporan BLU",
+      "difficulty": "Komprehensif",
+      "estimatedTime": "20-30 menit",
+      "question": "Latihan buatan: tujuh laporan BLU",
+      "context": "Gunakan hak layanan 120, kas diterima 100, beban tunai 70, pembelian aset 20, seluruhnya juta Rp. Rujukan: SAP 2026, PSAP 13 par.6-12,17-31,76-88,116-123; cetak 250-266/PDF 257-273",
+      "data": [
+        "Awal kas/SAL/ekuitas/kewajiban nihil.",
+        "Hak sah, kas disahkan, aset belum siap dipakai, penyusutan/transaksi lain nihil."
+      ],
+      "instructions": [
+        "Susun hubungan tujuh laporan.",
+        "Periksa kas, akrual dan keseimbangan."
+      ],
+      "outputFormat": [
+        "Pisahkan fakta, asumsi, analisis dan keputusan.",
+        "Tunjukkan hitungan atau bukti, lalu jelaskan batas kesimpulan."
+      ],
+      "rubric": [
+        "Ketepatan kerangka dan sumber: 30%.",
+        "Langkah, bukti dan pemeriksaan: 40%.",
+        "Keputusan serta kelemahan alternatif: 30%."
+      ],
+      "answerGuide": "Fakta: layanan 120, kas 100, beban 70, aset 20. Asumsi: seluruh kondisi kasus terpenuhi. LO surplus 50; piutang 20. LRA 100-90=10; LPSAL 0+10=10 tanpa koreksi lain. LPE 0+50=50. Neraca kas 10+piutang 20+aset 20=0+ekuitas 50. LAK operasi 30, investasi-20, akhir 10. Ca LK memuat pengakuan/pengesahan dan asumsi. Menganggap surplus 50 sebagai kas atau membebankan seluruh aset 20 pada LO memberi salah hubungan. Angka buatan, tanpa pembulatan; SAL=kas hanya pada kasus ini. Rujukan: SAP 2026, PSAP 13 par.6-12,17-31,76-88,116-123; cetak 250-266/PDF 257-273"
+    },
+    {
+      "type": "case",
+      "scope": "TM 13: Latihan buatan: konsolidasi dan fleksibilitas rumah sakit",
+      "difficulty": "Komprehensif",
+      "estimatedTime": "20-30 menit",
+      "question": "Latihan buatan: konsolidasi dan fleksibilitas rumah sakit",
+      "context": "Pendapatan/beban internal 40 juta Rp cocok; BLUD memiliki ambang kasus 10%, belanja bertambah 12% dan kas cukup. Rujukan: SAP 2026, PSAP 13 par.6-12,17-31,76-88,116-123; cetak 250-266/PDF 257-273 PMK 128/2024, lampiran Sistem Akuntansi dan Pelaporan Keuangan BLU, PDF 17-20,168-175; berlaku untuk LK 2024 dan seterusnya Permendagri 79/2018 Ps.50-54,74-75,99-100; cetak/PDF 31-34,36-38,47-50; mengganti 61/2007",
+      "data": [
+        "Lingkup konsolidasi sama; tidak ada selisih internal.",
+        "Ambang 10% ditetapkan dalam asumsi RBA/DPA, bukan angka aturan universal."
+      ],
+      "instructions": [
+        "Buat jurnal eliminasi LO serta batas penerapannya.",
+        "Putuskan langkah belanja dan kelemahan alternatif."
+      ],
+      "outputFormat": [
+        "Pisahkan fakta, asumsi, analisis dan keputusan.",
+        "Tunjukkan hitungan atau bukti, lalu jelaskan batas kesimpulan."
+      ],
+      "rubric": [
+        "Ketepatan kerangka dan sumber: 30%.",
+        "Langkah, bukti dan pemeriksaan: 40%.",
+        "Keputusan serta kelemahan alternatif: 30%."
+      ],
+      "answerGuide": "Eliminasi kertas kerja: debit pendapatan 40, kredit beban 40;debit=kredit. Tidak ada kas baru; jangan menyalin ke LRA yang memiliki ketentuan berbeda. BLUD: 12%-10%=2 poin persentase di atas ambang. Periksa persetujuan kepala daerah dan dasar pendapatan/layanan. Kas cukup tidak menggantikan persetujuan; menolak seluruh fleksibilitas juga mengabaikan aturan. PMK 128 untuk sistem pusat, Permendagri 79/kebijakan daerah untuk BLUD;status entitas harus jelas. Rujukan: SAP 2026, PSAP 13 par.6-12,17-31,76-88,116-123; cetak 250-266/PDF 257-273 PMK 128/2024, lampiran Sistem Akuntansi dan Pelaporan Keuangan BLU, PDF 17-20,168-175; berlaku untuk LK 2024 dan seterusnya Permendagri 79/2018 Ps.50-54,74-75,99-100; cetak/PDF 31-34,36-38,47-50; mengganti 61/2007"
+    }
+  ],
+  "audit": {
+    "findings": [
+      "Awal: PMK 220/2016 danPermendagri 61/2007 masih dipakai tanpa status Perbaikan: Jelaskan penggantian oleh PMK 128/2024 danPermendagri 79/2018.",
+      "Awal: LRA dan LO disamakan Perbaikan: Tunjukkan piutang, kapitalisasi dan pemeriksaan tujuh laporan.",
+      "Awal: Fleksibilitas dianggap bebas atau berambang universal Perbaikan: Uji RBA/DPA, sumber pendapatan dan persetujuan."
+    ],
+    "limitations": [
+      "DN Bab 3 dan aturan daerah/ambang aktual belum tersedia; sumber resmi dipakai dengan lingkup yang jelas.",
+      "Contoh rumah sakit buatan, tanpa klaim kepatuhan operasional satu rumah sakit nyata."
+    ],
+    "appendix": [
+      "Lampiran PMK 128 tentang akun dan proses detail di luar peta belajar inti tetap menjadi rujukan lanjutan.",
+      "Penetapan tarif, remunerasi dan pengadaan spesifik rumah sakit memerlukan aturan serta dokumen lokal."
+    ],
+    "status": "NEEDS_HUMAN_REVIEW",
+    "practiceSources": [
+      {
+        "kind": "cards",
+        "id": "aks201-tm12-01",
+        "field": "back",
+        "label": "SAP 2026, PSAP 13 par.6-12,17-31,76-88,116-123; cetak 250-266/PDF 257-273",
+        "url": "https://www.ksap.org/sap/wp-content/uploads/2026/01/2026-0101-Buku-SAP-2026-Besar.pdf#page=257"
+      },
+      {
+        "kind": "cards",
+        "id": "aks201-tm12-01",
+        "field": "back",
+        "label": "Permendagri 79/2018 Ps.50-54,74-75,99-100; cetak/PDF 31-34,36-38,47-50; mengganti 61/2007",
+        "url": "https://peraturan.bpk.go.id/Download/102253/Permendagri%20Nomor%2079%20Tahun%202018.pdf#page=31"
+      },
+      {
+        "kind": "cards",
+        "id": "akk203-uas-tm13-02",
+        "field": "back",
+        "label": "SAP 2026, PSAP 13 par.6-12,17-31,76-88,116-123; cetak 250-266/PDF 257-273",
+        "url": "https://www.ksap.org/sap/wp-content/uploads/2026/01/2026-0101-Buku-SAP-2026-Besar.pdf#page=257"
+      },
+      {
+        "kind": "cards",
+        "id": "akk203-uas-tm13-03",
+        "field": "back",
+        "label": "SAP 2026, PSAP 13 par.6-12,17-31,76-88,116-123; cetak 250-266/PDF 257-273",
+        "url": "https://www.ksap.org/sap/wp-content/uploads/2026/01/2026-0101-Buku-SAP-2026-Besar.pdf#page=257"
+      },
+      {
+        "kind": "cards",
+        "id": "akk203-uas-tm13-04",
+        "field": "back",
+        "label": "PMK 128/2024, lampiran Sistem Akuntansi dan Pelaporan Keuangan BLU, PDF 17-20,168-175; berlaku untuk LK 2024 dan seterusnya",
+        "url": "https://jdih.kemenkeu.go.id/download/c6ab0355-774d-4a2f-9190-363cdda2c9c6/2024pmkeuangan128.pdf#page=17"
+      },
+      {
+        "kind": "cards",
+        "id": "akk203-uas-tm13-05",
+        "field": "back",
+        "label": "SAP 2026, PSAP 13 par.6-12,17-31,76-88,116-123; cetak 250-266/PDF 257-273",
+        "url": "https://www.ksap.org/sap/wp-content/uploads/2026/01/2026-0101-Buku-SAP-2026-Besar.pdf#page=257"
+      },
+      {
+        "kind": "cards",
+        "id": "akk203-uas-tm13-06",
+        "field": "back",
+        "label": "Permendagri 79/2018 Ps.50-54,74-75,99-100; cetak/PDF 31-34,36-38,47-50; mengganti 61/2007",
+        "url": "https://peraturan.bpk.go.id/Download/102253/Permendagri%20Nomor%2079%20Tahun%202018.pdf#page=31"
+      },
+      {
+        "kind": "bank",
+        "id": "tm13-case1",
+        "field": "context",
+        "label": "SAP 2026, PSAP 13 par.6-12,17-31,76-88,116-123; cetak 250-266/PDF 257-273",
+        "url": "https://www.ksap.org/sap/wp-content/uploads/2026/01/2026-0101-Buku-SAP-2026-Besar.pdf#page=257"
+      },
+      {
+        "kind": "bank",
+        "id": "tm13-case1",
+        "field": "answerGuide",
+        "label": "SAP 2026, PSAP 13 par.6-12,17-31,76-88,116-123; cetak 250-266/PDF 257-273",
+        "url": "https://www.ksap.org/sap/wp-content/uploads/2026/01/2026-0101-Buku-SAP-2026-Besar.pdf#page=257"
+      },
+      {
+        "kind": "bank",
+        "id": "tm13-case2",
+        "field": "context",
+        "label": "SAP 2026, PSAP 13 par.6-12,17-31,76-88,116-123; cetak 250-266/PDF 257-273",
+        "url": "https://www.ksap.org/sap/wp-content/uploads/2026/01/2026-0101-Buku-SAP-2026-Besar.pdf#page=257"
+      },
+      {
+        "kind": "bank",
+        "id": "tm13-case2",
+        "field": "context",
+        "label": "PMK 128/2024, lampiran Sistem Akuntansi dan Pelaporan Keuangan BLU, PDF 17-20,168-175; berlaku untuk LK 2024 dan seterusnya",
+        "url": "https://jdih.kemenkeu.go.id/download/c6ab0355-774d-4a2f-9190-363cdda2c9c6/2024pmkeuangan128.pdf#page=17"
+      },
+      {
+        "kind": "bank",
+        "id": "tm13-case2",
+        "field": "context",
+        "label": "Permendagri 79/2018 Ps.50-54,74-75,99-100; cetak/PDF 31-34,36-38,47-50; mengganti 61/2007",
+        "url": "https://peraturan.bpk.go.id/Download/102253/Permendagri%20Nomor%2079%20Tahun%202018.pdf#page=31"
+      },
+      {
+        "kind": "bank",
+        "id": "tm13-case2",
+        "field": "answerGuide",
+        "label": "SAP 2026, PSAP 13 par.6-12,17-31,76-88,116-123; cetak 250-266/PDF 257-273",
+        "url": "https://www.ksap.org/sap/wp-content/uploads/2026/01/2026-0101-Buku-SAP-2026-Besar.pdf#page=257"
+      },
+      {
+        "kind": "bank",
+        "id": "tm13-case2",
+        "field": "answerGuide",
+        "label": "PMK 128/2024, lampiran Sistem Akuntansi dan Pelaporan Keuangan BLU, PDF 17-20,168-175; berlaku untuk LK 2024 dan seterusnya",
+        "url": "https://jdih.kemenkeu.go.id/download/c6ab0355-774d-4a2f-9190-363cdda2c9c6/2024pmkeuangan128.pdf#page=17"
+      },
+      {
+        "kind": "bank",
+        "id": "tm13-case2",
+        "field": "answerGuide",
+        "label": "Permendagri 79/2018 Ps.50-54,74-75,99-100; cetak/PDF 31-34,36-38,47-50; mengganti 61/2007",
+        "url": "https://peraturan.bpk.go.id/Download/102253/Permendagri%20Nomor%2079%20Tahun%202018.pdf#page=31"
+      }
+    ]
+  },
+  "coverage": [
+    {
+      "concept": "BLU dan BLUD: layanan, fleksibilitas dan batas entitas",
+      "source": "[SAP 2026, PSAP 13 par.6-12,17-31,76-88,116-123; cetak 250-266/PDF 257-273](https://www.ksap.org/sap/wp-content/uploads/2026/01/2026-0101-Buku-SAP-2026-Besar.pdf#page=257) [Permendagri 79/2018 Ps.50-54,74-75,99-100; cetak/PDF 31-34,36-38,47-50; mengganti 61/2007](https://peraturan.bpk.go.id/Download/102253/Permendagri%20Nomor%2079%20Tahun%202018.pdf#page=31)",
+      "before": "Ringkas atau belum dipisahkan menurut konteks/versi",
+      "after": "Penjelasan mekanisme, perbandingan, cek pemahaman dan batas sumber",
+      "assumptions": "Angka buatan hanya pada latihan berlabel; aturan bergantung entitas/periode",
+      "sourceExercises": "Tidak ada nomor kasus khusus dalam RPP. Format/ilustrasi resmi digunakan bila tersedia."
+    },
+    {
+      "concept": "Basis laporan: LRA dan LO menjawab pertanyaan berbeda",
+      "source": "[SAP 2026, PSAP 13 par.6-12,17-31,76-88,116-123; cetak 250-266/PDF 257-273](https://www.ksap.org/sap/wp-content/uploads/2026/01/2026-0101-Buku-SAP-2026-Besar.pdf#page=257)",
+      "before": "Ringkas atau belum dipisahkan menurut konteks/versi",
+      "after": "Penjelasan mekanisme, perbandingan, cek pemahaman dan batas sumber",
+      "assumptions": "Angka buatan hanya pada latihan berlabel; aturan bergantung entitas/periode",
+      "sourceExercises": "Tidak ada nomor kasus khusus dalam RPP. Format/ilustrasi resmi digunakan bila tersedia."
+    },
+    {
+      "concept": "Tujuh laporan dan hubungan saldo",
+      "source": "[SAP 2026, PSAP 13 par.6-12,17-31,76-88,116-123; cetak 250-266/PDF 257-273](https://www.ksap.org/sap/wp-content/uploads/2026/01/2026-0101-Buku-SAP-2026-Besar.pdf#page=257)",
+      "before": "Ringkas atau belum dipisahkan menurut konteks/versi",
+      "after": "Penjelasan mekanisme, perbandingan, cek pemahaman dan batas sumber",
+      "assumptions": "Angka buatan hanya pada latihan berlabel; aturan bergantung entitas/periode",
+      "sourceExercises": "Tidak ada nomor kasus khusus dalam RPP. Format/ilustrasi resmi digunakan bila tersedia."
+    },
+    {
+      "concept": "Mekanisme sistem: bukti, pengesahan dan rekonsiliasi",
+      "source": "[PMK 128/2024, lampiran Sistem Akuntansi dan Pelaporan Keuangan BLU, PDF 17-20,168-175; berlaku untuk LK 2024 dan seterusnya](https://jdih.kemenkeu.go.id/download/c6ab0355-774d-4a2f-9190-363cdda2c9c6/2024pmkeuangan128.pdf#page=17)",
+      "before": "Ringkas atau belum dipisahkan menurut konteks/versi",
+      "after": "Penjelasan mekanisme, perbandingan, cek pemahaman dan batas sumber",
+      "assumptions": "Angka buatan hanya pada latihan berlabel; aturan bergantung entitas/periode",
+      "sourceExercises": "Tidak ada nomor kasus khusus dalam RPP. Format/ilustrasi resmi digunakan bila tersedia."
+    },
+    {
+      "concept": "Konsolidasi: gabungkan dan eliminasi menurut jenis laporan",
+      "source": "[SAP 2026, PSAP 13 par.6-12,17-31,76-88,116-123; cetak 250-266/PDF 257-273](https://www.ksap.org/sap/wp-content/uploads/2026/01/2026-0101-Buku-SAP-2026-Besar.pdf#page=257) [PMK 128/2024, lampiran Sistem Akuntansi dan Pelaporan Keuangan BLU, PDF 17-20,168-175; berlaku untuk LK 2024 dan seterusnya](https://jdih.kemenkeu.go.id/download/c6ab0355-774d-4a2f-9190-363cdda2c9c6/2024pmkeuangan128.pdf#page=17)",
+      "before": "Ringkas atau belum dipisahkan menurut konteks/versi",
+      "after": "Penjelasan mekanisme, perbandingan, cek pemahaman dan batas sumber",
+      "assumptions": "Angka buatan hanya pada latihan berlabel; aturan bergantung entitas/periode",
+      "sourceExercises": "Tidak ada nomor kasus khusus dalam RPP. Format/ilustrasi resmi digunakan bila tersedia."
+    },
+    {
+      "concept": "BLUD rumah sakit: ambang RBA dan tanggung jawab layanan",
+      "source": "[Permendagri 79/2018 Ps.50-54,74-75,99-100; cetak/PDF 31-34,36-38,47-50; mengganti 61/2007](https://peraturan.bpk.go.id/Download/102253/Permendagri%20Nomor%2079%20Tahun%202018.pdf#page=31)",
+      "before": "Ringkas atau belum dipisahkan menurut konteks/versi",
+      "after": "Penjelasan mekanisme, perbandingan, cek pemahaman dan batas sumber",
+      "assumptions": "Angka buatan hanya pada latihan berlabel; aturan bergantung entitas/periode",
+      "sourceExercises": "Tidak ada nomor kasus khusus dalam RPP. Format/ilustrasi resmi digunakan bila tersedia."
+    }
+  ]
+}

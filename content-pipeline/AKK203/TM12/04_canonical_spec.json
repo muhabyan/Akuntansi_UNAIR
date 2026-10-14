@@ -1,0 +1,1179 @@
+{
+  "course": "AKK 203",
+  "newCode": "FEB 25603014",
+  "tm": 12,
+  "rpp": "PSAK terkait; DN Bab 3; peraturan terkait, RPP PDF 5",
+  "reading": {
+    "tm": 12,
+    "title": "Laporan Keuangan Nonlaba: Partai Politik",
+    "ref": "[UU 2/2008 sebagaimana diubah UU 2/2011 Ps.34,34 A,35,39; cetak/PDF 10-12 UU 2/2011](https://peraturan.bpk.go.id/Download/224586/UU%20No.%202%20Tahun%202011.pdf) | [PP 5/2009 sebagaimana diubah PP 1/2018 Ps.5,9,16; cetak/PDF 2-4 PP 1/2018](https://peraturan.bpk.go.id/Download/76860/PP%20Nomor%201%20Tahun%202018.pdf#page=2) | [Permendagri 36/2018 Ps.27-37 dan lampiran LPJ; cetak/PDF 18-22,31-34; dibaca bersama perubahan 78/2020](https://peraturan.go.id/files/bn630-2018.pdf#page=18) | [IAI DE ISAK 35(2018) CI 01-04 dan contoh laporan, PDF 19-33; ilustrasi penyajian historis, pengakuan diasumsikan dalam latihan](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=19) | [Permendagri 78/2020 perubahan Ps.8-9 A,28 A,29-29 A,37,39 A; cetak/PDF 4-9; formulir terbaru PDF 18-20](https://peraturan.bpk.go.id/Download/156015/Permendagri%20Nomor%2078%20Tahun%202020.pdf#page=4)",
+    "intro": "Partai memiliki laporan seluruh entitas dan LPJ bantuan pemerintah. Kamu akan menyusun hubungan keduanya, melacak sumber dana, lalu menilai penghitungan bantuan dan batas sumbangan sesuai ruang aturan.",
+    "layout": "layered",
+    "coreReadingMinutes": 20,
+    "objectives": [
+      "Sumber dana partai dan tujuan pencatatan",
+      "Laporan entitas dan LPJ bantuan mempunyai ruang berbeda",
+      "Sumbangan: kategori donor dan batas tahun",
+      "Bantuan: suara, tingkat dan prioritas penggunaan",
+      "LPJ: bukti menghubungkan penerimaan dan kegiatan",
+      "Menyusun laporan entitas dan rekonsiliasi bantuan"
+    ],
+    "blocks": [
+      {
+        "kind": "section",
+        "layer": "fondasi",
+        "title": "Kilat",
+        "blocks": [
+          {
+            "kind": "figure",
+            "spec": {
+              "id": "ASP-UAS-12-KILAT",
+              "type": "process",
+              "title": "Peta Laporan Keuangan Nonlaba: Partai Politik",
+              "nodes": [
+                {
+                  "title": "Tentukan konteks",
+                  "items": [
+                    "PSAK terkait; DN Bab 3; peraturan terkait, RPP PDF 5"
+                  ]
+                },
+                {
+                  "title": "Sumber dana partai dan tujuan pencatatan",
+                  "items": []
+                },
+                {
+                  "title": "Laporan entitas dan LPJ bantuan mempunyai ruang berbeda",
+                  "items": []
+                },
+                {
+                  "title": "Sumbangan: kategori donor dan batas tahun",
+                  "items": []
+                },
+                {
+                  "title": "Bantuan: suara, tingkat dan prioritas penggunaan",
+                  "items": []
+                },
+                {
+                  "title": "LPJ: bukti menghubungkan penerimaan dan kegiatan",
+                  "items": []
+                },
+                {
+                  "title": "Menyusun laporan entitas dan rekonsiliasi bantuan",
+                  "items": []
+                }
+              ],
+              "source": "[UU 2/2008 sebagaimana diubah UU 2/2011 Ps.34,34 A,35,39; cetak/PDF 10-12 UU 2/2011](https://peraturan.bpk.go.id/Download/224586/UU%20No.%202%20Tahun%202011.pdf)",
+              "alt": "Peta Laporan Keuangan Nonlaba: Partai Politik. Tentukan konteks → Sumber dana partai dan tujuan pencatatan → Laporan entitas dan LPJ bantuan mempunyai ruang berbeda → Sumbangan: kategori donor dan batas tahun → Bantuan: suara, tingkat dan prioritas penggunaan → LPJ: bukti menghubungkan penerimaan dan kegiatan → Menyusun laporan entitas dan rekonsiliasi bantuan",
+              "footer": "Skematis: hubungan konsep, tanpa skala angka."
+            }
+          },
+          {
+            "kind": "ul",
+            "items": [
+              "Pisahkan seluruh keuangan entitas dari LPJ bantuan publik.",
+              "Audit akuntan publik tahunan berbeda dari pemeriksaan BPK bantuan.",
+              "Sumbangan diperiksa menurut kategori donor dan satu tahun anggaran.",
+              "Tarif dasar per suara bergantung tingkat dan syarat kursi.",
+              "Pendidikan politik diprioritaskan, dengan bukti penggunaan.",
+              "Kas entitas belum tentu sisa bantuan."
+            ]
+          },
+          {
+            "kind": "p",
+            "text": "Kalau cuma sempat ingat satu hal: Pisahkan seluruh keuangan entitas dari LPJ bantuan publik."
+          },
+          {
+            "kind": "callout",
+            "variant": "note",
+            "title": "Cakupan dan periode sumber",
+            "text": "RPP: PSAK terkait; DN Bab 3; peraturan terkait, RPP PDF 5. Final SAK dan DN Bab 3 belum tersedia; latihan menyebut asumsi pengakuan dan format historis."
+          }
+        ]
+      },
+      {
+        "kind": "section",
+        "layer": "main",
+        "title": "Sumber dana partai dan tujuan pencatatan",
+        "source": "[UU 2/2008 sebagaimana diubah UU 2/2011 Ps.34,34 A,35,39; cetak/PDF 10-12 UU 2/2011](https://peraturan.bpk.go.id/Download/224586/UU%20No.%202%20Tahun%202011.pdf)",
+        "blocks": [
+          {
+            "kind": "p",
+            "text": "Partai memperoleh iuran anggota, sumbangan yang sah dan bantuan keuangan APBN/APBD. Masing-masing perlu pencatatan sumber, bukti dan penggunaan. Sumbangan dapat berupa uang, barang atau jasa. Pengelolaan harus transparan dan akuntabel, sehingga satu saldo kas tanpa rincian asal dana tidak cukup menjelaskan tanggung jawab. [UU 2/2008 sebagaimana diubah UU 2/2011 Ps.34,34 A,35,39; cetak/PDF 10-12 UU 2/2011](https://peraturan.bpk.go.id/Download/224586/UU%20No.%202%20Tahun%202011.pdf)"
+          },
+          {
+            "kind": "p",
+            "text": "Bantuan pemerintah diberikan kepada partai yang mendapat kursi pada tingkat terkait dengan penghitungan berdasarkan suara. Dana yang sama harus dapat dilihat menurut laporan entitas dan menurut laporan pertanggungjawaban bantuan. Pencatatan yang ditelusuri sampai bukti kegiatan mencegah satu pengeluaran dimasukkan dua kali pada laporan sumber dana berbeda. [UU 2/2008 sebagaimana diubah UU 2/2011 Ps.34,34 A,35,39; cetak/PDF 10-12 UU 2/2011](https://peraturan.bpk.go.id/Download/224586/UU%20No.%202%20Tahun%202011.pdf)"
+          },
+          {
+            "kind": "figure",
+            "spec": {
+              "id": "ASP-UAS-12-DANA",
+              "type": "parallel",
+              "title": "Sumber dana dan jejak penggunaannya",
+              "nodes": [
+                {
+                  "title": "Iuran anggota",
+                  "items": [
+                    "Bukti dan aturan AD/ART"
+                  ]
+                },
+                {
+                  "title": "Sumbangan sah",
+                  "items": [
+                    "Identitas, nilai dan bentuk"
+                  ]
+                },
+                {
+                  "title": "Bantuan APBN/APBD",
+                  "items": [
+                    "Tingkat, suara dan dasar alokasi"
+                  ]
+                }
+              ],
+              "source": "[UU 2/2008 sebagaimana diubah UU 2/2011 Ps.34,34 A,35,39; cetak/PDF 10-12 UU 2/2011](https://peraturan.bpk.go.id/Download/224586/UU%20No.%202%20Tahun%202011.pdf)",
+              "alt": "Sumber dana dan jejak penggunaannya. Cabang terpisah dibandingkan sesuai label. Tidak menunjukkan urutan waktu.",
+              "footer": "Skematis: hubungan konsep, tanpa skala angka.",
+              "result": "Pembukuan entitas dengan rincian per sumber dan penggunaan"
+            }
+          },
+          {
+            "kind": "self-check",
+            "question": "Mengapa iuran, sumbangan dan bantuan tidak cukup ditampilkan sebagai satu angka penerimaan?",
+            "answer": [
+              {
+                "kind": "p",
+                "text": "Rincian dibutuhkan untuk menilai keabsahan sumber, pembatasan dan pertanggungjawaban bantuan secara terpisah. [UU 2/2008 sebagaimana diubah UU 2/2011 Ps.34,34 A,35,39; cetak/PDF 10-12 UU 2/2011](https://peraturan.bpk.go.id/Download/224586/UU%20No.%202%20Tahun%202011.pdf)"
+              }
+            ],
+            "signal": "Jika alasanmu berbeda, kembali ke sumber dan identifikasi fakta yang belum mendukung jawaban."
+          }
+        ]
+      },
+      {
+        "kind": "section",
+        "layer": "main",
+        "title": "Laporan entitas dan LPJ bantuan mempunyai ruang berbeda",
+        "source": "[UU 2/2008 sebagaimana diubah UU 2/2011 Ps.34,34 A,35,39; cetak/PDF 10-12 UU 2/2011](https://peraturan.bpk.go.id/Download/224586/UU%20No.%202%20Tahun%202011.pdf) [Permendagri 36/2018 Ps.27-37 dan lampiran LPJ; cetak/PDF 18-22,31-34; dibaca bersama perubahan 78/2020](https://peraturan.go.id/files/bn630-2018.pdf#page=18)",
+        "blocks": [
+          {
+            "kind": "p",
+            "text": "Pasal 39 mengatur audit akuntan publik setiap tahun serta pengumuman berkala. Untuk audit itu partai wajib membuat laporan realisasi anggaran partai, neraca dan laporan arus kas. Penyusunan berbasis SAK perlu menentukan kerangka, kebijakan dan periode yang tepat, kemudian menghubungkan laporan dengan bukti. [UU 2/2008 sebagaimana diubah UU 2/2011 Ps.34,34 A,35,39; cetak/PDF 10-12 UU 2/2011](https://peraturan.bpk.go.id/Download/224586/UU%20No.%202%20Tahun%202011.pdf) [Permendagri 36/2018 Ps.27-37 dan lampiran LPJ; cetak/PDF 18-22,31-34; dibaca bersama perubahan 78/2020](https://peraturan.go.id/files/bn630-2018.pdf#page=18)"
+          },
+          {
+            "kind": "p",
+            "text": "Pasal 34 A mengatur LPJ penerimaan dan pengeluaran bantuan APBN/APBD kepada BPK. LPJ bantuan mencakup dana publik yang diterima serta penggunaannya. Laporan entitas mencakup keseluruhan sumber daya partai. Satu LPJ bantuan tidak menggantikan keseluruhan laporan entitas dan audit akuntan publik. Laporan dana kampanye merupakan ruang pemilu tersendiri yang memerlukan peraturan KPU untuk pemilu yang bersangkutan. [UU 2/2008 sebagaimana diubah UU 2/2011 Ps.34,34 A,35,39; cetak/PDF 10-12 UU 2/2011](https://peraturan.bpk.go.id/Download/224586/UU%20No.%202%20Tahun%202011.pdf) [Permendagri 36/2018 Ps.27-37 dan lampiran LPJ; cetak/PDF 18-22,31-34; dibaca bersama perubahan 78/2020](https://peraturan.go.id/files/bn630-2018.pdf#page=18)"
+          },
+          {
+            "kind": "table",
+            "title": "Pemisahan laporan dan pemeriksa",
+            "headers": [
+              "Laporan",
+              "Cakupan",
+              "Dasar/pemeriksa"
+            ],
+            "rows": [
+              [
+                "Laporan entitas partai",
+                "Seluruh sumber dan kegiatan entitas",
+                "Ps.39: audit akuntan publik tahunan"
+              ],
+              [
+                "LPJ bantuan",
+                "Penerimaan/pengeluaran bantuan APBN/APBD",
+                "Ps.34A: BPK"
+              ],
+              [
+                "Dana kampanye",
+                "Ruang pemilu terkait",
+                "Peraturan pemilu/KPU; rincian di luar inti ini"
+              ]
+            ],
+            "caption": "[UU 2/2008 sebagaimana diubah UU 2/2011 Ps.34,34 A,35,39; cetak/PDF 10-12 UU 2/2011](https://peraturan.bpk.go.id/Download/224586/UU%20No.%202%20Tahun%202011.pdf)",
+            "stackOnMobile": true
+          },
+          {
+            "kind": "self-check",
+            "question": "Jika LPJ bantuan sudah diperiksa BPK, apakah audit laporan entitas otomatis selesai?",
+            "answer": [
+              {
+                "kind": "p",
+                "text": "Tidak. Ruang dana dan dasar kewajibannya berbeda; pemeriksaan bantuan belum menggantikan audit keseluruhan entitas. [UU 2/2008 sebagaimana diubah UU 2/2011 Ps.34,34 A,35,39; cetak/PDF 10-12 UU 2/2011](https://peraturan.bpk.go.id/Download/224586/UU%20No.%202%20Tahun%202011.pdf) [Permendagri 36/2018 Ps.27-37 dan lampiran LPJ; cetak/PDF 18-22,31-34; dibaca bersama perubahan 78/2020](https://peraturan.go.id/files/bn630-2018.pdf#page=18)"
+              }
+            ],
+            "signal": "Jika alasanmu berbeda, kembali ke sumber dan identifikasi fakta yang belum mendukung jawaban."
+          }
+        ]
+      },
+      {
+        "kind": "section",
+        "layer": "main",
+        "title": "Sumbangan: kategori donor dan batas tahun",
+        "source": "[UU 2/2008 sebagaimana diubah UU 2/2011 Ps.34,34 A,35,39; cetak/PDF 10-12 UU 2/2011](https://peraturan.bpk.go.id/Download/224586/UU%20No.%202%20Tahun%202011.pdf)",
+        "blocks": [
+          {
+            "kind": "p",
+            "text": "Pasal 35 membedakan anggota partai dengan perseorangan yang bukan anggota serta perusahaan/badan usaha. Anggota mengikuti AD/ART. Perseorangan bukan anggota dibatasi paling banyak Rp 1 miliar per orang dalam satu tahun anggaran. Perusahaan/badan usaha paling banyak Rp 7,5 miliar per perusahaan/badan usaha dalam satu tahun anggaran menurut teks perubahan 2011. [UU 2/2008 sebagaimana diubah UU 2/2011 Ps.34,34 A,35,39; cetak/PDF 10-12 UU 2/2011](https://peraturan.bpk.go.id/Download/224586/UU%20No.%202%20Tahun%202011.pdf)"
+          },
+          {
+            "kind": "p",
+            "text": "Batas ini adalah sumbangan kepada partai menurut UU Partai Politik, sehingga tidak disalin sebagai batas dana kampanye. Identifikasi donor, bentuk uang/barang/jasa, nilai dan akumulasi periode. Sumbangan yang tampak kecil per transaksi dapat melampaui batas jika dijumlah setahun. Kategori sah dan larangan sumber juga harus dicek dari UU serta aturan terkait, tanpa mengandalkan nama rekening saja. [UU 2/2008 sebagaimana diubah UU 2/2011 Ps.34,34 A,35,39; cetak/PDF 10-12 UU 2/2011](https://peraturan.bpk.go.id/Download/224586/UU%20No.%202%20Tahun%202011.pdf)"
+          },
+          {
+            "kind": "table",
+            "title": "Kategori menurut Pasal 35",
+            "headers": [
+              "Pemberi",
+              "Ketentuan sumber",
+              "Periode"
+            ],
+            "rows": [
+              [
+                "Anggota partai",
+                "Diatur dalam AD/ART",
+                "Ikuti ketentuan yang relevan"
+              ],
+              [
+                "Perseorangan bukan anggota",
+                "MaksimalRp 1 miliar per orang",
+                "Satu tahun anggaran"
+              ],
+              [
+                "Perusahaan/badan usaha",
+                "MaksimalRp 7,5 miliar per perusahaan/badan usaha",
+                "Satu tahun anggaran"
+              ]
+            ],
+            "caption": "[UU 2/2008 sebagaimana diubah UU 2/2011 Ps.34,34 A,35,39; cetak/PDF 10-12 UU 2/2011](https://peraturan.bpk.go.id/Download/224586/UU%20No.%202%20Tahun%202011.pdf)",
+            "stackOnMobile": true
+          },
+          {
+            "kind": "self-check",
+            "question": "Donor bukan anggota memberiRp 600 juta dua kali pada tahun sama. Apa yang harus diperiksa?",
+            "answer": [
+              {
+                "kind": "p",
+                "text": "AkumulasiRp 1,2 miliar melampaui batasRp 1 miliar per orang per tahun pada teksPasal 35; bukan dinilai per transfer. [UU 2/2008 sebagaimana diubah UU 2/2011 Ps.34,34 A,35,39; cetak/PDF 10-12 UU 2/2011](https://peraturan.bpk.go.id/Download/224586/UU%20No.%202%20Tahun%202011.pdf)"
+              }
+            ],
+            "signal": "Jika alasanmu berbeda, kembali ke sumber dan identifikasi fakta yang belum mendukung jawaban."
+          }
+        ]
+      },
+      {
+        "kind": "section",
+        "layer": "main",
+        "title": "Bantuan: suara, tingkat dan prioritas penggunaan",
+        "source": "[PP 5/2009 sebagaimana diubah PP 1/2018 Ps.5,9,16; cetak/PDF 2-4 PP 1/2018](https://peraturan.bpk.go.id/Download/76860/PP%20Nomor%201%20Tahun%202018.pdf#page=2) [Permendagri 36/2018 Ps.27-37 dan lampiran LPJ; cetak/PDF 18-22,31-34; dibaca bersama perubahan 78/2020](https://peraturan.go.id/files/bn630-2018.pdf#page=18)",
+        "blocks": [
+          {
+            "kind": "p",
+            "text": "PP 1/2018 memberi nilai dasar per suara sah: pusatRp 1.000, provinsiRp 1.200, kabupaten/kotaRp 1.500. Bantuan memerlukan partai memperoleh kursi pada tingkat tersebut. Kenaikan nilai mengikuti syarat kemampuan keuangan dan persetujuan yang diatur, sehingga tarif dasar tidak dijadikan satu tarif aktual semua daerah. [PP 5/2009 sebagaimana diubah PP 1/2018 Ps.5,9,16; cetak/PDF 2-4 PP 1/2018](https://peraturan.bpk.go.id/Download/76860/PP%20Nomor%201%20Tahun%202018.pdf#page=2) [Permendagri 36/2018 Ps.27-37 dan lampiran LPJ; cetak/PDF 18-22,31-34; dibaca bersama perubahan 78/2020](https://peraturan.go.id/files/bn630-2018.pdf#page=18)"
+          },
+          {
+            "kind": "p",
+            "text": "Bantuan diprioritaskan bagi pendidikan politik dan dapat digunakan untuk operasional sekretariat. Pasal 9 hasil perubahan 2018 memakai prioritas, tanpa menetapkan angka 60% pada pasal itu. Bahan lama yang memakai satu persentase wajib perlu diuji terhadap versi dan aturan teknis yang relevan. Pelaporan harus memeriksa jenis kegiatan, bukti dan peruntukan, tidak cukup dengan satu rasio pembelanjaan. [PP 5/2009 sebagaimana diubah PP 1/2018 Ps.5,9,16; cetak/PDF 2-4 PP 1/2018](https://peraturan.bpk.go.id/Download/76860/PP%20Nomor%201%20Tahun%202018.pdf#page=2) [Permendagri 36/2018 Ps.27-37 dan lampiran LPJ; cetak/PDF 18-22,31-34; dibaca bersama perubahan 78/2020](https://peraturan.go.id/files/bn630-2018.pdf#page=18)"
+          },
+          {
+            "kind": "formula",
+            "text": "\\text{Bantuan latihan}=\\text{Suara sah}\\times\\text{Nilai per suara}",
+            "note": "Latihan mengasumsikan partai mendapat kursi, tarif sesuai tingkat, satu tahun penuh dan tidak ada kenaikan."
+          },
+          {
+            "kind": "table",
+            "title": "Nilai dasar sumber, bukan tarif aktual seluruh daerah",
+            "headers": [
+              "Tingkat",
+              "Rp per suara sah"
+            ],
+            "rows": [
+              [
+                "Pusat",
+                "1.000"
+              ],
+              [
+                "Provinsi",
+                "1.200"
+              ],
+              [
+                "Kabupaten/kota",
+                "1.500"
+              ]
+            ],
+            "caption": "[PP 5/2009 sebagaimana diubah PP 1/2018 Ps.5,9,16; cetak/PDF 2-4 PP 1/2018](https://peraturan.bpk.go.id/Download/76860/PP%20Nomor%201%20Tahun%202018.pdf#page=2)",
+            "stackOnMobile": true
+          },
+          {
+            "kind": "self-check",
+            "question": "ApakahRp 1.500 per suara sah pasti tarif aktual semua kabupaten pada 2026?",
+            "answer": [
+              {
+                "kind": "p",
+                "text": "Tidak. Itu nilai dasar PP 1/2018; periksa persetujuan kenaikan dan aturan daerah untuk tarif aktual. [PP 5/2009 sebagaimana diubah PP 1/2018 Ps.5,9,16; cetak/PDF 2-4 PP 1/2018](https://peraturan.bpk.go.id/Download/76860/PP%20Nomor%201%20Tahun%202018.pdf#page=2) [Permendagri 36/2018 Ps.27-37 dan lampiran LPJ; cetak/PDF 18-22,31-34; dibaca bersama perubahan 78/2020](https://peraturan.go.id/files/bn630-2018.pdf#page=18)"
+              }
+            ],
+            "signal": "Jika alasanmu berbeda, kembali ke sumber dan identifikasi fakta yang belum mendukung jawaban."
+          }
+        ]
+      },
+      {
+        "kind": "section",
+        "layer": "main",
+        "title": "LPJ: bukti menghubungkan penerimaan dan kegiatan",
+        "source": "[Permendagri 36/2018 Ps.27-37 dan lampiran LPJ; cetak/PDF 18-22,31-34; dibaca bersama perubahan 78/2020](https://peraturan.go.id/files/bn630-2018.pdf#page=18)",
+        "blocks": [
+          {
+            "kind": "p",
+            "text": "LPJ bantuan mencakup rekap realisasi penerimaan dan belanja serta rincian belanja per kegiatan. Pembukuan harus memelihara bukti penerimaan dan pengeluaran. Rincian pendidikan politik atau sekretariat harus cocok dengan rekap, buku kas dan rekening, disertai dokumen kegiatan yang relevan. [Permendagri 36/2018 Ps.27-37 dan lampiran LPJ; cetak/PDF 18-22,31-34; dibaca bersama perubahan 78/2020](https://peraturan.go.id/files/bn630-2018.pdf#page=18)"
+          },
+          {
+            "kind": "p",
+            "text": "Laporan kepada BPK disampaikan paling lambat satu bulan setelah tahun anggaran berakhir menurut Pasal 34 A danPasal 32. Hasil pemeriksaan menjadi bagian proses laporan kepada pihak pemerintah terkait. Keterlambatan atau tidak menyerahkan LPJ dapat memengaruhi pemberian bantuan menurut aturan. Rincian prosedur teknis dibaca bersama perubahan 78/2020; paket ini tidak menyatakan seluruh persyaratan permohonan telah dipenuhi hanya dari rekap angka. [Permendagri 36/2018 Ps.27-37 dan lampiran LPJ; cetak/PDF 18-22,31-34; dibaca bersama perubahan 78/2020](https://peraturan.go.id/files/bn630-2018.pdf#page=18)"
+          },
+          {
+            "kind": "p",
+            "text": "Perubahan 78/2020 mengganti ketentuan dan lampiran formulir. Gunakan rekap/rincian terbaru pada PDF 18-20, termasuk peruntukan dan bukti per kegiatan. Pasal 39 A membatasi ketentuan penggunaan terkait Covid pada masa darurat yang ditetapkan pemerintah; ketentuan khusus itu tidak diasumsikan aktif untuk kasus 2026. [Permendagri 78/2020 perubahan Ps.8-9 A,28 A,29-29 A,37,39 A; cetak/PDF 4-9; formulir terbaru PDF 18-20](https://peraturan.bpk.go.id/Download/156015/Permendagri%20Nomor%2078%20Tahun%202020.pdf#page=4)"
+          },
+          {
+            "kind": "figure",
+            "spec": {
+              "id": "ASP-UAS-12-LPJ",
+              "type": "process",
+              "title": "Jejak LPJ bantuan",
+              "nodes": [
+                {
+                  "title": "Bantuan diterima dan bukti disimpan",
+                  "items": []
+                },
+                {
+                  "title": "Buku kas dan rincian kegiatan",
+                  "items": []
+                },
+                {
+                  "title": "Rekap penerimaan serta belanja",
+                  "items": []
+                },
+                {
+                  "title": "LPJ kepada BPK dalam tenggat",
+                  "items": []
+                },
+                {
+                  "title": "Pemeriksaan dan laporan sesuai tingkat",
+                  "items": []
+                }
+              ],
+              "source": "[UU 2/2008 sebagaimana diubah UU 2/2011 Ps.34,34 A,35,39; cetak/PDF 10-12 UU 2/2011](https://peraturan.bpk.go.id/Download/224586/UU%20No.%202%20Tahun%202011.pdf) [Permendagri 36/2018 Ps.27-37 dan lampiran LPJ; cetak/PDF 18-22,31-34; dibaca bersama perubahan 78/2020](https://peraturan.go.id/files/bn630-2018.pdf#page=18)",
+              "alt": "Jejak LPJ bantuan. Bantuan diterima dan bukti disimpan → Buku kas dan rincian kegiatan → Rekap penerimaan serta belanja → LPJ kepada BPK dalam tenggat → Pemeriksaan dan laporan sesuai tingkat",
+              "footer": "Skematis: hubungan konsep, tanpa skala angka."
+            }
+          },
+          {
+            "kind": "self-check",
+            "question": "Mengapa rekap yang seimbang belum membuktikan seluruh penggunaan bantuan sah?",
+            "answer": [
+              {
+                "kind": "p",
+                "text": "Keseimbangan aritmetika belum memeriksa bukti, tujuan kegiatan, sumber dana dan ketentuan penggunaan. [Permendagri 36/2018 Ps.27-37 dan lampiran LPJ; cetak/PDF 18-22,31-34; dibaca bersama perubahan 78/2020](https://peraturan.go.id/files/bn630-2018.pdf#page=18)"
+              }
+            ],
+            "signal": "Jika alasanmu berbeda, kembali ke sumber dan identifikasi fakta yang belum mendukung jawaban."
+          }
+        ]
+      },
+      {
+        "kind": "section",
+        "layer": "main",
+        "title": "Menyusun laporan entitas dan rekonsiliasi bantuan",
+        "source": "[UU 2/2008 sebagaimana diubah UU 2/2011 Ps.34,34 A,35,39; cetak/PDF 10-12 UU 2/2011](https://peraturan.bpk.go.id/Download/224586/UU%20No.%202%20Tahun%202011.pdf) [IAI DE ISAK 35(2018) CI 01-04 dan contoh laporan, PDF 19-33; ilustrasi penyajian historis, pengakuan diasumsikan dalam latihan](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=19)",
+        "blocks": [
+          {
+            "kind": "p",
+            "text": "Latihan buatan 20X1 menggunakan juta Rp dan basis pengakuan yang diasumsikan sudah dipenuhi. Saldo awal, liabilitas dan transaksi nonkas nihil. Entitas menerima bantuan 75, iuran 25 dan donasi 50. Beban tunai pendidikan politik 50, sekretariat 25 dan kegiatan lain 25. Semua transaksi tercatat dalam laporan entitas; LPJ bantuan hanya memuat 75 dan penggunaan bantuan 75. [UU 2/2008 sebagaimana diubah UU 2/2011 Ps.34,34 A,35,39; cetak/PDF 10-12 UU 2/2011](https://peraturan.bpk.go.id/Download/224586/UU%20No.%202%20Tahun%202011.pdf) [IAI DE ISAK 35(2018) CI 01-04 dan contoh laporan, PDF 19-33; ilustrasi penyajian historis, pengakuan diasumsikan dalam latihan](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=19)"
+          },
+          {
+            "kind": "p",
+            "text": "Total penerimaan 150, beban 100 dan kas akhir 50. Pada model laporan entitas, surplus 50 menaikkan aset neto menjadi 50. Pada LPJ bantuan, penerimaan 75 dikurangi pendidikan 50 dan sekretariat 25 memberi sisa 0. Selisih kas entitas 50 dengan sisa bantuan 0 dijelaskan oleh sumber dana lain. Tidak ada kesimpulan otomatis bahwa kas 50 merupakan sisa bantuan. [UU 2/2008 sebagaimana diubah UU 2/2011 Ps.34,34 A,35,39; cetak/PDF 10-12 UU 2/2011](https://peraturan.bpk.go.id/Download/224586/UU%20No.%202%20Tahun%202011.pdf) [IAI DE ISAK 35(2018) CI 01-04 dan contoh laporan, PDF 19-33; ilustrasi penyajian historis, pengakuan diasumsikan dalam latihan](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=19)"
+          },
+          {
+            "kind": "table",
+            "title": "Rekonsiliasi buatan dalam juta Rp",
+            "headers": [
+              "Komponen",
+              "Entitas",
+              "LPJ bantuan"
+            ],
+            "rows": [
+              [
+                "Penerimaan bantuan",
+                "75",
+                "75"
+              ],
+              [
+                "Iuran+donasi",
+                "75",
+                "Tidak masuk LPJ bantuan"
+              ],
+              [
+                "Pendidikan politik",
+                "50",
+                "50"
+              ],
+              [
+                "Sekretariat",
+                "25",
+                "25"
+              ],
+              [
+                "Kegiatan lain dari dana umum",
+                "25",
+                "Tidak masuk LPJ bantuan"
+              ],
+              [
+                "Kas/sisa akhir",
+                "50",
+                "0"
+              ]
+            ],
+            "caption": "[UU 2/2008 sebagaimana diubah UU 2/2011 Ps.34,34 A,35,39; cetak/PDF 10-12 UU 2/2011](https://peraturan.bpk.go.id/Download/224586/UU%20No.%202%20Tahun%202011.pdf) [Permendagri 36/2018 Ps.27-37 dan lampiran LPJ; cetak/PDF 18-22,31-34; dibaca bersama perubahan 78/2020](https://peraturan.go.id/files/bn630-2018.pdf#page=18) [IAI DE ISAK 35(2018) CI 01-04 dan contoh laporan, PDF 19-33; ilustrasi penyajian historis, pengakuan diasumsikan dalam latihan](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=19)",
+            "stackOnMobile": true
+          },
+          {
+            "kind": "self-check",
+            "question": "Apakah kas akhir entitas 50 harus dilaporkan seluruhnya sebagai sisa bantuan?",
+            "answer": [
+              {
+                "kind": "p",
+                "text": "Tidak. Rincian menunjukkan bantuan 75 telah digunakan 75; kas 50 berasal dari sumber dana lain pada asumsi kasus. [UU 2/2008 sebagaimana diubah UU 2/2011 Ps.34,34 A,35,39; cetak/PDF 10-12 UU 2/2011](https://peraturan.bpk.go.id/Download/224586/UU%20No.%202%20Tahun%202011.pdf) [IAI DE ISAK 35(2018) CI 01-04 dan contoh laporan, PDF 19-33; ilustrasi penyajian historis, pengakuan diasumsikan dalam latihan](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=19)"
+              }
+            ],
+            "signal": "Jika alasanmu berbeda, kembali ke sumber dan identifikasi fakta yang belum mendukung jawaban."
+          }
+        ]
+      },
+      {
+        "kind": "pendalaman",
+        "title": "Pendalaman: dua jalur audit dan batas formulir",
+        "blocks": [
+          {
+            "kind": "figure",
+            "spec": {
+              "id": "ASP-UAS-12-AUDIT",
+              "type": "parallel",
+              "title": "Jalur pertanggungjawaban partai",
+              "nodes": [
+                {
+                  "title": "Seluruh keuangan entitas",
+                  "items": [
+                    "Ps.39 → akuntan publik → pengumuman"
+                  ]
+                },
+                {
+                  "title": "Bantuan APBN/APBD",
+                  "items": [
+                    "Ps.34A → BPK → pihak pemerintah sesuai tingkat"
+                  ]
+                }
+              ],
+              "source": "[UU 2/2008 sebagaimana diubah UU 2/2011 Ps.34,34 A,35,39; cetak/PDF 10-12 UU 2/2011](https://peraturan.bpk.go.id/Download/224586/UU%20No.%202%20Tahun%202011.pdf)",
+              "alt": "Jalur pertanggungjawaban partai. Cabang terpisah dibandingkan sesuai label. Tidak menunjukkan urutan waktu.",
+              "footer": "Skematis: hubungan konsep, tanpa skala angka."
+            }
+          },
+          {
+            "kind": "p",
+            "text": "Formulir 2018 bersifat historis; lampiran terbaru 78/2020 PDF 18-20 memuat rekap penerimaan serta rincian pendidikan politik/sekretariat. Gunakan versi terbaru sesuai periode. Teks final SAK dan DN Bab 3 belum tersedia; kampanye perlu aturan pemilu tersendiri. [Permendagri 78/2020 perubahan Ps.8-9 A,28 A,29-29 A,37,39 A; cetak/PDF 4-9; formulir terbaru PDF 18-20](https://peraturan.bpk.go.id/Download/156015/Permendagri%20Nomor%2078%20Tahun%202020.pdf#page=4)"
+          }
+        ]
+      },
+      {
+        "kind": "section",
+        "layer": "latihan",
+        "title": "Persiapan ujian",
+        "blocks": [
+          {
+            "kind": "table",
+            "title": "Jebakan dan langkah koreksi",
+            "headers": [
+              "Jebakan",
+              "Langkah yang benar"
+            ],
+            "rows": [
+              [
+                "TM 12 belum terdaftar; topik digabung dengan LSM",
+                "Daftarkan bacaan partai politik tersendiri sesuai RPP."
+              ],
+              [
+                "BPK disamakan dengan auditor seluruh laporan partai",
+                "PisahkanPasal 34 A dan 39."
+              ],
+              [
+                "Persentase 60% disebut tanpa versi aturan",
+                "Gunakan prioritasPasal 9 hasil PP 1/2018; hindari ambang universal."
+              ]
+            ],
+            "caption": "[UU 2/2008 sebagaimana diubah UU 2/2011 Ps.34,34 A,35,39; cetak/PDF 10-12 UU 2/2011](https://peraturan.bpk.go.id/Download/224586/UU%20No.%202%20Tahun%202011.pdf)",
+            "stackOnMobile": true
+          }
+        ]
+      },
+      {
+        "kind": "solution-reveal",
+        "title": "Latihan buatan: laporan dan LPJ partai",
+        "prompt": "Gunakan data entitas 150 penerimaan dan 100 beban pada Inti, dengan bantuan 75 digunakan seluruhnya untuk pendidikan 50 dan sekretariat 25.",
+        "blocks": [
+          {
+            "kind": "table",
+            "title": "Model laporan aktivitas 20X1, juta Rp",
+            "headers": [
+              "Pos",
+              "Nilai"
+            ],
+            "rows": [
+              [
+                "Bantuan, pengakuan diasumsikan terpenuhi",
+                "75"
+              ],
+              [
+                "Iuran",
+                "25"
+              ],
+              [
+                "Donasi",
+                "50"
+              ],
+              [
+                "Total penghasilan",
+                "150"
+              ],
+              [
+                "Pendidikan politik",
+                "(50)"
+              ],
+              [
+                "Sekretariat",
+                "(25)"
+              ],
+              [
+                "Kegiatan lain",
+                "(25)"
+              ],
+              [
+                "Surplus",
+                "50"
+              ]
+            ],
+            "caption": "[IAI DE ISAK 35(2018) CI 01-04 dan contoh laporan, PDF 19-33; ilustrasi penyajian historis, pengakuan diasumsikan dalam latihan](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=19)",
+            "stackOnMobile": true
+          },
+          {
+            "kind": "table",
+            "title": "Model perubahan aset neto 20X1",
+            "headers": [
+              "Pos",
+              "Juta Rp"
+            ],
+            "rows": [
+              [
+                "Awal",
+                "0"
+              ],
+              [
+                "Surplus",
+                "50"
+              ],
+              [
+                "Akhir",
+                "50"
+              ]
+            ],
+            "caption": "[IAI DE ISAK 35(2018) CI 01-04 dan contoh laporan, PDF 19-33; ilustrasi penyajian historis, pengakuan diasumsikan dalam latihan](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=19)",
+            "stackOnMobile": true
+          },
+          {
+            "kind": "table",
+            "title": "Neraca/posisi keuangan 20X1",
+            "headers": [
+              "Pos",
+              "Juta Rp"
+            ],
+            "rows": [
+              [
+                "Kas",
+                "50"
+              ],
+              [
+                "Liabilitas",
+                "0"
+              ],
+              [
+                "Aset neto",
+                "50"
+              ],
+              [
+                "Aset=liabilitas+aset neto",
+                "50=0+50"
+              ]
+            ],
+            "caption": "[UU 2/2008 sebagaimana diubah UU 2/2011 Ps.34,34 A,35,39; cetak/PDF 10-12 UU 2/2011](https://peraturan.bpk.go.id/Download/224586/UU%20No.%202%20Tahun%202011.pdf) [IAI DE ISAK 35(2018) CI 01-04 dan contoh laporan, PDF 19-33; ilustrasi penyajian historis, pengakuan diasumsikan dalam latihan](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=19)",
+            "stackOnMobile": true
+          },
+          {
+            "kind": "table",
+            "title": "Arus kas 20X1",
+            "headers": [
+              "Pos",
+              "Juta Rp"
+            ],
+            "rows": [
+              [
+                "Penerimaan operasi, asumsi kasus",
+                "150"
+              ],
+              [
+                "Pengeluaran operasi",
+                "(100)"
+              ],
+              [
+                "Investasi/pendanaan, asumsi nihil",
+                "0"
+              ],
+              [
+                "Kas awal",
+                "0"
+              ],
+              [
+                "Kas akhir",
+                "50"
+              ]
+            ],
+            "caption": "[IAI DE ISAK 35(2018) CI 01-04 dan contoh laporan, PDF 19-33; ilustrasi penyajian historis, pengakuan diasumsikan dalam latihan](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=19)",
+            "stackOnMobile": true
+          },
+          {
+            "kind": "table",
+            "title": "Realisasi anggaran partai dan LPJ bantuan",
+            "headers": [
+              "Pos",
+              "Anggaran entitas, asumsi",
+              "Realisasi entitas",
+              "LPJ bantuan"
+            ],
+            "rows": [
+              [
+                "Penerimaan",
+                "150",
+                "150",
+                "75"
+              ],
+              [
+                "Pendidikan politik",
+                "50",
+                "50",
+                "50"
+              ],
+              [
+                "Sekretariat",
+                "25",
+                "25",
+                "25"
+              ],
+              [
+                "Kegiatan lain",
+                "25",
+                "25",
+                "0"
+              ],
+              [
+                "Surplus/sisa",
+                "50",
+                "50",
+                "0"
+              ]
+            ],
+            "caption": "[UU 2/2008 sebagaimana diubah UU 2/2011 Ps.34,34 A,35,39; cetak/PDF 10-12 UU 2/2011](https://peraturan.bpk.go.id/Download/224586/UU%20No.%202%20Tahun%202011.pdf) [Permendagri 36/2018 Ps.27-37 dan lampiran LPJ; cetak/PDF 18-22,31-34; dibaca bersama perubahan 78/2020](https://peraturan.go.id/files/bn630-2018.pdf#page=18)",
+            "stackOnMobile": true
+          },
+          {
+            "kind": "p",
+            "text": "Ca LK model: sebutkan 20X1, satuan juta Rp, pengakuan bantuan yang diasumsikan terpenuhi, tidak ada transaksi nonkas/liabilitas, sumber penggunaan tiap kegiatan dan perbedaan ruang LPJ. Kas dan aset neto akhir 50 cocok. Pengakuan bantuan bersyarat aktual serta bentuk final SAK memerlukan standar transaksi dan kontrak, sehingga model ini tidak mengklaim kepatuhan aktual seluruh SAK. Tidak ada pembulatan."
+          }
+        ],
+        "revealLabel": "Tampilkan langkah dan pemeriksaan"
+      },
+      {
+        "kind": "solution-reveal",
+        "title": "Latihan buatan: suara dan bantuan",
+        "prompt": "Partai memperoleh 50.000 suara sah dan kursi DPRD kabupaten. Tarif dasarRp 1.500 dipakai, satu tahun penuh, tanpa kenaikan. Hitung bantuan.",
+        "blocks": [
+          {
+            "kind": "p",
+            "text": "50.000 suara×Rp 1.500/suara=Rp 75.000.000. Satuan suara saling menghapus, hasil rupiah. Tidak perlu pembulatan. Nilai suara dan keadaan partai buatan; tarif dasar berasal PP 1/2018."
+          },
+          {
+            "kind": "p",
+            "text": "Jika partai tidak mendapat kursi atau tarif daerah telah dinaikkan sesuai persetujuan, hasil latihan ini tidak langsung menjadi hak aktual. Menukar tarif provinsiRp 1.200 menghasilkanRp 60 juta untuk tingkat berbeda. [PP 5/2009 sebagaimana diubah PP 1/2018 Ps.5,9,16; cetak/PDF 2-4 PP 1/2018](https://peraturan.bpk.go.id/Download/76860/PP%20Nomor%201%20Tahun%202018.pdf#page=2)"
+          }
+        ],
+        "revealLabel": "Tampilkan langkah dan pemeriksaan"
+      }
+    ]
+  },
+  "quiz": [
+    {
+      "id": "akk203-uas-tm12-01",
+      "tm": 12,
+      "topic": "Sumber dana",
+      "skill": "Analisis dasar, mekanisme dan batas penerapan",
+      "difficulty": "medium",
+      "q": "Sumber dana: kombinasi menurut Pasal 34?",
+      "options": [
+        "Iuran, sumbangan sah dan bantuan APBN/APBD",
+        "Hanya bantuan APBN tanpa iuran atau donasi",
+        "Hanya donasi internasional tanpa bukti donor",
+        "Hanya kas pinjaman yang diakui sebagai iuran"
+      ],
+      "answer": 0,
+      "explanation": "Pasal 34 menyebut tiga kelompok sumber. Alternatif menghilangkan sumber atau menganggap transaksi pinjaman sebagai iuran tanpa dasar. Keabsahan dan penggunaan tetap harus ditelusuri. Rujukan: [UU 2/2008 sebagaimana diubah UU 2/2011 Ps.34,34 A,35,39; cetak/PDF 10-12 UU 2/2011](https://peraturan.bpk.go.id/Download/224586/UU%20No.%202%20Tahun%202011.pdf)",
+      "sourceRef": "[UU 2/2008 sebagaimana diubah UU 2/2011 Ps.34,34 A,35,39; cetak/PDF 10-12 UU 2/2011](https://peraturan.bpk.go.id/Download/224586/UU%20No.%202%20Tahun%202011.pdf)",
+      "sourceAnchors": [
+        "[UU 2/2008 sebagaimana diubah UU 2/2011 Ps.34,34 A,35,39; cetak/PDF 10-12 UU 2/2011](https://peraturan.bpk.go.id/Download/224586/UU%20No.%202%20Tahun%202011.pdf)"
+      ]
+    },
+    {
+      "id": "akk203-uas-tm12-02",
+      "tm": 12,
+      "topic": "Pelaporan",
+      "skill": "Analisis dasar, mekanisme dan batas penerapan",
+      "difficulty": "medium",
+      "q": "Pelaporan: hubungan audit entitas dan LPJ bantuan?",
+      "options": [
+        "Audit BPK bantuan mengganti semua audit entitas",
+        "Audit akuntan publik entitas berbeda dari BPK bantuan",
+        "Audit akuntan publik menghapus seluruh LPJ bantuan",
+        "Audit kampanye mengganti seluruh laporan tahunan"
+      ],
+      "answer": 1,
+      "explanation": "Ps.39 dan 34 A memberi kewajiban serta ruang berbeda. Opsi lain menganggap satu audit menghapus audit/laporan lain tanpa dasar; kampanye juga mempunyai ruang pemilu tersendiri. Rujukan: [UU 2/2008 sebagaimana diubah UU 2/2011 Ps.34,34 A,35,39; cetak/PDF 10-12 UU 2/2011](https://peraturan.bpk.go.id/Download/224586/UU%20No.%202%20Tahun%202011.pdf)",
+      "sourceRef": "[UU 2/2008 sebagaimana diubah UU 2/2011 Ps.34,34 A,35,39; cetak/PDF 10-12 UU 2/2011](https://peraturan.bpk.go.id/Download/224586/UU%20No.%202%20Tahun%202011.pdf)",
+      "sourceAnchors": [
+        "[UU 2/2008 sebagaimana diubah UU 2/2011 Ps.34,34 A,35,39; cetak/PDF 10-12 UU 2/2011](https://peraturan.bpk.go.id/Download/224586/UU%20No.%202%20Tahun%202011.pdf)"
+      ]
+    },
+    {
+      "id": "akk203-uas-tm12-03",
+      "tm": 12,
+      "topic": "Sumbangan",
+      "skill": "Analisis dasar, mekanisme dan batas penerapan",
+      "difficulty": "medium",
+      "q": "Sumbangan: donor bukan anggota memberi 600 juta dua kali setahun. Akumulasi?",
+      "options": [
+        "600 juta Rp karena setiap transfer berdiri sendiri",
+        "1,2 miliar Rp, selalu sah jika melalui rekening",
+        "1,2 miliar Rp, melebihi batas 1 miliar per orang",
+        "1,2 miliar Rp, memakai batas perusahaan 7,5 miliar"
+      ],
+      "answer": 2,
+      "explanation": "Akumulasi 600+600=1.200 juta=1,2 miliar. Batas orang nonanggota 1 miliar setahun. Rekening tidak mengubah batas, dan kategori perusahaan tidak dipakai bagi orang. Rujukan: [UU 2/2008 sebagaimana diubah UU 2/2011 Ps.34,34 A,35,39; cetak/PDF 10-12 UU 2/2011](https://peraturan.bpk.go.id/Download/224586/UU%20No.%202%20Tahun%202011.pdf)",
+      "sourceRef": "[UU 2/2008 sebagaimana diubah UU 2/2011 Ps.34,34 A,35,39; cetak/PDF 10-12 UU 2/2011](https://peraturan.bpk.go.id/Download/224586/UU%20No.%202%20Tahun%202011.pdf)",
+      "sourceAnchors": [
+        "[UU 2/2008 sebagaimana diubah UU 2/2011 Ps.34,34 A,35,39; cetak/PDF 10-12 UU 2/2011](https://peraturan.bpk.go.id/Download/224586/UU%20No.%202%20Tahun%202011.pdf)"
+      ]
+    },
+    {
+      "id": "akk203-uas-tm12-04",
+      "tm": 12,
+      "topic": "Latihan buatan",
+      "skill": "Analisis dasar, mekanisme dan batas penerapan",
+      "difficulty": "advanced",
+      "q": "Latihan buatan: 50.000 suara, kursi kabupaten, tarif dasar 1.500. Bantuan?",
+      "options": [
+        "Rp 60 juta seperti tarif tingkat provinsi",
+        "Rp 50 juta seperti tarif tingkat pusat",
+        "Rp 150 juta dari penghitungan ganda kursi",
+        "Rp 75 juta pada asumsi satu tahun penuh"
+      ],
+      "answer": 3,
+      "explanation": "50.000×1.500=Rp 75.000.000.60 juta memakai 1.200,50 juta memakai 1.000,150 juta menggandakan basis. Jumlah kursi menjadi syarat kelayakan tingkat, tidak faktor pengali tambahan pada latihan. Rujukan: [PP 5/2009 sebagaimana diubah PP 1/2018 Ps.5,9,16; cetak/PDF 2-4 PP 1/2018](https://peraturan.bpk.go.id/Download/76860/PP%20Nomor%201%20Tahun%202018.pdf#page=2)",
+      "sourceRef": "[PP 5/2009 sebagaimana diubah PP 1/2018 Ps.5,9,16; cetak/PDF 2-4 PP 1/2018](https://peraturan.bpk.go.id/Download/76860/PP%20Nomor%201%20Tahun%202018.pdf#page=2)",
+      "sourceAnchors": [
+        "[PP 5/2009 sebagaimana diubah PP 1/2018 Ps.5,9,16; cetak/PDF 2-4 PP 1/2018](https://peraturan.bpk.go.id/Download/76860/PP%20Nomor%201%20Tahun%202018.pdf#page=2)"
+      ]
+    },
+    {
+      "id": "akk203-uas-tm12-05",
+      "tm": 12,
+      "topic": "Penggunaan bantuan",
+      "skill": "Analisis dasar, mekanisme dan batas penerapan",
+      "difficulty": "medium",
+      "q": "Penggunaan bantuan: makna Pasal 9 hasil PP 1/2018?",
+      "options": [
+        "Pendidikan politik diprioritaskan; sekretariat diizinkan",
+        "Seluruh bantuan wajib dipakai untuk kampanye pemilu",
+        "Persentase 60% ditetapkan langsung pada pasal itu",
+        "Seluruh bantuan bebas digunakan tanpa rincian"
+      ],
+      "answer": 0,
+      "explanation": "Pasal 9 mengatur prioritas pendidikan dan operasional sekretariat, tanpa angka 60% pada teks itu. Kampanye atau penggunaan bebas tidak sesuai ketentuan tersebut; persentase memerlukan dasar versi yang tepat. Rujukan: [PP 5/2009 sebagaimana diubah PP 1/2018 Ps.5,9,16; cetak/PDF 2-4 PP 1/2018](https://peraturan.bpk.go.id/Download/76860/PP%20Nomor%201%20Tahun%202018.pdf#page=2)",
+      "sourceRef": "[PP 5/2009 sebagaimana diubah PP 1/2018 Ps.5,9,16; cetak/PDF 2-4 PP 1/2018](https://peraturan.bpk.go.id/Download/76860/PP%20Nomor%201%20Tahun%202018.pdf#page=2)",
+      "sourceAnchors": [
+        "[PP 5/2009 sebagaimana diubah PP 1/2018 Ps.5,9,16; cetak/PDF 2-4 PP 1/2018](https://peraturan.bpk.go.id/Download/76860/PP%20Nomor%201%20Tahun%202018.pdf#page=2)"
+      ]
+    },
+    {
+      "id": "akk203-uas-tm12-06",
+      "tm": 12,
+      "topic": "Latihan buatan",
+      "skill": "Analisis dasar, mekanisme dan batas penerapan",
+      "difficulty": "advanced",
+      "q": "Latihan buatan: entitas kas akhir 50, bantuan 75 dibelanjakan 75. Sisa bantuan?",
+      "options": [
+        "50 juta Rp karena seluruh kas milik bantuan",
+        "Nol pada rincian sumber yang diberikan",
+        "75 juta Rp karena pengeluaran tidak dicatat",
+        "100 juta Rp karena semua biaya ditambahkan"
+      ],
+      "answer": 1,
+      "explanation": "Sisa bantuan 75-75=0. Kas entitas 50 berasal dana lain pada asumsi. Menyamakan semua kas dengan bantuan, mengabaikan pengeluaran atau menambah biaya akan mencampur ruang laporan. Rujukan: [UU 2/2008 sebagaimana diubah UU 2/2011 Ps.34,34 A,35,39; cetak/PDF 10-12 UU 2/2011](https://peraturan.bpk.go.id/Download/224586/UU%20No.%202%20Tahun%202011.pdf) [Permendagri 36/2018 Ps.27-37 dan lampiran LPJ; cetak/PDF 18-22,31-34; dibaca bersama perubahan 78/2020](https://peraturan.go.id/files/bn630-2018.pdf#page=18)",
+      "sourceRef": "[UU 2/2008 sebagaimana diubah UU 2/2011 Ps.34,34 A,35,39; cetak/PDF 10-12 UU 2/2011](https://peraturan.bpk.go.id/Download/224586/UU%20No.%202%20Tahun%202011.pdf) [Permendagri 36/2018 Ps.27-37 dan lampiran LPJ; cetak/PDF 18-22,31-34; dibaca bersama perubahan 78/2020](https://peraturan.go.id/files/bn630-2018.pdf#page=18)",
+      "sourceAnchors": [
+        "[UU 2/2008 sebagaimana diubah UU 2/2011 Ps.34,34 A,35,39; cetak/PDF 10-12 UU 2/2011](https://peraturan.bpk.go.id/Download/224586/UU%20No.%202%20Tahun%202011.pdf) [Permendagri 36/2018 Ps.27-37 dan lampiran LPJ; cetak/PDF 18-22,31-34; dibaca bersama perubahan 78/2020](https://peraturan.go.id/files/bn630-2018.pdf#page=18)"
+      ]
+    },
+    {
+      "id": "akk203-uas-tm12-07",
+      "tm": 12,
+      "topic": "LPJ",
+      "skill": "Analisis dasar, mekanisme dan batas penerapan",
+      "difficulty": "medium",
+      "q": "LPJ: keseimbangan penerimaan dan belanja membuktikan apa?",
+      "options": [
+        "Seluruh kegiatan sudah pasti memenuhi peruntukan",
+        "Seluruh donor sudah pasti memenuhi batas tahunan",
+        "Ketepatan hitungan, kepatuhan perlu bukti tambahan",
+        "Seluruh audit entitas sudah otomatis selesai"
+      ],
+      "answer": 2,
+      "explanation": "Hitungan seimbang memeriksa aritmetika. Bukti kegiatan/peruntukan, akumulasi donor dan audit entitas merupakan pengujian terpisah yang tidak otomatis lulus dari total tersebut. Rujukan: [UU 2/2008 sebagaimana diubah UU 2/2011 Ps.34,34 A,35,39; cetak/PDF 10-12 UU 2/2011](https://peraturan.bpk.go.id/Download/224586/UU%20No.%202%20Tahun%202011.pdf) [Permendagri 36/2018 Ps.27-37 dan lampiran LPJ; cetak/PDF 18-22,31-34; dibaca bersama perubahan 78/2020](https://peraturan.go.id/files/bn630-2018.pdf#page=18)",
+      "sourceRef": "[UU 2/2008 sebagaimana diubah UU 2/2011 Ps.34,34 A,35,39; cetak/PDF 10-12 UU 2/2011](https://peraturan.bpk.go.id/Download/224586/UU%20No.%202%20Tahun%202011.pdf) [Permendagri 36/2018 Ps.27-37 dan lampiran LPJ; cetak/PDF 18-22,31-34; dibaca bersama perubahan 78/2020](https://peraturan.go.id/files/bn630-2018.pdf#page=18)",
+      "sourceAnchors": [
+        "[UU 2/2008 sebagaimana diubah UU 2/2011 Ps.34,34 A,35,39; cetak/PDF 10-12 UU 2/2011](https://peraturan.bpk.go.id/Download/224586/UU%20No.%202%20Tahun%202011.pdf) [Permendagri 36/2018 Ps.27-37 dan lampiran LPJ; cetak/PDF 18-22,31-34; dibaca bersama perubahan 78/2020](https://peraturan.go.id/files/bn630-2018.pdf#page=18)"
+      ]
+    },
+    {
+      "id": "akk203-uas-tm12-08",
+      "tm": 12,
+      "topic": "LPJ bantuan",
+      "skill": "Analisis dasar, mekanisme dan batas penerapan",
+      "difficulty": "medium",
+      "q": "LPJ bantuan: apa tenggat penyampaian kepada BPK menurut Ps.34A?",
+      "options": [
+        "Paling lambat 5 bulan setelah semua kampanye berakhir",
+        "Paling lambat 60 hari setelah nilai donasi diketahui",
+        "Paling lambat 2 tahun setelah SPKN baru berlaku",
+        "Paling lambat 1 bulan setelah tahun anggaran berakhir"
+      ],
+      "answer": 3,
+      "explanation": "TeksPs.34A mengatur laporan tahunan bantuan kepada BPK paling lambat 1 bulan setelah tahun anggaran.5 bulan adalah konteksyayasan;60 hari konteks tindaklanjut;2 tahun adalah transisi SPKN. Rujukan: [UU 2/2008 sebagaimana diubah UU 2/2011 Ps.34,34 A,35,39; cetak/PDF 10-12 UU 2/2011](https://peraturan.bpk.go.id/Download/224586/UU%20No.%202%20Tahun%202011.pdf)",
+      "sourceRef": "[UU 2/2008 sebagaimana diubah UU 2/2011 Ps.34,34 A,35,39; cetak/PDF 10-12 UU 2/2011](https://peraturan.bpk.go.id/Download/224586/UU%20No.%202%20Tahun%202011.pdf)",
+      "sourceAnchors": [
+        "[UU 2/2008 sebagaimana diubah UU 2/2011 Ps.34,34 A,35,39; cetak/PDF 10-12 UU 2/2011](https://peraturan.bpk.go.id/Download/224586/UU%20No.%202%20Tahun%202011.pdf)"
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "id": "aks201-tm11-03",
+      "phase": "pra-uas",
+      "tm": 12,
+      "topic": "ASP TM 12",
+      "category": "Hukum",
+      "front": "Akuntansi Partai Politik (UU No. 2/2011)",
+      "back": "LPJ penerimaan dan pengeluaran bantuan APBN/APBD disampaikan kepada BPK untuk diperiksa sesuai Pasal 34 A. UU 2/2008 sebagaimana diubah UU 2/2011 Ps.34,34 A,35,39; cetak/PDF 10-12 UU 2/2011"
+    },
+    {
+      "id": "akk203-uas-tm12-02",
+      "phase": "pra-uas",
+      "tm": 12,
+      "topic": "ASP TM 12",
+      "category": "Hukum",
+      "front": "Audit tahunan entitas partai",
+      "back": "Pasal 39 mengatur audit akuntan publik setiap tahun dan pengumuman berkala, terpisah dari LPJ bantuan. UU 2/2008 sebagaimana diubah UU 2/2011 Ps.34,34 A,35,39; cetak/PDF 10-12 UU 2/2011"
+    },
+    {
+      "id": "akk203-uas-tm12-03",
+      "phase": "pra-uas",
+      "tm": 12,
+      "topic": "ASP TM 12",
+      "category": "Tarif",
+      "front": "Sumbangan orang bukan anggota",
+      "back": "MaksimalRp 1 miliar per orang dalam satu tahun anggaran menurut Pasal 35. UU 2/2008 sebagaimana diubah UU 2/2011 Ps.34,34 A,35,39; cetak/PDF 10-12 UU 2/2011"
+    },
+    {
+      "id": "akk203-uas-tm12-04",
+      "phase": "pra-uas",
+      "tm": 12,
+      "topic": "ASP TM 12",
+      "category": "Tarif",
+      "front": "Sumbangan perusahaan/badan usaha",
+      "back": "MaksimalRp 7,5 miliar per perusahaan/badan usaha dalam satu tahun anggaran menurut Pasal 35. UU 2/2008 sebagaimana diubah UU 2/2011 Ps.34,34 A,35,39; cetak/PDF 10-12 UU 2/2011"
+    },
+    {
+      "id": "akk203-uas-tm12-05",
+      "phase": "pra-uas",
+      "tm": 12,
+      "topic": "ASP TM 12",
+      "category": "Rumus",
+      "front": "Bantuan berdasarkan suara",
+      "back": "Pada tarif dasar, suara sah dikali nilai sesuai tingkat, dengan syarat mendapat kursi dan memperhatikan kenaikan yang sah. PP 5/2009 sebagaimana diubah PP 1/2018 Ps.5,9,16; cetak/PDF 2-4 PP 1/2018"
+    },
+    {
+      "id": "akk203-uas-tm12-06",
+      "phase": "pra-uas",
+      "tm": 12,
+      "topic": "ASP TM 12",
+      "category": "Mekanisme",
+      "front": "LPJ bantuan dan kas entitas",
+      "back": "LPJ memuat dana bantuan serta penggunaan; kas entitas juga mencakup sumber lain. Cocokkan rincian sumber. UU 2/2008 sebagaimana diubah UU 2/2011 Ps.34,34 A,35,39; cetak/PDF 10-12 UU 2/2011 Permendagri 36/2018 Ps.27-37 dan lampiran LPJ; cetak/PDF 18-22,31-34; dibaca bersama perubahan 78/2020"
+    }
+  ],
+  "bank": [
+    {
+      "type": "case",
+      "scope": "TM 12: Latihan buatan: laporan entitas dan LPJ bantuan",
+      "difficulty": "Komprehensif",
+      "estimatedTime": "20-30 menit",
+      "question": "Latihan buatan: laporan entitas dan LPJ bantuan",
+      "context": "Gunakan bantuan 75, iuran 25, donasi 50 serta beban pendidikan 50, sekretariat 25, kegiatan lain 25, seluruhnya juta Rp. Rujukan: UU 2/2008 sebagaimana diubah UU 2/2011 Ps.34,34 A,35,39; cetak/PDF 10-12 UU 2/2011 Permendagri 36/2018 Ps.27-37 dan lampiran LPJ; cetak/PDF 18-22,31-34; dibaca bersama perubahan 78/2020 IAI DE ISAK 35(2018) CI 01-04 dan contoh laporan, PDF 19-33; ilustrasi penyajian historis, pengakuan diasumsikan dalam latihan",
+      "data": [
+        "saldo awal/liabilitas/nonkas nol. Pengakuan penghasilan diasumsikan terpenuhi.",
+        "Bantuan 75 digunakan untuk pendidikan 50 dan sekretariat 25."
+      ],
+      "instructions": [
+        "Susun laporan entitas dan LPJ bantuan.",
+        "Jelaskan perbedaan saldo dan pemeriksa."
+      ],
+      "outputFormat": [
+        "Pisahkan fakta, asumsi, analisis dan keputusan.",
+        "Tunjukkan hitungan atau bukti, lalu jelaskan batas kesimpulan."
+      ],
+      "rubric": [
+        "Ketepatan kerangka dan sumber: 30%.",
+        "Langkah, bukti dan pemeriksaan: 40%.",
+        "Keputusan serta kelemahan alternatif: 30%."
+      ],
+      "answerGuide": "Fakta: penerimaan 150, beban 100. Asumsi: pengakuan telah terpenuhi, seluruhnya tunai, liabilitas/nonkas nol. Surplus 150-100=50, kas akhir 50 dan aset neto 50;aset 50=liabilitas 0+neto 50. Arusoperasi 50, investasi/pendanaan 0. LPJ bantuan 75-50-25=0. Rincian sumber menjelaskan kas entitas 50 berasal sumber lain. laporan realisasi anggaran entitas membandingkan seluruh anggaran/realisasi sesuai Pasal 39, sementara LPJ memerinci dana publik. Audit entitas olehakuntan publik berbeda dari BPK bantuan. Menyalin 50 sebagai sisa bantuan mencampur ruang. Model berbasis asumsi dan ilustrasi DE 2018 tidak menggantikan standar final SAK atau kontrak bantuan. Rujukan: UU 2/2008 sebagaimana diubah UU 2/2011 Ps.34,34 A,35,39; cetak/PDF 10-12 UU 2/2011 Permendagri 36/2018 Ps.27-37 dan lampiran LPJ; cetak/PDF 18-22,31-34; dibaca bersama perubahan 78/2020 IAI DE ISAK 35(2018) CI 01-04 dan contoh laporan, PDF 19-33; ilustrasi penyajian historis, pengakuan diasumsikan dalam latihan"
+    },
+    {
+      "type": "case",
+      "scope": "TM 12: Latihan buatan: bantuan dan pengendalian donor",
+      "difficulty": "Komprehensif",
+      "estimatedTime": "20-30 menit",
+      "question": "Latihan buatan: bantuan dan pengendalian donor",
+      "context": "Partai tingkat kabupaten memperoleh 50.000 suara dan kursi, tarif dasar 1.500. Seorang donor bukan anggota memberi 600 juta dua kali dalam satu tahun. Rujukan: UU 2/2008 sebagaimana diubah UU 2/2011 Ps.34,34 A,35,39; cetak/PDF 10-12 UU 2/2011 PP 5/2009 sebagaimana diubah PP 1/2018 Ps.5,9,16; cetak/PDF 2-4 PP 1/2018",
+      "data": [
+        "Tidak ada kenaikan tarif daerah dalam asumsi.",
+        "Penerimaan donor melalui rekening, nilai rupiahbulat."
+      ],
+      "instructions": [
+        "Hitung bantuan dan akumulasi donor.",
+        "Jelaskan keputusan penerimaan dan kelemahan alternatif."
+      ],
+      "outputFormat": [
+        "Pisahkan fakta, asumsi, analisis dan keputusan.",
+        "Tunjukkan hitungan atau bukti, lalu jelaskan batas kesimpulan."
+      ],
+      "rubric": [
+        "Ketepatan kerangka dan sumber: 30%.",
+        "Langkah, bukti dan pemeriksaan: 40%.",
+        "Keputusan serta kelemahan alternatif: 30%."
+      ],
+      "answerGuide": "Bantuan=50.000×Rp 1.500=Rp 75 juta pada syarat tingkat kabupaten dan satu tahun penuh. Donor=600+600=Rp 1,2 miliar, melebihi batasRp 1 miliar per orang setahun menurut Pasal 35. Keputusan: periksa bukti identitas/akumulasi dan tangani penerimaan sesuai aturan; penggunaan rekening tidak melegalkan kelebihan. Menilai per transfer mengabaikan tahun anggaran; memakai batas perusahaan mengubah kategori donor. tarif provinsi/pusat menghasilkan angka untuk tingkat berbeda. Tidak ada pembulatan;angka 50.000/600 juta buatan, tarif danbatas berasal aturan. Rujukan: UU 2/2008 sebagaimana diubah UU 2/2011 Ps.34,34 A,35,39; cetak/PDF 10-12 UU 2/2011 PP 5/2009 sebagaimana diubah PP 1/2018 Ps.5,9,16; cetak/PDF 2-4 PP 1/2018"
+    }
+  ],
+  "audit": {
+    "findings": [
+      "Awal: TM 12 belum terdaftar; topik digabung dengan LSM Perbaikan: Daftarkan bacaan partai politik tersendiri sesuai RPP.",
+      "Awal: BPK disamakan dengan auditor seluruh laporan partai Perbaikan: PisahkanPasal 34 A dan 39.",
+      "Awal: Persentase 60% disebut tanpa versi aturan Perbaikan: Gunakan prioritasPasal 9 hasil PP 1/2018; hindari ambang universal."
+    ],
+    "limitations": [
+      "Final SAK dan DN Bab 3 belum tersedia; latihan menyebut asumsi pengakuan dan format historis.",
+      "Tarif daerah aktual dan ketentuan pemilu spesifik belum ditetapkan; latihan memakai tarif dasar dengan syarat eksplisit."
+    ],
+    "appendix": [
+      "Lampiran formulir permohonan serta beritaacara verifikasi tambahan tidak menggantikan latihan penyusunan laporan inti.",
+      "LADK/LPPDK dan auditkampanye perlu aturan KPU sesuai pemilu, tidak disalin dariPasal 35 atau 34 A."
+    ],
+    "status": "NEEDS_HUMAN_REVIEW",
+    "practiceSources": [
+      {
+        "kind": "cards",
+        "id": "aks201-tm11-03",
+        "field": "back",
+        "label": "UU 2/2008 sebagaimana diubah UU 2/2011 Ps.34,34 A,35,39; cetak/PDF 10-12 UU 2/2011",
+        "url": "https://peraturan.bpk.go.id/Download/224586/UU%20No.%202%20Tahun%202011.pdf"
+      },
+      {
+        "kind": "cards",
+        "id": "akk203-uas-tm12-02",
+        "field": "back",
+        "label": "UU 2/2008 sebagaimana diubah UU 2/2011 Ps.34,34 A,35,39; cetak/PDF 10-12 UU 2/2011",
+        "url": "https://peraturan.bpk.go.id/Download/224586/UU%20No.%202%20Tahun%202011.pdf"
+      },
+      {
+        "kind": "cards",
+        "id": "akk203-uas-tm12-03",
+        "field": "back",
+        "label": "UU 2/2008 sebagaimana diubah UU 2/2011 Ps.34,34 A,35,39; cetak/PDF 10-12 UU 2/2011",
+        "url": "https://peraturan.bpk.go.id/Download/224586/UU%20No.%202%20Tahun%202011.pdf"
+      },
+      {
+        "kind": "cards",
+        "id": "akk203-uas-tm12-04",
+        "field": "back",
+        "label": "UU 2/2008 sebagaimana diubah UU 2/2011 Ps.34,34 A,35,39; cetak/PDF 10-12 UU 2/2011",
+        "url": "https://peraturan.bpk.go.id/Download/224586/UU%20No.%202%20Tahun%202011.pdf"
+      },
+      {
+        "kind": "cards",
+        "id": "akk203-uas-tm12-05",
+        "field": "back",
+        "label": "PP 5/2009 sebagaimana diubah PP 1/2018 Ps.5,9,16; cetak/PDF 2-4 PP 1/2018",
+        "url": "https://peraturan.bpk.go.id/Download/76860/PP%20Nomor%201%20Tahun%202018.pdf#page=2"
+      },
+      {
+        "kind": "cards",
+        "id": "akk203-uas-tm12-06",
+        "field": "back",
+        "label": "UU 2/2008 sebagaimana diubah UU 2/2011 Ps.34,34 A,35,39; cetak/PDF 10-12 UU 2/2011",
+        "url": "https://peraturan.bpk.go.id/Download/224586/UU%20No.%202%20Tahun%202011.pdf"
+      },
+      {
+        "kind": "cards",
+        "id": "akk203-uas-tm12-06",
+        "field": "back",
+        "label": "Permendagri 36/2018 Ps.27-37 dan lampiran LPJ; cetak/PDF 18-22,31-34; dibaca bersama perubahan 78/2020",
+        "url": "https://peraturan.go.id/files/bn630-2018.pdf#page=18"
+      },
+      {
+        "kind": "bank",
+        "id": "tm12-case1",
+        "field": "context",
+        "label": "UU 2/2008 sebagaimana diubah UU 2/2011 Ps.34,34 A,35,39; cetak/PDF 10-12 UU 2/2011",
+        "url": "https://peraturan.bpk.go.id/Download/224586/UU%20No.%202%20Tahun%202011.pdf"
+      },
+      {
+        "kind": "bank",
+        "id": "tm12-case1",
+        "field": "context",
+        "label": "Permendagri 36/2018 Ps.27-37 dan lampiran LPJ; cetak/PDF 18-22,31-34; dibaca bersama perubahan 78/2020",
+        "url": "https://peraturan.go.id/files/bn630-2018.pdf#page=18"
+      },
+      {
+        "kind": "bank",
+        "id": "tm12-case1",
+        "field": "context",
+        "label": "IAI DE ISAK 35(2018) CI 01-04 dan contoh laporan, PDF 19-33; ilustrasi penyajian historis, pengakuan diasumsikan dalam latihan",
+        "url": "https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=19"
+      },
+      {
+        "kind": "bank",
+        "id": "tm12-case1",
+        "field": "answerGuide",
+        "label": "UU 2/2008 sebagaimana diubah UU 2/2011 Ps.34,34 A,35,39; cetak/PDF 10-12 UU 2/2011",
+        "url": "https://peraturan.bpk.go.id/Download/224586/UU%20No.%202%20Tahun%202011.pdf"
+      },
+      {
+        "kind": "bank",
+        "id": "tm12-case1",
+        "field": "answerGuide",
+        "label": "Permendagri 36/2018 Ps.27-37 dan lampiran LPJ; cetak/PDF 18-22,31-34; dibaca bersama perubahan 78/2020",
+        "url": "https://peraturan.go.id/files/bn630-2018.pdf#page=18"
+      },
+      {
+        "kind": "bank",
+        "id": "tm12-case1",
+        "field": "answerGuide",
+        "label": "IAI DE ISAK 35(2018) CI 01-04 dan contoh laporan, PDF 19-33; ilustrasi penyajian historis, pengakuan diasumsikan dalam latihan",
+        "url": "https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=19"
+      },
+      {
+        "kind": "bank",
+        "id": "tm12-case2",
+        "field": "context",
+        "label": "UU 2/2008 sebagaimana diubah UU 2/2011 Ps.34,34 A,35,39; cetak/PDF 10-12 UU 2/2011",
+        "url": "https://peraturan.bpk.go.id/Download/224586/UU%20No.%202%20Tahun%202011.pdf"
+      },
+      {
+        "kind": "bank",
+        "id": "tm12-case2",
+        "field": "context",
+        "label": "PP 5/2009 sebagaimana diubah PP 1/2018 Ps.5,9,16; cetak/PDF 2-4 PP 1/2018",
+        "url": "https://peraturan.bpk.go.id/Download/76860/PP%20Nomor%201%20Tahun%202018.pdf#page=2"
+      },
+      {
+        "kind": "bank",
+        "id": "tm12-case2",
+        "field": "answerGuide",
+        "label": "UU 2/2008 sebagaimana diubah UU 2/2011 Ps.34,34 A,35,39; cetak/PDF 10-12 UU 2/2011",
+        "url": "https://peraturan.bpk.go.id/Download/224586/UU%20No.%202%20Tahun%202011.pdf"
+      },
+      {
+        "kind": "bank",
+        "id": "tm12-case2",
+        "field": "answerGuide",
+        "label": "PP 5/2009 sebagaimana diubah PP 1/2018 Ps.5,9,16; cetak/PDF 2-4 PP 1/2018",
+        "url": "https://peraturan.bpk.go.id/Download/76860/PP%20Nomor%201%20Tahun%202018.pdf#page=2"
+      }
+    ]
+  },
+  "coverage": [
+    {
+      "concept": "Sumber dana partai dan tujuan pencatatan",
+      "source": "[UU 2/2008 sebagaimana diubah UU 2/2011 Ps.34,34 A,35,39; cetak/PDF 10-12 UU 2/2011](https://peraturan.bpk.go.id/Download/224586/UU%20No.%202%20Tahun%202011.pdf)",
+      "before": "Ringkas atau belum dipisahkan menurut konteks/versi",
+      "after": "Penjelasan mekanisme, perbandingan, cek pemahaman dan batas sumber",
+      "assumptions": "Angka buatan hanya pada latihan berlabel; aturan bergantung entitas/periode",
+      "sourceExercises": "Tidak ada nomor kasus khusus dalam RPP. Format/ilustrasi resmi digunakan bila tersedia."
+    },
+    {
+      "concept": "Laporan entitas dan LPJ bantuan mempunyai ruang berbeda",
+      "source": "[UU 2/2008 sebagaimana diubah UU 2/2011 Ps.34,34 A,35,39; cetak/PDF 10-12 UU 2/2011](https://peraturan.bpk.go.id/Download/224586/UU%20No.%202%20Tahun%202011.pdf) [Permendagri 36/2018 Ps.27-37 dan lampiran LPJ; cetak/PDF 18-22,31-34; dibaca bersama perubahan 78/2020](https://peraturan.go.id/files/bn630-2018.pdf#page=18)",
+      "before": "Ringkas atau belum dipisahkan menurut konteks/versi",
+      "after": "Penjelasan mekanisme, perbandingan, cek pemahaman dan batas sumber",
+      "assumptions": "Angka buatan hanya pada latihan berlabel; aturan bergantung entitas/periode",
+      "sourceExercises": "Tidak ada nomor kasus khusus dalam RPP. Format/ilustrasi resmi digunakan bila tersedia."
+    },
+    {
+      "concept": "Sumbangan: kategori donor dan batas tahun",
+      "source": "[UU 2/2008 sebagaimana diubah UU 2/2011 Ps.34,34 A,35,39; cetak/PDF 10-12 UU 2/2011](https://peraturan.bpk.go.id/Download/224586/UU%20No.%202%20Tahun%202011.pdf)",
+      "before": "Ringkas atau belum dipisahkan menurut konteks/versi",
+      "after": "Penjelasan mekanisme, perbandingan, cek pemahaman dan batas sumber",
+      "assumptions": "Angka buatan hanya pada latihan berlabel; aturan bergantung entitas/periode",
+      "sourceExercises": "Tidak ada nomor kasus khusus dalam RPP. Format/ilustrasi resmi digunakan bila tersedia."
+    },
+    {
+      "concept": "Bantuan: suara, tingkat dan prioritas penggunaan",
+      "source": "[PP 5/2009 sebagaimana diubah PP 1/2018 Ps.5,9,16; cetak/PDF 2-4 PP 1/2018](https://peraturan.bpk.go.id/Download/76860/PP%20Nomor%201%20Tahun%202018.pdf#page=2) [Permendagri 36/2018 Ps.27-37 dan lampiran LPJ; cetak/PDF 18-22,31-34; dibaca bersama perubahan 78/2020](https://peraturan.go.id/files/bn630-2018.pdf#page=18)",
+      "before": "Ringkas atau belum dipisahkan menurut konteks/versi",
+      "after": "Penjelasan mekanisme, perbandingan, cek pemahaman dan batas sumber",
+      "assumptions": "Angka buatan hanya pada latihan berlabel; aturan bergantung entitas/periode",
+      "sourceExercises": "Tidak ada nomor kasus khusus dalam RPP. Format/ilustrasi resmi digunakan bila tersedia."
+    },
+    {
+      "concept": "LPJ: bukti menghubungkan penerimaan dan kegiatan",
+      "source": "[Permendagri 36/2018 Ps.27-37 dan lampiran LPJ; cetak/PDF 18-22,31-34; dibaca bersama perubahan 78/2020](https://peraturan.go.id/files/bn630-2018.pdf#page=18)",
+      "before": "Ringkas atau belum dipisahkan menurut konteks/versi",
+      "after": "Penjelasan mekanisme, perbandingan, cek pemahaman dan batas sumber",
+      "assumptions": "Angka buatan hanya pada latihan berlabel; aturan bergantung entitas/periode",
+      "sourceExercises": "Tidak ada nomor kasus khusus dalam RPP. Format/ilustrasi resmi digunakan bila tersedia."
+    },
+    {
+      "concept": "Menyusun laporan entitas dan rekonsiliasi bantuan",
+      "source": "[UU 2/2008 sebagaimana diubah UU 2/2011 Ps.34,34 A,35,39; cetak/PDF 10-12 UU 2/2011](https://peraturan.bpk.go.id/Download/224586/UU%20No.%202%20Tahun%202011.pdf) [IAI DE ISAK 35(2018) CI 01-04 dan contoh laporan, PDF 19-33; ilustrasi penyajian historis, pengakuan diasumsikan dalam latihan](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=19)",
+      "before": "Ringkas atau belum dipisahkan menurut konteks/versi",
+      "after": "Penjelasan mekanisme, perbandingan, cek pemahaman dan batas sumber",
+      "assumptions": "Angka buatan hanya pada latihan berlabel; aturan bergantung entitas/periode",
+      "sourceExercises": "Tidak ada nomor kasus khusus dalam RPP. Format/ilustrasi resmi digunakan bila tersedia."
+    }
+  ]
+}

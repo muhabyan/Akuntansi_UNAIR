@@ -30,3 +30,5 @@ scripts/*.py
 *.pdf
 .content-inbox/
 /tmp/source-audit/
+/tmp/asp-sources/
+/tmp/asp-*.log

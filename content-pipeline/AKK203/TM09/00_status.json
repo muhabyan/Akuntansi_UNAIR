@@ -1,0 +1,14 @@
+{
+  "course": "AKK203",
+  "tm": 9,
+  "implementationStatus": "COMPLETE_FOR_DRAFT_REVIEW",
+  "technicalStatus": "PASS",
+  "sourceStatus": "NEEDS_HUMAN_REVIEW",
+  "sourceComplete": false,
+  "canonicalSha256": "774f6d58aacac1d6fba947568bb71197bf00c7da409853a15812eaea66a79e1a",
+  "evidence": "../qa-evidence.json",
+  "limitations": [
+    "MD 8, DN 8 dan JP 2 belum tersedia; metode dan contoh buku belum dapat diaudit lengkap.",
+    "Definisi ISSAI 300 merupakan sumber tambahan konsep; aturan audit nasional tidak digantikan."
+  ]
+}

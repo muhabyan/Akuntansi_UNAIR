@@ -1,0 +1,18 @@
+{
+  "tm": 10,
+  "canonicalSha256": "1f6fee087cdcf51b409a78fdd17ab973154e727ed2fd0942c2d497771aafc591",
+  "sourceStatus": "NEEDS_HUMAN_REVIEW",
+  "sourceComplete": false,
+  "visuals": 6,
+  "quiz": 9,
+  "cards": 6,
+  "cases": 2,
+  "independentChecks": "scripts/test-akk203-pra-uas.mjs",
+  "renderChecks": "scripts/test-akk203-pra-uas-render.mjs",
+  "browserChecks": "scripts/test-akk203-pra-uas-browser.mjs",
+  "technicalEvidence": "../qa-evidence.json",
+  "limitations": [
+    "JP Bab 2 dan 9 serta bahan dosen audit belum tersedia.",
+    "Latihan opini tidak memberi aturan otomatis materialitas/pervasiveness yang memerlukan standar penugasan rinci."
+  ]
+}

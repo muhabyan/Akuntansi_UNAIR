@@ -1,0 +1,1075 @@
+{
+  "course": "AKK 203",
+  "newCode": "FEB 25603014",
+  "tm": 14,
+  "rpp": "Artikel terkait, judul tidak ditentukan; RPP PDF 6",
+  "reading": {
+    "tm": 14,
+    "title": "Penelitian Akuntansi Sektor Publik: Membaca Bukti",
+    "ref": "[Olken(2007), Monitoring Corruption: Evidence from a Field Experiment in Indonesia, JPE 115(2), cetak 200-249/PDF 1-50; sumber tambahan pilihan, bukan artikel dosen yang terkonfirmasi](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=1) | [Olken(2007) desain dan pengukuran, cetak 202-211,216-217/PDF 3-12,17-18](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=3) | [Olken(2007) Table 4 dan pembahasan, cetak 218-221/PDF 19-22; Figure 1 pada PDF 21](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=19)",
+    "intro": "Kamu akan membedakan pertanyaan, desain, ukuran dan hasil penelitian, lalu menilai batas rekomendasi. Artikel primer pilihan memberi angka yang dapat diperiksa; daftar artikel dosen tetap perlu dilengkapi.",
+    "layout": "layered",
+    "coreReadingMinutes": 20,
+    "objectives": [
+      "Pertanyaan riset: hubungan akuntabilitas dan bukti",
+      "Desain eksperimen dan unit pengamatan",
+      "Pengukuran: pengeluaran hilang sebagai proksi",
+      "Hasil: nilai, satuan dan spesifikasi harus disebut",
+      "Mekanisme, validitas dan batas generalisasi",
+      "Menyusun ulasan dan rancangan riset yang dapat diuji"
+    ],
+    "blocks": [
+      {
+        "kind": "section",
+        "layer": "fondasi",
+        "title": "Kilat",
+        "blocks": [
+          {
+            "kind": "figure",
+            "spec": {
+              "id": "ASP-UAS-14-KILAT",
+              "type": "process",
+              "title": "Peta Penelitian Akuntansi Sektor Publik: Membaca Bukti",
+              "nodes": [
+                {
+                  "title": "Tentukan konteks",
+                  "items": [
+                    "Artikel terkait, judul tidak ditentukan; RPP PDF 6"
+                  ]
+                },
+                {
+                  "title": "Pertanyaan riset: hubungan akuntabilitas dan bukti",
+                  "items": []
+                },
+                {
+                  "title": "Desain eksperimen dan unit pengamatan",
+                  "items": []
+                },
+                {
+                  "title": "Pengukuran: pengeluaran hilang sebagai proksi",
+                  "items": []
+                },
+                {
+                  "title": "Hasil: nilai, satuan dan spesifikasi harus disebut",
+                  "items": []
+                },
+                {
+                  "title": "Mekanisme, validitas dan batas generalisasi",
+                  "items": []
+                },
+                {
+                  "title": "Menyusun ulasan dan rancangan riset yang dapat diuji",
+                  "items": []
+                }
+              ],
+              "source": "[Olken(2007), Monitoring Corruption: Evidence from a Field Experiment in Indonesia, JPE 115(2), cetak 200-249/PDF 1-50; sumber tambahan pilihan, bukan artikel dosen yang terkonfirmasi](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=1)",
+              "alt": "Peta Penelitian Akuntansi Sektor Publik: Membaca Bukti. Tentukan konteks → Pertanyaan riset: hubungan akuntabilitas dan bukti → Desain eksperimen dan unit pengamatan → Pengukuran: pengeluaran hilang sebagai proksi → Hasil: nilai, satuan dan spesifikasi harus disebut → Mekanisme, validitas dan batas generalisasi → Menyusun ulasan dan rancangan riset yang dapat diuji",
+              "footer": "Skematis: hubungan konsep, tanpa skala angka."
+            }
+          },
+          {
+            "kind": "ul",
+            "items": [
+              "Tentukan pertanyaan, mekanisme dan hasil yang terukur.",
+              "Artikel pilihan bukan daftar wajib dosen yang terkonfirmasi.",
+              "Randomisasi membantu pembanding, dengan unit/pengelompokan tepat.",
+              "Proksi selisih log memerlukan interpretasi hati-hati.",
+              "Sebutkan N, model, satuan dan ketidakpastian.",
+              "Transfer ke konteks lain perlu bukti tambahan."
+            ]
+          },
+          {
+            "kind": "p",
+            "text": "Kalau cuma sempat ingat satu hal: Tentukan pertanyaan, mekanisme dan hasil yang terukur."
+          },
+          {
+            "kind": "callout",
+            "variant": "note",
+            "title": "Cakupan dan periode sumber",
+            "text": "RPP: Artikel terkait, judul tidak ditentukan; RPP PDF 6. RPP tidak menyebut judul artikel; bahan dosen dan daftar artikel yang ditugaskan belum tersedia."
+          }
+        ]
+      },
+      {
+        "kind": "section",
+        "layer": "main",
+        "title": "Pertanyaan riset: hubungan akuntabilitas dan bukti",
+        "source": "[Olken(2007), Monitoring Corruption: Evidence from a Field Experiment in Indonesia, JPE 115(2), cetak 200-249/PDF 1-50; sumber tambahan pilihan, bukan artikel dosen yang terkonfirmasi](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=1)",
+        "blocks": [
+          {
+            "kind": "p",
+            "text": "Penelitian akuntansi sektor publik dapat menelaah kualitas pelaporan, audit, anggaran, kinerja dan akuntabilitas layanan. Pertanyaan perlu menentukan entitas, periode, mekanisme dan hasil yang akan diamati. Pertanyaan “apakah audit membantu?” terlalu luas jika jenis audit, perlakuan dan ukuran hasil tidak jelas. [Olken(2007), Monitoring Corruption: Evidence from a Field Experiment in Indonesia, JPE 115(2), cetak 200-249/PDF 1-50; sumber tambahan pilihan, bukan artikel dosen yang terkonfirmasi](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=1)"
+          },
+          {
+            "kind": "p",
+            "text": "RPP hanya menyebut artikel terkait, tanpa daftar judul. Paket memilih studi Olken 2007 tentang proyek jalan desa sebagai bacaan tambahan primer untuk berlatih menilai desain dan hasil. Artikel ini berada dalam ruang ekonomi/pengawasan sektor publik, sehingga bukan bukti bahwa seluruh topik riset ASP telah dicakup atau daftar artikel dosen telah dipenuhi. [Olken(2007), Monitoring Corruption: Evidence from a Field Experiment in Indonesia, JPE 115(2), cetak 200-249/PDF 1-50; sumber tambahan pilihan, bukan artikel dosen yang terkonfirmasi](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=1)"
+          },
+          {
+            "kind": "figure",
+            "spec": {
+              "id": "ASP-UAS-14-PERTANYAAN",
+              "type": "process",
+              "title": "Rantai pertanyaan penelitian",
+              "nodes": [
+                {
+                  "title": "Masalah pertanggungjawaban",
+                  "items": []
+                },
+                {
+                  "title": "Mekanisme audit/pengawasan",
+                  "items": []
+                },
+                {
+                  "title": "Hasil yang dapat diukur",
+                  "items": []
+                },
+                {
+                  "title": "Desain dan pembanding",
+                  "items": []
+                },
+                {
+                  "title": "Kesimpulan dengan batas",
+                  "items": []
+                }
+              ],
+              "source": "[Olken(2007), Monitoring Corruption: Evidence from a Field Experiment in Indonesia, JPE 115(2), cetak 200-249/PDF 1-50; sumber tambahan pilihan, bukan artikel dosen yang terkonfirmasi](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=1)",
+              "alt": "Rantai pertanyaan penelitian. Masalah pertanggungjawaban → Mekanisme audit/pengawasan → Hasil yang dapat diukur → Desain dan pembanding → Kesimpulan dengan batas",
+              "footer": "Skematis: hubungan konsep, tanpa skala angka."
+            }
+          },
+          {
+            "kind": "self-check",
+            "question": "Mengapa artikel pilihan tidak boleh disebut sebagai artikel wajib dosen?",
+            "answer": [
+              {
+                "kind": "p",
+                "text": "RPP tidak menamai artikel; pemilihan tambahan harus dijelaskan dan daftar dosen tetap merupakan celah sumber. [Olken(2007), Monitoring Corruption: Evidence from a Field Experiment in Indonesia, JPE 115(2), cetak 200-249/PDF 1-50; sumber tambahan pilihan, bukan artikel dosen yang terkonfirmasi](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=1)"
+              }
+            ],
+            "signal": "Jika alasanmu berbeda, kembali ke sumber dan identifikasi fakta yang belum mendukung jawaban."
+          }
+        ]
+      },
+      {
+        "kind": "section",
+        "layer": "main",
+        "title": "Desain eksperimen dan unit pengamatan",
+        "source": "[Olken(2007) desain dan pengukuran, cetak 202-211,216-217/PDF 3-12,17-18](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=3)",
+        "blocks": [
+          {
+            "kind": "p",
+            "text": "Penelitian mencakup 608 desa proyek jalan di Jawa Timur dan Jawa Tengah pada program 2003. Perlakuan audit mengumumkan peluang pemeriksaan pemerintah meningkat dari sekitar 4% menjadi 100%. Randomisasi (penempatan perlakuan secara acak) membantu membuat kelompok pembanding setara dalam harapan, sehingga perbedaan hasil lebih dapat dikaitkan dengan penugasan perlakuan. [Olken(2007) desain dan pengukuran, cetak 202-211,216-217/PDF 3-12,17-18](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=3)"
+          },
+          {
+            "kind": "p",
+            "text": "Audit dirandomisasi pada tingkat kecamatan, sementara undangan/form komentar diacak pada desa dengan stratifikasi. Pengelompokan ini memengaruhi galat baku; menganggap seluruh desa independen mengabaikan desain. Sampel 608 dalam desain tidak sama dengan jumlah observasi semua regresi: Table 4 memakai 477 untuk komponen utama jalan dan 538 untuk jalan beserta kegiatan tambahan. [Olken(2007) desain dan pengukuran, cetak 202-211,216-217/PDF 3-12,17-18](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=3)"
+          },
+          {
+            "kind": "table",
+            "title": "Desain dan sampel sumber",
+            "headers": [
+              "Bagian",
+              "Angka/keterangan",
+              "Makna"
+            ],
+            "rows": [
+              [
+                "Desain total",
+                "608 desa",
+                "Table 1, PDF 8"
+              ],
+              [
+                "Peluang audit",
+                "Sekitar 4% →100%",
+                "Perubahan perlakuan, bukan tingkat korupsi"
+              ],
+              [
+                "Table 4 jalan",
+                "N 477",
+                "Observasi untuk ukuran tertentu"
+              ],
+              [
+                "Table 4 jalan+tambahan",
+                "N 538",
+                "Sampel ukuran yang berbeda"
+              ]
+            ],
+            "caption": "[Olken(2007) desain dan pengukuran, cetak 202-211,216-217/PDF 3-12,17-18](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=3) [Olken(2007) Table 4 dan pembahasan, cetak 218-221/PDF 19-22; Figure 1 pada PDF 21](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=19)",
+            "stackOnMobile": true
+          },
+          {
+            "kind": "figure",
+            "spec": {
+              "id": "ASP-UAS-14-DESAIN",
+              "type": "parallel",
+              "title": "Perlakuan dan pembanding",
+              "nodes": [
+                {
+                  "title": "Kelompok audit",
+                  "items": [
+                    "Pengumuman peluang audit 100%"
+                  ]
+                },
+                {
+                  "title": "Kelompok kontrol",
+                  "items": [
+                    "Peluang dasar sekitar 4%"
+                  ]
+                }
+              ],
+              "source": "[Olken(2007) desain dan pengukuran, cetak 202-211,216-217/PDF 3-12,17-18](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=3)",
+              "alt": "Perlakuan dan pembanding. Cabang terpisah dibandingkan sesuai label. Tidak menunjukkan urutan waktu.",
+              "footer": "Skematis: hubungan konsep, tanpa skala angka.",
+              "result": "Bandingkan hasil, dengan galat baku sesuai pengelompokan"
+            }
+          },
+          {
+            "kind": "self-check",
+            "question": "Apakah N 608 otomatis menjadi N setiap estimasi?",
+            "answer": [
+              {
+                "kind": "p",
+                "text": "Tidak. Ketersediaan pengukuran dan sampel analisis menghasilkan N 477 atau 538 pada Table 4. [Olken(2007) desain dan pengukuran, cetak 202-211,216-217/PDF 3-12,17-18](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=3)"
+              }
+            ],
+            "signal": "Jika alasanmu berbeda, kembali ke sumber dan identifikasi fakta yang belum mendukung jawaban."
+          }
+        ]
+      },
+      {
+        "kind": "section",
+        "layer": "main",
+        "title": "Pengukuran: pengeluaran hilang sebagai proksi",
+        "source": "[Olken(2007) desain dan pengukuran, cetak 202-211,216-217/PDF 3-12,17-18](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=3)",
+        "blocks": [
+          {
+            "kind": "p",
+            "text": "Peneliti membandingkan pengeluaran yang dilaporkan dengan estimasi teknis biaya aktual, menggunakan sampel inti jalan, survei harga bahan dan informasi upah. “Percent missing” pada analisis utama didefinisikan sebagai log pengeluaran dilaporkan dikurangi log estimasi aktual. Log adalah transformasi logaritma natural; ukuran ini bukan langsung rasio selisih rupiah dibagi pengeluaran dilaporkan. [Olken(2007) desain dan pengukuran, cetak 202-211,216-217/PDF 3-12,17-18](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=3)"
+          },
+          {
+            "kind": "p",
+            "text": "Ukuran itu disebut proksi (indikator pengganti) pengeluaran yang tidak terjelaskan. Estimasi teknis, asumsi kehilangan material dan kesalahan pengukuran memengaruhi levelnya. Nilai proksi tidak langsung membuktikan tindak pidana individu. Penulis menekankan interpretasi level dengan hati-hati dan membedakannya dari bukti tertangkap melakukan korupsi. [Olken(2007) desain dan pengukuran, cetak 202-211,216-217/PDF 3-12,17-18](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=3)"
+          },
+          {
+            "kind": "formula",
+            "text": "\\text{Missing}_i=\\ln(\\text{Reported}_i)-\\ln(\\text{Estimated actual}_i)",
+            "note": "Definisi sumber, PDF 17. Nilai diubah ke skala persen ketika tabel menampilkannya; tidak langsung sama dengan rasio selisih biaya."
+          },
+          {
+            "kind": "figure",
+            "spec": {
+              "id": "ASP-UAS-14-UKUR",
+              "type": "parallel",
+              "title": "Dua masukan untuk proksi",
+              "nodes": [
+                {
+                  "title": "Pengeluaran dilaporkan",
+                  "items": [
+                    "Dokumen proyek"
+                  ]
+                },
+                {
+                  "title": "Estimasi biaya aktual",
+                  "items": [
+                    "Teknik, pasar dan upah"
+                  ]
+                }
+              ],
+              "source": "[Olken(2007) desain dan pengukuran, cetak 202-211,216-217/PDF 3-12,17-18](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=3)",
+              "alt": "Dua masukan untuk proksi. Cabang terpisah dibandingkan sesuai label. Tidak menunjukkan urutan waktu.",
+              "footer": "Skematis: hubungan konsep, tanpa skala angka.",
+              "result": "Selisih log → proksi → interpretasi dengan batas pengukuran"
+            }
+          },
+          {
+            "kind": "self-check",
+            "question": "Mengapa nilai missing tinggi belum membuktikan seseorang bersalah?",
+            "answer": [
+              {
+                "kind": "p",
+                "text": "Ukuran mengandung estimasi dan asumsi; pembuktian individu memerlukan bukti serta proses berbeda. [Olken(2007) desain dan pengukuran, cetak 202-211,216-217/PDF 3-12,17-18](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=3)"
+              }
+            ],
+            "signal": "Jika alasanmu berbeda, kembali ke sumber dan identifikasi fakta yang belum mendukung jawaban."
+          }
+        ]
+      },
+      {
+        "kind": "section",
+        "layer": "main",
+        "title": "Hasil: nilai, satuan dan spesifikasi harus disebut",
+        "source": "[Olken(2007) Table 4 dan pembahasan, cetak 218-221/PDF 19-22; Figure 1 pada PDF 21](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=19)",
+        "blocks": [
+          {
+            "kind": "p",
+            "text": "Table 4 untuk komponen utama jalan: kontrol 0,277, perlakuan 0,192, efek tanpa efek tetap-0,085, galat baku 0,044 dan p 0,058. Pada skala tabel, perbedaannya 8,5 poin persentase. Itu bukan penurunan 8,5% relatif. Spesifikasi dengan efek tetap insinyur memberi-0,076, p 0,039; efek tetap strata memberi-0,048, p 0,123. [Olken(2007) Table 4 dan pembahasan, cetak 218-221/PDF 19-22; Figure 1 pada PDF 21](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=19)"
+          },
+          {
+            "kind": "p",
+            "text": "Untuk jalan dan kegiatan tambahan, kontrol 0,291, perlakuan 0,199, koefisien tanpa efek tetap-0,091, p 0,034, N 538. Selisih rata-rata dibulatkan 0,291-0,199=0,092 berbeda sedikit dari koefisien 0,091 karena pembulatan/estimasi; pertahankan angka masing-masing, jangan memaksa sama. Hasil tidak semuanya memenuhi ambang 5% pada setiap spesifikasi. [Olken(2007) Table 4 dan pembahasan, cetak 218-221/PDF 19-22; Figure 1 pada PDF 21](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=19)"
+          },
+          {
+            "kind": "table",
+            "title": "Table 4: komponen utama jalan, N 477",
+            "headers": [
+              "Spesifikasi",
+              "Efek",
+              "p",
+              "Interpretasi batas 5%"
+            ],
+            "rows": [
+              [
+                "Tanpa efek tetap",
+                "-0,085",
+                "0,058",
+                "Tidak melewati ambang 5%"
+              ],
+              [
+                "Efek tetap insinyur",
+                "-0,076",
+                "0,039",
+                "Melewati ambang 5%"
+              ],
+              [
+                "Efek tetap strata",
+                "-0,048",
+                "0,123",
+                "Tidak melewati ambang 5%"
+              ]
+            ],
+            "caption": "[Olken(2007) Table 4 dan pembahasan, cetak 218-221/PDF 19-22; Figure 1 pada PDF 21](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=19)",
+            "stackOnMobile": true
+          },
+          {
+            "kind": "figure",
+            "spec": {
+              "id": "ASP-UAS-14-HASIL",
+              "type": "bar",
+              "title": "Proksi missing: kontrol dan perlakuan",
+              "nodes": [],
+              "source": "[Olken(2007) Table 4 dan pembahasan, cetak 218-221/PDF 19-22; Figure 1 pada PDF 21](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=19)",
+              "alt": "Proksi missing: kontrol dan perlakuan. Kontrol: 27.7; Perlakuan audit: 19.2. Skala persen proksi selisih log. Table 4, komponen utama jalan, N 477. Selisih 8,5 poin; bukan rasio uang hilang langsung.",
+              "footer": "Table 4, komponen utama jalan, N 477. Selisih 8,5 poin; bukan rasio uang hilang langsung.",
+              "bars": [
+                {
+                  "label": "Kontrol",
+                  "value": 27.7
+                },
+                {
+                  "label": "Perlakuan audit",
+                  "value": 19.2
+                }
+              ],
+              "axis": "Skala persen proksi selisih log",
+              "max": 30
+            }
+          },
+          {
+            "kind": "self-check",
+            "question": "Mengapa kesimpulan “signifikan 5% dalam semua model” salah?",
+            "answer": [
+              {
+                "kind": "p",
+                "text": "p 0,058 dan 0,123 tidak di bawah 0,05; sebutkan spesifikasi serta ambang yang dipilih. [Olken(2007) Table 4 dan pembahasan, cetak 218-221/PDF 19-22; Figure 1 pada PDF 21](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=19)"
+              }
+            ],
+            "signal": "Jika alasanmu berbeda, kembali ke sumber dan identifikasi fakta yang belum mendukung jawaban."
+          }
+        ]
+      },
+      {
+        "kind": "section",
+        "layer": "main",
+        "title": "Mekanisme, validitas dan batas generalisasi",
+        "source": "[Olken(2007) desain dan pengukuran, cetak 202-211,216-217/PDF 3-12,17-18](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=3) [Olken(2007) Table 4 dan pembahasan, cetak 218-221/PDF 19-22; Figure 1 pada PDF 21](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=19)",
+        "blocks": [
+          {
+            "kind": "p",
+            "text": "Pengumuman peluang audit dapat mengubah perilaku sebelum pemeriksa datang. Penulis melaporkan hasil tidak berbeda signifikan antara proyek yang disurvei sebelum dan sesudah audit, konsisten dengan mekanisme ancaman pemeriksaan. Konsisten berarti mendukung penjelasan, bukan membuktikan satu-satunya mekanisme yang mungkin. [Olken(2007) desain dan pengukuran, cetak 202-211,216-217/PDF 3-12,17-18](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=3) [Olken(2007) Table 4 dan pembahasan, cetak 218-221/PDF 19-22; Figure 1 pada PDF 21](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=19)"
+          },
+          {
+            "kind": "p",
+            "text": "Validitas internal menilai apakah desain mendukung hubungan sebab-akibat dalam penelitian. Validitas eksternal menilai apakah hasil berlaku pada konteks lain. Jalan desa 2003, jenis pengawasan dan ukuran teknis berbeda dari rumah sakit 2026 atau seluruh pengadaan Indonesia. Usulan kebijakan perlu menilai biaya, kapasitas audit dan konteks layanan sebelum menyalin peluang 100%. [Olken(2007) desain dan pengukuran, cetak 202-211,216-217/PDF 3-12,17-18](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=3) [Olken(2007) Table 4 dan pembahasan, cetak 218-221/PDF 19-22; Figure 1 pada PDF 21](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=19)"
+          },
+          {
+            "kind": "figure",
+            "spec": {
+              "id": "ASP-UAS-14-VALIDITAS",
+              "type": "parallel",
+              "title": "Dua pertanyaan validitas",
+              "nodes": [
+                {
+                  "title": "Internal",
+                  "items": [
+                    "Penugasan acak, pembanding, galat baku, pengukuran"
+                  ]
+                },
+                {
+                  "title": "Eksternal",
+                  "items": [
+                    "Entitas, periode, jenis proyek dan kapasitas berbeda"
+                  ]
+                }
+              ],
+              "source": "[Olken(2007) desain dan pengukuran, cetak 202-211,216-217/PDF 3-12,17-18](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=3) [Olken(2007) Table 4 dan pembahasan, cetak 218-221/PDF 19-22; Figure 1 pada PDF 21](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=19)",
+              "alt": "Dua pertanyaan validitas. Cabang terpisah dibandingkan sesuai label. Tidak menunjukkan urutan waktu.",
+              "footer": "Skematis: hubungan konsep, tanpa skala angka."
+            }
+          },
+          {
+            "kind": "table",
+            "title": "Klaim dan syarat",
+            "headers": [
+              "Klaim",
+              "Syarat tambahan"
+            ],
+            "rows": [
+              [
+                "Perlakuan memengaruhi hasil dalam sampel",
+                "Desain, ketidakpastian dan ukuran tepat"
+              ],
+              [
+                "Audit selalu menghapus korupsi",
+                "Tidak didukung: hasil rata-rata dan proksi"
+              ],
+              [
+                "Audit 100% layak untuk semua layanan",
+                "Evaluasi biaya, kapasitas dan konteks"
+              ]
+            ],
+            "caption": "[Olken(2007) Table 4 dan pembahasan, cetak 218-221/PDF 19-22; Figure 1 pada PDF 21](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=19)",
+            "stackOnMobile": true
+          },
+          {
+            "kind": "self-check",
+            "question": "Apakah hasil proyek jalan 2003 langsung menetapkan kebijakan audit rumah sakit 2026?",
+            "answer": [
+              {
+                "kind": "p",
+                "text": "Tidak. Nilai mekanisme yang dapat dipindahkan serta perbedaan entitas, biaya, kapasitas dan pengukuran. [Olken(2007) desain dan pengukuran, cetak 202-211,216-217/PDF 3-12,17-18](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=3) [Olken(2007) Table 4 dan pembahasan, cetak 218-221/PDF 19-22; Figure 1 pada PDF 21](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=19)"
+              }
+            ],
+            "signal": "Jika alasanmu berbeda, kembali ke sumber dan identifikasi fakta yang belum mendukung jawaban."
+          }
+        ]
+      },
+      {
+        "kind": "section",
+        "layer": "main",
+        "title": "Menyusun ulasan dan rancangan riset yang dapat diuji",
+        "source": "[Olken(2007), Monitoring Corruption: Evidence from a Field Experiment in Indonesia, JPE 115(2), cetak 200-249/PDF 1-50; sumber tambahan pilihan, bukan artikel dosen yang terkonfirmasi](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=1) [Olken(2007) desain dan pengukuran, cetak 202-211,216-217/PDF 3-12,17-18](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=3) [Olken(2007) Table 4 dan pembahasan, cetak 218-221/PDF 19-22; Figure 1 pada PDF 21](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=19)",
+        "blocks": [
+          {
+            "kind": "p",
+            "text": "Ulasan artikel memisahkan pertanyaan, teori/mekanisme, data, desain, ukuran, hasil dan keterbatasan. Catat tabel/halaman setiap angka dan sebutkan apakah kalimat merupakan temuan penulis atau interpretasi pembaca. Kritik perlu menunjuk konsekuensi suatu asumsi, bukan sekadar menyebut sampel kecil/besar. [Olken(2007), Monitoring Corruption: Evidence from a Field Experiment in Indonesia, JPE 115(2), cetak 200-249/PDF 1-50; sumber tambahan pilihan, bukan artikel dosen yang terkonfirmasi](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=1) [Olken(2007) desain dan pengukuran, cetak 202-211,216-217/PDF 3-12,17-18](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=3) [Olken(2007) Table 4 dan pembahasan, cetak 218-221/PDF 19-22; Figure 1 pada PDF 21](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=19)"
+          },
+          {
+            "kind": "p",
+            "text": "Rancangan lanjutan harus mempunyai variabel terukur dan pembanding yang masuk akal. Contoh buatan: apakah jadwal rekonsiliasi yang ditugaskan acak mengurangi selisih laporan layanan BLUD? Tentukan unit penugasan, ukuran selisih, periode, pengelompokan, kelengkapan data dan perlindungan informasi. Contoh ini usulan, belum merupakan temuan penelitian. [Olken(2007), Monitoring Corruption: Evidence from a Field Experiment in Indonesia, JPE 115(2), cetak 200-249/PDF 1-50; sumber tambahan pilihan, bukan artikel dosen yang terkonfirmasi](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=1) [Olken(2007) desain dan pengukuran, cetak 202-211,216-217/PDF 3-12,17-18](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=3) [Olken(2007) Table 4 dan pembahasan, cetak 218-221/PDF 19-22; Figure 1 pada PDF 21](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=19)"
+          },
+          {
+            "kind": "table",
+            "title": "Kerangka ulasan ujian",
+            "headers": [
+              "Bagian",
+              "Isi minimum"
+            ],
+            "rows": [
+              [
+                "Pertanyaan",
+                "Entitas, periode, mekanisme dan hasil"
+              ],
+              [
+                "Metode",
+                "Unit, penugasan, pembanding dan ukuran"
+              ],
+              [
+                "Hasil",
+                "Koefisien, satuan, N, p/ketidakpastian dan model"
+              ],
+              [
+                "Kritik",
+                "Asumsi serta akibat bagi kesimpulan"
+              ],
+              [
+                "Usulan",
+                "Variabel, pembanding, data dan batas generalisasi"
+              ]
+            ],
+            "caption": "[Olken(2007), Monitoring Corruption: Evidence from a Field Experiment in Indonesia, JPE 115(2), cetak 200-249/PDF 1-50; sumber tambahan pilihan, bukan artikel dosen yang terkonfirmasi](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=1)",
+            "stackOnMobile": true
+          },
+          {
+            "kind": "self-check",
+            "question": "Apa perbedaan angka temuan dan angka asumsi rancangan?",
+            "answer": [
+              {
+                "kind": "p",
+                "text": "Temuan ditelusuri ke tabel artikel; asumsi rancangan diberi label dan belum mengandung bukti hasil. [Olken(2007), Monitoring Corruption: Evidence from a Field Experiment in Indonesia, JPE 115(2), cetak 200-249/PDF 1-50; sumber tambahan pilihan, bukan artikel dosen yang terkonfirmasi](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=1) [Olken(2007) desain dan pengukuran, cetak 202-211,216-217/PDF 3-12,17-18](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=3) [Olken(2007) Table 4 dan pembahasan, cetak 218-221/PDF 19-22; Figure 1 pada PDF 21](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=19)"
+              }
+            ],
+            "signal": "Jika alasanmu berbeda, kembali ke sumber dan identifikasi fakta yang belum mendukung jawaban."
+          }
+        ]
+      },
+      {
+        "kind": "pendalaman",
+        "title": "Pendalaman: grafik sumber dan penelitian lanjutan",
+        "blocks": [
+          {
+            "kind": "p",
+            "text": "Figure 1 PDF 21 memuat fungsi distribusi kumulatif (CDF: proporsi pengamatan hingga suatu nilai) dan densitas (kepadatan sebaran) proksi missing. Kurva audit dibandingkan kontrol, dengan sumbu ukuran selisih log. Data mentah untuk menggambar ulang kurva tidak ada dalam paket; grafikTable 4 menampilkan angka tabel yang terverifikasi dan tidak mengaku mereproduksi CDF."
+          },
+          {
+            "kind": "figure",
+            "spec": {
+              "id": "ASP-UAS-14-ULASAN",
+              "type": "process",
+              "title": "Dari hasil ke rekomendasi",
+              "nodes": [
+                {
+                  "title": "Angka tabel dan model",
+                  "items": []
+                },
+                {
+                  "title": "Batas ukuran/ketidakpastian",
+                  "items": []
+                },
+                {
+                  "title": "Mekanisme yang didukung",
+                  "items": []
+                },
+                {
+                  "title": "Perbedaan konteks penerapan",
+                  "items": []
+                },
+                {
+                  "title": "Uji lanjutan serta rekomendasi terbatas",
+                  "items": []
+                }
+              ],
+              "source": "[Olken(2007), Monitoring Corruption: Evidence from a Field Experiment in Indonesia, JPE 115(2), cetak 200-249/PDF 1-50; sumber tambahan pilihan, bukan artikel dosen yang terkonfirmasi](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=1) [Olken(2007) Table 4 dan pembahasan, cetak 218-221/PDF 19-22; Figure 1 pada PDF 21](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=19)",
+              "alt": "Dari hasil ke rekomendasi. Angka tabel dan model → Batas ukuran/ketidakpastian → Mekanisme yang didukung → Perbedaan konteks penerapan → Uji lanjutan serta rekomendasi terbatas",
+              "footer": "Skematis: hubungan konsep, tanpa skala angka."
+            }
+          }
+        ]
+      },
+      {
+        "kind": "section",
+        "layer": "latihan",
+        "title": "Persiapan ujian",
+        "blocks": [
+          {
+            "kind": "table",
+            "title": "Jebakan dan langkah koreksi",
+            "headers": [
+              "Jebakan",
+              "Langkah yang benar"
+            ],
+            "rows": [
+              [
+                "Penelitian hanya daftar istilah tanpa artikel yang diaudit",
+                "Gunakan artikel primer pilihan dengan pertanyaan, desain, hasil dan kritik."
+              ],
+              [
+                "8% ditulis tanpa satuan/model",
+                "TampilkanTable 4,8,5 poin, N 477 dan p 0,058."
+              ],
+              [
+                "Hasil digeneralisasi ke semua layanan",
+                "Bedakan validitas internal/eksternal dan rancang pengujian lanjutan."
+              ]
+            ],
+            "caption": "[Olken(2007), Monitoring Corruption: Evidence from a Field Experiment in Indonesia, JPE 115(2), cetak 200-249/PDF 1-50; sumber tambahan pilihan, bukan artikel dosen yang terkonfirmasi](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=1)",
+            "stackOnMobile": true
+          }
+        ]
+      },
+      {
+        "kind": "solution-reveal",
+        "title": "Latihan berbasis sumber: membaca Table 4",
+        "prompt": "Gunakan kontrol 0,277, perlakuan 0,192, koefisien-0,085, p 0,058, N 477 pada model tanpa efek tetap.",
+        "blocks": [
+          {
+            "kind": "p",
+            "text": "Fakta sumber: 0,277-0,192=0,085, atau 8,5 poin pada skala persen tabel. Bila menghitung perubahan relatif terhadap kontrol,0,085/0,277×100≈30,69%; ini hitungan turunan, dibulatkan dua desimal dan bukan angka efek utama yang ditulis penulis."
+          },
+          {
+            "kind": "p",
+            "text": "Analisis: pada ambang 5% yang diasumsikan dalam soal, p 0,058>0,05; hasil ini tidak melewati ambang itu. Pada ambang 10% kesimpulan ambang berbeda, sehingga ambang harus disebut. Keputusan ulasan: efek rata-rata negatif dengan ketidakpastian serta sensitivitas model. Menulis “8,5% relatif” salah satuan; menulis “seluruh korupsi hilang” melampaui proksi dan hasil. [Olken(2007) Table 4 dan pembahasan, cetak 218-221/PDF 19-22; Figure 1 pada PDF 21](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=19)"
+          }
+        ],
+        "revealLabel": "Tampilkan langkah dan pemeriksaan"
+      },
+      {
+        "kind": "solution-reveal",
+        "title": "Latihan buatan: menilai klaim generalisasi",
+        "prompt": "Seorang mahasiswa menulis bahwa penelitian desa 2003 membuktikan audit 100% pasti menghapus korupsi rumah sakit 2026. Perbaiki klaim.",
+        "blocks": [
+          {
+            "kind": "p",
+            "text": "Fakta: artikel tentang proyek jalan desa, randomisasi perlakuan audit dan proksi berbasis estimasi teknis. Asumsi klaim mahasiswa: konteks layanan/periode sama, ukuran proksi sama dengan kejahatan dan efek pasti. Asumsi ini belum dibuktikan."
+          },
+          {
+            "kind": "p",
+            "text": "Analisis: pisahkan validitas internal penelitian dari transfer ke rumah sakit; periksa jenis layanan, biaya audit, kapasitas, data dan mekanisme. Keputusan: tulis bahwa studi memberi bukti efek rata-rata negatif dalam konteks tertentu, lalu usulkan evaluasi rumah sakit sebelum penerapan. Menolak seluruh penelitian juga keliru karena desain tetap memberi bukti dalam konteks asal. [Olken(2007) desain dan pengukuran, cetak 202-211,216-217/PDF 3-12,17-18](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=3) [Olken(2007) Table 4 dan pembahasan, cetak 218-221/PDF 19-22; Figure 1 pada PDF 21](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=19)"
+          }
+        ],
+        "revealLabel": "Tampilkan langkah dan pemeriksaan"
+      }
+    ]
+  },
+  "quiz": [
+    {
+      "id": "akk203-uas-tm14-01",
+      "tm": 14,
+      "topic": "RPP",
+      "skill": "Analisis dasar, mekanisme dan batas penerapan",
+      "difficulty": "medium",
+      "q": "RPP: status artikel Olken 2007 dalam paket?",
+      "options": [
+        "Satu-satunya artikel wajib yang disebut RPP",
+        "Standar akuntansi yang mengganti seluruh SAP",
+        "Sumber tambahan pilihan, judul dosen belum terkonfirmasi",
+        "Data seluruh rumah sakit Indonesia tahun 2026"
+      ],
+      "answer": 2,
+      "explanation": "RPP hanya artikel terkait. Pilihan primer perlu label, bukan disebut tugas pasti atau standar. Cakupan artikel adalah jalan desa historis. Rujukan: [Olken(2007), Monitoring Corruption: Evidence from a Field Experiment in Indonesia, JPE 115(2), cetak 200-249/PDF 1-50; sumber tambahan pilihan, bukan artikel dosen yang terkonfirmasi](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=1)",
+      "sourceRef": "[Olken(2007), Monitoring Corruption: Evidence from a Field Experiment in Indonesia, JPE 115(2), cetak 200-249/PDF 1-50; sumber tambahan pilihan, bukan artikel dosen yang terkonfirmasi](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=1)",
+      "sourceAnchors": [
+        "[Olken(2007), Monitoring Corruption: Evidence from a Field Experiment in Indonesia, JPE 115(2), cetak 200-249/PDF 1-50; sumber tambahan pilihan, bukan artikel dosen yang terkonfirmasi](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=1)"
+      ]
+    },
+    {
+      "id": "akk203-uas-tm14-02",
+      "tm": 14,
+      "topic": "Desain",
+      "skill": "Analisis dasar, mekanisme dan batas penerapan",
+      "difficulty": "medium",
+      "q": "Desain: apa manfaat penugasan acak audit?",
+      "options": [
+        "Menjamin setiap desa bebas kesalahan pengukuran",
+        "Menjamin semua hasil dapat berlaku selamanya",
+        "Menghapus kebutuhan galat baku dan sampel",
+        "Membantu pembanding setara dalam harapan"
+      ],
+      "answer": 3,
+      "explanation": "Randomisasi membantu identifikasi efek dalam konteks desain. Tidak menghapus kesalahan pengukuran, ketidakpastian atau persoalan generalisasi. Rujukan: [Olken(2007) desain dan pengukuran, cetak 202-211,216-217/PDF 3-12,17-18](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=3)",
+      "sourceRef": "[Olken(2007) desain dan pengukuran, cetak 202-211,216-217/PDF 3-12,17-18](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=3)",
+      "sourceAnchors": [
+        "[Olken(2007) desain dan pengukuran, cetak 202-211,216-217/PDF 3-12,17-18](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=3)"
+      ]
+    },
+    {
+      "id": "akk203-uas-tm14-03",
+      "tm": 14,
+      "topic": "Ukuran",
+      "skill": "Analisis dasar, mekanisme dan batas penerapan",
+      "difficulty": "medium",
+      "q": "Ukuran: percent missing utama didefinisikan bagaimana?",
+      "options": [
+        "Log dilaporkan dikurangi log estimasi aktual",
+        "Selisih kas dibagi seluruh kas desa selalu",
+        "Jumlah terdakwa dibagi seluruh pegawai desa",
+        "Opini audit dibagi tarif bantuan per suara"
+      ],
+      "answer": 0,
+      "explanation": "Definisi log pada PDF 17 berbeda dari rasio biasa, proses hukum atau opini. Proksi dipengaruhi estimasi teknis dan asumsi. Rujukan: [Olken(2007) desain dan pengukuran, cetak 202-211,216-217/PDF 3-12,17-18](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=3)",
+      "sourceRef": "[Olken(2007) desain dan pengukuran, cetak 202-211,216-217/PDF 3-12,17-18](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=3)",
+      "sourceAnchors": [
+        "[Olken(2007) desain dan pengukuran, cetak 202-211,216-217/PDF 3-12,17-18](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=3)"
+      ]
+    },
+    {
+      "id": "akk203-uas-tm14-04",
+      "tm": 14,
+      "topic": "Hasil",
+      "skill": "Analisis dasar, mekanisme dan batas penerapan",
+      "difficulty": "medium",
+      "q": "Hasil: 0,277 menjadi 0,192 memberi selisih apa?",
+      "options": [
+        "8,5% relatif terhadap nilai kontrol",
+        "8,5 poin persentase pada skala tabel",
+        "27,7 poin kenaikan terhadap kontrol",
+        "19,2% relatif tanpa memakai pembanding"
+      ],
+      "answer": 1,
+      "explanation": "Selisih 0,085×100=8,5 poin. Relatif memerlukan pembagian 0,277, sekitar 30,69%. Opsi lain menukar nilai level dengan perubahan. Rujukan: [Olken(2007) Table 4 dan pembahasan, cetak 218-221/PDF 19-22; Figure 1 pada PDF 21](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=19)",
+      "sourceRef": "[Olken(2007) Table 4 dan pembahasan, cetak 218-221/PDF 19-22; Figure 1 pada PDF 21](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=19)",
+      "sourceAnchors": [
+        "[Olken(2007) Table 4 dan pembahasan, cetak 218-221/PDF 19-22; Figure 1 pada PDF 21](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=19)"
+      ]
+    },
+    {
+      "id": "akk203-uas-tm14-05",
+      "tm": 14,
+      "topic": "Ketidakpastian",
+      "skill": "Analisis dasar, mekanisme dan batas penerapan",
+      "difficulty": "medium",
+      "q": "Ketidakpastian: p 0,058 pada ambang 5%, model tanpa efek tetap?",
+      "options": [
+        "Selalu melewati 5% karena koefisien negatif",
+        "Membuktikan efek pasti nol pada semua desa",
+        "Tidak melewati ambang 5% pada model tersebut",
+        "Membuktikan seluruh model signifikan 5%"
+      ],
+      "answer": 2,
+      "explanation": "0,058>0,05. Tanda koefisien tidak menentukanp; hasil di luar ambang tidak membuktikan efek pasti nol, dan model lain memiliki p berbeda. Rujukan: [Olken(2007) Table 4 dan pembahasan, cetak 218-221/PDF 19-22; Figure 1 pada PDF 21](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=19)",
+      "sourceRef": "[Olken(2007) Table 4 dan pembahasan, cetak 218-221/PDF 19-22; Figure 1 pada PDF 21](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=19)",
+      "sourceAnchors": [
+        "[Olken(2007) Table 4 dan pembahasan, cetak 218-221/PDF 19-22; Figure 1 pada PDF 21](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=19)"
+      ]
+    },
+    {
+      "id": "akk203-uas-tm14-06",
+      "tm": 14,
+      "topic": "Sampel",
+      "skill": "Analisis dasar, mekanisme dan batas penerapan",
+      "difficulty": "medium",
+      "q": "Sampel: 608 desa pada desain berarti apa bagiTable 4?",
+      "options": [
+        "Setiap regresi selalu memakai 608 observasi",
+        "Tidak perlu mencatatN karena efek negatif",
+        "Semua data artikel berasal 608 rumah sakit",
+        "N analisis berbeda: 477 jalan,538 jalan+tambahan"
+      ],
+      "answer": 3,
+      "explanation": "Ketersediaan ukuran menghasilkan sampel analisis berbeda. MencatatN penting bagi lingkup/ketidakpastian, dan entitas sumber adalah desa proyek jalan. Rujukan: [Olken(2007) desain dan pengukuran, cetak 202-211,216-217/PDF 3-12,17-18](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=3) [Olken(2007) Table 4 dan pembahasan, cetak 218-221/PDF 19-22; Figure 1 pada PDF 21](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=19)",
+      "sourceRef": "[Olken(2007) desain dan pengukuran, cetak 202-211,216-217/PDF 3-12,17-18](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=3) [Olken(2007) Table 4 dan pembahasan, cetak 218-221/PDF 19-22; Figure 1 pada PDF 21](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=19)",
+      "sourceAnchors": [
+        "[Olken(2007) desain dan pengukuran, cetak 202-211,216-217/PDF 3-12,17-18](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=3) [Olken(2007) Table 4 dan pembahasan, cetak 218-221/PDF 19-22; Figure 1 pada PDF 21](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=19)"
+      ]
+    },
+    {
+      "id": "akk203-uas-tm14-07",
+      "tm": 14,
+      "topic": "Validitas",
+      "skill": "Analisis dasar, mekanisme dan batas penerapan",
+      "difficulty": "medium",
+      "q": "Validitas: hasil jalan desa 2003 dipindah ke BLUD 2026?",
+      "options": [
+        "Uji perbedaan konteks, kapasitas, biaya dan ukuran",
+        "Terapkan langsung karena semua entitas publik sama",
+        "Anggap seluruh proksi sebagai bukti pidana",
+        "Tolak seluruh eksperimen karena sudah historis"
+      ],
+      "answer": 0,
+      "explanation": "Generalisasi memerlukan analisis eksternal. Konteks publik tidak menjamin kesamaan;proksi bukan bukti pidana, dan sejarah tidak menghapus validitas internal. Rujukan: [Olken(2007) desain dan pengukuran, cetak 202-211,216-217/PDF 3-12,17-18](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=3) [Olken(2007) Table 4 dan pembahasan, cetak 218-221/PDF 19-22; Figure 1 pada PDF 21](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=19)",
+      "sourceRef": "[Olken(2007) desain dan pengukuran, cetak 202-211,216-217/PDF 3-12,17-18](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=3) [Olken(2007) Table 4 dan pembahasan, cetak 218-221/PDF 19-22; Figure 1 pada PDF 21](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=19)",
+      "sourceAnchors": [
+        "[Olken(2007) desain dan pengukuran, cetak 202-211,216-217/PDF 3-12,17-18](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=3) [Olken(2007) Table 4 dan pembahasan, cetak 218-221/PDF 19-22; Figure 1 pada PDF 21](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=19)"
+      ]
+    },
+    {
+      "id": "akk203-uas-tm14-08",
+      "tm": 14,
+      "topic": "Ulasan",
+      "skill": "Analisis dasar, mekanisme dan batas penerapan",
+      "difficulty": "medium",
+      "q": "Ulasan: Figure 1 CDF/densitas ingin digambar ulang tanpa data mentah?",
+      "options": [
+        "Buat kurva numerik seolah data mentah sudah tersedia",
+        "Jelaskan bentuk asli dan gunakan tabel angka terverifikasi",
+        "Ubah seluruh kurva menjadi saldo kas desa",
+        "Hilangkan sumbu agar tidak perlu menjelaskan ukuran"
+      ],
+      "answer": 1,
+      "explanation": "Kurva empiris memerlukan data/titik yang tersedia. Paket menampilkan angkaTable 4 dan mencatat Figure 1 sebagai bacaan tambahan; mengarang kurva atau mengubah ukuran menyesatkan. Rujukan: [Olken(2007) Table 4 dan pembahasan, cetak 218-221/PDF 19-22; Figure 1 pada PDF 21](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=19)",
+      "sourceRef": "[Olken(2007) Table 4 dan pembahasan, cetak 218-221/PDF 19-22; Figure 1 pada PDF 21](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=19)",
+      "sourceAnchors": [
+        "[Olken(2007) Table 4 dan pembahasan, cetak 218-221/PDF 19-22; Figure 1 pada PDF 21](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=19)"
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "id": "akk203-uas-tm14-01",
+      "phase": "pra-uas",
+      "tm": 14,
+      "topic": "ASP TM 14",
+      "category": "Konsep",
+      "front": "Randomisasi dalam penelitian",
+      "back": "Penugasan perlakuan secara acak membantu pembanding setara dalam harapan; pengukuran dan ketidakpastian tetap diperiksa. Olken(2007) desain dan pengukuran, cetak 202-211,216-217/PDF 3-12,17-18"
+    },
+    {
+      "id": "akk203-uas-tm14-02",
+      "phase": "pra-uas",
+      "tm": 14,
+      "topic": "ASP TM 14",
+      "category": "Rumus",
+      "front": "Proksi percent missing Olken",
+      "back": "Log pengeluaran dilaporkan dikurangi log estimasi biaya aktual, dengan batas estimasi teknis. Bukan bukti pidana langsung. Olken(2007) desain dan pengukuran, cetak 202-211,216-217/PDF 3-12,17-18"
+    },
+    {
+      "id": "akk203-uas-tm14-03",
+      "phase": "pra-uas",
+      "tm": 14,
+      "topic": "ASP TM 14",
+      "category": "Konsep",
+      "front": "Efek jalan model tanpa efek tetap",
+      "back": "Table 4:N 477, efek-0,085, p 0,058. Selisih 8,5 poin pada skala persen, bukan 8,5% relatif. Olken(2007) Table 4 dan pembahasan, cetak 218-221/PDF 19-22; Figure 1 pada PDF 21"
+    },
+    {
+      "id": "akk203-uas-tm14-04",
+      "phase": "pra-uas",
+      "tm": 14,
+      "topic": "ASP TM 14",
+      "category": "Konsep",
+      "front": "Sampel desain dan analisis",
+      "back": "608 desa desain;Table 4 memakai 477 jalan dan 538 jalan+tambahan. Sebutkan ukuran dan model. Olken(2007) desain dan pengukuran, cetak 202-211,216-217/PDF 3-12,17-18 Olken(2007) Table 4 dan pembahasan, cetak 218-221/PDF 19-22; Figure 1 pada PDF 21"
+    },
+    {
+      "id": "akk203-uas-tm14-05",
+      "phase": "pra-uas",
+      "tm": 14,
+      "topic": "ASP TM 14",
+      "category": "Konsep",
+      "front": "Validitas internal dan eksternal",
+      "back": "Internal menilai identifikasi dalam penelitian;eksternal menilai transfer ke konteks lain. Olken(2007) desain dan pengukuran, cetak 202-211,216-217/PDF 3-12,17-18 Olken(2007) Table 4 dan pembahasan, cetak 218-221/PDF 19-22; Figure 1 pada PDF 21"
+    },
+    {
+      "id": "akk203-uas-tm14-06",
+      "phase": "pra-uas",
+      "tm": 14,
+      "topic": "ASP TM 14",
+      "category": "Mekanisme",
+      "front": "Kerangka ulasan penelitian",
+      "back": "Pertanyaan, mekanisme, data, desain, ukuran, hasil dan batas kesimpulan ditelusuri ke halaman/tabel. Olken(2007), Monitoring Corruption: Evidence from a Field Experiment in Indonesia, JPE 115(2), cetak 200-249/PDF 1-50; sumber tambahan pilihan, bukan artikel dosen yang terkonfirmasi"
+    }
+  ],
+  "bank": [
+    {
+      "type": "case",
+      "scope": "TM 14: Latihan sumber: ulasan hasil audit desa",
+      "difficulty": "Komprehensif",
+      "estimatedTime": "20-30 menit",
+      "question": "Latihan sumber: ulasan hasil audit desa",
+      "context": "Table 4 jalan: kontrol 0,277, perlakuan 0,192, efek-0,085, p 0,058, N 477. Rujukan: Olken(2007) Table 4 dan pembahasan, cetak 218-221/PDF 19-22; Figure 1 pada PDF 21",
+      "data": [
+        "Ambang 5% dipilih dalam soal.",
+        "Model lain: insinyur-0,076, p 0,039;strata-0,048, p 0,123."
+      ],
+      "instructions": [
+        "Hitung selisih poin dan perubahan relatif.",
+        "Nilai ketidakpastian serta sensitivitas model."
+      ],
+      "outputFormat": [
+        "Pisahkan fakta, asumsi, analisis dan keputusan.",
+        "Tunjukkan hitungan atau bukti, lalu jelaskan batas kesimpulan."
+      ],
+      "rubric": [
+        "Ketepatan kerangka dan sumber: 30%.",
+        "Langkah, bukti dan pemeriksaan: 40%.",
+        "Keputusan serta kelemahan alternatif: 30%."
+      ],
+      "answerGuide": "Fakta angkaTable 4. Selisih 0,085=8,5 poin;turunan relatif 0,085/0,277×100=30,69% dibulatkan dua desimal. Ambang 5% adalah asumsi soal: p 0,058 tidak melewati. model insinyur melewati, strata tidak. Kesimpulan efek negatif dengan ketidakpastian/model disebut;tidak semua signifikan 5%. Menulis 8,5%relatif salah satuan;membuktikan korupsi individu melampaui proksi. Buku/artikel dosen belum tersedia, artikel ini tambahan pilihan. Rujukan: Olken(2007) Table 4 dan pembahasan, cetak 218-221/PDF 19-22; Figure 1 pada PDF 21"
+    },
+    {
+      "type": "case",
+      "scope": "TM 14: Latihan buatan: usulan penelitian BLUD",
+      "difficulty": "Komprehensif",
+      "estimatedTime": "20-30 menit",
+      "question": "Latihan buatan: usulan penelitian BLUD",
+      "context": "Mahasiswa mengusulkan audit 100% semua rumah sakit hanya berdasarkan eksperimen jalan desa 2003. Rujukan: Olken(2007), Monitoring Corruption: Evidence from a Field Experiment in Indonesia, JPE 115(2), cetak 200-249/PDF 1-50; sumber tambahan pilihan, bukan artikel dosen yang terkonfirmasi Olken(2007) desain dan pengukuran, cetak 202-211,216-217/PDF 3-12,17-18 Olken(2007) Table 4 dan pembahasan, cetak 218-221/PDF 19-22; Figure 1 pada PDF 21",
+      "data": [
+        "Belum ada data rumah sakit atau biaya implementasi.",
+        "Usulan lanjutan dapat meneliti rekonsiliasi dan selisih laporan, belum ada hasil."
+      ],
+      "instructions": [
+        "Pisahkan fakta, asumsi dan klaim.",
+        "Susun rancangan yang dapat diuji serta batas rekomendasi."
+      ],
+      "outputFormat": [
+        "Pisahkan fakta, asumsi, analisis dan keputusan.",
+        "Tunjukkan hitungan atau bukti, lalu jelaskan batas kesimpulan."
+      ],
+      "rubric": [
+        "Ketepatan kerangka dan sumber: 30%.",
+        "Langkah, bukti dan pemeriksaan: 40%.",
+        "Keputusan serta kelemahan alternatif: 30%."
+      ],
+      "answerGuide": "Fakta: randomisasi dan proksi dalam konteks jalan desa historis. Asumsi transfer tanpa bukti harus diuji. Rancangan buatan: tetapkan unit penugasan, perlakuan jadwal rekonsiliasi, kelompok pembanding, periode, ukuran selisih, galat baku berkelompok dan akses data. Rekomendasi perlu biaya, kapasitas, mutu layanan dan validitas eksternal. Klaim pasti menghapus korupsi terlalu kuat;menolak semua bukti mengabaikan validitas internal sumber. Tidak ada angka hasil baru yang diklaim. Rujukan: Olken(2007), Monitoring Corruption: Evidence from a Field Experiment in Indonesia, JPE 115(2), cetak 200-249/PDF 1-50; sumber tambahan pilihan, bukan artikel dosen yang terkonfirmasi Olken(2007) desain dan pengukuran, cetak 202-211,216-217/PDF 3-12,17-18 Olken(2007) Table 4 dan pembahasan, cetak 218-221/PDF 19-22; Figure 1 pada PDF 21"
+    }
+  ],
+  "audit": {
+    "findings": [
+      "Awal: Penelitian hanya daftar istilah tanpa artikel yang diaudit Perbaikan: Gunakan artikel primer pilihan dengan pertanyaan, desain, hasil dan kritik.",
+      "Awal: 8% ditulis tanpa satuan/model Perbaikan: TampilkanTable 4,8,5 poin, N 477 dan p 0,058.",
+      "Awal: Hasil digeneralisasi ke semua layanan Perbaikan: Bedakan validitas internal/eksternal dan rancang pengujian lanjutan."
+    ],
+    "limitations": [
+      "RPP tidak menyebut judul artikel; bahan dosen dan daftar artikel yang ditugaskan belum tersedia.",
+      "Artikel 2007 memberi latihan membaca bukti historis, bukan tinjauan semua penelitian ASP terbaru."
+    ],
+    "appendix": [
+      "Table 2 keseimbangan, Table 3 statistik deskriptif, Table 5 harga/kuantitas dan evaluasi biaya tambahan menjadi bacaan lanjutan.",
+      "Figure 1 diperiksa langsung; kurva empiris tidak digambar ulang tanpa data mentah. Appendix dan seluruh robustness lanjutan belum diaudit penuh; tidak diklaim sebagai cakupan inti selesai."
+    ],
+    "status": "NEEDS_HUMAN_REVIEW",
+    "practiceSources": [
+      {
+        "kind": "cards",
+        "id": "akk203-uas-tm14-01",
+        "field": "back",
+        "label": "Olken(2007) desain dan pengukuran, cetak 202-211,216-217/PDF 3-12,17-18",
+        "url": "https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=3"
+      },
+      {
+        "kind": "cards",
+        "id": "akk203-uas-tm14-02",
+        "field": "back",
+        "label": "Olken(2007) desain dan pengukuran, cetak 202-211,216-217/PDF 3-12,17-18",
+        "url": "https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=3"
+      },
+      {
+        "kind": "cards",
+        "id": "akk203-uas-tm14-03",
+        "field": "back",
+        "label": "Olken(2007) Table 4 dan pembahasan, cetak 218-221/PDF 19-22; Figure 1 pada PDF 21",
+        "url": "https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=19"
+      },
+      {
+        "kind": "cards",
+        "id": "akk203-uas-tm14-04",
+        "field": "back",
+        "label": "Olken(2007) desain dan pengukuran, cetak 202-211,216-217/PDF 3-12,17-18",
+        "url": "https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=3"
+      },
+      {
+        "kind": "cards",
+        "id": "akk203-uas-tm14-04",
+        "field": "back",
+        "label": "Olken(2007) Table 4 dan pembahasan, cetak 218-221/PDF 19-22; Figure 1 pada PDF 21",
+        "url": "https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=19"
+      },
+      {
+        "kind": "cards",
+        "id": "akk203-uas-tm14-05",
+        "field": "back",
+        "label": "Olken(2007) desain dan pengukuran, cetak 202-211,216-217/PDF 3-12,17-18",
+        "url": "https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=3"
+      },
+      {
+        "kind": "cards",
+        "id": "akk203-uas-tm14-05",
+        "field": "back",
+        "label": "Olken(2007) Table 4 dan pembahasan, cetak 218-221/PDF 19-22; Figure 1 pada PDF 21",
+        "url": "https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=19"
+      },
+      {
+        "kind": "cards",
+        "id": "akk203-uas-tm14-06",
+        "field": "back",
+        "label": "Olken(2007), Monitoring Corruption: Evidence from a Field Experiment in Indonesia, JPE 115(2), cetak 200-249/PDF 1-50; sumber tambahan pilihan, bukan artikel dosen yang terkonfirmasi",
+        "url": "https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=1"
+      },
+      {
+        "kind": "bank",
+        "id": "tm14-case1",
+        "field": "context",
+        "label": "Olken(2007) Table 4 dan pembahasan, cetak 218-221/PDF 19-22; Figure 1 pada PDF 21",
+        "url": "https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=19"
+      },
+      {
+        "kind": "bank",
+        "id": "tm14-case1",
+        "field": "answerGuide",
+        "label": "Olken(2007) Table 4 dan pembahasan, cetak 218-221/PDF 19-22; Figure 1 pada PDF 21",
+        "url": "https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=19"
+      },
+      {
+        "kind": "bank",
+        "id": "tm14-case2",
+        "field": "context",
+        "label": "Olken(2007), Monitoring Corruption: Evidence from a Field Experiment in Indonesia, JPE 115(2), cetak 200-249/PDF 1-50; sumber tambahan pilihan, bukan artikel dosen yang terkonfirmasi",
+        "url": "https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=1"
+      },
+      {
+        "kind": "bank",
+        "id": "tm14-case2",
+        "field": "context",
+        "label": "Olken(2007) desain dan pengukuran, cetak 202-211,216-217/PDF 3-12,17-18",
+        "url": "https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=3"
+      },
+      {
+        "kind": "bank",
+        "id": "tm14-case2",
+        "field": "context",
+        "label": "Olken(2007) Table 4 dan pembahasan, cetak 218-221/PDF 19-22; Figure 1 pada PDF 21",
+        "url": "https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=19"
+      },
+      {
+        "kind": "bank",
+        "id": "tm14-case2",
+        "field": "answerGuide",
+        "label": "Olken(2007), Monitoring Corruption: Evidence from a Field Experiment in Indonesia, JPE 115(2), cetak 200-249/PDF 1-50; sumber tambahan pilihan, bukan artikel dosen yang terkonfirmasi",
+        "url": "https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=1"
+      },
+      {
+        "kind": "bank",
+        "id": "tm14-case2",
+        "field": "answerGuide",
+        "label": "Olken(2007) desain dan pengukuran, cetak 202-211,216-217/PDF 3-12,17-18",
+        "url": "https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=3"
+      },
+      {
+        "kind": "bank",
+        "id": "tm14-case2",
+        "field": "answerGuide",
+        "label": "Olken(2007) Table 4 dan pembahasan, cetak 218-221/PDF 19-22; Figure 1 pada PDF 21",
+        "url": "https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=19"
+      }
+    ]
+  },
+  "coverage": [
+    {
+      "concept": "Pertanyaan riset: hubungan akuntabilitas dan bukti",
+      "source": "[Olken(2007), Monitoring Corruption: Evidence from a Field Experiment in Indonesia, JPE 115(2), cetak 200-249/PDF 1-50; sumber tambahan pilihan, bukan artikel dosen yang terkonfirmasi](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=1)",
+      "before": "Ringkas atau belum dipisahkan menurut konteks/versi",
+      "after": "Penjelasan mekanisme, perbandingan, cek pemahaman dan batas sumber",
+      "assumptions": "Angka buatan hanya pada latihan berlabel; aturan bergantung entitas/periode",
+      "sourceExercises": "Tidak ada nomor kasus khusus dalam RPP. Format/ilustrasi resmi digunakan bila tersedia."
+    },
+    {
+      "concept": "Desain eksperimen dan unit pengamatan",
+      "source": "[Olken(2007) desain dan pengukuran, cetak 202-211,216-217/PDF 3-12,17-18](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=3)",
+      "before": "Ringkas atau belum dipisahkan menurut konteks/versi",
+      "after": "Penjelasan mekanisme, perbandingan, cek pemahaman dan batas sumber",
+      "assumptions": "Angka buatan hanya pada latihan berlabel; aturan bergantung entitas/periode",
+      "sourceExercises": "Tidak ada nomor kasus khusus dalam RPP. Format/ilustrasi resmi digunakan bila tersedia."
+    },
+    {
+      "concept": "Pengukuran: pengeluaran hilang sebagai proksi",
+      "source": "[Olken(2007) desain dan pengukuran, cetak 202-211,216-217/PDF 3-12,17-18](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=3)",
+      "before": "Ringkas atau belum dipisahkan menurut konteks/versi",
+      "after": "Penjelasan mekanisme, perbandingan, cek pemahaman dan batas sumber",
+      "assumptions": "Angka buatan hanya pada latihan berlabel; aturan bergantung entitas/periode",
+      "sourceExercises": "Tidak ada nomor kasus khusus dalam RPP. Format/ilustrasi resmi digunakan bila tersedia."
+    },
+    {
+      "concept": "Hasil: nilai, satuan dan spesifikasi harus disebut",
+      "source": "[Olken(2007) Table 4 dan pembahasan, cetak 218-221/PDF 19-22; Figure 1 pada PDF 21](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=19)",
+      "before": "Ringkas atau belum dipisahkan menurut konteks/versi",
+      "after": "Penjelasan mekanisme, perbandingan, cek pemahaman dan batas sumber",
+      "assumptions": "Angka buatan hanya pada latihan berlabel; aturan bergantung entitas/periode",
+      "sourceExercises": "Tidak ada nomor kasus khusus dalam RPP. Format/ilustrasi resmi digunakan bila tersedia."
+    },
+    {
+      "concept": "Mekanisme, validitas dan batas generalisasi",
+      "source": "[Olken(2007) desain dan pengukuran, cetak 202-211,216-217/PDF 3-12,17-18](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=3) [Olken(2007) Table 4 dan pembahasan, cetak 218-221/PDF 19-22; Figure 1 pada PDF 21](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=19)",
+      "before": "Ringkas atau belum dipisahkan menurut konteks/versi",
+      "after": "Penjelasan mekanisme, perbandingan, cek pemahaman dan batas sumber",
+      "assumptions": "Angka buatan hanya pada latihan berlabel; aturan bergantung entitas/periode",
+      "sourceExercises": "Tidak ada nomor kasus khusus dalam RPP. Format/ilustrasi resmi digunakan bila tersedia."
+    },
+    {
+      "concept": "Menyusun ulasan dan rancangan riset yang dapat diuji",
+      "source": "[Olken(2007), Monitoring Corruption: Evidence from a Field Experiment in Indonesia, JPE 115(2), cetak 200-249/PDF 1-50; sumber tambahan pilihan, bukan artikel dosen yang terkonfirmasi](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=1) [Olken(2007) desain dan pengukuran, cetak 202-211,216-217/PDF 3-12,17-18](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=3) [Olken(2007) Table 4 dan pembahasan, cetak 218-221/PDF 19-22; Figure 1 pada PDF 21](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=19)",
+      "before": "Ringkas atau belum dipisahkan menurut konteks/versi",
+      "after": "Penjelasan mekanisme, perbandingan, cek pemahaman dan batas sumber",
+      "assumptions": "Angka buatan hanya pada latihan berlabel; aturan bergantung entitas/periode",
+      "sourceExercises": "Tidak ada nomor kasus khusus dalam RPP. Format/ilustrasi resmi digunakan bila tersedia."
+    }
+  ]
+}

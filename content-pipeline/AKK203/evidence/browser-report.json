@@ -1,0 +1,1368 @@
+{
+  "rows": [
+    {
+      "tm": 8,
+      "width": 375,
+      "theme": "light",
+      "overflow": 0,
+      "svgs": 5,
+      "issues": [],
+      "minFont": 14.98235294117647,
+      "minContrast": 9.896764973632585,
+      "tables": [
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 341,
+          "scroll": 341
+        }
+      ],
+      "formulas": 0,
+      "journals": 1,
+      "mathErrors": 0
+    },
+    {
+      "tm": 9,
+      "width": 375,
+      "theme": "light",
+      "overflow": 0,
+      "svgs": 6,
+      "issues": [],
+      "minFont": 13.18235294117647,
+      "minContrast": 9.896764973632585,
+      "tables": [
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 96,
+          "scroll": 96
+        },
+        {
+          "max": 341,
+          "scroll": 341
+        }
+      ],
+      "formulas": 2,
+      "journals": 0,
+      "mathErrors": 0
+    },
+    {
+      "tm": 10,
+      "width": 375,
+      "theme": "light",
+      "overflow": 0,
+      "svgs": 6,
+      "issues": [],
+      "minFont": 13.18235294117647,
+      "minContrast": 9.896764973632585,
+      "tables": [
+        {
+          "max": 0,
+          "scroll": 0
+        }
+      ],
+      "formulas": 0,
+      "journals": 0,
+      "mathErrors": 0
+    },
+    {
+      "tm": 11,
+      "width": 375,
+      "theme": "light",
+      "overflow": 0,
+      "svgs": 5,
+      "issues": [],
+      "minFont": 14.98235294117647,
+      "minContrast": 9.896764973632585,
+      "tables": [
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 341,
+          "scroll": 341
+        },
+        {
+          "max": 341,
+          "scroll": 341
+        },
+        {
+          "max": 341,
+          "scroll": 341
+        },
+        {
+          "max": 341,
+          "scroll": 341
+        }
+      ],
+      "formulas": 1,
+      "journals": 0,
+      "mathErrors": 0
+    },
+    {
+      "tm": 12,
+      "width": 375,
+      "theme": "light",
+      "overflow": 0,
+      "svgs": 4,
+      "issues": [],
+      "minFont": 13.18235294117647,
+      "minContrast": 9.896764973632585,
+      "tables": [
+        {
+          "max": 59,
+          "scroll": 59
+        },
+        {
+          "max": 34,
+          "scroll": 34
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 341,
+          "scroll": 341
+        },
+        {
+          "max": 341,
+          "scroll": 341
+        },
+        {
+          "max": 341,
+          "scroll": 341
+        },
+        {
+          "max": 341,
+          "scroll": 341
+        },
+        {
+          "max": 341,
+          "scroll": 341
+        }
+      ],
+      "formulas": 1,
+      "journals": 0,
+      "mathErrors": 0
+    },
+    {
+      "tm": 13,
+      "width": 375,
+      "theme": "light",
+      "overflow": 0,
+      "svgs": 7,
+      "issues": [],
+      "minFont": 13.18235294117647,
+      "minContrast": 9.896764973632585,
+      "tables": [
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 341,
+          "scroll": 341
+        }
+      ],
+      "formulas": 0,
+      "journals": 1,
+      "mathErrors": 0
+    },
+    {
+      "tm": 14,
+      "width": 375,
+      "theme": "light",
+      "overflow": 0,
+      "svgs": 7,
+      "issues": [],
+      "minFont": 13.18235294117647,
+      "minContrast": 9.896764973632585,
+      "tables": [
+        {
+          "max": 21,
+          "scroll": 21
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        }
+      ],
+      "formulas": 1,
+      "journals": 0,
+      "mathErrors": 0
+    },
+    {
+      "tm": 8,
+      "width": 375,
+      "theme": "dark",
+      "overflow": 0,
+      "svgs": 5,
+      "issues": [],
+      "minFont": 14.98235294117647,
+      "minContrast": 12.024320295980338,
+      "tables": [
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 341,
+          "scroll": 341
+        }
+      ],
+      "formulas": 0,
+      "journals": 1,
+      "mathErrors": 0
+    },
+    {
+      "tm": 9,
+      "width": 375,
+      "theme": "dark",
+      "overflow": 0,
+      "svgs": 6,
+      "issues": [],
+      "minFont": 13.18235294117647,
+      "minContrast": 12.024320295980338,
+      "tables": [
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 96,
+          "scroll": 96
+        },
+        {
+          "max": 341,
+          "scroll": 341
+        }
+      ],
+      "formulas": 2,
+      "journals": 0,
+      "mathErrors": 0
+    },
+    {
+      "tm": 10,
+      "width": 375,
+      "theme": "dark",
+      "overflow": 0,
+      "svgs": 6,
+      "issues": [],
+      "minFont": 13.18235294117647,
+      "minContrast": 12.024320295980338,
+      "tables": [
+        {
+          "max": 0,
+          "scroll": 0
+        }
+      ],
+      "formulas": 0,
+      "journals": 0,
+      "mathErrors": 0
+    },
+    {
+      "tm": 11,
+      "width": 375,
+      "theme": "dark",
+      "overflow": 0,
+      "svgs": 5,
+      "issues": [],
+      "minFont": 14.98235294117647,
+      "minContrast": 12.024320295980338,
+      "tables": [
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 341,
+          "scroll": 341
+        },
+        {
+          "max": 341,
+          "scroll": 341
+        },
+        {
+          "max": 341,
+          "scroll": 341
+        },
+        {
+          "max": 341,
+          "scroll": 341
+        }
+      ],
+      "formulas": 1,
+      "journals": 0,
+      "mathErrors": 0
+    },
+    {
+      "tm": 12,
+      "width": 375,
+      "theme": "dark",
+      "overflow": 0,
+      "svgs": 4,
+      "issues": [],
+      "minFont": 13.18235294117647,
+      "minContrast": 12.024320295980338,
+      "tables": [
+        {
+          "max": 59,
+          "scroll": 59
+        },
+        {
+          "max": 34,
+          "scroll": 34
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 341,
+          "scroll": 341
+        },
+        {
+          "max": 341,
+          "scroll": 341
+        },
+        {
+          "max": 341,
+          "scroll": 341
+        },
+        {
+          "max": 341,
+          "scroll": 341
+        },
+        {
+          "max": 341,
+          "scroll": 341
+        }
+      ],
+      "formulas": 1,
+      "journals": 0,
+      "mathErrors": 0
+    },
+    {
+      "tm": 13,
+      "width": 375,
+      "theme": "dark",
+      "overflow": 0,
+      "svgs": 7,
+      "issues": [],
+      "minFont": 13.18235294117647,
+      "minContrast": 12.024320295980338,
+      "tables": [
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 341,
+          "scroll": 341
+        }
+      ],
+      "formulas": 0,
+      "journals": 1,
+      "mathErrors": 0
+    },
+    {
+      "tm": 14,
+      "width": 375,
+      "theme": "dark",
+      "overflow": 0,
+      "svgs": 7,
+      "issues": [],
+      "minFont": 13.18235294117647,
+      "minContrast": 12.024320295980338,
+      "tables": [
+        {
+          "max": 21,
+          "scroll": 21
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        }
+      ],
+      "formulas": 1,
+      "journals": 0,
+      "mathErrors": 0
+    },
+    {
+      "tm": 8,
+      "width": 1440,
+      "theme": "light",
+      "overflow": 0,
+      "svgs": 5,
+      "issues": [],
+      "minFont": 20.889473684210525,
+      "minContrast": 9.896764973632585,
+      "tables": [
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        }
+      ],
+      "formulas": 0,
+      "journals": 1,
+      "mathErrors": 0
+    },
+    {
+      "tm": 9,
+      "width": 1440,
+      "theme": "light",
+      "overflow": 0,
+      "svgs": 6,
+      "issues": [],
+      "minFont": 20.084210526315786,
+      "minContrast": 9.896764973632585,
+      "tables": [
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        }
+      ],
+      "formulas": 2,
+      "journals": 0,
+      "mathErrors": 0
+    },
+    {
+      "tm": 10,
+      "width": 1440,
+      "theme": "light",
+      "overflow": 0,
+      "svgs": 6,
+      "issues": [],
+      "minFont": 20.084210526315786,
+      "minContrast": 9.896764973632585,
+      "tables": [
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        }
+      ],
+      "formulas": 0,
+      "journals": 0,
+      "mathErrors": 0
+    },
+    {
+      "tm": 11,
+      "width": 1440,
+      "theme": "light",
+      "overflow": 0,
+      "svgs": 5,
+      "issues": [],
+      "minFont": 20.889473684210525,
+      "minContrast": 9.896764973632585,
+      "tables": [
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        }
+      ],
+      "formulas": 1,
+      "journals": 0,
+      "mathErrors": 0
+    },
+    {
+      "tm": 12,
+      "width": 1440,
+      "theme": "light",
+      "overflow": 0,
+      "svgs": 4,
+      "issues": [],
+      "minFont": 20.084210526315786,
+      "minContrast": 9.896764973632585,
+      "tables": [
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        }
+      ],
+      "formulas": 1,
+      "journals": 0,
+      "mathErrors": 0
+    },
+    {
+      "tm": 13,
+      "width": 1440,
+      "theme": "light",
+      "overflow": 0,
+      "svgs": 7,
+      "issues": [],
+      "minFont": 20.084210526315786,
+      "minContrast": 9.896764973632585,
+      "tables": [
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        }
+      ],
+      "formulas": 0,
+      "journals": 1,
+      "mathErrors": 0
+    },
+    {
+      "tm": 14,
+      "width": 1440,
+      "theme": "light",
+      "overflow": 0,
+      "svgs": 7,
+      "issues": [],
+      "minFont": 20.084210526315786,
+      "minContrast": 9.896764973632585,
+      "tables": [
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        }
+      ],
+      "formulas": 1,
+      "journals": 0,
+      "mathErrors": 0
+    },
+    {
+      "tm": 8,
+      "width": 1440,
+      "theme": "dark",
+      "overflow": 0,
+      "svgs": 5,
+      "issues": [],
+      "minFont": 20.889473684210525,
+      "minContrast": 12.024320295980338,
+      "tables": [
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        }
+      ],
+      "formulas": 0,
+      "journals": 1,
+      "mathErrors": 0
+    },
+    {
+      "tm": 9,
+      "width": 1440,
+      "theme": "dark",
+      "overflow": 0,
+      "svgs": 6,
+      "issues": [],
+      "minFont": 20.084210526315786,
+      "minContrast": 12.024320295980338,
+      "tables": [
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        }
+      ],
+      "formulas": 2,
+      "journals": 0,
+      "mathErrors": 0
+    },
+    {
+      "tm": 10,
+      "width": 1440,
+      "theme": "dark",
+      "overflow": 0,
+      "svgs": 6,
+      "issues": [],
+      "minFont": 20.084210526315786,
+      "minContrast": 12.024320295980338,
+      "tables": [
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        }
+      ],
+      "formulas": 0,
+      "journals": 0,
+      "mathErrors": 0
+    },
+    {
+      "tm": 11,
+      "width": 1440,
+      "theme": "dark",
+      "overflow": 0,
+      "svgs": 5,
+      "issues": [],
+      "minFont": 20.889473684210525,
+      "minContrast": 12.024320295980338,
+      "tables": [
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        }
+      ],
+      "formulas": 1,
+      "journals": 0,
+      "mathErrors": 0
+    },
+    {
+      "tm": 12,
+      "width": 1440,
+      "theme": "dark",
+      "overflow": 0,
+      "svgs": 4,
+      "issues": [],
+      "minFont": 20.084210526315786,
+      "minContrast": 12.024320295980338,
+      "tables": [
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        }
+      ],
+      "formulas": 1,
+      "journals": 0,
+      "mathErrors": 0
+    },
+    {
+      "tm": 13,
+      "width": 1440,
+      "theme": "dark",
+      "overflow": 0,
+      "svgs": 7,
+      "issues": [],
+      "minFont": 20.084210526315786,
+      "minContrast": 12.024320295980338,
+      "tables": [
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        }
+      ],
+      "formulas": 0,
+      "journals": 1,
+      "mathErrors": 0
+    },
+    {
+      "tm": 14,
+      "width": 1440,
+      "theme": "dark",
+      "overflow": 0,
+      "svgs": 7,
+      "issues": [],
+      "minFont": 20.084210526315786,
+      "minContrast": 12.024320295980338,
+      "tables": [
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        }
+      ],
+      "formulas": 1,
+      "journals": 0,
+      "mathErrors": 0
+    }
+  ]
+}

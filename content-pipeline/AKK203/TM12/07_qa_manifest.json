@@ -1,0 +1,18 @@
+{
+  "tm": 12,
+  "canonicalSha256": "b25a9b294364296eac170714a8123704d0fda0a6841d883cc5103510a48d8bdf",
+  "sourceStatus": "NEEDS_HUMAN_REVIEW",
+  "sourceComplete": false,
+  "visuals": 4,
+  "quiz": 8,
+  "cards": 6,
+  "cases": 2,
+  "independentChecks": "scripts/test-akk203-pra-uas.mjs",
+  "renderChecks": "scripts/test-akk203-pra-uas-render.mjs",
+  "browserChecks": "scripts/test-akk203-pra-uas-browser.mjs",
+  "technicalEvidence": "../qa-evidence.json",
+  "limitations": [
+    "Final SAK dan DN Bab 3 belum tersedia; latihan menyebut asumsi pengakuan dan format historis.",
+    "Tarif daerah aktual dan ketentuan pemilu spesifik belum ditetapkan; latihan memakai tarif dasar dengan syarat eksplisit."
+  ]
+}

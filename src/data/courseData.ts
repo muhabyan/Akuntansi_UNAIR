@@ -169,13 +169,13 @@ const AKK203_TM1_7 = materi([
   ['Laporan Keuangan Pemerintah Berbasis Akrual (PP 71/2010)', 'PSAP 01 s.d 12 | PP 71/2010 Lampiran I'],
 ], 1);
 const AKK203_TM8_14 = materi([
-  ['Sistem Akuntansi Pemerintah Pusat & Daerah', 'Permendagri 77/2020 | Permendagri 64/2013'],
+  ['Sistem Akuntansi Pemerintah Pusat & Daerah', 'PMK 217/2022 | PMK 100/2025 | Permendagri 64/2013'],
   ['Pengukuran Kinerja Pemerintah & Value for Money (3E)', 'Mardiasmo Bab 8 | SAKIP PermenPAN-RB'],
-  ['Audit Sektor Publik: Pengawasan APIP & Pemeriksaan BPK', 'UU 15/2004 | Standar SPKN BPK'],
-  ['Laporan Keuangan Organisasi Nirlaba Berbasis SAK: LSM', 'ISAK 35 | UU 16/2001 Yayasan'],
-  ['Laporan Keuangan Organisasi Nirlaba Berbasis SAK: Partai Politik', 'ISAK 35 | UU 2/2011 Partai Politik'],
-  ['Pengelolaan Keuangan BLU & BLUD (Rumah Sakit)', 'PP 23/2005 | PSAP 13 Pelaporan BLU'],
-  ['Topik Riset Kontemporer Akuntansi Sektor Publik', 'Jurnal ASP | Isu Keuangan Desa & SPBE'],
+  ['Audit Sektor Publik: Pengawasan APIP & Pemeriksaan BPK', 'UU 15/2004 | PP 60/2008 | SPKN 2017 dan transisi 2026'],
+  ['Laporan Keuangan Organisasi Nonlaba: LSM', 'UU Yayasan | Ilustrasi DE ISAK 35 historis; teks final perlu dilengkapi'],
+  ['Laporan Keuangan Nonlaba: Partai Politik', 'UU 2/2011 | PP 1/2018 | Permendagri 36/2018 jo.78/2020'],
+  ['Badan Layanan Umum dan BLUD Rumah Sakit', 'PSAP 13 | PMK 128/2024 | Permendagri 79/2018'],
+  ['Penelitian Akuntansi Sektor Publik: Membaca Bukti', 'Artikel pilihan Olken (2007); artikel dosen belum terkonfirmasi'],
 ], 8);
 const AKK203_REF = [
   'Komite Standar Akuntansi Pemerintahan (KSAP). PP No. 71 Tahun 2010 tentang Standar Akuntansi Pemerintahan (Berbasis Akrual). (Wajib)',

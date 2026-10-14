@@ -73,6 +73,8 @@ const standardTasks = [
   ['mnu108_practice', 'scripts/test-mnu108-practice.mjs'],
   ['mnu108_pra_uas_source', 'scripts/test-mnu108-pra-uas.mjs'],
   ['mnu108_pra_uas_render', 'scripts/test-mnu108-pra-uas-render.mjs'],
+  ['akk203_pra_uas_source', 'scripts/test-akk203-pra-uas.mjs'],
+  ['akk203_pra_uas_render', 'scripts/test-akk203-pra-uas-render.mjs'],
   ['essay_bank_breaks', 'scripts/test-essay-bank-breaks.mjs'],
   ['render_s1_guard', 'scripts/test-render-s1.mjs'],
   ['flashcard_behavior', 'scripts/test-flashcard-behavior.mjs'],

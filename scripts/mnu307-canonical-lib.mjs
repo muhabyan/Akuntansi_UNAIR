@@ -139,10 +139,10 @@ export async function testCanonical(tm) {
 }
 export function testProtected() {
   const snapshot=JSON.parse(fs.readFileSync('scripts/fixtures/mnu307/protected-files.json','utf8'));
-  for(const [file,hash] of Object.entries(snapshot))assert.ok([hash.worktree,hash.repository,...(hash.authorizedAudit20261012??[]),...(hash.authorizedMnu108PostUas20261013??[])].includes(createHash('sha256').update(fs.readFileSync(file)).digest('hex')),`protected file changed: ${file} (exact checkout variants and reviewed audit revisions explicitly recorded)`);
+  for(const [file,hash] of Object.entries(snapshot))assert.ok([hash.worktree,hash.repository,...(hash.authorizedAudit20261012??[]),...(hash.authorizedMnu108PostUas20261013??[]),...(hash.authorizedAspPostUas20261014??[])].includes(createHash('sha256').update(fs.readFileSync(file)).digest('hex')),`protected file changed: ${file} (exact checkout variants and reviewed audit revisions explicitly recorded)`);
   // Only the seventh Manstrat card is editable; every preceding and subsequent byte is guarded.
   const course=fs.readFileSync('src/data/courseData.ts','utf8').replace(/\r\n/g,'\n').replace(/const MNU307_TM1_7 = materi\(\[\n((?:[^\n]*\n){6})(?:[^\n]*\n)/,'const MNU307_TM1_7 = materi([\n$1');
   const catalog=JSON.parse(fs.readFileSync('scripts/fixtures/mnu307/course-catalog-guard.json','utf8'));
-  assert.ok([catalog.sha256,...(catalog.authorizedMnu108PostUas20261013??[])].includes(createHash('sha256').update(course).digest('hex')));
+  assert.ok([catalog.sha256,...(catalog.authorizedMnu108PostUas20261013??[]),...(catalog.authorizedAspPostUas20261014??[])].includes(createHash('sha256').update(course).digest('hex')));
   console.log(`MNU307 shared render rules PASS: ${Object.keys(snapshot).length} exact snapshots; explicitly recorded MNU108 UAS revision allowed, with other catalog entries guarded separately`);
 }

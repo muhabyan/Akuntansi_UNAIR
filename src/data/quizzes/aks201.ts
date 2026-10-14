@@ -499,494 +499,1204 @@ export const AKS201_QUIZ_UTS: QuizQuestion[] = [
 
 export const AKS201_QUIZ_UAS: QuizQuestion[] = [
   {
+    "id": "akk203-uas-tm08-01",
     "tm": 8,
-    "topic": "Sistem Akuntansi Keuangan Daerah Dualistis",
-    "difficulty": "advanced",
-    "q": "Dalam struktur akuntansi keuangan daerah, hubungan antara PPKD (selaku Kantor Pusat / Home Office) dan SKPD (selaku Kantor Cabang / Branch Office) dihubungkan melalui akun resiprokal...",
-    "options": [
-      "Kas di Kasda dan Kas di Bendahara Pengeluaran",
-      "Rekening Koran (RK) PPKD di SKPD dan Rekening Koran (RK) SKPD di PPKD",
-      "Piutang Pajak dan Utang Retribusi",
-      "Ekuitas Dana Lancar dan Ekuitas Dana Investasi"
-    ],
-    "answer": 1,
-    "explanation": "Sistem akuntansi pemda menggunakan konsep Home Office-Branch Office (HOBO), di mana transaksi antar-entitas dicatat resiprokal menggunakan akun RK-PPKD (ekuitas SKPD) dan RK-SKPD (aset PPKD)."
-  },
-  {
-    "tm": 8,
-    "topic": "Jurnal Belanja Modal SKPD",
-    "difficulty": "advanced",
-    "q": "Ketika SKPD membeli kendaraan dinas seharga Rp 350 juta melalui mekanisme SP2D-LS yang dibayarkan langsung oleh Kasda kepada rekanan dealer, jurnal yang dicatat SKPD adalah...",
-    "options": [
-      "Jurnal Finansial: (D) Beban Kendaraan / (K) Kas; Jurnal Anggaran: Tidak ada jurnal",
-      "Jurnal Finansial: (D) Kendaraan Bermotor Rp 350 Juta / (K) RK-PPKD Rp 350 Juta; Jurnal Anggaran: (D) Belanja Modal Pengadaan Kendaraan Rp 350 Juta / (K) Estimasi Perubahan SAL Rp 350 Juta",
-      "Jurnal Finansial: (D) Kasda / (K) Belanja Modal; Jurnal Anggaran: Tidak ada jurnal",
-      "Hanya mencatat di Jurnal Anggaran tanpa mempengaruhi Neraca"
-    ],
-    "answer": 1,
-    "explanation": "Pengadaan aset modal via SP2D-LS dicatat ganda: (1) Jurnal Finansial menambah Aset Tetap dan mengkredit RK-PPKD (karena dibayar Kasda), dan (2) Jurnal Anggaran mendebet Belanja Modal dan mengkredit Estimasi Perubahan SAL."
-  },
-  {
-    "tm": 8,
-    "topic": "Jurnal Penyetoran Pendapatan Pajak Daerah",
+    "topic": "SAPP",
+    "skill": "Analisis dasar, mekanisme dan batas penerapan",
     "difficulty": "medium",
-    "q": "Bendahara Penerimaan Bapenda menyetor uang kas hasil penerimaan pajak hotel sebesar Rp 80 juta ke Kas Daerah (Kasda). Jurnal finansial yang dicatat oleh Bapenda adalah...",
+    "q": "SAPP: kombinasi apa yang tepat menurut PMK 217/2022?",
     "options": [
-      "(D) Kas di Kasda Rp 80 Juta / (K) Kas di Bendahara Penerimaan Rp 80 Juta",
-      "(D) RK-PPKD Rp 80 Juta / (K) Kas di Bendahara Penerimaan Rp 80 Juta",
-      "(D) Beban Penyetoran Pajak Rp 80 Juta / (K) Pendapatan Pajak Rp 80 Juta",
-      "(D) Pendapatan Pajak-LRA Rp 80 Juta / (K) Kas di Kasda Rp 80 Juta"
-    ],
-    "answer": 1,
-    "explanation": "Saat menyetor kas penerimaan ke Kasda, SKPD mengkredit akun 'Kas di Bendahara Penerimaan' dan mendebet akun resiprokal 'RK-PPKD' (mengalihkan penguasaan dana ke BUD)."
-  },
-  {
-    "tm": 8,
-    "topic": "Mekanisme Uang Persediaan (UP / GU / TU)",
-    "difficulty": "medium",
-    "q": "Penerbitan SP2D Uang Persediaan (UP) sebesar Rp 50 juta dari Kasda ke Bendahara Pengeluaran SKPD dicatat oleh SKPD pada jurnal anggaran sebagai...",
-    "options": [
-      "(D) Belanja Barang dan Jasa Rp 50 Juta / (K) Estimasi Perubahan SAL Rp 50 Juta",
-      "Tidak dicatat dalam Jurnal Anggaran (LRA) karena belum terjadi belanja definitif riil",
-      "(D) Kas di Bendahara Pengeluaran Rp 50 Juta / (K) Pendapatan LRA Rp 50 Juta",
-      "(D) Pengeluaran Pembiayaan Rp 50 Juta / (K) Kasda Rp 50 Juta"
-    ],
-    "answer": 1,
-    "explanation": "Pemberian Uang Persediaan (UP) hanyalah pergeseran uang kas (kas bon kerja) dari Kasda ke rekening bendahara SKPD. Transaksi ini hanya dijurnal secara finansial (Kas di Bendahara Pengeluaran / RK-PPKD) dan TIDAK dijurnal di anggaran sampai belanja riil SPJ disahkan (GU)."
-  },
-  {
-    "tm": 8,
-    "topic": "Rekonsiliasi Sisa Lebih Pembiayaan (SiLPA)",
-    "difficulty": "advanced",
-    "q": "Dalam Laporan Realisasi Anggaran (LRA), nilai SiLPA akhir tahun merupakan hasil dari penjumlahan matematis...",
-    "options": [
-      "Total Pendapatan LRA dikurangi Total Belanja LRA saja",
-      "Surplus/Defisit LRA (Pendapatan LRA - Belanja LRA) ditambah Pembiayaan Neto (Penerimaan Pembiayaan - Pengeluaran Pembiayaan)",
-      "Total Aset Lancar dikurangi Total Liabilitas Lancar pada Neraca",
-      "Total Pendapatan LO dikurangi Beban Operasional LO"
-    ],
-    "answer": 1,
-    "explanation": "SiLPA = Surplus/Defisit LRA + Pembiayaan Neto. Nilai SiLPA inilah yang menjadi saldo akhir pada Laporan Perubahan SAL (LP-SAL) dan membentuk saldo kas bebas pada tahun berikutnya."
-  },
-  {
-    "tm": 9,
-    "topic": "Sistem Akuntansi Pemerintah Pusat (SAPP)",
-    "difficulty": "medium",
-    "q": "Pada struktur Sistem Akuntansi Pemerintah Pusat (SAPP), sub-sistem yang bertanggung jawab mencatat transaksi penerimaan pembiayaan utang luar negeri dan belanja subsidi pemerintah pusat adalah...",
-    "options": [
-      "Sistem Akuntansi Instansi (SAI)",
-      "Sistem Akuntansi Bendahara Umum Negara (SA-BUN)",
-      "Sistem Informasi Manajemen Barang Milik Negara (SIMAK-BMN)",
-      "Sistem Akuntansi Kas Satker"
-    ],
-    "answer": 1,
-    "explanation": "SA-BUN diproses oleh Kementerian Keuangan selaku BUN untuk mencatat transaksi fiskal strategis nasional seperti pengelolaan utang, investasi pemerintah, subsidi, dan transfer ke daerah."
-  },
-  {
-    "tm": 9,
-    "topic": "Jurnal Eliminasi Konsolidasi HOBO",
-    "difficulty": "advanced",
-    "q": "Pada saat menyusun Laporan Keuangan Konsolidasian Pemerintah Daerah di akhir tahun anggaran, Pejabat Pengelola Keuangan Daerah (PPKD) harus membuat jurnal eliminasi terhadap akun...",
-    "options": [
-      "Seluruh saldo Belanja Pegawai dan Belanja Barang",
-      "Akun resiprokal Rekening Koran (RK) PPKD dan Rekening Koran (RK) SKPD",
-      "Saldo persediaan obat di Puskesmas",
-      "Piutang pajak daerah yang telah kadaluwarsa"
-    ],
-    "answer": 1,
-    "explanation": "Akun RK-PPKD di seluruh SKPD dan akun RK-SKPD di PPKD adalah akun perantara internal (resiprokal) yang wajib dieliminasi (saling menghapus) agar tidak terjadi pencatatan ganda dalam neraca konsolidasi pemda."
-  },
-  {
-    "tm": 9,
-    "topic": "Bagan Akun Standar (BAS) Pemda",
-    "difficulty": "medium",
-    "q": "Berdasarkan Permendagri No. 77 Tahun 2020 dan kodefikasi BAS daerah, digit kode akun pertama '1', '2', '3', '4', '5', '6', '7', dan '8' secara berturut-turut merepresentasikan...",
-    "options": [
-      "Aset, Kewajiban, Ekuitas, Pendapatan-LRA, Belanja, Pembiayaan, Pendapatan-LO, dan Beban",
-      "Belanja, Pendapatan, Kas, Utang, Modal, Cadangan, Aset Tetap, dan Hibah",
-      "Pusat, Provinsi, Kabupaten, Kota, Kecamatan, Kelurahan, RT, dan RW",
-      "Kas, Piutang, Persediaan, Gedung, Peralatan, Utang, Modal, dan Beban"
+      "SABUN dan SAI membentuk sistem pusat",
+      "Si AP dan SAPD membentuk sistem pusat",
+      "SAI dan SAPD membentuk sistem pusat",
+      "Si AP dan SKPD membentuk sistem pusat"
     ],
     "answer": 0,
-    "explanation": "Kodefikasi BAS pemerintah daerah: 1=Aset, 2=Kewajiban, 3=Ekuitas, 4=Pendapatan-LRA, 5=Belanja, 6=Pembiayaan, 7=Pendapatan-LO, dan 8=Beban."
+    "explanation": "SABUN menangani transaksi BUN dan SAI transaksi instansi. Si AP merupakan bagian SABUN; SAPD dan SKPD berada dalam ruang daerah. Opsi lainnya mencampur tingkatan atau entitas. Rujukan: [PMK 217/PMK.05/2022 Ps.2-3,20-26,37-40; cetak/PDF 10-11,20-23,25-27](https://jdih.kemenkeu.go.id/api/download/84e2ae15-d735-487c-af36-e81644ee4b58/217~PMK.05~2022Per.pdf#page=10)",
+    "sourceRef": "[PMK 217/PMK.05/2022 Ps.2-3,20-26,37-40; cetak/PDF 10-11,20-23,25-27](https://jdih.kemenkeu.go.id/api/download/84e2ae15-d735-487c-af36-e81644ee4b58/217~PMK.05~2022Per.pdf#page=10)",
+    "sourceAnchors": [
+      "[PMK 217/PMK.05/2022 Ps.2-3,20-26,37-40; cetak/PDF 10-11,20-23,25-27](https://jdih.kemenkeu.go.id/api/download/84e2ae15-d735-487c-af36-e81644ee4b58/217~PMK.05~2022Per.pdf#page=10)"
+    ]
   },
   {
-    "tm": 9,
-    "topic": "Peran PPKD selaku Bendahara Umum Daerah (BUD)",
-    "difficulty": "basic",
-    "q": "Dalam pengelolaan keuangan daerah, pejabat yang memiliki kewenangan menerbitkan Surat Perintah Pencairan Dana (SP2D) atas beban rekening Kasda adalah...",
-    "options": [
-      "Kepala Dinas Pendidikan",
-      "Kuasa Bendahara Umum Daerah (Kuasa BUD) di Badan Pengelola Keuangan Daerah (BPKAD)",
-      "Sekretaris DPRD",
-      "Inspektur Daerah"
-    ],
-    "answer": 1,
-    "explanation": "Kuasa BUD berwenang meneliti kelengkapan dokumen SPM yang diajukan Pengguna Anggaran (SKPD) dan menerbitkan SP2D sebagai perintah pembayaran kepada bank kas daerah."
-  },
-  {
-    "tm": 9,
-    "topic": "Ganti Uang (GU) Nihil di Akhir Tahun",
-    "difficulty": "advanced",
-    "q": "Pada akhir tahun anggaran, seluruh sisa kas Uang Persediaan (UP) yang masih tersisa di tangan Bendahara Pengeluaran SKPD dan belum terpakai WAJIB...",
-    "options": [
-      "Dibagikan sebagai bonus kinerja bendahara pengeluaran",
-      "Disetorkan kembali secara utuh ke Kas Daerah (Kasda) paling lambat 31 Desember dengan bukti Surat Tanda Setoran (STS)",
-      "Disimpan di brankas kantor untuk belanja tahun anggaran berikutnya tanpa dilaporkan",
-      "Dikonversi menjadi persediaan alat tulis kantor"
-    ],
-    "answer": 1,
-    "explanation": "Sesuai asas tahunan dan regulasi penatausahaan keuangan, sisa kas UP pada penutupan tahun anggaran wajib disetorkan kembali ke Rekening Kas Umum Daerah (Kasda) sehingga saldo Kas di Bendahara Pengeluaran per 31 Desember bernilai nol."
-  },
-  {
-    "tm": 10,
-    "topic": "Pengukuran Kinerja Value for Money",
+    "id": "akk203-uas-tm08-02",
+    "tm": 8,
+    "topic": "Si AP",
+    "skill": "Analisis dasar, mekanisme dan batas penerapan",
     "difficulty": "medium",
-    "q": "Jika sebuah dinas berhasil membangun puskesmas dengan biaya 10% lebih rendah dari standar harga tanpa mengurangi spesifikasi teknis, namun puskesmas tersebut tidak dimanfaatkan oleh warga karena lokasinya di tengah hutan terpencil, maka program tersebut...",
+    "q": "Si AP: bagaimana hubungannya dengan SABUN?",
     "options": [
-      "Ekonomis dan Efektif, tetapi Tidak Efisien",
-      "Ekonomis dan Efisien, tetapi Tidak Efektif",
-      "Efektif, tetapi Tidak Ekonomis",
-      "Mencapai seluruh kriteria Value for Money"
+      "Si AP merupakan pengganti seluruh SABUN",
+      "Si AP merupakan salah satu subsistem SABUN",
+      "Si AP merupakan unit konsolidasi seluruh SKPD",
+      "Si AP merupakan nama kebijakan akuntansi SAP"
     ],
     "answer": 1,
-    "explanation": "Dinas berhasil mencapai aspek ekonomis (input murah) dan efisiensi (output gedung terbangun sesuai biaya), tetapi gagal dalam efektivitas (outcome/tujuan pelayanan kesehatan warga tidak tercapai)."
+    "explanation": "Si AP berada di dalam SABUN. Menjadikannya sinonim menghilangkan subsistem BUN lainnya; opsi SKPD mencampur daerah, sedangkan SAP adalah standar. Rujukan: [PMK 217/PMK.05/2022 Ps.2-3,20-26,37-40; cetak/PDF 10-11,20-23,25-27](https://jdih.kemenkeu.go.id/api/download/84e2ae15-d735-487c-af36-e81644ee4b58/217~PMK.05~2022Per.pdf#page=10)",
+    "sourceRef": "[PMK 217/PMK.05/2022 Ps.2-3,20-26,37-40; cetak/PDF 10-11,20-23,25-27](https://jdih.kemenkeu.go.id/api/download/84e2ae15-d735-487c-af36-e81644ee4b58/217~PMK.05~2022Per.pdf#page=10)",
+    "sourceAnchors": [
+      "[PMK 217/PMK.05/2022 Ps.2-3,20-26,37-40; cetak/PDF 10-11,20-23,25-27](https://jdih.kemenkeu.go.id/api/download/84e2ae15-d735-487c-af36-e81644ee4b58/217~PMK.05~2022Per.pdf#page=10)"
+    ]
   },
   {
-    "tm": 10,
-    "topic": "Rasio Efektivitas PAD",
+    "id": "akk203-uas-tm08-03",
+    "tm": 8,
+    "topic": "SAI",
+    "skill": "Analisis dasar, mekanisme dan batas penerapan",
     "difficulty": "medium",
-    "q": "Realisasi Pendapatan Asli Daerah (PAD) Kabupaten Makmur tahun 2025 adalah Rp 450 miliar, sedangkan target yang ditetapkan dalam APBD adalah Rp 500 miliar. Berapakah rasio efektivitas PAD daerah tersebut dan apa kriterianya?",
+    "q": "SAI: siapa menyusun laporan kementerian/lembaga?",
     "options": [
-      "90,0% (Kriteria: Cukup Efektif)",
-      "111,1% (Kriteria: Sangat Efektif)",
-      "80,0% (Kriteria: Kurang Efektif)",
-      "90,0% (Kriteria: Tidak Efektif)"
-    ],
-    "answer": 0,
-    "explanation": "Rasio Efektivitas = (Realisasi / Target) × 100% = (Rp 450 M / Rp 500 M) × 100% = 90,0%. Menurut standar Kemendagri, rentang 90% - 99,9% tergolong Cukup Efektif (di atas 100% Sangat Efektif)."
-  },
-  {
-    "tm": 10,
-    "topic": "Sistem Akuntabilitas Kinerja (SAKIP)",
-    "difficulty": "basic",
-    "q": "Laporan resmi yang wajib disusun oleh setiap pimpinan instansi pemerintah di akhir tahun untuk mempertanggungjawabkan keberhasilan dan kegagalan pencapaian target strategis organisasi disebut...",
-    "options": [
-      "Laporan Realisasi Anggaran (LRA)",
-      "Laporan Kinerja Instansi Pemerintah (LAKIP)",
-      "Laporan Harta Kekayaan Pejabat Negara (LHKPN)",
-      "Laporan Hasil Pemeriksaan (LHP)"
-    ],
-    "answer": 1,
-    "explanation": "LAKIP merupakan produk akhir siklus SAKIP yang memaparkan capaian target kinerja strategis (IKU) organisasi publik dibandingkan dengan rencana kerja dan perjanjian kinerjanya."
-  },
-  {
-    "tm": 10,
-    "topic": "Indikator Input, Output, dan Outcome",
-    "difficulty": "medium",
-    "q": "Dalam program imunisasi balita nasional: (1) Jumlah vaksin dan jarum suntik yang dibeli, (2) Jumlah balita yang berhasil disuntik vaksin, dan (3) Penurunan angka kejadian penyakit campak pada anak sebesar 80%, secara berurutan mencerminkan indikator...",
-    "options": [
-      "Input, Output, dan Outcome",
-      "Output, Input, dan Impact",
-      "Outcome, Output, dan Input",
-      "Input, Benefit, dan Efisiensi"
-    ],
-    "answer": 0,
-    "explanation": "(1) Vaksin/jarum adalah Input (sumber daya), (2) Balita yang disuntik adalah Output (keluaran langsung kegiatan), dan (3) Penurunan kasus penyakit adalah Outcome (hasil manfaat nyata yang dirasakan masyarakat)."
-  },
-  {
-    "tm": 10,
-    "topic": "Standar Pelayanan Minimal (SPM)",
-    "difficulty": "advanced",
-    "q": "Ketentuan mengenai jenis dan mutu pelayanan dasar yang merupakan urusan pemerintahan wajib dan berhak diperoleh setiap warga negara secara minimal diatur dalam regulasi tentang...",
-    "options": [
-      "Standar Biaya Masukan (SBM)",
-      "Standar Pelayanan Minimal (SPM)",
-      "Standar Akuntansi Pemerintahan (SAP)",
-      "Standar Pemeriksaan Keuangan Negara (SPKN)"
-    ],
-    "answer": 1,
-    "explanation": "SPM (PP No. 2/2018) mengatur tolok ukur kinerja pelayanan dasar wajib (pendidikan, kesehatan, pekerjaan umum, perumahan rakyat, trantibumlinmas, dan sosial) yang harus diprioritaskan alokasi anggarannya oleh pemda."
-  },
-  {
-    "tm": 11,
-    "topic": "Audit Sektor Publik: Opini BPK",
-    "difficulty": "medium",
-    "q": "Laporan keuangan pemerintah daerah yang disajikan wajar dalam semua hal yang material, menyajikan informasi sesuai SAP secara konsisten, memiliki SPI yang memadai, dan tidak ada pelanggaran hukum material akan memperoleh opini BPK berupa...",
-    "options": [
-      "Wajar Dengan Pengecualian (Qualified Opinion)",
-      "Wajar Tanpa Pengecualian (Unqualified Opinion / WTP)",
-      "Tidak Wajar (Adverse Opinion)",
-      "Menolak Memberikan Opini (Disclaimer of Opinion)"
-    ],
-    "answer": 1,
-    "explanation": "Opini Wajar Tanpa Pengecualian (WTP) adalah opini tertinggi BPK yang menyatakan bahwa laporan keuangan disajikan secara wajar dalam semua hal yang material sesuai SAP."
-  },
-  {
-    "tm": 11,
-    "topic": "Jenis-Jenis Pemeriksaan BPK",
-    "difficulty": "medium",
-    "q": "Berdasarkan UU No. 15 Tahun 2004, tiga jenis pemeriksaan yang memiliki kewenangan dilakukan oleh BPK RI adalah...",
-    "options": [
-      "Audit Pajak, Audit Bea Cukai, dan Audit Perbankan",
-      "Pemeriksaan Keuangan, Pemeriksaan Kinerja, dan Pemeriksaan Dengan Tujuan Tertentu (PDTT)",
-      "Audit Internal, Audit Manajemen, dan Audit Ketaatan Karyawan",
-      "Pemeriksaan Kasda, Pemeriksaan Inventaris, dan Pemeriksaan Kepegawaian"
-    ],
-    "answer": 1,
-    "explanation": "Pasal 4 UU 15/2004 membagi audit BPK menjadi: (1) Pemeriksaan Keuangan (opini atas LK), (2) Pemeriksaan Kinerja (ekonomi, efisiensi, efektivitas), dan (3) Pemeriksaan Dengan Tujuan Tertentu / PDTT (investigatif)."
-  },
-  {
-    "tm": 11,
-    "topic": "Standar Pemeriksaan Keuangan Negara (SPKN)",
-    "difficulty": "advanced",
-    "q": "Standar mutu dan etika profesional yang wajib dipatuhi oleh seluruh pemeriksa BPK RI dan akuntan publik yang ditugaskan atas nama BPK dalam memeriksa keuangan negara adalah...",
-    "options": [
-      "Standar Profesional Akuntan Publik (SPAP) IAPI murni",
-      "Standar Pemeriksaan Keuangan Negara (SPKN) yang ditetapkan dengan Peraturan BPK No. 1 Tahun 2017",
-      "Pedoman Teknis Permendagri",
-      "Pedoman Audit Internal Sektor Publik (PAISP)"
-    ],
-    "answer": 1,
-    "explanation": "SPKN ditetapkan oleh BPK RI melalui Peraturan BPK No. 1/2017 sebagai standar pemeriksaan wajib atas pengelolaan dan pertanggungjawaban keuangan negara di Indonesia."
-  },
-  {
-    "tm": 11,
-    "topic": "Tindak Lanjut Rekomendasi LHP BPK",
-    "difficulty": "basic",
-    "q": "Berdasarkan UU No. 15 Tahun 2004 Pasal 20, pejabat pengelola keuangan entitas yang diperiksa WAJIB memberikan jawaban atau penjelasan mengenai tindak lanjut atas rekomendasi dalam Laporan Hasil Pemeriksaan (LHP) BPK selambat-lambatnya...",
-    "options": [
-      "14 hari kalender",
-      "30 hari kalender",
-      "60 hari kalender",
-      "90 hari kalender"
+      "BUD dari laporan seluruh dinas daerah",
+      "SKPD dari gabungan seluruh kementerian",
+      "UAPA dari laporan unit di bawahnya",
+      "KPPN dari satu laporan yayasan nirlaba"
     ],
     "answer": 2,
-    "explanation": "UU 15/2004 mewajibkan pejabat menindaklanjuti rekomendasi temuan BPK dalam waktu maksimal 60 (enam puluh) hari setelah LHP diterima secara resmi."
+    "explanation": "UAPA berfungsi pada tingkat K/L. BUD dan SKPD terkait daerah; KPPN dalam peran kuasa BUN tidak menggantikan UAPA dan yayasan berada di kerangka berbeda. Rujukan: [PMK 217/PMK.05/2022 Ps.2-3,20-26,37-40; cetak/PDF 10-11,20-23,25-27](https://jdih.kemenkeu.go.id/api/download/84e2ae15-d735-487c-af36-e81644ee4b58/217~PMK.05~2022Per.pdf#page=10)",
+    "sourceRef": "[PMK 217/PMK.05/2022 Ps.2-3,20-26,37-40; cetak/PDF 10-11,20-23,25-27](https://jdih.kemenkeu.go.id/api/download/84e2ae15-d735-487c-af36-e81644ee4b58/217~PMK.05~2022Per.pdf#page=10)",
+    "sourceAnchors": [
+      "[PMK 217/PMK.05/2022 Ps.2-3,20-26,37-40; cetak/PDF 10-11,20-23,25-27](https://jdih.kemenkeu.go.id/api/download/84e2ae15-d735-487c-af36-e81644ee4b58/217~PMK.05~2022Per.pdf#page=10)"
+    ]
   },
   {
-    "tm": 11,
-    "topic": "Opini Disclaimer (TMP)",
-    "difficulty": "advanced",
-    "q": "BPK RI akan menerbitkan opini Tidak Memberikan Pendapat (Disclaimer / TMP) apabila...",
-    "options": [
-      "Terdapat satu kesalahan pembukuan kecil bernilai Rp 10 juta",
-      "Pemeriksa mengalami pembatasan lingkup pemeriksaan yang sangat material dan pervasif, atau sistem pencatatan begitu rusak sehingga pemeriksa tidak memperoleh bukti audit yang cukup",
-      "Pemerintah daerah tidak membagikan dividen kepada warganya",
-      "DPRD menolak menghadiri sidang paripurna penyerahan LHP"
-    ],
-    "answer": 1,
-    "explanation": "Opini TMP (Disclaimer) diberikan jika terjadi pembatasan lingkup pemeriksaan secara pervasif (misal data utama tidak diserahkan, bencana yang menghilangkan buku besar), sehingga auditor tidak dapat menyatakan pendapat audit."
-  },
-  {
-    "tm": 12,
-    "topic": "Bantuan Keuangan Partai Politik",
+    "id": "akk203-uas-tm08-04",
+    "tm": 8,
+    "topic": "Rekonsiliasi",
+    "skill": "Analisis dasar, mekanisme dan batas penerapan",
     "difficulty": "medium",
-    "q": "Berdasarkan UU No. 2 Tahun 2011 dan Permendagri No. 78 Tahun 2020, bantuan keuangan dari APBN/APBD yang diterima oleh Partai Politik diprioritaskan paling sedikit 60% untuk kegiatan...",
+    "q": "Rekonsiliasi: laporan aset dan keuangan tidak cocok. Apa langkah awal yang layak?",
     "options": [
-      "Kampanye pemilihan umum legislatif dan presiden",
-      "Pendidikan politik bagi anggota partai dan masyarakat luas",
-      "Pengadaan gedung sekretariat kantor partai permanen",
-      "Gaji tetap pengurus dewan pimpinan pusat"
+      "Samakan total dengan tambahan pendapatan acak",
+      "Hapus saldo lebih kecil supaya totalnya sama",
+      "Ganti standar seluruh entitas menjadi SAK",
+      "Cocokkan dokumen, periode, nilai dan klasifikasi"
     ],
-    "answer": 1,
-    "explanation": "Regulasi parpol mewajibkan alokasi minimal 60% dari dana bantuan APBN/APBD untuk pendidikan politik masyarakat dan kader, sedangkan maksimal 40% sisanya untuk operasional kesekretariatan."
+    "answer": 3,
+    "explanation": "Pencocokan harus mendahului koreksi. Pendapatan acak dan penghapusan saldo tanpa bukti menimbulkan salah saji. Mengganti standar tidak menyelesaikan sebab selisih. Rujukan: [PMK 217/PMK.05/2022 Ps.2-3,20-26,37-40; cetak/PDF 10-11,20-23,25-27](https://jdih.kemenkeu.go.id/api/download/84e2ae15-d735-487c-af36-e81644ee4b58/217~PMK.05~2022Per.pdf#page=10)",
+    "sourceRef": "[PMK 217/PMK.05/2022 Ps.2-3,20-26,37-40; cetak/PDF 10-11,20-23,25-27](https://jdih.kemenkeu.go.id/api/download/84e2ae15-d735-487c-af36-e81644ee4b58/217~PMK.05~2022Per.pdf#page=10)",
+    "sourceAnchors": [
+      "[PMK 217/PMK.05/2022 Ps.2-3,20-26,37-40; cetak/PDF 10-11,20-23,25-27](https://jdih.kemenkeu.go.id/api/download/84e2ae15-d735-487c-af36-e81644ee4b58/217~PMK.05~2022Per.pdf#page=10)"
+    ]
   },
   {
-    "tm": 12,
-    "topic": "Audit Dana Bantuan Parpol oleh BPK",
-    "difficulty": "medium",
-    "q": "Pertanggungjawaban penerimaan dan penggunaan bantuan keuangan partai politik yang bersumber dari kas negara/daerah wajib diaudit secara berkala oleh...",
-    "options": [
-      "Komisi Pengawas Persaingan Usaha (KPPU)",
-      "Badan Pemeriksa Keuangan (BPK RI)",
-      "Komisi Pemberantasan Korupsi (KPK) secara rutin",
-      "Badan Usaha Milik Negara"
-    ],
-    "answer": 1,
-    "explanation": "UU Partai Politik menegaskan bahwa laporan pertanggungjawaban penggunaan dana bantuan APBN/APBD parpol wajib diaudit oleh BPK RI setiap tahun anggaran."
-  },
-  {
-    "tm": 12,
-    "topic": "Laporan Dana Kampanye (LPPDK)",
+    "id": "akk203-uas-tm08-05",
+    "tm": 8,
+    "topic": "Latihan buatan",
+    "skill": "Analisis dasar, mekanisme dan batas penerapan",
     "difficulty": "advanced",
-    "q": "Laporan Pertanggungjawaban Penerimaan dan Pengeluaran Dana Kampanye (LPPDK) yang disusun oleh tim kampanye peserta pemilu diaudit oleh...",
+    "q": "Latihan buatan: RK-PPKD kredit dan RK-SKPD debit masing-masing Rp 100 juta. Jurnal eliminasi?",
     "options": [
-      "Kantor Akuntan Publik (KAP) independen yang ditunjuk resmi oleh KPU",
-      "Inspektorat Daerah pemda setempat",
-      "Badan Pengawas BUMD",
-      "Badan Kepegawaian Negara"
+      "Debit RK-PPKD, kredit RK-SKPD Rp 100 juta",
+      "Debit RK-SKPD, kredit RK-PPKD Rp 100 juta",
+      "Debit beban, kredit pendapatan Rp 100 juta",
+      "Debit kas, kredit pendapatan baru Rp 100 juta"
     ],
     "answer": 0,
-    "explanation": "KPU menunjuk Kantor Akuntan Publik (KAP) independen yang terdaftar untuk melakukan audit kepatuhan atas LPPDK seluruh peserta pemilu."
+    "explanation": "Debit RK-PPKD dan kredit RK-SKPD menghapus saldo yang diberikan. Jurnal terbalik memperbesar saldo; beban/pendapatan atau kas baru tidak menggambarkan pasangan internal. Debit sama dengan kredit. Rujukan: [Permendagri 64/2013 Lampiran II bagian j; cetak 33-37, PDF 71-75](https://peraturan.bpk.go.id/Details/111750/permendagri-no-64-tahun-2013)",
+    "sourceRef": "[Permendagri 64/2013 Lampiran II bagian j; cetak 33-37, PDF 71-75](https://peraturan.bpk.go.id/Details/111750/permendagri-no-64-tahun-2013)",
+    "sourceAnchors": [
+      "[Permendagri 64/2013 Lampiran II bagian j; cetak 33-37, PDF 71-75](https://peraturan.bpk.go.id/Details/111750/permendagri-no-64-tahun-2013)"
+    ]
   },
   {
+    "id": "akk203-uas-tm08-06",
+    "tm": 8,
+    "topic": "Konsolidasi",
+    "skill": "Analisis dasar, mekanisme dan batas penerapan",
+    "difficulty": "medium",
+    "q": "Konsolidasi: di mana jurnal eliminasi hubungan internal dibuat?",
+    "options": [
+      "Pada seluruh dokumen kas yang harus dihapus",
+      "Pada kertas kerja untuk laporan konsolidasian",
+      "Pada daftar donor untuk laporan dana kampanye",
+      "Pada laporan kinerja untuk mengubah target"
+    ],
+    "answer": 1,
+    "explanation": "Kertas kerja mendukung konsolidasi dan jejak unit tetap dipertahankan. Menghapus dokumen kas merusak bukti. Daftar donor dan target kinerja tidak berkaitan dengan akun timbal balik. Rujukan: [Permendagri 64/2013 Lampiran II bagian j; cetak 33-37, PDF 71-75](https://peraturan.bpk.go.id/Details/111750/permendagri-no-64-tahun-2013)",
+    "sourceRef": "[Permendagri 64/2013 Lampiran II bagian j; cetak 33-37, PDF 71-75](https://peraturan.bpk.go.id/Details/111750/permendagri-no-64-tahun-2013)",
+    "sourceAnchors": [
+      "[Permendagri 64/2013 Lampiran II bagian j; cetak 33-37, PDF 71-75](https://peraturan.bpk.go.id/Details/111750/permendagri-no-64-tahun-2013)"
+    ]
+  },
+  {
+    "id": "akk203-uas-tm08-07",
+    "tm": 8,
+    "topic": "Kebijakan pusat",
+    "skill": "Analisis dasar, mekanisme dan batas penerapan",
+    "difficulty": "medium",
+    "q": "Kebijakan pusat: bagaimana akun LRA dalam konsolidasi PMK 100/2025?",
+    "options": [
+      "Dieliminasi seluruhnya seperti akun finansial",
+      "Diganti menjadi akun LO tanpa rekonsiliasi",
+      "Tidak dieliminasi menurut klausul akun LRA",
+      "Dihapus karena tidak termasuk laporan SAP"
+    ],
+    "answer": 2,
+    "explanation": "Klausul PMK 100 menyebut akun LRA tidak dieliminasi. Menyamakan LRA dengan finansial mengabaikan pertanggungjawaban APBN; perubahan ke LO atau penghapusan juga tidak didukung aturan. Rujukan: [PMK 100/2025 Ps.6-7 dan Lampiran II. A.13; cetak/PDF 4,18-19](https://jdih.kemenkeu.go.id/api/download/29cc2a09-15f9-4155-9a87-88b9023ce686/2025pmkeuangan100.pdf#page=4)",
+    "sourceRef": "[PMK 100/2025 Ps.6-7 dan Lampiran II. A.13; cetak/PDF 4,18-19](https://jdih.kemenkeu.go.id/api/download/29cc2a09-15f9-4155-9a87-88b9023ce686/2025pmkeuangan100.pdf#page=4)",
+    "sourceAnchors": [
+      "[PMK 100/2025 Ps.6-7 dan Lampiran II. A.13; cetak/PDF 4,18-19](https://jdih.kemenkeu.go.id/api/download/29cc2a09-15f9-4155-9a87-88b9023ce686/2025pmkeuangan100.pdf#page=4)"
+    ]
+  },
+  {
+    "id": "akk203-uas-tm08-08",
+    "tm": 8,
+    "topic": "Latihan buatan",
+    "skill": "Analisis dasar, mekanisme dan batas penerapan",
+    "difficulty": "advanced",
+    "q": "Latihan buatan: saldo RK Rp 100 juta dan Rp 98 juta belum cocok. Keputusan?",
+    "options": [
+      "Eliminasi Rp 100 juta dan abaikan selisihnya",
+      "Eliminasi Rp 98 juta sebagai laba konsolidasi",
+      "Pindahkan selisih ke donasi tanpa dokumen",
+      "Telusuri selisih Rp 2 juta sebelum eliminasi"
+    ],
+    "answer": 3,
+    "explanation": "Selisih Rp 2 juta memerlukan penelusuran dan koreksi sesuai bukti. Eliminasi paksa menutupi masalah. Laba dan donasi tidak menjelaskan arus internal pemerintah daerah. Rujukan: [Permendagri 64/2013 Lampiran II bagian j; cetak 33-37, PDF 71-75](https://peraturan.bpk.go.id/Details/111750/permendagri-no-64-tahun-2013)",
+    "sourceRef": "[Permendagri 64/2013 Lampiran II bagian j; cetak 33-37, PDF 71-75](https://peraturan.bpk.go.id/Details/111750/permendagri-no-64-tahun-2013)",
+    "sourceAnchors": [
+      "[Permendagri 64/2013 Lampiran II bagian j; cetak 33-37, PDF 71-75](https://peraturan.bpk.go.id/Details/111750/permendagri-no-64-tahun-2013)"
+    ]
+  },
+  {
+    "id": "akk203-uas-tm08-09",
+    "tm": 8,
+    "topic": "Versi sumber",
+    "skill": "Analisis dasar, mekanisme dan batas penerapan",
+    "difficulty": "medium",
+    "q": "Versi sumber: mulai laporan tahun berapa PMK 100/2025 digunakan?",
+    "options": [
+      "Mulai laporan TA 2025 sesuai Pasal 6",
+      "Mulai laporan TA 2013 tanpa penyesuaian",
+      "Mulai laporan TA 2028 seperti SPKN baru",
+      "Mulai laporan TA 2009 untuk semua yayasan"
+    ],
+    "answer": 0,
+    "explanation": "Pasal 6 menetapkan LK TA 2025. Tahun 2013 berasal dari lampiran daerah, 2028 dari standar pemeriksaan lain, dan yayasan bukan ruang kebijakan pemerintah pusat. Rujukan: [PMK 100/2025 Ps.6-7 dan Lampiran II. A.13; cetak/PDF 4,18-19](https://jdih.kemenkeu.go.id/api/download/29cc2a09-15f9-4155-9a87-88b9023ce686/2025pmkeuangan100.pdf#page=4)",
+    "sourceRef": "[PMK 100/2025 Ps.6-7 dan Lampiran II. A.13; cetak/PDF 4,18-19](https://jdih.kemenkeu.go.id/api/download/29cc2a09-15f9-4155-9a87-88b9023ce686/2025pmkeuangan100.pdf#page=4)",
+    "sourceAnchors": [
+      "[PMK 100/2025 Ps.6-7 dan Lampiran II. A.13; cetak/PDF 4,18-19](https://jdih.kemenkeu.go.id/api/download/29cc2a09-15f9-4155-9a87-88b9023ce686/2025pmkeuangan100.pdf#page=4)"
+    ]
+  },
+  {
+    "id": "akk203-uas-tm09-01",
+    "tm": 9,
+    "topic": "Kinerja",
+    "skill": "Analisis dasar, mekanisme dan batas penerapan",
+    "difficulty": "medium",
+    "q": "Kinerja: apa beda output dan outcome?",
+    "options": [
+      "Output adalah anggaran, outcome daftar input",
+      "Output adalah keluaran, outcome hasil yang dituju",
+      "Output adalah harga, outcome saldo anggaran",
+      "Output adalah opini, outcome jurnal penutup"
+    ],
+    "answer": 1,
+    "explanation": "Keluaran kegiatan berbeda dari hasil program. Anggaran dan input adalah sumber daya; opini adalah hasil pemeriksaan, dan jurnal merupakan pencatatan. Menukar istilah membuat indikator tidak sesuai sasaran. Rujukan: [Perpres 29/2014 Ps.5,9,15-18,24; cetak/PDF 6,8,10-11,13](https://peraturan.bpk.go.id/Download/262284/Perpres%20Nomor%2029%20Tahun%202014.pdf#page=6)",
+    "sourceRef": "[Perpres 29/2014 Ps.5,9,15-18,24; cetak/PDF 6,8,10-11,13](https://peraturan.bpk.go.id/Download/262284/Perpres%20Nomor%2029%20Tahun%202014.pdf#page=6)",
+    "sourceAnchors": [
+      "[Perpres 29/2014 Ps.5,9,15-18,24; cetak/PDF 6,8,10-11,13](https://peraturan.bpk.go.id/Download/262284/Perpres%20Nomor%2029%20Tahun%202014.pdf#page=6)"
+    ]
+  },
+  {
+    "id": "akk203-uas-tm09-02",
+    "tm": 9,
+    "topic": "Ekonomi",
+    "skill": "Analisis dasar, mekanisme dan batas penerapan",
+    "difficulty": "medium",
+    "q": "Ekonomi: barang murah gagal memenuhi spesifikasi. Kesimpulan?",
+    "options": [
+      "Harga rendah selalu menunjukkan ekonomi baik",
+      "Harga rendah selalu membuktikan hasil program",
+      "Harga rendah belum cukup menunjukkan ekonomi",
+      "Harga rendah menggantikan bukti mutu barang"
+    ],
+    "answer": 2,
+    "explanation": "Ekonomi memperhatikan kualitas, jumlah dan waktu yang tepat bersama biaya. Opsi lain mengabaikan mutu atau mengubah informasi harga menjadi bukti efektivitas yang belum tersedia. Rujukan: [ISSAI 300 par.11, versi editorial IFPP 2019; PP 60/2008 Ps.50(2), cetak/PDF 23](https://www.issai.org/wp-content/uploads/2019/08/ISSAI-300.pdf#page=8)",
+    "sourceRef": "[ISSAI 300 par.11, versi editorial IFPP 2019; PP 60/2008 Ps.50(2), cetak/PDF 23](https://www.issai.org/wp-content/uploads/2019/08/ISSAI-300.pdf#page=8)",
+    "sourceAnchors": [
+      "[ISSAI 300 par.11, versi editorial IFPP 2019; PP 60/2008 Ps.50(2), cetak/PDF 23](https://www.issai.org/wp-content/uploads/2019/08/ISSAI-300.pdf#page=8)"
+    ]
+  },
+  {
+    "id": "akk203-uas-tm09-03",
+    "tm": 9,
+    "topic": "Efisiensi",
+    "skill": "Analisis dasar, mekanisme dan batas penerapan",
+    "difficulty": "medium",
+    "q": "Efisiensi: pembanding paling layak untuk dua program setara?",
+    "options": [
+      "Jumlah rapat dengan biaya dan mutu diabaikan",
+      "Serapan anggaran tanpa informasi hasil layanan",
+      "Opini laporan keuangan tanpa data keluaran",
+      "Biaya per keluaran dengan mutu dan periode sama"
+    ],
+    "answer": 3,
+    "explanation": "Hubungan sumber daya dengan keluaran membutuhkan pembanding setara. Rapat, serapan, dan opini dapat memberi informasi lain, tetapi masing-masing tidak cukup mengukur efisiensi keluaran. Rujukan: [ISSAI 300 par.11, versi editorial IFPP 2019; PP 60/2008 Ps.50(2), cetak/PDF 23](https://www.issai.org/wp-content/uploads/2019/08/ISSAI-300.pdf#page=8)",
+    "sourceRef": "[ISSAI 300 par.11, versi editorial IFPP 2019; PP 60/2008 Ps.50(2), cetak/PDF 23](https://www.issai.org/wp-content/uploads/2019/08/ISSAI-300.pdf#page=8)",
+    "sourceAnchors": [
+      "[ISSAI 300 par.11, versi editorial IFPP 2019; PP 60/2008 Ps.50(2), cetak/PDF 23](https://www.issai.org/wp-content/uploads/2019/08/ISSAI-300.pdf#page=8)"
+    ]
+  },
+  {
+    "id": "akk203-uas-tm09-04",
+    "tm": 9,
+    "topic": "Latihan buatan",
+    "skill": "Analisis dasar, mekanisme dan batas penerapan",
+    "difficulty": "advanced",
+    "q": "Latihan buatan: biaya Rp 480 juta untuk 800 layanan. Biaya per layanan?",
+    "options": [
+      "Rp 600.000 per layanan pada cakupan biaya sama",
+      "Rp 480.000 per layanan pada cakupan biaya sama",
+      "Rp 800.000 per layanan pada cakupan biaya sama",
+      "Rp 750.000 per layanan pada cakupan biaya sama"
+    ],
+    "answer": 0,
+    "explanation": "Rp 480.000.000/800 =Rp 600.000 per layanan. Rp 480.000 memakai 1.000 layanan rencana; Rp 800.000 dan Rp 750.000 tidak sesuai pembagian input yang diberikan. Mutu harus tetap sebanding. Rujukan: [ISSAI 300 par.11, versi editorial IFPP 2019; PP 60/2008 Ps.50(2), cetak/PDF 23](https://www.issai.org/wp-content/uploads/2019/08/ISSAI-300.pdf#page=8)",
+    "sourceRef": "[ISSAI 300 par.11, versi editorial IFPP 2019; PP 60/2008 Ps.50(2), cetak/PDF 23](https://www.issai.org/wp-content/uploads/2019/08/ISSAI-300.pdf#page=8)",
+    "sourceAnchors": [
+      "[ISSAI 300 par.11, versi editorial IFPP 2019; PP 60/2008 Ps.50(2), cetak/PDF 23](https://www.issai.org/wp-content/uploads/2019/08/ISSAI-300.pdf#page=8)"
+    ]
+  },
+  {
+    "id": "akk203-uas-tm09-05",
+    "tm": 9,
+    "topic": "Latihan buatan",
+    "skill": "Analisis dasar, mekanisme dan batas penerapan",
+    "difficulty": "advanced",
+    "q": "Latihan buatan: realisasi 120 dari target 180 hasil, higher is better. Capaian?",
+    "options": [
+      "150,00% dan hasil melampaui target",
+      "66,67% dan hasil masih di bawah target",
+      "80,00% dan biaya pasti lebih efisien",
+      "60,00% dan program pasti menyebabkan hasil"
+    ],
+    "answer": 1,
+    "explanation": "120/180 ×100% =66,67%, dibulatkan dua desimal.150% memakai pecahan terbalik;80% berasal rasio anggaran berbeda;60% salah hitung dan klaim sebab belum didukung desain. Rujukan: [Permen PAN-RB 53/2014 Lampiran II. A-F dan Anak Lampiran II/1; cetak 15-18, PDF 19-22](https://peraturan.bpk.go.id/Download/123556/PERMENPAN%20NOMOR%2053%20TAHUN%202014.pdf#page=19)",
+    "sourceRef": "[Permen PAN-RB 53/2014 Lampiran II. A-F dan Anak Lampiran II/1; cetak 15-18, PDF 19-22](https://peraturan.bpk.go.id/Download/123556/PERMENPAN%20NOMOR%2053%20TAHUN%202014.pdf#page=19)",
+    "sourceAnchors": [
+      "[Permen PAN-RB 53/2014 Lampiran II. A-F dan Anak Lampiran II/1; cetak 15-18, PDF 19-22](https://peraturan.bpk.go.id/Download/123556/PERMENPAN%20NOMOR%2053%20TAHUN%202014.pdf#page=19)"
+    ]
+  },
+  {
+    "id": "akk203-uas-tm09-06",
+    "tm": 9,
+    "topic": "SAKIP",
+    "skill": "Analisis dasar, mekanisme dan batas penerapan",
+    "difficulty": "medium",
+    "q": "SAKIP: urutan hubungan yang tepat?",
+    "options": [
+      "Audit opini, pembubaran unit, laporan, perjanjian, kas",
+      "Jurnal kas, donasi, likuidasi, laporan kampanye, target",
+      "Renstra, perjanjian, pengukuran/data, laporan, evaluasi",
+      "Laporan, hapus data, ubah target tanpa bukti, opini"
+    ],
+    "answer": 2,
+    "explanation": "Perpres 29 menjelaskan komponen yang saling terhubung dari rencana sampai evaluasi. Urutan lainnya mencampur proses berbeda atau menghapus bukti yang diperlukan pengukuran. Rujukan: [Perpres 29/2014 Ps.5,9,15-18,24; cetak/PDF 6,8,10-11,13](https://peraturan.bpk.go.id/Download/262284/Perpres%20Nomor%2029%20Tahun%202014.pdf#page=6)",
+    "sourceRef": "[Perpres 29/2014 Ps.5,9,15-18,24; cetak/PDF 6,8,10-11,13](https://peraturan.bpk.go.id/Download/262284/Perpres%20Nomor%2029%20Tahun%202014.pdf#page=6)",
+    "sourceAnchors": [
+      "[Perpres 29/2014 Ps.5,9,15-18,24; cetak/PDF 6,8,10-11,13](https://peraturan.bpk.go.id/Download/262284/Perpres%20Nomor%2029%20Tahun%202014.pdf#page=6)"
+    ]
+  },
+  {
+    "id": "akk203-uas-tm09-07",
+    "tm": 9,
+    "topic": "Indikator",
+    "skill": "Analisis dasar, mekanisme dan batas penerapan",
+    "difficulty": "medium",
+    "q": "Indikator: target 20 menit, realisasi 25 menit. Penilaian?",
+    "options": [
+      "Capaian 125% selalu berarti layanan makin berhasil",
+      "Jumlah rapat pasti menjelaskan semua selisih",
+      "Waktu tunggu dapat diganti dengan serapan biaya",
+      "Waktu tunggu lebih lama dan belum mencapai target"
+    ],
+    "answer": 3,
+    "explanation": "Pada lower is better, waktu lebih lama memburuk. Rasio 125% tidak berarti sukses; rapat tidak membuktikan sebab. Serapan mengukur aspek anggaran yang berbeda dari waktu tunggu. Rujukan: [Perpres 29/2014 Ps.5,9,15-18,24; cetak/PDF 6,8,10-11,13](https://peraturan.bpk.go.id/Download/262284/Perpres%20Nomor%2029%20Tahun%202014.pdf#page=6) [Permen PAN-RB 53/2014 Lampiran II. A-F dan Anak Lampiran II/1; cetak 15-18, PDF 19-22](https://peraturan.bpk.go.id/Download/123556/PERMENPAN%20NOMOR%2053%20TAHUN%202014.pdf#page=19)",
+    "sourceRef": "[Perpres 29/2014 Ps.5,9,15-18,24; cetak/PDF 6,8,10-11,13](https://peraturan.bpk.go.id/Download/262284/Perpres%20Nomor%2029%20Tahun%202014.pdf#page=6) [Permen PAN-RB 53/2014 Lampiran II. A-F dan Anak Lampiran II/1; cetak 15-18, PDF 19-22](https://peraturan.bpk.go.id/Download/123556/PERMENPAN%20NOMOR%2053%20TAHUN%202014.pdf#page=19)",
+    "sourceAnchors": [
+      "[Perpres 29/2014 Ps.5,9,15-18,24; cetak/PDF 6,8,10-11,13](https://peraturan.bpk.go.id/Download/262284/Perpres%20Nomor%2029%20Tahun%202014.pdf#page=6) [Permen PAN-RB 53/2014 Lampiran II. A-F dan Anak Lampiran II/1; cetak 15-18, PDF 19-22](https://peraturan.bpk.go.id/Download/123556/PERMENPAN%20NOMOR%2053%20TAHUN%202014.pdf#page=19)"
+    ]
+  },
+  {
+    "id": "akk203-uas-tm09-08",
+    "tm": 9,
+    "topic": "AKIP",
+    "skill": "Analisis dasar, mekanisme dan batas penerapan",
+    "difficulty": "medium",
+    "q": "AKIP: bobot empat komponen menurut 88/2021?",
+    "options": [
+      "Perencanaan 30, pengukuran 30, pelaporan 15, evaluasi 25",
+      "Perencanaan 25, pengukuran 25, pelaporan 25, evaluasi 25",
+      "Perencanaan 35, pengukuran 20, pelaporan 25, evaluasi 20",
+      "Perencanaan 15, pengukuran 20, pelaporan 30, evaluasi 35"
+    ],
+    "answer": 0,
+    "explanation": "Tabel sumber menetapkan 30/30/15/25. Tiga kombinasi lain tetap berjumlah 100 tetapi distribusinya tidak sesuai. Bobot AKIP juga harus dibedakan dari capaian rasio program. Rujukan: [Permen PAN-RB 88/2021 Lampiran I. B dan III. B.1; cetak/PDF 8,20-24](https://peraturan.bpk.go.id/Download/196187/Permen%20PANRB%20No.%2088%20Tahun%202021.pdf#page=8)",
+    "sourceRef": "[Permen PAN-RB 88/2021 Lampiran I. B dan III. B.1; cetak/PDF 8,20-24](https://peraturan.bpk.go.id/Download/196187/Permen%20PANRB%20No.%2088%20Tahun%202021.pdf#page=8)",
+    "sourceAnchors": [
+      "[Permen PAN-RB 88/2021 Lampiran I. B dan III. B.1; cetak/PDF 8,20-24](https://peraturan.bpk.go.id/Download/196187/Permen%20PANRB%20No.%2088%20Tahun%202021.pdf#page=8)"
+    ]
+  },
+  {
+    "id": "akk203-uas-tm09-09",
+    "tm": 9,
+    "topic": "AKIP",
+    "skill": "Analisis dasar, mekanisme dan batas penerapan",
+    "difficulty": "medium",
+    "q": "AKIP: dokumen tersedia, tetapi keputusan tidak memakainya. Aspek paling perlu diperiksa?",
+    "options": [
+      "Keberadaan, yang otomatis memberi nilai penuh",
+      "Pemanfaatan, terpisah dari keberadaan dokumen",
+      "Harga bahan, yang menggantikan penilaian AKIP",
+      "Opini BPK, yang menetapkan bobot seluruh AKIP"
+    ],
+    "answer": 1,
+    "explanation": "Pedoman membedakan keberadaan, kualitas dan pemanfaatan. Ketersediaan dokumen tidak membuktikan pemanfaatan. Harga bahan atau opini laporan keuangan tidak menggantikan bukti penggunaan informasi kinerja. Rujukan: [Permen PAN-RB 88/2021 Lampiran I. B dan III. B.1; cetak/PDF 8,20-24](https://peraturan.bpk.go.id/Download/196187/Permen%20PANRB%20No.%2088%20Tahun%202021.pdf#page=8)",
+    "sourceRef": "[Permen PAN-RB 88/2021 Lampiran I. B dan III. B.1; cetak/PDF 8,20-24](https://peraturan.bpk.go.id/Download/196187/Permen%20PANRB%20No.%2088%20Tahun%202021.pdf#page=8)",
+    "sourceAnchors": [
+      "[Permen PAN-RB 88/2021 Lampiran I. B dan III. B.1; cetak/PDF 8,20-24](https://peraturan.bpk.go.id/Download/196187/Permen%20PANRB%20No.%2088%20Tahun%202021.pdf#page=8)"
+    ]
+  },
+  {
+    "id": "akk203-uas-tm10-01",
+    "tm": 10,
+    "topic": "APIP",
+    "skill": "Analisis dasar, mekanisme dan batas penerapan",
+    "difficulty": "medium",
+    "q": "APIP: bentuk kegiatan pengawasan intern menurut PP 60?",
+    "options": [
+      "Opini WTP bagi semua warga dan penerima layanan",
+      "Penyusunan putusan pidana bagi semua program",
+      "Audit, reviu, evaluasi, pemantauan dan lainnya",
+      "Penggantian seluruh tanggung jawab pimpinan"
+    ],
+    "answer": 2,
+    "explanation": "Pasal 48 menjelaskan lima bentuk kegiatan. Opini eksternal, putusan pidana dan pemindahan tanggung jawab bukan klasifikasi pengawasan intern tersebut. Rujukan: [PP 60/2008 Ps.2-3,47-54; cetak/PDF 3-4,21-25](https://peraturan.go.id/files/pp60-2008.pdf#page=3)",
+    "sourceRef": "[PP 60/2008 Ps.2-3,47-54; cetak/PDF 3-4,21-25](https://peraturan.go.id/files/pp60-2008.pdf#page=3)",
+    "sourceAnchors": [
+      "[PP 60/2008 Ps.2-3,47-54; cetak/PDF 3-4,21-25](https://peraturan.go.id/files/pp60-2008.pdf#page=3)"
+    ]
+  },
+  {
+    "id": "akk203-uas-tm10-02",
+    "tm": 10,
+    "topic": "BPK",
+    "skill": "Analisis dasar, mekanisme dan batas penerapan",
+    "difficulty": "medium",
+    "q": "BPK: siapa menentukan objek, waktu dan metode pemeriksaan?",
+    "options": [
+      "Pejabat objek secara mutlak tanpa peran BPK",
+      "Donor yayasan untuk seluruh anggaran negara",
+      "Penyedia aplikasi karena data ada dalam sistem",
+      "BPK secara bebas dan mandiri sesuai UU 15/2004"
+    ],
+    "answer": 3,
+    "explanation": "Pasal 6 memberi kemandirian kepada BPK. Objek, donor, dan penyedia sistem dapat memberi informasi sesuai kebutuhan, tetapi tidak mengambil alih kewenangan penentuan pemeriksaan. Rujukan: [UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28](https://peraturan.bpk.go.id/Details/40509/uu-no-15-tahun-2004)",
+    "sourceRef": "[UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28](https://peraturan.bpk.go.id/Details/40509/uu-no-15-tahun-2004)",
+    "sourceAnchors": [
+      "[UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28](https://peraturan.bpk.go.id/Details/40509/uu-no-15-tahun-2004)"
+    ]
+  },
+  {
+    "id": "akk203-uas-tm10-03",
+    "tm": 10,
+    "topic": "Jenis pemeriksaan",
+    "skill": "Analisis dasar, mekanisme dan batas penerapan",
+    "difficulty": "medium",
+    "q": "Jenis pemeriksaan: menilai ekonomi dan hasil program termasuk?",
+    "options": [
+      "Pemeriksaan kinerja dengan kriteria yang relevan",
+      "Pemeriksaan keuangan untuk opini semua layanan",
+      "Audit dana kampanye untuk seluruh kementerian",
+      "Jurnal konsolidasi untuk mengubah hasil program"
+    ],
+    "answer": 0,
+    "explanation": "Pemeriksaan kinerja memeriksa aspek 3 E. Opini LK tidak otomatis menjawab hasil program; kampanye berbeda lingkup, sedangkan jurnal adalah proses akuntansi. Rujukan: [UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28](https://peraturan.bpk.go.id/Details/40509/uu-no-15-tahun-2004) [Peraturan BPK 1/2017 Ps.3-5 dan KK par.14,18,21-42; cetak 4-5,5-13 KK; PDF 4-5,17-25](https://peraturan.bpk.go.id/Download/20433/Peraturan%20BPK%20Nomor%201%20Tahun%202017.pdf)",
+    "sourceRef": "[UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28](https://peraturan.bpk.go.id/Details/40509/uu-no-15-tahun-2004) [Peraturan BPK 1/2017 Ps.3-5 dan KK par.14,18,21-42; cetak 4-5,5-13 KK; PDF 4-5,17-25](https://peraturan.bpk.go.id/Download/20433/Peraturan%20BPK%20Nomor%201%20Tahun%202017.pdf)",
+    "sourceAnchors": [
+      "[UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28](https://peraturan.bpk.go.id/Details/40509/uu-no-15-tahun-2004) [Peraturan BPK 1/2017 Ps.3-5 dan KK par.14,18,21-42; cetak 4-5,5-13 KK; PDF 4-5,17-25](https://peraturan.bpk.go.id/Download/20433/Peraturan%20BPK%20Nomor%201%20Tahun%202017.pdf)"
+    ]
+  },
+  {
+    "id": "akk203-uas-tm10-04",
+    "tm": 10,
+    "topic": "Bukti",
+    "skill": "Analisis dasar, mekanisme dan batas penerapan",
+    "difficulty": "medium",
+    "q": "Bukti: apa beda kecukupan dan ketepatan?",
+    "options": [
+      "Kecukupan mutu; ketepatan hanya jumlah salinan",
+      "Kecukupan jumlah; ketepatan mutu dan relevansi",
+      "Kecukupan opini; ketepatan hanya serapan biaya",
+      "Kecukupan aplikasi; ketepatan tanggal pengadaan"
+    ],
+    "answer": 1,
+    "explanation": "KK par 34-36 membedakan kuantitas dengan kualitas bukti. Opsi terbalik menukar definisi. Opini, serapan, aplikasi atau tanggal tunggal tidak menggantikan kedua dimensi penilaian bukti. Rujukan: [Peraturan BPK 1/2017 Ps.3-5 dan KK par.14,18,21-42; cetak 4-5,5-13 KK; PDF 4-5,17-25](https://peraturan.bpk.go.id/Download/20433/Peraturan%20BPK%20Nomor%201%20Tahun%202017.pdf)",
+    "sourceRef": "[Peraturan BPK 1/2017 Ps.3-5 dan KK par.14,18,21-42; cetak 4-5,5-13 KK; PDF 4-5,17-25](https://peraturan.bpk.go.id/Download/20433/Peraturan%20BPK%20Nomor%201%20Tahun%202017.pdf)",
+    "sourceAnchors": [
+      "[Peraturan BPK 1/2017 Ps.3-5 dan KK par.14,18,21-42; cetak 4-5,5-13 KK; PDF 4-5,17-25](https://peraturan.bpk.go.id/Download/20433/Peraturan%20BPK%20Nomor%201%20Tahun%202017.pdf)"
+    ]
+  },
+  {
+    "id": "akk203-uas-tm10-05",
+    "tm": 10,
+    "topic": "Opini WTP",
+    "skill": "Analisis dasar, mekanisme dan batas penerapan",
+    "difficulty": "medium",
+    "q": "Opini WTP: kesimpulan yang paling tepat?",
+    "options": [
+      "Semua transaksi pasti tanpa kecurangan",
+      "Seluruh program pasti mencapai hasil",
+      "Kewajaran LK menurut kriteria pemeriksaan",
+      "Seluruh rekomendasi BPK pasti selesai"
+    ],
+    "answer": 2,
+    "explanation": "Opini menjawab kewajaran informasi LK. Tiga alternatif mengubah opini menjadi jaminan fraud, efektivitas atau tindak lanjut yang memerlukan bukti terpisah. Rujukan: [UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28](https://peraturan.bpk.go.id/Details/40509/uu-no-15-tahun-2004)",
+    "sourceRef": "[UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28](https://peraturan.bpk.go.id/Details/40509/uu-no-15-tahun-2004)",
+    "sourceAnchors": [
+      "[UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28](https://peraturan.bpk.go.id/Details/40509/uu-no-15-tahun-2004)"
+    ]
+  },
+  {
+    "id": "akk203-uas-tm10-06",
+    "tm": 10,
+    "topic": "Latihan buatan",
+    "skill": "Analisis dasar, mekanisme dan batas penerapan",
+    "difficulty": "advanced",
+    "q": "Latihan buatan: dokumen aset hilang, bukti alternatif belum diuji. Keputusan?",
+    "options": [
+      "Langsung tetapkandisclaimer dari satu dokumen",
+      "Langsung tetapkan WTP karena aset terlihat",
+      "Hapus aset seluruhnya supaya audit selesai",
+      "Uji bukti alternatif dan dampak sebelum opini"
+    ],
+    "answer": 3,
+    "explanation": "Perlu bukti cukup dan tepat beserta penilaian materialitas dan cakupan. Disclaimer dan WTP otomatis melompati analisis. Penghapusan aset tanpa dasar juga dapat menciptakan salah saji. Rujukan: [UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28](https://peraturan.bpk.go.id/Details/40509/uu-no-15-tahun-2004) [Peraturan BPK 1/2017 Ps.3-5 dan KK par.14,18,21-42; cetak 4-5,5-13 KK; PDF 4-5,17-25](https://peraturan.bpk.go.id/Download/20433/Peraturan%20BPK%20Nomor%201%20Tahun%202017.pdf)",
+    "sourceRef": "[UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28](https://peraturan.bpk.go.id/Details/40509/uu-no-15-tahun-2004) [Peraturan BPK 1/2017 Ps.3-5 dan KK par.14,18,21-42; cetak 4-5,5-13 KK; PDF 4-5,17-25](https://peraturan.bpk.go.id/Download/20433/Peraturan%20BPK%20Nomor%201%20Tahun%202017.pdf)",
+    "sourceAnchors": [
+      "[UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28](https://peraturan.bpk.go.id/Details/40509/uu-no-15-tahun-2004) [Peraturan BPK 1/2017 Ps.3-5 dan KK par.14,18,21-42; cetak 4-5,5-13 KK; PDF 4-5,17-25](https://peraturan.bpk.go.id/Download/20433/Peraturan%20BPK%20Nomor%201%20Tahun%202017.pdf)"
+    ]
+  },
+  {
+    "id": "akk203-uas-tm10-07",
+    "tm": 10,
+    "topic": "Tindak lanjut",
+    "skill": "Analisis dasar, mekanisme dan batas penerapan",
+    "difficulty": "medium",
+    "q": "Tindak lanjut: 60 hari pada UU 15/2004 melekat pada apa?",
+    "options": [
+      "Jawaban atau penjelasan sejak LHP diterima",
+      "Jaminan seluruh rekomendasi selesai mutlak",
+      "Batas penerbitan semua laporan keuangan",
+      "Batas semua proyek fisik mulai dibangun"
+    ],
+    "answer": 0,
+    "explanation": "Pasal 20(3) menempatkan tenggat pada jawaban/penjelasan. Kewajiban melaksanakan tetap ada dan dipantau. Alternatif menyamakan tenggat dengan hasil final atau pekerjaan yang tidak diatur pasal itu. Rujukan: [UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28](https://peraturan.bpk.go.id/Details/40509/uu-no-15-tahun-2004)",
+    "sourceRef": "[UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28](https://peraturan.bpk.go.id/Details/40509/uu-no-15-tahun-2004)",
+    "sourceAnchors": [
+      "[UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28](https://peraturan.bpk.go.id/Details/40509/uu-no-15-tahun-2004)"
+    ]
+  },
+  {
+    "id": "akk203-uas-tm10-08",
+    "tm": 10,
+    "topic": "SPKN",
+    "skill": "Analisis dasar, mekanisme dan batas penerapan",
+    "difficulty": "medium",
+    "q": "SPKN: pada 14 Oktober 2026, bagaimana membaca aturan 2026?",
+    "options": [
+      "Langsung mengganti 2017 sejak 10 April 2026",
+      "Diundangkan, mulai berlaku 10 April 2028",
+      "Berlaku 2025 karena sebelum tahun akademik",
+      "Tidak pernah berlaku karena standar lama ada"
+    ],
+    "answer": 1,
+    "explanation": "Pasal 9 memberi jeda dua tahun sejak 10 April 2026. Pencabutan 2017 terjadi saat mulai berlaku. Alternatif mengabaikan jeda atau menyimpulkan standar baru tidak akan berlaku. Rujukan: [Peraturan BPK 1/2026 Ps.7-9; cetak/PDF 3-4; diundangkan 10 April 2026, berlaku 10 April 2028](https://peraturan.bpk.go.id/Download/411430/Salinan%20PBPK%201%20Tahun%202026.pdf#page=3)",
+    "sourceRef": "[Peraturan BPK 1/2026 Ps.7-9; cetak/PDF 3-4; diundangkan 10 April 2026, berlaku 10 April 2028](https://peraturan.bpk.go.id/Download/411430/Salinan%20PBPK%201%20Tahun%202026.pdf#page=3)",
+    "sourceAnchors": [
+      "[Peraturan BPK 1/2026 Ps.7-9; cetak/PDF 3-4; diundangkan 10 April 2026, berlaku 10 April 2028](https://peraturan.bpk.go.id/Download/411430/Salinan%20PBPK%201%20Tahun%202026.pdf#page=3)"
+    ]
+  },
+  {
+    "id": "akk203-uas-tm10-09",
+    "tm": 10,
+    "topic": "PDTT",
+    "skill": "Analisis dasar, mekanisme dan batas penerapan",
+    "difficulty": "medium",
+    "q": "PDTT: apakah selalu merupakan investigasi pidana?",
+    "options": [
+      "Ya; semua PDTT selalu menghasilkan putusan",
+      "Ya; semua PDTT menggantikan opini tahunan",
+      "Tidak; tujuan khusus dapat berupa kepatuhan",
+      "Tidak;PDTT hanya jurnal penyusutan aset"
+    ],
+    "answer": 2,
+    "explanation": "KK 2017 menyebut kepatuhan dan investigatif sebagai bentuk PDTT. Pemeriksa memberi kesimpulan sesuai tujuan, tidak otomatis putusan pidana atau pengganti opini. Jurnal penyusutan bukan jenis penugasan PDTT. Rujukan: [Peraturan BPK 1/2017 Ps.3-5 dan KK par.14,18,21-42; cetak 4-5,5-13 KK; PDF 4-5,17-25](https://peraturan.bpk.go.id/Download/20433/Peraturan%20BPK%20Nomor%201%20Tahun%202017.pdf)",
+    "sourceRef": "[Peraturan BPK 1/2017 Ps.3-5 dan KK par.14,18,21-42; cetak 4-5,5-13 KK; PDF 4-5,17-25](https://peraturan.bpk.go.id/Download/20433/Peraturan%20BPK%20Nomor%201%20Tahun%202017.pdf)",
+    "sourceAnchors": [
+      "[Peraturan BPK 1/2017 Ps.3-5 dan KK par.14,18,21-42; cetak 4-5,5-13 KK; PDF 4-5,17-25](https://peraturan.bpk.go.id/Download/20433/Peraturan%20BPK%20Nomor%201%20Tahun%202017.pdf)"
+    ]
+  },
+  {
+    "id": "akk203-uas-tm11-01",
+    "tm": 11,
+    "topic": "LSM",
+    "skill": "Analisis dasar, mekanisme dan batas penerapan",
+    "difficulty": "medium",
+    "q": "LSM: data apa diperlukan sebelum memilih kewajiban badan?",
+    "options": [
+      "Sebutan LSM saja tanpa dokumen badan hukum",
+      "Jumlah pengikut media sosial dan logo LSM",
+      "Nama aplikasi yang digunakan mencatat kas",
+      "Bentuk hukum, kegiatan, periode dan kerangka SAK"
+    ],
+    "answer": 3,
+    "explanation": "LSM adalah label kegiatan; kewajiban badan memerlukan bentuk hukum dan kerangka. Logo, pengikut dan aplikasi tidak menentukan standar maupun kewajiban laporan yayasan. Rujukan: [UU 16/2001 Ps.48-50; cetak/PDF 15-16; UU 28/2004 Ps. I angka 16 perubahanPs.52; cetak/PDF 9-10](https://peraturan.bpk.go.id/Download/30439/UU%20Nomor%2028%20Tahun%202004.pdf#page=15) [IAI DE ISAK 35(2018) par.7-12, CI 01-04; cetak 35.1-35.5, PDF 15-19; contoh historis, bukan teks standar final](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=15)",
+    "sourceRef": "[UU 16/2001 Ps.48-50; cetak/PDF 15-16; UU 28/2004 Ps. I angka 16 perubahanPs.52; cetak/PDF 9-10](https://peraturan.bpk.go.id/Download/30439/UU%20Nomor%2028%20Tahun%202004.pdf#page=15) [IAI DE ISAK 35(2018) par.7-12, CI 01-04; cetak 35.1-35.5, PDF 15-19; contoh historis, bukan teks standar final](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=15)",
+    "sourceAnchors": [
+      "[UU 16/2001 Ps.48-50; cetak/PDF 15-16; UU 28/2004 Ps. I angka 16 perubahanPs.52; cetak/PDF 9-10](https://peraturan.bpk.go.id/Download/30439/UU%20Nomor%2028%20Tahun%202004.pdf#page=15) [IAI DE ISAK 35(2018) par.7-12, CI 01-04; cetak 35.1-35.5, PDF 15-19; contoh historis, bukan teks standar final](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=15)"
+    ]
+  },
+  {
+    "id": "akk203-uas-tm11-02",
+    "tm": 11,
+    "topic": "ISAK 335",
+    "skill": "Analisis dasar, mekanisme dan batas penerapan",
+    "difficulty": "medium",
+    "q": "ISAK 335: fungsi yang dipelajari dalam contoh historis?",
+    "options": [
+      "Penyesuaian penyajian dan deskripsi laporan",
+      "Seluruh pengakuan donasi tanpa standar lain",
+      "Seluruh pengukuran aset tanpa kebijakan lain",
+      "Penghapusan kewajiban audit seluruh yayasan"
+    ],
+    "answer": 0,
+    "explanation": "Interpretasi berfokus penyajian. Pengakuan/pengukuran memerlukan standar transaksi terkait; audit berasal regulasi atau perikatan. Opsi lain memperluas lingkup tanpa dasar. Rujukan: [IAI DE ISAK 35(2018) par.7-12, CI 01-04; cetak 35.1-35.5, PDF 15-19; contoh historis, bukan teks standar final](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=15)",
+    "sourceRef": "[IAI DE ISAK 35(2018) par.7-12, CI 01-04; cetak 35.1-35.5, PDF 15-19; contoh historis, bukan teks standar final](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=15)",
+    "sourceAnchors": [
+      "[IAI DE ISAK 35(2018) par.7-12, CI 01-04; cetak 35.1-35.5, PDF 15-19; contoh historis, bukan teks standar final](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=15)"
+    ]
+  },
+  {
+    "id": "akk203-uas-tm11-03",
+    "tm": 11,
+    "topic": "Versi dokumen",
+    "skill": "Analisis dasar, mekanisme dan batas penerapan",
+    "difficulty": "medium",
+    "q": "Versi dokumen: DE ISAK 35 tahun 2018 merupakan?",
+    "options": [
+      "Salinan lengkap amendemen ISAK 335 tahun 2026",
+      "Draf eksposur historis, perlu teks final terkini",
+      "Peraturan pemerintah untuk semua rumah sakit",
+      "Standar audit BPK efektif sejak April 2028"
+    ],
+    "answer": 1,
+    "explanation": "DE merupakan draf dengan contoh yang tidak mencakup seluruh SAK. Penomoran dan amendemen terkini tidak mengubah file 2018 menjadi final. Opsi pemerintah/audit salah jenis dokumen. Rujukan: [IAI DE ISAK 35(2018) par.7-12, CI 01-04; cetak 35.1-35.5, PDF 15-19; contoh historis, bukan teks standar final](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=15) [IAI penomoran efektif 1 Januari 2024: ISAK 35→335; IAI pengesahan amendemen 3 Juni 2026; PSAK 118 efektif 1 Januari 2027 menurut pengumuman 18 Juni 2025](https://web.iaiglobal.or.id/Berita-IAI/detail/pengesahan_amendemen_isak_335)",
+    "sourceRef": "[IAI DE ISAK 35(2018) par.7-12, CI 01-04; cetak 35.1-35.5, PDF 15-19; contoh historis, bukan teks standar final](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=15) [IAI penomoran efektif 1 Januari 2024: ISAK 35→335; IAI pengesahan amendemen 3 Juni 2026; PSAK 118 efektif 1 Januari 2027 menurut pengumuman 18 Juni 2025](https://web.iaiglobal.or.id/Berita-IAI/detail/pengesahan_amendemen_isak_335)",
+    "sourceAnchors": [
+      "[IAI DE ISAK 35(2018) par.7-12, CI 01-04; cetak 35.1-35.5, PDF 15-19; contoh historis, bukan teks standar final](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=15) [IAI penomoran efektif 1 Januari 2024: ISAK 35→335; IAI pengesahan amendemen 3 Juni 2026; PSAK 118 efektif 1 Januari 2027 menurut pengumuman 18 Juni 2025](https://web.iaiglobal.or.id/Berita-IAI/detail/pengesahan_amendemen_isak_335)"
+    ]
+  },
+  {
+    "id": "akk203-uas-tm11-04",
+    "tm": 11,
+    "topic": "Aset neto",
+    "skill": "Analisis dasar, mekanisme dan batas penerapan",
+    "difficulty": "medium",
+    "q": "Aset neto: pembatasan dalam kelas with restrictions berasal dari?",
+    "options": [
+      "Semua keputusan internal membuat danacadangan",
+      "Seluruh kas kecil tanpa memperhatikan donor",
+      "Pemberi sumber daya menurut syarat tujuan/waktu",
+      "Seluruh bebanadministrasi pada akhirperiode"
+    ],
+    "answer": 2,
+    "explanation": "Kelas contoh mengacu pembatasan donor. Dana cadangan internal, kas kecil dan beban tidak otomatis menjadi kelas tersebut. Kontrak tetap perlu dibaca untuk pengakuan transaksi. Rujukan: [IAI DE ISAK 35(2018) contoh posisi keuangan/penghasilan/perubahan aset neto/arus kas/Ca LK; cetak 35.6-35.19, PDF 20-33; historis](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=20)",
+    "sourceRef": "[IAI DE ISAK 35(2018) contoh posisi keuangan/penghasilan/perubahan aset neto/arus kas/Ca LK; cetak 35.6-35.19, PDF 20-33; historis](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=20)",
+    "sourceAnchors": [
+      "[IAI DE ISAK 35(2018) contoh posisi keuangan/penghasilan/perubahan aset neto/arus kas/Ca LK; cetak 35.6-35.19, PDF 20-33; historis](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=20)"
+    ]
+  },
+  {
+    "id": "akk203-uas-tm11-05",
+    "tm": 11,
+    "topic": "Latihan buatan",
+    "skill": "Analisis dasar, mekanisme dan batas penerapan",
+    "difficulty": "advanced",
+    "q": "Latihan buatan: reklasifikasi 60 antar kelas memberi perubahan total?",
+    "options": [
+      "Naik 60 karena dianggap sumbanganbaru",
+      "Turun 60 karena semua reklasifikasi adalahbeban",
+      "Naik 120 karena kedua kelas ditambahkan",
+      "Nol; satu kelas naik dan kelas lain turun"
+    ],
+    "answer": 3,
+    "explanation": "Reklasifikasi+60 dan-60 berjumlahnol. Sumbanganbaru, bebanbaru atau penjumlahan kedua kenaikan akan menduplikasi perubahan. aset neto total tetap mengikuti penghasilan dikurangi beban. Rujukan: [IAI DE ISAK 35(2018) contoh posisi keuangan/penghasilan/perubahan aset neto/arus kas/Ca LK; cetak 35.6-35.19, PDF 20-33; historis](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=20)",
+    "sourceRef": "[IAI DE ISAK 35(2018) contoh posisi keuangan/penghasilan/perubahan aset neto/arus kas/Ca LK; cetak 35.6-35.19, PDF 20-33; historis](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=20)",
+    "sourceAnchors": [
+      "[IAI DE ISAK 35(2018) contoh posisi keuangan/penghasilan/perubahan aset neto/arus kas/Ca LK; cetak 35.6-35.19, PDF 20-33; historis](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=20)"
+    ]
+  },
+  {
+    "id": "akk203-uas-tm11-06",
+    "tm": 11,
+    "topic": "Latihan buatan",
+    "skill": "Analisis dasar, mekanisme dan batas penerapan",
+    "difficulty": "advanced",
+    "q": "Latihan buatan: donasi 300, beban 180 dan peralatan 50. kas akhir?",
+    "options": [
+      "70 juta Rp pada asumsi semua transaksi tunai",
+      "120 juta Rp dengan peralatan diabaikan",
+      "170 juta Rp dengan biaya peralatan ditambah",
+      "250 juta Rp dengan bebanoperasi diabaikan"
+    ],
+    "answer": 0,
+    "explanation": "Kas=300-180-50=70 juta Rp.120 adalahsurplus sebelum pembelian aset;170 menambah pengeluaran;250 mengabaikan beban. Peralatan masih aset 50 pada asumsi yang ditetapkan. Rujukan: [IAI DE ISAK 35(2018) contoh posisi keuangan/penghasilan/perubahan aset neto/arus kas/Ca LK; cetak 35.6-35.19, PDF 20-33; historis](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=20)",
+    "sourceRef": "[IAI DE ISAK 35(2018) contoh posisi keuangan/penghasilan/perubahan aset neto/arus kas/Ca LK; cetak 35.6-35.19, PDF 20-33; historis](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=20)",
+    "sourceAnchors": [
+      "[IAI DE ISAK 35(2018) contoh posisi keuangan/penghasilan/perubahan aset neto/arus kas/Ca LK; cetak 35.6-35.19, PDF 20-33; historis](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=20)"
+    ]
+  },
+  {
+    "id": "akk203-uas-tm11-07",
+    "tm": 11,
+    "topic": "Latihan buatan",
+    "skill": "Analisis dasar, mekanisme dan batas penerapan",
+    "difficulty": "advanced",
+    "q": "Latihan buatan: tanpa pembatasan 200, donor 100, beban 180, pembebasan 60. Kelas akhir?",
+    "options": [
+      "Tanpa 20, dengan 100, total 120 juta Rp",
+      "Tanpa 80, dengan 40, total 120 juta Rp",
+      "Tanpa 140, dengan 100, total 240 juta Rp",
+      "Tanpa 80, dengan 100, total 180 juta Rp"
+    ],
+    "answer": 1,
+    "explanation": "Tanpa=200+60-180=80;dengan=100-60=40;total 120. Opsi 20/100 mengabaikan pembebasan;240 menduplikasi dan 180 tidak mengurangi kelasdonor. Rujukan: [IAI DE ISAK 35(2018) contoh posisi keuangan/penghasilan/perubahan aset neto/arus kas/Ca LK; cetak 35.6-35.19, PDF 20-33; historis](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=20)",
+    "sourceRef": "[IAI DE ISAK 35(2018) contoh posisi keuangan/penghasilan/perubahan aset neto/arus kas/Ca LK; cetak 35.6-35.19, PDF 20-33; historis](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=20)",
+    "sourceAnchors": [
+      "[IAI DE ISAK 35(2018) contoh posisi keuangan/penghasilan/perubahan aset neto/arus kas/Ca LK; cetak 35.6-35.19, PDF 20-33; historis](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=20)"
+    ]
+  },
+  {
+    "id": "akk203-uas-tm11-08",
+    "tm": 11,
+    "topic": "Audit yayasan",
+    "skill": "Analisis dasar, mekanisme dan batas penerapan",
+    "difficulty": "medium",
+    "q": "Audit yayasan: bantuan 400 juta, kekayaan di luar wakaf 25 miliar. Keputusan?",
+    "options": [
+      "Ambang audit belum terpenuhi karena bantuan kecil",
+      "Ambang audit harus memenuhi kedua syarat bersama",
+      "Ambang audit terpenuhi melalui kekayaan yayasan",
+      "Ambang audit digantikan oleh jumlah transaksi kas"
+    ],
+    "answer": 2,
+    "explanation": "Pasal 52 menggunakan atau. Kekayaan 25 miliar melampaui 20 miliar, meskipun bantuan di bawah 500 juta. Kedua syarat bersama dan jumlah transaksi bukan ketentuan ambang tersebut. Rujukan: [UU 16/2001 Ps.48-50; cetak/PDF 15-16; UU 28/2004 Ps. I angka 16 perubahanPs.52; cetak/PDF 9-10](https://peraturan.bpk.go.id/Download/30439/UU%20Nomor%2028%20Tahun%202004.pdf#page=15)",
+    "sourceRef": "[UU 16/2001 Ps.48-50; cetak/PDF 15-16; UU 28/2004 Ps. I angka 16 perubahanPs.52; cetak/PDF 9-10](https://peraturan.bpk.go.id/Download/30439/UU%20Nomor%2028%20Tahun%202004.pdf#page=15)",
+    "sourceAnchors": [
+      "[UU 16/2001 Ps.48-50; cetak/PDF 15-16; UU 28/2004 Ps. I angka 16 perubahanPs.52; cetak/PDF 9-10](https://peraturan.bpk.go.id/Download/30439/UU%20Nomor%2028%20Tahun%202004.pdf#page=15)"
+    ]
+  },
+  {
+    "id": "akk203-uas-tm11-09",
+    "tm": 11,
+    "topic": "Pembatasan dan pengakuan",
+    "skill": "Analisis dasar, mekanisme dan batas penerapan",
+    "difficulty": "medium",
+    "q": "Pembatasan dan pengakuan: dana wajib kembali jika syarat gagal. Langkah?",
+    "options": [
+      "Selalu akui penghasilan hanya dari labeldonasi",
+      "Selalu hapus seluruh kelas aset neto pembatasan",
+      "Gunakan DE 2018 sebagai semua standartransaksi",
+      "Baca kontrak dan standar pengakuan yang relevan"
+    ],
+    "answer": 3,
+    "explanation": "Syarat pengembalian perlu analisis kontrak dan standar pengakuan. Labeldonasi serta format penyajian tidak menyelesaikan kemungkinan liabilitas. Menghapuskelas atau memperluas DE tidak didukung sumber. Rujukan: [IAI DE ISAK 35(2018) par.7-12, CI 01-04; cetak 35.1-35.5, PDF 15-19; contoh historis, bukan teks standar final](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=15) [IAI DE ISAK 35(2018) contoh posisi keuangan/penghasilan/perubahan aset neto/arus kas/Ca LK; cetak 35.6-35.19, PDF 20-33; historis](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=20)",
+    "sourceRef": "[IAI DE ISAK 35(2018) par.7-12, CI 01-04; cetak 35.1-35.5, PDF 15-19; contoh historis, bukan teks standar final](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=15) [IAI DE ISAK 35(2018) contoh posisi keuangan/penghasilan/perubahan aset neto/arus kas/Ca LK; cetak 35.6-35.19, PDF 20-33; historis](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=20)",
+    "sourceAnchors": [
+      "[IAI DE ISAK 35(2018) par.7-12, CI 01-04; cetak 35.1-35.5, PDF 15-19; contoh historis, bukan teks standar final](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=15) [IAI DE ISAK 35(2018) contoh posisi keuangan/penghasilan/perubahan aset neto/arus kas/Ca LK; cetak 35.6-35.19, PDF 20-33; historis](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=20)"
+    ]
+  },
+  {
+    "id": "akk203-uas-tm12-01",
     "tm": 12,
-    "topic": "Akuntansi Hibah Terikat LSM (Donor Grants)",
+    "topic": "Sumber dana",
+    "skill": "Analisis dasar, mekanisme dan batas penerapan",
     "difficulty": "medium",
-    "q": "Lembaga Swadaya Masyarakat (LSM) menerima dana hibah donor luar negeri USD 100.000 yang secara spesifik diwajibkan untuk program konservasi mangrove selama 2 tahun. Dana kas tersebut dicatat oleh LSM sebagai...",
+    "q": "Sumber dana: kombinasi menurut Pasal 34?",
     "options": [
-      "Pendapatan jasa komersial tanpa pembatasan",
-      "Penerimaan sumbangan aset neto dengan pembatasan temporer (restricted fund)",
-      "Utang wesel bayar jangka panjang",
-      "Ekuitas pemilik yang dapat dibagikan"
+      "Iuran, sumbangan sah dan bantuan APBN/APBD",
+      "Hanya bantuan APBN tanpa iuran atau donasi",
+      "Hanya donasi internasional tanpa bukti donor",
+      "Hanya kas pinjaman yang diakui sebagai iuran"
     ],
-    "answer": 1,
-    "explanation": "Dana hibah donor yang terikat tujuan spesifik dibukukan sebagai Penerimaan Aset Neto Dengan Pembatasan, dan hanya direklasifikasi menjadi tanpa pembatasan seiring dengan realisasi belanja proyek konservasi tersebut."
+    "answer": 0,
+    "explanation": "Pasal 34 menyebut tiga kelompok sumber. Alternatif menghilangkan sumber atau menganggap transaksi pinjaman sebagai iuran tanpa dasar. Keabsahan dan penggunaan tetap harus ditelusuri. Rujukan: [UU 2/2008 sebagaimana diubah UU 2/2011 Ps.34,34 A,35,39; cetak/PDF 10-12 UU 2/2011](https://peraturan.bpk.go.id/Download/224586/UU%20No.%202%20Tahun%202011.pdf)",
+    "sourceRef": "[UU 2/2008 sebagaimana diubah UU 2/2011 Ps.34,34 A,35,39; cetak/PDF 10-12 UU 2/2011](https://peraturan.bpk.go.id/Download/224586/UU%20No.%202%20Tahun%202011.pdf)",
+    "sourceAnchors": [
+      "[UU 2/2008 sebagaimana diubah UU 2/2011 Ps.34,34 A,35,39; cetak/PDF 10-12 UU 2/2011](https://peraturan.bpk.go.id/Download/224586/UU%20No.%202%20Tahun%202011.pdf)"
+    ]
   },
   {
+    "id": "akk203-uas-tm12-02",
     "tm": 12,
-    "topic": "Larangan Sumber Sumbangan Parpol",
-    "difficulty": "basic",
-    "q": "Partai politik di Indonesia dilarang keras menerima sumbangan dana keuangan dari pihak...",
-    "options": [
-      "Anggota resmi partai yang memiliki KTA",
-      "Pemerintah asing, lembaga swasta asing, BUMN, BUMD, dan penyumbang anonim tanpa identitas jelas",
-      "Warga negara Indonesia perorangan yang sah",
-      "Perusahaan swasta nasional berbadan hukum Indonesia"
-    ],
-    "answer": 1,
-    "explanation": "UU Parpol melarang sumbangan dari pihak asing, BUMN/BUMD, dan penyumbang anonim guna mencegah pengaruh kepentingan luar dan penyalahgunaan aset milik negara dalam politik."
-  },
-  {
-    "tm": 13,
-    "topic": "Fleksibilitas BLU dan BLUD",
+    "topic": "Pelaporan",
+    "skill": "Analisis dasar, mekanisme dan batas penerapan",
     "difficulty": "medium",
-    "q": "Fleksibilitas utama pengelolaan keuangan yang diberikan pemerintah kepada instansi berstatus Badan Layanan Umum (BLU) dan BLUD adalah...",
+    "q": "Pelaporan: hubungan audit entitas dan LPJ bantuan?",
     "options": [
-      "Bebas dari kewajiban menyusun laporan keuangan dan audit",
-      "Dapat menggunakan langsung pendapatan jasa layanan operasionalnya tanpa harus menyetor terlebih dahulu ke Kas Negara / Kas Daerah",
-      "Diperbolehkan membagikan dividen kepada direksi dan pegawai",
-      "Bebas meminjam dana luar negeri tanpa izin Kementerian Keuangan"
+      "Audit BPK bantuan mengganti semua audit entitas",
+      "Audit akuntan publik entitas berbeda dari BPK bantuan",
+      "Audit akuntan publik menghapus seluruh LPJ bantuan",
+      "Audit kampanye mengganti seluruh laporan tahunan"
     ],
     "answer": 1,
-    "explanation": "Pola Pengelolaan Keuangan BLU/BLUD (PP 23/2005) memberikan fleksibilitas pengelolaan pendapatan langsung untuk belanja operasional, meningkatkan responsivitas layanan publik (misal RSUD dan PTN-BLU)."
+    "explanation": "Ps.39 dan 34 A memberi kewajiban serta ruang berbeda. Opsi lain menganggap satu audit menghapus audit/laporan lain tanpa dasar; kampanye juga mempunyai ruang pemilu tersendiri. Rujukan: [UU 2/2008 sebagaimana diubah UU 2/2011 Ps.34,34 A,35,39; cetak/PDF 10-12 UU 2/2011](https://peraturan.bpk.go.id/Download/224586/UU%20No.%202%20Tahun%202011.pdf)",
+    "sourceRef": "[UU 2/2008 sebagaimana diubah UU 2/2011 Ps.34,34 A,35,39; cetak/PDF 10-12 UU 2/2011](https://peraturan.bpk.go.id/Download/224586/UU%20No.%202%20Tahun%202011.pdf)",
+    "sourceAnchors": [
+      "[UU 2/2008 sebagaimana diubah UU 2/2011 Ps.34,34 A,35,39; cetak/PDF 10-12 UU 2/2011](https://peraturan.bpk.go.id/Download/224586/UU%20No.%202%20Tahun%202011.pdf)"
+    ]
   },
   {
-    "tm": 13,
-    "topic": "Rencana Bisnis dan Anggaran (RBA)",
+    "id": "akk203-uas-tm12-03",
+    "tm": 12,
+    "topic": "Sumbangan",
+    "skill": "Analisis dasar, mekanisme dan batas penerapan",
     "difficulty": "medium",
-    "q": "Dokumen perencanaan bisnis dan penganggaran tahunan yang disusun oleh satuan kerja BLU/BLUD dengan memadukan pendekatan anggaran kinerja dan praktik bisnis yang sehat disebut...",
+    "q": "Sumbangan: donor bukan anggota memberi 600 juta dua kali setahun. Akumulasi?",
     "options": [
-      "Rencana Kerja Anggaran Kementerian Lembaga (RKA-K/L)",
-      "Rencana Bisnis dan Anggaran (RBA)",
-      "Dokumen Pelaksanaan Anggaran (DPA)",
-      "Rencana Tata Ruang Wilayah (RTRW)"
+      "600 juta Rp karena setiap transfer berdiri sendiri",
+      "1,2 miliar Rp, selalu sah jika melalui rekening",
+      "1,2 miliar Rp, melebihi batas 1 miliar per orang",
+      "1,2 miliar Rp, memakai batas perusahaan 7,5 miliar"
     ],
-    "answer": 1,
-    "explanation": "RBA adalah dokumen rencana kerja dan penganggaran BLU yang berbasis unit cost dan aktivitas layanan bisnis, yang nantinya diintegrasikan ke dalam dokumen anggaran induk kementerian/daerah."
+    "answer": 2,
+    "explanation": "Akumulasi 600+600=1.200 juta=1,2 miliar. Batas orang nonanggota 1 miliar setahun. Rekening tidak mengubah batas, dan kategori perusahaan tidak dipakai bagi orang. Rujukan: [UU 2/2008 sebagaimana diubah UU 2/2011 Ps.34,34 A,35,39; cetak/PDF 10-12 UU 2/2011](https://peraturan.bpk.go.id/Download/224586/UU%20No.%202%20Tahun%202011.pdf)",
+    "sourceRef": "[UU 2/2008 sebagaimana diubah UU 2/2011 Ps.34,34 A,35,39; cetak/PDF 10-12 UU 2/2011](https://peraturan.bpk.go.id/Download/224586/UU%20No.%202%20Tahun%202011.pdf)",
+    "sourceAnchors": [
+      "[UU 2/2008 sebagaimana diubah UU 2/2011 Ps.34,34 A,35,39; cetak/PDF 10-12 UU 2/2011](https://peraturan.bpk.go.id/Download/224586/UU%20No.%202%20Tahun%202011.pdf)"
+    ]
   },
   {
-    "tm": 13,
-    "topic": "Standar Akuntansi BLU (PSAP 13)",
+    "id": "akk203-uas-tm12-04",
+    "tm": 12,
+    "topic": "Latihan buatan",
+    "skill": "Analisis dasar, mekanisme dan batas penerapan",
     "difficulty": "advanced",
-    "q": "Standar Akuntansi Pemerintahan yang mengatur secara khusus penyajian laporan keuangan Badan Layanan Umum (BLU) dan konsolidasinya pada entitas akuntansi kementerian/lembaga/pemda adalah...",
+    "q": "Latihan buatan: 50.000 suara, kursi kabupaten, tarif dasar 1.500. Bantuan?",
     "options": [
-      "PSAP 01 tentang Penyajian Laporan Keuangan",
-      "PSAP 13 tentang Penyajian Laporan Keuangan Badan Layanan Umum",
-      "ISAK 35 tentang Organisasi Nonlaba",
-      "PSAK 71 tentang Instrumen Keuangan"
+      "Rp 60 juta seperti tarif tingkat provinsi",
+      "Rp 50 juta seperti tarif tingkat pusat",
+      "Rp 150 juta dari penghitungan ganda kursi",
+      "Rp 75 juta pada asumsi satu tahun penuh"
     ],
-    "answer": 1,
-    "explanation": "PSAP 13 mengatur pedoman khusus penyusunan laporan keuangan BLU yang mengombinasikan akuntansi akrual berorientasi layanan dengan kebutuhan konsolidasi ke Laporan Keuangan Pemerintah Pusat/Daerah."
+    "answer": 3,
+    "explanation": "50.000×1.500=Rp 75.000.000.60 juta memakai 1.200,50 juta memakai 1.000,150 juta menggandakan basis. Jumlah kursi menjadi syarat kelayakan tingkat, tidak faktor pengali tambahan pada latihan. Rujukan: [PP 5/2009 sebagaimana diubah PP 1/2018 Ps.5,9,16; cetak/PDF 2-4 PP 1/2018](https://peraturan.bpk.go.id/Download/76860/PP%20Nomor%201%20Tahun%202018.pdf#page=2)",
+    "sourceRef": "[PP 5/2009 sebagaimana diubah PP 1/2018 Ps.5,9,16; cetak/PDF 2-4 PP 1/2018](https://peraturan.bpk.go.id/Download/76860/PP%20Nomor%201%20Tahun%202018.pdf#page=2)",
+    "sourceAnchors": [
+      "[PP 5/2009 sebagaimana diubah PP 1/2018 Ps.5,9,16; cetak/PDF 2-4 PP 1/2018](https://peraturan.bpk.go.id/Download/76860/PP%20Nomor%201%20Tahun%202018.pdf#page=2)"
+    ]
   },
   {
-    "tm": 13,
-    "topic": "Ambang Batas Fleksibilitas Belanja RBA",
+    "id": "akk203-uas-tm12-05",
+    "tm": 12,
+    "topic": "Penggunaan bantuan",
+    "skill": "Analisis dasar, mekanisme dan batas penerapan",
+    "difficulty": "medium",
+    "q": "Penggunaan bantuan: makna Pasal 9 hasil PP 1/2018?",
+    "options": [
+      "Pendidikan politik diprioritaskan; sekretariat diizinkan",
+      "Seluruh bantuan wajib dipakai untuk kampanye pemilu",
+      "Persentase 60% ditetapkan langsung pada pasal itu",
+      "Seluruh bantuan bebas digunakan tanpa rincian"
+    ],
+    "answer": 0,
+    "explanation": "Pasal 9 mengatur prioritas pendidikan dan operasional sekretariat, tanpa angka 60% pada teks itu. Kampanye atau penggunaan bebas tidak sesuai ketentuan tersebut; persentase memerlukan dasar versi yang tepat. Rujukan: [PP 5/2009 sebagaimana diubah PP 1/2018 Ps.5,9,16; cetak/PDF 2-4 PP 1/2018](https://peraturan.bpk.go.id/Download/76860/PP%20Nomor%201%20Tahun%202018.pdf#page=2)",
+    "sourceRef": "[PP 5/2009 sebagaimana diubah PP 1/2018 Ps.5,9,16; cetak/PDF 2-4 PP 1/2018](https://peraturan.bpk.go.id/Download/76860/PP%20Nomor%201%20Tahun%202018.pdf#page=2)",
+    "sourceAnchors": [
+      "[PP 5/2009 sebagaimana diubah PP 1/2018 Ps.5,9,16; cetak/PDF 2-4 PP 1/2018](https://peraturan.bpk.go.id/Download/76860/PP%20Nomor%201%20Tahun%202018.pdf#page=2)"
+    ]
+  },
+  {
+    "id": "akk203-uas-tm12-06",
+    "tm": 12,
+    "topic": "Latihan buatan",
+    "skill": "Analisis dasar, mekanisme dan batas penerapan",
     "difficulty": "advanced",
-    "q": "Jika pendapatan operasional BLU melampaui target yang ditetapkan dalam RBA, BLU dapat melampaui pagu belanja operasionalnya sepanjang masih dalam...",
+    "q": "Latihan buatan: entitas kas akhir 50, bantuan 75 dibelanjakan 75. Sisa bantuan?",
     "options": [
-      "Persetujuan rapat umum pemegang saham",
-      "Ambang Batas Fleksibilitas (Flexibility Threshold) persentase belanja yang telah disetujui Menteri Keuangan/Kepala Daerah",
-      "Batas defisit APBN 3%",
-      "Jumlah modal awal pendirian rumah sakit"
+      "50 juta Rp karena seluruh kas milik bantuan",
+      "Nol pada rincian sumber yang diberikan",
+      "75 juta Rp karena pengeluaran tidak dicatat",
+      "100 juta Rp karena semua biaya ditambahkan"
     ],
     "answer": 1,
-    "explanation": "Ambang batas fleksibilitas adalah persentase toleransi kelebihan belanja di atas pagu DPA (misal fleksibilitas 10%) yang dapat dibelanjakan langsung jika pendapatan BLU meningkat melampaui target."
+    "explanation": "Sisa bantuan 75-75=0. Kas entitas 50 berasal dana lain pada asumsi. Menyamakan semua kas dengan bantuan, mengabaikan pengeluaran atau menambah biaya akan mencampur ruang laporan. Rujukan: [UU 2/2008 sebagaimana diubah UU 2/2011 Ps.34,34 A,35,39; cetak/PDF 10-12 UU 2/2011](https://peraturan.bpk.go.id/Download/224586/UU%20No.%202%20Tahun%202011.pdf) [Permendagri 36/2018 Ps.27-37 dan lampiran LPJ; cetak/PDF 18-22,31-34; dibaca bersama perubahan 78/2020](https://peraturan.go.id/files/bn630-2018.pdf#page=18)",
+    "sourceRef": "[UU 2/2008 sebagaimana diubah UU 2/2011 Ps.34,34 A,35,39; cetak/PDF 10-12 UU 2/2011](https://peraturan.bpk.go.id/Download/224586/UU%20No.%202%20Tahun%202011.pdf) [Permendagri 36/2018 Ps.27-37 dan lampiran LPJ; cetak/PDF 18-22,31-34; dibaca bersama perubahan 78/2020](https://peraturan.go.id/files/bn630-2018.pdf#page=18)",
+    "sourceAnchors": [
+      "[UU 2/2008 sebagaimana diubah UU 2/2011 Ps.34,34 A,35,39; cetak/PDF 10-12 UU 2/2011](https://peraturan.bpk.go.id/Download/224586/UU%20No.%202%20Tahun%202011.pdf) [Permendagri 36/2018 Ps.27-37 dan lampiran LPJ; cetak/PDF 18-22,31-34; dibaca bersama perubahan 78/2020](https://peraturan.go.id/files/bn630-2018.pdf#page=18)"
+    ]
   },
   {
+    "id": "akk203-uas-tm12-07",
+    "tm": 12,
+    "topic": "LPJ",
+    "skill": "Analisis dasar, mekanisme dan batas penerapan",
+    "difficulty": "medium",
+    "q": "LPJ: keseimbangan penerimaan dan belanja membuktikan apa?",
+    "options": [
+      "Seluruh kegiatan sudah pasti memenuhi peruntukan",
+      "Seluruh donor sudah pasti memenuhi batas tahunan",
+      "Ketepatan hitungan, kepatuhan perlu bukti tambahan",
+      "Seluruh audit entitas sudah otomatis selesai"
+    ],
+    "answer": 2,
+    "explanation": "Hitungan seimbang memeriksa aritmetika. Bukti kegiatan/peruntukan, akumulasi donor dan audit entitas merupakan pengujian terpisah yang tidak otomatis lulus dari total tersebut. Rujukan: [UU 2/2008 sebagaimana diubah UU 2/2011 Ps.34,34 A,35,39; cetak/PDF 10-12 UU 2/2011](https://peraturan.bpk.go.id/Download/224586/UU%20No.%202%20Tahun%202011.pdf) [Permendagri 36/2018 Ps.27-37 dan lampiran LPJ; cetak/PDF 18-22,31-34; dibaca bersama perubahan 78/2020](https://peraturan.go.id/files/bn630-2018.pdf#page=18)",
+    "sourceRef": "[UU 2/2008 sebagaimana diubah UU 2/2011 Ps.34,34 A,35,39; cetak/PDF 10-12 UU 2/2011](https://peraturan.bpk.go.id/Download/224586/UU%20No.%202%20Tahun%202011.pdf) [Permendagri 36/2018 Ps.27-37 dan lampiran LPJ; cetak/PDF 18-22,31-34; dibaca bersama perubahan 78/2020](https://peraturan.go.id/files/bn630-2018.pdf#page=18)",
+    "sourceAnchors": [
+      "[UU 2/2008 sebagaimana diubah UU 2/2011 Ps.34,34 A,35,39; cetak/PDF 10-12 UU 2/2011](https://peraturan.bpk.go.id/Download/224586/UU%20No.%202%20Tahun%202011.pdf) [Permendagri 36/2018 Ps.27-37 dan lampiran LPJ; cetak/PDF 18-22,31-34; dibaca bersama perubahan 78/2020](https://peraturan.go.id/files/bn630-2018.pdf#page=18)"
+    ]
+  },
+  {
+    "id": "akk203-uas-tm12-08",
+    "tm": 12,
+    "topic": "LPJ bantuan",
+    "skill": "Analisis dasar, mekanisme dan batas penerapan",
+    "difficulty": "medium",
+    "q": "LPJ bantuan: apa tenggat penyampaian kepada BPK menurut Ps.34A?",
+    "options": [
+      "Paling lambat 5 bulan setelah semua kampanye berakhir",
+      "Paling lambat 60 hari setelah nilai donasi diketahui",
+      "Paling lambat 2 tahun setelah SPKN baru berlaku",
+      "Paling lambat 1 bulan setelah tahun anggaran berakhir"
+    ],
+    "answer": 3,
+    "explanation": "TeksPs.34A mengatur laporan tahunan bantuan kepada BPK paling lambat 1 bulan setelah tahun anggaran.5 bulan adalah konteksyayasan;60 hari konteks tindaklanjut;2 tahun adalah transisi SPKN. Rujukan: [UU 2/2008 sebagaimana diubah UU 2/2011 Ps.34,34 A,35,39; cetak/PDF 10-12 UU 2/2011](https://peraturan.bpk.go.id/Download/224586/UU%20No.%202%20Tahun%202011.pdf)",
+    "sourceRef": "[UU 2/2008 sebagaimana diubah UU 2/2011 Ps.34,34 A,35,39; cetak/PDF 10-12 UU 2/2011](https://peraturan.bpk.go.id/Download/224586/UU%20No.%202%20Tahun%202011.pdf)",
+    "sourceAnchors": [
+      "[UU 2/2008 sebagaimana diubah UU 2/2011 Ps.34,34 A,35,39; cetak/PDF 10-12 UU 2/2011](https://peraturan.bpk.go.id/Download/224586/UU%20No.%202%20Tahun%202011.pdf)"
+    ]
+  },
+  {
+    "id": "akk203-uas-tm13-01",
     "tm": 13,
-    "topic": "Pengelolaan Kas dan Remunerasi BLU",
-    "difficulty": "basic",
-    "q": "Imbalan kerja berupa gaji, tunjangan, dan insentif berbasis kinerja yang dapat diberikan kepada pejabat pengelola dan pegawai BLU/BLUD di luar ketentuan PNS murni disebut sistem...",
-    "options": [
-      "Gratifikasi Resmi",
-      "Remunerasi BLU",
-      "Tunjangan Hari Tua Mandiri",
-      "Bagi Hasil Dividen Korporasi"
-    ],
-    "answer": 1,
-    "explanation": "Sistem remunerasi BLU/BLUD dirancang berbasis penilaian merit dan kinerja layanan (insentif) yang ditetapkan dengan Keputusan Menteri Keuangan atau Peraturan Kepala Daerah."
-  },
-  {
-    "tm": 14,
-    "topic": "Digital Governance & SIPD",
+    "topic": "Entitas",
+    "skill": "Analisis dasar, mekanisme dan batas penerapan",
     "difficulty": "medium",
-    "q": "Sistem informasi terpadu yang diwajibkan oleh Kementerian Dalam Negeri (Permendagri No. 70/2019) untuk mengintegrasikan data perencanaan pembangunan, penganggaran, penatausahaan kas, dan pelaporan keuangan seluruh pemda di Indonesia adalah...",
+    "q": "Entitas: rumah sakit swasta dan BLUD memakai aturan sama otomatis?",
     "options": [
-      "Sistem Informasi Manajemen Daerah (SIMDA) Desktop lama",
-      "Sistem Informasi Pemerintahan Daerah (SIPD)",
-      "Sistem Informasi Perbendaharaan dan Anggaran Negara (SPAN)",
-      "Sistem Akuntansi Instansi Berbasis Akrual (SAIBA)"
+      "Semua rumah sakit otomatis BLU pusat",
+      "Tentukan status entitas dan kerangka terlebih dahulu",
+      "Semua rumah sakit memakai satu tarif APBN",
+      "Semua rumah sakit dibebaskan dari pelaporan"
     ],
     "answer": 1,
-    "explanation": "SIPD adalah aplikasi berbasis cloud nasional yang menyatukan seluruh proses perencanaan hingga pertanggungjawaban APBD guna standardisasi data dan interoperabilitas fiskal nasional."
+    "explanation": "Status layanan tidak menentukan satu kerangka otomatis. Alternatif menyamakan status, tingkat atau menghapus pertanggungjawaban tanpa dasar. Rujukan: [SAP 2026, PSAP 13 par.6-12,17-31,76-88,116-123; cetak 250-266/PDF 257-273](https://www.ksap.org/sap/wp-content/uploads/2026/01/2026-0101-Buku-SAP-2026-Besar.pdf#page=257) [Permendagri 79/2018 Ps.50-54,74-75,99-100; cetak/PDF 31-34,36-38,47-50; mengganti 61/2007](https://peraturan.bpk.go.id/Download/102253/Permendagri%20Nomor%2079%20Tahun%202018.pdf#page=31)",
+    "sourceRef": "[SAP 2026, PSAP 13 par.6-12,17-31,76-88,116-123; cetak 250-266/PDF 257-273](https://www.ksap.org/sap/wp-content/uploads/2026/01/2026-0101-Buku-SAP-2026-Besar.pdf#page=257) [Permendagri 79/2018 Ps.50-54,74-75,99-100; cetak/PDF 31-34,36-38,47-50; mengganti 61/2007](https://peraturan.bpk.go.id/Download/102253/Permendagri%20Nomor%2079%20Tahun%202018.pdf#page=31)",
+    "sourceAnchors": [
+      "[SAP 2026, PSAP 13 par.6-12,17-31,76-88,116-123; cetak 250-266/PDF 257-273](https://www.ksap.org/sap/wp-content/uploads/2026/01/2026-0101-Buku-SAP-2026-Besar.pdf#page=257) [Permendagri 79/2018 Ps.50-54,74-75,99-100; cetak/PDF 31-34,36-38,47-50; mengganti 61/2007](https://peraturan.bpk.go.id/Download/102253/Permendagri%20Nomor%2079%20Tahun%202018.pdf#page=31)"
+    ]
   },
   {
-    "tm": 14,
-    "topic": "Green Budgeting & Climate Budget Tagging",
-    "difficulty": "medium",
-    "q": "Metodologi penandaan anggaran (tagging) dalam dokumen APBN/APBD yang melacak dan mengukur alokasi pengeluaran pemerintah yang dikhususkan untuk program aksi mitigasi dan adaptasi perubahan iklim disebut...",
-    "options": [
-      "Gender Responsive Budgeting",
-      "Climate Budget Tagging (CBT)",
-      "Zero Waste Procurement",
-      "Sustainable Cash Flow Analysis"
-    ],
-    "answer": 1,
-    "explanation": "Climate Budget Tagging (CBT) adalah instrumen inovatif penganggaran hijau (green budgeting) untuk memantau komitmen fiskal pemerintah dalam penurunan emisi gas rumah kaca."
-  },
-  {
-    "tm": 14,
-    "topic": "E-Procurement & Anti-Korupsi Pengadaan",
-    "difficulty": "basic",
-    "q": "Digitalisasi pengadaan barang dan jasa pemerintah yang dilakukan melalui portal LPSE dan Katalog Elektronik (E-Katalog) LKPP bertujuan utama untuk...",
-    "options": [
-      "Meniadakan keterlibatan pelaku UMKM dalam proyek pemerintah",
-      "Meningkatkan transparansi pasar, mencegah persekongkolan tender fisik, dan mewujudkan Value for Money pengadaan",
-      "Memperlambat proses belanja modal kementerian",
-      "Mengurangi pajak pertambahan nilai yang disetor ke kas negara"
-    ],
-    "answer": 1,
-    "explanation": "E-procurement dan e-Katalog meniadakan pertemuan fisik tatap muka, memangkas potensi suap/kickback, membuka akses transparan bagi UMKM, dan memberikan harga pasar terbaik bagi negara."
-  },
-  {
-    "tm": 14,
-    "topic": "Sistem Pengendalian Intern Pemerintah (SPIP)",
+    "id": "akk203-uas-tm13-02",
+    "tm": 13,
+    "topic": "Basis",
+    "skill": "Analisis dasar, mekanisme dan batas penerapan",
     "difficulty": "advanced",
-    "q": "Kerangka pengendalian intern pemerintah Indonesia yang diadopsi dari COSO Internal Control Framework dan diatur dalam PP No. 60 Tahun 2008 adalah...",
+    "q": "Basis: hak layanan 120, kas 100 pada latihan. Pendapatan LO dan piutang?",
     "options": [
-      "Sistem Pengawasan Fungsional Terpadu (SPFT)",
-      "Sistem Pengendalian Intern Pemerintah (SPIP)",
-      "Standar Operasional Prosedur Birokrasi (SOPB)",
-      "Total Quality Public Management (TQPM)"
+      "LO 100 dan piutang 0 karena belum ada kas",
+      "LO 20 dan piutang 120 karena hak tertukar",
+      "LO 120 dan piutang 20 jika hak terpenuhi",
+      "LO 120 dan piutang 100 karena kas diabaikan"
     ],
-    "answer": 1,
-    "explanation": "SPIP (PP 60/2008) mengadopsi 5 unsur COSO: Lingkungan Pengendalian, Penilaian Risiko, Kegiatan Pengendalian, Informasi dan Komunikasi, serta Pemantauan Pengendalian Intern."
+    "answer": 2,
+    "explanation": "Hak 120 dikurangi pembayaran 100 menyisakan piutang 20. LO 100 memakai kas sebagai seluruh akrual; opsi lain menukar saldo atau mengabaikan pembayaran. Rujukan: [SAP 2026, PSAP 13 par.6-12,17-31,76-88,116-123; cetak 250-266/PDF 257-273](https://www.ksap.org/sap/wp-content/uploads/2026/01/2026-0101-Buku-SAP-2026-Besar.pdf#page=257)",
+    "sourceRef": "[SAP 2026, PSAP 13 par.6-12,17-31,76-88,116-123; cetak 250-266/PDF 257-273](https://www.ksap.org/sap/wp-content/uploads/2026/01/2026-0101-Buku-SAP-2026-Besar.pdf#page=257)",
+    "sourceAnchors": [
+      "[SAP 2026, PSAP 13 par.6-12,17-31,76-88,116-123; cetak 250-266/PDF 257-273](https://www.ksap.org/sap/wp-content/uploads/2026/01/2026-0101-Buku-SAP-2026-Besar.pdf#page=257)"
+    ]
   },
   {
-    "tm": 14,
-    "topic": "Akuntansi Keuangan Desa (SISKEUDES)",
+    "id": "akk203-uas-tm13-03",
+    "tm": 13,
+    "topic": "Laporan",
+    "skill": "Analisis dasar, mekanisme dan batas penerapan",
     "difficulty": "medium",
-    "q": "Aplikasi resmi yang dikembangkan bersama oleh BPKP dan Kementerian Dalam Negeri untuk membantu pemerintah desa mengelola dan mempertanggungjawabkan Anggaran Pendapatan dan Belanja Desa (APBDes) adalah...",
+    "q": "Laporan: pasangan pemeriksaan neraca yang benar?",
     "options": [
-      "SIPD RI",
-      "Aplikasi SISKEUDES (Sistem Keuangan Desa)",
-      "SPAN Kemenkeu",
-      "SIMDA BPKAD"
+      "Kas selalu sama dengan seluruh ekuitas",
+      "SAL selalu sama dengan piutang layanan",
+      "LRA selalu sama dengan LO pada tiap periode",
+      "Aset sama dengan kewajiban ditambah ekuitas"
+    ],
+    "answer": 3,
+    "explanation": "Neraca menghubungkan aset, kewajiban dan ekuitas. Kas/SAL serta LRA/LO memiliki basis dan komponen berbeda sehingga persamaan alternatif tidak universal. Rujukan: [SAP 2026, PSAP 13 par.6-12,17-31,76-88,116-123; cetak 250-266/PDF 257-273](https://www.ksap.org/sap/wp-content/uploads/2026/01/2026-0101-Buku-SAP-2026-Besar.pdf#page=257)",
+    "sourceRef": "[SAP 2026, PSAP 13 par.6-12,17-31,76-88,116-123; cetak 250-266/PDF 257-273](https://www.ksap.org/sap/wp-content/uploads/2026/01/2026-0101-Buku-SAP-2026-Besar.pdf#page=257)",
+    "sourceAnchors": [
+      "[SAP 2026, PSAP 13 par.6-12,17-31,76-88,116-123; cetak 250-266/PDF 257-273](https://www.ksap.org/sap/wp-content/uploads/2026/01/2026-0101-Buku-SAP-2026-Besar.pdf#page=257)"
+    ]
+  },
+  {
+    "id": "akk203-uas-tm13-04",
+    "tm": 13,
+    "topic": "Konsolidasi",
+    "skill": "Analisis dasar, mekanisme dan batas penerapan",
+    "difficulty": "medium",
+    "q": "Konsolidasi: jurnal eliminasi pendapatan/beban internal LO diterapkan ke LRA?",
+    "options": [
+      "Periksa aturan berbeda, LRA digabung tanpa eliminasi tersebut",
+      "Salin seluruh eliminasi LO ke LRA tanpa pengecekan",
+      "Hapus seluruh pendapatan eksternal BLU dari LRA",
+      "Konsolidasi tidak pernah diperlukan bagi BLU"
+    ],
+    "answer": 0,
+    "explanation": "PSAP 13 membedakan perlakuan LRA dan LO. Menyalin jurnal mengabaikan aturan; transaksi eksternal tidak menjadi internal dan BLU tetap dikonsolidasikan. Rujukan: [SAP 2026, PSAP 13 par.6-12,17-31,76-88,116-123; cetak 250-266/PDF 257-273](https://www.ksap.org/sap/wp-content/uploads/2026/01/2026-0101-Buku-SAP-2026-Besar.pdf#page=257)",
+    "sourceRef": "[SAP 2026, PSAP 13 par.6-12,17-31,76-88,116-123; cetak 250-266/PDF 257-273](https://www.ksap.org/sap/wp-content/uploads/2026/01/2026-0101-Buku-SAP-2026-Besar.pdf#page=257)",
+    "sourceAnchors": [
+      "[SAP 2026, PSAP 13 par.6-12,17-31,76-88,116-123; cetak 250-266/PDF 257-273](https://www.ksap.org/sap/wp-content/uploads/2026/01/2026-0101-Buku-SAP-2026-Besar.pdf#page=257)"
+    ]
+  },
+  {
+    "id": "akk203-uas-tm13-05",
+    "tm": 13,
+    "topic": "Versi",
+    "skill": "Analisis dasar, mekanisme dan batas penerapan",
+    "difficulty": "medium",
+    "q": "Versi: sistem BLU pusat untuk LK 2024 dan sesudahnya?",
+    "options": [
+      "PMK 220/2016 selalu aktif tanpa perubahan",
+      "PMK 128/2024 mengganti PMK 220/2016 dan 42/2017",
+      "Permendagri 61/2007 mengatur seluruh BLU pusat",
+      "Draf ISAK 35 mengganti seluruh sistem perbendaharaan"
     ],
     "answer": 1,
-    "explanation": "SISKEUDES adalah instrumen komputerisasi akuntansi resmi yang dirancang user-friendly bagi aparatur desa untuk menatausahakan Dana Desa sesuai Permendagri No. 20 Tahun 2018."
+    "explanation": "PMK 128/2024 menyebut pencabutan dan periode penerapan. Alternatif memakai aturan diganti, tingkat berbeda atau draf nonlaba sebagai sistem pemerintah. Rujukan: [PMK 128/2024, lampiran Sistem Akuntansi dan Pelaporan Keuangan BLU, PDF 17-20,168-175; berlaku untuk LK 2024 dan seterusnya](https://jdih.kemenkeu.go.id/download/c6ab0355-774d-4a2f-9190-363cdda2c9c6/2024pmkeuangan128.pdf#page=17)",
+    "sourceRef": "[PMK 128/2024, lampiran Sistem Akuntansi dan Pelaporan Keuangan BLU, PDF 17-20,168-175; berlaku untuk LK 2024 dan seterusnya](https://jdih.kemenkeu.go.id/download/c6ab0355-774d-4a2f-9190-363cdda2c9c6/2024pmkeuangan128.pdf#page=17)",
+    "sourceAnchors": [
+      "[PMK 128/2024, lampiran Sistem Akuntansi dan Pelaporan Keuangan BLU, PDF 17-20,168-175; berlaku untuk LK 2024 dan seterusnya](https://jdih.kemenkeu.go.id/download/c6ab0355-774d-4a2f-9190-363cdda2c9c6/2024pmkeuangan128.pdf#page=17)"
+    ]
+  },
+  {
+    "id": "akk203-uas-tm13-06",
+    "tm": 13,
+    "topic": "Latihan buatan",
+    "skill": "Analisis dasar, mekanisme dan batas penerapan",
+    "difficulty": "advanced",
+    "q": "Latihan buatan: kas awal 0, penerimaan 100, operasi 70, aset 20. Kas akhir?",
+    "options": [
+      "30 juta Rp, pembelian aset tidak mengurangi kas",
+      "50 juta Rp, seluruh surplus LO dianggap kas",
+      "10 juta Rp, operasi 30 dikurangi investasi 20",
+      "90 juta Rp, pengeluaran dianggap penerimaan"
+    ],
+    "answer": 2,
+    "explanation": "100-70-20=10 juta Rp.30 mengabaikan investasi,50 memakai surplus akrual,90 mencampur pengeluaran dengan saldo. Tidak ada pembulatan. Rujukan: [SAP 2026, PSAP 13 par.6-12,17-31,76-88,116-123; cetak 250-266/PDF 257-273](https://www.ksap.org/sap/wp-content/uploads/2026/01/2026-0101-Buku-SAP-2026-Besar.pdf#page=257)",
+    "sourceRef": "[SAP 2026, PSAP 13 par.6-12,17-31,76-88,116-123; cetak 250-266/PDF 257-273](https://www.ksap.org/sap/wp-content/uploads/2026/01/2026-0101-Buku-SAP-2026-Besar.pdf#page=257)",
+    "sourceAnchors": [
+      "[SAP 2026, PSAP 13 par.6-12,17-31,76-88,116-123; cetak 250-266/PDF 257-273](https://www.ksap.org/sap/wp-content/uploads/2026/01/2026-0101-Buku-SAP-2026-Besar.pdf#page=257)"
+    ]
+  },
+  {
+    "id": "akk203-uas-tm13-07",
+    "tm": 13,
+    "topic": "BLUD",
+    "skill": "Analisis dasar, mekanisme dan batas penerapan",
+    "difficulty": "advanced",
+    "q": "BLUD: ambang kasus 10%, kenaikan 12%, kas cukup. Keputusan?",
+    "options": [
+      "Otomatis boleh karena saldo bank mencukupi",
+      "Otomatis boleh karena semua BLUD berambang 15%",
+      "Otomatis dilarang karena BLUD tidak punya fleksibilitas",
+      "Periksa persetujuan kepala daerah dan ketentuan RBA/DPA"
+    ],
+    "answer": 3,
+    "explanation": "12% melampaui ambang asumsi 10%. Ketentuan mengharuskan persetujuan terkait; kas cukup tidak menghapusnya.15% universal tidak didukung dan penolakan seluruh fleksibilitas berlebihan. Rujukan: [Permendagri 79/2018 Ps.50-54,74-75,99-100; cetak/PDF 31-34,36-38,47-50; mengganti 61/2007](https://peraturan.bpk.go.id/Download/102253/Permendagri%20Nomor%2079%20Tahun%202018.pdf#page=31)",
+    "sourceRef": "[Permendagri 79/2018 Ps.50-54,74-75,99-100; cetak/PDF 31-34,36-38,47-50; mengganti 61/2007](https://peraturan.bpk.go.id/Download/102253/Permendagri%20Nomor%2079%20Tahun%202018.pdf#page=31)",
+    "sourceAnchors": [
+      "[Permendagri 79/2018 Ps.50-54,74-75,99-100; cetak/PDF 31-34,36-38,47-50; mengganti 61/2007](https://peraturan.bpk.go.id/Download/102253/Permendagri%20Nomor%2079%20Tahun%202018.pdf#page=31)"
+    ]
+  },
+  {
+    "id": "akk203-uas-tm13-08",
+    "tm": 13,
+    "topic": "Eliminasi buatan 40",
+    "skill": "Analisis dasar, mekanisme dan batas penerapan",
+    "difficulty": "medium",
+    "q": "Eliminasi buatan 40:debit pendapatan dan kredit beban. Pemeriksaan?",
+    "options": [
+      "Debit 40=kredit 40, tanpa arus kas baru",
+      "Debit 40=kredit 0, karena beban boleh diabaikan",
+      "Debit 80=kredit 40, karena nilai dihitung ganda",
+      "Debit 40=kredit 40, selalu menciptakan kas 40"
+    ],
+    "answer": 0,
+    "explanation": "Kertas kerja eliminasi menghapus pasangan yang cocok. Opsi lain tidak seimbang atau menganggap eliminasi sebagai penerimaan kas. Lingkup dan bukti tetap harus diperiksa. Rujukan: [SAP 2026, PSAP 13 par.6-12,17-31,76-88,116-123; cetak 250-266/PDF 257-273](https://www.ksap.org/sap/wp-content/uploads/2026/01/2026-0101-Buku-SAP-2026-Besar.pdf#page=257) [PMK 128/2024, lampiran Sistem Akuntansi dan Pelaporan Keuangan BLU, PDF 17-20,168-175; berlaku untuk LK 2024 dan seterusnya](https://jdih.kemenkeu.go.id/download/c6ab0355-774d-4a2f-9190-363cdda2c9c6/2024pmkeuangan128.pdf#page=17)",
+    "sourceRef": "[SAP 2026, PSAP 13 par.6-12,17-31,76-88,116-123; cetak 250-266/PDF 257-273](https://www.ksap.org/sap/wp-content/uploads/2026/01/2026-0101-Buku-SAP-2026-Besar.pdf#page=257) [PMK 128/2024, lampiran Sistem Akuntansi dan Pelaporan Keuangan BLU, PDF 17-20,168-175; berlaku untuk LK 2024 dan seterusnya](https://jdih.kemenkeu.go.id/download/c6ab0355-774d-4a2f-9190-363cdda2c9c6/2024pmkeuangan128.pdf#page=17)",
+    "sourceAnchors": [
+      "[SAP 2026, PSAP 13 par.6-12,17-31,76-88,116-123; cetak 250-266/PDF 257-273](https://www.ksap.org/sap/wp-content/uploads/2026/01/2026-0101-Buku-SAP-2026-Besar.pdf#page=257) [PMK 128/2024, lampiran Sistem Akuntansi dan Pelaporan Keuangan BLU, PDF 17-20,168-175; berlaku untuk LK 2024 dan seterusnya](https://jdih.kemenkeu.go.id/download/c6ab0355-774d-4a2f-9190-363cdda2c9c6/2024pmkeuangan128.pdf#page=17)"
+    ]
+  },
+  {
+    "id": "akk203-uas-tm14-01",
+    "tm": 14,
+    "topic": "RPP",
+    "skill": "Analisis dasar, mekanisme dan batas penerapan",
+    "difficulty": "medium",
+    "q": "RPP: status artikel Olken 2007 dalam paket?",
+    "options": [
+      "Satu-satunya artikel wajib yang disebut RPP",
+      "Standar akuntansi yang mengganti seluruh SAP",
+      "Sumber tambahan pilihan, judul dosen belum terkonfirmasi",
+      "Data seluruh rumah sakit Indonesia tahun 2026"
+    ],
+    "answer": 2,
+    "explanation": "RPP hanya artikel terkait. Pilihan primer perlu label, bukan disebut tugas pasti atau standar. Cakupan artikel adalah jalan desa historis. Rujukan: [Olken(2007), Monitoring Corruption: Evidence from a Field Experiment in Indonesia, JPE 115(2), cetak 200-249/PDF 1-50; sumber tambahan pilihan, bukan artikel dosen yang terkonfirmasi](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=1)",
+    "sourceRef": "[Olken(2007), Monitoring Corruption: Evidence from a Field Experiment in Indonesia, JPE 115(2), cetak 200-249/PDF 1-50; sumber tambahan pilihan, bukan artikel dosen yang terkonfirmasi](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=1)",
+    "sourceAnchors": [
+      "[Olken(2007), Monitoring Corruption: Evidence from a Field Experiment in Indonesia, JPE 115(2), cetak 200-249/PDF 1-50; sumber tambahan pilihan, bukan artikel dosen yang terkonfirmasi](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=1)"
+    ]
+  },
+  {
+    "id": "akk203-uas-tm14-02",
+    "tm": 14,
+    "topic": "Desain",
+    "skill": "Analisis dasar, mekanisme dan batas penerapan",
+    "difficulty": "medium",
+    "q": "Desain: apa manfaat penugasan acak audit?",
+    "options": [
+      "Menjamin setiap desa bebas kesalahan pengukuran",
+      "Menjamin semua hasil dapat berlaku selamanya",
+      "Menghapus kebutuhan galat baku dan sampel",
+      "Membantu pembanding setara dalam harapan"
+    ],
+    "answer": 3,
+    "explanation": "Randomisasi membantu identifikasi efek dalam konteks desain. Tidak menghapus kesalahan pengukuran, ketidakpastian atau persoalan generalisasi. Rujukan: [Olken(2007) desain dan pengukuran, cetak 202-211,216-217/PDF 3-12,17-18](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=3)",
+    "sourceRef": "[Olken(2007) desain dan pengukuran, cetak 202-211,216-217/PDF 3-12,17-18](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=3)",
+    "sourceAnchors": [
+      "[Olken(2007) desain dan pengukuran, cetak 202-211,216-217/PDF 3-12,17-18](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=3)"
+    ]
+  },
+  {
+    "id": "akk203-uas-tm14-03",
+    "tm": 14,
+    "topic": "Ukuran",
+    "skill": "Analisis dasar, mekanisme dan batas penerapan",
+    "difficulty": "medium",
+    "q": "Ukuran: percent missing utama didefinisikan bagaimana?",
+    "options": [
+      "Log dilaporkan dikurangi log estimasi aktual",
+      "Selisih kas dibagi seluruh kas desa selalu",
+      "Jumlah terdakwa dibagi seluruh pegawai desa",
+      "Opini audit dibagi tarif bantuan per suara"
+    ],
+    "answer": 0,
+    "explanation": "Definisi log pada PDF 17 berbeda dari rasio biasa, proses hukum atau opini. Proksi dipengaruhi estimasi teknis dan asumsi. Rujukan: [Olken(2007) desain dan pengukuran, cetak 202-211,216-217/PDF 3-12,17-18](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=3)",
+    "sourceRef": "[Olken(2007) desain dan pengukuran, cetak 202-211,216-217/PDF 3-12,17-18](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=3)",
+    "sourceAnchors": [
+      "[Olken(2007) desain dan pengukuran, cetak 202-211,216-217/PDF 3-12,17-18](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=3)"
+    ]
+  },
+  {
+    "id": "akk203-uas-tm14-04",
+    "tm": 14,
+    "topic": "Hasil",
+    "skill": "Analisis dasar, mekanisme dan batas penerapan",
+    "difficulty": "medium",
+    "q": "Hasil: 0,277 menjadi 0,192 memberi selisih apa?",
+    "options": [
+      "8,5% relatif terhadap nilai kontrol",
+      "8,5 poin persentase pada skala tabel",
+      "27,7 poin kenaikan terhadap kontrol",
+      "19,2% relatif tanpa memakai pembanding"
+    ],
+    "answer": 1,
+    "explanation": "Selisih 0,085×100=8,5 poin. Relatif memerlukan pembagian 0,277, sekitar 30,69%. Opsi lain menukar nilai level dengan perubahan. Rujukan: [Olken(2007) Table 4 dan pembahasan, cetak 218-221/PDF 19-22; Figure 1 pada PDF 21](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=19)",
+    "sourceRef": "[Olken(2007) Table 4 dan pembahasan, cetak 218-221/PDF 19-22; Figure 1 pada PDF 21](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=19)",
+    "sourceAnchors": [
+      "[Olken(2007) Table 4 dan pembahasan, cetak 218-221/PDF 19-22; Figure 1 pada PDF 21](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=19)"
+    ]
+  },
+  {
+    "id": "akk203-uas-tm14-05",
+    "tm": 14,
+    "topic": "Ketidakpastian",
+    "skill": "Analisis dasar, mekanisme dan batas penerapan",
+    "difficulty": "medium",
+    "q": "Ketidakpastian: p 0,058 pada ambang 5%, model tanpa efek tetap?",
+    "options": [
+      "Selalu melewati 5% karena koefisien negatif",
+      "Membuktikan efek pasti nol pada semua desa",
+      "Tidak melewati ambang 5% pada model tersebut",
+      "Membuktikan seluruh model signifikan 5%"
+    ],
+    "answer": 2,
+    "explanation": "0,058>0,05. Tanda koefisien tidak menentukanp; hasil di luar ambang tidak membuktikan efek pasti nol, dan model lain memiliki p berbeda. Rujukan: [Olken(2007) Table 4 dan pembahasan, cetak 218-221/PDF 19-22; Figure 1 pada PDF 21](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=19)",
+    "sourceRef": "[Olken(2007) Table 4 dan pembahasan, cetak 218-221/PDF 19-22; Figure 1 pada PDF 21](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=19)",
+    "sourceAnchors": [
+      "[Olken(2007) Table 4 dan pembahasan, cetak 218-221/PDF 19-22; Figure 1 pada PDF 21](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=19)"
+    ]
+  },
+  {
+    "id": "akk203-uas-tm14-06",
+    "tm": 14,
+    "topic": "Sampel",
+    "skill": "Analisis dasar, mekanisme dan batas penerapan",
+    "difficulty": "medium",
+    "q": "Sampel: 608 desa pada desain berarti apa bagiTable 4?",
+    "options": [
+      "Setiap regresi selalu memakai 608 observasi",
+      "Tidak perlu mencatatN karena efek negatif",
+      "Semua data artikel berasal 608 rumah sakit",
+      "N analisis berbeda: 477 jalan,538 jalan+tambahan"
+    ],
+    "answer": 3,
+    "explanation": "Ketersediaan ukuran menghasilkan sampel analisis berbeda. MencatatN penting bagi lingkup/ketidakpastian, dan entitas sumber adalah desa proyek jalan. Rujukan: [Olken(2007) desain dan pengukuran, cetak 202-211,216-217/PDF 3-12,17-18](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=3) [Olken(2007) Table 4 dan pembahasan, cetak 218-221/PDF 19-22; Figure 1 pada PDF 21](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=19)",
+    "sourceRef": "[Olken(2007) desain dan pengukuran, cetak 202-211,216-217/PDF 3-12,17-18](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=3) [Olken(2007) Table 4 dan pembahasan, cetak 218-221/PDF 19-22; Figure 1 pada PDF 21](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=19)",
+    "sourceAnchors": [
+      "[Olken(2007) desain dan pengukuran, cetak 202-211,216-217/PDF 3-12,17-18](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=3) [Olken(2007) Table 4 dan pembahasan, cetak 218-221/PDF 19-22; Figure 1 pada PDF 21](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=19)"
+    ]
+  },
+  {
+    "id": "akk203-uas-tm14-07",
+    "tm": 14,
+    "topic": "Validitas",
+    "skill": "Analisis dasar, mekanisme dan batas penerapan",
+    "difficulty": "medium",
+    "q": "Validitas: hasil jalan desa 2003 dipindah ke BLUD 2026?",
+    "options": [
+      "Uji perbedaan konteks, kapasitas, biaya dan ukuran",
+      "Terapkan langsung karena semua entitas publik sama",
+      "Anggap seluruh proksi sebagai bukti pidana",
+      "Tolak seluruh eksperimen karena sudah historis"
+    ],
+    "answer": 0,
+    "explanation": "Generalisasi memerlukan analisis eksternal. Konteks publik tidak menjamin kesamaan;proksi bukan bukti pidana, dan sejarah tidak menghapus validitas internal. Rujukan: [Olken(2007) desain dan pengukuran, cetak 202-211,216-217/PDF 3-12,17-18](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=3) [Olken(2007) Table 4 dan pembahasan, cetak 218-221/PDF 19-22; Figure 1 pada PDF 21](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=19)",
+    "sourceRef": "[Olken(2007) desain dan pengukuran, cetak 202-211,216-217/PDF 3-12,17-18](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=3) [Olken(2007) Table 4 dan pembahasan, cetak 218-221/PDF 19-22; Figure 1 pada PDF 21](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=19)",
+    "sourceAnchors": [
+      "[Olken(2007) desain dan pengukuran, cetak 202-211,216-217/PDF 3-12,17-18](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=3) [Olken(2007) Table 4 dan pembahasan, cetak 218-221/PDF 19-22; Figure 1 pada PDF 21](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=19)"
+    ]
+  },
+  {
+    "id": "akk203-uas-tm14-08",
+    "tm": 14,
+    "topic": "Ulasan",
+    "skill": "Analisis dasar, mekanisme dan batas penerapan",
+    "difficulty": "medium",
+    "q": "Ulasan: Figure 1 CDF/densitas ingin digambar ulang tanpa data mentah?",
+    "options": [
+      "Buat kurva numerik seolah data mentah sudah tersedia",
+      "Jelaskan bentuk asli dan gunakan tabel angka terverifikasi",
+      "Ubah seluruh kurva menjadi saldo kas desa",
+      "Hilangkan sumbu agar tidak perlu menjelaskan ukuran"
+    ],
+    "answer": 1,
+    "explanation": "Kurva empiris memerlukan data/titik yang tersedia. Paket menampilkan angkaTable 4 dan mencatat Figure 1 sebagai bacaan tambahan; mengarang kurva atau mengubah ukuran menyesatkan. Rujukan: [Olken(2007) Table 4 dan pembahasan, cetak 218-221/PDF 19-22; Figure 1 pada PDF 21](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=19)",
+    "sourceRef": "[Olken(2007) Table 4 dan pembahasan, cetak 218-221/PDF 19-22; Figure 1 pada PDF 21](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=19)",
+    "sourceAnchors": [
+      "[Olken(2007) Table 4 dan pembahasan, cetak 218-221/PDF 19-22; Figure 1 pada PDF 21](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=19)"
+    ]
   }
 ];
 

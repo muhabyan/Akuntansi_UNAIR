@@ -1,0 +1,14 @@
+{
+  "course": "AKK203",
+  "tm": 10,
+  "implementationStatus": "COMPLETE_FOR_DRAFT_REVIEW",
+  "technicalStatus": "PASS",
+  "sourceStatus": "NEEDS_HUMAN_REVIEW",
+  "sourceComplete": false,
+  "canonicalSha256": "1f6fee087cdcf51b409a78fdd17ab973154e727ed2fd0942c2d497771aafc591",
+  "evidence": "../qa-evidence.json",
+  "limitations": [
+    "JP Bab 2 dan 9 serta bahan dosen audit belum tersedia.",
+    "Latihan opini tidak memberi aturan otomatis materialitas/pervasiveness yang memerlukan standar penugasan rinci."
+  ]
+}

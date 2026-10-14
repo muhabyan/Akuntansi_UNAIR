@@ -11,7 +11,7 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 
 const GENERATED = {
-  flashcards: ['AKM202', 'AKS201'],
+  flashcards: ['AKM202'],
   quizzes: ['AKM202'],
   banksoal: ['AKM202'],
 };

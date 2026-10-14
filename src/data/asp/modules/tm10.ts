@@ -1,164 +1,444 @@
-import type { Reading } from '../../../types';
-import { CASE_VALUE_FOR_MONEY_EVAL } from '../aspPracticeCases';
-
-const SVG_VFM_TRIANGLE = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
-  <defs>
-    <linearGradient id="bgAsp10" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
-    <linearGradient id="e1Grad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#0284c7"/><stop offset="100%" stop-color="#38bdf8"/></linearGradient>
-    <linearGradient id="e2Grad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#d97706"/><stop offset="100%" stop-color="#fbbf24"/></linearGradient>
-    <linearGradient id="e3Grad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#059669"/><stop offset="100%" stop-color="#34d399"/></linearGradient>
-  </defs>
-  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgAsp10)" stroke="#1e293b" stroke-width="1.5"/>
-  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
-  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
-  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
-  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700">KERANGKA PENGUKURAN KINERJA VALUE FOR MONEY 3E (EKONOMI, EFISIENSI, &amp; EFEKTIVITAS)</text>
-  <rect class="svg-badge-blue" x="735" y="21" width="140" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
-  <text class="text-accent-blue" x="805" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">VFM 3E MODEL</text>
-
-  <!-- 3 Sequential E-Pillars -->
-  <!-- 1. Ekonomi (Input) -->
-  <g transform="translate(35, 75)">
-    <rect class="svg-card" x="0" y="0" width="265" height="235" rx="10" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
-    <rect x="0" y="0" width="265" height="30" rx="10" fill="url(#e1Grad)" fill-opacity="0.25"/>
-    <text class="text-accent-blue" x="132" y="20" fill="#38bdf8" font-size="10" font-weight="800" text-anchor="middle">1. EKONOMI (HEMAT INPUT)</text>
-    <rect class="svg-subcard" x="14" y="40" width="237" height="24" rx="4" fill="#1e293b"/>
-    <text class="text-accent-blue" x="132" y="56" fill="#38bdf8" font-size="8.5" font-weight="700" text-anchor="middle">Rasio: Input Riil vs Input Anggaran</text>
-    
-    <text class="svg-text" x="14" y="82" fill="#cbd5e1" font-size="7.5">• Memperoleh sumber daya input (SDM, material, fasilitas) dengan biaya serendah mungkin tanpa mengorbankan standar mutu</text>
-    <text class="svg-text" x="14" y="112" fill="#cbd5e1" font-size="7.5">• Contoh: Pengadaan obat generik RSUD via e-Katalog LKPP dengan harga diskon optimal</text>
-    <text class="text-accent-blue" x="14" y="138" fill="#38bdf8" font-size="7.5" font-weight="700">• Pertanyaan Kunci: "Apakah biaya input hemat?"</text>
-
-    <rect class="svg-badge-blue" x="14" y="185" width="237" height="24" rx="4" fill="#0284c7" fill-opacity="0.2"/>
-    <text class="text-accent-blue" x="132" y="201" fill="#38bdf8" font-size="7.5" font-weight="700" text-anchor="middle">Fokus: Pengendalian Biaya Masukan</text>
-  </g>
-
-  <polygon points="307,185 315,190 307,195" fill="#38bdf8"/>
-
-  <!-- 2. Efisiensi (Input to Output) -->
-  <g transform="translate(318, 75)">
-    <rect class="svg-card" x="0" y="0" width="265" height="235" rx="10" fill="#0f172a" stroke="#fbbf24" stroke-width="1.5"/>
-    <rect x="0" y="0" width="265" height="30" rx="10" fill="url(#e2Grad)" fill-opacity="0.25"/>
-    <text class="text-accent-amber" x="132" y="20" fill="#fbbf24" font-size="10" font-weight="800" text-anchor="middle">2. EFISIENSI (BERDAYA GUNA)</text>
-    <rect class="svg-subcard" x="14" y="40" width="237" height="24" rx="4" fill="#1e293b"/>
-    <text class="text-accent-amber" x="132" y="56" fill="#fbbf24" font-size="8.5" font-weight="700" text-anchor="middle">Rasio: Output Dihasilkan ÷ Input Digunakan</text>
-    
-    <text class="svg-text" x="14" y="82" fill="#cbd5e1" font-size="7.5">• Memaksimalkan jumlah output fisik dengan input tertentu, atau meminimalkan input untuk target output tertentu</text>
-    <text class="svg-text" x="14" y="112" fill="#cbd5e1" font-size="7.5">• Contoh: Jumlah kilometer jalan aspal yang terbangun per alokasi dana Rp 1 Miliar</text>
-    <text class="text-accent-amber" x="14" y="138" fill="#fbbf24" font-size="7.5" font-weight="700">• Pertanyaan Kunci: "Apakah output optimal?"</text>
-
-    <rect class="svg-badge-amber" x="14" y="185" width="237" height="24" rx="4" fill="#d97706" fill-opacity="0.2"/>
-    <text class="text-accent-amber" x="132" y="201" fill="#fbbf24" font-size="7.5" font-weight="700" text-anchor="middle">Fokus: Produktivitas Transformasi Proses</text>
-  </g>
-
-  <polygon points="590,185 598,190 590,195" fill="#fbbf24"/>
-
-  <!-- 3. Efektivitas (Output to Outcome) -->
-  <g transform="translate(600, 75)">
-    <rect class="svg-card" x="0" y="0" width="265" height="235" rx="10" fill="#0f172a" stroke="#34d399" stroke-width="1.5"/>
-    <rect x="0" y="0" width="265" height="30" rx="10" fill="url(#e3Grad)" fill-opacity="0.25"/>
-    <text class="text-accent-green" x="132" y="20" fill="#34d399" font-size="10" font-weight="800" text-anchor="middle">3. EFEKTIVITAS (BERHASIL GUNA)</text>
-    <rect class="svg-subcard" x="14" y="40" width="237" height="24" rx="4" fill="#1e293b"/>
-    <text class="text-accent-green" x="132" y="56" fill="#34d399" font-size="8.5" font-weight="700" text-anchor="middle">Rasio: Realisasi Outcome ÷ Target Outcome</text>
-    
-    <text class="svg-text" x="14" y="82" fill="#cbd5e1" font-size="7.5">• Tingkat keberhasilan dalam mencapai sasaran strategis &amp; dampak nyata bagi masyarakat</text>
-    <text class="svg-text" x="14" y="106" fill="#cbd5e1" font-size="7.5">• Contoh: Penurunan prevalensi angka stunting balita daerah sebesar 5% pasca program gizi</text>
-    <text class="text-accent-green" x="14" y="134" fill="#34d399" font-size="7.5" font-weight="700">• Pertanyaan Kunci: "Apakah tujuan tercapai?"</text>
-
-    <rect class="svg-badge-green" x="14" y="185" width="237" height="24" rx="4" fill="#059669" fill-opacity="0.2"/>
-    <text class="text-accent-green" x="132" y="201" fill="#34d399" font-size="7.5" font-weight="700" text-anchor="middle">Fokus: Dampak Nyata bagi Kesejahteraan</text>
-  </g>
-</svg>`;
-
+// Generated from AKK203 canonical 04; run node scripts/build-akk203-pra-uas.mjs.
+import type {Reading} from '../../../types';
 export const TM10_READING: Reading = {
-  tm: 10,
-  title: 'Pengukuran Kinerja Organisasi Pemerintah & Paradigma Value for Money (VFM)',
-  ref: 'Mardiasmo Ch. 8 | Indikator Kinerja Sektor Publik | Audit Kinerja BPK: 3E (Ekonomi, Efisiensi, Efektivitas)',
-  intro: 'TM 10 membahas sistem pengukuran kinerja sektor publik yang berfokus pada Paradigma Value for Money (VFM): prinsip 3E (Ekonomi, Efisiensi, dan Efektivitas) ditambah Equity dan Equality, penyusunan Indikator Kinerja Utama (IKU), pengukuran Indeks Kepuasan Masyarakat (IKM), serta penyusunan Laporan Kinerja Instansi Pemerintah (LKjIP) berbasis Sistem Akuntabilitas Kinerja Instansi Pemerintah (SAKIP).',
-  objectives: [
-    'Mendefinisikan dan menghitung rasio Ekonomi, rasio Efisiensi, dan rasio Efektivitas program publik.',
-    'Menjelaskan perbedaan mendasar antara Efisiensi (Input vs Output) dan Efektivitas (Output vs Outcome).',
-    'Menyusun kerangka pengukuran kinerja instansi pemerintah (SAKIP / LKjIP).',
-    'Menganalisis penyebab program publik yang efisien tetapi tidak efektif (atau sebaliknya).'
+  "tm": 10,
+  "title": "Audit Organisasi Pemerintah: APIP dan BPK",
+  "ref": "[UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28](https://peraturan.bpk.go.id/Details/40509/uu-no-15-tahun-2004) | [PP 60/2008 Ps.2-3,47-54; cetak/PDF 3-4,21-25](https://peraturan.go.id/files/pp60-2008.pdf#page=3) | [Peraturan BPK 1/2017 Ps.3-5 dan KK par.14,18,21-42; cetak 4-5,5-13 KK; PDF 4-5,17-25](https://peraturan.bpk.go.id/Download/20433/Peraturan%20BPK%20Nomor%201%20Tahun%202017.pdf) | [Peraturan BPK 1/2026 Ps.7-9; cetak/PDF 3-4; diundangkan 10 April 2026, berlaku 10 April 2028](https://peraturan.bpk.go.id/Download/411430/Salinan%20PBPK%201%20Tahun%202026.pdf#page=3)",
+  "intro": "Opini laporan keuangan, kualitas layanan dan tindak lanjut rekomendasi menjawab pertanyaan berbeda. Kamu akan memilih tujuan pemeriksaan, menilai bukti, lalu menyatakan kesimpulan yang sesuai ruang lingkup.",
+  "layout": "layered",
+  "coreReadingMinutes": 20,
+  "objectives": [
+    "APIP dan BPK: posisi dan tanggung jawab",
+    "Jenis pemeriksaan mengikuti tujuan",
+    "Unsur pemeriksaan: kriteria dan bukti",
+    "Opini dan batasnya",
+    "LHP dan tindak lanjut 60 hari",
+    "SPKN: bedakan pengundangan dan penerapan"
   ],
-  blocks: [
+  "blocks": [
     {
-      kind: 'figure',
-      caption: 'Gambar 10.1: Tiga Pilar Paradigma Value for Money (VFM) Pengukuran Kinerja Publik.',
-      svg: SVG_VFM_TRIANGLE
-    },
-    {
-      kind: 'h2',
-      text: 'Alur Belajar Cepat (Learning Flow Matrix) TM 10'
-    },
-    {
-      kind: 'table',
-      headers: ['Pilar Value for Money', 'Formula Pengukuran', 'Kriteria Penilaian Kinerja', 'Fokus Pengendalian'],
-      rows: [
-        ['Ekonomi (Economy)', '$\\frac{\\text{Realisasi Biaya Input}}{\\text{Anggaran Biaya Input}} \\times 100\\%$', '$< 100\\%$ = Ekonomis / Berhemat; $> 100\\%$ = Boros.', 'Pengadaan bahan baku & harga satuan barang/jasa.'],
-        ['Efisiensi (Efficiency)', '$\\frac{\\text{Output Riil yang Dihasilkan}}{\\text{Input Biaya yang Digunakan}}$', 'Meningkat jika output naik dengan biaya sama, atau biaya turun dengan output sama.', 'Proses operasional & rasio biaya per unit output.'],
-        ['Efektivitas (Effectiveness)', '$\\frac{\\text{Realisasi Hasil (Outcome)}}{\\text{Target Hasil yang Ditetapkan}} \\times 100\\%$', '$\\ge 100\\%$ = Efektif; $< 100\\%$ = Kurang/Tidak Efektif.', 'Pencapaian tujuan strategis & kepuasan masyarakat.'],
-        ['Keadilan (Equity & Equality)', 'Pemerataan alokasi belanja bagi kelompok rentan/marjinal.', 'Apakah seluruh warga memperoleh akses pelayanan publik yang setara?', 'Distribusi spasial dan kelompok penerima manfaat.']
-      ],
-      caption: 'Tabel 10.0: Matriks pilar pengukuran kinerja Value for Money.'
-    },
-    {
-      kind: 'h2',
-      text: 'Formula Sheet Fondasi: Evaluasi Kinerja Program Publik'
-    },
-    {
-      kind: 'formula',
-      text: `\\text{Rasio Ekonomi} = \\frac{\\text{Realisasi Belanja}}{\\text{Anggaran Belanja}} \\times 100\\% \\quad \\text{(Nilai < 100\\% Menandakan Penghematan Kas)}
-\\text{Biaya per Unit Output} = \\frac{\\text{Total Biaya Realisasi}}{\\text{Jumlah Unit Output Fisik}} \\quad \\text{(Semakin Rendah, Semakin Efisien)}
-\\text{Rasio Efektivitas} = \\frac{\\text{Realisasi Outcome}}{\\text{Target Outcome}} \\times 100\\% \\quad \\text{(Nilai } \\ge 100\\% \\text{ Menandakan Target Tercapai)}`,
-      note: 'Program publik yang paling ideal adalah program yang memenuhi ketiga syarat sekaligus: Ekonomis saat membeli input, Efisien dalam memproses output, dan Efektif dalam menghasilkan outcome bagi rakyat.'
-    },
-    {
-      kind: 'h2',
-      text: 'Latihan Aktif Interaktif'
-    },
-    {
-      kind: 'solution-reveal',
-      title: 'Latihan Mandiri: Analisis Kinerja Program Pelatihan Kerja Dinas Tenaga Kerja',
-      prompt: 'Dinas Tenaga Kerja menganggarkan pelatihan montir Rp 200 Juta untuk melatih 100 pemuda dengan target 80 orang terserap kerja. Realisasi: biaya dihabiskan Rp 180 Juta, 100 pemuda lulus pelatihan, dan 85 orang langsung diterima kerja. Hitung rasio ekonomi, efisiensi biaya per orang, dan rasio efektivitas program!',
-      blocks: [
+      "kind": "section",
+      "layer": "fondasi",
+      "title": "Kilat",
+      "blocks": [
         {
-          kind: 'ul',
-          items: [
-            '**1. Rasio Ekonomi**: $\\frac{180 \\text{ Juta}}{200 \\text{ Juta}} \\times 100\\% = \\mathbf{90,0\\%}$ $\\r→$ **Ekonomis** (Hemat Rp 20 Juta).',
-            '**2. Efisiensi Biaya per Unit**: $\\frac{Rp 180.000.000}{100 \\text{ Peserta}} = \\mathbf{Rp 1.800.000 \\text{ per peserta}}$ (Lebih efisien dibanding target awal Rp 2.000.000 per orang).',
-            '**3. Rasio Efektivitas**: $\\frac{85 \\text{ Orang Terserap}}{80 \\text{ Orang Target}} \\times 100\\% = \\mathbf{106,25\\%}$ $\\r→$ **Sangat Efektif** (Melampaui target penyerapan kerja).',
-            '**Kesimpulan**: Program ini berkinerja unggul karena memenuhi kriteria Value for Money secara sempurna (Ekonomis, Efisien, dan Efektif).'
+          "kind": "figure",
+          "title": "Peta Audit Organisasi Pemerintah: APIP dan BPK",
+          "svg": "<svg class=\"course-diagram-svg akk203-uas-diagram\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-labelledby=\"ASP-UAS-10-KILAT-d-title ASP-UAS-10-KILAT-d-desc\" width=\"100%\" viewBox=\"0 0 760 750.6000000000001\"><title id=\"ASP-UAS-10-KILAT-d-title\">Peta Audit Organisasi Pemerintah: APIP dan BPK</title><desc id=\"ASP-UAS-10-KILAT-d-desc\">Peta Audit Organisasi Pemerintah: APIP dan BPK. Tentukan konteks → APIP dan BPK: posisi dan tanggung jawab → Jenis pemeriksaan mengikuti tujuan → Unsur pemeriksaan: kriteria dan bukti → Opini dan batasnya → LHP dan tindak lanjut 60 hari → SPKN: bedakan pengundangan dan penerapan Tentukan konteks: SAP, SPKN; JP Bab 2 dan 9 sesuai RPP PDF 5 APIP dan BPK: posisi dan tanggung jawab Jenis pemeriksaan mengikuti tujuan Unsur pemeriksaan: kriteria dan bukti Opini dan batasnya LHP dan tindak lanjut 60 hari SPKN: bedakan pengundangan dan penerapan Skematis: hubungan konsep, tanpa skala angka.</desc><defs><marker id=\"ASP-UAS-10-KILAT-d-arrow\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto\"><path class=\"svg-title\" d=\"M0 0 L10 5 L0 10 Z\"/></marker></defs><rect class=\"svg-bg\" width=\"760\" height=\"750.6000000000001\" rx=\"12\"/><rect class=\"svg-card\" x=\"24\" y=\"28\" width=\"712\" height=\"95.8\" rx=\"10\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"40\" y=\"54\" font-size=\"19\"><tspan x=\"40\" dy=\"0\">Tentukan konteks</tspan></text><text class=\"svg-text\" x=\"40\" y=\"90.6\" font-size=\"18\"><tspan x=\"40\" dy=\"0\">SAP, SPKN; JP Bab 2 dan 9 sesuai RPP PDF 5</tspan></text><path class=\"svg-title\" style=\"fill:none!important\" stroke=\"currentColor\" stroke-width=\"2\" marker-end=\"url(#ASP-UAS-10-KILAT-d-arrow)\" d=\"M380 127.8 V149.8\"/><rect class=\"svg-card\" x=\"24\" y=\"155.8\" width=\"712\" height=\"58.599999999999994\" rx=\"10\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"40\" y=\"181.8\" font-size=\"19\"><tspan x=\"40\" dy=\"0\">APIP dan BPK: posisi dan tanggung jawab</tspan></text><path class=\"svg-title\" style=\"fill:none!important\" stroke=\"currentColor\" stroke-width=\"2\" marker-end=\"url(#ASP-UAS-10-KILAT-d-arrow)\" d=\"M380 218.4 V240.4\"/><rect class=\"svg-card\" x=\"24\" y=\"246.4\" width=\"712\" height=\"58.599999999999994\" rx=\"10\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"40\" y=\"272.4\" font-size=\"19\"><tspan x=\"40\" dy=\"0\">Jenis pemeriksaan mengikuti tujuan</tspan></text><path class=\"svg-title\" style=\"fill:none!important\" stroke=\"currentColor\" stroke-width=\"2\" marker-end=\"url(#ASP-UAS-10-KILAT-d-arrow)\" d=\"M380 309 V331\"/><rect class=\"svg-card\" x=\"24\" y=\"337\" width=\"712\" height=\"58.599999999999994\" rx=\"10\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"40\" y=\"363\" font-size=\"19\"><tspan x=\"40\" dy=\"0\">Unsur pemeriksaan: kriteria dan bukti</tspan></text><path class=\"svg-title\" style=\"fill:none!important\" stroke=\"currentColor\" stroke-width=\"2\" marker-end=\"url(#ASP-UAS-10-KILAT-d-arrow)\" d=\"M380 399.6 V421.6\"/><rect class=\"svg-card\" x=\"24\" y=\"427.6\" width=\"712\" height=\"58.599999999999994\" rx=\"10\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"40\" y=\"453.6\" font-size=\"19\"><tspan x=\"40\" dy=\"0\">Opini dan batasnya</tspan></text><path class=\"svg-title\" style=\"fill:none!important\" stroke=\"currentColor\" stroke-width=\"2\" marker-end=\"url(#ASP-UAS-10-KILAT-d-arrow)\" d=\"M380 490.20000000000005 V512.2\"/><rect class=\"svg-card\" x=\"24\" y=\"518.2\" width=\"712\" height=\"58.599999999999994\" rx=\"10\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"40\" y=\"544.2\" font-size=\"19\"><tspan x=\"40\" dy=\"0\">LHP dan tindak lanjut 60 hari</tspan></text><path class=\"svg-title\" style=\"fill:none!important\" stroke=\"currentColor\" stroke-width=\"2\" marker-end=\"url(#ASP-UAS-10-KILAT-d-arrow)\" d=\"M380 580.8000000000001 V602.8000000000001\"/><rect class=\"svg-card\" x=\"24\" y=\"608.8000000000001\" width=\"712\" height=\"58.599999999999994\" rx=\"10\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"40\" y=\"634.8000000000001\" font-size=\"19\"><tspan x=\"40\" dy=\"0\">SPKN: bedakan pengundangan dan penerapan</tspan></text><text class=\"svg-text\" x=\"24\" y=\"699.4000000000001\" font-size=\"18\"><tspan x=\"24\" dy=\"0\">Skematis: hubungan konsep, tanpa skala angka.</tspan></text></svg>",
+          "mobileSvg": "<svg class=\"course-diagram-svg akk203-uas-diagram\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-labelledby=\"ASP-UAS-10-KILAT-m-title ASP-UAS-10-KILAT-m-desc\" width=\"100%\" viewBox=\"0 0 340 960.5999999999998\"><title id=\"ASP-UAS-10-KILAT-m-title\">Peta Audit Organisasi Pemerintah: APIP dan BPK</title><desc id=\"ASP-UAS-10-KILAT-m-desc\">Peta Audit Organisasi Pemerintah: APIP dan BPK. Tentukan konteks → APIP dan BPK: posisi dan tanggung jawab → Jenis pemeriksaan mengikuti tujuan → Unsur pemeriksaan: kriteria dan bukti → Opini dan batasnya → LHP dan tindak lanjut 60 hari → SPKN: bedakan pengundangan dan penerapan Tentukan konteks: SAP, SPKN; JP Bab 2 dan 9 sesuai RPP PDF 5 APIP dan BPK: posisi dan tanggung jawab Jenis pemeriksaan mengikuti tujuan Unsur pemeriksaan: kriteria dan bukti Opini dan batasnya LHP dan tindak lanjut 60 hari SPKN: bedakan pengundangan dan penerapan Skematis: hubungan konsep, tanpa skala angka.</desc><defs><marker id=\"ASP-UAS-10-KILAT-m-arrow\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto\"><path class=\"svg-title\" d=\"M0 0 L10 5 L0 10 Z\"/></marker></defs><rect class=\"svg-bg\" width=\"340\" height=\"960.5999999999998\" rx=\"12\"/><rect class=\"svg-card\" x=\"24\" y=\"28\" width=\"292\" height=\"121\" rx=\"10\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"40\" y=\"54\" font-size=\"19\"><tspan x=\"40\" dy=\"0\">Tentukan konteks</tspan></text><text class=\"svg-text\" x=\"40\" y=\"90.6\" font-size=\"18\"><tspan x=\"40\" dy=\"0\">SAP, SPKN; JP Bab 2 dan</tspan></text><text class=\"svg-text\" x=\"40\" y=\"115.8\" font-size=\"18\"><tspan x=\"40\" dy=\"0\">9 sesuai RPP PDF 5</tspan></text><path class=\"svg-title\" style=\"fill:none!important\" stroke=\"currentColor\" stroke-width=\"2\" marker-end=\"url(#ASP-UAS-10-KILAT-m-arrow)\" d=\"M170 153 V175\"/><rect class=\"svg-card\" x=\"24\" y=\"181\" width=\"292\" height=\"85.19999999999999\" rx=\"10\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"40\" y=\"207\" font-size=\"19\"><tspan x=\"40\" dy=\"0\">APIP dan BPK: posisi</tspan><tspan x=\"40\" dy=\"26.599999999999998\">dan tanggung jawab</tspan></text><path class=\"svg-title\" style=\"fill:none!important\" stroke=\"currentColor\" stroke-width=\"2\" marker-end=\"url(#ASP-UAS-10-KILAT-m-arrow)\" d=\"M170 270.2 V292.2\"/><rect class=\"svg-card\" x=\"24\" y=\"298.2\" width=\"292\" height=\"85.19999999999999\" rx=\"10\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"40\" y=\"324.2\" font-size=\"19\"><tspan x=\"40\" dy=\"0\">Jenis pemeriksaan</tspan><tspan x=\"40\" dy=\"26.599999999999998\">mengikuti tujuan</tspan></text><path class=\"svg-title\" style=\"fill:none!important\" stroke=\"currentColor\" stroke-width=\"2\" marker-end=\"url(#ASP-UAS-10-KILAT-m-arrow)\" d=\"M170 387.4 V409.4\"/><rect class=\"svg-card\" x=\"24\" y=\"415.4\" width=\"292\" height=\"85.19999999999999\" rx=\"10\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"40\" y=\"441.4\" font-size=\"19\"><tspan x=\"40\" dy=\"0\">Unsur pemeriksaan:</tspan><tspan x=\"40\" dy=\"26.599999999999998\">kriteria dan bukti</tspan></text><path class=\"svg-title\" style=\"fill:none!important\" stroke=\"currentColor\" stroke-width=\"2\" marker-end=\"url(#ASP-UAS-10-KILAT-m-arrow)\" d=\"M170 504.59999999999997 V526.5999999999999\"/><rect class=\"svg-card\" x=\"24\" y=\"532.5999999999999\" width=\"292\" height=\"58.599999999999994\" rx=\"10\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"40\" y=\"558.5999999999999\" font-size=\"19\"><tspan x=\"40\" dy=\"0\">Opini dan batasnya</tspan></text><path class=\"svg-title\" style=\"fill:none!important\" stroke=\"currentColor\" stroke-width=\"2\" marker-end=\"url(#ASP-UAS-10-KILAT-m-arrow)\" d=\"M170 595.1999999999999 V617.1999999999999\"/><rect class=\"svg-card\" x=\"24\" y=\"623.1999999999999\" width=\"292\" height=\"85.19999999999999\" rx=\"10\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"40\" y=\"649.1999999999999\" font-size=\"19\"><tspan x=\"40\" dy=\"0\">LHP dan tindak lanjut</tspan><tspan x=\"40\" dy=\"26.599999999999998\">60 hari</tspan></text><path class=\"svg-title\" style=\"fill:none!important\" stroke=\"currentColor\" stroke-width=\"2\" marker-end=\"url(#ASP-UAS-10-KILAT-m-arrow)\" d=\"M170 712.3999999999999 V734.3999999999999\"/><rect class=\"svg-card\" x=\"24\" y=\"740.3999999999999\" width=\"292\" height=\"111.8\" rx=\"10\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"40\" y=\"766.3999999999999\" font-size=\"19\"><tspan x=\"40\" dy=\"0\">SPKN: bedakan</tspan><tspan x=\"40\" dy=\"26.599999999999998\">pengundangan dan</tspan><tspan x=\"40\" dy=\"26.599999999999998\">penerapan</tspan></text><text class=\"svg-text\" x=\"24\" y=\"884.1999999999998\" font-size=\"18\"><tspan x=\"24\" dy=\"0\">Skematis: hubungan konsep,</tspan><tspan x=\"24\" dy=\"25.2\">tanpa skala angka.</tspan></text></svg>",
+          "caption": "[UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28](https://peraturan.bpk.go.id/Details/40509/uu-no-15-tahun-2004)",
+          "altText": "Peta Audit Organisasi Pemerintah: APIP dan BPK. Tentukan konteks → APIP dan BPK: posisi dan tanggung jawab → Jenis pemeriksaan mengikuti tujuan → Unsur pemeriksaan: kriteria dan bukti → Opini dan batasnya → LHP dan tindak lanjut 60 hari → SPKN: bedakan pengundangan dan penerapan Tentukan konteks: SAP, SPKN; JP Bab 2 dan 9 sesuai RPP PDF 5 APIP dan BPK: posisi dan tanggung jawab Jenis pemeriksaan mengikuti tujuan Unsur pemeriksaan: kriteria dan bukti Opini dan batasnya LHP dan tindak lanjut 60 hari SPKN: bedakan pengundangan dan penerapan Skematis: hubungan konsep, tanpa skala angka.",
+          "transcript": [
+            "Tentukan konteks: SAP, SPKN; JP Bab 2 dan 9 sesuai RPP PDF 5",
+            "APIP dan BPK: posisi dan tanggung jawab",
+            "Jenis pemeriksaan mengikuti tujuan",
+            "Unsur pemeriksaan: kriteria dan bukti",
+            "Opini dan batasnya",
+            "LHP dan tindak lanjut 60 hari",
+            "SPKN: bedakan pengundangan dan penerapan",
+            "Skematis: hubungan konsep, tanpa skala angka."
           ]
+        },
+        {
+          "kind": "ul",
+          "items": [
+            "Pilih tujuan pemeriksaan sebelum menilai temuan.",
+            "APIP melakukan pengawasan intern;BPK memeriksa secara mandiri.",
+            "Kriteria serta bukti cukup dan tepat mendukung kesimpulan.",
+            "WTP tidak menjamin bebas fraud atau efektifnya seluruh program.",
+            "60 hari adalah tenggat jawaban/penjelasan tindak lanjut.",
+            "SPKN 2026 mulai berlaku 10 April 2028."
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "Kalau cuma sempat ingat satu hal: Pilih tujuan pemeriksaan sebelum menilai temuan."
+        },
+        {
+          "kind": "callout",
+          "variant": "note",
+          "title": "Cakupan dan periode sumber",
+          "text": "RPP: SAP, SPKN; JP Bab 2 dan 9 sesuai RPP PDF 5. JP Bab 2 dan 9 serta bahan dosen audit belum tersedia."
         }
       ]
     },
     {
-      kind: 'h2',
-      text: 'Peta Submateri & Target Penguasaan Ujian TM 10'
-    },
-    {
-      kind: 'table',
-      headers: ['No', 'Submateri Pokok', 'Kedalaman Penguasaan yang Diuji', 'Standar Output Ujian'],
-      rows: [
-        ['1', 'Prinsip Value for Money (3E)', 'Pengukuran rasio ekonomi, efisiensi, dan efektivitas kuantitatif.', 'Mampu mengkalkulasi skor kinerja program sektor publik.'],
-        ['2', 'Indikator Input, Output, Outcome', 'Diferensiasi indikator antara barang fisik vs dampak kesejahteraan sosial.', 'Mampu merancang indikator kinerja utama dinas pemerintah.'],
-        ['3', 'Sistem Akuntabilitas Kinerja (SAKIP)', 'Penyusunan dokumen Perjanjian Kinerja (PK) dan laporan LKjIP.', 'Mampu mengevaluasi keterkaitan sasaran strategis kepala daerah.']
-      ],
-      caption: 'Tabel 10.2: Peta penguasaan submateri TM 10 Akuntansi Sektor Publik.'
-    },
-    CASE_VALUE_FOR_MONEY_EVAL,
-    {
-      kind: 'h2',
-      text: 'Rangkuman & Kunci Sukses Ujian (Key Takeaways)'
-    },
-    {
-      kind: 'ul',
-      items: [
-        '**Efisien Belum Tentu Efektif**: Sebuah puskesmas bisa sangat efisien mengobati 1.000 pasien dengan biaya murah, tetapi gagal secara efektivitas jika wabah penyakit menular tetap meluas di lingkungan warga.',
-        '**SAKIP Mewajibkan Keterkaitan Kinerja**: SAKIP menuntut setiap rupiah belanja di DPA dapat dipertanggungjawabkan hasilnya terhadap Indikator Kinerja Utama (IKU) Kepala Daerah.',
-        '**Audit Kinerja BPK RI**: Berbeda dengan audit keuangan yang memberikan opini wajar tanpa pengecualian (WTP), audit kinerja BPK RI menilai kehematan, efisiensi, dan efektivitas operasional program pemerintah.'
+      "kind": "section",
+      "layer": "main",
+      "title": "APIP dan BPK: posisi dan tanggung jawab",
+      "source": "[UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28](https://peraturan.bpk.go.id/Details/40509/uu-no-15-tahun-2004) [PP 60/2008 Ps.2-3,47-54; cetak/PDF 3-4,21-25](https://peraturan.go.id/files/pp60-2008.pdf#page=3)",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Instansi perlu pengawasan di dalam organisasi dan pemeriksaan yang mandiri. APIP, Aparat Pengawasan Intern Pemerintah, mencakup BPKP, inspektorat jenderal atau unit sejenis, inspektorat provinsi dan kabupaten/kota. PP 60/2008 menyebut audit, reviu, evaluasi, pemantauan dan pengawasan lainnya sebagai kegiatan pengawasan intern. [UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28](https://peraturan.bpk.go.id/Details/40509/uu-no-15-tahun-2004) [PP 60/2008 Ps.2-3,47-54; cetak/PDF 3-4,21-25](https://peraturan.go.id/files/pp60-2008.pdf#page=3)"
+        },
+        {
+          "kind": "p",
+          "text": "BPK memeriksa pengelolaan dan tanggung jawab keuangan negara. Objek, rencana, waktu, metode dan penyajian pemeriksaan ditentukan secara bebas dan mandiri menurut UU 15/2004. Pimpinan instansi tetap bertanggung jawab mengelola dan menindaklanjuti. Pengawasan intern yang baik menyediakan bukti serta perbaikan; keberadaannya tidak menghapus mandat pemeriksaan BPK. [UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28](https://peraturan.bpk.go.id/Details/40509/uu-no-15-tahun-2004) [PP 60/2008 Ps.2-3,47-54; cetak/PDF 3-4,21-25](https://peraturan.go.id/files/pp60-2008.pdf#page=3)"
+        },
+        {
+          "kind": "table",
+          "title": "APIP dan BPK dalam kasus",
+          "headers": [
+            "Aspek",
+            "APIP",
+            "BPK"
+          ],
+          "rows": [
+            [
+              "Posisi",
+              "Pengawasan intern pemerintah",
+              "Pemeriksaan eksternal bebas dan mandiri"
+            ],
+            [
+              "Aktivitas",
+              "Audit, reviu, evaluasi, pemantauan, lainnya",
+              "Keuangan, kinerja dan PDTT"
+            ],
+            [
+              "Pihak yang dituju",
+              "Pimpinan instansi sesuai mandat",
+              "Lembaga perwakilan dan pemerintah menurut UU"
+            ],
+            [
+              "Tanggung jawab manajemen",
+              "Tetap pada pimpinan",
+              "Tetap pada pejabat pengelola"
+            ]
+          ],
+          "caption": "[UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28](https://peraturan.bpk.go.id/Details/40509/uu-no-15-tahun-2004) [PP 60/2008 Ps.2-3,47-54; cetak/PDF 3-4,21-25](https://peraturan.go.id/files/pp60-2008.pdf#page=3)",
+          "stackOnMobile": true
+        },
+        {
+          "kind": "self-check",
+          "question": "Apakah reviu APIP memindahkan tanggung jawab laporan keuangan dari pimpinan?",
+          "answer": [
+            {
+              "kind": "p",
+              "text": "Tidak. Pimpinan tetap bertanggung jawab; reviu memberi pengawasan atas pelaporan. [UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28](https://peraturan.bpk.go.id/Details/40509/uu-no-15-tahun-2004) [PP 60/2008 Ps.2-3,47-54; cetak/PDF 3-4,21-25](https://peraturan.go.id/files/pp60-2008.pdf#page=3)"
+            }
+          ],
+          "signal": "Jika alasanmu berbeda, kembali ke sumber dan identifikasi fakta yang belum mendukung jawaban."
+        }
       ]
+    },
+    {
+      "kind": "section",
+      "layer": "main",
+      "title": "Jenis pemeriksaan mengikuti tujuan",
+      "source": "[UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28](https://peraturan.bpk.go.id/Details/40509/uu-no-15-tahun-2004) [Peraturan BPK 1/2017 Ps.3-5 dan KK par.14,18,21-42; cetak 4-5,5-13 KK; PDF 4-5,17-25](https://peraturan.bpk.go.id/Download/20433/Peraturan%20BPK%20Nomor%201%20Tahun%202017.pdf)",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Jika pertanyaanmu menyangkut kewajaran laporan keuangan, pemeriksaan keuangan memberi opini. Jika pertanyaanmu menyangkut ekonomi, efisiensi atau efektivitas, pemeriksaan kinerja menghasilkan kesimpulan dan rekomendasi. PDTT, pemeriksaan dengan tujuan tertentu, memberi kesimpulan sesuai tujuan penugasan; dapat berbentuk kepatuhan atau investigatif. [UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28](https://peraturan.bpk.go.id/Details/40509/uu-no-15-tahun-2004) [Peraturan BPK 1/2017 Ps.3-5 dan KK par.14,18,21-42; cetak 4-5,5-13 KK; PDF 4-5,17-25](https://peraturan.bpk.go.id/Download/20433/Peraturan%20BPK%20Nomor%201%20Tahun%202017.pdf)"
+        },
+        {
+          "kind": "p",
+          "text": "Jangan menyamakan semua pemeriksaan dengan investigasi pidana. Tujuan, hal pokok dan kriteria menentukan bukti yang dibutuhkan. Informasi yang sama dapat relevan pada beberapa jenis penugasan, tetapi keluaran dan pertanyaannya berbeda. Menilai kualitas layanan dari opini laporan keuangan saja tidak menjawab sasaran pemeriksaan kinerja. [UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28](https://peraturan.bpk.go.id/Details/40509/uu-no-15-tahun-2004) [Peraturan BPK 1/2017 Ps.3-5 dan KK par.14,18,21-42; cetak 4-5,5-13 KK; PDF 4-5,17-25](https://peraturan.bpk.go.id/Download/20433/Peraturan%20BPK%20Nomor%201%20Tahun%202017.pdf)"
+        },
+        {
+          "kind": "figure",
+          "title": "Tiga tujuan pemeriksaan",
+          "svg": "<svg class=\"course-diagram-svg akk203-uas-diagram\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-labelledby=\"ASP-UAS-10-JENIS-d-title ASP-UAS-10-JENIS-d-desc\" width=\"100%\" viewBox=\"0 0 760 462.6\"><title id=\"ASP-UAS-10-JENIS-d-title\">Tiga tujuan pemeriksaan</title><desc id=\"ASP-UAS-10-JENIS-d-desc\">Tiga tujuan pemeriksaan. Cabang terpisah dibandingkan sesuai label. Tidak menunjukkan urutan waktu. Keuangan: Kewajaran LK → opini Kinerja: Ekonomi, efisiensi, efektivitas → kesimpulan/rekomendasi PDTT: Tujuan khusus → kesimpulan sesuai tujuan Skematis: hubungan konsep, tanpa skala angka.</desc><defs><marker id=\"ASP-UAS-10-JENIS-d-arrow\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto\"><path class=\"svg-title\" d=\"M0 0 L10 5 L0 10 Z\"/></marker></defs><rect class=\"svg-bg\" width=\"760\" height=\"462.6\" rx=\"12\"/><rect class=\"svg-card\" x=\"24\" y=\"28\" width=\"712\" height=\"95.8\" rx=\"10\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"40\" y=\"54\" font-size=\"19\"><tspan x=\"40\" dy=\"0\">Keuangan</tspan></text><text class=\"svg-text\" x=\"40\" y=\"90.6\" font-size=\"18\"><tspan x=\"40\" dy=\"0\">Kewajaran LK → opini</tspan></text><rect class=\"svg-card\" x=\"24\" y=\"155.8\" width=\"712\" height=\"95.8\" rx=\"10\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"40\" y=\"181.8\" font-size=\"19\"><tspan x=\"40\" dy=\"0\">Kinerja</tspan></text><text class=\"svg-text\" x=\"40\" y=\"218.4\" font-size=\"18\"><tspan x=\"40\" dy=\"0\">Ekonomi, efisiensi, efektivitas → kesimpulan/rekomendasi</tspan></text><rect class=\"svg-card\" x=\"24\" y=\"283.6\" width=\"712\" height=\"95.8\" rx=\"10\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"40\" y=\"309.6\" font-size=\"19\"><tspan x=\"40\" dy=\"0\">PDTT</tspan></text><text class=\"svg-text\" x=\"40\" y=\"346.20000000000005\" font-size=\"18\"><tspan x=\"40\" dy=\"0\">Tujuan khusus → kesimpulan sesuai tujuan</tspan></text><text class=\"svg-text\" x=\"24\" y=\"411.40000000000003\" font-size=\"18\"><tspan x=\"24\" dy=\"0\">Skematis: hubungan konsep, tanpa skala angka.</tspan></text></svg>",
+          "mobileSvg": "<svg class=\"course-diagram-svg akk203-uas-diagram\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-labelledby=\"ASP-UAS-10-JENIS-m-title ASP-UAS-10-JENIS-m-desc\" width=\"100%\" viewBox=\"0 0 340 588.6\"><title id=\"ASP-UAS-10-JENIS-m-title\">Tiga tujuan pemeriksaan</title><desc id=\"ASP-UAS-10-JENIS-m-desc\">Tiga tujuan pemeriksaan. Cabang terpisah dibandingkan sesuai label. Tidak menunjukkan urutan waktu. Keuangan: Kewajaran LK → opini Kinerja: Ekonomi, efisiensi, efektivitas → kesimpulan/rekomendasi PDTT: Tujuan khusus → kesimpulan sesuai tujuan Skematis: hubungan konsep, tanpa skala angka.</desc><defs><marker id=\"ASP-UAS-10-JENIS-m-arrow\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto\"><path class=\"svg-title\" d=\"M0 0 L10 5 L0 10 Z\"/></marker></defs><rect class=\"svg-bg\" width=\"340\" height=\"588.6\" rx=\"12\"/><rect class=\"svg-card\" x=\"24\" y=\"28\" width=\"292\" height=\"95.8\" rx=\"10\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"40\" y=\"54\" font-size=\"19\"><tspan x=\"40\" dy=\"0\">Keuangan</tspan></text><text class=\"svg-text\" x=\"40\" y=\"90.6\" font-size=\"18\"><tspan x=\"40\" dy=\"0\">Kewajaran LK → opini</tspan></text><rect class=\"svg-card\" x=\"24\" y=\"155.8\" width=\"292\" height=\"146.2\" rx=\"10\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"40\" y=\"181.8\" font-size=\"19\"><tspan x=\"40\" dy=\"0\">Kinerja</tspan></text><text class=\"svg-text\" x=\"40\" y=\"218.4\" font-size=\"18\"><tspan x=\"40\" dy=\"0\">Ekonomi, efisiensi,</tspan></text><text class=\"svg-text\" x=\"40\" y=\"243.6\" font-size=\"18\"><tspan x=\"40\" dy=\"0\">efektivitas →</tspan></text><text class=\"svg-text\" x=\"40\" y=\"268.8\" font-size=\"18\"><tspan x=\"40\" dy=\"0\">kesimpulan/rekomendasi</tspan></text><rect class=\"svg-card\" x=\"24\" y=\"334\" width=\"292\" height=\"146.2\" rx=\"10\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"40\" y=\"360\" font-size=\"19\"><tspan x=\"40\" dy=\"0\">PDTT</tspan></text><text class=\"svg-text\" x=\"40\" y=\"396.6\" font-size=\"18\"><tspan x=\"40\" dy=\"0\">Tujuan khusus →</tspan></text><text class=\"svg-text\" x=\"40\" y=\"421.8\" font-size=\"18\"><tspan x=\"40\" dy=\"0\">kesimpulan sesuai</tspan></text><text class=\"svg-text\" x=\"40\" y=\"447\" font-size=\"18\"><tspan x=\"40\" dy=\"0\">tujuan</tspan></text><text class=\"svg-text\" x=\"24\" y=\"512.2\" font-size=\"18\"><tspan x=\"24\" dy=\"0\">Skematis: hubungan konsep,</tspan><tspan x=\"24\" dy=\"25.2\">tanpa skala angka.</tspan></text></svg>",
+          "caption": "[Peraturan BPK 1/2017 Ps.3-5 dan KK par.14,18,21-42; cetak 4-5,5-13 KK; PDF 4-5,17-25](https://peraturan.bpk.go.id/Download/20433/Peraturan%20BPK%20Nomor%201%20Tahun%202017.pdf)",
+          "altText": "Tiga tujuan pemeriksaan. Cabang terpisah dibandingkan sesuai label. Tidak menunjukkan urutan waktu. Keuangan: Kewajaran LK → opini Kinerja: Ekonomi, efisiensi, efektivitas → kesimpulan/rekomendasi PDTT: Tujuan khusus → kesimpulan sesuai tujuan Skematis: hubungan konsep, tanpa skala angka.",
+          "transcript": [
+            "Keuangan: Kewajaran LK → opini",
+            "Kinerja: Ekonomi, efisiensi, efektivitas → kesimpulan/rekomendasi",
+            "PDTT: Tujuan khusus → kesimpulan sesuai tujuan",
+            "Skematis: hubungan konsep, tanpa skala angka."
+          ]
+        },
+        {
+          "kind": "self-check",
+          "question": "Pemeriksa menilai keterlambatan layanan dan pemborosan sumber daya. Jenis yang relevan?",
+          "answer": [
+            {
+              "kind": "p",
+              "text": "Pemeriksaan kinerja, dengan tujuan dan kriteria yang dirumuskan pada aspek ekonomi, efisiensi atau efektivitas. [UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28](https://peraturan.bpk.go.id/Details/40509/uu-no-15-tahun-2004) [Peraturan BPK 1/2017 Ps.3-5 dan KK par.14,18,21-42; cetak 4-5,5-13 KK; PDF 4-5,17-25](https://peraturan.bpk.go.id/Download/20433/Peraturan%20BPK%20Nomor%201%20Tahun%202017.pdf)"
+            }
+          ],
+          "signal": "Jika alasanmu berbeda, kembali ke sumber dan identifikasi fakta yang belum mendukung jawaban."
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "layer": "main",
+      "title": "Unsur pemeriksaan: kriteria dan bukti",
+      "source": "[Peraturan BPK 1/2017 Ps.3-5 dan KK par.14,18,21-42; cetak 4-5,5-13 KK; PDF 4-5,17-25](https://peraturan.bpk.go.id/Download/20433/Peraturan%20BPK%20Nomor%201%20Tahun%202017.pdf)",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Subject matter berarti hal pokok yang diperiksa, misalnya laporan, kinerja, proses atau kepatuhan. Criteria berarti tolok ukur untuk menilai hal pokok. Pemeriksa, pihak bertanggung jawab, dan pengguna LHP membentuk hubungan tiga pihak. Bukti menghubungkan keadaan yang ditemukan dengan kriteria. [Peraturan BPK 1/2017 Ps.3-5 dan KK par.14,18,21-42; cetak 4-5,5-13 KK; PDF 4-5,17-25](https://peraturan.bpk.go.id/Download/20433/Peraturan%20BPK%20Nomor%201%20Tahun%202017.pdf)"
+        },
+        {
+          "kind": "p",
+          "text": "Kecukupan menyangkut jumlah bukti; ketepatan menyangkut mutu, relevansi dan validitas. Banyak bukti bermutu buruk belum menutup kekurangan bukti yang tepat. Pemeriksa menggunakan inspeksi, observasi, konfirmasi, permintaan keterangan, rekalkulasi atau prosedur relevan lain. Kesimpulan harus mengikuti bukti yang cukup dan tepat, bukan dugaan berdasarkan satu dokumen yang belum dikonfirmasi. [Peraturan BPK 1/2017 Ps.3-5 dan KK par.14,18,21-42; cetak 4-5,5-13 KK; PDF 4-5,17-25](https://peraturan.bpk.go.id/Download/20433/Peraturan%20BPK%20Nomor%201%20Tahun%202017.pdf)"
+        },
+        {
+          "kind": "figure",
+          "title": "Dari tujuan sampai kesimpulan",
+          "svg": "<svg class=\"course-diagram-svg akk203-uas-diagram\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-labelledby=\"ASP-UAS-10-BUKTI-d-title ASP-UAS-10-BUKTI-d-desc\" width=\"100%\" viewBox=\"0 0 760 718.2\"><title id=\"ASP-UAS-10-BUKTI-d-title\">Dari tujuan sampai kesimpulan</title><desc id=\"ASP-UAS-10-BUKTI-d-desc\">Dari tujuan sampai kesimpulan. Tujuan dan hal pokok → Kriteria → Bukti → Analisis → LHP Tujuan dan hal pokok: Apa yang dinilai? Kriteria: Tolok ukur yang relevan Bukti: Cukup dan tepat Analisis: Bandingkan kondisi dengan kriteria LHP: Kesimpulan sesuai jenis penugasan Skematis: hubungan konsep, tanpa skala angka.</desc><defs><marker id=\"ASP-UAS-10-BUKTI-d-arrow\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto\"><path class=\"svg-title\" d=\"M0 0 L10 5 L0 10 Z\"/></marker></defs><rect class=\"svg-bg\" width=\"760\" height=\"718.2\" rx=\"12\"/><rect class=\"svg-card\" x=\"24\" y=\"28\" width=\"712\" height=\"95.8\" rx=\"10\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"40\" y=\"54\" font-size=\"19\"><tspan x=\"40\" dy=\"0\">Tujuan dan hal pokok</tspan></text><text class=\"svg-text\" x=\"40\" y=\"90.6\" font-size=\"18\"><tspan x=\"40\" dy=\"0\">Apa yang dinilai?</tspan></text><path class=\"svg-title\" style=\"fill:none!important\" stroke=\"currentColor\" stroke-width=\"2\" marker-end=\"url(#ASP-UAS-10-BUKTI-d-arrow)\" d=\"M380 127.8 V149.8\"/><rect class=\"svg-card\" x=\"24\" y=\"155.8\" width=\"712\" height=\"95.8\" rx=\"10\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"40\" y=\"181.8\" font-size=\"19\"><tspan x=\"40\" dy=\"0\">Kriteria</tspan></text><text class=\"svg-text\" x=\"40\" y=\"218.4\" font-size=\"18\"><tspan x=\"40\" dy=\"0\">Tolok ukur yang relevan</tspan></text><path class=\"svg-title\" style=\"fill:none!important\" stroke=\"currentColor\" stroke-width=\"2\" marker-end=\"url(#ASP-UAS-10-BUKTI-d-arrow)\" d=\"M380 255.60000000000002 V277.6\"/><rect class=\"svg-card\" x=\"24\" y=\"283.6\" width=\"712\" height=\"95.8\" rx=\"10\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"40\" y=\"309.6\" font-size=\"19\"><tspan x=\"40\" dy=\"0\">Bukti</tspan></text><text class=\"svg-text\" x=\"40\" y=\"346.20000000000005\" font-size=\"18\"><tspan x=\"40\" dy=\"0\">Cukup dan tepat</tspan></text><path class=\"svg-title\" style=\"fill:none!important\" stroke=\"currentColor\" stroke-width=\"2\" marker-end=\"url(#ASP-UAS-10-BUKTI-d-arrow)\" d=\"M380 383.40000000000003 V405.40000000000003\"/><rect class=\"svg-card\" x=\"24\" y=\"411.40000000000003\" width=\"712\" height=\"95.8\" rx=\"10\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"40\" y=\"437.40000000000003\" font-size=\"19\"><tspan x=\"40\" dy=\"0\">Analisis</tspan></text><text class=\"svg-text\" x=\"40\" y=\"474.00000000000006\" font-size=\"18\"><tspan x=\"40\" dy=\"0\">Bandingkan kondisi dengan kriteria</tspan></text><path class=\"svg-title\" style=\"fill:none!important\" stroke=\"currentColor\" stroke-width=\"2\" marker-end=\"url(#ASP-UAS-10-BUKTI-d-arrow)\" d=\"M380 511.20000000000005 V533.2\"/><rect class=\"svg-card\" x=\"24\" y=\"539.2\" width=\"712\" height=\"95.8\" rx=\"10\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"40\" y=\"565.2\" font-size=\"19\"><tspan x=\"40\" dy=\"0\">LHP</tspan></text><text class=\"svg-text\" x=\"40\" y=\"601.8000000000001\" font-size=\"18\"><tspan x=\"40\" dy=\"0\">Kesimpulan sesuai jenis penugasan</tspan></text><text class=\"svg-text\" x=\"24\" y=\"667\" font-size=\"18\"><tspan x=\"24\" dy=\"0\">Skematis: hubungan konsep, tanpa skala angka.</tspan></text></svg>",
+          "mobileSvg": "<svg class=\"course-diagram-svg akk203-uas-diagram\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-labelledby=\"ASP-UAS-10-BUKTI-m-title ASP-UAS-10-BUKTI-m-desc\" width=\"100%\" viewBox=\"0 0 340 793.8000000000001\"><title id=\"ASP-UAS-10-BUKTI-m-title\">Dari tujuan sampai kesimpulan</title><desc id=\"ASP-UAS-10-BUKTI-m-desc\">Dari tujuan sampai kesimpulan. Tujuan dan hal pokok → Kriteria → Bukti → Analisis → LHP Tujuan dan hal pokok: Apa yang dinilai? Kriteria: Tolok ukur yang relevan Bukti: Cukup dan tepat Analisis: Bandingkan kondisi dengan kriteria LHP: Kesimpulan sesuai jenis penugasan Skematis: hubungan konsep, tanpa skala angka.</desc><defs><marker id=\"ASP-UAS-10-BUKTI-m-arrow\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto\"><path class=\"svg-title\" d=\"M0 0 L10 5 L0 10 Z\"/></marker></defs><rect class=\"svg-bg\" width=\"340\" height=\"793.8000000000001\" rx=\"12\"/><rect class=\"svg-card\" x=\"24\" y=\"28\" width=\"292\" height=\"95.8\" rx=\"10\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"40\" y=\"54\" font-size=\"19\"><tspan x=\"40\" dy=\"0\">Tujuan dan hal pokok</tspan></text><text class=\"svg-text\" x=\"40\" y=\"90.6\" font-size=\"18\"><tspan x=\"40\" dy=\"0\">Apa yang dinilai?</tspan></text><path class=\"svg-title\" style=\"fill:none!important\" stroke=\"currentColor\" stroke-width=\"2\" marker-end=\"url(#ASP-UAS-10-BUKTI-m-arrow)\" d=\"M170 127.8 V149.8\"/><rect class=\"svg-card\" x=\"24\" y=\"155.8\" width=\"292\" height=\"95.8\" rx=\"10\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"40\" y=\"181.8\" font-size=\"19\"><tspan x=\"40\" dy=\"0\">Kriteria</tspan></text><text class=\"svg-text\" x=\"40\" y=\"218.4\" font-size=\"18\"><tspan x=\"40\" dy=\"0\">Tolok ukur yang relevan</tspan></text><path class=\"svg-title\" style=\"fill:none!important\" stroke=\"currentColor\" stroke-width=\"2\" marker-end=\"url(#ASP-UAS-10-BUKTI-m-arrow)\" d=\"M170 255.60000000000002 V277.6\"/><rect class=\"svg-card\" x=\"24\" y=\"283.6\" width=\"292\" height=\"95.8\" rx=\"10\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"40\" y=\"309.6\" font-size=\"19\"><tspan x=\"40\" dy=\"0\">Bukti</tspan></text><text class=\"svg-text\" x=\"40\" y=\"346.20000000000005\" font-size=\"18\"><tspan x=\"40\" dy=\"0\">Cukup dan tepat</tspan></text><path class=\"svg-title\" style=\"fill:none!important\" stroke=\"currentColor\" stroke-width=\"2\" marker-end=\"url(#ASP-UAS-10-BUKTI-m-arrow)\" d=\"M170 383.40000000000003 V405.40000000000003\"/><rect class=\"svg-card\" x=\"24\" y=\"411.40000000000003\" width=\"292\" height=\"121\" rx=\"10\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"40\" y=\"437.40000000000003\" font-size=\"19\"><tspan x=\"40\" dy=\"0\">Analisis</tspan></text><text class=\"svg-text\" x=\"40\" y=\"474.00000000000006\" font-size=\"18\"><tspan x=\"40\" dy=\"0\">Bandingkan kondisi</tspan></text><text class=\"svg-text\" x=\"40\" y=\"499.20000000000005\" font-size=\"18\"><tspan x=\"40\" dy=\"0\">dengan kriteria</tspan></text><path class=\"svg-title\" style=\"fill:none!important\" stroke=\"currentColor\" stroke-width=\"2\" marker-end=\"url(#ASP-UAS-10-BUKTI-m-arrow)\" d=\"M170 536.4000000000001 V558.4000000000001\"/><rect class=\"svg-card\" x=\"24\" y=\"564.4000000000001\" width=\"292\" height=\"121\" rx=\"10\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"40\" y=\"590.4000000000001\" font-size=\"19\"><tspan x=\"40\" dy=\"0\">LHP</tspan></text><text class=\"svg-text\" x=\"40\" y=\"627.0000000000001\" font-size=\"18\"><tspan x=\"40\" dy=\"0\">Kesimpulan sesuai jenis</tspan></text><text class=\"svg-text\" x=\"40\" y=\"652.2000000000002\" font-size=\"18\"><tspan x=\"40\" dy=\"0\">penugasan</tspan></text><text class=\"svg-text\" x=\"24\" y=\"717.4000000000001\" font-size=\"18\"><tspan x=\"24\" dy=\"0\">Skematis: hubungan konsep,</tspan><tspan x=\"24\" dy=\"25.2\">tanpa skala angka.</tspan></text></svg>",
+          "caption": "[Peraturan BPK 1/2017 Ps.3-5 dan KK par.14,18,21-42; cetak 4-5,5-13 KK; PDF 4-5,17-25](https://peraturan.bpk.go.id/Download/20433/Peraturan%20BPK%20Nomor%201%20Tahun%202017.pdf)",
+          "altText": "Dari tujuan sampai kesimpulan. Tujuan dan hal pokok → Kriteria → Bukti → Analisis → LHP Tujuan dan hal pokok: Apa yang dinilai? Kriteria: Tolok ukur yang relevan Bukti: Cukup dan tepat Analisis: Bandingkan kondisi dengan kriteria LHP: Kesimpulan sesuai jenis penugasan Skematis: hubungan konsep, tanpa skala angka.",
+          "transcript": [
+            "Tujuan dan hal pokok: Apa yang dinilai?",
+            "Kriteria: Tolok ukur yang relevan",
+            "Bukti: Cukup dan tepat",
+            "Analisis: Bandingkan kondisi dengan kriteria",
+            "LHP: Kesimpulan sesuai jenis penugasan",
+            "Skematis: hubungan konsep, tanpa skala angka."
+          ]
+        },
+        {
+          "kind": "self-check",
+          "question": "Mengapa 100 salinan dokumen yang sama tidak otomatis lebih meyakinkan daripada satu konfirmasi independen?",
+          "answer": [
+            {
+              "kind": "p",
+              "text": "Penggandaan jumlah tidak menaikkan mutu atau independensi bukti. Kecukupan dan ketepatan harus dinilai bersama. [Peraturan BPK 1/2017 Ps.3-5 dan KK par.14,18,21-42; cetak 4-5,5-13 KK; PDF 4-5,17-25](https://peraturan.bpk.go.id/Download/20433/Peraturan%20BPK%20Nomor%201%20Tahun%202017.pdf)"
+            }
+          ],
+          "signal": "Jika alasanmu berbeda, kembali ke sumber dan identifikasi fakta yang belum mendukung jawaban."
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "layer": "main",
+      "title": "Opini dan batasnya",
+      "source": "[UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28](https://peraturan.bpk.go.id/Details/40509/uu-no-15-tahun-2004)",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "UU 15/2004 menyebut opini sebagai kesimpulan profesional atas kewajaran informasi dalam laporan keuangan. Penjelasan Pasal 16 memuat empat kriteria: kesesuaian dengan SAP, kecukupan pengungkapan, kepatuhan terhadap peraturan, serta efektivitas sistem pengendalian intern. Empat jenis opini adalah WTP, WDP, tidak wajar dan pernyataan menolak memberikan opini. [UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28](https://peraturan.bpk.go.id/Details/40509/uu-no-15-tahun-2004)"
+        },
+        {
+          "kind": "p",
+          "text": "WTP menjawab kewajaran laporan menurut kriteria pemeriksaan. Opini itu tidak menyatakan bahwa seluruh transaksi bebas kecurangan atau seluruh program efektif. Kasus dokumen aset yang hilang memerlukan penilaian atas bukti alternatif, materialitas dan pengaruh terhadap laporan. Nominal yang besar saja belum menentukan satu jenis opini secara otomatis. Latihan di sini melatih analisis bukti, tanpa menggantikan pertimbangan profesional pemeriksa. [UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28](https://peraturan.bpk.go.id/Details/40509/uu-no-15-tahun-2004)"
+        },
+        {
+          "kind": "table",
+          "title": "Informasi dan kesimpulan yang diizinkan",
+          "headers": [
+            "Informasi",
+            "Makna yang dapat dijelaskan",
+            "Batas"
+          ],
+          "rows": [
+            [
+              "WTP",
+              "LK dinilai wajar menurut kriteria pemeriksaan",
+              "Tidak menjamin bebas fraud atau semua hasil program baik"
+            ],
+            [
+              "Dokumen aset hilang",
+              "Keterbatasan bukti perlu ditelusuri",
+              "Opini membutuhkan cakupan dan bukti alternatif"
+            ],
+            [
+              "Temuan kinerja",
+              "Aspek layanan/3 E perlu diperbaiki",
+              "Tidak otomatis mengubah opini LK"
+            ],
+            [
+              "PDTT",
+              "Kesimpulan khusus sesuai tujuan",
+              "Tidak selalu investigasi pidana"
+            ]
+          ],
+          "caption": "[UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28](https://peraturan.bpk.go.id/Details/40509/uu-no-15-tahun-2004) [Peraturan BPK 1/2017 Ps.3-5 dan KK par.14,18,21-42; cetak 4-5,5-13 KK; PDF 4-5,17-25](https://peraturan.bpk.go.id/Download/20433/Peraturan%20BPK%20Nomor%201%20Tahun%202017.pdf)",
+          "stackOnMobile": true
+        },
+        {
+          "kind": "self-check",
+          "question": "Bolehkah WTP dipakai sebagai satu-satunya indikator efektivitas program?",
+          "answer": [
+            {
+              "kind": "p",
+              "text": "Tidak. Opini menilai kewajaran laporan; efektivitas membutuhkan bukti tentang tujuan dan hasil program. [UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28](https://peraturan.bpk.go.id/Details/40509/uu-no-15-tahun-2004)"
+            }
+          ],
+          "signal": "Jika alasanmu berbeda, kembali ke sumber dan identifikasi fakta yang belum mendukung jawaban."
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "layer": "main",
+      "title": "LHP dan tindak lanjut 60 hari",
+      "source": "[UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28](https://peraturan.bpk.go.id/Details/40509/uu-no-15-tahun-2004)",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "LHP, Laporan Hasil Pemeriksaan, memuat hasil sesuai jenis pemeriksaan. LHP yang disampaikan kepada lembaga perwakilan terbuka untuk umum, dengan pengecualian rahasia negara. Pengguna laporan memerlukan rekomendasi yang dapat dihubungkan dengan masalah dan tindakan perbaikan. [UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28](https://peraturan.bpk.go.id/Details/40509/uu-no-15-tahun-2004)"
+        },
+        {
+          "kind": "p",
+          "text": "Pasal 20 mewajibkan pejabat menindaklanjuti rekomendasi dan menyampaikan jawaban atau penjelasan kepada BPK paling lambat 60 hari setelah LHP diterima. Tenggat ini melekat pada jawaban atau penjelasan. Penjelasan Pasal 20 mengizinkan alasan yang sah bila sebagian atau seluruh rekomendasi belum dapat dilaksanakan. BPK memantau tindak lanjut; surat jawaban tidak otomatis membuktikan rekomendasi telah selesai. [UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28](https://peraturan.bpk.go.id/Details/40509/uu-no-15-tahun-2004)"
+        },
+        {
+          "kind": "figure",
+          "title": "Tindak lanjut berdasarkan bukti",
+          "svg": "<svg class=\"course-diagram-svg akk203-uas-diagram\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-labelledby=\"ASP-UAS-10-TL-d-title ASP-UAS-10-TL-d-desc\" width=\"100%\" viewBox=\"0 0 760 718.2\"><title id=\"ASP-UAS-10-TL-d-title\">Tindak lanjut berdasarkan bukti</title><desc id=\"ASP-UAS-10-TL-d-desc\">Tindak lanjut berdasarkan bukti. LHP diterima → Pejabat menindaklanjuti → Jawaban/penjelasan kepada BPK → BPK memantau → Perbaikan berlanjut LHP diterima: Catat tanggal penerimaan Pejabat menindaklanjuti: Tetapkan tindakan dan penanggung jawab Jawaban/penjelasan kepada BPK: Paling lambat 60 hari; sertakan bukti/alasan sah BPK memantau: Nilai hasil tindak lanjut Perbaikan berlanjut: Selesaikan masalah yang masih ada Skematis: hubungan konsep, tanpa skala angka.</desc><defs><marker id=\"ASP-UAS-10-TL-d-arrow\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto\"><path class=\"svg-title\" d=\"M0 0 L10 5 L0 10 Z\"/></marker></defs><rect class=\"svg-bg\" width=\"760\" height=\"718.2\" rx=\"12\"/><rect class=\"svg-card\" x=\"24\" y=\"28\" width=\"712\" height=\"95.8\" rx=\"10\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"40\" y=\"54\" font-size=\"19\"><tspan x=\"40\" dy=\"0\">LHP diterima</tspan></text><text class=\"svg-text\" x=\"40\" y=\"90.6\" font-size=\"18\"><tspan x=\"40\" dy=\"0\">Catat tanggal penerimaan</tspan></text><path class=\"svg-title\" style=\"fill:none!important\" stroke=\"currentColor\" stroke-width=\"2\" marker-end=\"url(#ASP-UAS-10-TL-d-arrow)\" d=\"M380 127.8 V149.8\"/><rect class=\"svg-card\" x=\"24\" y=\"155.8\" width=\"712\" height=\"95.8\" rx=\"10\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"40\" y=\"181.8\" font-size=\"19\"><tspan x=\"40\" dy=\"0\">Pejabat menindaklanjuti</tspan></text><text class=\"svg-text\" x=\"40\" y=\"218.4\" font-size=\"18\"><tspan x=\"40\" dy=\"0\">Tetapkan tindakan dan penanggung jawab</tspan></text><path class=\"svg-title\" style=\"fill:none!important\" stroke=\"currentColor\" stroke-width=\"2\" marker-end=\"url(#ASP-UAS-10-TL-d-arrow)\" d=\"M380 255.60000000000002 V277.6\"/><rect class=\"svg-card\" x=\"24\" y=\"283.6\" width=\"712\" height=\"95.8\" rx=\"10\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"40\" y=\"309.6\" font-size=\"19\"><tspan x=\"40\" dy=\"0\">Jawaban/penjelasan kepada BPK</tspan></text><text class=\"svg-text\" x=\"40\" y=\"346.20000000000005\" font-size=\"18\"><tspan x=\"40\" dy=\"0\">Paling lambat 60 hari; sertakan bukti/alasan sah</tspan></text><path class=\"svg-title\" style=\"fill:none!important\" stroke=\"currentColor\" stroke-width=\"2\" marker-end=\"url(#ASP-UAS-10-TL-d-arrow)\" d=\"M380 383.40000000000003 V405.40000000000003\"/><rect class=\"svg-card\" x=\"24\" y=\"411.40000000000003\" width=\"712\" height=\"95.8\" rx=\"10\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"40\" y=\"437.40000000000003\" font-size=\"19\"><tspan x=\"40\" dy=\"0\">BPK memantau</tspan></text><text class=\"svg-text\" x=\"40\" y=\"474.00000000000006\" font-size=\"18\"><tspan x=\"40\" dy=\"0\">Nilai hasil tindak lanjut</tspan></text><path class=\"svg-title\" style=\"fill:none!important\" stroke=\"currentColor\" stroke-width=\"2\" marker-end=\"url(#ASP-UAS-10-TL-d-arrow)\" d=\"M380 511.20000000000005 V533.2\"/><rect class=\"svg-card\" x=\"24\" y=\"539.2\" width=\"712\" height=\"95.8\" rx=\"10\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"40\" y=\"565.2\" font-size=\"19\"><tspan x=\"40\" dy=\"0\">Perbaikan berlanjut</tspan></text><text class=\"svg-text\" x=\"40\" y=\"601.8000000000001\" font-size=\"18\"><tspan x=\"40\" dy=\"0\">Selesaikan masalah yang masih ada</tspan></text><text class=\"svg-text\" x=\"24\" y=\"667\" font-size=\"18\"><tspan x=\"24\" dy=\"0\">Skematis: hubungan konsep, tanpa skala angka.</tspan></text></svg>",
+          "mobileSvg": "<svg class=\"course-diagram-svg akk203-uas-diagram\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-labelledby=\"ASP-UAS-10-TL-m-title ASP-UAS-10-TL-m-desc\" width=\"100%\" viewBox=\"0 0 340 947.8\"><title id=\"ASP-UAS-10-TL-m-title\">Tindak lanjut berdasarkan bukti</title><desc id=\"ASP-UAS-10-TL-m-desc\">Tindak lanjut berdasarkan bukti. LHP diterima → Pejabat menindaklanjuti → Jawaban/penjelasan kepada BPK → BPK memantau → Perbaikan berlanjut LHP diterima: Catat tanggal penerimaan Pejabat menindaklanjuti: Tetapkan tindakan dan penanggung jawab Jawaban/penjelasan kepada BPK: Paling lambat 60 hari; sertakan bukti/alasan sah BPK memantau: Nilai hasil tindak lanjut Perbaikan berlanjut: Selesaikan masalah yang masih ada Skematis: hubungan konsep, tanpa skala angka.</desc><defs><marker id=\"ASP-UAS-10-TL-m-arrow\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto\"><path class=\"svg-title\" d=\"M0 0 L10 5 L0 10 Z\"/></marker></defs><rect class=\"svg-bg\" width=\"340\" height=\"947.8\" rx=\"12\"/><rect class=\"svg-card\" x=\"24\" y=\"28\" width=\"292\" height=\"121\" rx=\"10\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"40\" y=\"54\" font-size=\"19\"><tspan x=\"40\" dy=\"0\">LHP diterima</tspan></text><text class=\"svg-text\" x=\"40\" y=\"90.6\" font-size=\"18\"><tspan x=\"40\" dy=\"0\">Catat tanggal</tspan></text><text class=\"svg-text\" x=\"40\" y=\"115.8\" font-size=\"18\"><tspan x=\"40\" dy=\"0\">penerimaan</tspan></text><path class=\"svg-title\" style=\"fill:none!important\" stroke=\"currentColor\" stroke-width=\"2\" marker-end=\"url(#ASP-UAS-10-TL-m-arrow)\" d=\"M170 153 V175\"/><rect class=\"svg-card\" x=\"24\" y=\"181\" width=\"292\" height=\"147.6\" rx=\"10\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"40\" y=\"207\" font-size=\"19\"><tspan x=\"40\" dy=\"0\">Pejabat</tspan><tspan x=\"40\" dy=\"26.599999999999998\">menindaklanjuti</tspan></text><text class=\"svg-text\" x=\"40\" y=\"270.2\" font-size=\"18\"><tspan x=\"40\" dy=\"0\">Tetapkan tindakan dan</tspan></text><text class=\"svg-text\" x=\"40\" y=\"295.4\" font-size=\"18\"><tspan x=\"40\" dy=\"0\">penanggung jawab</tspan></text><path class=\"svg-title\" style=\"fill:none!important\" stroke=\"currentColor\" stroke-width=\"2\" marker-end=\"url(#ASP-UAS-10-TL-m-arrow)\" d=\"M170 332.6 V354.6\"/><rect class=\"svg-card\" x=\"24\" y=\"360.6\" width=\"292\" height=\"172.79999999999998\" rx=\"10\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"40\" y=\"386.6\" font-size=\"19\"><tspan x=\"40\" dy=\"0\">Jawaban/penjelasan</tspan><tspan x=\"40\" dy=\"26.599999999999998\">kepada BPK</tspan></text><text class=\"svg-text\" x=\"40\" y=\"449.8\" font-size=\"18\"><tspan x=\"40\" dy=\"0\">Paling lambat 60 hari;</tspan></text><text class=\"svg-text\" x=\"40\" y=\"475\" font-size=\"18\"><tspan x=\"40\" dy=\"0\">sertakan bukti/alasan</tspan></text><text class=\"svg-text\" x=\"40\" y=\"500.2\" font-size=\"18\"><tspan x=\"40\" dy=\"0\">sah</tspan></text><path class=\"svg-title\" style=\"fill:none!important\" stroke=\"currentColor\" stroke-width=\"2\" marker-end=\"url(#ASP-UAS-10-TL-m-arrow)\" d=\"M170 537.4 V559.4\"/><rect class=\"svg-card\" x=\"24\" y=\"565.4\" width=\"292\" height=\"121\" rx=\"10\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"40\" y=\"591.4\" font-size=\"19\"><tspan x=\"40\" dy=\"0\">BPK memantau</tspan></text><text class=\"svg-text\" x=\"40\" y=\"628\" font-size=\"18\"><tspan x=\"40\" dy=\"0\">Nilai hasil tindak</tspan></text><text class=\"svg-text\" x=\"40\" y=\"653.2\" font-size=\"18\"><tspan x=\"40\" dy=\"0\">lanjut</tspan></text><path class=\"svg-title\" style=\"fill:none!important\" stroke=\"currentColor\" stroke-width=\"2\" marker-end=\"url(#ASP-UAS-10-TL-m-arrow)\" d=\"M170 690.4 V712.4\"/><rect class=\"svg-card\" x=\"24\" y=\"718.4\" width=\"292\" height=\"121\" rx=\"10\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"40\" y=\"744.4\" font-size=\"19\"><tspan x=\"40\" dy=\"0\">Perbaikan berlanjut</tspan></text><text class=\"svg-text\" x=\"40\" y=\"781\" font-size=\"18\"><tspan x=\"40\" dy=\"0\">Selesaikan masalah yang</tspan></text><text class=\"svg-text\" x=\"40\" y=\"806.2\" font-size=\"18\"><tspan x=\"40\" dy=\"0\">masih ada</tspan></text><text class=\"svg-text\" x=\"24\" y=\"871.4\" font-size=\"18\"><tspan x=\"24\" dy=\"0\">Skematis: hubungan konsep,</tspan><tspan x=\"24\" dy=\"25.2\">tanpa skala angka.</tspan></text></svg>",
+          "caption": "[UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28](https://peraturan.bpk.go.id/Details/40509/uu-no-15-tahun-2004)",
+          "altText": "Tindak lanjut berdasarkan bukti. LHP diterima → Pejabat menindaklanjuti → Jawaban/penjelasan kepada BPK → BPK memantau → Perbaikan berlanjut LHP diterima: Catat tanggal penerimaan Pejabat menindaklanjuti: Tetapkan tindakan dan penanggung jawab Jawaban/penjelasan kepada BPK: Paling lambat 60 hari; sertakan bukti/alasan sah BPK memantau: Nilai hasil tindak lanjut Perbaikan berlanjut: Selesaikan masalah yang masih ada Skematis: hubungan konsep, tanpa skala angka.",
+          "transcript": [
+            "LHP diterima: Catat tanggal penerimaan",
+            "Pejabat menindaklanjuti: Tetapkan tindakan dan penanggung jawab",
+            "Jawaban/penjelasan kepada BPK: Paling lambat 60 hari; sertakan bukti/alasan sah",
+            "BPK memantau: Nilai hasil tindak lanjut",
+            "Perbaikan berlanjut: Selesaikan masalah yang masih ada",
+            "Skematis: hubungan konsep, tanpa skala angka."
+          ]
+        },
+        {
+          "kind": "self-check",
+          "question": "Apa yang salah dengan kalimat seluruh rekomendasi pasti selesai dalam 60 hari?",
+          "answer": [
+            {
+              "kind": "p",
+              "text": "UU menetapkan tenggat jawaban/penjelasan 60 hari. Pelaksanaan dan hasilnya tetap harus dijelaskan serta dipantau. [UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28](https://peraturan.bpk.go.id/Details/40509/uu-no-15-tahun-2004)"
+            }
+          ],
+          "signal": "Jika alasanmu berbeda, kembali ke sumber dan identifikasi fakta yang belum mendukung jawaban."
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "layer": "main",
+      "title": "SPKN: bedakan pengundangan dan penerapan",
+      "source": "[Peraturan BPK 1/2017 Ps.3-5 dan KK par.14,18,21-42; cetak 4-5,5-13 KK; PDF 4-5,17-25](https://peraturan.bpk.go.id/Download/20433/Peraturan%20BPK%20Nomor%201%20Tahun%202017.pdf) [Peraturan BPK 1/2026 Ps.7-9; cetak/PDF 3-4; diundangkan 10 April 2026, berlaku 10 April 2028](https://peraturan.bpk.go.id/Download/411430/Salinan%20PBPK%201%20Tahun%202026.pdf#page=3)",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Peraturan BPK 1/2017 memuat kerangka konseptual dan PSP 100,200,300 tentang standar umum, pelaksanaan dan pelaporan. Lingkupnya termasuk APIP ketika melakukan audit kinerja dan audit tujuan tertentu menurut Pasal 5. Standar pengawasan intern juga perlu dibaca sesuai mandat penugasan. [Peraturan BPK 1/2017 Ps.3-5 dan KK par.14,18,21-42; cetak 4-5,5-13 KK; PDF 4-5,17-25](https://peraturan.bpk.go.id/Download/20433/Peraturan%20BPK%20Nomor%201%20Tahun%202017.pdf) [Peraturan BPK 1/2026 Ps.7-9; cetak/PDF 3-4; diundangkan 10 April 2026, berlaku 10 April 2028](https://peraturan.bpk.go.id/Download/411430/Salinan%20PBPK%201%20Tahun%202026.pdf#page=3)"
+        },
+        {
+          "kind": "p",
+          "text": "SPKN baru, Peraturan BPK 1/2026, diundangkan 10 April 2026. Pasal 9 menetapkan mulai berlaku dua tahun sejak pengundangan, yaitu 10 April 2028. Pasal 8 mencabut peraturan 2017 pada saat peraturan baru mulai berlaku. Pada tanggal audit 14 Oktober 2026, gunakan 2017 sebagai kerangka aktif dan jelaskan 2026 sebagai pembaruan yang belum mulai diterapkan. Label status pada portal perlu dibaca bersama pasal transisi. [Peraturan BPK 1/2017 Ps.3-5 dan KK par.14,18,21-42; cetak 4-5,5-13 KK; PDF 4-5,17-25](https://peraturan.bpk.go.id/Download/20433/Peraturan%20BPK%20Nomor%201%20Tahun%202017.pdf) [Peraturan BPK 1/2026 Ps.7-9; cetak/PDF 3-4; diundangkan 10 April 2026, berlaku 10 April 2028](https://peraturan.bpk.go.id/Download/411430/Salinan%20PBPK%201%20Tahun%202026.pdf#page=3)"
+        },
+        {
+          "kind": "figure",
+          "title": "Garis waktu SPKN",
+          "svg": "<svg class=\"course-diagram-svg akk203-uas-diagram\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-labelledby=\"ASP-UAS-10-VERSI-d-title ASP-UAS-10-VERSI-d-desc\" width=\"100%\" viewBox=\"0 0 760 590.4000000000001\"><title id=\"ASP-UAS-10-VERSI-d-title\">Garis waktu SPKN</title><desc id=\"ASP-UAS-10-VERSI-d-desc\">Garis waktu SPKN. 2017 → 10 April 2026 → 14 Oktober 2026 → 10 April 2028 2017: Kerangka dan PSP 100/200/300 10 April 2026: SPKN baru diundangkan 14 Oktober 2026: Audit paket: 2017 masih digunakan 10 April 2028: Mulai berlaku 2026; pencabutan 2017 Skematis: hubungan konsep, tanpa skala angka.</desc><defs><marker id=\"ASP-UAS-10-VERSI-d-arrow\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto\"><path class=\"svg-title\" d=\"M0 0 L10 5 L0 10 Z\"/></marker></defs><rect class=\"svg-bg\" width=\"760\" height=\"590.4000000000001\" rx=\"12\"/><rect class=\"svg-card\" x=\"24\" y=\"28\" width=\"712\" height=\"95.8\" rx=\"10\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"40\" y=\"54\" font-size=\"19\"><tspan x=\"40\" dy=\"0\">2017</tspan></text><text class=\"svg-text\" x=\"40\" y=\"90.6\" font-size=\"18\"><tspan x=\"40\" dy=\"0\">Kerangka dan PSP 100/200/300</tspan></text><path class=\"svg-title\" style=\"fill:none!important\" stroke=\"currentColor\" stroke-width=\"2\" marker-end=\"url(#ASP-UAS-10-VERSI-d-arrow)\" d=\"M380 127.8 V149.8\"/><rect class=\"svg-card\" x=\"24\" y=\"155.8\" width=\"712\" height=\"95.8\" rx=\"10\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"40\" y=\"181.8\" font-size=\"19\"><tspan x=\"40\" dy=\"0\">10 April 2026</tspan></text><text class=\"svg-text\" x=\"40\" y=\"218.4\" font-size=\"18\"><tspan x=\"40\" dy=\"0\">SPKN baru diundangkan</tspan></text><path class=\"svg-title\" style=\"fill:none!important\" stroke=\"currentColor\" stroke-width=\"2\" marker-end=\"url(#ASP-UAS-10-VERSI-d-arrow)\" d=\"M380 255.60000000000002 V277.6\"/><rect class=\"svg-card\" x=\"24\" y=\"283.6\" width=\"712\" height=\"95.8\" rx=\"10\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"40\" y=\"309.6\" font-size=\"19\"><tspan x=\"40\" dy=\"0\">14 Oktober 2026</tspan></text><text class=\"svg-text\" x=\"40\" y=\"346.20000000000005\" font-size=\"18\"><tspan x=\"40\" dy=\"0\">Audit paket: 2017 masih digunakan</tspan></text><path class=\"svg-title\" style=\"fill:none!important\" stroke=\"currentColor\" stroke-width=\"2\" marker-end=\"url(#ASP-UAS-10-VERSI-d-arrow)\" d=\"M380 383.40000000000003 V405.40000000000003\"/><rect class=\"svg-card\" x=\"24\" y=\"411.40000000000003\" width=\"712\" height=\"95.8\" rx=\"10\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"40\" y=\"437.40000000000003\" font-size=\"19\"><tspan x=\"40\" dy=\"0\">10 April 2028</tspan></text><text class=\"svg-text\" x=\"40\" y=\"474.00000000000006\" font-size=\"18\"><tspan x=\"40\" dy=\"0\">Mulai berlaku 2026; pencabutan 2017</tspan></text><text class=\"svg-text\" x=\"24\" y=\"539.2\" font-size=\"18\"><tspan x=\"24\" dy=\"0\">Skematis: hubungan konsep, tanpa skala angka.</tspan></text></svg>",
+          "mobileSvg": "<svg class=\"course-diagram-svg akk203-uas-diagram\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-labelledby=\"ASP-UAS-10-VERSI-m-title ASP-UAS-10-VERSI-m-desc\" width=\"100%\" viewBox=\"0 0 340 691.1999999999999\"><title id=\"ASP-UAS-10-VERSI-m-title\">Garis waktu SPKN</title><desc id=\"ASP-UAS-10-VERSI-m-desc\">Garis waktu SPKN. 2017 → 10 April 2026 → 14 Oktober 2026 → 10 April 2028 2017: Kerangka dan PSP 100/200/300 10 April 2026: SPKN baru diundangkan 14 Oktober 2026: Audit paket: 2017 masih digunakan 10 April 2028: Mulai berlaku 2026; pencabutan 2017 Skematis: hubungan konsep, tanpa skala angka.</desc><defs><marker id=\"ASP-UAS-10-VERSI-m-arrow\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto\"><path class=\"svg-title\" d=\"M0 0 L10 5 L0 10 Z\"/></marker></defs><rect class=\"svg-bg\" width=\"340\" height=\"691.1999999999999\" rx=\"12\"/><rect class=\"svg-card\" x=\"24\" y=\"28\" width=\"292\" height=\"121\" rx=\"10\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"40\" y=\"54\" font-size=\"19\"><tspan x=\"40\" dy=\"0\">2017</tspan></text><text class=\"svg-text\" x=\"40\" y=\"90.6\" font-size=\"18\"><tspan x=\"40\" dy=\"0\">Kerangka dan PSP</tspan></text><text class=\"svg-text\" x=\"40\" y=\"115.8\" font-size=\"18\"><tspan x=\"40\" dy=\"0\">100/200/300</tspan></text><path class=\"svg-title\" style=\"fill:none!important\" stroke=\"currentColor\" stroke-width=\"2\" marker-end=\"url(#ASP-UAS-10-VERSI-m-arrow)\" d=\"M170 153 V175\"/><rect class=\"svg-card\" x=\"24\" y=\"181\" width=\"292\" height=\"95.8\" rx=\"10\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"40\" y=\"207\" font-size=\"19\"><tspan x=\"40\" dy=\"0\">10 April 2026</tspan></text><text class=\"svg-text\" x=\"40\" y=\"243.6\" font-size=\"18\"><tspan x=\"40\" dy=\"0\">SPKN baru diundangkan</tspan></text><path class=\"svg-title\" style=\"fill:none!important\" stroke=\"currentColor\" stroke-width=\"2\" marker-end=\"url(#ASP-UAS-10-VERSI-m-arrow)\" d=\"M170 280.8 V302.8\"/><rect class=\"svg-card\" x=\"24\" y=\"308.8\" width=\"292\" height=\"121\" rx=\"10\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"40\" y=\"334.8\" font-size=\"19\"><tspan x=\"40\" dy=\"0\">14 Oktober 2026</tspan></text><text class=\"svg-text\" x=\"40\" y=\"371.40000000000003\" font-size=\"18\"><tspan x=\"40\" dy=\"0\">Audit paket: 2017 masih</tspan></text><text class=\"svg-text\" x=\"40\" y=\"396.6\" font-size=\"18\"><tspan x=\"40\" dy=\"0\">digunakan</tspan></text><path class=\"svg-title\" style=\"fill:none!important\" stroke=\"currentColor\" stroke-width=\"2\" marker-end=\"url(#ASP-UAS-10-VERSI-m-arrow)\" d=\"M170 433.8 V455.8\"/><rect class=\"svg-card\" x=\"24\" y=\"461.8\" width=\"292\" height=\"121\" rx=\"10\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"40\" y=\"487.8\" font-size=\"19\"><tspan x=\"40\" dy=\"0\">10 April 2028</tspan></text><text class=\"svg-text\" x=\"40\" y=\"524.4\" font-size=\"18\"><tspan x=\"40\" dy=\"0\">Mulai berlaku 2026;</tspan></text><text class=\"svg-text\" x=\"40\" y=\"549.6\" font-size=\"18\"><tspan x=\"40\" dy=\"0\">pencabutan 2017</tspan></text><text class=\"svg-text\" x=\"24\" y=\"614.8\" font-size=\"18\"><tspan x=\"24\" dy=\"0\">Skematis: hubungan konsep,</tspan><tspan x=\"24\" dy=\"25.2\">tanpa skala angka.</tspan></text></svg>",
+          "caption": "[Peraturan BPK 1/2026 Ps.7-9; cetak/PDF 3-4; diundangkan 10 April 2026, berlaku 10 April 2028](https://peraturan.bpk.go.id/Download/411430/Salinan%20PBPK%201%20Tahun%202026.pdf#page=3)",
+          "altText": "Garis waktu SPKN. 2017 → 10 April 2026 → 14 Oktober 2026 → 10 April 2028 2017: Kerangka dan PSP 100/200/300 10 April 2026: SPKN baru diundangkan 14 Oktober 2026: Audit paket: 2017 masih digunakan 10 April 2028: Mulai berlaku 2026; pencabutan 2017 Skematis: hubungan konsep, tanpa skala angka.",
+          "transcript": [
+            "2017: Kerangka dan PSP 100/200/300",
+            "10 April 2026: SPKN baru diundangkan",
+            "14 Oktober 2026: Audit paket: 2017 masih digunakan",
+            "10 April 2028: Mulai berlaku 2026; pencabutan 2017",
+            "Skematis: hubungan konsep, tanpa skala angka."
+          ]
+        },
+        {
+          "kind": "self-check",
+          "question": "Apakah tanggal pengundangan 2026 berarti SPKN 2017 langsung tidak berlaku?",
+          "answer": [
+            {
+              "kind": "p",
+              "text": "Tidak. Pasal 8-9 menempatkan pencabutan pada saat peraturan 2026 mulai berlaku setelah dua tahun. [Peraturan BPK 1/2017 Ps.3-5 dan KK par.14,18,21-42; cetak 4-5,5-13 KK; PDF 4-5,17-25](https://peraturan.bpk.go.id/Download/20433/Peraturan%20BPK%20Nomor%201%20Tahun%202017.pdf) [Peraturan BPK 1/2026 Ps.7-9; cetak/PDF 3-4; diundangkan 10 April 2026, berlaku 10 April 2028](https://peraturan.bpk.go.id/Download/411430/Salinan%20PBPK%201%20Tahun%202026.pdf#page=3)"
+            }
+          ],
+          "signal": "Jika alasanmu berbeda, kembali ke sumber dan identifikasi fakta yang belum mendukung jawaban."
+        }
+      ]
+    },
+    {
+      "kind": "pendalaman",
+      "title": "Pendalaman: lima unsur SPIP dan hubungan audit",
+      "blocks": [
+        {
+          "kind": "figure",
+          "title": "Unsur SPIP",
+          "svg": "<svg class=\"course-diagram-svg akk203-uas-diagram\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-labelledby=\"ASP-UAS-10-SPIP-d-title ASP-UAS-10-SPIP-d-desc\" width=\"100%\" viewBox=\"0 0 760 718.2\"><title id=\"ASP-UAS-10-SPIP-d-title\">Unsur SPIP</title><desc id=\"ASP-UAS-10-SPIP-d-desc\">Unsur SPIP. Cabang terpisah dibandingkan sesuai label. Tidak menunjukkan urutan waktu. Lingkungan pengendalian: Integritas dan struktur Penilaian risiko: Risiko terhadap tujuan Kegiatan pengendalian: Respons atas risiko Informasi dan komunikasi: Informasi untuk tanggung jawab Pemantauan: Nilai efektivitas pengendalian Skematis: hubungan konsep, tanpa skala angka.</desc><defs><marker id=\"ASP-UAS-10-SPIP-d-arrow\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto\"><path class=\"svg-title\" d=\"M0 0 L10 5 L0 10 Z\"/></marker></defs><rect class=\"svg-bg\" width=\"760\" height=\"718.2\" rx=\"12\"/><rect class=\"svg-card\" x=\"24\" y=\"28\" width=\"712\" height=\"95.8\" rx=\"10\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"40\" y=\"54\" font-size=\"19\"><tspan x=\"40\" dy=\"0\">Lingkungan pengendalian</tspan></text><text class=\"svg-text\" x=\"40\" y=\"90.6\" font-size=\"18\"><tspan x=\"40\" dy=\"0\">Integritas dan struktur</tspan></text><rect class=\"svg-card\" x=\"24\" y=\"155.8\" width=\"712\" height=\"95.8\" rx=\"10\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"40\" y=\"181.8\" font-size=\"19\"><tspan x=\"40\" dy=\"0\">Penilaian risiko</tspan></text><text class=\"svg-text\" x=\"40\" y=\"218.4\" font-size=\"18\"><tspan x=\"40\" dy=\"0\">Risiko terhadap tujuan</tspan></text><rect class=\"svg-card\" x=\"24\" y=\"283.6\" width=\"712\" height=\"95.8\" rx=\"10\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"40\" y=\"309.6\" font-size=\"19\"><tspan x=\"40\" dy=\"0\">Kegiatan pengendalian</tspan></text><text class=\"svg-text\" x=\"40\" y=\"346.20000000000005\" font-size=\"18\"><tspan x=\"40\" dy=\"0\">Respons atas risiko</tspan></text><rect class=\"svg-card\" x=\"24\" y=\"411.40000000000003\" width=\"712\" height=\"95.8\" rx=\"10\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"40\" y=\"437.40000000000003\" font-size=\"19\"><tspan x=\"40\" dy=\"0\">Informasi dan komunikasi</tspan></text><text class=\"svg-text\" x=\"40\" y=\"474.00000000000006\" font-size=\"18\"><tspan x=\"40\" dy=\"0\">Informasi untuk tanggung jawab</tspan></text><rect class=\"svg-card\" x=\"24\" y=\"539.2\" width=\"712\" height=\"95.8\" rx=\"10\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"40\" y=\"565.2\" font-size=\"19\"><tspan x=\"40\" dy=\"0\">Pemantauan</tspan></text><text class=\"svg-text\" x=\"40\" y=\"601.8000000000001\" font-size=\"18\"><tspan x=\"40\" dy=\"0\">Nilai efektivitas pengendalian</tspan></text><text class=\"svg-text\" x=\"24\" y=\"667\" font-size=\"18\"><tspan x=\"24\" dy=\"0\">Skematis: hubungan konsep, tanpa skala angka.</tspan></text></svg>",
+          "mobileSvg": "<svg class=\"course-diagram-svg akk203-uas-diagram\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-labelledby=\"ASP-UAS-10-SPIP-m-title ASP-UAS-10-SPIP-m-desc\" width=\"100%\" viewBox=\"0 0 340 847\"><title id=\"ASP-UAS-10-SPIP-m-title\">Unsur SPIP</title><desc id=\"ASP-UAS-10-SPIP-m-desc\">Unsur SPIP. Cabang terpisah dibandingkan sesuai label. Tidak menunjukkan urutan waktu. Lingkungan pengendalian: Integritas dan struktur Penilaian risiko: Risiko terhadap tujuan Kegiatan pengendalian: Respons atas risiko Informasi dan komunikasi: Informasi untuk tanggung jawab Pemantauan: Nilai efektivitas pengendalian Skematis: hubungan konsep, tanpa skala angka.</desc><defs><marker id=\"ASP-UAS-10-SPIP-m-arrow\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto\"><path class=\"svg-title\" d=\"M0 0 L10 5 L0 10 Z\"/></marker></defs><rect class=\"svg-bg\" width=\"340\" height=\"847\" rx=\"12\"/><rect class=\"svg-card\" x=\"24\" y=\"28\" width=\"292\" height=\"122.39999999999999\" rx=\"10\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"40\" y=\"54\" font-size=\"19\"><tspan x=\"40\" dy=\"0\">Lingkungan</tspan><tspan x=\"40\" dy=\"26.599999999999998\">pengendalian</tspan></text><text class=\"svg-text\" x=\"40\" y=\"117.19999999999999\" font-size=\"18\"><tspan x=\"40\" dy=\"0\">Integritas dan struktur</tspan></text><rect class=\"svg-card\" x=\"24\" y=\"182.39999999999998\" width=\"292\" height=\"95.8\" rx=\"10\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"40\" y=\"208.39999999999998\" font-size=\"19\"><tspan x=\"40\" dy=\"0\">Penilaian risiko</tspan></text><text class=\"svg-text\" x=\"40\" y=\"244.99999999999997\" font-size=\"18\"><tspan x=\"40\" dy=\"0\">Risiko terhadap tujuan</tspan></text><rect class=\"svg-card\" x=\"24\" y=\"310.2\" width=\"292\" height=\"95.8\" rx=\"10\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"40\" y=\"336.2\" font-size=\"19\"><tspan x=\"40\" dy=\"0\">Kegiatan pengendalian</tspan></text><text class=\"svg-text\" x=\"40\" y=\"372.8\" font-size=\"18\"><tspan x=\"40\" dy=\"0\">Respons atas risiko</tspan></text><rect class=\"svg-card\" x=\"24\" y=\"438\" width=\"292\" height=\"147.6\" rx=\"10\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"40\" y=\"464\" font-size=\"19\"><tspan x=\"40\" dy=\"0\">Informasi dan</tspan><tspan x=\"40\" dy=\"26.599999999999998\">komunikasi</tspan></text><text class=\"svg-text\" x=\"40\" y=\"527.2\" font-size=\"18\"><tspan x=\"40\" dy=\"0\">Informasi untuk</tspan></text><text class=\"svg-text\" x=\"40\" y=\"552.4000000000001\" font-size=\"18\"><tspan x=\"40\" dy=\"0\">tanggung jawab</tspan></text><rect class=\"svg-card\" x=\"24\" y=\"617.6\" width=\"292\" height=\"121\" rx=\"10\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"40\" y=\"643.6\" font-size=\"19\"><tspan x=\"40\" dy=\"0\">Pemantauan</tspan></text><text class=\"svg-text\" x=\"40\" y=\"680.2\" font-size=\"18\"><tspan x=\"40\" dy=\"0\">Nilai efektivitas</tspan></text><text class=\"svg-text\" x=\"40\" y=\"705.4000000000001\" font-size=\"18\"><tspan x=\"40\" dy=\"0\">pengendalian</tspan></text><text class=\"svg-text\" x=\"24\" y=\"770.6\" font-size=\"18\"><tspan x=\"24\" dy=\"0\">Skematis: hubungan konsep,</tspan><tspan x=\"24\" dy=\"25.2\">tanpa skala angka.</tspan></text></svg>",
+          "caption": "[PP 60/2008 Ps.2-3,47-54; cetak/PDF 3-4,21-25](https://peraturan.go.id/files/pp60-2008.pdf#page=3)",
+          "altText": "Unsur SPIP. Cabang terpisah dibandingkan sesuai label. Tidak menunjukkan urutan waktu. Lingkungan pengendalian: Integritas dan struktur Penilaian risiko: Risiko terhadap tujuan Kegiatan pengendalian: Respons atas risiko Informasi dan komunikasi: Informasi untuk tanggung jawab Pemantauan: Nilai efektivitas pengendalian Skematis: hubungan konsep, tanpa skala angka.",
+          "transcript": [
+            "Lingkungan pengendalian: Integritas dan struktur",
+            "Penilaian risiko: Risiko terhadap tujuan",
+            "Kegiatan pengendalian: Respons atas risiko",
+            "Informasi dan komunikasi: Informasi untuk tanggung jawab",
+            "Pemantauan: Nilai efektivitas pengendalian",
+            "Skematis: hubungan konsep, tanpa skala angka."
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "SPIP memberi keyakinan memadai tentang tujuan, pelaporan, pengamanan aset dan kepatuhan. Kelima unsur saling mendukung, tanpa urutan waktu wajib. Audit/reviu tidak dapat menggantikan pengendalian harian oleh manajemen. [PP 60/2008 Ps.2-3,47-54; cetak/PDF 3-4,21-25](https://peraturan.go.id/files/pp60-2008.pdf#page=3)"
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "layer": "latihan",
+      "title": "Persiapan ujian",
+      "blocks": [
+        {
+          "kind": "table",
+          "title": "Jebakan dan langkah koreksi",
+          "headers": [
+            "Jebakan",
+            "Langkah yang benar"
+          ],
+          "rows": [
+            [
+              "Opini ditebak dari nominal satu masalah",
+              "Minta bukti alternatif, cakupan dan materialitas."
+            ],
+            [
+              "60 hari digambarkan jaminan selesai semua rekomendasi",
+              "Pisahkan jawaban/penjelasan dari status pelaksanaan."
+            ],
+            [
+              "Aturan baru disamakan dengan tanggal pengundangan",
+              "Gunakan transisiPasal 7-9 SPKN 2026."
+            ]
+          ],
+          "caption": "[UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28](https://peraturan.bpk.go.id/Details/40509/uu-no-15-tahun-2004)",
+          "stackOnMobile": true
+        }
+      ]
+    },
+    {
+      "kind": "solution-reveal",
+      "title": "Latihan buatan: bukti aset belum cukup",
+      "prompt": "Daftar asetRp 8 miliar kehilangan dokumen awal. Pemeriksa belum menyelesaikan observasi dan konfirmasi. Pilih langkah, bukan tebak opini.",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Fakta: dokumen awal hilang. Asumsi: masih ada bukti alternatif yang mungkin diperoleh. Analisis: lakukan observasi, konfirmasi, dan pemeriksaan catatan pendukung; nilai materialitas serta dampak terhadap hal pokok. Belum ada dasar untuk memutuskan jenis opini final."
+        },
+        {
+          "kind": "p",
+          "text": "Menganggap otomatis disclaimer mengabaikan bukti alternatif. Menganggap otomatis WTP karena aset terlihat mengabaikan hak, nilai dan pengungkapan. Keputusan: selesaikan prosedur dan dokumentasikan hasil sebelum menyimpulkan. [UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28](https://peraturan.bpk.go.id/Details/40509/uu-no-15-tahun-2004) [Peraturan BPK 1/2017 Ps.3-5 dan KK par.14,18,21-42; cetak 4-5,5-13 KK; PDF 4-5,17-25](https://peraturan.bpk.go.id/Download/20433/Peraturan%20BPK%20Nomor%201%20Tahun%202017.pdf)"
+        }
+      ],
+      "revealLabel": "Tampilkan langkah dan pemeriksaan"
+    },
+    {
+      "kind": "solution-reveal",
+      "title": "Latihan buatan: tindak lanjut yang belum selesai",
+      "prompt": "Hari ke 45 sejak LHP diterima, tindak lanjut belum lengkap. Pejabat akan menunggu sampai semua selesai untuk menjawab BPK.",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "UU mewajibkan jawaban/penjelasan paling lambat 60 hari. Pejabat harus menyampaikan tindakan yang telah dilakukan, bukti, rencana penyelesaian dan alasan sah atas bagian yang belum dapat dilaksanakan. Menunggu tanpa jawaban dapat melewati tenggat."
+        },
+        {
+          "kind": "p",
+          "text": "Surat umum tanpa bukti tidak cukup untuk menyatakan penyelesaian. BPK memantau tindak lanjut dan menilai penjelasan. Angka hari 45 adalah asumsi latihan, tidak mengubah tenggat sumber. [UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28](https://peraturan.bpk.go.id/Details/40509/uu-no-15-tahun-2004)"
+        }
+      ],
+      "revealLabel": "Tampilkan langkah dan pemeriksaan"
     }
   ]
 };

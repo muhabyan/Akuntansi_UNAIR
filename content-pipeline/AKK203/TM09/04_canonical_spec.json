@@ -1,0 +1,1121 @@
+{
+  "course": "AKK 203",
+  "newCode": "FEB 25603014",
+  "tm": 9,
+  "rpp": "MD Bab 8; DN Bab 8; JP Bab 2; peraturan terkait, RPP PDF 5",
+  "reading": {
+    "tm": 9,
+    "title": "Pengukuran Kinerja Organisasi Pemerintah",
+    "ref": "[Perpres 29/2014 Ps.5,9,15-18,24; cetak/PDF 6,8,10-11,13](https://peraturan.bpk.go.id/Download/262284/Perpres%20Nomor%2029%20Tahun%202014.pdf#page=6) | [Permen PAN-RB 53/2014 Lampiran II. A-F dan Anak Lampiran II/1; cetak 15-18, PDF 19-22](https://peraturan.bpk.go.id/Download/123556/PERMENPAN%20NOMOR%2053%20TAHUN%202014.pdf#page=19) | [Permen PAN-RB 88/2021 Lampiran I. B dan III. B.1; cetak/PDF 8,20-24](https://peraturan.bpk.go.id/Download/196187/Permen%20PANRB%20No.%2088%20Tahun%202021.pdf#page=8) | [ISSAI 300 par.11, versi editorial IFPP 2019; PP 60/2008 Ps.50(2), cetak/PDF 23](https://www.issai.org/wp-content/uploads/2019/08/ISSAI-300.pdf#page=8)",
+    "intro": "Anggaran kecil dapat menghasilkan layanan yang buruk. Anggaran besar juga perlu diperiksa hasilnya. Kamu akan memisahkan perolehan input, penggunaan sumber daya, dan pencapaian hasil sebelum memberi penilaian.",
+    "layout": "layered",
+    "coreReadingMinutes": 20,
+    "objectives": [
+      "Kinerja: hubungkan sumber daya dengan hasil",
+      "Tiga E menanyakan tiga hal berbeda",
+      "Indikator, target dan arah perbaikan",
+      "SAKIP: data menghubungkan rencana dan evaluasi",
+      "Hitungan: label rasio sebelum menilai",
+      "Evaluasi AKIP: kualitas dan pemanfaatan"
+    ],
+    "blocks": [
+      {
+        "kind": "section",
+        "layer": "fondasi",
+        "title": "Kilat",
+        "blocks": [
+          {
+            "kind": "figure",
+            "spec": {
+              "id": "ASP-UAS-9-KILAT",
+              "type": "process",
+              "title": "Peta Pengukuran Kinerja Organisasi Pemerintah",
+              "nodes": [
+                {
+                  "title": "Tentukan konteks",
+                  "items": [
+                    "MD Bab 8; DN Bab 8; JP Bab 2; peraturan terkait, RPP PDF 5"
+                  ]
+                },
+                {
+                  "title": "Kinerja: hubungkan sumber daya dengan hasil",
+                  "items": []
+                },
+                {
+                  "title": "Tiga E menanyakan tiga hal berbeda",
+                  "items": []
+                },
+                {
+                  "title": "Indikator, target dan arah perbaikan",
+                  "items": []
+                },
+                {
+                  "title": "SAKIP: data menghubungkan rencana dan evaluasi",
+                  "items": []
+                },
+                {
+                  "title": "Hitungan: label rasio sebelum menilai",
+                  "items": []
+                },
+                {
+                  "title": "Evaluasi AKIP: kualitas dan pemanfaatan",
+                  "items": []
+                }
+              ],
+              "source": "[Perpres 29/2014 Ps.5,9,15-18,24; cetak/PDF 6,8,10-11,13](https://peraturan.bpk.go.id/Download/262284/Perpres%20Nomor%2029%20Tahun%202014.pdf#page=6)",
+              "alt": "Peta Pengukuran Kinerja Organisasi Pemerintah. Tentukan konteks → Kinerja: hubungkan sumber daya dengan hasil → Tiga E menanyakan tiga hal berbeda → Indikator, target dan arah perbaikan → SAKIP: data menghubungkan rencana dan evaluasi → Hitungan: label rasio sebelum menilai → Evaluasi AKIP: kualitas dan pemanfaatan",
+              "footer": "Skematis: hubungan konsep, tanpa skala angka."
+            }
+          },
+          {
+            "kind": "ul",
+            "items": [
+              "Pisahkan input, keluaran dan hasil sebelum menilai kinerja.",
+              "Tiga E memerlukan bukti yang berbeda.",
+              "Serapan anggaran tidak cukup mengukur efisiensi.",
+              "Indikator harus terukur, sejalan sasaran dan mempunyai periode.",
+              "SAKIP menghubungkan rencana, data, laporan dan perbaikan.",
+              "AKIP menilai keberadaan, kualitas dan pemanfaatan."
+            ]
+          },
+          {
+            "kind": "p",
+            "text": "Kalau cuma sempat ingat satu hal: Pisahkan input, keluaran dan hasil sebelum menilai kinerja."
+          },
+          {
+            "kind": "callout",
+            "variant": "note",
+            "title": "Cakupan dan periode sumber",
+            "text": "RPP: MD Bab 8; DN Bab 8; JP Bab 2; peraturan terkait, RPP PDF 5. MD 8, DN 8 dan JP 2 belum tersedia; metode dan contoh buku belum dapat diaudit lengkap."
+          }
+        ]
+      },
+      {
+        "kind": "section",
+        "layer": "main",
+        "title": "Kinerja: hubungkan sumber daya dengan hasil",
+        "source": "[Perpres 29/2014 Ps.5,9,15-18,24; cetak/PDF 6,8,10-11,13](https://peraturan.bpk.go.id/Download/262284/Perpres%20Nomor%2029%20Tahun%202014.pdf#page=6)",
+        "blocks": [
+          {
+            "kind": "p",
+            "text": "Anggaran terserap seluruhnya, tetapi layanan belum mencapai sasaran. Kamu perlu memisahkan input, yaitu sumber daya, output, yaitu keluaran kegiatan, dan outcome, yaitu hasil yang ingin dicapai. Laporan kinerja menjelaskan prestasi atas penggunaan anggaran dan hubungan keluaran dengan hasil program. [Perpres 29/2014 Ps.5,9,15-18,24; cetak/PDF 6,8,10-11,13](https://peraturan.bpk.go.id/Download/262284/Perpres%20Nomor%2029%20Tahun%202014.pdf#page=6)"
+          },
+          {
+            "kind": "p",
+            "text": "Perpres 29/2014 menyelaraskan SAKIP dengan sistem akuntansi pemerintah dan pengendalian pembangunan. Pengukuran membandingkan realisasi dengan target tahunan dan sasaran jangka menengah. Selisih perlu analisis penyebab. Ukuran jumlah kegiatan menjawab apa yang dilakukan; ukuran hasil menjawab perubahan yang dituju. Keduanya membantu menilai program, dengan tingkat organisasi yang sesuai. [Perpres 29/2014 Ps.5,9,15-18,24; cetak/PDF 6,8,10-11,13](https://peraturan.bpk.go.id/Download/262284/Perpres%20Nomor%2029%20Tahun%202014.pdf#page=6)"
+          },
+          {
+            "kind": "figure",
+            "spec": {
+              "id": "ASP-UAS-9-HASIL",
+              "type": "process",
+              "title": "Sumber daya sampai hasil",
+              "nodes": [
+                {
+                  "title": "Input",
+                  "items": [
+                    "Dana dan sumber daya"
+                  ]
+                },
+                {
+                  "title": "Kegiatan",
+                  "items": [
+                    "Layanan yang dilakukan"
+                  ]
+                },
+                {
+                  "title": "Output",
+                  "items": [
+                    "Keluaran terukur"
+                  ]
+                },
+                {
+                  "title": "Outcome",
+                  "items": [
+                    "Hasil yang dituju"
+                  ]
+                },
+                {
+                  "title": "Umpan balik",
+                  "items": [
+                    "Analisis capaian dan perbaikan"
+                  ]
+                }
+              ],
+              "source": "[Perpres 29/2014 Ps.5,9,15-18,24; cetak/PDF 6,8,10-11,13](https://peraturan.bpk.go.id/Download/262284/Perpres%20Nomor%2029%20Tahun%202014.pdf#page=6)",
+              "alt": "Sumber daya sampai hasil. Input → Kegiatan → Output → Outcome → Umpan balik",
+              "footer": "Skematis: hubungan konsep, tanpa skala angka."
+            }
+          },
+          {
+            "kind": "self-check",
+            "question": "Jumlah peserta pelatihan naik. Apakah tingkat bekerja setelah pelatihan pasti naik?",
+            "answer": [
+              {
+                "kind": "p",
+                "text": "Tidak. Peserta adalah keluaran, sedangkan bekerja setelah pelatihan adalah hasil. Perlu data tindak lanjut dan analisis faktor lain. [Perpres 29/2014 Ps.5,9,15-18,24; cetak/PDF 6,8,10-11,13](https://peraturan.bpk.go.id/Download/262284/Perpres%20Nomor%2029%20Tahun%202014.pdf#page=6)"
+              }
+            ],
+            "signal": "Jika alasanmu berbeda, kembali ke sumber dan identifikasi fakta yang belum mendukung jawaban."
+          }
+        ]
+      },
+      {
+        "kind": "section",
+        "layer": "main",
+        "title": "Tiga E menanyakan tiga hal berbeda",
+        "source": "[ISSAI 300 par.11, versi editorial IFPP 2019; PP 60/2008 Ps.50(2), cetak/PDF 23](https://www.issai.org/wp-content/uploads/2019/08/ISSAI-300.pdf#page=8)",
+        "blocks": [
+          {
+            "kind": "p",
+            "text": "Economy berarti memperoleh sumber daya dengan biaya yang hemat, pada waktu serta kualitas dan jumlah yang tepat. Efficiency membandingkan sumber daya yang dipakai dengan keluaran, termasuk mutu dan waktu. Effectiveness menilai tercapainya tujuan dan hasil yang dimaksud. Istilah Indonesia yang dipakai di sini adalah ekonomi, efisiensi, dan efektivitas. [ISSAI 300 par.11, versi editorial IFPP 2019; PP 60/2008 Ps.50(2), cetak/PDF 23](https://www.issai.org/wp-content/uploads/2019/08/ISSAI-300.pdf#page=8)"
+          },
+          {
+            "kind": "p",
+            "text": "Harga murah dengan barang yang tidak memenuhi mutu tidak cukup menunjukkan ekonomi. Biaya lebih rendah tanpa memperhatikan keluaran tidak cukup menunjukkan efisiensi. Banyak keluaran tanpa hasil yang dituju tidak cukup menunjukkan efektivitas. Definisi ISSAI 300 digunakan sebagai pelengkap konseptual; praktik audit Indonesia mengikuti SPKN dan aturan nasional yang relevan. [ISSAI 300 par.11, versi editorial IFPP 2019; PP 60/2008 Ps.50(2), cetak/PDF 23](https://www.issai.org/wp-content/uploads/2019/08/ISSAI-300.pdf#page=8)"
+          },
+          {
+            "kind": "table",
+            "title": "Tiga E dan bukti yang dibutuhkan",
+            "headers": [
+              "Aspek",
+              "Pertanyaan",
+              "Bukti/batas"
+            ],
+            "rows": [
+              [
+                "Ekonomi",
+                "Apakah input diperoleh hemat dan sesuai kebutuhan?",
+                "Bandingkan spesifikasi, jumlah, waktu dan harga"
+              ],
+              [
+                "Efisiensi",
+                "Berapa keluaran untuk sumber daya yang digunakan?",
+                "Bandingkan mutu, periode dan beban kerja"
+              ],
+              [
+                "Efektivitas",
+                "Apakah tujuan dan hasil tercapai?",
+                "Target hasil serta data hasil yang dapat ditelusuri"
+              ]
+            ],
+            "caption": "[ISSAI 300 par.11, versi editorial IFPP 2019; PP 60/2008 Ps.50(2), cetak/PDF 23](https://www.issai.org/wp-content/uploads/2019/08/ISSAI-300.pdf#page=8)",
+            "stackOnMobile": true
+          },
+          {
+            "kind": "figure",
+            "spec": {
+              "id": "ASP-UAS-9-3E",
+              "type": "parallel",
+              "title": "Tiga sudut pengukuran",
+              "nodes": [
+                {
+                  "title": "Ekonomi",
+                  "items": [
+                    "Perolehan input sesuai kebutuhan"
+                  ]
+                },
+                {
+                  "title": "Efisiensi",
+                  "items": [
+                    "Sumber daya dibanding keluaran"
+                  ]
+                },
+                {
+                  "title": "Efektivitas",
+                  "items": [
+                    "Tujuan dibanding hasil"
+                  ]
+                }
+              ],
+              "source": "[ISSAI 300 par.11, versi editorial IFPP 2019; PP 60/2008 Ps.50(2), cetak/PDF 23](https://www.issai.org/wp-content/uploads/2019/08/ISSAI-300.pdf#page=8)",
+              "alt": "Tiga sudut pengukuran. Cabang terpisah dibandingkan sesuai label. Tidak menunjukkan urutan waktu.",
+              "footer": "Skematis: hubungan konsep, tanpa skala angka."
+            }
+          },
+          {
+            "kind": "self-check",
+            "question": "Biaya aktual lebih kecil dari anggaran. Apa yang masih perlu diketahui untuk menyimpulkan efisien?",
+            "answer": [
+              {
+                "kind": "p",
+                "text": "Keluaran, mutu, waktu dan pembanding yang setara. Rasio biaya terhadap anggaran saja mengukur penggunaan anggaran. [ISSAI 300 par.11, versi editorial IFPP 2019; PP 60/2008 Ps.50(2), cetak/PDF 23](https://www.issai.org/wp-content/uploads/2019/08/ISSAI-300.pdf#page=8)"
+              }
+            ],
+            "signal": "Jika alasanmu berbeda, kembali ke sumber dan identifikasi fakta yang belum mendukung jawaban."
+          }
+        ]
+      },
+      {
+        "kind": "section",
+        "layer": "main",
+        "title": "Indikator, target dan arah perbaikan",
+        "source": "[Perpres 29/2014 Ps.5,9,15-18,24; cetak/PDF 6,8,10-11,13](https://peraturan.bpk.go.id/Download/262284/Perpres%20Nomor%2029%20Tahun%202014.pdf#page=6) [Permen PAN-RB 53/2014 Lampiran II. A-F dan Anak Lampiran II/1; cetak 15-18, PDF 19-22](https://peraturan.bpk.go.id/Download/123556/PERMENPAN%20NOMOR%2053%20TAHUN%202014.pdf#page=19)",
+        "blocks": [
+          {
+            "kind": "p",
+            "text": "Indikator kinerja adalah ukuran keberhasilan yang menggambarkan terwujudnya kinerja atau hasil. IKU, Indikator Kinerja Utama, dipilih untuk mencerminkan tugas serta mandat utama organisasi. Indikator instansi harus selaras antarjenjang. Target yang baik memberi periode, satuan, definisi populasi dan bukti pengukuran. [Perpres 29/2014 Ps.5,9,15-18,24; cetak/PDF 6,8,10-11,13](https://peraturan.bpk.go.id/Download/262284/Perpres%20Nomor%2029%20Tahun%202014.pdf#page=6) [Permen PAN-RB 53/2014 Lampiran II. A-F dan Anak Lampiran II/1; cetak 15-18, PDF 19-22](https://peraturan.bpk.go.id/Download/123556/PERMENPAN%20NOMOR%2053%20TAHUN%202014.pdf#page=19)"
+          },
+          {
+            "kind": "p",
+            "text": "Higher is better berarti kenaikan indikator diinginkan, seperti persentase layanan selesai tepat waktu. Lower is better berarti penurunan diinginkan, seperti waktu tunggu. Terjemahan ini membantu membaca arah hasil. Perpres 29 mensyaratkan spesifik, terukur, dapat dicapai, berjangka waktu, dan dapat dipantau. Keterbandingan rusak jika definisi atau populasi berubah tanpa penjelasan. [Perpres 29/2014 Ps.5,9,15-18,24; cetak/PDF 6,8,10-11,13](https://peraturan.bpk.go.id/Download/262284/Perpres%20Nomor%2029%20Tahun%202014.pdf#page=6) [Permen PAN-RB 53/2014 Lampiran II. A-F dan Anak Lampiran II/1; cetak 15-18, PDF 19-22](https://peraturan.bpk.go.id/Download/123556/PERMENPAN%20NOMOR%2053%20TAHUN%202014.pdf#page=19)"
+          },
+          {
+            "kind": "table",
+            "title": "Contoh buatan: definisi indikator",
+            "headers": [
+              "Ukuran",
+              "Definisi operasional",
+              "Arah"
+            ],
+            "rows": [
+              [
+                "Layanan tepat waktu",
+                "Layanan selesai dalam batas waktu / seluruh layanan valid ×100%",
+                "Lebih tinggi diinginkan"
+              ],
+              [
+                "Waktu tunggu",
+                "Rata-rata menit dari registrasi sampai pelayanan untuk populasi tertentu",
+                "Lebih rendah diinginkan"
+              ],
+              [
+                "Biaya per keluaran",
+                "Biaya terkait / jumlah keluaran bermutu sebanding",
+                "Lebih rendah dengan mutu tetap"
+              ],
+              [
+                "Peserta bekerja",
+                "Peserta terverifikasi bekerja / peserta ditelusuri ×100%",
+                "Lebih tinggi, jelaskan yang hilang dari penelusuran"
+              ]
+            ],
+            "caption": "[Permen PAN-RB 53/2014 Lampiran II. A-F dan Anak Lampiran II/1; cetak 15-18, PDF 19-22](https://peraturan.bpk.go.id/Download/123556/PERMENPAN%20NOMOR%2053%20TAHUN%202014.pdf#page=19)",
+            "stackOnMobile": true
+          },
+          {
+            "kind": "self-check",
+            "question": "Apa masalah indikator jumlah rapat untuk sasaran penurunan waktu tunggu?",
+            "answer": [
+              {
+                "kind": "p",
+                "text": "Jumlah rapat mengukur kegiatan pendukung. Belum mengukur waktu tunggu atau hasil layanan yang dituju. [Perpres 29/2014 Ps.5,9,15-18,24; cetak/PDF 6,8,10-11,13](https://peraturan.bpk.go.id/Download/262284/Perpres%20Nomor%2029%20Tahun%202014.pdf#page=6) [Permen PAN-RB 53/2014 Lampiran II. A-F dan Anak Lampiran II/1; cetak 15-18, PDF 19-22](https://peraturan.bpk.go.id/Download/123556/PERMENPAN%20NOMOR%2053%20TAHUN%202014.pdf#page=19)"
+              }
+            ],
+            "signal": "Jika alasanmu berbeda, kembali ke sumber dan identifikasi fakta yang belum mendukung jawaban."
+          }
+        ]
+      },
+      {
+        "kind": "section",
+        "layer": "main",
+        "title": "SAKIP: data menghubungkan rencana dan evaluasi",
+        "source": "[Perpres 29/2014 Ps.5,9,15-18,24; cetak/PDF 6,8,10-11,13](https://peraturan.bpk.go.id/Download/262284/Perpres%20Nomor%2029%20Tahun%202014.pdf#page=6)",
+        "blocks": [
+          {
+            "kind": "p",
+            "text": "SAKIP mencakup rencana strategis, perjanjian kinerja, pengukuran, pengelolaan data, pelaporan, serta reviu dan evaluasi. Perjanjian kinerja mengikat sasaran, indikator dan target dengan tanggung jawab pimpinan. Data dikumpulkan sesuai definisi indikator, kemudian dibandingkan dengan target. [Perpres 29/2014 Ps.5,9,15-18,24; cetak/PDF 6,8,10-11,13](https://peraturan.bpk.go.id/Download/262284/Perpres%20Nomor%2029%20Tahun%202014.pdf#page=6)"
+          },
+          {
+            "kind": "p",
+            "text": "Baseline adalah data dasar untuk membandingkan perubahan. Pengelolaan data juga mencakup instrumen, pencatatan, penyimpanan dan perangkuman. Laporan kinerja tahunan menjelaskan capaian beserta perbandingan jangka menengah. Reviu memeriksa kualitas pelaporan, sedangkan evaluasi mendorong perbaikan akuntabilitas. Menyalin angka tahun lalu tanpa memeriksa definisi dan sumber tidak memenuhi tujuan proses ini. [Perpres 29/2014 Ps.5,9,15-18,24; cetak/PDF 6,8,10-11,13](https://peraturan.bpk.go.id/Download/262284/Perpres%20Nomor%2029%20Tahun%202014.pdf#page=6)"
+          },
+          {
+            "kind": "figure",
+            "spec": {
+              "id": "ASP-UAS-9-SAKIP",
+              "type": "process",
+              "title": "Rangkaian SAKIP",
+              "nodes": [
+                {
+                  "title": "Renstra",
+                  "items": [
+                    "Sasaran jangka menengah"
+                  ]
+                },
+                {
+                  "title": "Perjanjian kinerja",
+                  "items": [
+                    "Indikator, target dan penanggung jawab"
+                  ]
+                },
+                {
+                  "title": "Pengukuran dan data",
+                  "items": [
+                    "Catat, olah, simpan dan cocokkan"
+                  ]
+                },
+                {
+                  "title": "Pelaporan",
+                  "items": [
+                    "Bandingkan realisasi dan target"
+                  ]
+                },
+                {
+                  "title": "Reviu dan evaluasi",
+                  "items": [
+                    "Perbaikan kinerja dan akuntabilitas"
+                  ]
+                }
+              ],
+              "source": "[Perpres 29/2014 Ps.5,9,15-18,24; cetak/PDF 6,8,10-11,13](https://peraturan.bpk.go.id/Download/262284/Perpres%20Nomor%2029%20Tahun%202014.pdf#page=6)",
+              "alt": "Rangkaian SAKIP. Renstra → Perjanjian kinerja → Pengukuran dan data → Pelaporan → Reviu dan evaluasi",
+              "footer": "Skematis: hubungan konsep, tanpa skala angka.",
+              "feedback": true
+            }
+          },
+          {
+            "kind": "self-check",
+            "question": "Mengapa baseline dan penyimpanan data perlu ditulis dalam rancangan indikator?",
+            "answer": [
+              {
+                "kind": "p",
+                "text": "Agar perubahan dapat dibandingkan dan bukti hasil dapat ditelusuri oleh penilai atau pengguna laporan. [Perpres 29/2014 Ps.5,9,15-18,24; cetak/PDF 6,8,10-11,13](https://peraturan.bpk.go.id/Download/262284/Perpres%20Nomor%2029%20Tahun%202014.pdf#page=6)"
+              }
+            ],
+            "signal": "Jika alasanmu berbeda, kembali ke sumber dan identifikasi fakta yang belum mendukung jawaban."
+          }
+        ]
+      },
+      {
+        "kind": "section",
+        "layer": "main",
+        "title": "Hitungan: label rasio sebelum menilai",
+        "source": "[Permen PAN-RB 53/2014 Lampiran II. A-F dan Anak Lampiran II/1; cetak 15-18, PDF 19-22](https://peraturan.bpk.go.id/Download/123556/PERMENPAN%20NOMOR%2053%20TAHUN%202014.pdf#page=19) [ISSAI 300 par.11, versi editorial IFPP 2019; PP 60/2008 Ps.50(2), cetak/PDF 23](https://www.issai.org/wp-content/uploads/2019/08/ISSAI-300.pdf#page=8)",
+        "blocks": [
+          {
+            "kind": "p",
+            "text": "Rasio realisasi biaya terhadap anggaran menunjukkan proporsi anggaran yang digunakan. Untuk latihan efisiensi, biaya per keluaran dapat digunakan jika biaya dan mutu keluaran sebanding. Untuk latihan capaian, realisasi hasil dibandingkan target yang arahnya meningkat. Setiap rumus di bawah adalah operasionalisasi latihan yang ditetapkan secara eksplisit. [Permen PAN-RB 53/2014 Lampiran II. A-F dan Anak Lampiran II/1; cetak 15-18, PDF 19-22](https://peraturan.bpk.go.id/Download/123556/PERMENPAN%20NOMOR%2053%20TAHUN%202014.pdf#page=19) [ISSAI 300 par.11, versi editorial IFPP 2019; PP 60/2008 Ps.50(2), cetak/PDF 23](https://www.issai.org/wp-content/uploads/2019/08/ISSAI-300.pdf#page=8)"
+          },
+          {
+            "kind": "p",
+            "text": "Pada indikator yang arahnya menurun, realisasi lebih besar dapat berarti lebih buruk. Jangan memakai realisasi/target ×100% lalu menyebut nilai di atas 100% selalu sukses. Tentukan interpretasi arah, periode dan satuan dahulu. Rasio capaian tidak membuktikan dampak kausal program. Kondisi ekonomi atau layanan lain dapat turut memengaruhi outcome. [Permen PAN-RB 53/2014 Lampiran II. A-F dan Anak Lampiran II/1; cetak 15-18, PDF 19-22](https://peraturan.bpk.go.id/Download/123556/PERMENPAN%20NOMOR%2053%20TAHUN%202014.pdf#page=19) [ISSAI 300 par.11, versi editorial IFPP 2019; PP 60/2008 Ps.50(2), cetak/PDF 23](https://www.issai.org/wp-content/uploads/2019/08/ISSAI-300.pdf#page=8)"
+          },
+          {
+            "kind": "formula",
+            "text": "\\text{Biaya per keluaran}=\\frac{\\text{Biaya terkait (Rp)}}{\\text{Keluaran sebanding (unit)}}",
+            "note": "Operasionalisasi latihan, mutu dan cakupan biaya harus sama."
+          },
+          {
+            "kind": "formula",
+            "text": "\\text{Capaian hasil}=\\frac{\\text{Realisasi hasil}}{\\text{Target hasil}}\\times100\\%",
+            "note": "Digunakan pada latihan higher is better; bukan rumus universal seluruh indikator."
+          },
+          {
+            "kind": "self-check",
+            "question": "Jika biaya Rp 480 juta menghasilkan 800 layanan, berapa biaya per layanan?",
+            "answer": [
+              {
+                "kind": "p",
+                "text": "Rp 480.000.000 /800 = Rp 600.000 per layanan. Penilaian membutuhkan pembanding dan mutu yang setara. [Permen PAN-RB 53/2014 Lampiran II. A-F dan Anak Lampiran II/1; cetak 15-18, PDF 19-22](https://peraturan.bpk.go.id/Download/123556/PERMENPAN%20NOMOR%2053%20TAHUN%202014.pdf#page=19) [ISSAI 300 par.11, versi editorial IFPP 2019; PP 60/2008 Ps.50(2), cetak/PDF 23](https://www.issai.org/wp-content/uploads/2019/08/ISSAI-300.pdf#page=8)"
+              }
+            ],
+            "signal": "Jika alasanmu berbeda, kembali ke sumber dan identifikasi fakta yang belum mendukung jawaban."
+          }
+        ]
+      },
+      {
+        "kind": "section",
+        "layer": "main",
+        "title": "Evaluasi AKIP: kualitas dan pemanfaatan",
+        "source": "[Permen PAN-RB 88/2021 Lampiran I. B dan III. B.1; cetak/PDF 8,20-24](https://peraturan.bpk.go.id/Download/196187/Permen%20PANRB%20No.%2088%20Tahun%202021.pdf#page=8)",
+        "blocks": [
+          {
+            "kind": "p",
+            "text": "Permen PAN-RB 88/2021 mengganti pedoman 12/2015. Lampirannya menilai perencanaan kinerja, pengukuran kinerja, pelaporan kinerja dan evaluasi akuntabilitas internal. Bobot komponen adalah 30,30,15 dan 25. Setiap komponen menilai keberadaan, kualitas dan pemanfaatan dengan bobot 20%,30% dan 50% dari komponen. [Permen PAN-RB 88/2021 Lampiran I. B dan III. B.1; cetak/PDF 8,20-24](https://peraturan.bpk.go.id/Download/196187/Permen%20PANRB%20No.%2088%20Tahun%202021.pdf#page=8)"
+          },
+          {
+            "kind": "p",
+            "text": "Bobot tersebut adalah kerangka evaluasi AKIP, tidak identik dengan rasio efisiensi program atau nilai kepuasan warga. Laporan yang tersedia belum cukup bila belum dimanfaatkan memperbaiki keputusan. Alur evaluasi bergerak dari tujuan, ruang lingkup, desain, pelaksanaan, lalu pelaporan dan pengomunikasian hasil. Bukti evaluasi dapat mengubah rencana tindakan periode berikutnya. [Permen PAN-RB 88/2021 Lampiran I. B dan III. B.1; cetak/PDF 8,20-24](https://peraturan.bpk.go.id/Download/196187/Permen%20PANRB%20No.%2088%20Tahun%202021.pdf#page=8)"
+          },
+          {
+            "kind": "table",
+            "title": "Bobot sumber AKIP, bukan data buatan",
+            "headers": [
+              "Komponen",
+              "Total",
+              "Keberadaan 20%",
+              "Kualitas 30%",
+              "Pemanfaatan 50%"
+            ],
+            "rows": [
+              [
+                "Perencanaan",
+                "30",
+                "6",
+                "9",
+                "15"
+              ],
+              [
+                "Pengukuran",
+                "30",
+                "6",
+                "9",
+                "15"
+              ],
+              [
+                "Pelaporan",
+                "15",
+                "3",
+                "4,5",
+                "7,5"
+              ],
+              [
+                "Evaluasi internal",
+                "25",
+                "5",
+                "7,5",
+                "12,5"
+              ],
+              [
+                "Jumlah",
+                "100",
+                "20",
+                "30",
+                "50"
+              ]
+            ],
+            "caption": "[Permen PAN-RB 88/2021 Lampiran I. B dan III. B.1; cetak/PDF 8,20-24](https://peraturan.bpk.go.id/Download/196187/Permen%20PANRB%20No.%2088%20Tahun%202021.pdf#page=8)",
+            "stackOnMobile": true
+          },
+          {
+            "kind": "figure",
+            "spec": {
+              "id": "ASP-UAS-9-BOBOT",
+              "type": "bar",
+              "title": "Bobot komponen evaluasi AKIP",
+              "nodes": [],
+              "source": "[Permen PAN-RB 88/2021 Lampiran I. B dan III. B.1; cetak/PDF 8,20-24](https://peraturan.bpk.go.id/Download/196187/Permen%20PANRB%20No.%2088%20Tahun%202021.pdf#page=8)",
+              "alt": "Bobot komponen evaluasi AKIP. Perencanaan: 30; Pengukuran: 30; Pelaporan: 15; Evaluasi internal: 25. Bobot komponen (%). Permen PAN-RB 88/2021 lampiran. Total 30+30+15+25=100%; bukan nilai hasil suatu instansi.",
+              "footer": "Permen PAN-RB 88/2021 lampiran. Total 30+30+15+25=100%; bukan nilai hasil suatu instansi.",
+              "bars": [
+                {
+                  "label": "Perencanaan",
+                  "value": 30
+                },
+                {
+                  "label": "Pengukuran",
+                  "value": 30
+                },
+                {
+                  "label": "Pelaporan",
+                  "value": 15
+                },
+                {
+                  "label": "Evaluasi internal",
+                  "value": 25
+                }
+              ],
+              "axis": "Bobot komponen (%)",
+              "max": 40
+            }
+          },
+          {
+            "kind": "self-check",
+            "question": "Apakah skor dokumen ada berarti komponen pemanfaatan otomatis penuh?",
+            "answer": [
+              {
+                "kind": "p",
+                "text": "Tidak. Keberadaan, kualitas dan pemanfaatan dinilai terpisah berdasarkan bukti. [Permen PAN-RB 88/2021 Lampiran I. B dan III. B.1; cetak/PDF 8,20-24](https://peraturan.bpk.go.id/Download/196187/Permen%20PANRB%20No.%2088%20Tahun%202021.pdf#page=8)"
+              }
+            ],
+            "signal": "Jika alasanmu berbeda, kembali ke sumber dan identifikasi fakta yang belum mendukung jawaban."
+          }
+        ]
+      },
+      {
+        "kind": "pendalaman",
+        "title": "Pendalaman: alur evaluasi dan batas metode",
+        "blocks": [
+          {
+            "kind": "figure",
+            "spec": {
+              "id": "ASP-UAS-9-EVAL",
+              "type": "process",
+              "title": "Alur evaluasi AKIP",
+              "nodes": [
+                {
+                  "title": "Perumusan tujuan",
+                  "items": []
+                },
+                {
+                  "title": "Penentuan ruang lingkup",
+                  "items": []
+                },
+                {
+                  "title": "Perancangan desain: metode dan alat",
+                  "items": []
+                },
+                {
+                  "title": "Mekanisme pelaksanaan",
+                  "items": []
+                },
+                {
+                  "title": "Pelaporan dan pengomunikasian hasil",
+                  "items": []
+                }
+              ],
+              "source": "[Permen PAN-RB 88/2021 Lampiran I. B dan III. B.1; cetak/PDF 8,20-24](https://peraturan.bpk.go.id/Download/196187/Permen%20PANRB%20No.%2088%20Tahun%202021.pdf#page=8)",
+              "alt": "Alur evaluasi AKIP. Perumusan tujuan → Penentuan ruang lingkup → Perancangan desain: metode dan alat → Mekanisme pelaksanaan → Pelaporan dan pengomunikasian hasil",
+              "footer": "Skematis: hubungan konsep, tanpa skala angka."
+            }
+          },
+          {
+            "kind": "p",
+            "text": "Perubahan bobot atau indikator pada instrumen khusus perlu dibaca dari pedoman penugasan. Kerangka umum ini tidak menetapkan satu benchmark biaya untuk semua instansi. Bab MD 8, DN 8 dan JP 2 belum tersedia, sehingga metode buku belum diaudit lengkap."
+          }
+        ]
+      },
+      {
+        "kind": "section",
+        "layer": "latihan",
+        "title": "Persiapan ujian",
+        "blocks": [
+          {
+            "kind": "table",
+            "title": "Jebakan dan langkah koreksi",
+            "headers": [
+              "Jebakan",
+              "Langkah yang benar"
+            ],
+            "rows": [
+              [
+                "Rasio biaya/anggaran dinamai efisiensi universal",
+                "Gunakan label serapan; tampilkan biaya per keluaran dan mutu."
+              ],
+              [
+                "Outcome disamakan dengan jumlah kegiatan",
+                "Pisahkan keluaran dari hasil dan batas klaim sebab."
+              ],
+              [
+                "Bobot evaluasi tidak berperiode",
+                "Gunakan 88/2021 dan tandai sumber angka 30/30/15/25."
+              ]
+            ],
+            "caption": "[Perpres 29/2014 Ps.5,9,15-18,24; cetak/PDF 6,8,10-11,13](https://peraturan.bpk.go.id/Download/262284/Perpres%20Nomor%2029%20Tahun%202014.pdf#page=6)",
+            "stackOnMobile": true
+          }
+        ]
+      },
+      {
+        "kind": "solution-reveal",
+        "title": "Latihan buatan: biaya dan capaian layanan",
+        "prompt": "Anggaran Rp 600 juta untuk 1.000 layanan. Realisasi Rp 480 juta untuk 800 layanan bermutu setara. Target 180 penerima mencapai hasil; realisasi 120. Hitung dan nilai.",
+        "blocks": [
+          {
+            "kind": "table",
+            "title": "Langkah hitungan",
+            "headers": [
+              "Ukuran",
+              "Langkah",
+              "Hasil"
+            ],
+            "rows": [
+              [
+                "Realisasi anggaran",
+                "480/600 ×100%",
+                "80%"
+              ],
+              [
+                "Biaya rencana per layanan",
+                "Rp 600 juta/1.000",
+                "Rp 600.000/layanan"
+              ],
+              [
+                "Biaya aktual per layanan",
+                "Rp 480 juta/800",
+                "Rp 600.000/layanan"
+              ],
+              [
+                "Capaian hasil",
+                "120/180 ×100%",
+                "66,67%"
+              ]
+            ],
+            "caption": "[Permen PAN-RB 53/2014 Lampiran II. A-F dan Anak Lampiran II/1; cetak 15-18, PDF 19-22](https://peraturan.bpk.go.id/Download/123556/PERMENPAN%20NOMOR%2053%20TAHUN%202014.pdf#page=19) [ISSAI 300 par.11, versi editorial IFPP 2019; PP 60/2008 Ps.50(2), cetak/PDF 23](https://www.issai.org/wp-content/uploads/2019/08/ISSAI-300.pdf#page=8)",
+            "stackOnMobile": true
+          },
+          {
+            "kind": "p",
+            "text": "Tidak ada perbaikan biaya per layanan pada asumsi mutu sama. Hasil belum mencapai target. Angka 80% adalah realisasi anggaran, sehingga menyebutnya efisiensi 80% dapat menyesatkan. Pembulatan capaian dua desimal. Rasio tidak membuktikan sebab rendahnya hasil."
+          }
+        ],
+        "revealLabel": "Tampilkan langkah dan pemeriksaan"
+      },
+      {
+        "kind": "solution-reveal",
+        "title": "Latihan buatan: indikator lebih rendah lebih baik",
+        "prompt": "Target waktu tunggu 20 menit, realisasi 25 menit. Jumlah rapat meningkat. Apakah hasil membaik?",
+        "blocks": [
+          {
+            "kind": "p",
+            "text": "Fakta: realisasi waktu tunggu lebih lama 5 menit. Perubahan relatif = (25-20)/20 ×100% =25% lebih lama dari target. Asumsi: populasi dan cara pengukuran sama. Hasil belum mencapai sasaran. Jumlah rapat tidak menjawab perubahan waktu tunggu."
+          },
+          {
+            "kind": "p",
+            "text": "Periksa antrean, kapasitas dan data pencatatan sebelum menetapkan penyebab. Menambah rapat tanpa diagnosis mempunyai kelemahan karena tidak menargetkan hambatan layanan. [Perpres 29/2014 Ps.5,9,15-18,24; cetak/PDF 6,8,10-11,13](https://peraturan.bpk.go.id/Download/262284/Perpres%20Nomor%2029%20Tahun%202014.pdf#page=6) [Permen PAN-RB 53/2014 Lampiran II. A-F dan Anak Lampiran II/1; cetak 15-18, PDF 19-22](https://peraturan.bpk.go.id/Download/123556/PERMENPAN%20NOMOR%2053%20TAHUN%202014.pdf#page=19)"
+          }
+        ],
+        "revealLabel": "Tampilkan langkah dan pemeriksaan"
+      }
+    ]
+  },
+  "quiz": [
+    {
+      "id": "akk203-uas-tm09-01",
+      "tm": 9,
+      "topic": "Kinerja",
+      "skill": "Analisis dasar, mekanisme dan batas penerapan",
+      "difficulty": "medium",
+      "q": "Kinerja: apa beda output dan outcome?",
+      "options": [
+        "Output adalah anggaran, outcome daftar input",
+        "Output adalah keluaran, outcome hasil yang dituju",
+        "Output adalah harga, outcome saldo anggaran",
+        "Output adalah opini, outcome jurnal penutup"
+      ],
+      "answer": 1,
+      "explanation": "Keluaran kegiatan berbeda dari hasil program. Anggaran dan input adalah sumber daya; opini adalah hasil pemeriksaan, dan jurnal merupakan pencatatan. Menukar istilah membuat indikator tidak sesuai sasaran. Rujukan: [Perpres 29/2014 Ps.5,9,15-18,24; cetak/PDF 6,8,10-11,13](https://peraturan.bpk.go.id/Download/262284/Perpres%20Nomor%2029%20Tahun%202014.pdf#page=6)",
+      "sourceRef": "[Perpres 29/2014 Ps.5,9,15-18,24; cetak/PDF 6,8,10-11,13](https://peraturan.bpk.go.id/Download/262284/Perpres%20Nomor%2029%20Tahun%202014.pdf#page=6)",
+      "sourceAnchors": [
+        "[Perpres 29/2014 Ps.5,9,15-18,24; cetak/PDF 6,8,10-11,13](https://peraturan.bpk.go.id/Download/262284/Perpres%20Nomor%2029%20Tahun%202014.pdf#page=6)"
+      ]
+    },
+    {
+      "id": "akk203-uas-tm09-02",
+      "tm": 9,
+      "topic": "Ekonomi",
+      "skill": "Analisis dasar, mekanisme dan batas penerapan",
+      "difficulty": "medium",
+      "q": "Ekonomi: barang murah gagal memenuhi spesifikasi. Kesimpulan?",
+      "options": [
+        "Harga rendah selalu menunjukkan ekonomi baik",
+        "Harga rendah selalu membuktikan hasil program",
+        "Harga rendah belum cukup menunjukkan ekonomi",
+        "Harga rendah menggantikan bukti mutu barang"
+      ],
+      "answer": 2,
+      "explanation": "Ekonomi memperhatikan kualitas, jumlah dan waktu yang tepat bersama biaya. Opsi lain mengabaikan mutu atau mengubah informasi harga menjadi bukti efektivitas yang belum tersedia. Rujukan: [ISSAI 300 par.11, versi editorial IFPP 2019; PP 60/2008 Ps.50(2), cetak/PDF 23](https://www.issai.org/wp-content/uploads/2019/08/ISSAI-300.pdf#page=8)",
+      "sourceRef": "[ISSAI 300 par.11, versi editorial IFPP 2019; PP 60/2008 Ps.50(2), cetak/PDF 23](https://www.issai.org/wp-content/uploads/2019/08/ISSAI-300.pdf#page=8)",
+      "sourceAnchors": [
+        "[ISSAI 300 par.11, versi editorial IFPP 2019; PP 60/2008 Ps.50(2), cetak/PDF 23](https://www.issai.org/wp-content/uploads/2019/08/ISSAI-300.pdf#page=8)"
+      ]
+    },
+    {
+      "id": "akk203-uas-tm09-03",
+      "tm": 9,
+      "topic": "Efisiensi",
+      "skill": "Analisis dasar, mekanisme dan batas penerapan",
+      "difficulty": "medium",
+      "q": "Efisiensi: pembanding paling layak untuk dua program setara?",
+      "options": [
+        "Jumlah rapat dengan biaya dan mutu diabaikan",
+        "Serapan anggaran tanpa informasi hasil layanan",
+        "Opini laporan keuangan tanpa data keluaran",
+        "Biaya per keluaran dengan mutu dan periode sama"
+      ],
+      "answer": 3,
+      "explanation": "Hubungan sumber daya dengan keluaran membutuhkan pembanding setara. Rapat, serapan, dan opini dapat memberi informasi lain, tetapi masing-masing tidak cukup mengukur efisiensi keluaran. Rujukan: [ISSAI 300 par.11, versi editorial IFPP 2019; PP 60/2008 Ps.50(2), cetak/PDF 23](https://www.issai.org/wp-content/uploads/2019/08/ISSAI-300.pdf#page=8)",
+      "sourceRef": "[ISSAI 300 par.11, versi editorial IFPP 2019; PP 60/2008 Ps.50(2), cetak/PDF 23](https://www.issai.org/wp-content/uploads/2019/08/ISSAI-300.pdf#page=8)",
+      "sourceAnchors": [
+        "[ISSAI 300 par.11, versi editorial IFPP 2019; PP 60/2008 Ps.50(2), cetak/PDF 23](https://www.issai.org/wp-content/uploads/2019/08/ISSAI-300.pdf#page=8)"
+      ]
+    },
+    {
+      "id": "akk203-uas-tm09-04",
+      "tm": 9,
+      "topic": "Latihan buatan",
+      "skill": "Analisis dasar, mekanisme dan batas penerapan",
+      "difficulty": "advanced",
+      "q": "Latihan buatan: biaya Rp 480 juta untuk 800 layanan. Biaya per layanan?",
+      "options": [
+        "Rp 600.000 per layanan pada cakupan biaya sama",
+        "Rp 480.000 per layanan pada cakupan biaya sama",
+        "Rp 800.000 per layanan pada cakupan biaya sama",
+        "Rp 750.000 per layanan pada cakupan biaya sama"
+      ],
+      "answer": 0,
+      "explanation": "Rp 480.000.000/800 =Rp 600.000 per layanan. Rp 480.000 memakai 1.000 layanan rencana; Rp 800.000 dan Rp 750.000 tidak sesuai pembagian input yang diberikan. Mutu harus tetap sebanding. Rujukan: [ISSAI 300 par.11, versi editorial IFPP 2019; PP 60/2008 Ps.50(2), cetak/PDF 23](https://www.issai.org/wp-content/uploads/2019/08/ISSAI-300.pdf#page=8)",
+      "sourceRef": "[ISSAI 300 par.11, versi editorial IFPP 2019; PP 60/2008 Ps.50(2), cetak/PDF 23](https://www.issai.org/wp-content/uploads/2019/08/ISSAI-300.pdf#page=8)",
+      "sourceAnchors": [
+        "[ISSAI 300 par.11, versi editorial IFPP 2019; PP 60/2008 Ps.50(2), cetak/PDF 23](https://www.issai.org/wp-content/uploads/2019/08/ISSAI-300.pdf#page=8)"
+      ]
+    },
+    {
+      "id": "akk203-uas-tm09-05",
+      "tm": 9,
+      "topic": "Latihan buatan",
+      "skill": "Analisis dasar, mekanisme dan batas penerapan",
+      "difficulty": "advanced",
+      "q": "Latihan buatan: realisasi 120 dari target 180 hasil, higher is better. Capaian?",
+      "options": [
+        "150,00% dan hasil melampaui target",
+        "66,67% dan hasil masih di bawah target",
+        "80,00% dan biaya pasti lebih efisien",
+        "60,00% dan program pasti menyebabkan hasil"
+      ],
+      "answer": 1,
+      "explanation": "120/180 ×100% =66,67%, dibulatkan dua desimal.150% memakai pecahan terbalik;80% berasal rasio anggaran berbeda;60% salah hitung dan klaim sebab belum didukung desain. Rujukan: [Permen PAN-RB 53/2014 Lampiran II. A-F dan Anak Lampiran II/1; cetak 15-18, PDF 19-22](https://peraturan.bpk.go.id/Download/123556/PERMENPAN%20NOMOR%2053%20TAHUN%202014.pdf#page=19)",
+      "sourceRef": "[Permen PAN-RB 53/2014 Lampiran II. A-F dan Anak Lampiran II/1; cetak 15-18, PDF 19-22](https://peraturan.bpk.go.id/Download/123556/PERMENPAN%20NOMOR%2053%20TAHUN%202014.pdf#page=19)",
+      "sourceAnchors": [
+        "[Permen PAN-RB 53/2014 Lampiran II. A-F dan Anak Lampiran II/1; cetak 15-18, PDF 19-22](https://peraturan.bpk.go.id/Download/123556/PERMENPAN%20NOMOR%2053%20TAHUN%202014.pdf#page=19)"
+      ]
+    },
+    {
+      "id": "akk203-uas-tm09-06",
+      "tm": 9,
+      "topic": "SAKIP",
+      "skill": "Analisis dasar, mekanisme dan batas penerapan",
+      "difficulty": "medium",
+      "q": "SAKIP: urutan hubungan yang tepat?",
+      "options": [
+        "Audit opini, pembubaran unit, laporan, perjanjian, kas",
+        "Jurnal kas, donasi, likuidasi, laporan kampanye, target",
+        "Renstra, perjanjian, pengukuran/data, laporan, evaluasi",
+        "Laporan, hapus data, ubah target tanpa bukti, opini"
+      ],
+      "answer": 2,
+      "explanation": "Perpres 29 menjelaskan komponen yang saling terhubung dari rencana sampai evaluasi. Urutan lainnya mencampur proses berbeda atau menghapus bukti yang diperlukan pengukuran. Rujukan: [Perpres 29/2014 Ps.5,9,15-18,24; cetak/PDF 6,8,10-11,13](https://peraturan.bpk.go.id/Download/262284/Perpres%20Nomor%2029%20Tahun%202014.pdf#page=6)",
+      "sourceRef": "[Perpres 29/2014 Ps.5,9,15-18,24; cetak/PDF 6,8,10-11,13](https://peraturan.bpk.go.id/Download/262284/Perpres%20Nomor%2029%20Tahun%202014.pdf#page=6)",
+      "sourceAnchors": [
+        "[Perpres 29/2014 Ps.5,9,15-18,24; cetak/PDF 6,8,10-11,13](https://peraturan.bpk.go.id/Download/262284/Perpres%20Nomor%2029%20Tahun%202014.pdf#page=6)"
+      ]
+    },
+    {
+      "id": "akk203-uas-tm09-07",
+      "tm": 9,
+      "topic": "Indikator",
+      "skill": "Analisis dasar, mekanisme dan batas penerapan",
+      "difficulty": "medium",
+      "q": "Indikator: target 20 menit, realisasi 25 menit. Penilaian?",
+      "options": [
+        "Capaian 125% selalu berarti layanan makin berhasil",
+        "Jumlah rapat pasti menjelaskan semua selisih",
+        "Waktu tunggu dapat diganti dengan serapan biaya",
+        "Waktu tunggu lebih lama dan belum mencapai target"
+      ],
+      "answer": 3,
+      "explanation": "Pada lower is better, waktu lebih lama memburuk. Rasio 125% tidak berarti sukses; rapat tidak membuktikan sebab. Serapan mengukur aspek anggaran yang berbeda dari waktu tunggu. Rujukan: [Perpres 29/2014 Ps.5,9,15-18,24; cetak/PDF 6,8,10-11,13](https://peraturan.bpk.go.id/Download/262284/Perpres%20Nomor%2029%20Tahun%202014.pdf#page=6) [Permen PAN-RB 53/2014 Lampiran II. A-F dan Anak Lampiran II/1; cetak 15-18, PDF 19-22](https://peraturan.bpk.go.id/Download/123556/PERMENPAN%20NOMOR%2053%20TAHUN%202014.pdf#page=19)",
+      "sourceRef": "[Perpres 29/2014 Ps.5,9,15-18,24; cetak/PDF 6,8,10-11,13](https://peraturan.bpk.go.id/Download/262284/Perpres%20Nomor%2029%20Tahun%202014.pdf#page=6) [Permen PAN-RB 53/2014 Lampiran II. A-F dan Anak Lampiran II/1; cetak 15-18, PDF 19-22](https://peraturan.bpk.go.id/Download/123556/PERMENPAN%20NOMOR%2053%20TAHUN%202014.pdf#page=19)",
+      "sourceAnchors": [
+        "[Perpres 29/2014 Ps.5,9,15-18,24; cetak/PDF 6,8,10-11,13](https://peraturan.bpk.go.id/Download/262284/Perpres%20Nomor%2029%20Tahun%202014.pdf#page=6) [Permen PAN-RB 53/2014 Lampiran II. A-F dan Anak Lampiran II/1; cetak 15-18, PDF 19-22](https://peraturan.bpk.go.id/Download/123556/PERMENPAN%20NOMOR%2053%20TAHUN%202014.pdf#page=19)"
+      ]
+    },
+    {
+      "id": "akk203-uas-tm09-08",
+      "tm": 9,
+      "topic": "AKIP",
+      "skill": "Analisis dasar, mekanisme dan batas penerapan",
+      "difficulty": "medium",
+      "q": "AKIP: bobot empat komponen menurut 88/2021?",
+      "options": [
+        "Perencanaan 30, pengukuran 30, pelaporan 15, evaluasi 25",
+        "Perencanaan 25, pengukuran 25, pelaporan 25, evaluasi 25",
+        "Perencanaan 35, pengukuran 20, pelaporan 25, evaluasi 20",
+        "Perencanaan 15, pengukuran 20, pelaporan 30, evaluasi 35"
+      ],
+      "answer": 0,
+      "explanation": "Tabel sumber menetapkan 30/30/15/25. Tiga kombinasi lain tetap berjumlah 100 tetapi distribusinya tidak sesuai. Bobot AKIP juga harus dibedakan dari capaian rasio program. Rujukan: [Permen PAN-RB 88/2021 Lampiran I. B dan III. B.1; cetak/PDF 8,20-24](https://peraturan.bpk.go.id/Download/196187/Permen%20PANRB%20No.%2088%20Tahun%202021.pdf#page=8)",
+      "sourceRef": "[Permen PAN-RB 88/2021 Lampiran I. B dan III. B.1; cetak/PDF 8,20-24](https://peraturan.bpk.go.id/Download/196187/Permen%20PANRB%20No.%2088%20Tahun%202021.pdf#page=8)",
+      "sourceAnchors": [
+        "[Permen PAN-RB 88/2021 Lampiran I. B dan III. B.1; cetak/PDF 8,20-24](https://peraturan.bpk.go.id/Download/196187/Permen%20PANRB%20No.%2088%20Tahun%202021.pdf#page=8)"
+      ]
+    },
+    {
+      "id": "akk203-uas-tm09-09",
+      "tm": 9,
+      "topic": "AKIP",
+      "skill": "Analisis dasar, mekanisme dan batas penerapan",
+      "difficulty": "medium",
+      "q": "AKIP: dokumen tersedia, tetapi keputusan tidak memakainya. Aspek paling perlu diperiksa?",
+      "options": [
+        "Keberadaan, yang otomatis memberi nilai penuh",
+        "Pemanfaatan, terpisah dari keberadaan dokumen",
+        "Harga bahan, yang menggantikan penilaian AKIP",
+        "Opini BPK, yang menetapkan bobot seluruh AKIP"
+      ],
+      "answer": 1,
+      "explanation": "Pedoman membedakan keberadaan, kualitas dan pemanfaatan. Ketersediaan dokumen tidak membuktikan pemanfaatan. Harga bahan atau opini laporan keuangan tidak menggantikan bukti penggunaan informasi kinerja. Rujukan: [Permen PAN-RB 88/2021 Lampiran I. B dan III. B.1; cetak/PDF 8,20-24](https://peraturan.bpk.go.id/Download/196187/Permen%20PANRB%20No.%2088%20Tahun%202021.pdf#page=8)",
+      "sourceRef": "[Permen PAN-RB 88/2021 Lampiran I. B dan III. B.1; cetak/PDF 8,20-24](https://peraturan.bpk.go.id/Download/196187/Permen%20PANRB%20No.%2088%20Tahun%202021.pdf#page=8)",
+      "sourceAnchors": [
+        "[Permen PAN-RB 88/2021 Lampiran I. B dan III. B.1; cetak/PDF 8,20-24](https://peraturan.bpk.go.id/Download/196187/Permen%20PANRB%20No.%2088%20Tahun%202021.pdf#page=8)"
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "id": "aks201-tm09-01",
+      "phase": "pra-uas",
+      "tm": 9,
+      "topic": "ASP TM 9",
+      "category": "Definisi",
+      "front": "Konsep Value for Money (3 E)",
+      "back": "Ekonomi menilai perolehan input; efisiensi hubungan input-keluaran; efektivitas pencapaian tujuan dan hasil. ISSAI 300 par.11, versi editorial IFPP 2019; PP 60/2008 Ps.50(2), cetak/PDF 23"
+    },
+    {
+      "id": "aks201-tm09-02",
+      "phase": "pra-uas",
+      "tm": 9,
+      "topic": "ASP TM 9",
+      "category": "Konsep",
+      "front": "Definisi Ekonomis (Economy)",
+      "back": "Minimalkan biaya sumber daya dengan waktu, jumlah dan kualitas yang tepat. ISSAI 300 par.11, versi editorial IFPP 2019; PP 60/2008 Ps.50(2), cetak/PDF 23"
+    },
+    {
+      "id": "aks201-tm09-03",
+      "phase": "pra-uas",
+      "tm": 9,
+      "topic": "ASP TM 9",
+      "category": "Konsep",
+      "front": "Definisi Efisiensi (Efficiency)",
+      "back": "Dapatkan keluaran terbaik dari sumber daya, dengan memperhatikan mutu dan waktu. ISSAI 300 par.11, versi editorial IFPP 2019; PP 60/2008 Ps.50(2), cetak/PDF 23"
+    },
+    {
+      "id": "aks201-tm09-04",
+      "phase": "pra-uas",
+      "tm": 9,
+      "topic": "ASP TM 9",
+      "category": "Konsep",
+      "front": "Definisi Efektivitas (Effectiveness)",
+      "back": "Nilai pencapaian tujuan yang ditetapkan dan hasil yang dimaksud. ISSAI 300 par.11, versi editorial IFPP 2019; PP 60/2008 Ps.50(2), cetak/PDF 23"
+    },
+    {
+      "id": "aks201-tm09-05",
+      "phase": "pra-uas",
+      "tm": 9,
+      "topic": "ASP TM 9",
+      "category": "Hukum",
+      "front": "Sistem Akuntabilitas Kinerja Instansi Pemerintah (SAKIP)",
+      "back": "Rangkaian rencana, perjanjian, pengukuran, data, pelaporan, serta reviu/evaluasi kinerja. Perpres 29/2014 Ps.5,9,15-18,24; cetak/PDF 6,8,10-11,13"
+    },
+    {
+      "id": "aks201-tm09-06",
+      "phase": "pra-uas",
+      "tm": 9,
+      "topic": "ASP TM 9",
+      "category": "Konsep",
+      "front": "Indikator Kinerja Utama (IKU / KPI)",
+      "back": "Ukuran keberhasilan kinerja utama sesuai tugas, fungsi dan mandat instansi. Permen PAN-RB 53/2014 Lampiran II. A-F dan Anak Lampiran II/1; cetak 15-18, PDF 19-22"
+    }
+  ],
+  "bank": [
+    {
+      "type": "case",
+      "scope": "TM 9: Latihan buatan: nilai tiga E secara terpisah",
+      "difficulty": "Komprehensif",
+      "estimatedTime": "20-30 menit",
+      "question": "Latihan buatan: nilai tiga E secara terpisah",
+      "context": "Data layanan menggunakan anggaranRp 600 juta, realisasiRp 480 juta, target 1.000 layanan dan realisasi 800. Mutu dan periode diasumsikan sama. Rujukan: Permen PAN-RB 53/2014 Lampiran II. A-F dan Anak Lampiran II/1; cetak 15-18, PDF 19-22 ISSAI 300 par.11, versi editorial IFPP 2019; PP 60/2008 Ps.50(2), cetak/PDF 23",
+      "data": [
+        "Target hasil 180, realisasi 120.",
+        "Informasi harga per input belum tersedia."
+      ],
+      "instructions": [
+        "Hitung serapan, biaya per layanan dan capaian hasil.",
+        "Tentukan kesimpulan serta data yang masih diperlukan."
+      ],
+      "outputFormat": [
+        "Pisahkan fakta, asumsi, analisis dan keputusan.",
+        "Tunjukkan hitungan atau bukti, lalu jelaskan batas kesimpulan."
+      ],
+      "rubric": [
+        "Ketepatan kerangka dan sumber: 30%.",
+        "Langkah, bukti dan pemeriksaan: 40%.",
+        "Keputusan serta kelemahan alternatif: 30%."
+      ],
+      "answerGuide": "Fakta: nilai dan jumlah yang diberikan. Asumsi: mutu, waktu, dan cakupan biaya sama. Serapan=480/600=80%. Biaya rencana=600 juta/1.000=Rp 600.000, aktual=480 juta/800=Rp 600.000. Tidak ada penurunan biaya per keluaran. Capaian hasil=120/180=66,67%, dibulatkan dua desimal. Ekonomi belum dapat dinilai karena harga serta kualitas input tidak tersedia. Keputusan: telusuri sebab kekurangan hasil dan keluaran. Menyebut efisien dari serapan 80% mengabaikan volume. Menyebut program menyebabkan hasil memerlukan pembanding kausal. Rujukan: Permen PAN-RB 53/2014 Lampiran II. A-F dan Anak Lampiran II/1; cetak 15-18, PDF 19-22 ISSAI 300 par.11, versi editorial IFPP 2019; PP 60/2008 Ps.50(2), cetak/PDF 23"
+    },
+    {
+      "type": "case",
+      "scope": "TM 9: Adaptasi format sumber: susun perjanjian kinerja",
+      "difficulty": "Komprehensif",
+      "estimatedTime": "20-30 menit",
+      "question": "Adaptasi format sumber: susun perjanjian kinerja",
+      "context": "Gunakan format perjanjian kinerja SKPD pada sumber. Angka berikut buatan: sasaran waktu tunggu, target 20 menit, realisasi 25 menit. Rujukan: Perpres 29/2014 Ps.5,9,15-18,24; cetak/PDF 6,8,10-11,13 Permen PAN-RB 53/2014 Lampiran II. A-F dan Anak Lampiran II/1; cetak 15-18, PDF 19-22",
+      "data": [
+        "Satuan: menit; lebih rendah diinginkan.",
+        "Jumlah rapat tercatat naik, mutu data antrean belum direviu."
+      ],
+      "instructions": [
+        "Tetapkan indikator dan sumber data.",
+        "Jelaskan analisis capaian dan rekomendasi."
+      ],
+      "outputFormat": [
+        "Pisahkan fakta, asumsi, analisis dan keputusan.",
+        "Tunjukkan hitungan atau bukti, lalu jelaskan batas kesimpulan."
+      ],
+      "rubric": [
+        "Ketepatan kerangka dan sumber: 30%.",
+        "Langkah, bukti dan pemeriksaan: 40%.",
+        "Keputusan serta kelemahan alternatif: 30%."
+      ],
+      "answerGuide": "Fakta: waktu 25 menit dibanding target 20. Asumsi: pencatatan konsisten, populasi sama. Susun sasaran layanan lebih cepat, indikator rata-rata waktu tunggu dengan definisi titik mulai/akhir, target 20 menit, penanggung jawab dan anggaran. Selisih 5 menit atau 25% lebih lama. Verifikasi data sebelum menyimpulkan sebab. Keputusan: analisis hambatan layanan dan lakukan perbaikan yang diuji pada periode berikutnya. Jumlah rapat hanya kegiatan pendukung; menggantikan outcome dengan rapat mengubah sasaran. Mengubah target setelah hasil diketahui tanpa penjelasan merusak perbandingan. Rujukan: Perpres 29/2014 Ps.5,9,15-18,24; cetak/PDF 6,8,10-11,13 Permen PAN-RB 53/2014 Lampiran II. A-F dan Anak Lampiran II/1; cetak 15-18, PDF 19-22"
+    }
+  ],
+  "audit": {
+    "findings": [
+      "Awal: Rasio biaya/anggaran dinamai efisiensi universal Perbaikan: Gunakan label serapan; tampilkan biaya per keluaran dan mutu.",
+      "Awal: Outcome disamakan dengan jumlah kegiatan Perbaikan: Pisahkan keluaran dari hasil dan batas klaim sebab.",
+      "Awal: Bobot evaluasi tidak berperiode Perbaikan: Gunakan 88/2021 dan tandai sumber angka 30/30/15/25."
+    ],
+    "limitations": [
+      "MD 8, DN 8 dan JP 2 belum tersedia; metode dan contoh buku belum dapat diaudit lengkap.",
+      "Definisi ISSAI 300 merupakan sumber tambahan konsep; aturan audit nasional tidak digantikan."
+    ],
+    "appendix": [
+      "Format lengkap perjanjian kinerja unit kerja dan satker pada PAN 53 PDF 13-18 untuk latihan tambahan.",
+      "Kategori nilai AKIP serta instrumen khusus penugasan disimpan sebagai bacaan tambahan, tidak ditebak dari rasio biaya."
+    ],
+    "status": "NEEDS_HUMAN_REVIEW",
+    "practiceSources": [
+      {
+        "kind": "cards",
+        "id": "aks201-tm09-01",
+        "field": "back",
+        "label": "ISSAI 300 par.11, versi editorial IFPP 2019; PP 60/2008 Ps.50(2), cetak/PDF 23",
+        "url": "https://www.issai.org/wp-content/uploads/2019/08/ISSAI-300.pdf#page=8"
+      },
+      {
+        "kind": "cards",
+        "id": "aks201-tm09-02",
+        "field": "back",
+        "label": "ISSAI 300 par.11, versi editorial IFPP 2019; PP 60/2008 Ps.50(2), cetak/PDF 23",
+        "url": "https://www.issai.org/wp-content/uploads/2019/08/ISSAI-300.pdf#page=8"
+      },
+      {
+        "kind": "cards",
+        "id": "aks201-tm09-03",
+        "field": "back",
+        "label": "ISSAI 300 par.11, versi editorial IFPP 2019; PP 60/2008 Ps.50(2), cetak/PDF 23",
+        "url": "https://www.issai.org/wp-content/uploads/2019/08/ISSAI-300.pdf#page=8"
+      },
+      {
+        "kind": "cards",
+        "id": "aks201-tm09-04",
+        "field": "back",
+        "label": "ISSAI 300 par.11, versi editorial IFPP 2019; PP 60/2008 Ps.50(2), cetak/PDF 23",
+        "url": "https://www.issai.org/wp-content/uploads/2019/08/ISSAI-300.pdf#page=8"
+      },
+      {
+        "kind": "cards",
+        "id": "aks201-tm09-05",
+        "field": "back",
+        "label": "Perpres 29/2014 Ps.5,9,15-18,24; cetak/PDF 6,8,10-11,13",
+        "url": "https://peraturan.bpk.go.id/Download/262284/Perpres%20Nomor%2029%20Tahun%202014.pdf#page=6"
+      },
+      {
+        "kind": "cards",
+        "id": "aks201-tm09-06",
+        "field": "back",
+        "label": "Permen PAN-RB 53/2014 Lampiran II. A-F dan Anak Lampiran II/1; cetak 15-18, PDF 19-22",
+        "url": "https://peraturan.bpk.go.id/Download/123556/PERMENPAN%20NOMOR%2053%20TAHUN%202014.pdf#page=19"
+      },
+      {
+        "kind": "bank",
+        "id": "tm9-case1",
+        "field": "context",
+        "label": "Permen PAN-RB 53/2014 Lampiran II. A-F dan Anak Lampiran II/1; cetak 15-18, PDF 19-22",
+        "url": "https://peraturan.bpk.go.id/Download/123556/PERMENPAN%20NOMOR%2053%20TAHUN%202014.pdf#page=19"
+      },
+      {
+        "kind": "bank",
+        "id": "tm9-case1",
+        "field": "context",
+        "label": "ISSAI 300 par.11, versi editorial IFPP 2019; PP 60/2008 Ps.50(2), cetak/PDF 23",
+        "url": "https://www.issai.org/wp-content/uploads/2019/08/ISSAI-300.pdf#page=8"
+      },
+      {
+        "kind": "bank",
+        "id": "tm9-case1",
+        "field": "answerGuide",
+        "label": "Permen PAN-RB 53/2014 Lampiran II. A-F dan Anak Lampiran II/1; cetak 15-18, PDF 19-22",
+        "url": "https://peraturan.bpk.go.id/Download/123556/PERMENPAN%20NOMOR%2053%20TAHUN%202014.pdf#page=19"
+      },
+      {
+        "kind": "bank",
+        "id": "tm9-case1",
+        "field": "answerGuide",
+        "label": "ISSAI 300 par.11, versi editorial IFPP 2019; PP 60/2008 Ps.50(2), cetak/PDF 23",
+        "url": "https://www.issai.org/wp-content/uploads/2019/08/ISSAI-300.pdf#page=8"
+      },
+      {
+        "kind": "bank",
+        "id": "tm9-case2",
+        "field": "context",
+        "label": "Perpres 29/2014 Ps.5,9,15-18,24; cetak/PDF 6,8,10-11,13",
+        "url": "https://peraturan.bpk.go.id/Download/262284/Perpres%20Nomor%2029%20Tahun%202014.pdf#page=6"
+      },
+      {
+        "kind": "bank",
+        "id": "tm9-case2",
+        "field": "context",
+        "label": "Permen PAN-RB 53/2014 Lampiran II. A-F dan Anak Lampiran II/1; cetak 15-18, PDF 19-22",
+        "url": "https://peraturan.bpk.go.id/Download/123556/PERMENPAN%20NOMOR%2053%20TAHUN%202014.pdf#page=19"
+      },
+      {
+        "kind": "bank",
+        "id": "tm9-case2",
+        "field": "answerGuide",
+        "label": "Perpres 29/2014 Ps.5,9,15-18,24; cetak/PDF 6,8,10-11,13",
+        "url": "https://peraturan.bpk.go.id/Download/262284/Perpres%20Nomor%2029%20Tahun%202014.pdf#page=6"
+      },
+      {
+        "kind": "bank",
+        "id": "tm9-case2",
+        "field": "answerGuide",
+        "label": "Permen PAN-RB 53/2014 Lampiran II. A-F dan Anak Lampiran II/1; cetak 15-18, PDF 19-22",
+        "url": "https://peraturan.bpk.go.id/Download/123556/PERMENPAN%20NOMOR%2053%20TAHUN%202014.pdf#page=19"
+      }
+    ]
+  },
+  "coverage": [
+    {
+      "concept": "Kinerja: hubungkan sumber daya dengan hasil",
+      "source": "[Perpres 29/2014 Ps.5,9,15-18,24; cetak/PDF 6,8,10-11,13](https://peraturan.bpk.go.id/Download/262284/Perpres%20Nomor%2029%20Tahun%202014.pdf#page=6)",
+      "before": "Ringkas atau belum dipisahkan menurut konteks/versi",
+      "after": "Penjelasan mekanisme, perbandingan, cek pemahaman dan batas sumber",
+      "assumptions": "Angka buatan hanya pada latihan berlabel; aturan bergantung entitas/periode",
+      "sourceExercises": "Tidak ada nomor kasus khusus dalam RPP. Format/ilustrasi resmi digunakan bila tersedia."
+    },
+    {
+      "concept": "Tiga E menanyakan tiga hal berbeda",
+      "source": "[ISSAI 300 par.11, versi editorial IFPP 2019; PP 60/2008 Ps.50(2), cetak/PDF 23](https://www.issai.org/wp-content/uploads/2019/08/ISSAI-300.pdf#page=8)",
+      "before": "Ringkas atau belum dipisahkan menurut konteks/versi",
+      "after": "Penjelasan mekanisme, perbandingan, cek pemahaman dan batas sumber",
+      "assumptions": "Angka buatan hanya pada latihan berlabel; aturan bergantung entitas/periode",
+      "sourceExercises": "Tidak ada nomor kasus khusus dalam RPP. Format/ilustrasi resmi digunakan bila tersedia."
+    },
+    {
+      "concept": "Indikator, target dan arah perbaikan",
+      "source": "[Perpres 29/2014 Ps.5,9,15-18,24; cetak/PDF 6,8,10-11,13](https://peraturan.bpk.go.id/Download/262284/Perpres%20Nomor%2029%20Tahun%202014.pdf#page=6) [Permen PAN-RB 53/2014 Lampiran II. A-F dan Anak Lampiran II/1; cetak 15-18, PDF 19-22](https://peraturan.bpk.go.id/Download/123556/PERMENPAN%20NOMOR%2053%20TAHUN%202014.pdf#page=19)",
+      "before": "Ringkas atau belum dipisahkan menurut konteks/versi",
+      "after": "Penjelasan mekanisme, perbandingan, cek pemahaman dan batas sumber",
+      "assumptions": "Angka buatan hanya pada latihan berlabel; aturan bergantung entitas/periode",
+      "sourceExercises": "Tidak ada nomor kasus khusus dalam RPP. Format/ilustrasi resmi digunakan bila tersedia."
+    },
+    {
+      "concept": "SAKIP: data menghubungkan rencana dan evaluasi",
+      "source": "[Perpres 29/2014 Ps.5,9,15-18,24; cetak/PDF 6,8,10-11,13](https://peraturan.bpk.go.id/Download/262284/Perpres%20Nomor%2029%20Tahun%202014.pdf#page=6)",
+      "before": "Ringkas atau belum dipisahkan menurut konteks/versi",
+      "after": "Penjelasan mekanisme, perbandingan, cek pemahaman dan batas sumber",
+      "assumptions": "Angka buatan hanya pada latihan berlabel; aturan bergantung entitas/periode",
+      "sourceExercises": "Tidak ada nomor kasus khusus dalam RPP. Format/ilustrasi resmi digunakan bila tersedia."
+    },
+    {
+      "concept": "Hitungan: label rasio sebelum menilai",
+      "source": "[Permen PAN-RB 53/2014 Lampiran II. A-F dan Anak Lampiran II/1; cetak 15-18, PDF 19-22](https://peraturan.bpk.go.id/Download/123556/PERMENPAN%20NOMOR%2053%20TAHUN%202014.pdf#page=19) [ISSAI 300 par.11, versi editorial IFPP 2019; PP 60/2008 Ps.50(2), cetak/PDF 23](https://www.issai.org/wp-content/uploads/2019/08/ISSAI-300.pdf#page=8)",
+      "before": "Ringkas atau belum dipisahkan menurut konteks/versi",
+      "after": "Penjelasan mekanisme, perbandingan, cek pemahaman dan batas sumber",
+      "assumptions": "Angka buatan hanya pada latihan berlabel; aturan bergantung entitas/periode",
+      "sourceExercises": "Tidak ada nomor kasus khusus dalam RPP. Format/ilustrasi resmi digunakan bila tersedia."
+    },
+    {
+      "concept": "Evaluasi AKIP: kualitas dan pemanfaatan",
+      "source": "[Permen PAN-RB 88/2021 Lampiran I. B dan III. B.1; cetak/PDF 8,20-24](https://peraturan.bpk.go.id/Download/196187/Permen%20PANRB%20No.%2088%20Tahun%202021.pdf#page=8)",
+      "before": "Ringkas atau belum dipisahkan menurut konteks/versi",
+      "after": "Penjelasan mekanisme, perbandingan, cek pemahaman dan batas sumber",
+      "assumptions": "Angka buatan hanya pada latihan berlabel; aturan bergantung entitas/periode",
+      "sourceExercises": "Tidak ada nomor kasus khusus dalam RPP. Format/ilustrasi resmi digunakan bila tersedia."
+    }
+  ]
+}

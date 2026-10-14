@@ -1,0 +1,18 @@
+{
+  "tm": 8,
+  "canonicalSha256": "3ecf8ac8c5edd50f93036718a8981bda57ffb6f2edb94bac40fd1448969d861e",
+  "sourceStatus": "NEEDS_HUMAN_REVIEW",
+  "sourceComplete": false,
+  "visuals": 5,
+  "quiz": 9,
+  "cards": 6,
+  "cases": 2,
+  "independentChecks": "scripts/test-akk203-pra-uas.mjs",
+  "renderChecks": "scripts/test-akk203-pra-uas-render.mjs",
+  "browserChecks": "scripts/test-akk203-pra-uas-browser.mjs",
+  "technicalEvidence": "../qa-evidence.json",
+  "limitations": [
+    "Buku DN Bab 10 dan IBS Bab 2 belum tersedia; cakupan buku belum lengkap.",
+    "Format sumber daerah bertanda xxx; angka latihan adalah asumsi, tanpa kode BAS historis."
+  ]
+}
