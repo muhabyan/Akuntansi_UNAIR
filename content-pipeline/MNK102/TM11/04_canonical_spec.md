@@ -2,7 +2,7 @@
 
 Status: READY_WITH_SCOPE_LIMITATION
 
-SHA256 05 (CRLF): fb1f52771c0f32c1ea17f864ebf4b882eee9cda7c1e7c1e609c06a90ac3c394b
+SHA256 05 (CRLF): c27aea45140182aa5e4bf74fbb49350d4cf0d1ddaff3da7734d8b187843ddccc
 
 Brigham & Houston, FFM 16e (2022), Bab 16, hal. cetak 559-581 (PDF 601-623)
 
@@ -167,3 +167,6 @@ Persediaan dan piutang menambah waktu; utang pemasok mengurangi waktu. [hal. 566
 Collections=0.20(300)(0.98)+0.70(250)+0.10(200)=253.8
 Satuan juta USD; tidak ada bad debt dalam asumsi dasar tabel. [hal. 571; PDF 613]
 ```
+## Elaborasi 14 Oktober 2026
+
+Sumber 05 diperbarui untuk tujuan spesifik, contoh terbimbing dekat rumus, dan alur penalaran. Angka ilustrasi baru diberi label penulis; tabel, rumus, gambar dan dua kasus sumber dipertahankan. TM09 mengurutkan teori sebelum kerangka kasus. SHA256 05: c27aea45140182aa5e4bf74fbb49350d4cf0d1ddaff3da7734d8b187843ddccc. Validasi terakhir dicatat di docs/pra-uas-elaboration-progress.md.

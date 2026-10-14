@@ -3,9 +3,9 @@
 Brigham & Houston, FFM 16e (2022), Bab 16, hal. cetak 577-589 (PDF 619-631). Halaman cetak buku memiliki selisih 42 dari halaman PDF.
 
 **Setelah TM ini kamu bisa:**
-1. Memilih konsep dan asumsi yang sesuai kasus.
-2. Menunjukkan langkah hitungan, satuan, pembulatan, dan keputusan.
-3. Menjelaskan batas model serta rujukannya.
+1. Menjelaskan hubungan persediaan dengan layanan, dana tertahan dan risiko kekurangan stok.
+2. Menghitung biaya melepas diskon serta membedakan pendekatan tahunan sederhana dari efektif.
+3. Membandingkan pinjaman, saldo kompensasi, biaya fasilitas, cicilan dan risiko pembaruan kredit.
 
 ## Kilat
 
@@ -30,7 +30,7 @@ alt text: Modal Kerja II: Persediaan dan Pendanaan: peta keputusan. Mulai dari j
 
 Brigham & Houston, FFM 16e (2022), Bab 16, hal. cetak 577-589 (PDF 619-631)
 
-> **Kalau cuma sempat ingat satu hal:** arus kas, tingkat, satuan, dan periode harus konsisten sebelum kamu mengambil keputusan.
+> **Kalau cuma sempat ingat satu hal:** bandingkan biaya pendanaan terhadap dana yang benar-benar dapat dipakai dan jangka waktu yang sama.
 
 > **Catatan sumber:** Web Appendix 16A dan 16B tidak tersedia. EOQ, discount interest, dan compensating balance tidak dijadikan teori kanonik. Latihan pengembangan arus kas ditandai sebagai asumsi buatan dan bukan contoh buku.
 
@@ -63,6 +63,16 @@ Jika perusahaan membayar terlambat melewati kontrak, dampak pemasok dan penalti 
 r_{nom}=\frac{d}{1-d}\frac{365}{n}\qquad EAR=\left(1+\frac{d}{1-d}\right)^{365/n}-1
 d adalah proporsi diskon; n jeda hari diskon sampai pelunasan penuh. EAR berarti tingkat efektif tahunan; r nominal belum memperhitungkan penggandaan. [hal. 582; PDF 624] [hal. 587; PDF 629]
 ```
+
+### Contoh terbimbing: harga dari tambahan kredit 20 hari
+
+Ilustrasi penulis memakai faktur 10.000 dengan syarat 2/10, net 30. Pada hari 10, pembeli dapat menyelesaikannya dengan 9.800. Jika menunggu hari 30, pembeli membayar 10.000. Dasar konsep diskon sumber: [hal. 582; PDF 624].
+
+1. Tambahan dana yang dipertahankan selama hari 10 sampai hari 30 adalah 9.800, yaitu kas yang seharusnya dibayar saat diskon diambil.
+2. Biaya melepas diskon adalah 200. Biaya untuk 20 hari = 200/9.800 = 2,0408%; penyebutnya tidak memakai 10.000.
+3. Dengan asumsi tahun 365 hari, pendekatan tahunan sederhana 2,0408% × 365/20 = 37,24%. Pengulangan dan penggandaan periode memberi tingkat efektif tahunan sekitar 44,59%.
+
+Bandingkan dengan fasilitas bank pada tenor serta dasar biaya yang sama. Tingkat nominal bank belum cukup jika ada potongan bunga di muka, biaya atau saldo yang tidak dapat dipakai. Semua angka merupakan ilustrasi, bukan penawaran kredit aktual.
 
 <!-- self-check question="Apa biaya ekonomis melepas diskon pemasok?" -->
 Syarat 2/10, net 30 berarti diskon 2% bila membayar pada hari 10, atau harga penuh pada hari 30. Melepas diskon seolah meminjam harga setelah diskon selama 20 hari dengan biaya diskon yang dilepas. [hal. cetak 581-584; PDF623-626]
@@ -107,7 +117,7 @@ versi HP: overview dengan kartu teks; grafik desktop tetap dapat dibuka
 alt text: Trade Credit: diskon atau pendanaan. Tambahan pendanaan 20 hari memiliki biaya 2/98.
 ```
 
-## 4a. Bandingkan biaya fasilitas dan cicilan
+## 5. Bandingkan biaya fasilitas dan cicilan
 
 Line of credit informal pada contoh buku tidak mengikat bank. Revolving credit agreement memberi komitmen formal dan mengenakan commitment fee, biaya atas bagian fasilitas yang belum dipakai. Contoh fasilitas 100 juta USD dengan biaya 0,25% setahun menghasilkan 250.000 USD saat tidak dipakai. Jika 50 juta USD digunakan sejak awal tahun, biaya atas saldo yang tidak dipakai menjadi 125.000 USD, di luar bunga atas pinjaman. Semua angka ini konteks buku, bukan penawaran bank kini. [hal. 585-586; PDF 627-628]
 

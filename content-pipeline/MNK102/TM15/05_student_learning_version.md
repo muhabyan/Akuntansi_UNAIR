@@ -3,9 +3,9 @@
 Altman (2002), Corporate Distress Prediction Models, halaman PDF 9-15, Figure 2 dan bagian 5-7; Brigham & Houston, FFM 16e (2022), Bab 7, hal. cetak 261-262 (PDF 303-304). Halaman cetak buku memiliki selisih 42 dari halaman PDF.
 
 **Setelah TM ini kamu bisa:**
-1. Memilih konsep dan asumsi yang sesuai kasus.
-2. Menunjukkan langkah hitungan, satuan, pembulatan, dan keputusan.
-3. Menjelaskan batas model serta rujukannya.
+1. Membedakan masalah likuiditas, distress dan status hukum dalam batas sumber.
+2. Mengidentifikasi rasio, unit, populasi dan batas satu varian Altman secara konsisten.
+3. Menggunakan skor sebagai awal analisis dan membandingkan alternatif pemulihan tanpa mengubahnya menjadi probabilitas gagal.
 
 ## Kilat
 
@@ -30,7 +30,7 @@ alt text: Corporate Failure dan Analisis Kesulitan Keuangan: peta keputusan. Mul
 
 Altman (2002), Corporate Distress Prediction Models, halaman PDF 9-15, Figure 2 dan bagian 5-7; Brigham & Houston, FFM 16e (2022), Bab 7, hal. cetak 261-262 (PDF 303-304)
 
-> **Kalau cuma sempat ingat satu hal:** arus kas, tingkat, satuan, dan periode harus konsisten sebelum kamu mengambil keputusan.
+> **Kalau cuma sempat ingat satu hal:** Z-score menyaring risiko pada populasi dan varian tertentu; keputusan tetap memerlukan pemeriksaan kas, jatuh tempo dan nilai pemulihan.
 
 > **Catatan sumber:** Artikel yang ditugaskan dosen tidak teridentifikasi. Altman (2002) adalah artikel primer pelengkap pilihan pengguna, bukan materi dosen terkonfirmasi. Core Failure diberi batas cakupan; prosedur Chapter 7/11 adalah Amerika Serikat. Tidak ada data perusahaan numerik pada artikel untuk contoh kanonik.
 
@@ -85,6 +85,16 @@ Untuk latihan original, skor di bawah 1,81 masuk distress, di atas 2,99 masuk zo
 
 Artikel juga membahas perubahan hasil pengujian dan false positive, perusahaan yang ditandai bermasalah tetapi tidak gagal. [Altman 2002 PDF13-14]
 
+### Contoh terbimbing: rasio desimal, kontribusi dan batas simpulan
+
+Ilustrasi penulis untuk varian original: X1 = 0,10; X2 = 0,20; X3 = 0,08; X4 = 0,50; X5 = 1,20. Diasumsikan definisi data dan populasi sesuai varian. Koefisien mengikuti artikel primer yang telah dirujuk: [Altman 2002, PDF 10-14].
+
+1. Kontribusi setiap rasio adalah 0,120; 0,280; 0,264; 0,300; dan 1,200. Jumlahnya Z = 2,164. Menulis rasio 10% sebagai angka 10 akan mengubah skala dan menghasilkan skor keliru.
+2. Dengan batas original yang digunakan modul, 2,164 berada di zona abu-abu. Ini klasifikasi skor, bukan peluang gagal 2,164% atau 216,4%.
+3. Jika hanya X3 turun dari 0,08 ke 0,02, kontribusinya berkurang 3,3 × 0,06 = 0,198. Skor baru 1,966. Hasil ini menunjukkan kepekaan terhadap EBIT pada asumsi rasio lain tetap, bukan membuktikan penyebab perubahan perusahaan nyata.
+
+Langkah berikutnya adalah memeriksa data, jadwal pembayaran, kas dan prospek pemulihan. Jangan mengganti nilai pasar ekuitas dengan nilai buku sambil mempertahankan seluruh koefisien dan batas original.
+
 <!-- self-check question="Apa pembilang dan penyebut X4 original?" -->
 Model original dikembangkan dari sampel manufaktur publik. Gunakan data yang sesuai populasi, termasuk nilai pasar seluruh ekuitas dan nilai buku seluruh kewajiban. [Altman 2002 PDF9-12, Figure 2]
 <!-- self-check:end -->
@@ -132,7 +142,7 @@ versi HP: overview dengan kartu teks; grafik desktop tetap dapat dibuka
 alt text: Original Z-Score: komponen rasio. Jumlah kontribusi menghasilkan skor tanpa satuan; skor belum menjadi probabilitas gagal.
 ```
 
-## 4a. Hubungkan sinyal skor dengan keputusan
+## 5. Hubungkan sinyal skor dengan keputusan
 
 Z-score menghasilkan klasifikasi berdasarkan gabungan rasio dan sampel model. Jangan mengubah skor menjadi persentase peluang bangkrut. Rasio yang buruk menunjukkan kebutuhan pemeriksaan kas, laba operasi, kewajiban dan aset; keputusan hukum maupun pendanaan memerlukan bukti tambahan. Kesalahan tipe I berarti perusahaan bermasalah diklasifikasi sehat; tipe II berarti perusahaan sehat diklasifikasi bermasalah pada pembahasan artikel. [Altman 2002, PDF 13-15, bagian 5-7]
 

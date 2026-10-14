@@ -2,7 +2,7 @@
 
 Status: READY_WITH_SCOPE_LIMITATION
 
-SHA256 05 (CRLF): 0756e85851fc8ab78ed51efc0584bf0d8804e1bbb53a832be2f057e24ea8b470
+SHA256 05 (CRLF): 2c903f3a286cde9a0d620f19c05d4c102988b676afb1aa5a979d28e7d033a339
 
 Brigham & Houston, FFM 16e (2022), Bab 14, hal. cetak 478-520 (PDF 520-562)
 
@@ -459,3 +459,6 @@ Jangan memasukkan bobot utang 0,2 sebagai D/E. [hal. 497; PDF 539]
 EPS_0=\frac{30{,}000(0.75)}{10{,}000}=2.25\qquad EPS_{50}=\frac{(30{,}000-7{,}200)(0.75)}{5{,}000}=3.42
 Hasil USD per saham; angka akhir dua desimal. [hal. 491; PDF 533]
 ```
+## Elaborasi 14 Oktober 2026
+
+Sumber 05 diperbarui untuk tujuan spesifik, contoh terbimbing dekat rumus, dan alur penalaran. Angka ilustrasi baru diberi label penulis; tabel, rumus, gambar dan dua kasus sumber dipertahankan. TM09 mengurutkan teori sebelum kerangka kasus. SHA256 05: 2c903f3a286cde9a0d620f19c05d4c102988b676afb1aa5a979d28e7d033a339. Validasi terakhir dicatat di docs/pra-uas-elaboration-progress.md.

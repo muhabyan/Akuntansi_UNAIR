@@ -26,7 +26,7 @@ for (const code of codes) {
       sections: all.filter(b => b.kind === 'section' || b.kind === 'h2').map(b => b.title ?? b.text),
       denseTables: all.filter(b => b.kind === 'table' && b.rows.length >= 5).map(b => ({ title: b.title, rows: b.rows.length, columns: b.headers.length })),
       closedDepth: all.filter(b => b.kind === 'pendalaman').length,
-      status: ['AKA201', 'AKK202', 'AKK203'].includes(code) ? 'revision-written; see progress checkpoint for validation and source limits' : 'awaiting source and depth review',
+      status: ['AKA201', 'AKK202', 'AKK203', 'MNK102'].includes(code) ? 'revision-written; see progress checkpoint for validation and source limits' : 'awaiting source and depth review',
     };
   });
   courses.push({ code, meetings });

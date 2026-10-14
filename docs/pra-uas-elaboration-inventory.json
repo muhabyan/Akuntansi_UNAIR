@@ -1079,11 +1079,11 @@
             "1. Pisahkan risiko operasi dari risiko pendanaan",
             "2. Cari nilai maksimum, lalu periksa EPS",
             "3. MM, biaya distress, informasi dan fleksibilitas",
+            "3.1 Baca MM dengan asumsi yang terpisah",
+            "3.2 MM dengan pajak perusahaan: manfaat bunga",
+            "3.3 Teori pendanaan untuk keputusan nyata",
+            "3.4 Grafik sumber untuk risiko dan struktur optimal",
             "4. Kerangka pengerjaan kasus",
-            "3a. Baca MM dengan asumsi yang terpisah",
-            "3b. Teori pendanaan untuk keputusan nyata",
-            "3c. MM dengan pajak perusahaan: manfaat bunga",
-            "3d. Grafik sumber untuk risiko dan struktur optimal",
             "Kasus latihan",
             "Persiapan Ujian"
           ],
@@ -1094,7 +1094,7 @@
             }
           ],
           "closedDepth": 1,
-          "status": "awaiting source and depth review"
+          "status": "revision-written; see progress checkpoint for validation and source limits"
         },
         {
           "tm": 10,
@@ -1108,7 +1108,7 @@
             "3. Teori dividen dan penafsiran informasi",
             "4. Prosedur pembayaran dan mekanisme saham",
             "5. Buyback dan nilai",
-            "5a. Uji pembagian kas terhadap kebutuhan investor",
+            "6. Uji pembagian kas terhadap kebutuhan investor",
             "Kasus latihan",
             "Persiapan Ujian"
           ],
@@ -1127,7 +1127,7 @@
             }
           ],
           "closedDepth": 1,
-          "status": "awaiting source and depth review"
+          "status": "revision-written; see progress checkpoint for validation and source limits"
         },
         {
           "tm": 11,
@@ -1140,7 +1140,7 @@
             "2. Siklus konversi kas dan unit harian",
             "3. Anggaran kas menunjukkan kebutuhan dana tepat waktu",
             "4. Kebijakan kas, sekuritas dan piutang",
-            "4a. Hubungkan angka dengan keputusan kas",
+            "5. Hubungkan angka dengan keputusan kas",
             "Kasus latihan",
             "Persiapan Ujian"
           ],
@@ -1151,7 +1151,7 @@
             }
           ],
           "closedDepth": 1,
-          "status": "awaiting source and depth review"
+          "status": "revision-written; see progress checkpoint for validation and source limits"
         },
         {
           "tm": 12,
@@ -1164,7 +1164,7 @@
             "2. Diskon pemasok adalah keputusan biaya pendanaan",
             "3. Biaya bank ditentukan dari arus kas bersih",
             "4. Fasilitas dan risiko pembiayaan jangka pendek",
-            "4a. Bandingkan biaya fasilitas dan cicilan",
+            "5. Bandingkan biaya fasilitas dan cicilan",
             "Kasus latihan",
             "Persiapan Ujian"
           ],
@@ -1175,7 +1175,7 @@
             }
           ],
           "closedDepth": 1,
-          "status": "awaiting source and depth review"
+          "status": "revision-written; see progress checkpoint for validation and source limits"
         },
         {
           "tm": 13,
@@ -1190,7 +1190,7 @@
             "3. Spot, forward, dan paritas suku bunga",
             "4. PPP dan inflasi sebagai model proyeksi",
             "5. Lindung nilai dan penilaian proyek",
-            "5a. Baca pasar dana dan kas yang kembali ke induk",
+            "6. Baca pasar dana dan kas yang kembali ke induk",
             "Kasus latihan",
             "Persiapan Ujian"
           ],
@@ -1209,7 +1209,7 @@
             }
           ],
           "closedDepth": 1,
-          "status": "awaiting source and depth review"
+          "status": "revision-written; see progress checkpoint for validation and source limits"
         },
         {
           "tm": 14,
@@ -1222,7 +1222,7 @@
             "2. Bedakan nilai operasi dan nilai ekuitas",
             "3. Batas tawaran dan siapa memperoleh sinergi",
             "4. Alternatif dan pemeriksaan pelaksanaan",
-            "4a. Periksa asal sinergi dan risiko tawaran",
+            "5. Periksa asal sinergi dan risiko tawaran",
             "Kasus latihan",
             "Persiapan Ujian"
           ],
@@ -1233,7 +1233,7 @@
             }
           ],
           "closedDepth": 1,
-          "status": "awaiting source and depth review"
+          "status": "revision-written; see progress checkpoint for validation and source limits"
         },
         {
           "tm": 15,
@@ -1246,7 +1246,7 @@
             "2. Altman original: variabel, unit dan populasi",
             "3. Varian model tidak boleh ditukar sebagian",
             "4. Reorganisasi dan likuidasi sebagai keputusan ekonomi",
-            "4a. Hubungkan sinyal skor dengan keputusan",
+            "5. Hubungkan sinyal skor dengan keputusan",
             "Kasus latihan",
             "Persiapan Ujian"
           ],
@@ -1261,7 +1261,7 @@
             }
           ],
           "closedDepth": 1,
-          "status": "awaiting source and depth review"
+          "status": "revision-written; see progress checkpoint for validation and source limits"
         }
       ]
     },

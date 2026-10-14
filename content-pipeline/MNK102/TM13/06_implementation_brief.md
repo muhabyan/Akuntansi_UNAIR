@@ -1,6 +1,6 @@
 # Implementasi MNK102 TM13
 
-Masukan otoritatif: 05_student_learning_version.md; SHA256 4902aa35785081947637f2099d45eaf84540d0e8574b2ea2a8c82d70d4979fbc.
+Masukan otoritatif: 05_student_learning_version.md; SHA256 460b96777fa1d82515764fd3bad34e964458a8d064accc092d55e95cd0d451ea.
 
 Konverter scripts/convert-mnk102.mjs menghasilkan src/data/mankeu/modules/tm13.ts, ekspor TM13_READING, Reading.layout layered, kunci 13. Output CRLF. Jangan mengedit teks TypeScript hasil konverter.
 
@@ -71,3 +71,6 @@ pesan utama: Urutan ini menjelaskan paritas suku bunga.
 versi HP: overview dengan kartu teks; grafik desktop tetap dapat dibuka
 alt text: Covered Investment: investasi dengan kurs terkunci. Urutan ini menjelaskan paritas suku bunga.
 ```
+## Elaborasi 14 Oktober 2026
+
+Sumber 05 diperbarui untuk tujuan spesifik, contoh terbimbing dekat rumus, dan alur penalaran. Angka ilustrasi baru diberi label penulis; tabel, rumus, gambar dan dua kasus sumber dipertahankan. TM09 mengurutkan teori sebelum kerangka kasus. SHA256 05: 460b96777fa1d82515764fd3bad34e964458a8d064accc092d55e95cd0d451ea. Validasi terakhir dicatat di docs/pra-uas-elaboration-progress.md.

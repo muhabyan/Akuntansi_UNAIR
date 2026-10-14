@@ -2,7 +2,7 @@
 
 Status: READY_WITH_SCOPE_LIMITATION
 
-SHA256 05 (CRLF): 2f7059b66735ea263c1fcd7b7f638f60542557fe52707cc2c86f833a3b736e73
+SHA256 05 (CRLF): b011ffe39d313910dd59e1f7790116c83bdc3e2fc6fc0b901e57d54b5ebb2df1
 
 Altman (2002), Corporate Distress Prediction Models, halaman PDF 9-15, Figure 2 dan bagian 5-7; Brigham & Houston, FFM 16e (2022), Bab 7, hal. cetak 261-262 (PDF 303-304)
 
@@ -93,3 +93,6 @@ alt text: Original Z-Score: komponen rasio. Jumlah kontribusi menghasilkan skor 
 \displaystyle Z=1.2 X_1+1.4 X_2+3.3 X_3+0.6 X_4+1.0 X_5
 [Altman 2002, PDF 10, Figure 2]
 ```
+## Elaborasi 14 Oktober 2026
+
+Sumber 05 diperbarui untuk tujuan spesifik, contoh terbimbing dekat rumus, dan alur penalaran. Angka ilustrasi baru diberi label penulis; tabel, rumus, gambar dan dua kasus sumber dipertahankan. TM09 mengurutkan teori sebelum kerangka kasus. SHA256 05: b011ffe39d313910dd59e1f7790116c83bdc3e2fc6fc0b901e57d54b5ebb2df1. Validasi terakhir dicatat di docs/pra-uas-elaboration-progress.md.
