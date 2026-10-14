@@ -1,0 +1,156 @@
+{
+  "date": "2026-10-14",
+  "scope": "Pencarian dan audit ulang buku RPP ASP TM8-14, sesudah review awal PR61",
+  "searchChannels": [
+    "Penerbit resmi Salemba/Andi/Pearson",
+    "Katalog dan repositori universitas",
+    "Google Books preview resmi",
+    "Myedisi dan Gramedia yang ditautkan penerbit",
+    "Pencarian judul/penulis/ISBN/bab secara spesifik"
+  ],
+  "entries": [
+    {
+      "id": "JP",
+      "title": "Public Sector Accounting",
+      "authors": "Rowan Jones; Maurice Pendlebury",
+      "assigned": "RPP ed.6, 2000; Bab 2 dan 9",
+      "verifiedEdition": "Ed.6, 2010, ISBN 9780273720362",
+      "access": "FULL_TEXT_ACQUIRED_AND_ASSIGNED_CHAPTERS_AUDITED",
+      "primaryUrls": [
+        "https://opac.feb.uinjkt.ac.id/repository/4a92513b40668f056ddd4e5117aca16e.pdf",
+        "https://www.pearson.com/en-ca/subject-catalog/p/public-sector-accounting/P200000004576/9780273720409",
+        "https://research.birmingham.ac.uk/en/publications/public-sector-accounting/"
+      ],
+      "conflict": "Tahun 2000 adalah edisi kelima menurut halaman hak cipta; edisi keenam terbit 2010. Versi yang dibaca disebut eksplisit, tidak diam-diam mengubah RPP.",
+      "printPagesReviewed": [
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        127,
+        128,
+        129,
+        130,
+        131,
+        132,
+        133,
+        134,
+        135,
+        136,
+        137,
+        138,
+        139,
+        140
+      ],
+      "pdfId": "JP6_2010"
+    },
+    {
+      "id": "IBS",
+      "title": "Sistem Akuntansi Sektor Publik",
+      "authors": "Indra Bastian",
+      "assigned": "RPP ed.2, 2011; Bab 2",
+      "verifiedEdition": "Publisher: ed.2, tahun 2006 ISBN 9796913712; preview: hak cipta 2006, cetakan katalog 2019 ISBN 9789790618329",
+      "access": "OFFICIAL_PARTIAL_PREVIEW_ACQUIRED_CHAPTER_2_NOT_OPEN",
+      "primaryUrls": [
+        "https://penerbitsalemba.com/buku/01-0110-sistem-akuntansi-sektor-publik-e2",
+        "https://www.myedisi.com/salemba/65446/sistem-akuntansi-sektor-publik",
+        "https://www.myedisi.com/salemba/65446/preview",
+        "https://ebooks.gramedia.com/id/buku/sistem-akuntansi-sektor-publik-edisi-ke-2"
+      ],
+      "previewPages": 14,
+      "imagePagesReviewed": [
+        2,
+        3,
+        5,
+        10
+      ],
+      "printedPagesReviewed": [
+        "hak cipta",
+        "iii",
+        "vii",
+        "4"
+      ],
+      "previewManifestSha256": "bda993ed8e0200c4141aa9dbdcc731479c21f3a26d8aea8554cd91788182a645",
+      "boundary": "Bab 2 tidak ada di 14 halaman pilihan preview. Teks penuh tersedia melalui pembelian digital dan aplikasi pembaca; belum ada hak akses penuh pada sesi ini. Tahun 2011 mungkin cetakan; tidak dinyatakan salah tanpa bukti cetakan tersebut.",
+      "localPreviewManifestPath": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\tmp\\asp-sources\\IBS_preview.json",
+      "pageImages": [
+        {
+          "previewPage": 2,
+          "localPath": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\tmp\\asp-sources\\book-review\\IBS-preview-2.png",
+          "sha256": "6a0ee71dc29608e54b2f016a2f62da9569d2f9acdde26ca68be82a67f41654d5"
+        },
+        {
+          "previewPage": 3,
+          "localPath": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\tmp\\asp-sources\\book-review\\IBS-preview-3.png",
+          "sha256": "43d2c0d73f70906b5b176391ad9da7374bb4136cd5199be882f0c25e3fb752bb"
+        },
+        {
+          "previewPage": 5,
+          "localPath": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\tmp\\asp-sources\\book-review\\IBS-preview-5.png",
+          "sha256": "0c916b11127352f94cf6fd8a856e54fd5512d2a2bc9a0a1dada6f6b9db2adddf"
+        },
+        {
+          "previewPage": 10,
+          "localPath": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\tmp\\asp-sources\\book-review\\IBS-preview-10.png",
+          "sha256": "6b1fb506413139d6b7be6d510c2ee963f8a585bda90e70ed3b1317afe143606e"
+        }
+      ]
+    },
+    {
+      "id": "DN",
+      "title": "Akuntansi Sektor Publik",
+      "authors": "Deddi Nordiawan; Ayuningtyas Hertianti",
+      "assigned": "RPP ed.2, 2010; Bab 3,8,10",
+      "verifiedEdition": "Ed.2,2010,ISBN 9789790611139;230 halaman menurut penerbit",
+      "access": "BIBLIOGRAPHY_AND_ACQUISITION_ROUTE_VERIFIED_NO_FULL_CHAPTER_ACCESS",
+      "primaryUrls": [
+        "https://penerbitsalemba.com/buku/01-0169-akuntansi-sektor-publik-e2",
+        "https://slims.untan.ac.id/buku/index.php?id=17451&p=show_detail",
+        "https://perpus.swins.ac.id/opac/detail-opac?id=479",
+        "https://slims.umn.ac.id/index.php?id=691&p=show_detail"
+      ],
+      "boundary": "Halaman resmi penerbit menyediakan sampul/spesifikasi dan pembelian. preview, free content, lecturer content dan eBookLink kosong pada data halaman publik yang diperiksa. Katalog perpustakaan mengonfirmasi eksemplar fisik, tidak memberikan teks bab digital. Tidak mengklaim membaca Bab 3/8/10.",
+      "publisherPageSnapshot": {
+        "localPath": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\tmp\\asp-sources\\DNpublisher.json",
+        "sha256": "e685732867c28e277e5c70e8305fcd4c53a08834ff1ef3a1366dd6ab001c5478"
+      }
+    },
+    {
+      "id": "MD",
+      "title": "Akuntansi Sektor Publik",
+      "authors": "Mardiasmo",
+      "assigned": "RPP 2009; Bab 8",
+      "verifiedEdition": "2009,ISBN9789792907797,xx+218halaman dikonfirmasi katalog Airlangga; edisi baru ISBN9789792969726 berbeda",
+      "access": "EXACT_EDITION_CATALOG_FOUND_CHAPTER_8_NOT_ACCESSIBLE",
+      "primaryUrls": [
+        "https://ailisx.lib.unair.ac.id/opac/detail-opac?id=accdff18665cb2da73369c71ede0f384cefbb0c9",
+        "https://www.andipublisher.com/produk/detail/akuntansi-sektor-publik-ed-terbaru/1000",
+        "https://books.google.com/books/about/AKUNTANSI_SEKTOR_PUBLIK_Edisi_Terbaru.html?id=pBVCEAAAQBAJ"
+      ],
+      "boundary": "Katalog edisi 2009 ditemukan. Tab konten digital tidak memberikan berkas bab; layanan digital memberi403. Google Books merupakan edisi lebih baru dan halaman150/151 yang diperiksa menampilkan pembatasan pratinjau. Tidak memakai abstrak, daftar isi atau snippets sebagai bukti membaca Bab8."
+    },
+    {
+      "id": "MAHSUN",
+      "title": "Akuntansi Sektor Publik",
+      "authors": "Moh. Mahsun; Firma Sulistiyowati; Heribertus Andre Purwanugraha",
+      "assigned": "Tambahan yang dipilih agent, tidak terdaftar sebagai DN/MD/IBS",
+      "verifiedEdition": "Ed.3,cetakan2011,ISBN9795034928",
+      "access": "AUTHOR_REPOSITORY_FULL_TEXT_ACQUIRED_SELECTED_PAGES_AUDITED",
+      "primaryUrls": [
+        "https://people.usd.ac.id/~dosen/repository/firma/sektor.pdf"
+      ],
+      "pdfId": "Mahsun3_2011",
+      "boundary": "Halaman terpilih Bab10 dan11 dipakai perbandingan konsep/format historis. Batas donasi tahun1999, PSAK45 dan format BLU lama tidak dijadikan jawaban peraturan periode kini."
+    }
+  ],
+  "searchIsNotReading": "Hasil pencarian, katalog dan sinopsis tidak dihitung sebagai audit isi bab. Status akses per buku dibedakan.",
+  "licensedSourcesNotCommitted": true
+}

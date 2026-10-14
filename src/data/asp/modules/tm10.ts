@@ -3,7 +3,7 @@ import type {Reading} from '../../../types';
 export const TM10_READING: Reading = {
   "tm": 10,
   "title": "Audit Organisasi Pemerintah: APIP dan BPK",
-  "ref": "[UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28](https://peraturan.bpk.go.id/Details/40509/uu-no-15-tahun-2004) | [PP 60/2008 Ps.2-3,47-54; cetak/PDF 3-4,21-25](https://peraturan.go.id/files/pp60-2008.pdf#page=3) | [Peraturan BPK 1/2017 Ps.3-5 dan KK par.14,18,21-42; cetak 4-5,5-13 KK; PDF 4-5,17-25](https://peraturan.bpk.go.id/Download/20433/Peraturan%20BPK%20Nomor%201%20Tahun%202017.pdf) | [Peraturan BPK 1/2026 Ps.7-9; cetak/PDF 3-4; diundangkan 10 April 2026, berlaku 10 April 2028](https://peraturan.bpk.go.id/Download/411430/Salinan%20PBPK%201%20Tahun%202026.pdf#page=3)",
+  "ref": "[UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28](https://peraturan.bpk.go.id/Details/40509/uu-no-15-tahun-2004) | [PP 60/2008 Ps.2-3,47-54; cetak/PDF 3-4,21-25](https://peraturan.go.id/files/pp60-2008.pdf#page=3) | [Peraturan BPK 1/2017 Ps.3-5 dan KK par.14,18,21-42; cetak 4-5,5-13 KK; PDF 4-5,17-25](https://peraturan.bpk.go.id/Download/20433/Peraturan%20BPK%20Nomor%201%20Tahun%202017.pdf) | [Peraturan BPK 1/2026 Ps.7-9; cetak/PDF 3-4; diundangkan 10 April 2026, berlaku 10 April 2028](https://peraturan.bpk.go.id/Download/411430/Salinan%20PBPK%201%20Tahun%202026.pdf#page=3) | [Jones-Pendlebury ed.6 (2010), Bab 9, cetak 127-140/PDF 138-151](https://opac.feb.uinjkt.ac.id/repository/4a92513b40668f056ddd4e5117aca16e.pdf#page=138)",
   "intro": "Opini laporan keuangan, kualitas layanan dan tindak lanjut rekomendasi menjawab pertanyaan berbeda. Kamu akan memilih tujuan pemeriksaan, menilai bukti, lalu menyatakan kesimpulan yang sesuai ruang lingkup.",
   "layout": "layered",
   "coreReadingMinutes": 20,
@@ -374,6 +374,42 @@ export const TM10_READING: Reading = {
         {
           "kind": "p",
           "text": "SPIP memberi keyakinan memadai tentang tujuan, pelaporan, pengamanan aset dan kepatuhan. Kelima unsur saling mendukung, tanpa urutan waktu wajib. Audit/reviu tidak dapat menggantikan pengendalian harian oleh manajemen. [PP 60/2008 Ps.2-3,47-54; cetak/PDF 3-4,21-25](https://peraturan.go.id/files/pp60-2008.pdf#page=3)"
+        },
+        {
+          "kind": "p",
+          "text": "JP Bab 9 sudah dibaca lengkap dalam edisi keenam 2010. Buku memberi kerangka perbandingan internasional; mandat APIP/BPK tetap mengikuti peraturan Indonesia. Independensi memerlukan sikap objektif dan dukungan kelembagaan. Tekanan anggaran, akses bukti atau pengubahan laporan dapat mengganggu pemeriksaan. [Jones-Pendlebury ed.6 (2010), Bab 9, cetak 127-140/PDF 138-151](https://opac.feb.uinjkt.ac.id/repository/4a92513b40668f056ddd4e5117aca16e.pdf#page=138)"
+        },
+        {
+          "kind": "table",
+          "title": "Kerangka buku dan batas penerapan",
+          "headers": [
+            "Konsep",
+            "Implikasi untuk analisis kasus"
+          ],
+          "rows": [
+            [
+              "Independensi",
+              "Periksa mandat, akses bukti, sumber daya dan kebebasan pelaporan."
+            ],
+            [
+              "Pengendalian intern",
+              "Kontrol mengurangi risiko; kolusi, kesalahan dan pengabaian oleh manajemen tetap mungkin."
+            ],
+            [
+              "Materialitas",
+              "Nilai uang perlu dibaca bersama sensitivitas sifat transaksi dan kepentingan publik."
+            ],
+            [
+              "Pemeriksaan anggaran",
+              "Target dan prediksi memerlukan pemeriksaan asumsi; bukti transaksi realisasi mempunyai dasar berbeda."
+            ]
+          ],
+          "caption": "[Jones-Pendlebury ed.6 (2010), Bab 9, cetak 127-140/PDF 138-151](https://opac.feb.uinjkt.ac.id/repository/4a92513b40668f056ddd4e5117aca16e.pdf#page=138) Kerangka konseptual; keputusan penugasan Indonesia mengikuti SPKN.",
+          "stackOnMobile": true
+        },
+        {
+          "kind": "p",
+          "text": "Contoh buatan: biaya perjalanan pejabat bernilai kecil dapat sensitif karena sifat dan penerima manfaatnya. Menilai seluruh temuan dengan satu persen seragam dapat melewatkan aspek kualitatif. Anggaran masa depan juga tidak memberikan kepastian bahwa hasil akan terjadi. Pilih kesimpulan sesuai objek, kriteria dan bukti yang benar-benar diperiksa. [Jones-Pendlebury ed.6 (2010), Bab 9, cetak 127-140/PDF 138-151](https://opac.feb.uinjkt.ac.id/repository/4a92513b40668f056ddd4e5117aca16e.pdf#page=138)"
         }
       ]
     },

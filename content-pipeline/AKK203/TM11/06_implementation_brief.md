@@ -1,6 +1,6 @@
 # Implementasi TM11
 
-Bangun ulang dari04 JSON (e2767664a3e1729859ab955f5167e4d587f132228a4eaea15f3e12b590d40027): node scripts/build-akk203-pra-uas.mjs.
+Bangun ulang dari04 JSON (a2fa365be167fc4792ab486033e383dddfb664ac24306153b5fd1ad561123ac4): node scripts/build-akk203-pra-uas.mjs.
 
 Visual:
 
@@ -162,3 +162,4 @@ Visual:
 
 - DE 2018 CatatanD tentang investasi/endowment: belum masuk latihan inti karena teks transaksi final belum tersedia.
 - DE 2018 FormatA/B dan arus kas tidak langsung dapat menjadi latihan penyajian tambahan;angka sumber berupa placeholder.
+- Buku tambahan Mahsun dkk. edisi ketiga 2011 tersedia dari repositori penulis; halaman terpilih dibandingkan sebagai konteks historis. Buku ini tidak menggantikan identitas DN pada RPP.

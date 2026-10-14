@@ -477,6 +477,10 @@
           {
             "kind": "p",
             "text": "Tidak ada teks DN Bab 10 dan IBS Bab 2 dalam paket lokal yang ditemukan. Kedalaman bab, tabel dan latihan buku belum dapat dinyatakan telah diaudit. SAPD aktual juga memerlukan perkada dan konfigurasi akun daerah yang bersangkutan."
+          },
+          {
+            "kind": "p",
+            "text": "Pengantar buku Bastian menempatkan sistem sebagai pengolahan informasi sekaligus pembagian wewenang. Karena itu, telusuri dokumen asal, pencatat, pemberi otorisasi, alur catatan dan keluaran laporan bersama kontrolnya. Pratinjau ini mendukung alasan desain sistem; isi Bab 2 dan kasus diskusinya belum tersedia penuh. Ketentuan teknis pusat/daerah dalam bacaan tetap mengikuti sumber resmi yang dirujuk. [Bastian, Sistem Akuntansi Sektor Publik ed.2, pratinjau resmi cetakan 2019, cetak iii dan 4; halaman pratinjau 3,10](https://www.myedisi.com/salemba/65446/preview)"
           }
         ]
       },
@@ -860,12 +864,13 @@
       "Awal: Aturan pusat dan daerah tercampur Perbaikan: Tunjukkan batas PMK 100 dan contoh Permendagri 64."
     ],
     "limitations": [
-      "Buku DN Bab 10 dan IBS Bab 2 belum tersedia; cakupan buku belum lengkap.",
+      "DN Bab 10 belum tersedia penuh. IBS edisi 2 ditemukan melalui penerbit: pengantar dan Bab 1 terbaca pada pratinjau cetakan 2019, tetapi Bab 2 penugasan belum terbaca penuh. Tahun/cetakan RPP 2011 dipisahkan dari versi yang diakses.",
       "Format sumber daerah bertanda xxx; angka latihan adalah asumsi, tanpa kode BAS historis."
     ],
     "appendix": [
       "Format laporan PPKD lengkap pada PDF 69-81 merupakan latihan tambahan pembacaan penyajian.",
-      "Subsistem SABUN yang tidak dibahas mendalam dan seluruh tenggat teknis per unit perlu teks prosedur penugasan terkait."
+      "Subsistem SABUN yang tidak dibahas mendalam dan seluruh tenggat teknis per unit perlu teks prosedur penugasan terkait.",
+      "Pratinjau resmi IBS terdiri dari 14 halaman terpilih, bukan 14 halaman berurutan buku. Halaman 2/3/5/10 diperiksa sebagai gambar; Bab 2 dan kasus diskusi belum terbuka."
     ],
     "status": "NEEDS_HUMAN_REVIEW",
     "practiceSources": [

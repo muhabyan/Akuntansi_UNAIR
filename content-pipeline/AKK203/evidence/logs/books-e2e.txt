@@ -1,0 +1,1 @@
+Browser E2E PASS: EKT109 bank and 90-minute simulator interactions, PJK201 timer restore, route, 404, exam localStorage, dan theme persistence

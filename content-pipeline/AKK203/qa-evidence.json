@@ -8,40 +8,57 @@
     "total": 80,
     "passed": 80,
     "failed": 0,
-    "wallDurationMs": 192647
+    "wallDurationMs": 241414
   },
   "logs": {
     "standard": {
-      "path": "evidence/logs/standard.txt",
-      "sha256": "28379500be15d3db1ad55abbafd00113ad76a933b37e8572e50b766fda1ef7ab",
-      "result": "PASS"
+      "path": "evidence/logs/books-standard.txt",
+      "sha256": "c667d966158e8daaf12c560a72a4789a1c6100110a9f5845d7c6469345aab383",
+      "rawSha256": "6313c42ef45f1dd87535e88d81e6ef29d28a0926ad02a35a380dccc3468868b1",
+      "result": "PASS",
+      "formatting": "Trailing whitespace normalized in committed copy; raw retained locally."
     },
     "lint": {
-      "path": "evidence/logs/lint.txt",
-      "sha256": "005b7bd609fb6e4b95897af4e6e50f412261a0052304164a0d08271e73bb89ff",
-      "result": "PASS"
-    },
-    "types": {
-      "path": "evidence/logs/types.txt",
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "result": "PASS"
+      "path": "evidence/logs/books-lint.txt",
+      "sha256": "f26a453d6f2b4e689df61a1da5110756be24c1535f20c4fce13d69853a7549fb",
+      "rawSha256": "a5dd6232eda686e69c86bce0e2f291a5ac2c02c01127b4fa8bd925529592c435",
+      "result": "PASS",
+      "formatting": "Trailing whitespace normalized in committed copy; raw retained locally."
     },
     "build": {
-      "path": "evidence/logs/build.txt",
-      "sha256": "292c50531ac9645111d6a07e52b2300334af80e1368f7be239b4e5bb6eb9d7c2",
+      "path": "evidence/logs/books-build.txt",
+      "sha256": "0f4861347a19da566587a6b6f5c23df24970edcb08786cceb6906a6847aa9478",
+      "rawSha256": "25a278ca01950a4fba8a59346f4a6f537b7e2c7ef3ce3ac1158bc1d7da957dca",
       "result": "PASS",
-      "rawSha256": "ecb55c9910978db325431c55d2371a362e2ca125df4cf0f70c0e93c7263dcc94",
-      "formatting": "Trailing whitespace removed in committed copy; original output retained locally."
+      "formatting": "Trailing whitespace normalized in committed copy; raw retained locally."
+    },
+    "browser": {
+      "path": "evidence/logs/books-browser.txt",
+      "sha256": "6e9047cf2e47b87309066e81fa4268e6755aba2158573c9dcf58ffbc8b40c864",
+      "rawSha256": "f2693e44d0d792719108da63d50d90aecdbcc7c6a717dbac3f3546acd24a12c2",
+      "result": "PASS",
+      "formatting": "Trailing whitespace normalized in committed copy; raw retained locally."
     },
     "runtime": {
-      "path": "evidence/logs/runtime.txt",
-      "sha256": "3c9b51775b9ea56260b810416d88a088a481ef29759b8cc7b90879831a060a92",
-      "result": "PASS"
+      "path": "evidence/logs/books-runtime.txt",
+      "sha256": "3eda732f785c26394a77895ac68b92a52382a9587763acb6308bd36bb2ca8fd3",
+      "rawSha256": "fcf805c62cbcc7cce4c65f689ba5fcb64983d3b93d483ba968735ca6880e035c",
+      "result": "PASS",
+      "formatting": "Trailing whitespace normalized in committed copy; raw retained locally."
     },
     "e2e": {
-      "path": "evidence/logs/e2e.txt",
-      "sha256": "8ad841dd42c186f6cfa8c3517f558a7333304cefb1a8d59b2137b2cccd6c0d63",
-      "result": "PASS"
+      "path": "evidence/logs/books-e2e.txt",
+      "sha256": "dd1f28076f772e82035445180134dbdd7cbc88e2d44c5f50ea9b6fe8a7b30217",
+      "rawSha256": "5efea679ac476b8cc3d317628501a36c1d3199993d23294e5a62f6a968e6f5a2",
+      "result": "PASS",
+      "formatting": "Trailing whitespace normalized in committed copy; raw retained locally."
+    },
+    "e2e-first": {
+      "path": "evidence/logs/books-e2e-first.txt",
+      "sha256": "fbe023efff29a90c7f7620e2636576226d3bf74db7e9af56b15bd582aa17ceb8",
+      "rawSha256": "fbe023efff29a90c7f7620e2636576226d3bf74db7e9af56b15bd582aa17ceb8",
+      "result": "RESOLVED_PORT_COLLISION",
+      "formatting": "Trailing whitespace normalized in committed copy; raw retained locally."
     }
   },
   "browser": {
@@ -55,8 +72,8 @@
       "dark"
     ],
     "allPendalamanOpened": true,
-    "screenshots": 160,
-    "visuals": 40,
+    "screenshots": 164,
+    "visuals": 41,
     "overflow": 0,
     "minSvgFontPx": 13.18235294117647,
     "minSvgContrast": 9.896764973632585,
@@ -68,7 +85,8 @@
     "Jurnal debit sama dengan kredit",
     "Neraca, pergerakan aset neto, kas, LO dan LRA dihitung terpisah",
     "Nilai dan p-value Tabel 4 Olken dipertahankan; pp dibedakan dari perubahan relatif",
-    "Periode standar dan syarat ambang diperiksa dari ketentuan asli"
+    "Periode standar dan syarat ambang diperiksa dari ketentuan asli",
+    "JP Exhibit2.1 budget/student and student/full-time-teacher ratios recalculated separately; source display preserved; no actual-spending inference"
   ],
   "protected": {
     "unrelatedSourceFiles": 380,
@@ -84,11 +102,36 @@
   ],
   "resolvedFailures": [
     "Tipe angka jurnal, format rujukan komponen bank, lint dan snapshot ASP diperbaiki",
-    "Timeout satu tes navigasi AKA201: retry 25/25 lulus, kemudian seluruh 80/80 lulus"
+    "Timeout satu tes navigasi AKA201: retry 25/25 lulus, kemudian seluruh 80/80 lulus",
+    "E2E default CDP port9222 was occupied by another app; wrong target caused navigation timeout. Retry with E2E_CDP_PORT9367/E2E_PREVIEW_PORT4287 passed; no shared source code changed."
   ],
   "gaps": [
-    "D1: buku bab RPP belum tersedia",
-    "D2: teks final SAK/ISAK 335 dan amendemen belum tersedia",
-    "D3: artikel penugasan dosen TM14 belum teridentifikasi"
-  ]
+    "D1: MD8,DN3/8/10,IBS2 full chapters inaccessible after searches; JP RPP year/edition conflict documented",
+    "D2: final SAK/ISAK335 and amendments unavailable",
+    "D3: assigned lecturer article list unidentified"
+  ],
+  "revision": "Book search and source audit revision",
+  "previousEvidence": "evidence/qa-before-book-revision.json",
+  "typescript": {
+    "result": "PASS",
+    "command": "node node_modules/typescript/bin/tsc -b --pretty false",
+    "execution": "First step of build group; build runs only after zero exit."
+  },
+  "sourceAuditRevision": {
+    "register": "book-search-register.json",
+    "pdfRegisterCount": 25,
+    "JPAssignedChaptersAudited": [
+      2,
+      9
+    ],
+    "IBSOfficialPreviewPages": 14,
+    "IBSImagePagesReviewed": [
+      2,
+      3,
+      5,
+      10
+    ],
+    "supplement": "Mahsun ed.3 2011, selected historical pages",
+    "assurance": "Source assurance improved for JP2/9; no claim all other assigned books read."
+  }
 }

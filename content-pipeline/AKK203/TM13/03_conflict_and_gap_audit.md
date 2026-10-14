@@ -11,3 +11,12 @@ Status: NEEDS_HUMAN_REVIEW.
 DN Bab 3 dan aturan daerah/ambang aktual belum tersedia; sumber resmi dipakai dengan lingkup yang jelas.
 
 Contoh rumah sakit buatan, tanpa klaim kepatuhan operasional satu rumah sakit nyata.
+
+
+## Revisi pencarian buku 14 Oktober 2026
+
+Lihat ../book-search-register.json untuk sumber yang diperoleh, pratinjau dan akses bab yang masih terbatas. Status lama di atas merupakan keadaan sebelum pencarian lanjutan.
+
+DN Bab 3 dan aturan daerah/ambang aktual belum tersedia; sumber resmi dipakai dengan lingkup yang jelas.
+
+Contoh rumah sakit buatan, tanpa klaim kepatuhan operasional satu rumah sakit nyata.

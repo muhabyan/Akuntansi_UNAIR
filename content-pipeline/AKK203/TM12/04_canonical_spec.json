@@ -481,6 +481,10 @@
           {
             "kind": "p",
             "text": "Formulir 2018 bersifat historis; lampiran terbaru 78/2020 PDF 18-20 memuat rekap penerimaan serta rincian pendidikan politik/sekretariat. Gunakan versi terbaru sesuai periode. Teks final SAK dan DN Bab 3 belum tersedia; kampanye perlu aturan pemilu tersendiri. [Permendagri 78/2020 perubahan Ps.8-9 A,28 A,29-29 A,37,39 A; cetak/PDF 4-9; formulir terbaru PDF 18-20](https://peraturan.bpk.go.id/Download/156015/Permendagri%20Nomor%2078%20Tahun%202020.pdf#page=4)"
+          },
+          {
+            "kind": "p",
+            "text": "Bagian partai dalam buku tambahan 2011 memuat aturan tahun 1999 dan ambang Rp15 juta/Rp150 juta. Angka historis itu tidak dipakai menjawab kasus batas donasi entitas pada paket ini, yang merujuk UU 2/2011. Dana kampanye mempunyai cakupan aturan tersendiri. [Mahsun dkk. ed.3 (2011), tambahan historis bagian partai; cetak 203-205/PDF 214-216](https://people.usd.ac.id/~dosen/repository/firma/sektor.pdf#page=214)"
           }
         ]
       },
@@ -1001,7 +1005,8 @@
     ],
     "appendix": [
       "Lampiran formulir permohonan serta beritaacara verifikasi tambahan tidak menggantikan latihan penyusunan laporan inti.",
-      "LADK/LPPDK dan auditkampanye perlu aturan KPU sesuai pemilu, tidak disalin dariPasal 35 atau 34 A."
+      "LADK/LPPDK dan auditkampanye perlu aturan KPU sesuai pemilu, tidak disalin dariPasal 35 atau 34 A.",
+      "Buku tambahan Mahsun dkk. edisi ketiga 2011 tersedia dari repositori penulis; halaman terpilih dibandingkan sebagai konteks historis. Buku ini tidak menggantikan identitas DN pada RPP."
     ],
     "status": "NEEDS_HUMAN_REVIEW",
     "practiceSources": [
@@ -1174,6 +1179,14 @@
       "after": "Penjelasan mekanisme, perbandingan, cek pemahaman dan batas sumber",
       "assumptions": "Angka buatan hanya pada latihan berlabel; aturan bergantung entitas/periode",
       "sourceExercises": "Tidak ada nomor kasus khusus dalam RPP. Format/ilustrasi resmi digunakan bila tersedia."
+    },
+    {
+      "concept": "Perbandingan buku tambahan historis dan sumber periode kini",
+      "source": "[Mahsun dkk. ed.3 (2011), tambahan historis bagian partai; cetak 203-205/PDF 214-216](https://people.usd.ac.id/~dosen/repository/firma/sektor.pdf#page=214)",
+      "before": "Buku tambahan belum diperiksa langsung",
+      "after": "Perbedaan format/aturan buku historis dijelaskan tanpa memindahkan angka lama ke kasus kini",
+      "assumptions": "Mahsun adalah tambahan, tidak dianggap DN atau persetujuan dosen",
+      "sourceExercises": "Format lama diperiksa sebagai gambar; tidak diberi angka kasus sumber baru"
     }
   ]
 }

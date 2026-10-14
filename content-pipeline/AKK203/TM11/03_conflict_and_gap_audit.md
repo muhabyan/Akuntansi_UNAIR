@@ -11,3 +11,12 @@ Status: NEEDS_HUMAN_REVIEW.
 Teks final SAK/ISAK 335 dan amendemen 2026 belum tersedia utuh; ilustrasiDE2018 tidak membuktikan kepatuhan aktual.
 
 DN Bab 3 dan bahan dosen pasca-UTS belum tersedia; contoh buku belum teraudit.
+
+
+## Revisi pencarian buku 14 Oktober 2026
+
+Lihat ../book-search-register.json untuk sumber yang diperoleh, pratinjau dan akses bab yang masih terbatas. Status lama di atas merupakan keadaan sebelum pencarian lanjutan.
+
+Teks final SAK/ISAK 335 dan amendemen 2026 belum tersedia utuh; ilustrasi DE 2018 tidak membuktikan kepatuhan aktual.
+
+DN Bab 3 dan bahan dosen pasca-UTS belum tersedia; contoh buku belum teraudit.

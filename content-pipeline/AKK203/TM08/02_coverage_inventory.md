@@ -20,3 +20,4 @@ RPP: DN Bab 10; IBS Bab 2; peraturan terkait, RPP PDF 5. Buku/bahan dosen belum 
 
 - Format laporan PPKD lengkap pada PDF 69-81 merupakan latihan tambahan pembacaan penyajian.
 - Subsistem SABUN yang tidak dibahas mendalam dan seluruh tenggat teknis per unit perlu teks prosedur penugasan terkait.
+- Pratinjau resmi IBS terdiri dari 14 halaman terpilih, bukan 14 halaman berurutan buku. Halaman 2/3/5/10 diperiksa sebagai gambar; Bab 2 dan kasus diskusi belum terbuka.

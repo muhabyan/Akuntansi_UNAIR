@@ -230,10 +230,24 @@ Halaman gambar ditinjau: 1, 3, 4, 6, 7, 8, 9, 10, 11, 12, 17, 18, 19, 20, 21, 22
 
 [Sumber primer](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf)
 
-## Sumber yang belum tersedia
+## Pembaruan pencarian buku
 
-D1: buku Mardiasmo 2009 Bab 8; Nordiawan 2010 edisi 2 Bab 3,8,10; Bastian 2011 edisi 2 Bab 2; Jones/Pendlebury 2000 edisi 6 Bab 2,9. Tidak ada klaim nomor halaman, latihan atau gambar buku yang belum dibaca.
+JP edisi keenam 2010 tersedia dan Bab 2/9 sudah dibaca lengkap beserta gambar. Buku tambahan Mahsun edisi3 2011 tersedia, halaman terpilih Bab10/11 ditinjau. Pratinjau resmi IBS14 halaman pilihan tersedia; gambar2/3/5/10 ditinjau, Bab2 belum terbuka. DN edisi2 2010 dan MD2009 sudah ditemukan identitas dan jalur aksesnya, tetapi teks bab belum dapat dibaca. book-search-register.json membedakan teks penuh, pratinjau, metadata dan hambatan akses.
 
-D2: teks final SAK/ISAK 335 dan amendemen terkait. DE historis dan berita pengesahan hanya mendukung konteks terbatas.
+D1 kini terbatas pada MD8,DN3/8/10,IBS2 penuh dan konflik tahun JP dalam RPP. D2 teks final SAK/ISAK335 dan amendemen; D3 artikel dosen tetap belum tersedia. Tidak ada klaim pengganti Mahsun identik dengan buku penugasan.
 
-D3: daftar artikel penugasan dosen TM14. Artikel Olken dilabeli pilihan tambahan. RMK dan mini project mahasiswa merupakan tugas, tidak dijadikan otoritas standar.
+## JP6_2010
+
+Jones-Pendlebury ed.6 2010, ISBN 9780273720362. Bab 2 dan 9 seluruhnya dibaca; gambar setiap halaman bab ditinjau. Buku ed.6 2010 berbeda dari tahun 2000 pada RPP.
+
+Cetak = PDF -11 untuk halaman bab yang digunakan; halaman awal memiliki angka Romawi. Gambar PDF: 5, 6, 7, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151.
+
+[Sumber](https://opac.feb.uinjkt.ac.id/repository/4a92513b40668f056ddd4e5117aca16e.pdf)
+
+## Mahsun3_2011
+
+Mahsun, Sulistiyowati, Purwanugraha ed.3 cetakan 2011, ISBN 9795034928. Halaman terpilih Bab 10/11 dibaca dan ditinjau gambar; tidak ada klaim membaca semua bab buku tambahan.
+
+Cetak = PDF -11 untuk halaman bab yang digunakan; halaman awal memiliki angka Romawi. Gambar PDF: 3, 11, 192, 196, 197, 198, 203, 204, 209, 214, 215, 216, 242, 243, 246, 247, 248, 249, 250, 251, 252.
+
+[Sumber](https://people.usd.ac.id/~dosen/repository/firma/sektor.pdf)

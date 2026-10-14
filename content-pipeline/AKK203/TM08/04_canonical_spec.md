@@ -1,6 +1,6 @@
 # AKK203 TM8: spesifikasi kanonik
 
-SHA256 JSON: 3ecf8ac8c5edd50f93036718a8981bda57ffb6f2edb94bac40fd1448969d861e
+SHA256 JSON: 5b765a2a24d954f0ad0bc3083d3b9ce062d675790e33997082eac57456e8ab54
 
 RPP: DN Bab 10; IBS Bab 2; peraturan terkait, RPP PDF 5
 
@@ -52,6 +52,6 @@ Penjelasan mekanisme, perbandingan, cek pemahaman dan batas sumber. Angka buatan
 
 Status sumber: NEEDS_HUMAN_REVIEW
 
-Buku DN Bab 10 dan IBS Bab 2 belum tersedia; cakupan buku belum lengkap.
+DN Bab 10 belum tersedia penuh. IBS edisi 2 ditemukan melalui penerbit: pengantar dan Bab 1 terbaca pada pratinjau cetakan 2019, tetapi Bab 2 penugasan belum terbaca penuh. Tahun/cetakan RPP 2011 dipisahkan dari versi yang diakses.
 
 Format sumber daerah bertanda xxx; angka latihan adalah asumsi, tanpa kode BAS historis.

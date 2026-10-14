@@ -6,6 +6,11 @@
   "previousFilesPreserved": 311,
   "files": [
     {
+      "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\book-search-register.json",
+      "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\book-search-register.json",
+      "sha256": "13bc31926ec005b623073cfb728c027c13a47692817642699c51eeb3cbc477e3"
+    },
+    {
       "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\card-identity-map.json",
       "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\card-identity-map.json",
       "sha256": "a9d606034b65a98fb04c2a7c9f1f1a1941143ba4855e22241d545b5f51d8215f"
@@ -13,12 +18,12 @@
     {
       "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\qa-evidence.json",
       "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\qa-evidence.json",
-      "sha256": "0383a81aa8a7931879d91e8bbb84f3fe7bd082cc13eba07fd59b974fa51539be"
+      "sha256": "ad945a3d4af7184734a3de3ba7e7624c86a0b138dcd3bd6a90cd56e036287709"
     },
     {
       "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\README.md",
       "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\README.md",
-      "sha256": "073bebde61d8c6ffce9cacb1da6f90e4a1cab0bfe4d5f6bf0005bc469852213a"
+      "sha256": "0cc433cef2e7d9d993e0c259320174ce714e8f815844c41bd10efcaa1a46902a"
     },
     {
       "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\review-uas.json",
@@ -28,12 +33,12 @@
     {
       "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\source-register.json",
       "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\source-register.json",
-      "sha256": "eb1425384e1b11afe43c6c6b9f73c636a21b64a2da94a497d701d375a740376f"
+      "sha256": "a13b0c45d63fcccbbd87da92d147ba19c9004740d7fc1b023b6bd8f3236aaec1"
     },
     {
       "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\source-register.md",
       "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\source-register.md",
-      "sha256": "3f3be50ac9d3afcc17b28d00f135e9c1b312a67a1b4e459b6b2984143588828e"
+      "sha256": "f93a1065d273550b5b6a6e5d22b14e2ba339f31295c6db63c2e1dc0b81caf18e"
     },
     {
       "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\_progress.md",
@@ -46,19 +51,29 @@
       "sha256": "ffaa632b5eae30bdb1b9299160554d7355de851d462a0731aba8abf351b4469f"
     },
     {
+      "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\_report_revisi_buku_20261014.md",
+      "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\_report_revisi_buku_20261014.md",
+      "sha256": "25298a84908b73e87f28c41d386c09a82c89a376df67b2cca77923c520cace76"
+    },
+    {
       "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\evidence\\browser-report.json",
       "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\evidence\\browser-report.json",
-      "sha256": "e311a64097e5e91db38574b49c50697347a9480a68181b62cde8ea40b0cb8000"
+      "sha256": "123e7368346e1deb95e88883094878988660273166dc7972fc80064439c34a50"
+    },
+    {
+      "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\evidence\\qa-before-book-revision.json",
+      "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\evidence\\qa-before-book-revision.json",
+      "sha256": "0383a81aa8a7931879d91e8bbb84f3fe7bd082cc13eba07fd59b974fa51539be"
     },
     {
       "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\evidence\\README.md",
       "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\evidence\\README.md",
-      "sha256": "f2b113a62048966dbba455e893b620af2372649e120d77b8d564c8c8be73e7bc"
+      "sha256": "ff6c7bf867ca0077396523aa30f45b3bba6ed6ca28961f659195500e50bd03b8"
     },
     {
       "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\evidence\\tm14-1440-dark-figure5.png",
       "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\evidence\\tm14-1440-dark-figure5.png",
-      "sha256": "f964b78337c86013601d76008096d50d55a0846beda19aad2d68759791b90f9a"
+      "sha256": "7ff4e97fdc008b555fd258ed8b47fddfa2abfdb3d10b5b4c8c4ac60a360ce15f"
     },
     {
       "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\evidence\\tm14-1440-light-figure5.png",
@@ -81,9 +96,19 @@
       "sha256": "491b462abe777244cae656d192e0ef20325e5ce1e993a3f5ff59bd55294488d4"
     },
     {
+      "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\evidence\\tm9-1440-dark-figure7.png",
+      "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\evidence\\tm9-1440-dark-figure7.png",
+      "sha256": "39558b3150c4550f6fee9f18db15ac4f2526ee74788b9a5f1c5bac0c2b816fea"
+    },
+    {
       "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\evidence\\tm9-1440-light-figure5.png",
       "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\evidence\\tm9-1440-light-figure5.png",
       "sha256": "fb1e06bd5cfe9066b0c67e29e902fa6b3a3d67d8da74b359925f0f61586a6564"
+    },
+    {
+      "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\evidence\\tm9-1440-light-figure7.png",
+      "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\evidence\\tm9-1440-light-figure7.png",
+      "sha256": "f100589a0ff287dce586262895cb13c9149f7fb676a8a8a4852a35b6f29270d0"
     },
     {
       "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\evidence\\tm9-375-dark-figure5.png",
@@ -91,64 +116,84 @@
       "sha256": "af48b675051fe7722d71a834d993036714d81b7a588ea7d26cfd11d6da74f509"
     },
     {
+      "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\evidence\\tm9-375-dark-figure7.png",
+      "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\evidence\\tm9-375-dark-figure7.png",
+      "sha256": "b6bfaa5e68ade0728cfb8a58311fc4d748fa276b058937b533fea080081b4bd5"
+    },
+    {
       "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\evidence\\tm9-375-light-figure5.png",
       "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\evidence\\tm9-375-light-figure5.png",
       "sha256": "9f3e8cf16ade0aaa94f307b5e3bec84590466c3aaa8623f07b06fcceaaf40dd6"
     },
     {
+      "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\evidence\\tm9-375-light-figure7.png",
+      "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\evidence\\tm9-375-light-figure7.png",
+      "sha256": "dbb15babe2c7a6af32e2842a1b1558bcda3fe1c9d4f9822b25f78edfb320fc50"
+    },
+    {
+      "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\evidence\\visual-review-before-book-revision.json",
+      "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\evidence\\visual-review-before-book-revision.json",
+      "sha256": "dd41ac06069f282444b694123dec6ad305896732f4315a6d381acdf80ab1e156"
+    },
+    {
       "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\evidence\\visual-review.json",
       "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\evidence\\visual-review.json",
-      "sha256": "dd41ac06069f282444b694123dec6ad305896732f4315a6d381acdf80ab1e156"
+      "sha256": "d3028b35d1610f43f18e483d710221e06b9e99d6ee3b0dad2ad62fbb6ff72e37"
     },
     {
       "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\TM08\\00_status.json",
       "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\TM08\\00_status.json",
-      "sha256": "adce58e330c1026d3ec9bba5b5c4ebc11545b0f8ba0507c7d13cfdcac6042ee5"
+      "sha256": "dd8ec12e93246df72a11a9603902c1fb71b9b67bfc4ccb07e5796f37c5d6486f"
+    },
+    {
+      "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\TM08\\00_status.md",
+      "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\TM08\\00_status.md",
+      "sha256": "54904e149a30bbea46f2fd5e9e3ef4a20e78fd00cec604912cfe25288f0cbae1"
     },
     {
       "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\TM08\\01_source_inventory.md",
       "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\TM08\\01_source_inventory.md",
-      "sha256": "181642504ef9459f1ea3871e377a1e7d888644a304a5bbddb026fa6bd5d02656"
+      "sha256": "a0d95d4e70f58223bc31580f4ed8d799baf5fc0aef968dc88901ae294284d572"
     },
     {
       "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\TM08\\02_coverage_inventory.md",
       "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\TM08\\02_coverage_inventory.md",
-      "sha256": "c549a74eb437e6dbbfdde38bb202a1c2143dc4603e375fe332fa314de3cc43f0"
+      "sha256": "19ef5c4c8c367f176479a39d1945878e27853be2f2fe45e9af4161b425b3e9f0"
     },
     {
       "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\TM08\\03_conflict_and_gap_audit.md",
       "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\TM08\\03_conflict_and_gap_audit.md",
-      "sha256": "aadf9227da36e3d094754b2d481225f4fe59ee3bef864392031660dae8bd9753"
+      "sha256": "226353aa8d6bca3d6d04905f55264a81c43b4e10a03b411e4359651d802d2dbf"
     },
     {
       "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\TM08\\04_canonical_spec.json",
       "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\TM08\\04_canonical_spec.json",
-      "sha256": "3ecf8ac8c5edd50f93036718a8981bda57ffb6f2edb94bac40fd1448969d861e"
+      "sha256": "5b765a2a24d954f0ad0bc3083d3b9ce062d675790e33997082eac57456e8ab54"
     },
     {
       "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\TM08\\04_canonical_spec.md",
       "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\TM08\\04_canonical_spec.md",
-      "sha256": "a43ae970223cee03433c508b7c1606ed7bba7912d726c7962593612a88d4b56e"
+      "sha256": "690093e9fccd1a20fe6f3f97045172ec6825629f9c9818e6b290bad0a86e2096"
     },
     {
       "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\TM08\\05_student_learning_version.md",
       "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\TM08\\05_student_learning_version.md",
-      "sha256": "b463e1071635fb69ea7b95d9cdd79b4eafe18a398579c71de732d2dde0d94f15"
+      "sha256": "ee4ea2b4ee4ef053ad7e17cfd6817458adc5709d87b1f0a928ad700d83d5dbb4"
     },
     {
       "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\TM08\\06_implementation_brief.md",
       "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\TM08\\06_implementation_brief.md",
-      "sha256": "feea9b8da805bbd74876c669dd507191d2eb45a32ff0c4300081a824d249e928"
+      "sha256": "7ee479859c3523d802854b14a1438e576a91f089050fc63bbf097c17e8a3f931"
     },
     {
       "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\TM08\\07_qa_manifest.json",
       "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\TM08\\07_qa_manifest.json",
-      "sha256": "26d6f40dfa812ba61c416fc08b51eddf816879a8d7dc6c1a6a82855cbd353eb1"
+      "sha256": "935a8d7142fa24fa757ba2eba6e8206757a67ba17e816a49e6b201ad36c24efc"
     },
     {
       "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\TM08\\07_qa_report.md",
       "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\TM08\\07_qa_report.md",
-      "sha256": "dbbd170447ebc10e0a3176278c492941d1c47ce7af7efdcf2aa94cfc259f2276"
+      "sha256": "005e01c7646224888a4a057c9a4b5411679a4b9c16cf4d29cfcfff519d59f18a"
     },
     {
       "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\TM08\\_report_pra_uas_20261014.md",
@@ -156,54 +201,64 @@
       "sha256": "d1eab260211598df7a90c239fdc9d49aa0adf139b586cf7dd5062e748348aaab"
     },
     {
+      "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\TM08\\_report_revisi_buku_20261014.md",
+      "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\TM08\\_report_revisi_buku_20261014.md",
+      "sha256": "774d91966394440d168a3cc7706cdd596d9c043613b6dfe6ad674e87f2acf70b"
+    },
+    {
       "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\TM09\\00_status.json",
       "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\TM09\\00_status.json",
-      "sha256": "e234c7f012df7ff4cf910e31d6eb808da77766d23236f96b941cb88df2eb274a"
+      "sha256": "bfb2f13bca34721ef4a169714c99ce6c2413a569451e481e987e85420bfe86fe"
+    },
+    {
+      "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\TM09\\00_status.md",
+      "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\TM09\\00_status.md",
+      "sha256": "6e8faa6e3a59f36f53302dacc4b8d432fa6677cbcd2e3768613b585ad3ba45d8"
     },
     {
       "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\TM09\\01_source_inventory.md",
       "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\TM09\\01_source_inventory.md",
-      "sha256": "d84380eac14f9ca9bbbbceefe0c54c47b719952756fa437ca5c097fdf9f8a893"
+      "sha256": "b4427e351cf9cc46f9a4034fbf90054209b332c1bca95d619f09b0ebd48150aa"
     },
     {
       "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\TM09\\02_coverage_inventory.md",
       "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\TM09\\02_coverage_inventory.md",
-      "sha256": "3d487d9ded174c1f79c0d067ff99688d560d0d1e94cd4a6e9179598316ae04ef"
+      "sha256": "0cb5cafe3cf2aed31753533d8a46991f89a8d353fba5b7d4497bc6d5204f4865"
     },
     {
       "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\TM09\\03_conflict_and_gap_audit.md",
       "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\TM09\\03_conflict_and_gap_audit.md",
-      "sha256": "074d6261c211a75adefd69524802c88bbf8d3b516f69c5254bcf56385e256d30"
+      "sha256": "6d8c08c97543a690f284286cea8cbca106e2391512d43898f8f7fea1f85006ae"
     },
     {
       "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\TM09\\04_canonical_spec.json",
       "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\TM09\\04_canonical_spec.json",
-      "sha256": "774f6d58aacac1d6fba947568bb71197bf00c7da409853a15812eaea66a79e1a"
+      "sha256": "096c07ebd99b0dc15bfc35063635cf06321778786becaf998abbb6272d2d4525"
     },
     {
       "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\TM09\\04_canonical_spec.md",
       "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\TM09\\04_canonical_spec.md",
-      "sha256": "090559c5edc5c9e487633bb51dd23a6da1d67edcd3c9eb9e7e08c6c78b3f68e4"
+      "sha256": "c33d65dffe29a766f4d51e2a76c9eee612a228ad713b9145175f4719f3fbb44f"
     },
     {
       "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\TM09\\05_student_learning_version.md",
       "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\TM09\\05_student_learning_version.md",
-      "sha256": "3b81d674f3a0ae9cb2f2b92d3a7c505042474dda1ea58039faed4c832752d77e"
+      "sha256": "3d0d727d1b5ea346a37aa140ddfc2753e566b8f7d6fc34ad7a19f4a3286929a5"
     },
     {
       "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\TM09\\06_implementation_brief.md",
       "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\TM09\\06_implementation_brief.md",
-      "sha256": "dc17e4fcca644e20bffe7d340aefa621557e29e9823e304b6b6ffb67663f13de"
+      "sha256": "1d75416c46f8110d04b98443c215d1800b82f2b4c2c8089bd58571ee3998e050"
     },
     {
       "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\TM09\\07_qa_manifest.json",
       "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\TM09\\07_qa_manifest.json",
-      "sha256": "23cb6c08bc9acc968449c7831a8504495ab297a592be8e8d4206127fee9f0b0c"
+      "sha256": "4e3280c22f5ff544cb08f382fcccb853213a0535fce6cedaa89976e320971c27"
     },
     {
       "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\TM09\\07_qa_report.md",
       "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\TM09\\07_qa_report.md",
-      "sha256": "1225fd1b435e05265ce8061c977c72f2bc08850e406c795602d172886ce71e6e"
+      "sha256": "f048d7d9e5fe279798ad055acec2d2bae97b6e3837950bba9c4fa0805db55232"
     },
     {
       "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\TM09\\_report_pra_uas_20261014.md",
@@ -211,54 +266,64 @@
       "sha256": "aa03c1a83bbe904c9a3348020ad71a209b2e1029e458a958fb9a198ff0913c68"
     },
     {
+      "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\TM09\\_report_revisi_buku_20261014.md",
+      "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\TM09\\_report_revisi_buku_20261014.md",
+      "sha256": "34164ac8a142d8bd5d39039460b14edb2e600a0c8f7e802556947c51a87220d2"
+    },
+    {
       "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\TM10\\00_status.json",
       "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\TM10\\00_status.json",
-      "sha256": "be30690c983576c47268e4a6dd885adf3fc50ba2fd504bb6103615760826f22c"
+      "sha256": "50847aeaeae0d603e13b4ca169911aba96244f3be2ea95d3a17c5c36c0d6a849"
+    },
+    {
+      "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\TM10\\00_status.md",
+      "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\TM10\\00_status.md",
+      "sha256": "90d9f3cbe3fc023e1846639dc06547d55f6988443be7d95dd9ac90e15922bd80"
     },
     {
       "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\TM10\\01_source_inventory.md",
       "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\TM10\\01_source_inventory.md",
-      "sha256": "cc5fcd04264e9d321e755e05954714250dcb5784ddb0a122f89e2c9d6febd465"
+      "sha256": "34443cf0271f6028ff3823b762fa74972219dfed56394e75be65a49a5b6313ba"
     },
     {
       "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\TM10\\02_coverage_inventory.md",
       "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\TM10\\02_coverage_inventory.md",
-      "sha256": "8f1229c3751415f772074fd99a545c2c1b95eb4cc1a80b6bbaf847ffcbe42e40"
+      "sha256": "d5bb4bd212ed806d3b76513455c1c7e312949a7f9c3feca9f6169fd506c6027e"
     },
     {
       "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\TM10\\03_conflict_and_gap_audit.md",
       "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\TM10\\03_conflict_and_gap_audit.md",
-      "sha256": "7052089e62f119a8435592e3c0c7e021d1f69496f5dadab62292d91eb350ba9e"
+      "sha256": "54f9935c9648d94e453d9f5bdf1249600dd042215cd6393eb6ee0e40accb767f"
     },
     {
       "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\TM10\\04_canonical_spec.json",
       "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\TM10\\04_canonical_spec.json",
-      "sha256": "1f6fee087cdcf51b409a78fdd17ab973154e727ed2fd0942c2d497771aafc591"
+      "sha256": "ccd403c2ee7d745bbb5aef6ab734c2fb2fbe68c900238efe5afa55e1f43370de"
     },
     {
       "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\TM10\\04_canonical_spec.md",
       "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\TM10\\04_canonical_spec.md",
-      "sha256": "2c36c651f27d0e39adf75213537596859b1c60e44d2ba62e0a919e7a957c5723"
+      "sha256": "112b0e19299dc67e1f4ae36576208492b75ffb584f43b990ba322c100288fd79"
     },
     {
       "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\TM10\\05_student_learning_version.md",
       "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\TM10\\05_student_learning_version.md",
-      "sha256": "c847708046400f0e63c4dfec342feafc43b95bfc61c02a2fed1f03e4142d149d"
+      "sha256": "e6188e26e68c93ebd3ea61fe576923ed49ad123709bc0d0ac58177e3673ec3a2"
     },
     {
       "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\TM10\\06_implementation_brief.md",
       "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\TM10\\06_implementation_brief.md",
-      "sha256": "a9385a93164e6cc367884564d5912e95d5357ab33c6309a2252801d0beb2d9d0"
+      "sha256": "912cb9c48350d1b4d271e47978ba79d97ac3bf11404fbfb486d6f1a9e1f6efbc"
     },
     {
       "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\TM10\\07_qa_manifest.json",
       "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\TM10\\07_qa_manifest.json",
-      "sha256": "c62ed2df7be686eee4384f235582d12984daf302723b2dc77a07bd8b5acd6013"
+      "sha256": "13b149da423f0f552d1a0725c643ff62e4eeed123592763df4a8493bc2fd2cc8"
     },
     {
       "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\TM10\\07_qa_report.md",
       "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\TM10\\07_qa_report.md",
-      "sha256": "922bbb57551aea78d5a72a0875822fff9be03c1d9bbce0c1e84364a85484d906"
+      "sha256": "45b1ee8b069bcabb0c7870dbca435c16d374b7a3dab0c565573b88c11140d8a1"
     },
     {
       "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\TM10\\_report_pra_uas_20261014.md",
@@ -266,54 +331,64 @@
       "sha256": "c05a0bd64f0df36b69248311df13cf8abb89162aa82da0ab6e612483412fae83"
     },
     {
+      "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\TM10\\_report_revisi_buku_20261014.md",
+      "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\TM10\\_report_revisi_buku_20261014.md",
+      "sha256": "16390095fc3b7ffba4bcbf70fb69f983358fae363d74a2393e9d6f39270a43a8"
+    },
+    {
       "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\TM11\\00_status.json",
       "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\TM11\\00_status.json",
-      "sha256": "d61bbdc8cbad4ffbcba9b0aea97750c98b4f3ed1a3882de63d933b014568a05e"
+      "sha256": "8f0f614716016850868627721f65bfc2990c97e9e3be602dcb11c58050ad46d0"
+    },
+    {
+      "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\TM11\\00_status.md",
+      "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\TM11\\00_status.md",
+      "sha256": "147ad1faf96331aeb1886be10ba668c0a7d7996ef1acf234d16e170d124bd508"
     },
     {
       "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\TM11\\01_source_inventory.md",
       "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\TM11\\01_source_inventory.md",
-      "sha256": "ab319767e7b0dac0131aed42a8ed70719a998865ea3e0493f6fc5ec256a0886d"
+      "sha256": "4581cfe79fa98e53ac198229540940cd8f3dc83878c981cc7f7ab32a9acb9611"
     },
     {
       "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\TM11\\02_coverage_inventory.md",
       "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\TM11\\02_coverage_inventory.md",
-      "sha256": "18be59d06b34d21e6df913b0e37431834138f3b661b8759d86a2be27baf6e755"
+      "sha256": "3c4cda64a843a0add7d3ddbedde65a4932fc589332fe4e2ab187ccbdda7783f5"
     },
     {
       "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\TM11\\03_conflict_and_gap_audit.md",
       "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\TM11\\03_conflict_and_gap_audit.md",
-      "sha256": "b8e166530bd2c93c5fc1c10c806e697992796defe193f68a319d54ecf88357c9"
+      "sha256": "433240f7d56fb381fa6dff1315964e7ce5ef8063eefce8acdd2e85418af66e7b"
     },
     {
       "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\TM11\\04_canonical_spec.json",
       "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\TM11\\04_canonical_spec.json",
-      "sha256": "e2767664a3e1729859ab955f5167e4d587f132228a4eaea15f3e12b590d40027"
+      "sha256": "a2fa365be167fc4792ab486033e383dddfb664ac24306153b5fd1ad561123ac4"
     },
     {
       "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\TM11\\04_canonical_spec.md",
       "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\TM11\\04_canonical_spec.md",
-      "sha256": "216112e0886cc9a10b8ebf6c79977f6bde36080493a8f3b7e18a4329ef67c413"
+      "sha256": "78c3db393f90b9089db64b8ab4268044e94f800b0c5fd8364d213f160423a14a"
     },
     {
       "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\TM11\\05_student_learning_version.md",
       "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\TM11\\05_student_learning_version.md",
-      "sha256": "b101e633d0f5a4ea969a3862cdec41a9262485e0c1ec7e6627abe4a73eadadb3"
+      "sha256": "44ddc79eed1cb92a90d454c548bd25e8769ef32f5779fbb7824f537001e2916a"
     },
     {
       "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\TM11\\06_implementation_brief.md",
       "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\TM11\\06_implementation_brief.md",
-      "sha256": "20a8ba5ac2a2456c0aac7bb67d396c3ff308629de8039664912cf0a3e60b6451"
+      "sha256": "eac283c28ce70ce667390eae43fcc17de5219d582a81987f917a08c7705583c8"
     },
     {
       "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\TM11\\07_qa_manifest.json",
       "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\TM11\\07_qa_manifest.json",
-      "sha256": "b61cf11a07d49ff496e3c716de89cd2e758a6d7721e8efb95a4d808c6d653d86"
+      "sha256": "64c39b6db3dcfc2b14ea1547ed5db976df3110c28c150bfd2fe4c6d866c54a6a"
     },
     {
       "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\TM11\\07_qa_report.md",
       "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\TM11\\07_qa_report.md",
-      "sha256": "80c0f1b63689c3a7fe51b76395bc463dcf4f51137bf03e6a88e30ea1d794f8bf"
+      "sha256": "795ab1405dfeee3ba3b81ca8475fdac9ac17bd000a31e01652716265a004eeb7"
     },
     {
       "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\TM11\\_report_pra_uas_20261014.md",
@@ -321,54 +396,64 @@
       "sha256": "fccc4f4441219caa8efac78ed1198541b41f490745199cc828327552da04ec5c"
     },
     {
+      "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\TM11\\_report_revisi_buku_20261014.md",
+      "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\TM11\\_report_revisi_buku_20261014.md",
+      "sha256": "00139241f8a1acfe770fef0eeae31f5bc317c08c9ac4d952b108d62edd69272e"
+    },
+    {
       "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\TM12\\00_status.json",
       "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\TM12\\00_status.json",
-      "sha256": "9e3c48893ceda130eeffe985bfae055b35bc7a8ce42d7a78ef4c9f8b234a2025"
+      "sha256": "02ffa46185949bf66d5a3a3aba2fedd4f39f282c5f596de16d049121bb6a1763"
+    },
+    {
+      "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\TM12\\00_status.md",
+      "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\TM12\\00_status.md",
+      "sha256": "96d5eeccd2d6825b8ee7772a9c4fb03b9b0d22915db172d45943f601e4655965"
     },
     {
       "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\TM12\\01_source_inventory.md",
       "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\TM12\\01_source_inventory.md",
-      "sha256": "656b6144fb0a26800ec501bbac2a893cfc45d355ebeede3952b56bd41dd4037f"
+      "sha256": "86b4164a678b3194e549a642e7366b80d33973fb1f2cafab7f6b60a651a4dff8"
     },
     {
       "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\TM12\\02_coverage_inventory.md",
       "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\TM12\\02_coverage_inventory.md",
-      "sha256": "bea89eac7ad492ccd90631f5c5facb68e0a237d001ffb12a806c6dc411ca97c5"
+      "sha256": "00de66840e0d9d5ac5abd8ad60dd4f813a4e2d249edcb6ec00d6108ee83b15fa"
     },
     {
       "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\TM12\\03_conflict_and_gap_audit.md",
       "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\TM12\\03_conflict_and_gap_audit.md",
-      "sha256": "e63c58e092a285a3411c71e7ee6c7c1009c078f923300ac407403a00fa1d99d7"
+      "sha256": "3951263255c4eff6c3ccaf4b53dba213fa7d01aae768669b88b8fd7ecd072ea9"
     },
     {
       "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\TM12\\04_canonical_spec.json",
       "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\TM12\\04_canonical_spec.json",
-      "sha256": "b25a9b294364296eac170714a8123704d0fda0a6841d883cc5103510a48d8bdf"
+      "sha256": "78b24fdb1a2db71dc54edf4ce05fd86f51897499f19db167be3f9ba8d75b00d4"
     },
     {
       "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\TM12\\04_canonical_spec.md",
       "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\TM12\\04_canonical_spec.md",
-      "sha256": "3ca428233c41ca98dcdc7bcff22ac6b9fd247881146196e390d0dee8e7d8b72b"
+      "sha256": "9430f313b05f664067b3a08d1f0a82169464694f9f3e7d74b1f75ee7af471269"
     },
     {
       "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\TM12\\05_student_learning_version.md",
       "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\TM12\\05_student_learning_version.md",
-      "sha256": "2e546662c96f8da9f16ce6895ceba1952dd0689d7bacf59c37448659e7e3d528"
+      "sha256": "4555751495890e8b0e396f95204aa260f9ef4aa1a78ffbae92cbdd1a0bf9cfef"
     },
     {
       "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\TM12\\06_implementation_brief.md",
       "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\TM12\\06_implementation_brief.md",
-      "sha256": "4bee8b5da6c3dbc97392456f0d5422ba89c2b0bfa873f40f4b9fca3b874134c4"
+      "sha256": "0f4d12841ca48a9be39fd6458959c59501a9d6bd0d46d1d24ca926ce8bf04f8e"
     },
     {
       "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\TM12\\07_qa_manifest.json",
       "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\TM12\\07_qa_manifest.json",
-      "sha256": "13f77b57503fb1e05b4d888970f6ea6406efc572992dd647e60b9902999657d3"
+      "sha256": "f6059cf3ff96db5d28ce7511f94273a277861ba4889bbf024c9e5ac753c86549"
     },
     {
       "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\TM12\\07_qa_report.md",
       "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\TM12\\07_qa_report.md",
-      "sha256": "94b69e0dd2b554b618ae4cf0a88bdfca6e387c1e7160778525d4c2124e28b158"
+      "sha256": "fb1b73794c91e76d89ea7d2bcf92ec281a27610bf4ca5d68db562071aa3bd5c4"
     },
     {
       "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\TM12\\_report_pra_uas_20261014.md",
@@ -376,54 +461,64 @@
       "sha256": "69a7a80eb9ddfa515e237de03004503d98394a74ee517b3b50c840e6f83efe0c"
     },
     {
+      "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\TM12\\_report_revisi_buku_20261014.md",
+      "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\TM12\\_report_revisi_buku_20261014.md",
+      "sha256": "2a09fc4b7102c4c7a2e66d64b430a5f3cee3587ca2f4723b64f2f7f9945dc341"
+    },
+    {
       "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\TM13\\00_status.json",
       "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\TM13\\00_status.json",
-      "sha256": "9241b94a0f0c4c2ff05ea9e8adfda35f8dfbb0a7c9706141cdcf6ce0bb15e159"
+      "sha256": "983744035ad97f1427e53fedf6013baad4aed0036404d76e1cb50a59d46aa9da"
+    },
+    {
+      "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\TM13\\00_status.md",
+      "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\TM13\\00_status.md",
+      "sha256": "8bc1a61c6fea15daa53b00fe9241c2fd737ffbe8b4af4e8dd3730c2534abb77f"
     },
     {
       "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\TM13\\01_source_inventory.md",
       "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\TM13\\01_source_inventory.md",
-      "sha256": "1147889268851dba1bf11f5560180faf037f7cd51f1a21fd7354cf8512416e58"
+      "sha256": "dcbeb29ce268c787c22774e8d0ae4c72dda3385adadc06c314411a36c5ce9027"
     },
     {
       "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\TM13\\02_coverage_inventory.md",
       "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\TM13\\02_coverage_inventory.md",
-      "sha256": "a87a9b6283ba5a78732e9943b5fc5b5732d80b7af562b9926cea1e8cf6de517e"
+      "sha256": "68108ca0f7a1b308a8e42627e707204d57049dc0867d3146176b0c9b12748140"
     },
     {
       "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\TM13\\03_conflict_and_gap_audit.md",
       "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\TM13\\03_conflict_and_gap_audit.md",
-      "sha256": "dc1ee25d1e46665c5e6716b6cc5b5b31c5fa7fa4559bf6e5026b805deb8de08a"
+      "sha256": "f1488133689281e9202d6f2f4899daf031fc9906074ccacd77c6a10520353211"
     },
     {
       "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\TM13\\04_canonical_spec.json",
       "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\TM13\\04_canonical_spec.json",
-      "sha256": "993ceb6198cdd20e91e56887b9b4f239f7595be969322a8376b159ccee425106"
+      "sha256": "b8877117adcd9b25867301ee89930c70cd910d2dfb6c9d88459e153e897c0c4d"
     },
     {
       "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\TM13\\04_canonical_spec.md",
       "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\TM13\\04_canonical_spec.md",
-      "sha256": "9af52197f549a59e4ec2d9b97a43cef9ec54ad4491c54b810fc9d85090d119c7"
+      "sha256": "ca48fb7e729c5e99ca9ed07475319307836c4ea4f44de8a79ef21d5f491ed0b4"
     },
     {
       "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\TM13\\05_student_learning_version.md",
       "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\TM13\\05_student_learning_version.md",
-      "sha256": "cd01ed1011b2209643430d4bee437a604be3f41842ee98ebdefb7479c3af01d1"
+      "sha256": "5349b627b878810671396756a7ac0b896dcaea0b284c8b6df95433072e8e547c"
     },
     {
       "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\TM13\\06_implementation_brief.md",
       "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\TM13\\06_implementation_brief.md",
-      "sha256": "455d3f71910b5759a8e4bcf318e81768bd3f584897449296ba12a4c4d60572fc"
+      "sha256": "d7831cbc8cacef3a960546788d4e3a4c91c6168a4452b3c07b741cef95ccf465"
     },
     {
       "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\TM13\\07_qa_manifest.json",
       "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\TM13\\07_qa_manifest.json",
-      "sha256": "71df74023011463acc66954b4c152e5e0b860e56a5da4c2f2e96b72e62589064"
+      "sha256": "23f439412e37b17038cbeaeef28c0610c5c78c2d7f5550751e0f06036872feaa"
     },
     {
       "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\TM13\\07_qa_report.md",
       "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\TM13\\07_qa_report.md",
-      "sha256": "531814d39a05adbfe6a37db51f9223c27359b5a6681b8d2c0b466484882736c7"
+      "sha256": "858e71338edee5c5cb81d57c969c0c254c73c1592839058ee4f81c8af515edc7"
     },
     {
       "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\TM13\\_report_pra_uas_20261014.md",
@@ -431,9 +526,19 @@
       "sha256": "ecc83101ddc6ed058ae7c245c00fe9065d40c5c5d5d5a00a839b4afd122d076a"
     },
     {
+      "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\TM13\\_report_revisi_buku_20261014.md",
+      "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\TM13\\_report_revisi_buku_20261014.md",
+      "sha256": "29b6536caf9350cddd4632fb615f7a0b13c93c6efc5af9669039e03da77ad603"
+    },
+    {
       "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\TM14\\00_status.json",
       "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\TM14\\00_status.json",
       "sha256": "471e75eb29d7143df4d14a22d949fccd90163177d0d3371681b28a2ca5f00e1f"
+    },
+    {
+      "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\TM14\\00_status.md",
+      "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\TM14\\00_status.md",
+      "sha256": "bbe41476d6ce5c74c1995d4485d1b88005e972c5ad8b51af860841ceb91fc2f5"
     },
     {
       "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\TM14\\01_source_inventory.md",
@@ -484,6 +589,46 @@
       "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\TM14\\_report_pra_uas_20261014.md",
       "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\TM14\\_report_pra_uas_20261014.md",
       "sha256": "745821c2a9c9222b2dd98dac5362a71c5d29ddeb0269ee622fe92bf5ba6a320d"
+    },
+    {
+      "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\TM14\\_report_revisi_buku_20261014.md",
+      "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\TM14\\_report_revisi_buku_20261014.md",
+      "sha256": "c99343df46224a2456c4e57762b68107452a0b1f5ba1a6bd49e2d36fe20d15f0"
+    },
+    {
+      "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\evidence\\logs\\books-browser.txt",
+      "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\evidence\\logs\\books-browser.txt",
+      "sha256": "6e9047cf2e47b87309066e81fa4268e6755aba2158573c9dcf58ffbc8b40c864"
+    },
+    {
+      "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\evidence\\logs\\books-build.txt",
+      "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\evidence\\logs\\books-build.txt",
+      "sha256": "0f4861347a19da566587a6b6f5c23df24970edcb08786cceb6906a6847aa9478"
+    },
+    {
+      "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\evidence\\logs\\books-e2e-first.txt",
+      "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\evidence\\logs\\books-e2e-first.txt",
+      "sha256": "fbe023efff29a90c7f7620e2636576226d3bf74db7e9af56b15bd582aa17ceb8"
+    },
+    {
+      "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\evidence\\logs\\books-e2e.txt",
+      "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\evidence\\logs\\books-e2e.txt",
+      "sha256": "dd1f28076f772e82035445180134dbdd7cbc88e2d44c5f50ea9b6fe8a7b30217"
+    },
+    {
+      "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\evidence\\logs\\books-lint.txt",
+      "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\evidence\\logs\\books-lint.txt",
+      "sha256": "f26a453d6f2b4e689df61a1da5110756be24c1535f20c4fce13d69853a7549fb"
+    },
+    {
+      "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\evidence\\logs\\books-runtime.txt",
+      "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\evidence\\logs\\books-runtime.txt",
+      "sha256": "3eda732f785c26394a77895ac68b92a52382a9587763acb6308bd36bb2ca8fd3"
+    },
+    {
+      "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\evidence\\logs\\books-standard.txt",
+      "target": "C:\\AkuntansiHub-Content-Agent\\content-pipeline\\AKK203\\evidence\\logs\\books-standard.txt",
+      "sha256": "c667d966158e8daaf12c560a72a4789a1c6100110a9f5845d7c6469345aab383"
     },
     {
       "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\content-pipeline\\AKK203\\evidence\\logs\\build.txt",
@@ -574,6 +719,16 @@
       "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\tmp\\asp-sources\\Olken2007.pdf",
       "target": "C:\\AkuntansiHub-Content-Agent\\course-sources\\AKK203\\shared\\pra-uas-20261014\\Olken2007.pdf",
       "sha256": "c3ec58ab6fce6a9671f5e17c3f38d1c2862a36d33561a3f7cf29de9676cabdad"
+    },
+    {
+      "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\tmp\\asp-sources\\JP6_2010.pdf",
+      "target": "C:\\AkuntansiHub-Content-Agent\\course-sources\\AKK203\\shared\\pra-uas-20261014\\JP6_2010.pdf",
+      "sha256": "6b4b6377211187f094a1cca47ae392fdb569413501cc77fe8deaa84c4a2c1766"
+    },
+    {
+      "source": "C:\\Users\\Lenovo\\.codex\\.chatgpt-projects\\g-p-6acca71af48c8191af132f193daf4d6e\\work\\akk203\\tmp\\asp-sources\\Mahsun3_2011.pdf",
+      "target": "C:\\AkuntansiHub-Content-Agent\\course-sources\\AKK203\\shared\\pra-uas-20261014\\Mahsun3_2011.pdf",
+      "sha256": "6b6e48071ea96dae76fc8c98f33a42b264da53c1a1b98c7e79939ac6100ac19a"
     }
   ],
   "selfHashNote": "Manifest itself is copied last and checked byte for byte; it is excluded from its own hash list."

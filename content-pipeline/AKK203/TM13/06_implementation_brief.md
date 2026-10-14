@@ -1,6 +1,6 @@
 # Implementasi TM13
 
-Bangun ulang dari04 JSON (993ceb6198cdd20e91e56887b9b4f239f7595be969322a8376b159ccee425106): node scripts/build-akk203-pra-uas.mjs.
+Bangun ulang dari04 JSON (b8877117adcd9b25867301ee89930c70cd910d2dfb6c9d88459e153e897c0c4d): node scripts/build-akk203-pra-uas.mjs.
 
 Visual:
 
@@ -229,3 +229,4 @@ Visual:
 
 - Lampiran PMK 128 tentang akun dan proses detail di luar peta belajar inti tetap menjadi rujukan lanjutan.
 - Penetapan tarif, remunerasi dan pengadaan spesifik rumah sakit memerlukan aturan serta dokumen lokal.
+- Buku tambahan Mahsun dkk. edisi ketiga 2011 tersedia dari repositori penulis; halaman terpilih dibandingkan sebagai konteks historis. Buku ini tidak menggantikan identitas DN pada RPP.

@@ -198,6 +198,8 @@ Diagram sumber daerah pada cetak 34/PDF 72 direkonstruksi sebagai kertas kerja d
 
 Tidak ada teks DN Bab 10 dan IBS Bab 2 dalam paket lokal yang ditemukan. Kedalaman bab, tabel dan latihan buku belum dapat dinyatakan telah diaudit. SAPD aktual juga memerlukan perkada dan konfigurasi akun daerah yang bersangkutan.
 
+Pengantar buku Bastian menempatkan sistem sebagai pengolahan informasi sekaligus pembagian wewenang. Karena itu, telusuri dokumen asal, pencatat, pemberi otorisasi, alur catatan dan keluaran laporan bersama kontrolnya. Pratinjau ini mendukung alasan desain sistem; isi Bab 2 dan kasus diskusinya belum tersedia penuh. Ketentuan teknis pusat/daerah dalam bacaan tetap mengikuti sumber resmi yang dirujuk. [Bastian, Sistem Akuntansi Sektor Publik ed.2, pratinjau resmi cetakan 2019, cetak iii dan 4; halaman pratinjau 3,10](https://www.myedisi.com/salemba/65446/preview)
+
 ## Persiapan ujian
 
 ### Jebakan dan langkah koreksi

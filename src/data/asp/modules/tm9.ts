@@ -3,7 +3,7 @@ import type {Reading} from '../../../types';
 export const TM9_READING: Reading = {
   "tm": 9,
   "title": "Pengukuran Kinerja Organisasi Pemerintah",
-  "ref": "[Perpres 29/2014 Ps.5,9,15-18,24; cetak/PDF 6,8,10-11,13](https://peraturan.bpk.go.id/Download/262284/Perpres%20Nomor%2029%20Tahun%202014.pdf#page=6) | [Permen PAN-RB 53/2014 Lampiran II. A-F dan Anak Lampiran II/1; cetak 15-18, PDF 19-22](https://peraturan.bpk.go.id/Download/123556/PERMENPAN%20NOMOR%2053%20TAHUN%202014.pdf#page=19) | [Permen PAN-RB 88/2021 Lampiran I. B dan III. B.1; cetak/PDF 8,20-24](https://peraturan.bpk.go.id/Download/196187/Permen%20PANRB%20No.%2088%20Tahun%202021.pdf#page=8) | [ISSAI 300 par.11, versi editorial IFPP 2019; PP 60/2008 Ps.50(2), cetak/PDF 23](https://www.issai.org/wp-content/uploads/2019/08/ISSAI-300.pdf#page=8)",
+  "ref": "[Perpres 29/2014 Ps.5,9,15-18,24; cetak/PDF 6,8,10-11,13](https://peraturan.bpk.go.id/Download/262284/Perpres%20Nomor%2029%20Tahun%202014.pdf#page=6) | [Permen PAN-RB 53/2014 Lampiran II. A-F dan Anak Lampiran II/1; cetak 15-18, PDF 19-22](https://peraturan.bpk.go.id/Download/123556/PERMENPAN%20NOMOR%2053%20TAHUN%202014.pdf#page=19) | [Permen PAN-RB 88/2021 Lampiran I. B dan III. B.1; cetak/PDF 8,20-24](https://peraturan.bpk.go.id/Download/196187/Permen%20PANRB%20No.%2088%20Tahun%202021.pdf#page=8) | [ISSAI 300 par.11, versi editorial IFPP 2019; PP 60/2008 Ps.50(2), cetak/PDF 23](https://www.issai.org/wp-content/uploads/2019/08/ISSAI-300.pdf#page=8) | [Jones-Pendlebury ed.6 (2010), Bab 2, cetak 18-29/PDF 29-40](https://opac.feb.uinjkt.ac.id/repository/4a92513b40668f056ddd4e5117aca16e.pdf#page=29)",
   "intro": "Anggaran kecil dapat menghasilkan layanan yang buruk. Anggaran besar juga perlu diperiksa hasilnya. Kamu akan memisahkan perolehan input, penggunaan sumber daya, dan pencapaian hasil sebelum memberi penilaian.",
   "layout": "layered",
   "coreReadingMinutes": 20,
@@ -428,7 +428,47 @@ export const TM9_READING: Reading = {
         },
         {
           "kind": "p",
-          "text": "Perubahan bobot atau indikator pada instrumen khusus perlu dibaca dari pedoman penugasan. Kerangka umum ini tidak menetapkan satu benchmark biaya untuk semua instansi. Bab MD 8, DN 8 dan JP 2 belum tersedia, sehingga metode buku belum diaudit lengkap."
+          "text": "Instrumen khusus dapat memakai indikator berbeda. JP Bab 2 sudah diperiksa dari teks dan gambar edisi keenam 2010. RPP menulis edisi keenam 2000; halaman hak cipta dan penerbit menunjukkan 2000 adalah edisi kelima. Bacaan ini menyebut edisi yang benar-benar dibaca. MD Bab 8 dan DN Bab 8 masih belum dapat dibaca penuh."
+        },
+        {
+          "kind": "p",
+          "text": "Indikator menangkap sebagian pelayanan. Nilai hasil perlu dibaca bersama mutu, biaya dan kondisi penerima. Mengurutkan unit dari satu rasio dapat menutup perbedaan beban layanan. [Jones-Pendlebury ed.6 (2010), Bab 2, cetak 18-29/PDF 29-40](https://opac.feb.uinjkt.ac.id/repository/4a92513b40668f056ddd4e5117aca16e.pdf#page=29)"
+        },
+        {
+          "kind": "table",
+          "title": "Enam tantangan pengukuran dan tindakan membaca data",
+          "headers": [
+            "Tantangan buku",
+            "Pertanyaan yang perlu dijawab"
+          ],
+          "rows": [
+            [
+              "Pengukuran biaya",
+              "Apakah biaya akrual dan alokasinya sesuai keputusan?"
+            ],
+            [
+              "Keandalan keluaran",
+              "Apakah definisi, pencatatan dan bukti angka dapat diperiksa?"
+            ],
+            [
+              "Hubungan sebab-akibat",
+              "Apakah hasil dipengaruhi faktor lain?"
+            ],
+            [
+              "Ukuran yang sempit",
+              "Bagian mutu apa yang terlewat dari indikator?"
+            ],
+            [
+              "Kelengkapan dan keringkasan",
+              "Apakah ringkasan menutupi konteks penting?"
+            ],
+            [
+              "Kemampuan mengendalikan hasil",
+              "Bagian hasil mana berada dalam kendali unit?"
+            ]
+          ],
+          "caption": "[Jones-Pendlebury ed.6 (2010), Bab 2, cetak 18-29/PDF 29-40](https://opac.feb.uinjkt.ac.id/repository/4a92513b40668f056ddd4e5117aca16e.pdf#page=29)",
+          "stackOnMobile": true
         }
       ]
     },
@@ -465,45 +505,58 @@ export const TM9_READING: Reading = {
     },
     {
       "kind": "solution-reveal",
-      "title": "Latihan buatan: biaya dan capaian layanan",
-      "prompt": "Anggaran Rp 600 juta untuk 1.000 layanan. Realisasi Rp 480 juta untuk 800 layanan bermutu setara. Target 180 penerima mencapai hasil; realisasi 120. Hitung dan nilai.",
+      "title": "Adaptasi ilustrasi buku: sekolah A di Eutopia",
+      "prompt": "Exhibit 2.1 memberi anggaran sekolah A £3.000.000, 450 murid dan 70 guru penuh waktu; seluruh sekolah kota £10.000.000, 1.950 murid dan 350 guru penuh waktu. Hitung rasio dan jelaskan apakah sekolah A otomatis lebih buruk. Eutopia adalah kota rekaan buku, bukan data Indonesia.",
       "blocks": [
         {
           "kind": "table",
-          "title": "Langkah hitungan",
+          "title": "Perhitungan ulang angka sumber",
           "headers": [
             "Ukuran",
-            "Langkah",
-            "Hasil"
+            "Sekolah A",
+            "Seluruh sekolah kota"
           ],
           "rows": [
             [
-              "Realisasi anggaran",
-              "480/600 ×100%",
-              "80%"
+              "Anggaran per murid",
+              "3.000.000/450 = £6.666,67",
+              "10.000.000/1.950 = £5.128,21"
             ],
             [
-              "Biaya rencana per layanan",
-              "Rp 600 juta/1.000",
-              "Rp 600.000/layanan"
+              "Buku menampilkan proksi biaya per murid",
+              "£6.666",
+              "£5.128"
             ],
             [
-              "Biaya aktual per layanan",
-              "Rp 480 juta/800",
-              "Rp 600.000/layanan"
+              "Murid per guru penuh waktu",
+              "450/70 = 6,43",
+              "1.950/350 = 5,57"
             ],
             [
-              "Capaian hasil",
-              "120/180 ×100%",
-              "66,67%"
+              "Pembulatan rasio yang ditampilkan buku",
+              "6,4 : 1",
+              "5,6 : 1"
             ]
           ],
-          "caption": "[Permen PAN-RB 53/2014 Lampiran II. A-F dan Anak Lampiran II/1; cetak 15-18, PDF 19-22](https://peraturan.bpk.go.id/Download/123556/PERMENPAN%20NOMOR%2053%20TAHUN%202014.pdf#page=19) [ISSAI 300 par.11, versi editorial IFPP 2019; PP 60/2008 Ps.50(2), cetak/PDF 23](https://www.issai.org/wp-content/uploads/2019/08/ISSAI-300.pdf#page=8)",
+          "caption": "[Jones-Pendlebury ed.6 (2010), Exhibit 2.1-2.6 dan analisis; cetak 22-26/PDF 33-37](https://opac.feb.uinjkt.ac.id/repository/4a92513b40668f056ddd4e5117aca16e.pdf#page=33) Angka asal dipertahankan; perhitungan ulang dibulatkan dua desimal.",
           "stackOnMobile": true
         },
         {
+          "kind": "figure",
+          "title": "Anggaran per murid: sekolah A dan kota",
+          "svg": "<svg class=\"course-diagram-svg akk203-uas-diagram\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-labelledby=\"ASP-UAS-9-EUTOPIA-d-title ASP-UAS-9-EUTOPIA-d-desc\" width=\"100%\" viewBox=\"0 0 760 399\"><title id=\"ASP-UAS-9-EUTOPIA-d-title\">Anggaran per murid: sekolah A dan kota</title><desc id=\"ASP-UAS-9-EUTOPIA-d-desc\">Proksi anggaran per murid sekolah A 6666,67 pound dan kota 5128,21 pound. Sekolah A: 6666,67 Rata-rata kota: 5128,21 Hitungan ulang anggaran sumber 20x2; tidak menunjukkan realisasi biaya atau mutu layanan.</desc><defs><marker id=\"ASP-UAS-9-EUTOPIA-d-arrow\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto\"><path class=\"svg-title\" d=\"M0 0 L10 5 L0 10 Z\"/></marker></defs><rect class=\"svg-bg\" width=\"760\" height=\"399\" rx=\"12\"/><text class=\"svg-title\" x=\"24\" y=\"28\" font-size=\"18\"><tspan x=\"24\" dy=\"0\">Pound sterling per murid (£)</tspan></text><text class=\"svg-title\" x=\"24\" y=\"79.2\" font-size=\"18\"><tspan x=\"24\" dy=\"0\">Sekolah A: 6666,67</tspan></text><rect class=\"svg-subcard\" x=\"24\" y=\"114.4\" width=\"702\" height=\"24\" rx=\"3\"/><rect class=\"svg-badge-blue\" x=\"24\" y=\"114.4\" width=\"585.0002925\" height=\"24\" rx=\"3\"/><text class=\"svg-title\" x=\"24\" y=\"168.4\" font-size=\"18\"><tspan x=\"24\" dy=\"0\">Rata-rata kota: 5128,21</tspan></text><rect class=\"svg-subcard\" x=\"24\" y=\"203.60000000000002\" width=\"702\" height=\"24\" rx=\"3\"/><rect class=\"svg-badge-blue\" x=\"24\" y=\"203.60000000000002\" width=\"450.0004275\" height=\"24\" rx=\"3\"/><path class=\"svg-title\" style=\"fill:none!important\" stroke=\"currentColor\" stroke-width=\"2\" d=\"M24 257.6 H726\"/><path stroke=\"currentColor\" style=\"fill:none!important\" d=\"M24 257.6 v6\"/><text class=\"svg-text\" x=\"24\" y=\"281.6\" font-size=\"18\"><tspan x=\"24\" dy=\"0\">0</tspan></text><path stroke=\"currentColor\" style=\"fill:none!important\" d=\"M375 257.6 v6\"/><text class=\"svg-text\" x=\"375\" y=\"281.6\" font-size=\"18\"><tspan x=\"375\" dy=\"0\">4000</tspan></text><path stroke=\"currentColor\" style=\"fill:none!important\" d=\"M726 257.6 v6\"/><text class=\"svg-text\" x=\"696\" y=\"281.6\" font-size=\"18\"><tspan x=\"696\" dy=\"0\">8000</tspan></text><text class=\"svg-text\" x=\"24\" y=\"322.6\" font-size=\"18\"><tspan x=\"24\" dy=\"0\">Hitungan ulang anggaran sumber 20x2; tidak menunjukkan</tspan><tspan x=\"24\" dy=\"25.2\">realisasi biaya atau mutu layanan.</tspan></text></svg>",
+          "mobileSvg": "<svg class=\"course-diagram-svg akk203-uas-diagram\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-labelledby=\"ASP-UAS-9-EUTOPIA-m-title ASP-UAS-9-EUTOPIA-m-desc\" width=\"100%\" viewBox=\"0 0 340 474.6\"><title id=\"ASP-UAS-9-EUTOPIA-m-title\">Anggaran per murid: sekolah A dan kota</title><desc id=\"ASP-UAS-9-EUTOPIA-m-desc\">Proksi anggaran per murid sekolah A 6666,67 pound dan kota 5128,21 pound. Sekolah A: 6666,67 Rata-rata kota: 5128,21 Hitungan ulang anggaran sumber 20x2; tidak menunjukkan realisasi biaya atau mutu layanan.</desc><defs><marker id=\"ASP-UAS-9-EUTOPIA-m-arrow\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto\"><path class=\"svg-title\" d=\"M0 0 L10 5 L0 10 Z\"/></marker></defs><rect class=\"svg-bg\" width=\"340\" height=\"474.6\" rx=\"12\"/><text class=\"svg-title\" x=\"24\" y=\"28\" font-size=\"18\"><tspan x=\"24\" dy=\"0\">Pound sterling per murid</tspan><tspan x=\"24\" dy=\"25.2\">(£)</tspan></text><text class=\"svg-title\" x=\"24\" y=\"104.4\" font-size=\"18\"><tspan x=\"24\" dy=\"0\">Sekolah A: 6666,67</tspan></text><rect class=\"svg-subcard\" x=\"24\" y=\"139.60000000000002\" width=\"282\" height=\"24\" rx=\"3\"/><rect class=\"svg-badge-blue\" x=\"24\" y=\"139.60000000000002\" width=\"235.0001175\" height=\"24\" rx=\"3\"/><text class=\"svg-title\" x=\"24\" y=\"193.60000000000002\" font-size=\"18\"><tspan x=\"24\" dy=\"0\">Rata-rata kota: 5128,21</tspan></text><rect class=\"svg-subcard\" x=\"24\" y=\"228.8\" width=\"282\" height=\"24\" rx=\"3\"/><rect class=\"svg-badge-blue\" x=\"24\" y=\"228.8\" width=\"180.76940249999998\" height=\"24\" rx=\"3\"/><path class=\"svg-title\" style=\"fill:none!important\" stroke=\"currentColor\" stroke-width=\"2\" d=\"M24 282.8 H306\"/><path stroke=\"currentColor\" style=\"fill:none!important\" d=\"M24 282.8 v6\"/><text class=\"svg-text\" x=\"24\" y=\"306.8\" font-size=\"18\"><tspan x=\"24\" dy=\"0\">0</tspan></text><path stroke=\"currentColor\" style=\"fill:none!important\" d=\"M165 282.8 v6\"/><text class=\"svg-text\" x=\"165\" y=\"306.8\" font-size=\"18\"><tspan x=\"165\" dy=\"0\">4000</tspan></text><path stroke=\"currentColor\" style=\"fill:none!important\" d=\"M306 282.8 v6\"/><text class=\"svg-text\" x=\"276\" y=\"306.8\" font-size=\"18\"><tspan x=\"276\" dy=\"0\">8000</tspan></text><text class=\"svg-text\" x=\"24\" y=\"347.8\" font-size=\"18\"><tspan x=\"24\" dy=\"0\">Hitungan ulang anggaran</tspan><tspan x=\"24\" dy=\"25.2\">sumber 20x2; tidak</tspan><tspan x=\"24\" dy=\"25.2\">menunjukkan realisasi</tspan><tspan x=\"24\" dy=\"25.2\">biaya atau mutu layanan.</tspan></text></svg>",
+          "caption": "[Jones-Pendlebury ed.6 (2010), Exhibit 2.1-2.6 dan analisis; cetak 22-26/PDF 33-37](https://opac.feb.uinjkt.ac.id/repository/4a92513b40668f056ddd4e5117aca16e.pdf#page=33)",
+          "altText": "Proksi anggaran per murid sekolah A 6666,67 pound dan kota 5128,21 pound. Sekolah A: 6666,67 Rata-rata kota: 5128,21 Hitungan ulang anggaran sumber 20x2; tidak menunjukkan realisasi biaya atau mutu layanan.",
+          "transcript": [
+            "Sekolah A: 6666,67",
+            "Rata-rata kota: 5128,21",
+            "Hitungan ulang anggaran sumber 20x2; tidak menunjukkan realisasi biaya atau mutu layanan."
+          ]
+        },
+        {
           "kind": "p",
-          "text": "Tidak ada perbaikan biaya per layanan pada asumsi mutu sama. Hasil belum mencapai target. Angka 80% adalah realisasi anggaran, sehingga menyebutnya efisiensi 80% dapat menyesatkan. Pembulatan capaian dua desimal. Rasio tidak membuktikan sebab rendahnya hasil."
+          "text": "Asumsi hitungan: gunakan anggaran sebagai proksi biaya, sesuai ilustrasi; guru paruh waktu dan asisten belum masuk pembagi. Biaya lebih tinggi dan rasio murid/guru lebih tinggi memberi sinyal berbeda. Inspeksi buku menilai sekolah baik, sementara hasil tes berada di bawah target nasional. Keputusan memerlukan bukti mutu dan latar murid; satu rasio belum cukup. [Jones-Pendlebury ed.6 (2010), Exhibit 2.1-2.6 dan analisis; cetak 22-26/PDF 33-37](https://opac.feb.uinjkt.ac.id/repository/4a92513b40668f056ddd4e5117aca16e.pdf#page=33)"
         }
       ],
       "revealLabel": "Tampilkan langkah dan pemeriksaan"

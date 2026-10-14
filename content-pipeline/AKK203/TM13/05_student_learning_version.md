@@ -239,6 +239,8 @@ Skematis: hubungan konsep, tanpa skala angka.
 
 [SAP 2026, PSAP 13 par.6-12,17-31,76-88,116-123; cetak 250-266/PDF 257-273](https://www.ksap.org/sap/wp-content/uploads/2026/01/2026-0101-Buku-SAP-2026-Besar.pdf#page=257) [PMK 128/2024, lampiran Sistem Akuntansi dan Pelaporan Keuangan BLU, PDF 17-20,168-175; berlaku untuk LK 2024 dan seterusnya](https://jdih.kemenkeu.go.id/download/c6ab0355-774d-4a2f-9190-363cdda2c9c6/2024pmkeuangan128.pdf#page=17) [Permendagri 79/2018 Ps.50-54,74-75,99-100; cetak/PDF 31-34,36-38,47-50; mengganti 61/2007](https://peraturan.bpk.go.id/Download/102253/Permendagri%20Nomor%2079%20Tahun%202018.pdf#page=31)
 
+Contoh rumah sakit dalam buku tambahan 2011 memakai laporan aktivitas dan tiga kelas aset neto. Format historis tersebut tidak langsung dipakai untuk BLU/BLUD periode kini. Bacaan ini mengikuti tujuh laporan PSAP 13 dan sistem PMK 128/2024; Gambar 11.1-11.3 lama hanya bahan perbandingan tambahan. [Mahsun dkk. ed.3 (2011), tambahan historis Bab 11 Gambar 11.1-11.3; cetak 237-240/PDF 248-251](https://people.usd.ac.id/~dosen/repository/firma/sektor.pdf#page=248)
+
 ## Persiapan ujian
 
 ### Jebakan dan langkah koreksi

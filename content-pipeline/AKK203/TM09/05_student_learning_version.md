@@ -224,7 +224,22 @@ Skematis: hubungan konsep, tanpa skala angka.
 
 [Permen PAN-RB 88/2021 Lampiran I. B dan III. B.1; cetak/PDF 8,20-24](https://peraturan.bpk.go.id/Download/196187/Permen%20PANRB%20No.%2088%20Tahun%202021.pdf#page=8)
 
-Perubahan bobot atau indikator pada instrumen khusus perlu dibaca dari pedoman penugasan. Kerangka umum ini tidak menetapkan satu benchmark biaya untuk semua instansi. Bab MD 8, DN 8 dan JP 2 belum tersedia, sehingga metode buku belum diaudit lengkap.
+Instrumen khusus dapat memakai indikator berbeda. JP Bab 2 sudah diperiksa dari teks dan gambar edisi keenam 2010. RPP menulis edisi keenam 2000; halaman hak cipta dan penerbit menunjukkan 2000 adalah edisi kelima. Bacaan ini menyebut edisi yang benar-benar dibaca. MD Bab 8 dan DN Bab 8 masih belum dapat dibaca penuh.
+
+Indikator menangkap sebagian pelayanan. Nilai hasil perlu dibaca bersama mutu, biaya dan kondisi penerima. Mengurutkan unit dari satu rasio dapat menutup perbedaan beban layanan. [Jones-Pendlebury ed.6 (2010), Bab 2, cetak 18-29/PDF 29-40](https://opac.feb.uinjkt.ac.id/repository/4a92513b40668f056ddd4e5117aca16e.pdf#page=29)
+
+### Enam tantangan pengukuran dan tindakan membaca data
+
+| Tantangan buku | Pertanyaan yang perlu dijawab |
+| --- | --- |
+| Pengukuran biaya | Apakah biaya akrual dan alokasinya sesuai keputusan? |
+| Keandalan keluaran | Apakah definisi, pencatatan dan bukti angka dapat diperiksa? |
+| Hubungan sebab-akibat | Apakah hasil dipengaruhi faktor lain? |
+| Ukuran yang sempit | Bagian mutu apa yang terlewat dari indikator? |
+| Kelengkapan dan keringkasan | Apakah ringkasan menutupi konteks penting? |
+| Kemampuan mengendalikan hasil | Bagian hasil mana berada dalam kendali unit? |
+
+[Jones-Pendlebury ed.6 (2010), Bab 2, cetak 18-29/PDF 29-40](https://opac.feb.uinjkt.ac.id/repository/4a92513b40668f056ddd4e5117aca16e.pdf#page=29)
 
 ## Persiapan ujian
 
@@ -238,22 +253,32 @@ Perubahan bobot atau indikator pada instrumen khusus perlu dibaca dari pedoman p
 
 [Perpres 29/2014 Ps.5,9,15-18,24; cetak/PDF 6,8,10-11,13](https://peraturan.bpk.go.id/Download/262284/Perpres%20Nomor%2029%20Tahun%202014.pdf#page=6)
 
-## Latihan buatan: biaya dan capaian layanan
+## Adaptasi ilustrasi buku: sekolah A di Eutopia
 
-Anggaran Rp 600 juta untuk 1.000 layanan. Realisasi Rp 480 juta untuk 800 layanan bermutu setara. Target 180 penerima mencapai hasil; realisasi 120. Hitung dan nilai.
+Exhibit 2.1 memberi anggaran sekolah A £3.000.000, 450 murid dan 70 guru penuh waktu; seluruh sekolah kota £10.000.000, 1.950 murid dan 350 guru penuh waktu. Hitung rasio dan jelaskan apakah sekolah A otomatis lebih buruk. Eutopia adalah kota rekaan buku, bukan data Indonesia.
 
-### Langkah hitungan
+### Perhitungan ulang angka sumber
 
-| Ukuran | Langkah | Hasil |
+| Ukuran | Sekolah A | Seluruh sekolah kota |
 | --- | --- | --- |
-| Realisasi anggaran | 480/600 ×100% | 80% |
-| Biaya rencana per layanan | Rp 600 juta/1.000 | Rp 600.000/layanan |
-| Biaya aktual per layanan | Rp 480 juta/800 | Rp 600.000/layanan |
-| Capaian hasil | 120/180 ×100% | 66,67% |
+| Anggaran per murid | 3.000.000/450 = £6.666,67 | 10.000.000/1.950 = £5.128,21 |
+| Buku menampilkan proksi biaya per murid | £6.666 | £5.128 |
+| Murid per guru penuh waktu | 450/70 = 6,43 | 1.950/350 = 5,57 |
+| Pembulatan rasio yang ditampilkan buku | 6,4 : 1 | 5,6 : 1 |
 
-[Permen PAN-RB 53/2014 Lampiran II. A-F dan Anak Lampiran II/1; cetak 15-18, PDF 19-22](https://peraturan.bpk.go.id/Download/123556/PERMENPAN%20NOMOR%2053%20TAHUN%202014.pdf#page=19) [ISSAI 300 par.11, versi editorial IFPP 2019; PP 60/2008 Ps.50(2), cetak/PDF 23](https://www.issai.org/wp-content/uploads/2019/08/ISSAI-300.pdf#page=8)
+[Jones-Pendlebury ed.6 (2010), Exhibit 2.1-2.6 dan analisis; cetak 22-26/PDF 33-37](https://opac.feb.uinjkt.ac.id/repository/4a92513b40668f056ddd4e5117aca16e.pdf#page=33) Angka asal dipertahankan; perhitungan ulang dibulatkan dua desimal.
 
-Tidak ada perbaikan biaya per layanan pada asumsi mutu sama. Hasil belum mencapai target. Angka 80% adalah realisasi anggaran, sehingga menyebutnya efisiensi 80% dapat menyesatkan. Pembulatan capaian dua desimal. Rasio tidak membuktikan sebab rendahnya hasil.
+### Anggaran per murid: sekolah A dan kota
+
+
+
+Sekolah A: 6666.67; Rata-rata kota: 5128.21
+
+Hitungan ulang anggaran sumber 20x2; tidak menunjukkan realisasi biaya atau mutu layanan.
+
+[Jones-Pendlebury ed.6 (2010), Exhibit 2.1-2.6 dan analisis; cetak 22-26/PDF 33-37](https://opac.feb.uinjkt.ac.id/repository/4a92513b40668f056ddd4e5117aca16e.pdf#page=33)
+
+Asumsi hitungan: gunakan anggaran sebagai proksi biaya, sesuai ilustrasi; guru paruh waktu dan asisten belum masuk pembagi. Biaya lebih tinggi dan rasio murid/guru lebih tinggi memberi sinyal berbeda. Inspeksi buku menilai sekolah baik, sementara hasil tes berada di bawah target nasional. Keputusan memerlukan bukti mutu dan latar murid; satu rasio belum cukup. [Jones-Pendlebury ed.6 (2010), Exhibit 2.1-2.6 dan analisis; cetak 22-26/PDF 33-37](https://opac.feb.uinjkt.ac.id/repository/4a92513b40668f056ddd4e5117aca16e.pdf#page=33)
 
 ## Latihan buatan: indikator lebih rendah lebih baik
 
@@ -299,7 +324,7 @@ C. Opini laporan keuangan tanpa data keluaran
 
 D. Biaya per keluaran dengan mutu dan periode sama
 
-Kunci D: Hubungan sumber daya dengan keluaran membutuhkan pembanding setara. Rapat, serapan, dan opini dapat memberi informasi lain, tetapi masing-masing tidak cukup mengukur efisiensi keluaran. Rujukan: [ISSAI 300 par.11, versi editorial IFPP 2019; PP 60/2008 Ps.50(2), cetak/PDF 23](https://www.issai.org/wp-content/uploads/2019/08/ISSAI-300.pdf#page=8)
+Kunci D: Hubungan sumber daya dengan keluaran membutuhkan pembanding setara. Rapat, serapan, dan opini dapat memberi informasi lain, tetapi masing-masing tidak cukup mengukur efisiensi keluaran. Rujukan: [ISSAI 300 par.11, versi editorial IFPP 2019; PP 60/2008 Ps.50(2), cetak/PDF 23](https://www.issai.org/wp-content/uploads/2019/08/ISSAI-300.pdf#page=8) Rasio antarunit juga perlu konteks serta data mutu. [Jones-Pendlebury ed.6 (2010), Bab 2, cetak 18-29/PDF 29-40](https://opac.feb.uinjkt.ac.id/repository/4a92513b40668f056ddd4e5117aca16e.pdf#page=29)
 
 4. Latihan buatan: biaya Rp 480 juta untuk 800 layanan. Biaya per layanan?
 
@@ -401,19 +426,21 @@ Ukuran keberhasilan kinerja utama sesuai tugas, fungsi dan mandat instansi. Perm
 
 ## Kasus
 
-### Latihan buatan: nilai tiga E secara terpisah
+### Adaptasi ilustrasi sumber: menilai sekolah A di Eutopia
 
-Data layanan menggunakan anggaranRp 600 juta, realisasiRp 480 juta, target 1.000 layanan dan realisasi 800. Mutu dan periode diasumsikan sama. Rujukan: Permen PAN-RB 53/2014 Lampiran II. A-F dan Anak Lampiran II/1; cetak 15-18, PDF 19-22 ISSAI 300 par.11, versi editorial IFPP 2019; PP 60/2008 Ps.50(2), cetak/PDF 23
+Kota Eutopia adalah rekaan buku. Anggaran 20x2 sekolah A £3.000.000 untuk 450 murid dan 70 guru penuh waktu. Seluruh sekolah kota memakai £10.000.000, 1.950 murid dan 350 guru penuh waktu. Rujukan: Jones-Pendlebury ed.6 (2010), Exhibit 2.1-2.6, cetak 22-26/PDF 33-37.
 
-Target hasil 180, realisasi 120.
+Inspeksi terakhir memberi nilai 3 dari skala 4 sampai 1, berarti baik dalam ilustrasi buku.
 
-Informasi harga per input belum tersedia.
+Hasil tes sekolah di bawah target nasional; latar murid memengaruhi hasil.
 
-Hitung serapan, biaya per layanan dan capaian hasil.
+Guru paruh waktu dan asisten digunakan tetapi jumlahnya tidak diberikan.
 
-Tentukan kesimpulan serta data yang masih diperlukan.
+Hitung anggaran per murid dan murid per guru penuh waktu.
 
-Pembahasan: Fakta: nilai dan jumlah yang diberikan. Asumsi: mutu, waktu, dan cakupan biaya sama. Serapan=480/600=80%. Biaya rencana=600 juta/1.000=Rp 600.000, aktual=480 juta/800=Rp 600.000. Tidak ada penurunan biaya per keluaran. Capaian hasil=120/180=66,67%, dibulatkan dua desimal. Ekonomi belum dapat dinilai karena harga serta kualitas input tidak tersedia. Keputusan: telusuri sebab kekurangan hasil dan keluaran. Menyebut efisien dari serapan 80% mengabaikan volume. Menyebut program menyebabkan hasil memerlukan pembanding kausal. Rujukan: Permen PAN-RB 53/2014 Lampiran II. A-F dan Anak Lampiran II/1; cetak 15-18, PDF 19-22 ISSAI 300 par.11, versi editorial IFPP 2019; PP 60/2008 Ps.50(2), cetak/PDF 23
+Nilai apakah kesimpulan sekolah pasti buruk dapat diterima.
+
+Pembahasan: Fakta: anggaran, murid, guru dan penilaian inspeksi berasal dari ilustrasi buku. Asumsi hitungan: anggaran dipakai sebagai proksi biaya, bukan realisasi; murid dan guru penuh waktu memakai periode yang sama. Analisis: sekolah A 3.000.000/450 = £6.666,67 per murid; kota 10.000.000/1.950 = £5.128,21. Buku menampilkan £6.666 dan £5.128. Rasio murid/guru 450/70 = 6,43 dan 1.950/350 = 5,57; buku menampilkan 6,4 dan 5,6. Pembulatan hitungan ulang dua desimal. Inspeksi baik dan hasil tes di bawah target memberi sinyal yang perlu dijelaskan. Keputusan: periksa biaya aktual, mutu serta latar murid sebelum membuat peringkat. Alternatif menyatakan buruk dari anggaran per murid mengabaikan mutu; menyatakan efisien dari rasio guru mengabaikan guru paruh waktu/asisten; inspeksi baik tidak meniadakan kelemahan capaian tes. Rujukan: Jones-Pendlebury ed.6 (2010), Exhibit 2.1-2.6, cetak 22-26/PDF 33-37.
 
 ### Adaptasi format sumber: susun perjanjian kinerja
 

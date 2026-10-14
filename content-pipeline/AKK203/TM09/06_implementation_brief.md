@@ -1,6 +1,6 @@
 # Implementasi TM9
 
-Bangun ulang dari04 JSON (774f6d58aacac1d6fba947568bb71197bf00c7da409853a15812eaea66a79e1a): node scripts/build-akk203-pra-uas.mjs.
+Bangun ulang dari04 JSON (096c07ebd99b0dc15bfc35063635cf06321778786becaf998abbb6272d2d4525): node scripts/build-akk203-pra-uas.mjs.
 
 Visual:
 
@@ -213,6 +213,27 @@ Visual:
     "source": "[Permen PAN-RB 88/2021 Lampiran I. B dan III. B.1; cetak/PDF 8,20-24](https://peraturan.bpk.go.id/Download/196187/Permen%20PANRB%20No.%2088%20Tahun%202021.pdf#page=8)",
     "alt": "Alur evaluasi AKIP. Perumusan tujuan → Penentuan ruang lingkup → Perancangan desain: metode dan alat → Mekanisme pelaksanaan → Pelaporan dan pengomunikasian hasil",
     "footer": "Skematis: hubungan konsep, tanpa skala angka."
+  },
+  {
+    "id": "ASP-UAS-9-EUTOPIA",
+    "type": "bar",
+    "title": "Anggaran per murid: sekolah A dan kota",
+    "nodes": [],
+    "bars": [
+      {
+        "label": "Sekolah A",
+        "value": 6666.67
+      },
+      {
+        "label": "Rata-rata kota",
+        "value": 5128.21
+      }
+    ],
+    "max": 8000,
+    "axis": "Pound sterling per murid (£)",
+    "source": "[Jones-Pendlebury ed.6 (2010), Exhibit 2.1-2.6 dan analisis; cetak 22-26/PDF 33-37](https://opac.feb.uinjkt.ac.id/repository/4a92513b40668f056ddd4e5117aca16e.pdf#page=33)",
+    "alt": "Proksi anggaran per murid sekolah A 6666,67 pound dan kota 5128,21 pound.",
+    "footer": "Hitungan ulang anggaran sumber 20x2; tidak menunjukkan realisasi biaya atau mutu layanan."
   }
 ]
 ```
@@ -221,3 +242,5 @@ Visual:
 
 - Format lengkap perjanjian kinerja unit kerja dan satker pada PAN 53 PDF 13-18 untuk latihan tambahan.
 - Kategori nilai AKIP serta instrumen khusus penugasan disimpan sebagai bacaan tambahan, tidak ditebak dari rasio biaya.
+- JP Exhibit 2.1-2.6 adalah ilustrasi kota rekaan. Rincian nilai tes, pendanaan, inspeksi dan makanan sekolah dapat dipakai latihan lanjutan; tidak ada klaim data Indonesia.
+- Further reading JP Bab 2 cetak 29/PDF 40 telah diinventarisasi, tidak otomatis dianggap artikel penugasan TM14.

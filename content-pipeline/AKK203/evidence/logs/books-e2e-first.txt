@@ -1,0 +1,9 @@
+file:///C:/Users/Lenovo/.codex/.chatgpt-projects/g-p-6acca71af48c8191af132f193daf4d6e/work/akk203/scripts/e2e-browser.mjs:96
+  throw new Error(`Navigation timeout: ${url}; state=${JSON.stringify({ ...state, body: state.body.slice(0, 1200) })}`);
+        ^
+
+Error: Navigation timeout: http://127.0.0.1:4173/course/EKT109; state={"url":"https://vantage.csw.lenovo.com/v1/web/containerwidget/default/","ready":"complete","body":""}
+    at navigate (file:///C:/Users/Lenovo/.codex/.chatgpt-projects/g-p-6acca71af48c8191af132f193daf4d6e/work/akk203/scripts/e2e-browser.mjs:96:9)
+    at async file:///C:/Users/Lenovo/.codex/.chatgpt-projects/g-p-6acca71af48c8191af132f193daf4d6e/work/akk203/scripts/e2e-browser.mjs:213:3
+
+Node.js v24.16.0

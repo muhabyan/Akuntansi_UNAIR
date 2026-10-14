@@ -295,18 +295,19 @@ export const AKS201_BANK_UAS: BankSoal[] = [
   },
   {
     "type": "case",
-    "scope": "TM 9: Latihan buatan: nilai tiga E secara terpisah",
+    "scope": "TM 9: Adaptasi ilustrasi sumber JP, sekolah A Eutopia",
     "difficulty": "Komprehensif",
     "estimatedTime": "20-30 menit",
-    "question": "Latihan buatan: nilai tiga E secara terpisah",
-    "context": "Data layanan menggunakan anggaranRp 600 juta, realisasiRp 480 juta, target 1.000 layanan dan realisasi 800. Mutu dan periode diasumsikan sama. Rujukan: Permen PAN-RB 53/2014 Lampiran II. A-F dan Anak Lampiran II/1; cetak 15-18, PDF 19-22 ISSAI 300 par.11, versi editorial IFPP 2019; PP 60/2008 Ps.50(2), cetak/PDF 23",
+    "question": "Adaptasi ilustrasi sumber: menilai sekolah A di Eutopia",
+    "context": "Kota Eutopia adalah rekaan buku. Anggaran 20x2 sekolah A £3.000.000 untuk 450 murid dan 70 guru penuh waktu. Seluruh sekolah kota memakai £10.000.000, 1.950 murid dan 350 guru penuh waktu. Rujukan: Jones-Pendlebury ed.6 (2010), Exhibit 2.1-2.6, cetak 22-26/PDF 33-37.",
     "data": [
-      "Target hasil 180, realisasi 120.",
-      "Informasi harga per input belum tersedia."
+      "Inspeksi terakhir memberi nilai 3 dari skala 4 sampai 1, berarti baik dalam ilustrasi buku.",
+      "Hasil tes sekolah di bawah target nasional; latar murid memengaruhi hasil.",
+      "Guru paruh waktu dan asisten digunakan tetapi jumlahnya tidak diberikan."
     ],
     "instructions": [
-      "Hitung serapan, biaya per layanan dan capaian hasil.",
-      "Tentukan kesimpulan serta data yang masih diperlukan."
+      "Hitung anggaran per murid dan murid per guru penuh waktu.",
+      "Nilai apakah kesimpulan sekolah pasti buruk dapat diterima."
     ],
     "outputFormat": [
       "Pisahkan fakta, asumsi, analisis dan keputusan.",
@@ -317,7 +318,7 @@ export const AKS201_BANK_UAS: BankSoal[] = [
       "Langkah, bukti dan pemeriksaan: 40%.",
       "Keputusan serta kelemahan alternatif: 30%."
     ],
-    "answerGuide": "Fakta: nilai dan jumlah yang diberikan. Asumsi: mutu, waktu, dan cakupan biaya sama. Serapan=480/600=80%. Biaya rencana=600 juta/1.000=Rp 600.000, aktual=480 juta/800=Rp 600.000. Tidak ada penurunan biaya per keluaran. Capaian hasil=120/180=66,67%, dibulatkan dua desimal. Ekonomi belum dapat dinilai karena harga serta kualitas input tidak tersedia. Keputusan: telusuri sebab kekurangan hasil dan keluaran. Menyebut efisien dari serapan 80% mengabaikan volume. Menyebut program menyebabkan hasil memerlukan pembanding kausal. Rujukan: Permen PAN-RB 53/2014 Lampiran II. A-F dan Anak Lampiran II/1; cetak 15-18, PDF 19-22 ISSAI 300 par.11, versi editorial IFPP 2019; PP 60/2008 Ps.50(2), cetak/PDF 23"
+    "answerGuide": "Fakta: anggaran, murid, guru dan penilaian inspeksi berasal dari ilustrasi buku. Asumsi hitungan: anggaran dipakai sebagai proksi biaya, bukan realisasi; murid dan guru penuh waktu memakai periode yang sama. Analisis: sekolah A 3.000.000/450 = £6.666,67 per murid; kota 10.000.000/1.950 = £5.128,21. Buku menampilkan £6.666 dan £5.128. Rasio murid/guru 450/70 = 6,43 dan 1.950/350 = 5,57; buku menampilkan 6,4 dan 5,6. Pembulatan hitungan ulang dua desimal. Inspeksi baik dan hasil tes di bawah target memberi sinyal yang perlu dijelaskan. Keputusan: periksa biaya aktual, mutu serta latar murid sebelum membuat peringkat. Alternatif menyatakan buruk dari anggaran per murid mengabaikan mutu; menyatakan efisien dari rasio guru mengabaikan guru paruh waktu/asisten; inspeksi baik tidak meniadakan kelemahan capaian tes. Rujukan: Jones-Pendlebury ed.6 (2010), Exhibit 2.1-2.6, cetak 22-26/PDF 33-37."
   },
   {
     "type": "case",

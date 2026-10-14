@@ -421,6 +421,10 @@ export const TM11_READING: Reading = {
         {
           "kind": "p",
           "text": "Teks final ISAK 335 beserta amendemen 2026 dan standar transaksi belum tersedia utuh. Klaim bahwa model ini merupakan laporan aktual yang telah memenuhi seluruh SAK tidak dibuat. Bab DN 3 belum dapat diaudit."
+        },
+        {
+          "kind": "p",
+          "text": "Buku tambahan Mahsun dkk. 2011 memakai kategori historis aset neto tidak terikat, terikat temporer dan permanen. Bacaan ini memisahkan ilustrasi lama dari penyajian dua kategori dalam DE ISAK 35. Tujuan pertanggungjawaban kepada penyedia sumber daya tetap relevan; mekanik pengakuan dan format final perlu standar yang sesuai periode. [Mahsun dkk. ed.3 (2011), tambahan historis Bab 10; cetak 185-187,192-193/PDF 196-198,203-204](https://people.usd.ac.id/~dosen/repository/firma/sektor.pdf#page=196)"
         }
       ]
     },

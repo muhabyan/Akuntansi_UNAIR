@@ -21,6 +21,13 @@ assert.equal(m.AKS201_QUIZ_UAS.length,60);assert.equal(m.AKS201_BANK_UAS.length,
 const expectedKeys={8:['SAPP','SAI'],9:['600','66'],10:['60','2028'],11:['120','80','40'],12:['75','1,2'],13:['10','50'],14:['8,5','0,058']};
 for(const [tm,needles] of Object.entries(expectedKeys)){const text=JSON.stringify(specs.find(s=>s.tm===Number(tm)));for(const needle of needles)assert.ok(text.includes(needle),`TM${tm} independently audited content ${needle}`);}
 assert.equal(480000000/800,600000);assert.equal(600000000/1000,600000);assert.equal((120/180*100).toFixed(2),'66.67');
+// JP Exhibit 2.1 and analysis, print pp22-26: original budget data, not actual spending.
+assert.equal((3000000/450).toFixed(2),'6666.67');assert.equal((10000000/1950).toFixed(2),'5128.21');
+assert.equal((450/70).toFixed(2),'6.43');assert.equal((1950/350).toFixed(2),'5.57');
+const schoolCase=m.AKS201_BANK_UAS.find(b=>b.question.includes('Eutopia'));
+assert.ok(schoolCase);assert.match(schoolCase.answerGuide,/6\.666,67/);assert.match(schoolCase.answerGuide,/5\.128,21/);assert.match(schoolCase.answerGuide,/proksi biaya, bukan realisasi/);
+const schoolFigure=flatten(specs[1].reading.blocks).find(b=>b.kind==='figure'&&b.spec.id==='ASP-UAS-9-EUTOPIA');
+assert.deepEqual(schoolFigure.spec.bars.map(b=>b.value),[6666.67,5128.21]);assert.equal(schoolFigure.spec.max,8000);
 assert.equal(300-180,120);assert.equal(200-120+60-60,80);assert.equal(100-60,40);assert.equal(300-180-50,70);assert.equal(70+50,120);
 assert.equal(50000*1500,75000000);assert.equal(600000000*2,1200000000);const aid=400000000,wealth=25000000000;assert.ok(aid<500000000&&wealth>=20000000000,'Yayasan OR test');
 assert.equal(120-70,50);assert.equal(100-70-20,10);assert.equal(10+20+20,50);

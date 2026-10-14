@@ -732,10 +732,11 @@ export const AKS201_QUIZ_UAS: QuizQuestion[] = [
       "Biaya per keluaran dengan mutu dan periode sama"
     ],
     "answer": 3,
-    "explanation": "Hubungan sumber daya dengan keluaran membutuhkan pembanding setara. Rapat, serapan, dan opini dapat memberi informasi lain, tetapi masing-masing tidak cukup mengukur efisiensi keluaran. Rujukan: [ISSAI 300 par.11, versi editorial IFPP 2019; PP 60/2008 Ps.50(2), cetak/PDF 23](https://www.issai.org/wp-content/uploads/2019/08/ISSAI-300.pdf#page=8)",
-    "sourceRef": "[ISSAI 300 par.11, versi editorial IFPP 2019; PP 60/2008 Ps.50(2), cetak/PDF 23](https://www.issai.org/wp-content/uploads/2019/08/ISSAI-300.pdf#page=8)",
+    "explanation": "Hubungan sumber daya dengan keluaran membutuhkan pembanding setara. Rapat, serapan, dan opini dapat memberi informasi lain, tetapi masing-masing tidak cukup mengukur efisiensi keluaran. Rujukan: [ISSAI 300 par.11, versi editorial IFPP 2019; PP 60/2008 Ps.50(2), cetak/PDF 23](https://www.issai.org/wp-content/uploads/2019/08/ISSAI-300.pdf#page=8) Rasio antarunit juga perlu konteks serta data mutu. [Jones-Pendlebury ed.6 (2010), Bab 2, cetak 18-29/PDF 29-40](https://opac.feb.uinjkt.ac.id/repository/4a92513b40668f056ddd4e5117aca16e.pdf#page=29)",
+    "sourceRef": "[ISSAI 300 par.11, versi editorial IFPP 2019; PP 60/2008 Ps.50(2), cetak/PDF 23](https://www.issai.org/wp-content/uploads/2019/08/ISSAI-300.pdf#page=8) [Jones-Pendlebury ed.6 (2010), Bab 2, cetak 18-29/PDF 29-40](https://opac.feb.uinjkt.ac.id/repository/4a92513b40668f056ddd4e5117aca16e.pdf#page=29)",
     "sourceAnchors": [
-      "[ISSAI 300 par.11, versi editorial IFPP 2019; PP 60/2008 Ps.50(2), cetak/PDF 23](https://www.issai.org/wp-content/uploads/2019/08/ISSAI-300.pdf#page=8)"
+      "[ISSAI 300 par.11, versi editorial IFPP 2019; PP 60/2008 Ps.50(2), cetak/PDF 23](https://www.issai.org/wp-content/uploads/2019/08/ISSAI-300.pdf#page=8)",
+      "[Jones-Pendlebury ed.6 (2010), Bab 2, cetak 18-29/PDF 29-40](https://opac.feb.uinjkt.ac.id/repository/4a92513b40668f056ddd4e5117aca16e.pdf#page=29)"
     ]
   },
   {

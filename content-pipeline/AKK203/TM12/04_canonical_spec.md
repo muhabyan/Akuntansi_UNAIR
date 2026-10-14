@@ -1,6 +1,6 @@
 # AKK203 TM12: spesifikasi kanonik
 
-SHA256 JSON: b25a9b294364296eac170714a8123704d0fda0a6841d883cc5103510a48d8bdf
+SHA256 JSON: 78b24fdb1a2db71dc54edf4ce05fd86f51897499f19db167be3f9ba8d75b00d4
 
 RPP: PSAK terkait; DN Bab 3; peraturan terkait, RPP PDF 5
 
@@ -49,6 +49,12 @@ Penjelasan mekanisme, perbandingan, cek pemahaman dan batas sumber. Angka buatan
 [UU 2/2008 sebagaimana diubah UU 2/2011 Ps.34,34 A,35,39; cetak/PDF 10-12 UU 2/2011](https://peraturan.bpk.go.id/Download/224586/UU%20No.%202%20Tahun%202011.pdf) [IAI DE ISAK 35(2018) CI 01-04 dan contoh laporan, PDF 19-33; ilustrasi penyajian historis, pengakuan diasumsikan dalam latihan](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=19)
 
 Penjelasan mekanisme, perbandingan, cek pemahaman dan batas sumber. Angka buatan hanya pada latihan berlabel; aturan bergantung entitas/periode
+
+### Perbandingan buku tambahan historis dan sumber periode kini
+
+[Mahsun dkk. ed.3 (2011), tambahan historis bagian partai; cetak 203-205/PDF 214-216](https://people.usd.ac.id/~dosen/repository/firma/sektor.pdf#page=214)
+
+Perbedaan format/aturan buku historis dijelaskan tanpa memindahkan angka lama ke kasus kini. Mahsun adalah tambahan, tidak dianggap DN atau persetujuan dosen
 
 Status sumber: NEEDS_HUMAN_REVIEW
 

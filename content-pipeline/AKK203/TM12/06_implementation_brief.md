@@ -1,6 +1,6 @@
 # Implementasi TM12
 
-Bangun ulang dari04 JSON (b25a9b294364296eac170714a8123704d0fda0a6841d883cc5103510a48d8bdf): node scripts/build-akk203-pra-uas.mjs.
+Bangun ulang dari04 JSON (78b24fdb1a2db71dc54edf4ce05fd86f51897499f19db167be3f9ba8d75b00d4): node scripts/build-akk203-pra-uas.mjs.
 
 Visual:
 
@@ -134,3 +134,4 @@ Visual:
 
 - Lampiran formulir permohonan serta beritaacara verifikasi tambahan tidak menggantikan latihan penyusunan laporan inti.
 - LADK/LPPDK dan auditkampanye perlu aturan KPU sesuai pemilu, tidak disalin dariPasal 35 atau 34 A.
+- Buku tambahan Mahsun dkk. edisi ketiga 2011 tersedia dari repositori penulis; halaman terpilih dibandingkan sebagai konteks historis. Buku ini tidak menggantikan identitas DN pada RPP.

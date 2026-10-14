@@ -1,6 +1,6 @@
 # AKK203 TM13: spesifikasi kanonik
 
-SHA256 JSON: 993ceb6198cdd20e91e56887b9b4f239f7595be969322a8376b159ccee425106
+SHA256 JSON: b8877117adcd9b25867301ee89930c70cd910d2dfb6c9d88459e153e897c0c4d
 
 RPP: DN Bab 3; PSAP 13; PP 23/2005 jo. PP 74/2012, PP 12/2019; pembaruan atas Permendagri 61/2007 dan PMK 220/2016, RPP PDF 6
 
@@ -49,6 +49,12 @@ Penjelasan mekanisme, perbandingan, cek pemahaman dan batas sumber. Angka buatan
 [Permendagri 79/2018 Ps.50-54,74-75,99-100; cetak/PDF 31-34,36-38,47-50; mengganti 61/2007](https://peraturan.bpk.go.id/Download/102253/Permendagri%20Nomor%2079%20Tahun%202018.pdf#page=31)
 
 Penjelasan mekanisme, perbandingan, cek pemahaman dan batas sumber. Angka buatan hanya pada latihan berlabel; aturan bergantung entitas/periode
+
+### Perbandingan buku tambahan historis dan sumber periode kini
+
+[Mahsun dkk. ed.3 (2011), tambahan historis Bab 11 Gambar 11.1-11.3; cetak 237-240/PDF 248-251](https://people.usd.ac.id/~dosen/repository/firma/sektor.pdf#page=248)
+
+Perbedaan format/aturan buku historis dijelaskan tanpa memindahkan angka lama ke kasus kini. Mahsun adalah tambahan, tidak dianggap DN atau persetujuan dosen
 
 Status sumber: NEEDS_HUMAN_REVIEW
 

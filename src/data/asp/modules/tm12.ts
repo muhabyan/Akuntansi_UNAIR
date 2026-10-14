@@ -407,6 +407,10 @@ export const TM12_READING: Reading = {
         {
           "kind": "p",
           "text": "Formulir 2018 bersifat historis; lampiran terbaru 78/2020 PDF 18-20 memuat rekap penerimaan serta rincian pendidikan politik/sekretariat. Gunakan versi terbaru sesuai periode. Teks final SAK dan DN Bab 3 belum tersedia; kampanye perlu aturan pemilu tersendiri. [Permendagri 78/2020 perubahan Ps.8-9 A,28 A,29-29 A,37,39 A; cetak/PDF 4-9; formulir terbaru PDF 18-20](https://peraturan.bpk.go.id/Download/156015/Permendagri%20Nomor%2078%20Tahun%202020.pdf#page=4)"
+        },
+        {
+          "kind": "p",
+          "text": "Bagian partai dalam buku tambahan 2011 memuat aturan tahun 1999 dan ambang Rp15 juta/Rp150 juta. Angka historis itu tidak dipakai menjawab kasus batas donasi entitas pada paket ini, yang merujuk UU 2/2011. Dana kampanye mempunyai cakupan aturan tersendiri. [Mahsun dkk. ed.3 (2011), tambahan historis bagian partai; cetak 203-205/PDF 214-216](https://people.usd.ac.id/~dosen/repository/firma/sektor.pdf#page=214)"
         }
       ]
     },

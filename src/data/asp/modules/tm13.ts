@@ -435,6 +435,10 @@ export const TM13_READING: Reading = {
             "Layanan: Mutu, akses serta kemampuan pendanaan",
             "Skematis: hubungan konsep, tanpa skala angka."
           ]
+        },
+        {
+          "kind": "p",
+          "text": "Contoh rumah sakit dalam buku tambahan 2011 memakai laporan aktivitas dan tiga kelas aset neto. Format historis tersebut tidak langsung dipakai untuk BLU/BLUD periode kini. Bacaan ini mengikuti tujuh laporan PSAP 13 dan sistem PMK 128/2024; Gambar 11.1-11.3 lama hanya bahan perbandingan tambahan. [Mahsun dkk. ed.3 (2011), tambahan historis Bab 11 Gambar 11.1-11.3; cetak 237-240/PDF 248-251](https://people.usd.ac.id/~dosen/repository/firma/sektor.pdf#page=248)"
         }
       ]
     },

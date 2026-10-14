@@ -28,7 +28,7 @@
       "width": 375,
       "theme": "light",
       "overflow": 0,
-      "svgs": 6,
+      "svgs": 7,
       "issues": [],
       "minFont": 13.18235294117647,
       "minContrast": 9.896764973632585,
@@ -253,7 +253,7 @@
       "width": 375,
       "theme": "dark",
       "overflow": 0,
-      "svgs": 6,
+      "svgs": 7,
       "issues": [],
       "minFont": 13.18235294117647,
       "minContrast": 12.024320295980338,
@@ -506,11 +506,19 @@
       "width": 1440,
       "theme": "light",
       "overflow": 0,
-      "svgs": 6,
+      "svgs": 7,
       "issues": [],
-      "minFont": 20.084210526315786,
+      "minFont": 19.705263157894738,
       "minContrast": 9.896764973632585,
       "tables": [
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
         {
           "max": 0,
           "scroll": 0
@@ -578,6 +586,10 @@
       "minFont": 20.084210526315786,
       "minContrast": 9.896764973632585,
       "tables": [
+        {
+          "max": 0,
+          "scroll": 0
+        },
         {
           "max": 0,
           "scroll": 0
@@ -963,11 +975,19 @@
       "width": 1440,
       "theme": "dark",
       "overflow": 0,
-      "svgs": 6,
+      "svgs": 7,
       "issues": [],
-      "minFont": 20.084210526315786,
+      "minFont": 19.705263157894738,
       "minContrast": 12.024320295980338,
       "tables": [
+        {
+          "max": 0,
+          "scroll": 0
+        },
+        {
+          "max": 0,
+          "scroll": 0
+        },
         {
           "max": 0,
           "scroll": 0
@@ -1035,6 +1055,10 @@
       "minFont": 20.084210526315786,
       "minContrast": 12.024320295980338,
       "tables": [
+        {
+          "max": 0,
+          "scroll": 0
+        },
         {
           "max": 0,
           "scroll": 0

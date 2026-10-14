@@ -1,8 +1,12 @@
 {
   "reviewDate": "2026-10-14",
-  "screenshots": 160,
-  "contactSheets": 56,
-  "reviewMethod": "Semua visual ditinjau langsung melalui 56 lembar kontak, mencakup 375/1440 px dan tema terang/gelap. Perbaikan ukuran huruf, kontras serta spasi label diikuti pemeriksaan browser ulang; contoh akhir disertakan.",
+  "screenshots": 164,
+  "visuals": 41,
+  "reviewMethod": "132 screenshots remain byte-identical to previously reviewed images. All 28 changed frames were re-inspected in 14 contact sheets. Four new Eutopia frames were inspected individually in 375/1440 px and both themes. Previous review of 160 frames retained as evidence.",
+  "previousReview": "visual-review-before-book-revision.json",
+  "changedFramesReinspected": 28,
+  "newFramesInspected": 4,
+  "unchangedFramesPreviouslyReviewed": 132,
   "files": [
     {
       "path": "qa-akk203-uas.local/tm10-1440-dark-figure1.png",
@@ -10,11 +14,11 @@
     },
     {
       "path": "qa-akk203-uas.local/tm10-1440-dark-figure2.png",
-      "sha256": "d17a65ea2bb3c96a686f690b07c074ae4311989227c96e8e58984d12943b22ff"
+      "sha256": "25414b6d8d4ab314795cf0d7f99e3e4915b67f55d6f8cbbbacc40f5f6ccf7ed8"
     },
     {
       "path": "qa-akk203-uas.local/tm10-1440-dark-figure3.png",
-      "sha256": "7bf0f18a761af14b0fba127deca05c9c47c4e022d763c11ea4ead7442f1b70d8"
+      "sha256": "848e568d1a31d7c1257041a048e2ddcecc2fbda3cb97bb694af0ba311ffe7e31"
     },
     {
       "path": "qa-akk203-uas.local/tm10-1440-dark-figure4.png",
@@ -34,15 +38,15 @@
     },
     {
       "path": "qa-akk203-uas.local/tm10-1440-light-figure2.png",
-      "sha256": "f143787b2a91989f305b6a2854d567becb40ba72642954dcba0826de13cb7759"
+      "sha256": "a2755395474ec3fef537eed6e148d3fb9f2761ca8d9e7d81a6cbd516cafe32d6"
     },
     {
       "path": "qa-akk203-uas.local/tm10-1440-light-figure3.png",
-      "sha256": "3dad0947f04d36f813905fc643c6156c1c68c8606ef9bf1f93d66baa776b4180"
+      "sha256": "e8020fe471a34fb371d2cb73d6fc72b0ce9a7be96d2ef1ee4c494c40f471c048"
     },
     {
       "path": "qa-akk203-uas.local/tm10-1440-light-figure4.png",
-      "sha256": "a6872bd15f2b4aae2eb4e64f8b2a4273806f10cb7d6d6f9c9de521b35a7dc20d"
+      "sha256": "af69583ad00593a0bb84b360d5e4eecd9d944778cfbb358b53ecfdc0645a2097"
     },
     {
       "path": "qa-akk203-uas.local/tm10-1440-light-figure5.png",
@@ -54,7 +58,7 @@
     },
     {
       "path": "qa-akk203-uas.local/tm10-375-dark-figure1.png",
-      "sha256": "2e8fb5dccd4079a6da40e9538e849d1127c47e422a9c2b2f8d1257003db5caea"
+      "sha256": "b87d674587371e5f003e0985a0e79010ec64f27f5124eb1195cb362ae1b13094"
     },
     {
       "path": "qa-akk203-uas.local/tm10-375-dark-figure2.png",
@@ -110,7 +114,7 @@
     },
     {
       "path": "qa-akk203-uas.local/tm11-1440-dark-figure3.png",
-      "sha256": "16f24dea98f86a5122962e55326ade39d2c7a478009235fcf3e106bfd955d44f"
+      "sha256": "a547a81994ca69df231ef7b149cc52398f22d9cb063f4b0e4476788b2f0c20f5"
     },
     {
       "path": "qa-akk203-uas.local/tm11-1440-dark-figure4.png",
@@ -186,15 +190,15 @@
     },
     {
       "path": "qa-akk203-uas.local/tm12-1440-dark-figure2.png",
-      "sha256": "2dfa1eb95dd1a61a4820edaa9c6d6f39ca9a62d38c099b161843829bbea3b5d5"
+      "sha256": "8b0fb12287da0be3500d8ecef77059c9079c1751a904e3c754dde86929c41eaa"
     },
     {
       "path": "qa-akk203-uas.local/tm12-1440-dark-figure3.png",
-      "sha256": "de70aa791e218780cc4c43b9e940082bac80ab4df33dab524a4bb81aa0e91b70"
+      "sha256": "6da19ca65af788e6049fe9d509126eeac5aa6b6084829c7d0d7a434ef20f0d30"
     },
     {
       "path": "qa-akk203-uas.local/tm12-1440-dark-figure4.png",
-      "sha256": "41652c5ffc24d46e42bfaa6ee3967e46402064ba6f5841f0089edc03a2809468"
+      "sha256": "43f4b952501b48b8cd8a74634930e14effd60dbb3b408fefd5843ae1c21d4809"
     },
     {
       "path": "qa-akk203-uas.local/tm12-1440-light-figure1.png",
@@ -250,15 +254,15 @@
     },
     {
       "path": "qa-akk203-uas.local/tm13-1440-dark-figure2.png",
-      "sha256": "3e385614bd7b711e471a050d440cc843e74714d757592663c89b05e025b5026e"
+      "sha256": "d5e7b15ad20f431d467619c49d14f306068885daaf4814b766804975754a5bce"
     },
     {
       "path": "qa-akk203-uas.local/tm13-1440-dark-figure3.png",
-      "sha256": "ae9a4b0af688138ea992f37ecea83e2842fd77c10f55601faae07f8b0a0ed877"
+      "sha256": "32f8e43419166c220e9cf8c9a269bd86b3a52ee209a26a957b11af0bc1bc27ee"
     },
     {
       "path": "qa-akk203-uas.local/tm13-1440-dark-figure4.png",
-      "sha256": "552d9144c804aa9e5263b8317ee43a96aea63ba93a3648426d6d095fb54540b9"
+      "sha256": "ad88798e91cf84504f031dba3e28363db882f2910d58cdfd99c383ea4c6af251"
     },
     {
       "path": "qa-akk203-uas.local/tm13-1440-dark-figure5.png",
@@ -266,11 +270,11 @@
     },
     {
       "path": "qa-akk203-uas.local/tm13-1440-dark-figure6.png",
-      "sha256": "7bbc1c3adc741d0fd55089aa4833043a7bd8e3d9828c845785c3a8d964689b28"
+      "sha256": "0501ea05ec904a970bc2c28f90fcc91253cccb633582a52dfc6b82f7e1daeca1"
     },
     {
       "path": "qa-akk203-uas.local/tm13-1440-dark-figure7.png",
-      "sha256": "40455a8303ae66f336f6d82b38084b1d19114becb74c750a0f07367bcb90b373"
+      "sha256": "16e165d28d52105e6375e16abd2bd7518d4059948d94aba5fbb6e11a38cdc208"
     },
     {
       "path": "qa-akk203-uas.local/tm13-1440-light-figure1.png",
@@ -366,19 +370,19 @@
     },
     {
       "path": "qa-akk203-uas.local/tm14-1440-dark-figure3.png",
-      "sha256": "6fe84da4fa00af3f7ded2c3bca31544b657f1dd79a8463409bf9f7e84cb7c9a6"
+      "sha256": "ad1232c7593950e5cd221bd164087469ba0e330f719cd6114019ad175a4259ab"
     },
     {
       "path": "qa-akk203-uas.local/tm14-1440-dark-figure4.png",
-      "sha256": "0f0cdaa8dc3c41165f47d05f6b5ca9161cc39b96e332bc19abab6d6a2228d787"
+      "sha256": "7d66e809e6acc408b54aaeb4e9f4132a18c39ab6c5b3860fd31ed7955dc98339"
     },
     {
       "path": "qa-akk203-uas.local/tm14-1440-dark-figure5.png",
-      "sha256": "f964b78337c86013601d76008096d50d55a0846beda19aad2d68759791b90f9a"
+      "sha256": "7ff4e97fdc008b555fd258ed8b47fddfa2abfdb3d10b5b4c8c4ac60a360ce15f"
     },
     {
       "path": "qa-akk203-uas.local/tm14-1440-dark-figure6.png",
-      "sha256": "c856322fe84df701c6c2f2635724f48004d72af7f25f08b6e3cd6e0333b932ab"
+      "sha256": "f59e3dd1eb66d4fdab59300a35fb7d166861852854dacf2aa5e4eaf3dc72eec7"
     },
     {
       "path": "qa-akk203-uas.local/tm14-1440-dark-figure7.png",
@@ -390,11 +394,11 @@
     },
     {
       "path": "qa-akk203-uas.local/tm14-1440-light-figure2.png",
-      "sha256": "7ded96ac7e2ff39006aa0035ea21e71e7693f7a7290a6056e083bd4286a51bc7"
+      "sha256": "e4aeff0a825d3b58b796f74a7d580b7be644ca1dfe61a58bba687351dd0732b9"
     },
     {
       "path": "qa-akk203-uas.local/tm14-1440-light-figure3.png",
-      "sha256": "c1bd690973e64377ed995639c39205b21612a7b45ac63a59aa3b0357035140d1"
+      "sha256": "70dbd9f26cbad0eba16d1dde3609a162787b02dc11f70646bed47f4120b52c43"
     },
     {
       "path": "qa-akk203-uas.local/tm14-1440-light-figure4.png",
@@ -406,11 +410,11 @@
     },
     {
       "path": "qa-akk203-uas.local/tm14-1440-light-figure6.png",
-      "sha256": "56d85747394f4bc6e68d97d30737afab5c22d66cfb04e0d5e069e60d7d7704c9"
+      "sha256": "33d5151ebf4d3b29f31ac5a0d499656dc0454ac13c4daec826424bd9d8db92b1"
     },
     {
       "path": "qa-akk203-uas.local/tm14-1440-light-figure7.png",
-      "sha256": "f6668f9134f10375b4c82746ef5a89745bac6851a72b3f085d592c1109b7361e"
+      "sha256": "12bc6174c853ee836f066933be72a5593e57ccf0c6c057ed8ccebd5667a9b3ce"
     },
     {
       "path": "qa-akk203-uas.local/tm14-375-dark-figure1.png",
@@ -474,7 +478,7 @@
     },
     {
       "path": "qa-akk203-uas.local/tm8-1440-dark-figure2.png",
-      "sha256": "ad8e2de2b65a598e60dd0eea6ab668836f9ba19217cc3413c6c588aa28382dd5"
+      "sha256": "3db47ee040c165b416fb384ab866cbca973e9f4766a7f2af82fa68f4c52528bc"
     },
     {
       "path": "qa-akk203-uas.local/tm8-1440-dark-figure3.png",
@@ -498,7 +502,7 @@
     },
     {
       "path": "qa-akk203-uas.local/tm8-1440-light-figure3.png",
-      "sha256": "68eaf61031269065a5baa791d7420eea729ccd4903eea4d20b9f632d52bfa660"
+      "sha256": "f432f6fb451a8e2a6b04de01bcd0c826b2800c00520b94c20239fa687b8d2fa7"
     },
     {
       "path": "qa-akk203-uas.local/tm8-1440-light-figure4.png",
@@ -558,11 +562,11 @@
     },
     {
       "path": "qa-akk203-uas.local/tm9-1440-dark-figure3.png",
-      "sha256": "45fd7b406166baa9bfdd3d78b0c018ad4f43c5028cd7316ceac58c734c2e471c"
+      "sha256": "42201a1d6619da784982032514312eb5a35bef8b84a75e8ac722e3c73fb50cc0"
     },
     {
       "path": "qa-akk203-uas.local/tm9-1440-dark-figure4.png",
-      "sha256": "a6f470069283449fd3a90b142d45a9ad71150a28cced559dac9ec39fd79e3b31"
+      "sha256": "e0681c71a4b8ea17b49eac4f8a79187d932893671214cfd6aa0c3d882d5b03cf"
     },
     {
       "path": "qa-akk203-uas.local/tm9-1440-dark-figure5.png",
@@ -571,6 +575,10 @@
     {
       "path": "qa-akk203-uas.local/tm9-1440-dark-figure6.png",
       "sha256": "add1e0cb62d7f0c17832958696cf4b955b4cca7e1f347928c1cec97bb0b58673"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm9-1440-dark-figure7.png",
+      "sha256": "39558b3150c4550f6fee9f18db15ac4f2526ee74788b9a5f1c5bac0c2b816fea"
     },
     {
       "path": "qa-akk203-uas.local/tm9-1440-light-figure1.png",
@@ -582,7 +590,7 @@
     },
     {
       "path": "qa-akk203-uas.local/tm9-1440-light-figure3.png",
-      "sha256": "d134b4c1d975510399ecc86eb04ce7ea55fb54101b86b2e69b15b5cddb1fe545"
+      "sha256": "2cd82a5b05955f7861bae262faa8dc0ecdb1056268f520e481f9ae0808068b25"
     },
     {
       "path": "qa-akk203-uas.local/tm9-1440-light-figure4.png",
@@ -595,6 +603,10 @@
     {
       "path": "qa-akk203-uas.local/tm9-1440-light-figure6.png",
       "sha256": "c7eaac89ea10e4598f60ad2cd96503f85515607b3bd05714d667e0877bb7ca1b"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm9-1440-light-figure7.png",
+      "sha256": "f100589a0ff287dce586262895cb13c9149f7fb676a8a8a4852a35b6f29270d0"
     },
     {
       "path": "qa-akk203-uas.local/tm9-375-dark-figure1.png",
@@ -621,6 +633,10 @@
       "sha256": "1663f4d2c97f76c6182e14b71210023da10907be80d05ddf447a689cd753e8c8"
     },
     {
+      "path": "qa-akk203-uas.local/tm9-375-dark-figure7.png",
+      "sha256": "b6bfaa5e68ade0728cfb8a58311fc4d748fa276b058937b533fea080081b4bd5"
+    },
+    {
       "path": "qa-akk203-uas.local/tm9-375-light-figure1.png",
       "sha256": "9d054be118d55568085280c05a0da1e4b17afe57669c2d6ff965fcaa89465c79"
     },
@@ -643,6 +659,10 @@
     {
       "path": "qa-akk203-uas.local/tm9-375-light-figure6.png",
       "sha256": "17779118b1498aa7a96c1e84c38bce289f018845acd9bb2bc31e2a7925d5be12"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm9-375-light-figure7.png",
+      "sha256": "dbb15babe2c7a6af32e2842a1b1558bcda3fe1c9d4f9822b25f78edfb320fc50"
     }
   ]
 }

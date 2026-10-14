@@ -1,6 +1,6 @@
 # Implementasi TM8
 
-Bangun ulang dari04 JSON (3ecf8ac8c5edd50f93036718a8981bda57ffb6f2edb94bac40fd1448969d861e): node scripts/build-akk203-pra-uas.mjs.
+Bangun ulang dari04 JSON (5b765a2a24d954f0ad0bc3083d3b9ce062d675790e33997082eac57456e8ab54): node scripts/build-akk203-pra-uas.mjs.
 
 Visual:
 
@@ -190,3 +190,4 @@ Visual:
 
 - Format laporan PPKD lengkap pada PDF 69-81 merupakan latihan tambahan pembacaan penyajian.
 - Subsistem SABUN yang tidak dibahas mendalam dan seluruh tenggat teknis per unit perlu teks prosedur penugasan terkait.
+- Pratinjau resmi IBS terdiri dari 14 halaman terpilih, bukan 14 halaman berurutan buku. Halaman 2/3/5/10 diperiksa sebagai gambar; Bab 2 dan kasus diskusi belum terbuka.

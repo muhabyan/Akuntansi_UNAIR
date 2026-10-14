@@ -210,6 +210,21 @@ Skematis: hubungan konsep, tanpa skala angka.
 
 SPIP memberi keyakinan memadai tentang tujuan, pelaporan, pengamanan aset dan kepatuhan. Kelima unsur saling mendukung, tanpa urutan waktu wajib. Audit/reviu tidak dapat menggantikan pengendalian harian oleh manajemen. [PP 60/2008 Ps.2-3,47-54; cetak/PDF 3-4,21-25](https://peraturan.go.id/files/pp60-2008.pdf#page=3)
 
+JP Bab 9 sudah dibaca lengkap dalam edisi keenam 2010. Buku memberi kerangka perbandingan internasional; mandat APIP/BPK tetap mengikuti peraturan Indonesia. Independensi memerlukan sikap objektif dan dukungan kelembagaan. Tekanan anggaran, akses bukti atau pengubahan laporan dapat mengganggu pemeriksaan. [Jones-Pendlebury ed.6 (2010), Bab 9, cetak 127-140/PDF 138-151](https://opac.feb.uinjkt.ac.id/repository/4a92513b40668f056ddd4e5117aca16e.pdf#page=138)
+
+### Kerangka buku dan batas penerapan
+
+| Konsep | Implikasi untuk analisis kasus |
+| --- | --- |
+| Independensi | Periksa mandat, akses bukti, sumber daya dan kebebasan pelaporan. |
+| Pengendalian intern | Kontrol mengurangi risiko; kolusi, kesalahan dan pengabaian oleh manajemen tetap mungkin. |
+| Materialitas | Nilai uang perlu dibaca bersama sensitivitas sifat transaksi dan kepentingan publik. |
+| Pemeriksaan anggaran | Target dan prediksi memerlukan pemeriksaan asumsi; bukti transaksi realisasi mempunyai dasar berbeda. |
+
+[Jones-Pendlebury ed.6 (2010), Bab 9, cetak 127-140/PDF 138-151](https://opac.feb.uinjkt.ac.id/repository/4a92513b40668f056ddd4e5117aca16e.pdf#page=138) Kerangka konseptual; keputusan penugasan Indonesia mengikuti SPKN.
+
+Contoh buatan: biaya perjalanan pejabat bernilai kecil dapat sensitif karena sifat dan penerima manfaatnya. Menilai seluruh temuan dengan satu persen seragam dapat melewatkan aspek kualitatif. Anggaran masa depan juga tidak memberikan kepastian bahwa hasil akan terjadi. Pilih kesimpulan sesuai objek, kriteria dan bukti yang benar-benar diperiksa. [Jones-Pendlebury ed.6 (2010), Bab 9, cetak 127-140/PDF 138-151](https://opac.feb.uinjkt.ac.id/repository/4a92513b40668f056ddd4e5117aca16e.pdf#page=138)
+
 ## Persiapan ujian
 
 ### Jebakan dan langkah koreksi

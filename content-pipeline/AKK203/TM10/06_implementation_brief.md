@@ -1,6 +1,6 @@
 # Implementasi TM10
 
-Bangun ulang dari04 JSON (1f6fee087cdcf51b409a78fdd17ab973154e727ed2fd0942c2d497771aafc591): node scripts/build-akk203-pra-uas.mjs.
+Bangun ulang dari04 JSON (ccd403c2ee7d745bbb5aef6ab734c2fb2fbe68c900238efe5afa55e1f43370de): node scripts/build-akk203-pra-uas.mjs.
 
 Visual:
 
@@ -235,3 +235,4 @@ Visual:
 
 - Penyelesaian ganti kerugian dan sanksi rinci UU 15 tidak menjadi fokus inti TM 10.
 - Lampiran SPKN 2026 sesudah batang tubuh belum diterapkan sebagai standar aktif pada paket ini.
+- JP Bab 9 cetak 140/PDF 151: further reading diinventarisasi sebagai tambahan, tidak menjadi artikel wajib TM14 tanpa daftar dosen.

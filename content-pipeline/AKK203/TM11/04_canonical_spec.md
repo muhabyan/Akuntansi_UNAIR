@@ -1,6 +1,6 @@
 # AKK203 TM11: spesifikasi kanonik
 
-SHA256 JSON: e2767664a3e1729859ab955f5167e4d587f132228a4eaea15f3e12b590d40027
+SHA256 JSON: a2fa365be167fc4792ab486033e383dddfb664ac24306153b5fd1ad561123ac4
 
 RPP: PSAK terkait; DN Bab 3; peraturan terkait, RPP PDF 5
 
@@ -49,6 +49,12 @@ Penjelasan mekanisme, perbandingan, cek pemahaman dan batas sumber. Angka buatan
 [UU 16/2001 Ps.48-50; cetak/PDF 15-16; UU 28/2004 Ps. I angka 16 perubahanPs.52; cetak/PDF 9-10](https://peraturan.bpk.go.id/Download/30439/UU%20Nomor%2028%20Tahun%202004.pdf#page=15)
 
 Penjelasan mekanisme, perbandingan, cek pemahaman dan batas sumber. Angka buatan hanya pada latihan berlabel; aturan bergantung entitas/periode
+
+### Perbandingan buku tambahan historis dan sumber periode kini
+
+[Mahsun dkk. ed.3 (2011), tambahan historis Bab 10; cetak 185-187,192-193/PDF 196-198,203-204](https://people.usd.ac.id/~dosen/repository/firma/sektor.pdf#page=196)
+
+Perbedaan format/aturan buku historis dijelaskan tanpa memindahkan angka lama ke kasus kini. Mahsun adalah tambahan, tidak dianggap DN atau persetujuan dosen
 
 Status sumber: NEEDS_HUMAN_REVIEW
 
