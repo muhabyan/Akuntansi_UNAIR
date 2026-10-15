@@ -2,7 +2,7 @@
 
 Status: READY_WITH_SCOPE_LIMITATION
 
-SHA256 05 (CRLF): 4902aa35785081947637f2099d45eaf84540d0e8574b2ea2a8c82d70d4979fbc
+SHA256 05 (CRLF): 460b96777fa1d82515764fd3bad34e964458a8d064accc092d55e95cd0d451ea
 
 Brigham & Houston, FFM 16e (2022), Bab 18, hal. cetak 625-661 (PDF 667-703)
 
@@ -126,3 +126,6 @@ USD saling menghapus; hasil dibulatkan empat desimal. [hal. 636; PDF 678]
 USD=\frac{200{,}000{,}000\ \mathrm{CHF}}{0.910784\ \mathrm{CHF/USD}}=219{,}591{,}033.6589\ \mathrm{USD}
 Dibulatkan menjadi 219.591.034 USD ke dolar terdekat, sesuai kunci buku. [hal. 639; PDF 681]
 ```
+## Elaborasi 14 Oktober 2026
+
+Sumber 05 diperbarui untuk tujuan spesifik, contoh terbimbing dekat rumus, dan alur penalaran. Angka ilustrasi baru diberi label penulis; tabel, rumus, gambar dan dua kasus sumber dipertahankan. TM09 mengurutkan teori sebelum kerangka kasus. SHA256 05: 460b96777fa1d82515764fd3bad34e964458a8d064accc092d55e95cd0d451ea. Validasi terakhir dicatat di docs/pra-uas-elaboration-progress.md.

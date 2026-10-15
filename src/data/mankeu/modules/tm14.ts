@@ -7,9 +7,9 @@ export const TM14_READING: Reading = {
   "title": "Merger dan Akuisisi",
   "intro": "Brigham & Houston, FFM 16e (2022), Bab 21, hal. cetak 741-767 (PDF 783-809). Halaman cetak buku memiliki selisih 42 dari halaman PDF.",
   "objectives": [
-    "Memilih konsep dan asumsi yang sesuai kasus.",
-    "Menunjukkan langkah hitungan, satuan, pembulatan, dan keputusan.",
-    "Menjelaskan batas model serta rujukannya."
+    "Membedakan alasan merger dari sinergi yang didukung bukti.",
+    "Memilih arus kas dan tingkat diskonto yang sepadan serta memisahkan nilai operasi dari ekuitas.",
+    "Menghitung batas tawaran dan pembagian sinergi setelah biaya, lalu menilai risiko pelaksanaannya."
   ],
   "layout": "layered",
   "ref": "Brigham & Houston, FFM 16e (2022), Bab 21, hal. cetak 741-767 (PDF 783-809)",
@@ -81,7 +81,7 @@ export const TM14_READING: Reading = {
         {
           "kind": "callout",
           "variant": "gist",
-          "text": "**Kalau cuma sempat ingat satu hal:** arus kas, tingkat, satuan, dan periode harus konsisten sebelum kamu mengambil keputusan."
+          "text": "**Kalau cuma sempat ingat satu hal:** nilai sinergi bersih menentukan ruang tawar; premi kepada penjual mengurangi bagian manfaat yang tersisa bagi pembeli."
         },
         {
           "kind": "callout",
@@ -235,6 +235,26 @@ export const TM14_READING: Reading = {
           "text": "Pembayaran dengan saham menukar kepemilikan pemegang saham lama. Harga tawaran menentukan pembagian manfaat sinergi antara pengakuisisi dan target. Nilai merger perlu didasarkan pada arus kas dan risiko yang konsisten, serta diperiksa melalui due diligence. [hal. 750; PDF 792] [hal. 752; PDF 794]"
         },
         {
+          "kind": "h3",
+          "text": "Contoh terbimbing: siapa menerima sinergi?"
+        },
+        {
+          "kind": "p",
+          "text": "Ilustrasi penulis, seluruh nilai kini dalam miliar rupiah: pembeli berdiri sendiri 500, target 300, sinergi bruto 80 dan biaya integrasi 10. Asumsikan sinergi serta biaya belum tercakup dalam nilai terpisah; tidak ada perubahan pendanaan atau biaya lain. Dasar analisis: [hal. 747-752; PDF 789-794]."
+        },
+        {
+          "kind": "ol",
+          "items": [
+            "Sinergi bersih = 80 - 10 = 70. Nilai bersama setelah integrasi = 500 + 300 + 70 = 870.",
+            "Batas harga target untuk tidak merugikan pembeli = 300 + 70 = 370. Pada harga ini, seluruh manfaat tambahan 70 diberikan kepada pemilik target.",
+            "Jika penawaran tunai 350, premi penjual = 350 - 300 = 50. Bagian manfaat pembeli = 70 - 50 = 20. Nilai bersih yang tersisa bagi pembeli = 870 - 350 = 520 dibanding nilai awal 500."
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "Jika sinergi sudah dimasukkan ke proyeksi kas yang didiskonto, jangan menambahkannya lagi di luar hasil penilaian. Demikian juga biaya integrasi tidak boleh dikurangkan dua kali. Harga di bawah batas model masih memerlukan uji kelayakan proyeksi dan pelaksanaan."
+        },
+        {
           "kind": "self-check",
           "question": "Mengapa sinergi tidak ditambahkan dua kali?",
           "answer": [
@@ -380,7 +400,7 @@ export const TM14_READING: Reading = {
     },
     {
       "kind": "section",
-      "title": "4a. Periksa asal sinergi dan risiko tawaran",
+      "title": "5. Periksa asal sinergi dan risiko tawaran",
       "layer": "main",
       "blocks": [
         {

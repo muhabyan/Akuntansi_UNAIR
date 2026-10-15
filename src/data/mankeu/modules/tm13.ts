@@ -7,9 +7,9 @@ export const TM13_READING: Reading = {
   "title": "Manajemen Keuangan Multinasional",
   "intro": "Brigham & Houston, FFM 16e (2022), Bab 18, hal. cetak 625-661 (PDF 667-703). Halaman cetak buku memiliki selisih 42 dari halaman PDF.",
   "objectives": [
-    "Memilih konsep dan asumsi yang sesuai kasus.",
-    "Menunjukkan langkah hitungan, satuan, pembulatan, dan keputusan.",
-    "Menjelaskan batas model serta rujukannya."
+    "Membedakan rezim nilai tukar serta membaca kuotasi dan kurs silang.",
+    "Menggunakan spot, forward, paritas bunga dan PPP dengan satuan dan tenor yang tepat.",
+    "Menilai lindung nilai dan proyek dari kas yang dapat diterima induk beserta risiko yang belum tertutup."
   ],
   "layout": "layered",
   "ref": "Brigham & Houston, FFM 16e (2022), Bab 18, hal. cetak 625-661 (PDF 667-703)",
@@ -81,7 +81,7 @@ export const TM13_READING: Reading = {
         {
           "kind": "callout",
           "variant": "gist",
-          "text": "**Kalau cuma sempat ingat satu hal:** arus kas, tingkat, satuan, dan periode harus konsisten sebelum kamu mengambil keputusan."
+          "text": "**Kalau cuma sempat ingat satu hal:** tulis satuan mata uang pada setiap kurs, lalu samakan mata uang arus kas, tingkat dan tenor sebelum membandingkan keputusan."
         },
         {
           "kind": "callout",
@@ -206,6 +206,26 @@ export const TM13_READING: Reading = {
           "kind": "formula",
           "text": "S_{JPY/EUR}=\\frac{S_{JPY/USD}}{S_{EUR/USD}}",
           "note": "[hal. 636; PDF 678] [hal. 640; PDF 682] [hal. 644; PDF 686]"
+        },
+        {
+          "kind": "h3",
+          "text": "Contoh terbimbing: hapus satuan perantara"
+        },
+        {
+          "kind": "p",
+          "text": "Ilustrasi penulis memakai kuotasi 16.000 IDR/USD dan 160 JPY/USD. Angka ini asumsi latihan, bukan kurs pasar saat ini. Dasar metode: [hal. 636 dan 640; PDF 678 dan 682]."
+        },
+        {
+          "kind": "ol",
+          "items": [
+            "Satu USD setara 16.000 IDR dan 160 JPY. Karena keduanya mempunyai penyebut USD, bagi 16.000 IDR/USD dengan 160 JPY/USD.",
+            "USD saling menghapus dan hasilnya 100 IDR/JPY. Tagihan 1.000.000 JPY kemudian setara 100.000.000 IDR pada kurs ilustratif tersebut.",
+            "Jika kuotasi dibalik menjadi JPY/IDR, nilainya 1/100 = 0,01 JPY/IDR. Jangan memakai angka 100 dengan label satuan yang terbalik."
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "Sebelum menilai forward atau proyek, tulis mata uang pembayaran dan tanggalnya. Kurs silang memecahkan konversi satuan; ini belum memasukkan spread transaksi, biaya transfer atau perubahan kurs antarwaktu."
         },
         {
           "kind": "self-check",
@@ -385,7 +405,7 @@ export const TM13_READING: Reading = {
     },
     {
       "kind": "section",
-      "title": "5a. Baca pasar dana dan kas yang kembali ke induk",
+      "title": "6. Baca pasar dana dan kas yang kembali ke induk",
       "layer": "main",
       "blocks": [
         {

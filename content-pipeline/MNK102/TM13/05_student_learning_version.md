@@ -3,9 +3,9 @@
 Brigham & Houston, FFM 16e (2022), Bab 18, hal. cetak 625-661 (PDF 667-703). Halaman cetak buku memiliki selisih 42 dari halaman PDF.
 
 **Setelah TM ini kamu bisa:**
-1. Memilih konsep dan asumsi yang sesuai kasus.
-2. Menunjukkan langkah hitungan, satuan, pembulatan, dan keputusan.
-3. Menjelaskan batas model serta rujukannya.
+1. Membedakan rezim nilai tukar serta membaca kuotasi dan kurs silang.
+2. Menggunakan spot, forward, paritas bunga dan PPP dengan satuan dan tenor yang tepat.
+3. Menilai lindung nilai dan proyek dari kas yang dapat diterima induk beserta risiko yang belum tertutup.
 
 ## Kilat
 
@@ -30,7 +30,7 @@ alt text: Manajemen Keuangan Multinasional: peta keputusan. Mulai dari jenis kep
 
 Brigham & Houston, FFM 16e (2022), Bab 18, hal. cetak 625-661 (PDF 667-703)
 
-> **Kalau cuma sempat ingat satu hal:** arus kas, tingkat, satuan, dan periode harus konsisten sebelum kamu mengambil keputusan.
+> **Kalau cuma sempat ingat satu hal:** tulis satuan mata uang pada setiap kurs, lalu samakan mata uang arus kas, tingkat dan tenor sebelum membandingkan keputusan.
 
 > **Catatan sumber:** Bab 19 pada kontrak edisi 15 dipetakan ke Bab 18 edisi 16. Data kurs buku bersifat historis. Pembulatan forward Swiss dihitung ulang dan sesuai kunci buku.
 
@@ -82,6 +82,16 @@ Buku memakai data historis 7 Agustus 2020 untuk menjelaskan arah kuotasi. [hal. 
 S_{JPY/EUR}=\frac{S_{JPY/USD}}{S_{EUR/USD}}
 [hal. 636; PDF 678] [hal. 640; PDF 682] [hal. 644; PDF 686]
 ```
+
+### Contoh terbimbing: hapus satuan perantara
+
+Ilustrasi penulis memakai kuotasi 16.000 IDR/USD dan 160 JPY/USD. Angka ini asumsi latihan, bukan kurs pasar saat ini. Dasar metode: [hal. 636 dan 640; PDF 678 dan 682].
+
+1. Satu USD setara 16.000 IDR dan 160 JPY. Karena keduanya mempunyai penyebut USD, bagi 16.000 IDR/USD dengan 160 JPY/USD.
+2. USD saling menghapus dan hasilnya 100 IDR/JPY. Tagihan 1.000.000 JPY kemudian setara 100.000.000 IDR pada kurs ilustratif tersebut.
+3. Jika kuotasi dibalik menjadi JPY/IDR, nilainya 1/100 = 0,01 JPY/IDR. Jangan memakai angka 100 dengan label satuan yang terbalik.
+
+Sebelum menilai forward atau proyek, tulis mata uang pembayaran dan tanggalnya. Kurs silang memecahkan konversi satuan; ini belum memasukkan spread transaksi, biaya transfer atau perubahan kurs antarwaktu.
 
 <!-- self-check question="Bagaimana satuan menunjukkan arah pembagian kurs?" -->
 Kurs harus dibaca bersama satuan. Kuotasi JPY/USD menyatakan yen yang diperoleh dari satu USD. [hal. 636; PDF 678]
@@ -152,7 +162,7 @@ versi HP: overview dengan kartu teks; grafik desktop tetap dapat dibuka
 alt text: Covered Investment: investasi dengan kurs terkunci. Urutan ini menjelaskan paritas suku bunga.
 ```
 
-## 5a. Baca pasar dana dan kas yang kembali ke induk
+## 6. Baca pasar dana dan kas yang kembali ke induk
 
 Eurodollar berarti simpanan USD pada bank di luar Amerika Serikat, termasuk bank di luar Eropa. Eurobond diterbitkan dalam mata uang yang berbeda dari mata uang negara tempat penawaran, sedangkan foreign bond diterbitkan dalam mata uang negara pasar tujuan oleh penerbit asing. Nama instrumen tidak cukup menentukan risiko kurs; cocokkan mata uang kewajiban dengan kas pelunasan. [hal. 647-649; PDF 689-691]
 

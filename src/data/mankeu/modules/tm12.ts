@@ -7,9 +7,9 @@ export const TM12_READING: Reading = {
   "title": "Modal Kerja II: Persediaan dan Pendanaan",
   "intro": "Brigham & Houston, FFM 16e (2022), Bab 16, hal. cetak 577-589 (PDF 619-631). Halaman cetak buku memiliki selisih 42 dari halaman PDF.",
   "objectives": [
-    "Memilih konsep dan asumsi yang sesuai kasus.",
-    "Menunjukkan langkah hitungan, satuan, pembulatan, dan keputusan.",
-    "Menjelaskan batas model serta rujukannya."
+    "Menjelaskan hubungan persediaan dengan layanan, dana tertahan dan risiko kekurangan stok.",
+    "Menghitung biaya melepas diskon serta membedakan pendekatan tahunan sederhana dari efektif.",
+    "Membandingkan pinjaman, saldo kompensasi, biaya fasilitas, cicilan dan risiko pembaruan kredit."
   ],
   "layout": "layered",
   "ref": "Brigham & Houston, FFM 16e (2022), Bab 16, hal. cetak 577-589 (PDF 619-631)",
@@ -81,7 +81,7 @@ export const TM12_READING: Reading = {
         {
           "kind": "callout",
           "variant": "gist",
-          "text": "**Kalau cuma sempat ingat satu hal:** arus kas, tingkat, satuan, dan periode harus konsisten sebelum kamu mengambil keputusan."
+          "text": "**Kalau cuma sempat ingat satu hal:** bandingkan biaya pendanaan terhadap dana yang benar-benar dapat dipakai dan jangka waktu yang sama."
         },
         {
           "kind": "callout",
@@ -151,6 +151,26 @@ export const TM12_READING: Reading = {
           "kind": "formula",
           "text": "r_{nom}=\\frac{d}{1-d}\\frac{365}{n}\\qquad EAR=\\left(1+\\frac{d}{1-d}\\right)^{365/n}-1",
           "note": "d adalah proporsi diskon; n jeda hari diskon sampai pelunasan penuh. EAR berarti tingkat efektif tahunan; r nominal belum memperhitungkan penggandaan. [hal. 582; PDF 624] [hal. 587; PDF 629]"
+        },
+        {
+          "kind": "h3",
+          "text": "Contoh terbimbing: harga dari tambahan kredit 20 hari"
+        },
+        {
+          "kind": "p",
+          "text": "Ilustrasi penulis memakai faktur 10.000 dengan syarat 2/10, net 30. Pada hari 10, pembeli dapat menyelesaikannya dengan 9.800. Jika menunggu hari 30, pembeli membayar 10.000. Dasar konsep diskon sumber: [hal. 582; PDF 624]."
+        },
+        {
+          "kind": "ol",
+          "items": [
+            "Tambahan dana yang dipertahankan selama hari 10 sampai hari 30 adalah 9.800, yaitu kas yang seharusnya dibayar saat diskon diambil.",
+            "Biaya melepas diskon adalah 200. Biaya untuk 20 hari = 200/9.800 = 2,0408%; penyebutnya tidak memakai 10.000.",
+            "Dengan asumsi tahun 365 hari, pendekatan tahunan sederhana 2,0408% × 365/20 = 37,24%. Pengulangan dan penggandaan periode memberi tingkat efektif tahunan sekitar 44,59%."
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "Bandingkan dengan fasilitas bank pada tenor serta dasar biaya yang sama. Tingkat nominal bank belum cukup jika ada potongan bunga di muka, biaya atau saldo yang tidak dapat dipakai. Semua angka merupakan ilustrasi, bukan penawaran kredit aktual."
         },
         {
           "kind": "self-check",
@@ -277,7 +297,7 @@ export const TM12_READING: Reading = {
     },
     {
       "kind": "section",
-      "title": "4a. Bandingkan biaya fasilitas dan cicilan",
+      "title": "5. Bandingkan biaya fasilitas dan cicilan",
       "layer": "main",
       "blocks": [
         {

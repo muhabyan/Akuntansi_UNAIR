@@ -1,6 +1,6 @@
 # Implementasi MNK102 TM11
 
-Masukan otoritatif: 05_student_learning_version.md; SHA256 fb1f52771c0f32c1ea17f864ebf4b882eee9cda7c1e7c1e609c06a90ac3c394b.
+Masukan otoritatif: 05_student_learning_version.md; SHA256 c27aea45140182aa5e4bf74fbb49350d4cf0d1ddaff3da7734d8b187843ddccc.
 
 Konverter scripts/convert-mnk102.mjs menghasilkan src/data/mankeu/modules/tm11.ts, ekspor TM11_READING, Reading.layout layered, kunci 11. Output CRLF. Jangan mengedit teks TypeScript hasil konverter.
 
@@ -112,3 +112,6 @@ versi HP: grafik 360 unit dengan label 16 unit; rincian desktop dapat dibuka
 alt text: Allied Cash Budget: kebutuhan pinjaman dan surplus. Dana diperlukan saat saldo kumulatif berada di bawah target; gunakan angka bulat tabel sumber.
 data: {"panels": [{"title": "Kas setelah target saldo minimum", "xlabel": "Bulan: 7 Juli sampai 12 Desember", "ylabel": "Surplus (+)/pinjaman (-), juta USD", "series": [{"label": "Surplus atau kebutuhan pinjaman", "points": [[7, -21], [8, -58], [9, -100], [10, -56], [11, 58], [12, 102]]}], "xmin": 7, "xmax": 12, "ymin": -120, "ymax": 120, "xticks": [7, 8, 9, 10, 11, 12], "markers": [{"x": 9, "y": -100, "label": "September: pinjaman 100 juta USD"}]}]}
 ```
+## Elaborasi 14 Oktober 2026
+
+Sumber 05 diperbarui untuk tujuan spesifik, contoh terbimbing dekat rumus, dan alur penalaran. Angka ilustrasi baru diberi label penulis; tabel, rumus, gambar dan dua kasus sumber dipertahankan. TM09 mengurutkan teori sebelum kerangka kasus. SHA256 05: c27aea45140182aa5e4bf74fbb49350d4cf0d1ddaff3da7734d8b187843ddccc. Validasi terakhir dicatat di docs/pra-uas-elaboration-progress.md.

@@ -1,0 +1,154 @@
+{
+  "tm": 9,
+  "layout": "layered",
+  "title": "Pengukuran Kinerja Pemerintah: Input, Output, Outcome dan Value for Money",
+  "ref": "Kontrak ASP TM9; UU 15/2004 Pasal 4; ISSAI 300; ilustrasi pengukuran penulis",
+  "intro": "Anggaran yang tersisa belum cukup untuk membuktikan keberhasilan program. Pisahkan sumber daya yang dibeli, layanan yang dihasilkan, dan perubahan yang ingin dicapai sebelum menilai ekonomi, efisiensi, dan efektivitas.",
+  "objectives": [
+    "Membedakan input, proses, output dan outcome.",
+    "Menafsirkan ukuran ekonomi, efisiensi dan efektivitas beserta batasnya.",
+    "Merancang indikator dan bukti kinerja yang sesuai tujuan layanan."
+  ],
+  "blocks": [
+    {
+      "kind": "section",
+      "layer": "main",
+      "title": "1. Fondasi: ukur tujuan program, bukan hanya pengeluaran",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Pengukuran kinerja membandingkan capaian dengan sasaran dan ukuran yang ditentukan. Mulai dari masalah layanan, tujuan, indikator, target, dan data realisasi. Input adalah sumber daya; proses mengubahnya menjadi output barang/jasa; outcome adalah perubahan yang diharapkan dari layanan itu. Rantai ini menjadi alat analisis, bukan bukti otomatis bahwa setiap perubahan disebabkan program."
+        },
+        {
+          "kind": "p",
+          "text": "Misalnya pada pelatihan kerja: biaya dan pengajar adalah input, pelaksanaan kelas adalah proses, peserta yang menyelesaikan pelatihan adalah output, dan penyerapan kerja adalah outcome. Menambah peserta belum memastikan penyerapan kerja meningkat. Ilustrasi penulis untuk membedakan konsep."
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "layer": "main",
+      "title": "2. Tiga pertanyaan Value for Money",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Ekonomi menilai perolehan sumber daya dengan harga terbaik sambil menjaga waktu, jumlah dan mutu. Efisiensi menghubungkan sumber daya dengan output, termasuk mutu dan ketepatan waktu. Efektivitas menilai pencapaian tujuan dan hasil yang dimaksud. Ketiganya dapat memberi jawaban berbeda untuk program yang sama. Sumber: [INTOSAI, ISSAI 300 paras. 11 dan 27](https://www.issai.org/wp-content/uploads/2019/08/ISSAI-300.pdf)"
+        },
+        {
+          "kind": "table",
+          "title": "Pertanyaan dan bukti yang diperlukan",
+          "headers": [
+            "Aspek",
+            "Pertanyaan analisis",
+            "Bukti tambahan"
+          ],
+          "rows": [
+            [
+              "Ekonomi",
+              "Apakah input diperoleh dengan biaya yang layak?",
+              "Harga pembanding, spesifikasi, kuantitas dan waktu pengadaan"
+            ],
+            [
+              "Efisiensi",
+              "Berapa sumber daya untuk setiap unit layanan?",
+              "Biaya yang sebanding serta output dengan definisi dan mutu yang sama"
+            ],
+            [
+              "Efektivitas",
+              "Apakah tujuan dan target hasil tercapai?",
+              "Target, hasil terukur, periode dan faktor lain yang memengaruhi hasil"
+            ]
+          ],
+          "caption": "Ringkasan konsep ISSAI 300 para. 11; contoh jenis bukti dirancang penulis.",
+          "stackOnMobile": true
+        },
+        {
+          "kind": "pendalaman",
+          "title": "Cara membaca rasio tanpa membuat kesimpulan berlebihan",
+          "blocks": [
+            {
+              "kind": "p",
+              "text": "Realisasi dibagi anggaran menunjukkan penyerapan, bukan bukti lengkap ekonomi. Sisa anggaran bisa muncul karena harga lebih baik, tetapi bisa pula karena barang kurang, mutu turun, atau kegiatan tertunda. Biaya per output yang turun mendukung efisiensi hanya jika cakupan biaya dan kualitas output sebanding."
+            },
+            {
+              "kind": "p",
+              "text": "Untuk indikator hasil yang semakin tinggi semakin baik, capaian dapat dihitung realisasi/target. Pada indikator yang semakin rendah semakin baik, seperti waktu tunggu atau angka kematian, interpretasinya harus dibalik sesuai rancangan ukuran. Jangan memberi label buruk hanya karena rasionya kurang dari 100%. Ini pedoman analisis penulis untuk menerapkan ukuran sesuai tujuan."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "layer": "main",
+      "title": "3. Dari indikator menuju evaluasi",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Tentukan definisi operasional: siapa yang dihitung, periode, satuan, sumber data, dan cara verifikasi. Pisahkan target output dan target outcome. Pilih pembanding yang masuk akal, lalu jelaskan sebab selisih dan perbaikannya; angka capaian saja tidak menjelaskan penyebab."
+        },
+        {
+          "kind": "pendalaman",
+          "title": "Keadilan, kualitas dan kemungkinan perilaku menyimpang",
+          "blocks": [
+            {
+              "kind": "p",
+              "text": "Tambahkan pemeriksaan distribusi layanan: apakah kelompok rentan terjangkau dan apakah mutu tetap terjaga? Ini sudut analisis tambahan, bukan mengganti tiga E. Target jumlah dapat mendorong layanan mudah dihitung sambil mengabaikan kasus sulit; gunakan indikator mutu dan akses untuk menguji kemungkinan itu. Contoh pertanyaan analitis penulis."
+            },
+            {
+              "kind": "p",
+              "text": "Dokumen perencanaan, target, realisasi dan laporan kinerja perlu dapat ditelusuri. BPKP juga menekankan desain intervensi, indikator terukur serta pengujian efektivitas dan efisiensi: [BPKP, evaluasi perencanaan dan penganggaran, 7 Februari 2025](https://www.bpkp.go.id/id/unitKerja/33/berita/x6Yz/mengenal-lebih-dalam-evaluasi-perencanaan-dan-penganggaran-2025-bersama-bpkp-sulteng)."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "layer": "main",
+      "title": "4. Kasus bertahap",
+      "blocks": [
+        {
+          "kind": "example",
+          "title": "Contoh terbimbing: Pelatihan kerja",
+          "blocks": [
+            {
+              "kind": "p",
+              "text": "Ilustrasi penulis: anggaran Rp200 juta untuk 100 peserta; realisasi Rp180 juta, output 100 peserta, 85 orang bekerja dari target 80. Hitung tiga ukuran dan batas kesimpulannya."
+            },
+            {
+              "kind": "p",
+              "text": "Penyerapan = 180/200 × 100% = 90%, sehingga ada selisih anggaran Rp20 juta. Biaya per peserta = Rp1,8 juta dibanding rencana Rp2 juta. Capaian penyerapan kerja = 85/80 × 100% = 106,25%."
+            },
+            {
+              "kind": "p",
+              "text": "Target outcome numerik terlampaui. Efisiensi didukung jika peserta, mutu dan cakupan biaya sebanding. Ekonomi masih memerlukan pembanding harga serta mutu input. Data ini belum cukup untuk menyatakan Value for Money sempurna atau seluruh penyerapan kerja disebabkan pelatihan."
+            }
+          ]
+        },
+        {
+          "kind": "solution-reveal",
+          "title": "Layanan cuci darah",
+          "prompt": "Ilustrasi penulis, bukan data aktual rumah sakit: anggaran Rp10 miliar, realisasi Rp8,5 miliar; target 5.000 pasien dan realisasi 5.500; outcome kesehatan dilaporkan naik 25%, tetapi target outcome tidak diberikan.",
+          "blocks": [
+            {
+              "kind": "p",
+              "text": "Penyerapan 85% dan capaian output 110%. Kenaikan outcome 25% menunjukkan perubahan yang perlu diperiksa definisi serta datanya. Rasio realisasi/target outcome belum dapat dihitung karena target outcome tidak tersedia. Biaya pengadaan alat saja juga belum mewakili seluruh biaya layanan per pasien."
+            }
+          ]
+        },
+        {
+          "kind": "self-check",
+          "question": "Apakah sisa anggaran 15% sudah membuktikan program ekonomis?",
+          "answer": [
+            {
+              "kind": "p",
+              "text": "Belum. Periksa apakah jumlah, mutu dan ketepatan waktu input terpenuhi, lalu bandingkan harga yang layak. Sisa akibat kegiatan tidak terlaksana berbeda dari pengadaan input setara dengan harga lebih baik."
+            }
+          ],
+          "signal": "Tulis alasan dengan menyebut dasar perbandingan atau batas entitas sebelum membuka jawaban."
+        }
+      ]
+    }
+  ]
+}

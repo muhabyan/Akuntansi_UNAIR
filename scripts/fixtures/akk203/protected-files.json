@@ -37,14 +37,26 @@
   },
   "src/data/banksoal/aks201.ts": {
     "worktree": "37789c06e1df93271b6954295e3d59b1b534b06b86c1629d70e0e1549f993add",
-    "repository": "03c811dbdd255bec587ecd84214a036a8851b620ada4139261fd4b3c9b9b5fd5"
+    "repository": "03c811dbdd255bec587ecd84214a036a8851b620ada4139261fd4b3c9b9b5fd5",
+    "authorizedPraUasElaboration20261014": [
+      "b8aafe1817773c73eca491807d21690fd860b437baac27ece86cb63b332169e4",
+      "c9961b2ef62d8dab0070ef66f56f9216d61ad87ce61125f5ba6f54dc73e9c8d8"
+    ]
   },
   "src/data/quizzes/aks201.ts": {
     "worktree": "93858cba4b2dfe5a392947d665332ceaf15b447c8eebd1af471203791f632e0d",
-    "repository": "13248ef0a8cb1d90fb9fd946dc8573a6785ec38b0a8944fb68225983fc004dc5"
+    "repository": "13248ef0a8cb1d90fb9fd946dc8573a6785ec38b0a8944fb68225983fc004dc5",
+    "authorizedPraUasElaboration20261014": [
+      "2b37ffd684c8e0f05d33bbc4f8f9a4e9a8c70863409e50d0d4103e409e4a55e7",
+      "bf447041754e34e53685ddabc704dcf87be369f82228f48edcaeebe6a63e139a"
+    ]
   },
   "src/data/flashcards/aks201.ts": {
     "worktree": "2638e994216ec22b56cbf4de26ebb0ab4b360432b409b0687f45df615527e761",
-    "repository": "9b9a854495871b286c3d748ba4e8dfbf8437398aaf2e722fa9a81e4590be508d"
+    "repository": "9b9a854495871b286c3d748ba4e8dfbf8437398aaf2e722fa9a81e4590be508d",
+    "authorizedPraUasElaboration20261014": [
+      "14bd7afdad5ec9e8cd0ae57e05acda93a2e3df0fe7879564dae73d808015507d",
+      "d839825bd17f9605878a81e14238f31ee2becd6d22e3bdf49579cdfe3f885b20"
+    ]
   }
 }

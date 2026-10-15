@@ -1,6 +1,6 @@
 # Implementasi MNK102 TM14
 
-Masukan otoritatif: 05_student_learning_version.md; SHA256 9b12ca0c01792f9dcb361a379643367822da64a0383d1a5bc1a3a99b497666ee.
+Masukan otoritatif: 05_student_learning_version.md; SHA256 39930f5424cf942fbb6ef6ded5d136ea25f531f8b5bc46310e1468c09facbfd7.
 
 Konverter scripts/convert-mnk102.mjs menghasilkan src/data/mankeu/modules/tm14.ts, ekspor TM14_READING, Reading.layout layered, kunci 14. Output CRLF. Jangan mengedit teks TypeScript hasil konverter.
 
@@ -76,3 +76,6 @@ versi HP: overview dengan kartu teks; grafik desktop tetap dapat dibuka
 alt text: A View of Merger Analysis: rentang tawaran. Tawaran membagi total manfaat antara pemilik kedua perusahaan.
 data: {"panels":[{"title":"Manfaat pemegang saham","xlabel":"Harga target (juta USD)","ylabel":"Perubahan kekayaan (juta USD)","series":[{"label":"Hightech (acquirer)","points":[[52.5,44],[106.5,-10]]},{"label":"Apex (target)","points":[[52.5,-10],[106.5,44]]}],"xmin":52.5,"xmax":106.5,"ymin":-15,"ymax":45,"xticks":[62.5,86.5,96.5]}]}
 ```
+## Elaborasi 14 Oktober 2026
+
+Sumber 05 diperbarui untuk tujuan spesifik, contoh terbimbing dekat rumus, dan alur penalaran. Angka ilustrasi baru diberi label penulis; tabel, rumus, gambar dan dua kasus sumber dipertahankan. TM09 mengurutkan teori sebelum kerangka kasus. SHA256 05: 39930f5424cf942fbb6ef6ded5d136ea25f531f8b5bc46310e1468c09facbfd7. Validasi terakhir dicatat di docs/pra-uas-elaboration-progress.md.

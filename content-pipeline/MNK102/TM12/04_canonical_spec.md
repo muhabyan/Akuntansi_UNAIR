@@ -2,7 +2,7 @@
 
 Status: READY_WITH_SCOPE_LIMITATION
 
-SHA256 05 (CRLF): 737dda1913a632ed12210a74fa94dc1a283fdaf3f9ce6ffa2f7f9af8b4dc435a
+SHA256 05 (CRLF): bc161276d81749fd8ded8766464a1d308ecf043fb5e41993595713f0826b71ef
 
 Brigham & Houston, FFM 16e (2022), Bab 16, hal. cetak 577-589 (PDF 619-631)
 
@@ -124,3 +124,6 @@ Bunga bulan 30 hari dibulatkan 27,08 USD; basis 360 tidak boleh diganti 365 diam
 EAR=(1+0.0325/12)^{12}-1=0.032989
 EAR 3,2989% mengikuti angka buku. Tarif tersebut adalah asumsi historis contoh, bukan harga kredit kini. [hal. 587; PDF 629]
 ```
+## Elaborasi 14 Oktober 2026
+
+Sumber 05 diperbarui untuk tujuan spesifik, contoh terbimbing dekat rumus, dan alur penalaran. Angka ilustrasi baru diberi label penulis; tabel, rumus, gambar dan dua kasus sumber dipertahankan. TM09 mengurutkan teori sebelum kerangka kasus. SHA256 05: bc161276d81749fd8ded8766464a1d308ecf043fb5e41993595713f0826b71ef. Validasi terakhir dicatat di docs/pra-uas-elaboration-progress.md.

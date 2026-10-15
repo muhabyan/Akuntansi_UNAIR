@@ -1,0 +1,302 @@
+{
+  "tm": 13,
+  "title": "PPnBM, Saat Terutang, Faktur, dan Retur",
+  "ref": "RPP Perpajakan II, halaman PDF 3-5, baris pertemuan 9-15 dan catatan UAS studi kasus",
+  "intro": "Menghitung PPN serta PPnBM dengan saat, tempat, klasifikasi, dan tahun transaksi yang jelas. Membedakan faktur biasa, gabungan, pengganti, pembatalan, serta dokumen yang dipersamakan. Contoh dan latihan di bawah menyatakan tahun kasus, dasar aturan, satuan, dan pembulatan.",
+  "objectives": [
+    "Menghitung PPN serta PPnBM dengan saat, tempat, klasifikasi, dan tahun transaksi yang jelas.",
+    "Membedakan faktur biasa, gabungan, pengganti, pembatalan, serta dokumen yang dipersamakan.",
+    "Menentukan dampak kurs, retur, pembatalan jasa, dan sanksi berdasarkan dokumen."
+  ],
+  "blocks": [
+    {
+      "kind": "callout",
+      "variant": "info",
+      "title": "Cakupan, sumber, dan tahun kasus",
+      "text": "Contoh mengikuti tahun yang tertulis pada soal, terutama 2024/2025. Pilih aturan, tarif, dokumen dan tenggat sesuai tahun kasus. Rujukan mencakup RPP, materi dosen, peraturan primer dan bacaan terbuka yang ditautkan. Buku Waluyo/Resmi dan arsip UAS belum tersedia; prioritas belajar didasarkan pada RPP, dengan batas sumber dijelaskan pada bagian bacaan."
+    },
+    {
+      "kind": "callout",
+      "variant": "tip",
+      "title": "Perkiraan fokus UAS",
+      "text": "Perkiraan berdasarkan capaian RPP dan contoh sumber: PPnBM, Saat Terutang, Faktur, dan Retur. Latih keputusan aturan sebelum hitungan, langkah per lapisan, dokumentasi, dan koreksi kesalahan. Tidak ada arsip UAS lokal yang mengonfirmasi bobot topik atau bentuk soal. RPP menyebut studi kasus komprehensif; latihan berbahasa Indonesia mengikuti materi lokal."
+    },
+    {
+      "kind": "h2",
+      "text": "PPnBM: karakter, tarif, dan penghitungan"
+    },
+    {
+      "kind": "p",
+      "text": "PPnBM atau Pajak Penjualan atas Barang Mewah dikenakan satu kali pada impor atau penyerahan BKP mewah oleh produsen. PPN tetap dikenakan pada transaksi yang sama jika syarat terpenuhi."
+    },
+    {
+      "kind": "p",
+      "text": "Tarif PPnBM bergantung klasifikasi produk, dengan kerangka UU umumnya 10%-200% dan ekspor BKP mewah 0%; tarif spesifik wajib ditelusuri aturan produknya. Kasus memberikan klasifikasi sah 20% sebagai input, tidak menyatakan semua barang mewah bertarif 20%."
+    },
+    {
+      "kind": "p",
+      "text": "PPnBM tidak dapat dikreditkan sebagai PM PPN dan tidak ditambahkan ke DPP PPN."
+    },
+    {
+      "kind": "p",
+      "text": "Rujukan: UU PPN Pasal 5, 8 dan 10 (paragraf satu kali pengenaan, tarif, serta larangan pengkreditan PPnBM); PMK 131/2024 Pasal 2 dan 5."
+    },
+    {
+      "kind": "h2",
+      "text": "Saat dan tempat terutang"
+    },
+    {
+      "kind": "p",
+      "text": "Pasal 11 UU PPN dan PP 44/2022 Pasal 23 mengatur saat terutang: penyerahan, impor, pemanfaatan luar negeri, atau ekspor; pembayaran yang mendahului penyerahan menimbulkan pajak saat pembayaran. Faktur dibuat pada saat yang diwajibkan, termasuk uang muka."
+    },
+    {
+      "kind": "p",
+      "text": "Tempat terutang mengikuti tempat tinggal/kedudukan atau tempat kegiatan usaha menurut Pasal 12 UU PPN. PP 44/2022 Pasal 25 memungkinkan pemusatan melalui pemberitahuan tertulis dan administrasi penjualan/keuangan terpusat."
+    },
+    {
+      "kind": "p",
+      "text": "Cabang tidak otomatis dianggap terpusat tanpa pemenuhan syarat administrasi."
+    },
+    {
+      "kind": "p",
+      "text": "Rujukan: UU PPN Pasal 11-13 (paragraf saat, tempat, dan faktur); PP 44/2022 Pasal 23 dan 25 (paragraf saat terutang dan pemberitahuan pemusatan)."
+    },
+    {
+      "kind": "h3",
+      "text": "Contoh terbimbing: uang muka dan sisa pembayaran"
+    },
+    {
+      "kind": "ol",
+      "items": [
+        "Catat tanggal uang diterima dan tanggal penyerahan, lalu tentukan peristiwa pajak masing-masing.",
+        "Pisahkan bagian harga yang sudah dipajaki saat uang muka.",
+        "Saat penyerahan, hitung bagian yang belum diperhitungkan dan hubungkan dokumennya agar tidak terjadi pengenaan ganda."
+      ]
+    },
+    {
+      "kind": "p",
+      "text": "Ilustrasi penulis: BKP biasa pada 2024, harga sebelum PPN Rp 400 juta dan uang muka 30% diterima sebelum penyerahan. Uang muka Rp 120 juta membawa PPN Rp 13,2 juta pada asumsi tarif 11%. Pada penyerahan, sisa dasar Rp 280 juta membawa PPN Rp 30,8 juta. Total PPN Rp 44 juta sama dengan 11% × Rp 400 juta. Jangan menghitung Rp 44 juta penuh lalu menambahkan Rp 13,2 juta sekali lagi. Contoh tidak mencakup PPnBM atau fasilitas khusus. Rujukan: UU PPN Pasal 11 dan 13; PP 44/2022 Pasal 23."
+    },
+    {
+      "kind": "pendalaman",
+      "title": "Kesalahan dokumen dan pembatalan transaksi",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Jika transaksi tetap terjadi tetapi isi faktur keliru, analisis jalur koreksi/penggantian. Jika transaksinya batal, analisis pembatalan. Pada kasus 2024, ikuti hubungan faktur asal dan SPT yang sudah dilaporkan; penerimaan kas, pembetulan akuntansi, dan perubahan dokumen pajak tidak selalu menjadi satu kejadian. Rujukan: PER-03/PJ/2022 Pasal 22–24 dan Lampiran J–K; prosedur 2025 dibaca sesuai tahunnya."
+        }
+      ]
+    },
+    {
+      "kind": "h2",
+      "text": "Pembukuan PKP dan jenis dokumen"
+    },
+    {
+      "kind": "p",
+      "text": "Simpan harga jual, penggantian, diskon sah, pajak keluaran, pajak masukan, uang muka, retur dan pembatalan, dengan nomor faktur serta masa yang cocok. Faktur penyerahan, faktur gabungan sesuai syarat, dan dokumen tertentu yang dipersamakan mempunyai fungsi masing-masing. Formal berarti kelengkapan yang dipersyaratkan; material berarti mencerminkan transaksi sebenarnya. Jangan menerima kredit dari faktur salah identitas hanya karena jumlah PPN cocok. Rujukan: UU PPN Pasal 11 dan 13 ayat (1a), (5), (9) (paragraf saat terutang, pembuatan faktur, syarat formal dan material)."
+    },
+    {
+      "kind": "h2",
+      "text": "Pembetulan, penggantian, dan sanksi"
+    },
+    {
+      "kind": "p",
+      "text": "Bedakan koreksi isi faktur dengan pembatalan transaksi. Jika identitas/nilai salah, gunakan prosedur pembetulan atau penggantian yang berlaku pada tahun sistem dan rekonsiliasi masa terkait; jangan menghapus dokumen tanpa jejak."
+    },
+    {
+      "kind": "p",
+      "text": "PER-03/PJ/2022 pada materi lama tidak dipresentasikan sebagai satu-satunya prosedur untuk Coretax 2025. PPN terutang tidak hilang karena faktur terlambat."
+    },
+    {
+      "kind": "p",
+      "text": "Kasus STP faktur Pasal 14 ayat (4) sesudah HPP memakai denda 1% DPP untuk pemicu yang dipersyaratkan, di luar pokok dan sanksi lain. Perlu menilai pemicu, bukan otomatis memberi denda pada seluruh salah ketik."
+    },
+    {
+      "kind": "p",
+      "text": "Rujukan: UU HPP, halaman PDF 14-16, perubahan Pasal 14 ayat (1) huruf d-e dan ayat (4) UU KUP."
+    },
+    {
+      "kind": "h2",
+      "text": "Alur faktur pada kasus tahun 2024"
+    },
+    {
+      "kind": "p",
+      "text": "Faktur gabungan mengelompokkan penyerahan kepada pembeli yang sama selama satu bulan, dibuat paling lambat akhir bulan penyerahan dan tunduk pengecualian fasilitas serta kode transaksi. Salah isi faktur dengan transaksi tetap berlangsung ditangani melalui faktur pengganti."
+    },
+    {
+      "kind": "p",
+      "text": "Transaksi dibatalkan atau seharusnya tidak dibuatkan faktur memerlukan pembatalan faktur. Jika faktur asal sudah dilaporkan, penjual dan pembeli yang telah melaporkannya membetulkan SPT masa bersangkutan selama pembetulan masih diperbolehkan."
+    },
+    {
+      "kind": "p",
+      "text": "Simpan hubungan faktur asal, pengganti, bukti pembatalan, dan SPT. Alur ini merujuk e-Faktur 2024; prosedur elektronik 2025 perlu aturan tahun tersebut."
+    },
+    {
+      "kind": "p",
+      "text": "Rujukan: PER-03/PJ/2022, Pasal 4 dan 22-24 serta Lampiran J-K (paragraf faktur gabungan, penggantian, pembatalan, dan pembetulan SPT)."
+    },
+    {
+      "kind": "h2",
+      "text": "Valuta asing, retur, dan pembatalan"
+    },
+    {
+      "kind": "p",
+      "text": "Untuk transaksi selain rupiah, PP 44/2022 Pasal 21 menggunakan kurs Menteri Keuangan saat faktur/dokumen seharusnya dibuat. Kurs bank atau akhir bulan akuntansi tidak menggantikan kurs pajak tersebut."
+    },
+    {
+      "kind": "p",
+      "text": "Retur BKP dengan nota sah mengurangi PPN/PPnBM pada masa retur; pembatalan JKP dengan dokumen sah mengurangi PPN masa pembatalan menurut Pasal 5A UU PPN. Pihak pembeli menyesuaikan PM terkait."
+    },
+    {
+      "kind": "p",
+      "text": "Nilai asal, tarif, dan dokumen harus dapat ditelusuri lintas masa."
+    },
+    {
+      "kind": "p",
+      "text": "Rujukan: PP 44/2022, Pasal 21 (paragraf konversi valuta asing dengan kurs Menteri Keuangan). Dasar retur dan pembatalan: UU PPN Pasal 5A ayat (1)-(2) (paragraf penurunan PPN/PPnBM karena retur BKP dan pembatalan JKP)."
+    },
+    {
+      "kind": "table",
+      "title": "Dokumen dan pemicu koreksi",
+      "headers": [
+        "Peristiwa",
+        "Tindakan",
+        "Pengujian"
+      ],
+      "rows": [
+        [
+          "Pembayaran sebelum penyerahan",
+          "Faktur uang muka",
+          "Tarif sesuai tahun dan sisa tidak dipajaki ganda"
+        ],
+        [
+          "Identitas/nilai faktur salah",
+          "Prosedur perbaikan sesuai sistem tahun",
+          "Syarat formal dan material"
+        ],
+        [
+          "Retur BKP",
+          "Nota retur sah",
+          "Kurangi PPN/PPnBM sesuai masa retur"
+        ],
+        [
+          "Pembatalan JKP",
+          "Dokumen pembatalan sah",
+          "Kurangi PPN masa pembatalan"
+        ],
+        [
+          "Valuta asing",
+          "Konversi kurs KMK",
+          "Saat faktur seharusnya dibuat"
+        ]
+      ],
+      "caption": "Rujukan: UU PPN Pasal 11 dan 13 ayat (1a), (5), (9) (paragraf saat terutang, pembuatan faktur, syarat formal dan material).",
+      "stackOnMobile": true
+    },
+    {
+      "kind": "formula",
+      "text": "\\mathrm{Tagihan}=\\mathrm{Harga}+\\mathrm{PPN}+\\mathrm{PPnBM}",
+      "note": "Harga di sini adalah nilai sebelum PPN dan PPnBM. PPnBM dihitung atas DPP sesuai klasifikasi; jangan menambahkan PPnBM ke DPP PPN tanpa dasar. Rujukan: UU PPN Pasal 5, 8, 8A dan 10. Tarif PPnBM dan tahun dinyatakan pada soal."
+    },
+    {
+      "kind": "solution-reveal",
+      "title": "Kasus 13A: Rantai barang mewah dan retur lintas masa",
+      "prompt": "Pada Maret 2025 produsen menjual BKP mewah yang telah diklasifikasi dengan PPnBM 20% kepada distributor, harga sebelum pajak Rp500 juta. April distributor menjual kembali barang sejenis Rp700 juta sebelum pajak. Pada Mei distributor mengembalikan sebagian pembelian Maret senilai Rp50 juta DPP harga asal dengan nota retur sah. Rujukan: UU PPN Pasal 5, 8 dan 10 (paragraf satu kali pengenaan, tarif, serta larangan pengkreditan PPnBM); PMK 131/2024 Pasal 2 dan 5; UU PPN Pasal 5A ayat (1)-(2) (paragraf retur BKP dan pembatalan JKP); UU PPN Pasal 11 dan 13 ayat (1a), (5), (9) (paragraf saat terutang, pembuatan faktur, syarat formal dan material).",
+      "promptBlocks": [
+        {
+          "kind": "ul",
+          "items": [
+            "PPN 12% atas harga penuh, tanpa transisi eceran Januari dan tanpa insentif.",
+            "Retur Mei merujuk faktur produsen Maret; semua pihak PKP."
+          ]
+        },
+        {
+          "kind": "ol",
+          "items": [
+            "Hitung PPN, PPnBM, dan tagihan produsen.",
+            "Hitung pajak keluaran penjualan distributor dan jelaskan PPnBM pembelian.",
+            "Hitung pengurangan PPN serta PPnBM produsen pada masa Mei dan rekonsiliasi dokumen."
+          ]
+        }
+      ],
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Produsen Maret: PPN 12% × Rp500 juta = Rp60 juta; PPnBM 20% × Rp500 juta = Rp100 juta; tagihan Rp660 juta. Distributor April: PPN 12% × Rp700 juta = Rp84 juta, PPnBM tahap jual kembali Rp0. PPnBM tidak dikreditkan sebagai PM PPN; biaya barang mengikuti pembukuan. Retur Mei: pengurangan PK produsen 12% × Rp50 juta = Rp6 juta; PPnBM 20% × Rp50 juta = Rp10 juta. Distributor menyesuaikan PM terkait retur Rp6 juta serta pembukuannya. Jangan memindahkan retur ke Maret hanya karena faktur asal Maret. Hasil rupiah bulat; tarif PPnBM 20% adalah asumsi klasifikasi kasus, perlu dokumen produk. Rujukan: UU PPN Pasal 5, 8 dan 10 (paragraf satu kali pengenaan, tarif, serta larangan pengkreditan PPnBM); PMK 131/2024 Pasal 2 dan 5; UU PPN Pasal 5A ayat (1)-(2) (paragraf retur BKP dan pembatalan JKP); UU PPN Pasal 11 dan 13 ayat (1a), (5), (9) (paragraf saat terutang, pembuatan faktur, syarat formal dan material)."
+        }
+      ],
+      "revealLabel": "Buka langkah hitung dan analisis"
+    },
+    {
+      "kind": "solution-reveal",
+      "title": "Kasus 13B: Uang muka, kurs pajak, dan faktur bermasalah",
+      "prompt": "Agustus 2024 PKP menerima uang muka Rp30 juta untuk BKP harga penuh Rp100 juta; penyerahan dan pembayaran sisa terjadi September. Terpisah, JKP September ditagih USD10.000, kurs KMK Rp15.000/USD dan kurs bank Rp16.000/USD. Faktur transaksi BKP DPP Rp100 juta dibuat terlambat sehingga dikenai STP Pasal 14 ayat (4). Rujukan: UU PPN Pasal 11 dan 13 ayat (1a), (5), (9) (paragraf saat terutang, pembuatan faktur, syarat formal dan material); PP 44/2022, Pasal 21 (paragraf konversi valuta asing dengan kurs Menteri Keuangan); UU HPP, halaman PDF 14-16, perubahan Pasal 14 ayat (1) huruf d-e dan ayat (4) UU KUP; UU PPN Pasal 5A ayat (1)-(2) (paragraf retur BKP dan pembatalan JKP).",
+      "promptBlocks": [
+        {
+          "kind": "ul",
+          "items": [
+            "Tarif PPN 2024 11%; denda kasus faktur 1% dari DPP, tanpa sanksi lain.",
+            "November ada pembatalan sah JKP lain Rp10 juta sebelum PPN yang telah difakturkan."
+          ]
+        },
+        {
+          "kind": "ol",
+          "items": [
+            "Susun masa dan PPN uang muka serta sisa.",
+            "Hitung DPP rupiah dan PPN JKP valas.",
+            "Hitung denda faktur serta pengurangan PK pembatalan; bedakan pemicunya."
+          ]
+        }
+      ],
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Uang muka Agustus Rp30 juta × 11% = Rp3,3 juta. Sisa September Rp70 juta × 11% = Rp7,7 juta; total Rp11 juta tanpa pungutan ganda. JKP valas: USD10.000 × Rp15.000/USD = Rp150 juta, PPN Rp16,5 juta. Kurs bank tidak menggantikan kurs KMK saat faktur seharusnya dibuat. Denda faktur = 1% × Rp100 juta = Rp1 juta, di luar pokok PPN. Pembatalan JKP November mengurangi PK 11% × Rp10 juta = Rp1,1 juta dengan dokumen sah. Pemicu denda dan pembatalan berbeda; pembatalan transaksi lain tidak menghapus denda faktur. Satuan USD habis saat konversi, hasil rupiah bulat. Rujukan: UU PPN Pasal 11 dan 13 ayat (1a), (5), (9) (paragraf saat terutang, pembuatan faktur, syarat formal dan material); PP 44/2022, Pasal 21 (paragraf konversi valuta asing dengan kurs Menteri Keuangan); UU HPP, halaman PDF 14-16, perubahan Pasal 14 ayat (1) huruf d-e dan ayat (4) UU KUP; UU PPN Pasal 5A ayat (1)-(2) (paragraf retur BKP dan pembatalan JKP)."
+        }
+      ],
+      "revealLabel": "Buka langkah hitung dan analisis"
+    },
+    {
+      "kind": "h2",
+      "text": "Bacaan terbuka sesuai RPP"
+    },
+    {
+      "kind": "ul",
+      "items": [
+        "[DJP manual SPT Masa PPN (edisi 20240909)](https://pajak.go.id/sites/default/files/2025-04/Buku%20Manual%20SPT%20Masa%20PPN.pdf#page=9): PDF 9-20 faktur keluaran, 25-27 retur, 39-45 pengganti, 46-51 batal."
+      ]
+    },
+    {
+      "kind": "p",
+      "text": "Panduan yang diunggah pada direktori 2025 masih menampilkan edisi September 2024 di sampul. Gunakan sebagai ilustrasi Coretax. Prosedur hukum kasus 2024 mengikuti PER-03/PJ/2022 beserta perubahannya; buku aplikasi tidak menetapkan tarif PPnBM, kurs, atau sanksi."
+    },
+    {
+      "kind": "h2",
+      "text": "Rujukan yang dapat ditelusuri"
+    },
+    {
+      "kind": "ul",
+      "items": [
+        "UU PPN Pasal 5, 8 dan 10 (paragraf satu kali pengenaan, tarif, serta larangan pengkreditan PPnBM); PMK 131/2024 Pasal 2 dan 5.",
+        "UU PPN Pasal 11 dan 13 ayat (1a), (5), (9) (paragraf saat terutang, pembuatan faktur, syarat formal dan material).",
+        "UU HPP, halaman PDF 14-16, perubahan Pasal 14 ayat (1) huruf d-e dan ayat (4) UU KUP.",
+        "PP 44/2022, Pasal 21 (paragraf konversi valuta asing dengan kurs Menteri Keuangan).",
+        "PER-03/PJ/2022, Pasal 4 dan 22-24 serta Lampiran J-K (paragraf faktur gabungan, penggantian, pembatalan, dan pembetulan SPT)."
+      ]
+    },
+    {
+      "kind": "p",
+      "text": "Sumber resmi untuk memeriksa paragraf: [PP 44/2022](https://pajak.go.id/id/peraturan/penerapan-terhadap-pajak-pertambahan-nilai-barang-dan-jasa-dan-pajak-penjualan-atas). Halaman PDF dihitung dari awal berkas, bukan nomor slide yang dapat berbeda satu halaman."
+    },
+    {
+      "kind": "p",
+      "text": "Sumber resmi tambahan: [PER-03/PJ/2022](https://pajak.go.id/index.php/id/peraturan/faktur-pajak)."
+    },
+    {
+      "kind": "callout",
+      "variant": "warning",
+      "title": "Batas sumber dan penerapan",
+      "text": "Materi memakai tahun kasus yang disebutkan. Aturan khusus memerlukan klasifikasi, dokumen, dan ketentuan pelaksana yang sesuai. Katalog Waluyo/Resmi sudah ditelusuri, tetapi isi bukunya belum diakses. Bacaan terbuka tersedia pada bagian di atas. Arsip UAS Perpajakan II belum ditemukan untuk mengonfirmasi bobot dan bentuk ujian."
+    }
+  ]
+}

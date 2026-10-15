@@ -7,9 +7,9 @@ export const TM9_READING: Reading = {
   "title": "Struktur Modal dan Leverage",
   "intro": "Brigham & Houston, FFM 16e (2022), Bab 14, hal. cetak 478-520 (PDF 520-562). Halaman cetak buku memiliki selisih 42 dari halaman PDF.",
   "objectives": [
-    "Memilih konsep dan asumsi yang sesuai kasus.",
-    "Menunjukkan langkah hitungan, satuan, pembulatan, dan keputusan.",
-    "Menjelaskan batas model serta rujukannya."
+    "Memisahkan risiko bisnis, operating leverage dan financial leverage.",
+    "Menggunakan bobot pasar, D/E, beta dan WACC dengan asumsi yang tepat.",
+    "Membandingkan model MM, trade-off, informasi dan fleksibilitas sebelum mengambil keputusan pendanaan."
   ],
   "layout": "layered",
   "ref": "Brigham & Houston, FFM 16e (2022), Bab 14, hal. cetak 478-520 (PDF 520-562)",
@@ -81,7 +81,7 @@ export const TM9_READING: Reading = {
         {
           "kind": "callout",
           "variant": "gist",
-          "text": "**Kalau cuma sempat ingat satu hal:** arus kas, tingkat, satuan, dan periode harus konsisten sebelum kamu mengambil keputusan."
+          "text": "**Kalau cuma sempat ingat satu hal:** bauran pendanaan mengubah risiko pemilik; EPS yang naik belum membuktikan nilai perusahaan naik."
         },
         {
           "kind": "callout",
@@ -185,6 +185,26 @@ export const TM9_READING: Reading = {
           "kind": "formula",
           "text": "\\operatorname{DOL}=\\frac{S-VC}{EBIT}\\qquad ROIC=\\frac{EBIT(1-T)}{IC}\\qquad ROE=\\frac{(EBIT-I)(1-T)}{E}",
           "note": "S pendapatan penjualan; VC biaya variabel; EBIT laba operasi sebelum bunga dan pajak; IC modal investasi; I bunga; E ekuitas. T adalah pajak pada asumsi kasus. DOL diturunkan dari perubahan EBIT dengan harga dan biaya variabel tetap. [hal. 487; PDF 529] [hal. 491; PDF 533]"
+        },
+        {
+          "kind": "h3",
+          "text": "Contoh terbimbing: mengapa EBIT lebih peka daripada penjualan"
+        },
+        {
+          "kind": "p",
+          "text": "Ilustrasi penulis, seluruh angka dalam juta rupiah: penjualan 1.000, biaya variabel 600 dan biaya tetap operasi 200. Belum ada bunga. Ini penerapan DOL pada tingkat penjualan tertentu, bukan data Bigbee pada buku. Dasar konsep: [hal. 484-487; PDF 526-529]."
+        },
+        {
+          "kind": "ol",
+          "items": [
+            "Margin kontribusi = 1.000 - 600 = 400. EBIT = 400 - 200 = 200. DOL = 400/200 = 2 kali.",
+            "Jika penjualan naik 10% dan harga serta proporsi biaya variabel tetap, penjualan menjadi 1.100 dan biaya variabel 660. Biaya tetap tetap 200, sehingga EBIT menjadi 240.",
+            "EBIT naik 40/200 = 20%, sesuai 2 × 10%. Perubahan ini berasal dari struktur biaya operasi. Menambahkan bunga akan memerlukan analisis pendanaan tersendiri."
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "Jika asumsi harga, biaya per unit atau kapasitas berubah, jangan langsung menerapkan sensitivitas tersebut. Rasio ini juga tidak menyatakan probabilitas kebangkrutan."
         },
         {
           "kind": "self-check",
@@ -311,38 +331,7 @@ export const TM9_READING: Reading = {
     },
     {
       "kind": "section",
-      "title": "4. Kerangka pengerjaan kasus",
-      "layer": "main",
-      "blocks": [
-        {
-          "kind": "p",
-          "text": "Data apa yang harus ditetapkan sebelum menghitung?"
-        },
-        {
-          "kind": "ul",
-          "items": [
-            "Susun EBIT dan NOPAT dengan unit mata uang yang konsisten.",
-            "Hitung saham dibeli, saham tersisa, bunga, laba bersih dan EPS.",
-            "Ubah rasio total modal menjadi D/E sebelum menghitung beta.",
-            "Bandingkan WACC serta nilai pada arus kas yang dinyatakan.",
-            "Uji penurunan EBIT, kenaikan bunga dan keterbatasan manfaat pajak. Semua tarif adalah asumsi kasus."
-          ]
-        },
-        {
-          "kind": "self-check",
-          "question": "Data apa yang harus ditetapkan sebelum menghitung?",
-          "answer": [
-            {
-              "kind": "p",
-              "text": "Ikuti urutan data, satuan, rumus, dan interpretasi pada sumber. [hal. 487; PDF 529] [hal. 491; PDF 533] [hal. 487; PDF 529] [hal. 491; PDF 533]"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "kind": "section",
-      "title": "3a. Baca MM dengan asumsi yang terpisah",
+      "title": "3.1 Baca MM dengan asumsi yang terpisah",
       "layer": "main",
       "blocks": [
         {
@@ -464,7 +453,59 @@ export const TM9_READING: Reading = {
     },
     {
       "kind": "section",
-      "title": "3b. Teori pendanaan untuk keputusan nyata",
+      "title": "3.2 MM dengan pajak perusahaan: manfaat bunga",
+      "layer": "main",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Dalam ilustrasi pajak perusahaan, T = 25%, rU = 12% dan rD = 6% setahun. Setiap titik membandingkan perusahaan dengan operasi tetap dan utang permanen tersendiri. Tidak ada pajak pribadi, biaya distress, biaya transaksi atau perubahan risiko utang. Seluruh perisai bunga dapat dipakai. Parameter buatan ini berbeda dari estimasi Bigbee. [hal. 501-503; PDF 543-545; turunan WACC dan VL = VU + TD]"
+        },
+        {
+          "kind": "formula",
+          "text": "r_E=r_U+(1-T)(r_U-r_D)\\frac{D}{E}\\qquad WACC=r_U\\left(1-T\\frac{D}{D+E}\\right)",
+          "note": "Hubungan biaya ekuitas dan WACC pada penyederhanaan utang tetap dan penghematan bunga terpakai. Diturunkan dengan menyamakan kas operasi tetap pada VL = VU + TD dan pembobotan biaya modal. [hal. 495 dan 501; PDF 537 dan 543]"
+        },
+        {
+          "kind": "figure",
+          "title": "MM dengan pajak perusahaan: biaya modal dan nilai",
+          "svg": "<svg class=\"finance-svg\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 670 978\" role=\"img\" aria-label=\"MM dengan pajak perusahaan: biaya modal dan nilai. Kurva pajak perusahaan berbeda dari MM tanpa pajak dan belum memuat biaya distress.\"><style>.finance-svg{--svg-bg:#f8fafc;--svg-card:#fff;--svg-text:#0f172a;--svg-muted:#64748b;--svg-accent:#2563eb;--svg-success:#15803d;--svg-warning:#b45309}.dark .finance-svg{--svg-bg:#17212b;--svg-card:#1e293b;--svg-text:#e5e7eb;--svg-muted:#94a3b8;--svg-accent:#60a5fa;--svg-success:#34d399;--svg-warning:#fbbf24}.finance-svg .svg-bg{fill:var(--svg-bg)}.finance-svg .svg-card{fill:var(--svg-card)}.finance-svg .svg-text{fill:var(--svg-text);font-family:system-ui,sans-serif}</style><defs><marker id=\"arrow\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\"><path d=\"M0 0 L6 3 L0 6\" fill=\"var(--svg-accent,#2563eb)\"/></marker></defs><rect width=\"670\" height=\"978\" class=\"svg-bg\"/><text x=\"45\" y=\"45\" text-anchor=\"start\" font-size=\"19\" class=\"svg-text\">Biaya modal: pajak perusahaan 25%</text><text x=\"45\" y=\"94\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">Biaya (% per tahun)</text><line x1=\"90\" y1=\"110\" x2=\"90\" y2=\"265\" stroke=\"var(--svg-muted, #64748b)\" /><line x1=\"90\" y1=\"265\" x2=\"580\" y2=\"265\" stroke=\"var(--svg-muted, #64748b)\" /><line x1=\"90\" y1=\"265\" x2=\"90\" y2=\"270\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"90\" y=\"288\" text-anchor=\"middle\" font-size=\"15\" class=\"svg-text\">0</text><line x1=\"212.5\" y1=\"265\" x2=\"212.5\" y2=\"270\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"212.5\" y=\"288\" text-anchor=\"middle\" font-size=\"15\" class=\"svg-text\">0.5</text><line x1=\"335\" y1=\"265\" x2=\"335\" y2=\"270\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"335\" y=\"288\" text-anchor=\"middle\" font-size=\"15\" class=\"svg-text\">1</text><line x1=\"457.5\" y1=\"265\" x2=\"457.5\" y2=\"270\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"457.5\" y=\"288\" text-anchor=\"middle\" font-size=\"15\" class=\"svg-text\">1.5</text><line x1=\"580\" y1=\"265\" x2=\"580\" y2=\"270\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"580\" y=\"288\" text-anchor=\"middle\" font-size=\"15\" class=\"svg-text\">2</text><text x=\"82\" y=\"270\" text-anchor=\"end\" font-size=\"15\" class=\"svg-text\">0</text><text x=\"82\" y=\"192.5\" text-anchor=\"end\" font-size=\"15\" class=\"svg-text\">12</text><text x=\"82\" y=\"115\" text-anchor=\"end\" font-size=\"15\" class=\"svg-text\">24</text><text x=\"335\" y=\"313\" text-anchor=\"middle\" font-size=\"15\" class=\"svg-text\">D/E nilai pasar (kali)</text><polyline points=\"90,187.5 212.5,172.96875 335,158.4375 457.5,143.90625 580,129.375\" fill=\"none\" stroke=\"var(--svg-accent, #2563eb)\" stroke-width=\"3\" /><circle cx=\"90\" cy=\"187.5\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"212.5\" cy=\"172.96875\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"335\" cy=\"158.4375\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"457.5\" cy=\"143.90625\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"580\" cy=\"129.375\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><line x1=\"65\" y1=\"340\" x2=\"95\" y2=\"340\" stroke=\"var(--svg-accent, #2563eb)\" stroke-width=\"3\" /><text x=\"105\" y=\"345\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">Biaya ekuitas rE</text><polyline points=\"90,187.5 212.5,193.95833333333334 335,197.1875 457.5,199.125 580,200.41666666666666\" fill=\"none\" stroke=\"var(--svg-success, #16a34a)\" stroke-width=\"3\" stroke-dasharray=\"8 5\"/><circle cx=\"90\" cy=\"187.5\" r=\"3\" fill=\"var(--svg-success, #16a34a)\"/><circle cx=\"212.5\" cy=\"193.95833333333334\" r=\"3\" fill=\"var(--svg-success, #16a34a)\"/><circle cx=\"335\" cy=\"197.1875\" r=\"3\" fill=\"var(--svg-success, #16a34a)\"/><circle cx=\"457.5\" cy=\"199.125\" r=\"3\" fill=\"var(--svg-success, #16a34a)\"/><circle cx=\"580\" cy=\"200.41666666666666\" r=\"3\" fill=\"var(--svg-success, #16a34a)\"/><line x1=\"65\" y1=\"370\" x2=\"95\" y2=\"370\" stroke=\"var(--svg-success, #16a34a)\" stroke-width=\"3\" stroke-dasharray=\"8 5\"/><text x=\"105\" y=\"375\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">WACC</text><polyline points=\"90,235.9375 580,235.9375\" fill=\"none\" stroke=\"var(--svg-warning, #d97706)\" stroke-width=\"3\" stroke-dasharray=\"2 5\"/><circle cx=\"90\" cy=\"235.9375\" r=\"3\" fill=\"var(--svg-warning, #d97706)\"/><circle cx=\"580\" cy=\"235.9375\" r=\"3\" fill=\"var(--svg-warning, #d97706)\"/><line x1=\"65\" y1=\"400\" x2=\"95\" y2=\"400\" stroke=\"var(--svg-warning, #d97706)\" stroke-width=\"3\" stroke-dasharray=\"2 5\"/><text x=\"105\" y=\"405\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">Utang setelah pajak</text><line x1=\"335\" y1=\"265\" x2=\"335\" y2=\"197.1875\" stroke=\"var(--svg-warning, #d97706)\" stroke-dasharray=\"5 4\"/><circle cx=\"335\" cy=\"197.1875\" r=\"5\" fill=\"var(--svg-bg,#f8fafc)\" stroke=\"var(--svg-warning, #d97706)\" stroke-width=\"3\"/><text x=\"65\" y=\"435\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">D/E 1: WACC 10,5%</text><text x=\"45\" y=\"568\" text-anchor=\"start\" font-size=\"19\" class=\"svg-text\">Nilai operasi plus perisai bunga</text><text x=\"45\" y=\"617\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">Indeks nilai (VU = 100)</text><line x1=\"90\" y1=\"633\" x2=\"90\" y2=\"788\" stroke=\"var(--svg-muted, #64748b)\" /><line x1=\"90\" y1=\"788\" x2=\"580\" y2=\"788\" stroke=\"var(--svg-muted, #64748b)\" /><line x1=\"90\" y1=\"788\" x2=\"90\" y2=\"793\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"90\" y=\"811\" text-anchor=\"middle\" font-size=\"15\" class=\"svg-text\">0</text><line x1=\"212.5\" y1=\"788\" x2=\"212.5\" y2=\"793\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"212.5\" y=\"811\" text-anchor=\"middle\" font-size=\"15\" class=\"svg-text\">0.5</text><line x1=\"335\" y1=\"788\" x2=\"335\" y2=\"793\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"335\" y=\"811\" text-anchor=\"middle\" font-size=\"15\" class=\"svg-text\">1</text><line x1=\"457.5\" y1=\"788\" x2=\"457.5\" y2=\"793\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"457.5\" y=\"811\" text-anchor=\"middle\" font-size=\"15\" class=\"svg-text\">1.5</text><line x1=\"580\" y1=\"788\" x2=\"580\" y2=\"793\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"580\" y=\"811\" text-anchor=\"middle\" font-size=\"15\" class=\"svg-text\">2</text><text x=\"82\" y=\"793\" text-anchor=\"end\" font-size=\"15\" class=\"svg-text\">0</text><text x=\"82\" y=\"715.5\" text-anchor=\"end\" font-size=\"15\" class=\"svg-text\">65</text><text x=\"82\" y=\"638\" text-anchor=\"end\" font-size=\"15\" class=\"svg-text\">130</text><text x=\"335\" y=\"836\" text-anchor=\"middle\" font-size=\"15\" class=\"svg-text\">D/E nilai pasar (kali)</text><polyline points=\"90,668.7692307692307 212.5,657.93006993007 335,651.7362637362637 457.5,647.7285067873303 580,644.9230769230769\" fill=\"none\" stroke=\"var(--svg-accent, #2563eb)\" stroke-width=\"3\" /><circle cx=\"90\" cy=\"668.7692307692307\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"212.5\" cy=\"657.93006993007\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"335\" cy=\"651.7362637362637\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"457.5\" cy=\"647.7285067873303\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"580\" cy=\"644.9230769230769\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><line x1=\"65\" y1=\"863\" x2=\"95\" y2=\"863\" stroke=\"var(--svg-accent, #2563eb)\" stroke-width=\"3\" /><text x=\"105\" y=\"868\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">VL dengan pajak perusahaan</text><polyline points=\"90,668.7692307692307 580,668.7692307692307\" fill=\"none\" stroke=\"var(--svg-success, #16a34a)\" stroke-width=\"3\" stroke-dasharray=\"8 5\"/><circle cx=\"90\" cy=\"668.7692307692307\" r=\"3\" fill=\"var(--svg-success, #16a34a)\"/><circle cx=\"580\" cy=\"668.7692307692307\" r=\"3\" fill=\"var(--svg-success, #16a34a)\"/><line x1=\"65\" y1=\"893\" x2=\"95\" y2=\"893\" stroke=\"var(--svg-success, #16a34a)\" stroke-width=\"3\" stroke-dasharray=\"8 5\"/><text x=\"105\" y=\"898\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">VU tanpa utang</text></svg>",
+          "caption": "Disusun dari hal. 495 dan 501 (PDF 537 dan 543). Parameter ilustrasi buatan T 25%, rU 12%, rD 6%, VU 100.",
+          "mobileSvg": "<svg class=\"finance-svg\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 360 1058\" role=\"img\" aria-label=\"MM dengan pajak perusahaan: biaya modal dan nilai. Kurva pajak perusahaan berbeda dari MM tanpa pajak dan belum memuat biaya distress.\"><style>.finance-svg{--svg-bg:#f8fafc;--svg-card:#fff;--svg-text:#0f172a;--svg-muted:#64748b;--svg-accent:#2563eb;--svg-success:#15803d;--svg-warning:#b45309}.dark .finance-svg{--svg-bg:#17212b;--svg-card:#1e293b;--svg-text:#e5e7eb;--svg-muted:#94a3b8;--svg-accent:#60a5fa;--svg-success:#34d399;--svg-warning:#fbbf24}.finance-svg .svg-bg{fill:var(--svg-bg)}.finance-svg .svg-card{fill:var(--svg-card)}.finance-svg .svg-text{fill:var(--svg-text);font-family:system-ui,sans-serif}</style><rect width=\"360\" height=\"1058\" fill=\"var(--svg-bg,#f8fafc)\"/><text x=\"16\" y=\"35\" text-anchor=\"start\" font-size=\"18\" class=\"svg-text\">Biaya modal: pajak perusahaan 25%</text><text x=\"16\" y=\"104\" text-anchor=\"start\" font-size=\"16\" class=\"svg-text\">Biaya (% per tahun)</text><line x1=\"58\" y1=\"120\" x2=\"58\" y2=\"300\" stroke=\"var(--svg-muted, #64748b)\" /><line x1=\"58\" y1=\"300\" x2=\"335\" y2=\"300\" stroke=\"var(--svg-muted, #64748b)\" /><line x1=\"58\" y1=\"300\" x2=\"58\" y2=\"305\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"58\" y=\"323\" text-anchor=\"middle\" font-size=\"16\" class=\"svg-text\">0</text><line x1=\"127.25\" y1=\"300\" x2=\"127.25\" y2=\"305\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"127.25\" y=\"323\" text-anchor=\"middle\" font-size=\"16\" class=\"svg-text\">0.5</text><line x1=\"196.5\" y1=\"300\" x2=\"196.5\" y2=\"305\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"196.5\" y=\"323\" text-anchor=\"middle\" font-size=\"16\" class=\"svg-text\">1</text><line x1=\"265.75\" y1=\"300\" x2=\"265.75\" y2=\"305\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"265.75\" y=\"323\" text-anchor=\"middle\" font-size=\"16\" class=\"svg-text\">1.5</text><line x1=\"335\" y1=\"300\" x2=\"335\" y2=\"305\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"335\" y=\"323\" text-anchor=\"middle\" font-size=\"16\" class=\"svg-text\">2</text><text x=\"50\" y=\"305\" text-anchor=\"end\" font-size=\"16\" class=\"svg-text\">0</text><text x=\"50\" y=\"215\" text-anchor=\"end\" font-size=\"16\" class=\"svg-text\">12</text><text x=\"50\" y=\"125\" text-anchor=\"end\" font-size=\"16\" class=\"svg-text\">24</text><text x=\"196.5\" y=\"348\" text-anchor=\"middle\" font-size=\"16\" class=\"svg-text\">D/E nilai pasar (kali)</text><polyline points=\"58,210 127.25,193.125 196.5,176.25 265.75,159.375 335,142.5\" fill=\"none\" stroke=\"var(--svg-accent, #2563eb)\" stroke-width=\"3\" /><circle cx=\"58\" cy=\"210\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"127.25\" cy=\"193.125\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"196.5\" cy=\"176.25\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"265.75\" cy=\"159.375\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"335\" cy=\"142.5\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><line x1=\"18\" y1=\"375\" x2=\"44\" y2=\"375\" stroke=\"var(--svg-accent, #2563eb)\" stroke-width=\"3\" /><text x=\"52\" y=\"380\" text-anchor=\"start\" font-size=\"16\" class=\"svg-text\">Biaya ekuitas rE</text><polyline points=\"58,210 127.25,217.5 196.5,221.25 265.75,223.5 335,225\" fill=\"none\" stroke=\"var(--svg-success, #16a34a)\" stroke-width=\"3\" stroke-dasharray=\"8 5\"/><circle cx=\"58\" cy=\"210\" r=\"3\" fill=\"var(--svg-success, #16a34a)\"/><circle cx=\"127.25\" cy=\"217.5\" r=\"3\" fill=\"var(--svg-success, #16a34a)\"/><circle cx=\"196.5\" cy=\"221.25\" r=\"3\" fill=\"var(--svg-success, #16a34a)\"/><circle cx=\"265.75\" cy=\"223.5\" r=\"3\" fill=\"var(--svg-success, #16a34a)\"/><circle cx=\"335\" cy=\"225\" r=\"3\" fill=\"var(--svg-success, #16a34a)\"/><line x1=\"18\" y1=\"405\" x2=\"44\" y2=\"405\" stroke=\"var(--svg-success, #16a34a)\" stroke-width=\"3\" stroke-dasharray=\"8 5\"/><text x=\"52\" y=\"410\" text-anchor=\"start\" font-size=\"16\" class=\"svg-text\">WACC</text><polyline points=\"58,266.25 335,266.25\" fill=\"none\" stroke=\"var(--svg-warning, #d97706)\" stroke-width=\"3\" stroke-dasharray=\"2 5\"/><circle cx=\"58\" cy=\"266.25\" r=\"3\" fill=\"var(--svg-warning, #d97706)\"/><circle cx=\"335\" cy=\"266.25\" r=\"3\" fill=\"var(--svg-warning, #d97706)\"/><line x1=\"18\" y1=\"435\" x2=\"44\" y2=\"435\" stroke=\"var(--svg-warning, #d97706)\" stroke-width=\"3\" stroke-dasharray=\"2 5\"/><text x=\"52\" y=\"440\" text-anchor=\"start\" font-size=\"16\" class=\"svg-text\">Utang setelah pajak</text><line x1=\"196.5\" y1=\"300\" x2=\"196.5\" y2=\"221.25\" stroke=\"var(--svg-warning, #d97706)\" stroke-dasharray=\"5 4\"/><circle cx=\"196.5\" cy=\"221.25\" r=\"5\" fill=\"var(--svg-bg,#f8fafc)\" stroke=\"var(--svg-warning, #d97706)\" stroke-width=\"3\"/><text x=\"16\" y=\"470\" text-anchor=\"start\" font-size=\"16\" class=\"svg-text\">D/E 1: WACC 10,5%</text><text x=\"16\" y=\"603\" text-anchor=\"start\" font-size=\"18\" class=\"svg-text\">Nilai operasi plus perisai bunga</text><text x=\"16\" y=\"672\" text-anchor=\"start\" font-size=\"16\" class=\"svg-text\">Indeks nilai (VU = 100)</text><line x1=\"58\" y1=\"688\" x2=\"58\" y2=\"868\" stroke=\"var(--svg-muted, #64748b)\" /><line x1=\"58\" y1=\"868\" x2=\"335\" y2=\"868\" stroke=\"var(--svg-muted, #64748b)\" /><line x1=\"58\" y1=\"868\" x2=\"58\" y2=\"873\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"58\" y=\"891\" text-anchor=\"middle\" font-size=\"16\" class=\"svg-text\">0</text><line x1=\"127.25\" y1=\"868\" x2=\"127.25\" y2=\"873\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"127.25\" y=\"891\" text-anchor=\"middle\" font-size=\"16\" class=\"svg-text\">0.5</text><line x1=\"196.5\" y1=\"868\" x2=\"196.5\" y2=\"873\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"196.5\" y=\"891\" text-anchor=\"middle\" font-size=\"16\" class=\"svg-text\">1</text><line x1=\"265.75\" y1=\"868\" x2=\"265.75\" y2=\"873\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"265.75\" y=\"891\" text-anchor=\"middle\" font-size=\"16\" class=\"svg-text\">1.5</text><line x1=\"335\" y1=\"868\" x2=\"335\" y2=\"873\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"335\" y=\"891\" text-anchor=\"middle\" font-size=\"16\" class=\"svg-text\">2</text><text x=\"50\" y=\"873\" text-anchor=\"end\" font-size=\"16\" class=\"svg-text\">0</text><text x=\"50\" y=\"783\" text-anchor=\"end\" font-size=\"16\" class=\"svg-text\">65</text><text x=\"50\" y=\"693\" text-anchor=\"end\" font-size=\"16\" class=\"svg-text\">130</text><text x=\"196.5\" y=\"916\" text-anchor=\"middle\" font-size=\"16\" class=\"svg-text\">D/E nilai pasar (kali)</text><polyline points=\"58,729.5384615384615 127.25,716.951048951049 196.5,709.7582417582418 265.75,705.10407239819 335,701.8461538461538\" fill=\"none\" stroke=\"var(--svg-accent, #2563eb)\" stroke-width=\"3\" /><circle cx=\"58\" cy=\"729.5384615384615\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"127.25\" cy=\"716.951048951049\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"196.5\" cy=\"709.7582417582418\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"265.75\" cy=\"705.10407239819\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"335\" cy=\"701.8461538461538\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><line x1=\"18\" y1=\"943\" x2=\"44\" y2=\"943\" stroke=\"var(--svg-accent, #2563eb)\" stroke-width=\"3\" /><text x=\"52\" y=\"948\" text-anchor=\"start\" font-size=\"16\" class=\"svg-text\">VL dengan pajak perusahaan</text><polyline points=\"58,729.5384615384615 335,729.5384615384615\" fill=\"none\" stroke=\"var(--svg-success, #16a34a)\" stroke-width=\"3\" stroke-dasharray=\"8 5\"/><circle cx=\"58\" cy=\"729.5384615384615\" r=\"3\" fill=\"var(--svg-success, #16a34a)\"/><circle cx=\"335\" cy=\"729.5384615384615\" r=\"3\" fill=\"var(--svg-success, #16a34a)\"/><line x1=\"18\" y1=\"973\" x2=\"44\" y2=\"973\" stroke=\"var(--svg-success, #16a34a)\" stroke-width=\"3\" stroke-dasharray=\"8 5\"/><text x=\"52\" y=\"978\" text-anchor=\"start\" font-size=\"16\" class=\"svg-text\">VU tanpa utang</text></svg>",
+          "altText": "MM dengan pajak perusahaan: biaya modal dan nilai. Kurva pajak perusahaan berbeda dari MM tanpa pajak dan belum memuat biaya distress.",
+          "overview": {
+            "heading": "MM dengan pajak perusahaan: biaya modal dan nilai",
+            "cards": [
+              {
+                "title": "D/E 1: biaya ekuitas 16,5% per tahun",
+                "subtitle": "",
+                "items": [],
+                "takeaway": ""
+              },
+              {
+                "title": "D/E 1: WACC 10,5% per tahun",
+                "subtitle": "",
+                "items": [],
+                "takeaway": ""
+              },
+              {
+                "title": "VL lebih tinggi dari VU melalui perisai bunga",
+                "subtitle": "",
+                "items": [],
+                "takeaway": ""
+              }
+            ],
+            "footer": "Sumbu, satuan, legenda dan penanda dibaca bersama asumsi pada teks. Kurva pajak perusahaan berbeda dari MM tanpa pajak dan belum memuat biaya distress."
+          }
+        },
+        {
+          "kind": "p",
+          "text": "Cara membaca: pada D/E = 1, VL = 114,2857 dan D = 57,1429 dalam satuan indeks. Perisai pajak 0,25D = 14,2857 menjembatani VU 100 dengan VL. D/E berbeda dari utang/modal, sehingga jangan membaca x = 1 sebagai utang 100% dari total modal. Kenaikan nilai ini berasal dari manfaat pajak yang diasumsikan, bukan perubahan EBIT. [hal. 500-503; PDF 542-545; turunan ilustrasi]"
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "3.3 Teori pendanaan untuk keputusan nyata",
       "layer": "main",
       "blocks": [
         {
@@ -589,59 +630,7 @@ export const TM9_READING: Reading = {
     },
     {
       "kind": "section",
-      "title": "3c. MM dengan pajak perusahaan: manfaat bunga",
-      "layer": "main",
-      "blocks": [
-        {
-          "kind": "p",
-          "text": "Dalam ilustrasi pajak perusahaan, T = 25%, rU = 12% dan rD = 6% setahun. Setiap titik membandingkan perusahaan dengan operasi tetap dan utang permanen tersendiri. Tidak ada pajak pribadi, biaya distress, biaya transaksi atau perubahan risiko utang. Seluruh perisai bunga dapat dipakai. Parameter buatan ini berbeda dari estimasi Bigbee. [hal. 501-503; PDF 543-545; turunan WACC dan VL = VU + TD]"
-        },
-        {
-          "kind": "formula",
-          "text": "r_E=r_U+(1-T)(r_U-r_D)\\frac{D}{E}\\qquad WACC=r_U\\left(1-T\\frac{D}{D+E}\\right)",
-          "note": "Hubungan biaya ekuitas dan WACC pada penyederhanaan utang tetap dan penghematan bunga terpakai. Diturunkan dengan menyamakan kas operasi tetap pada VL = VU + TD dan pembobotan biaya modal. [hal. 495 dan 501; PDF 537 dan 543]"
-        },
-        {
-          "kind": "figure",
-          "title": "MM dengan pajak perusahaan: biaya modal dan nilai",
-          "svg": "<svg class=\"finance-svg\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 670 978\" role=\"img\" aria-label=\"MM dengan pajak perusahaan: biaya modal dan nilai. Kurva pajak perusahaan berbeda dari MM tanpa pajak dan belum memuat biaya distress.\"><style>.finance-svg{--svg-bg:#f8fafc;--svg-card:#fff;--svg-text:#0f172a;--svg-muted:#64748b;--svg-accent:#2563eb;--svg-success:#15803d;--svg-warning:#b45309}.dark .finance-svg{--svg-bg:#17212b;--svg-card:#1e293b;--svg-text:#e5e7eb;--svg-muted:#94a3b8;--svg-accent:#60a5fa;--svg-success:#34d399;--svg-warning:#fbbf24}.finance-svg .svg-bg{fill:var(--svg-bg)}.finance-svg .svg-card{fill:var(--svg-card)}.finance-svg .svg-text{fill:var(--svg-text);font-family:system-ui,sans-serif}</style><defs><marker id=\"arrow\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\"><path d=\"M0 0 L6 3 L0 6\" fill=\"var(--svg-accent,#2563eb)\"/></marker></defs><rect width=\"670\" height=\"978\" class=\"svg-bg\"/><text x=\"45\" y=\"45\" text-anchor=\"start\" font-size=\"19\" class=\"svg-text\">Biaya modal: pajak perusahaan 25%</text><text x=\"45\" y=\"94\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">Biaya (% per tahun)</text><line x1=\"90\" y1=\"110\" x2=\"90\" y2=\"265\" stroke=\"var(--svg-muted, #64748b)\" /><line x1=\"90\" y1=\"265\" x2=\"580\" y2=\"265\" stroke=\"var(--svg-muted, #64748b)\" /><line x1=\"90\" y1=\"265\" x2=\"90\" y2=\"270\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"90\" y=\"288\" text-anchor=\"middle\" font-size=\"15\" class=\"svg-text\">0</text><line x1=\"212.5\" y1=\"265\" x2=\"212.5\" y2=\"270\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"212.5\" y=\"288\" text-anchor=\"middle\" font-size=\"15\" class=\"svg-text\">0.5</text><line x1=\"335\" y1=\"265\" x2=\"335\" y2=\"270\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"335\" y=\"288\" text-anchor=\"middle\" font-size=\"15\" class=\"svg-text\">1</text><line x1=\"457.5\" y1=\"265\" x2=\"457.5\" y2=\"270\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"457.5\" y=\"288\" text-anchor=\"middle\" font-size=\"15\" class=\"svg-text\">1.5</text><line x1=\"580\" y1=\"265\" x2=\"580\" y2=\"270\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"580\" y=\"288\" text-anchor=\"middle\" font-size=\"15\" class=\"svg-text\">2</text><text x=\"82\" y=\"270\" text-anchor=\"end\" font-size=\"15\" class=\"svg-text\">0</text><text x=\"82\" y=\"192.5\" text-anchor=\"end\" font-size=\"15\" class=\"svg-text\">12</text><text x=\"82\" y=\"115\" text-anchor=\"end\" font-size=\"15\" class=\"svg-text\">24</text><text x=\"335\" y=\"313\" text-anchor=\"middle\" font-size=\"15\" class=\"svg-text\">D/E nilai pasar (kali)</text><polyline points=\"90,187.5 212.5,172.96875 335,158.4375 457.5,143.90625 580,129.375\" fill=\"none\" stroke=\"var(--svg-accent, #2563eb)\" stroke-width=\"3\" /><circle cx=\"90\" cy=\"187.5\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"212.5\" cy=\"172.96875\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"335\" cy=\"158.4375\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"457.5\" cy=\"143.90625\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"580\" cy=\"129.375\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><line x1=\"65\" y1=\"340\" x2=\"95\" y2=\"340\" stroke=\"var(--svg-accent, #2563eb)\" stroke-width=\"3\" /><text x=\"105\" y=\"345\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">Biaya ekuitas rE</text><polyline points=\"90,187.5 212.5,193.95833333333334 335,197.1875 457.5,199.125 580,200.41666666666666\" fill=\"none\" stroke=\"var(--svg-success, #16a34a)\" stroke-width=\"3\" stroke-dasharray=\"8 5\"/><circle cx=\"90\" cy=\"187.5\" r=\"3\" fill=\"var(--svg-success, #16a34a)\"/><circle cx=\"212.5\" cy=\"193.95833333333334\" r=\"3\" fill=\"var(--svg-success, #16a34a)\"/><circle cx=\"335\" cy=\"197.1875\" r=\"3\" fill=\"var(--svg-success, #16a34a)\"/><circle cx=\"457.5\" cy=\"199.125\" r=\"3\" fill=\"var(--svg-success, #16a34a)\"/><circle cx=\"580\" cy=\"200.41666666666666\" r=\"3\" fill=\"var(--svg-success, #16a34a)\"/><line x1=\"65\" y1=\"370\" x2=\"95\" y2=\"370\" stroke=\"var(--svg-success, #16a34a)\" stroke-width=\"3\" stroke-dasharray=\"8 5\"/><text x=\"105\" y=\"375\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">WACC</text><polyline points=\"90,235.9375 580,235.9375\" fill=\"none\" stroke=\"var(--svg-warning, #d97706)\" stroke-width=\"3\" stroke-dasharray=\"2 5\"/><circle cx=\"90\" cy=\"235.9375\" r=\"3\" fill=\"var(--svg-warning, #d97706)\"/><circle cx=\"580\" cy=\"235.9375\" r=\"3\" fill=\"var(--svg-warning, #d97706)\"/><line x1=\"65\" y1=\"400\" x2=\"95\" y2=\"400\" stroke=\"var(--svg-warning, #d97706)\" stroke-width=\"3\" stroke-dasharray=\"2 5\"/><text x=\"105\" y=\"405\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">Utang setelah pajak</text><line x1=\"335\" y1=\"265\" x2=\"335\" y2=\"197.1875\" stroke=\"var(--svg-warning, #d97706)\" stroke-dasharray=\"5 4\"/><circle cx=\"335\" cy=\"197.1875\" r=\"5\" fill=\"var(--svg-bg,#f8fafc)\" stroke=\"var(--svg-warning, #d97706)\" stroke-width=\"3\"/><text x=\"65\" y=\"435\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">D/E 1: WACC 10,5%</text><text x=\"45\" y=\"568\" text-anchor=\"start\" font-size=\"19\" class=\"svg-text\">Nilai operasi plus perisai bunga</text><text x=\"45\" y=\"617\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">Indeks nilai (VU = 100)</text><line x1=\"90\" y1=\"633\" x2=\"90\" y2=\"788\" stroke=\"var(--svg-muted, #64748b)\" /><line x1=\"90\" y1=\"788\" x2=\"580\" y2=\"788\" stroke=\"var(--svg-muted, #64748b)\" /><line x1=\"90\" y1=\"788\" x2=\"90\" y2=\"793\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"90\" y=\"811\" text-anchor=\"middle\" font-size=\"15\" class=\"svg-text\">0</text><line x1=\"212.5\" y1=\"788\" x2=\"212.5\" y2=\"793\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"212.5\" y=\"811\" text-anchor=\"middle\" font-size=\"15\" class=\"svg-text\">0.5</text><line x1=\"335\" y1=\"788\" x2=\"335\" y2=\"793\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"335\" y=\"811\" text-anchor=\"middle\" font-size=\"15\" class=\"svg-text\">1</text><line x1=\"457.5\" y1=\"788\" x2=\"457.5\" y2=\"793\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"457.5\" y=\"811\" text-anchor=\"middle\" font-size=\"15\" class=\"svg-text\">1.5</text><line x1=\"580\" y1=\"788\" x2=\"580\" y2=\"793\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"580\" y=\"811\" text-anchor=\"middle\" font-size=\"15\" class=\"svg-text\">2</text><text x=\"82\" y=\"793\" text-anchor=\"end\" font-size=\"15\" class=\"svg-text\">0</text><text x=\"82\" y=\"715.5\" text-anchor=\"end\" font-size=\"15\" class=\"svg-text\">65</text><text x=\"82\" y=\"638\" text-anchor=\"end\" font-size=\"15\" class=\"svg-text\">130</text><text x=\"335\" y=\"836\" text-anchor=\"middle\" font-size=\"15\" class=\"svg-text\">D/E nilai pasar (kali)</text><polyline points=\"90,668.7692307692307 212.5,657.93006993007 335,651.7362637362637 457.5,647.7285067873303 580,644.9230769230769\" fill=\"none\" stroke=\"var(--svg-accent, #2563eb)\" stroke-width=\"3\" /><circle cx=\"90\" cy=\"668.7692307692307\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"212.5\" cy=\"657.93006993007\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"335\" cy=\"651.7362637362637\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"457.5\" cy=\"647.7285067873303\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"580\" cy=\"644.9230769230769\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><line x1=\"65\" y1=\"863\" x2=\"95\" y2=\"863\" stroke=\"var(--svg-accent, #2563eb)\" stroke-width=\"3\" /><text x=\"105\" y=\"868\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">VL dengan pajak perusahaan</text><polyline points=\"90,668.7692307692307 580,668.7692307692307\" fill=\"none\" stroke=\"var(--svg-success, #16a34a)\" stroke-width=\"3\" stroke-dasharray=\"8 5\"/><circle cx=\"90\" cy=\"668.7692307692307\" r=\"3\" fill=\"var(--svg-success, #16a34a)\"/><circle cx=\"580\" cy=\"668.7692307692307\" r=\"3\" fill=\"var(--svg-success, #16a34a)\"/><line x1=\"65\" y1=\"893\" x2=\"95\" y2=\"893\" stroke=\"var(--svg-success, #16a34a)\" stroke-width=\"3\" stroke-dasharray=\"8 5\"/><text x=\"105\" y=\"898\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">VU tanpa utang</text></svg>",
-          "caption": "Disusun dari hal. 495 dan 501 (PDF 537 dan 543). Parameter ilustrasi buatan T 25%, rU 12%, rD 6%, VU 100.",
-          "mobileSvg": "<svg class=\"finance-svg\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 360 1058\" role=\"img\" aria-label=\"MM dengan pajak perusahaan: biaya modal dan nilai. Kurva pajak perusahaan berbeda dari MM tanpa pajak dan belum memuat biaya distress.\"><style>.finance-svg{--svg-bg:#f8fafc;--svg-card:#fff;--svg-text:#0f172a;--svg-muted:#64748b;--svg-accent:#2563eb;--svg-success:#15803d;--svg-warning:#b45309}.dark .finance-svg{--svg-bg:#17212b;--svg-card:#1e293b;--svg-text:#e5e7eb;--svg-muted:#94a3b8;--svg-accent:#60a5fa;--svg-success:#34d399;--svg-warning:#fbbf24}.finance-svg .svg-bg{fill:var(--svg-bg)}.finance-svg .svg-card{fill:var(--svg-card)}.finance-svg .svg-text{fill:var(--svg-text);font-family:system-ui,sans-serif}</style><rect width=\"360\" height=\"1058\" fill=\"var(--svg-bg,#f8fafc)\"/><text x=\"16\" y=\"35\" text-anchor=\"start\" font-size=\"18\" class=\"svg-text\">Biaya modal: pajak perusahaan 25%</text><text x=\"16\" y=\"104\" text-anchor=\"start\" font-size=\"16\" class=\"svg-text\">Biaya (% per tahun)</text><line x1=\"58\" y1=\"120\" x2=\"58\" y2=\"300\" stroke=\"var(--svg-muted, #64748b)\" /><line x1=\"58\" y1=\"300\" x2=\"335\" y2=\"300\" stroke=\"var(--svg-muted, #64748b)\" /><line x1=\"58\" y1=\"300\" x2=\"58\" y2=\"305\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"58\" y=\"323\" text-anchor=\"middle\" font-size=\"16\" class=\"svg-text\">0</text><line x1=\"127.25\" y1=\"300\" x2=\"127.25\" y2=\"305\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"127.25\" y=\"323\" text-anchor=\"middle\" font-size=\"16\" class=\"svg-text\">0.5</text><line x1=\"196.5\" y1=\"300\" x2=\"196.5\" y2=\"305\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"196.5\" y=\"323\" text-anchor=\"middle\" font-size=\"16\" class=\"svg-text\">1</text><line x1=\"265.75\" y1=\"300\" x2=\"265.75\" y2=\"305\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"265.75\" y=\"323\" text-anchor=\"middle\" font-size=\"16\" class=\"svg-text\">1.5</text><line x1=\"335\" y1=\"300\" x2=\"335\" y2=\"305\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"335\" y=\"323\" text-anchor=\"middle\" font-size=\"16\" class=\"svg-text\">2</text><text x=\"50\" y=\"305\" text-anchor=\"end\" font-size=\"16\" class=\"svg-text\">0</text><text x=\"50\" y=\"215\" text-anchor=\"end\" font-size=\"16\" class=\"svg-text\">12</text><text x=\"50\" y=\"125\" text-anchor=\"end\" font-size=\"16\" class=\"svg-text\">24</text><text x=\"196.5\" y=\"348\" text-anchor=\"middle\" font-size=\"16\" class=\"svg-text\">D/E nilai pasar (kali)</text><polyline points=\"58,210 127.25,193.125 196.5,176.25 265.75,159.375 335,142.5\" fill=\"none\" stroke=\"var(--svg-accent, #2563eb)\" stroke-width=\"3\" /><circle cx=\"58\" cy=\"210\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"127.25\" cy=\"193.125\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"196.5\" cy=\"176.25\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"265.75\" cy=\"159.375\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"335\" cy=\"142.5\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><line x1=\"18\" y1=\"375\" x2=\"44\" y2=\"375\" stroke=\"var(--svg-accent, #2563eb)\" stroke-width=\"3\" /><text x=\"52\" y=\"380\" text-anchor=\"start\" font-size=\"16\" class=\"svg-text\">Biaya ekuitas rE</text><polyline points=\"58,210 127.25,217.5 196.5,221.25 265.75,223.5 335,225\" fill=\"none\" stroke=\"var(--svg-success, #16a34a)\" stroke-width=\"3\" stroke-dasharray=\"8 5\"/><circle cx=\"58\" cy=\"210\" r=\"3\" fill=\"var(--svg-success, #16a34a)\"/><circle cx=\"127.25\" cy=\"217.5\" r=\"3\" fill=\"var(--svg-success, #16a34a)\"/><circle cx=\"196.5\" cy=\"221.25\" r=\"3\" fill=\"var(--svg-success, #16a34a)\"/><circle cx=\"265.75\" cy=\"223.5\" r=\"3\" fill=\"var(--svg-success, #16a34a)\"/><circle cx=\"335\" cy=\"225\" r=\"3\" fill=\"var(--svg-success, #16a34a)\"/><line x1=\"18\" y1=\"405\" x2=\"44\" y2=\"405\" stroke=\"var(--svg-success, #16a34a)\" stroke-width=\"3\" stroke-dasharray=\"8 5\"/><text x=\"52\" y=\"410\" text-anchor=\"start\" font-size=\"16\" class=\"svg-text\">WACC</text><polyline points=\"58,266.25 335,266.25\" fill=\"none\" stroke=\"var(--svg-warning, #d97706)\" stroke-width=\"3\" stroke-dasharray=\"2 5\"/><circle cx=\"58\" cy=\"266.25\" r=\"3\" fill=\"var(--svg-warning, #d97706)\"/><circle cx=\"335\" cy=\"266.25\" r=\"3\" fill=\"var(--svg-warning, #d97706)\"/><line x1=\"18\" y1=\"435\" x2=\"44\" y2=\"435\" stroke=\"var(--svg-warning, #d97706)\" stroke-width=\"3\" stroke-dasharray=\"2 5\"/><text x=\"52\" y=\"440\" text-anchor=\"start\" font-size=\"16\" class=\"svg-text\">Utang setelah pajak</text><line x1=\"196.5\" y1=\"300\" x2=\"196.5\" y2=\"221.25\" stroke=\"var(--svg-warning, #d97706)\" stroke-dasharray=\"5 4\"/><circle cx=\"196.5\" cy=\"221.25\" r=\"5\" fill=\"var(--svg-bg,#f8fafc)\" stroke=\"var(--svg-warning, #d97706)\" stroke-width=\"3\"/><text x=\"16\" y=\"470\" text-anchor=\"start\" font-size=\"16\" class=\"svg-text\">D/E 1: WACC 10,5%</text><text x=\"16\" y=\"603\" text-anchor=\"start\" font-size=\"18\" class=\"svg-text\">Nilai operasi plus perisai bunga</text><text x=\"16\" y=\"672\" text-anchor=\"start\" font-size=\"16\" class=\"svg-text\">Indeks nilai (VU = 100)</text><line x1=\"58\" y1=\"688\" x2=\"58\" y2=\"868\" stroke=\"var(--svg-muted, #64748b)\" /><line x1=\"58\" y1=\"868\" x2=\"335\" y2=\"868\" stroke=\"var(--svg-muted, #64748b)\" /><line x1=\"58\" y1=\"868\" x2=\"58\" y2=\"873\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"58\" y=\"891\" text-anchor=\"middle\" font-size=\"16\" class=\"svg-text\">0</text><line x1=\"127.25\" y1=\"868\" x2=\"127.25\" y2=\"873\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"127.25\" y=\"891\" text-anchor=\"middle\" font-size=\"16\" class=\"svg-text\">0.5</text><line x1=\"196.5\" y1=\"868\" x2=\"196.5\" y2=\"873\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"196.5\" y=\"891\" text-anchor=\"middle\" font-size=\"16\" class=\"svg-text\">1</text><line x1=\"265.75\" y1=\"868\" x2=\"265.75\" y2=\"873\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"265.75\" y=\"891\" text-anchor=\"middle\" font-size=\"16\" class=\"svg-text\">1.5</text><line x1=\"335\" y1=\"868\" x2=\"335\" y2=\"873\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"335\" y=\"891\" text-anchor=\"middle\" font-size=\"16\" class=\"svg-text\">2</text><text x=\"50\" y=\"873\" text-anchor=\"end\" font-size=\"16\" class=\"svg-text\">0</text><text x=\"50\" y=\"783\" text-anchor=\"end\" font-size=\"16\" class=\"svg-text\">65</text><text x=\"50\" y=\"693\" text-anchor=\"end\" font-size=\"16\" class=\"svg-text\">130</text><text x=\"196.5\" y=\"916\" text-anchor=\"middle\" font-size=\"16\" class=\"svg-text\">D/E nilai pasar (kali)</text><polyline points=\"58,729.5384615384615 127.25,716.951048951049 196.5,709.7582417582418 265.75,705.10407239819 335,701.8461538461538\" fill=\"none\" stroke=\"var(--svg-accent, #2563eb)\" stroke-width=\"3\" /><circle cx=\"58\" cy=\"729.5384615384615\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"127.25\" cy=\"716.951048951049\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"196.5\" cy=\"709.7582417582418\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"265.75\" cy=\"705.10407239819\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"335\" cy=\"701.8461538461538\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><line x1=\"18\" y1=\"943\" x2=\"44\" y2=\"943\" stroke=\"var(--svg-accent, #2563eb)\" stroke-width=\"3\" /><text x=\"52\" y=\"948\" text-anchor=\"start\" font-size=\"16\" class=\"svg-text\">VL dengan pajak perusahaan</text><polyline points=\"58,729.5384615384615 335,729.5384615384615\" fill=\"none\" stroke=\"var(--svg-success, #16a34a)\" stroke-width=\"3\" stroke-dasharray=\"8 5\"/><circle cx=\"58\" cy=\"729.5384615384615\" r=\"3\" fill=\"var(--svg-success, #16a34a)\"/><circle cx=\"335\" cy=\"729.5384615384615\" r=\"3\" fill=\"var(--svg-success, #16a34a)\"/><line x1=\"18\" y1=\"973\" x2=\"44\" y2=\"973\" stroke=\"var(--svg-success, #16a34a)\" stroke-width=\"3\" stroke-dasharray=\"8 5\"/><text x=\"52\" y=\"978\" text-anchor=\"start\" font-size=\"16\" class=\"svg-text\">VU tanpa utang</text></svg>",
-          "altText": "MM dengan pajak perusahaan: biaya modal dan nilai. Kurva pajak perusahaan berbeda dari MM tanpa pajak dan belum memuat biaya distress.",
-          "overview": {
-            "heading": "MM dengan pajak perusahaan: biaya modal dan nilai",
-            "cards": [
-              {
-                "title": "D/E 1: biaya ekuitas 16,5% per tahun",
-                "subtitle": "",
-                "items": [],
-                "takeaway": ""
-              },
-              {
-                "title": "D/E 1: WACC 10,5% per tahun",
-                "subtitle": "",
-                "items": [],
-                "takeaway": ""
-              },
-              {
-                "title": "VL lebih tinggi dari VU melalui perisai bunga",
-                "subtitle": "",
-                "items": [],
-                "takeaway": ""
-              }
-            ],
-            "footer": "Sumbu, satuan, legenda dan penanda dibaca bersama asumsi pada teks. Kurva pajak perusahaan berbeda dari MM tanpa pajak dan belum memuat biaya distress."
-          }
-        },
-        {
-          "kind": "p",
-          "text": "Cara membaca: pada D/E = 1, VL = 114,2857 dan D = 57,1429 dalam satuan indeks. Perisai pajak 0,25D = 14,2857 menjembatani VU 100 dengan VL. D/E berbeda dari utang/modal, sehingga jangan membaca x = 1 sebagai utang 100% dari total modal. Kenaikan nilai ini berasal dari manfaat pajak yang diasumsikan, bukan perubahan EBIT. [hal. 500-503; PDF 542-545; turunan ilustrasi]"
-        }
-      ]
-    },
-    {
-      "kind": "section",
-      "title": "3d. Grafik sumber untuk risiko dan struktur optimal",
+      "title": "3.4 Grafik sumber untuk risiko dan struktur optimal",
       "layer": "main",
       "blocks": [
         {
@@ -911,6 +900,37 @@ export const TM9_READING: Reading = {
         {
           "kind": "p",
           "text": "Figure 14.7 menunjukkan EPS tertinggi pada utang 50%, sementara WACC terendah 10,86% dan harga tertinggi 20,81 USD berada pada utang 30%. Tabel menggunakan payout seluruh laba, g nol dan estimasi biaya modal. Titik tertinggi EPS tidak dapat menggantikan penilaian harga dan risiko. [hal. 495-499; PDF 537-541]"
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "4. Kerangka pengerjaan kasus",
+      "layer": "main",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Data apa yang harus ditetapkan sebelum menghitung?"
+        },
+        {
+          "kind": "ul",
+          "items": [
+            "Susun EBIT dan NOPAT dengan unit mata uang yang konsisten.",
+            "Hitung saham dibeli, saham tersisa, bunga, laba bersih dan EPS.",
+            "Ubah rasio total modal menjadi D/E sebelum menghitung beta.",
+            "Bandingkan WACC serta nilai pada arus kas yang dinyatakan.",
+            "Uji penurunan EBIT, kenaikan bunga dan keterbatasan manfaat pajak. Semua tarif adalah asumsi kasus."
+          ]
+        },
+        {
+          "kind": "self-check",
+          "question": "Data apa yang harus ditetapkan sebelum menghitung?",
+          "answer": [
+            {
+              "kind": "p",
+              "text": "Tetapkan EBIT, pajak asumsi, nilai pasar modal, bunga dan jumlah saham. Bedakan laba operasi dari bunga, ubah bobot D/(D+E) menjadi D/E bila rumus memerlukannya, lalu samakan periode dan unit sebelum menghitung EPS atau WACC. [hal. 487-498; PDF 529-540]"
+            }
+          ]
         },
         {
           "kind": "pendalaman",

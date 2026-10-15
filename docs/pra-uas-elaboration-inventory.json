@@ -1,0 +1,2000 @@
+{
+  "note": "Inventory only; not a completeness audit. SIA excluded by user scope.",
+  "courses": [
+    {
+      "code": "AKA201",
+      "meetings": [
+        {
+          "tm": 9,
+          "title": "Perencanaan Audit, Strategi Audit Menyeluruh, dan Pemahaman Bisnis Klien",
+          "sourceIntro": "**Sumber utama:** Arens dkk., Ch.6, hal.174–198 (halaman PDF 187–211 pada salinan buku). **Standar pendamping:** ISA 300, ISA 210, dan ISA 315 (Revised 2019). Buku memakai konteks Kanada dan istilah CAS; persyaratan Indonesia perlu dibaca pada SA yang berlaku. Materialitas dibahas di TM07; pengendalian dan respons risiko dilanjutkan pada TM12–TM15.",
+          "sections": [
+            "0. Fondasi: perencanaan menjawab satu pertanyaan, yaitu apa yang bisa salah?",
+            "1. Strategi audit menyeluruh dan rencana audit",
+            "2. Menerima atau melanjutkan klien",
+            "3. Syarat awal audit dan surat penugasan",
+            "4. Sumber daya dan waktu dalam strategi",
+            "5. Memahami entitas dan lingkungannya",
+            "6. Struktur, tata kelola, dan model bisnis",
+            "7. Ukuran kinerja dan kerangka pelaporan",
+            "8. Prosedur penilaian risiko",
+            "9. Prosedur analitis pendahuluan: contoh Hillsburg",
+            "Kasus latihan",
+            "Uji pemahaman",
+            "Exam toolkit"
+          ],
+          "denseTables": [
+            {
+              "title": "Kesalahpahaman umum tentang perencanaan audit",
+              "rows": 6,
+              "columns": 3
+            },
+            {
+              "title": "Isi surat penugasan menurut buku",
+              "rows": 9,
+              "columns": 2
+            },
+            {
+              "title": "Batasan cakupan yang membuat audit ditolak (Table 6-2)",
+              "rows": 7,
+              "columns": 2
+            },
+            {
+              "title": "Ringkasan surat penugasan Hillsburg",
+              "rows": 5,
+              "columns": 2
+            },
+            {
+              "title": "Rincian sumber daya dalam konteks buku",
+              "rows": 5,
+              "columns": 3
+            },
+            {
+              "title": "Lima area pemahaman entitas dan kerangka pelaporan",
+              "rows": 6,
+              "columns": 3
+            },
+            {
+              "title": "Inquiry: pihak yang ditanya dan hal yang dipelajari",
+              "rows": 5,
+              "columns": 2
+            },
+            {
+              "title": "Contoh prosedur analitis pada tahap perencanaan (Table 6-4)",
+              "rows": 5,
+              "columns": 2
+            },
+            {
+              "title": "Rasio terpilih Hillsburg dibanding industri (Table 6-5)",
+              "rows": 9,
+              "columns": 5
+            },
+            {
+              "title": "Analisis horizontal laba rugi Hillsburg (ribuan, Figure 6-4)",
+              "rows": 11,
+              "columns": 5
+            },
+            {
+              "title": "Pasangan istilah yang sering tertukar di TM09",
+              "rows": 6,
+              "columns": 2
+            }
+          ],
+          "closedDepth": 17,
+          "status": "revision-written; see progress checkpoint for validation and source limits"
+        },
+        {
+          "tm": 10,
+          "title": "Bukti Audit dan Prosedur Analitis",
+          "sourceIntro": "**Sumber utama:** Arens dkk., Ch.5, pp.126–155 dan Appendix 5A, pp.162–164. **Standar:** SA/ISA 500 (bukti audit), SA/ISA 520 (prosedur analitis).",
+          "sections": [
+            "0. Fondasi: opini auditor hanya sekuat bukti di bawahnya",
+            "1. Bukti di setiap fase audit",
+            "2. Tiga keputusan bukti",
+            "3. Persuasiveness: appropriateness, sufficiency, timeliness",
+            "4. Tiga kategori dan tujuh jenis prosedur audit",
+            "5. Prosedur analitis: kapan dipakai dan dibandingkan dengan apa",
+            "6. Prosedur analitis substantif: ekspektasi, selisih, penyelidikan",
+            "7. Audit data analytics dan teknologi canggih",
+            "Kasus latihan",
+            "Uji pemahaman",
+            "Exam toolkit"
+          ],
+          "denseTables": [
+            {
+              "title": "Kesalahpahaman umum tentang bukti audit dan prosedur analitis",
+              "rows": 6,
+              "columns": 3
+            },
+            {
+              "title": "Enam faktor keandalan bukti",
+              "rows": 6,
+              "columns": 3
+            },
+            {
+              "title": "Keandalan tiap jenis prosedur (Table 5-4)",
+              "rows": 8,
+              "columns": 6
+            },
+            {
+              "title": "Istilah dalam instruksi prosedur audit (Table 5-5)",
+              "rows": 11,
+              "columns": 4
+            },
+            {
+              "title": "Perbandingan internal dan salah saji yang mungkin terdeteksi (Table 5-7)",
+              "rows": 5,
+              "columns": 2
+            },
+            {
+              "title": "Rasio keuangan umum menurut Appendix 5A",
+              "rows": 15,
+              "columns": 4
+            },
+            {
+              "title": "Pola ekspektasi independen dari buku",
+              "rows": 5,
+              "columns": 2
+            },
+            {
+              "title": "Pengujian beban bunga Hillsburg (Figure 5-2, kertas kerja N-3)",
+              "rows": 7,
+              "columns": 3
+            },
+            {
+              "title": "Langkah merencanakan dan menjalankan ADA (Figure 5-3)",
+              "rows": 6,
+              "columns": 3
+            },
+            {
+              "title": "Pasangan istilah yang sering tertukar di TM10",
+              "rows": 8,
+              "columns": 2
+            }
+          ],
+          "closedDepth": 9,
+          "status": "revision-written; see progress checkpoint for validation and source limits"
+        },
+        {
+          "tm": 11,
+          "title": "Dokumentasi Audit dan Kertas Kerja",
+          "sourceIntro": "**Sumber utama:** Arens dkk., Ch.5, pp.156–161. **Standar:** SA/ISA 230 (dokumentasi audit). Bagian akhir juga menyinggung skeptisisme profesional, yang di buku dikaitkan dengan Ch.3.",
+          "sections": [
+            "0. Fondasi: yang tidak tercatat sulit dibuktikan pernah dikerjakan",
+            "1. Tujuan dokumentasi audit",
+            "2. Apa yang wajib dicatat",
+            "3. Isi dan organisasi berkas audit",
+            "4. Menyusun kertas kerja yang baik",
+            "5. Berkas akhir, kepemilikan, dan kerahasiaan",
+            "6. Skeptisisme profesional, bukti, dan dokumentasi",
+            "Kasus latihan",
+            "Uji pemahaman",
+            "Exam toolkit"
+          ],
+          "denseTables": [
+            {
+              "title": "Kesalahpahaman umum tentang dokumentasi audit",
+              "rows": 5,
+              "columns": 3
+            },
+            {
+              "title": "Tujuan dokumentasi audit",
+              "rows": 5,
+              "columns": 3
+            },
+            {
+              "title": "Unsur dokumentasi yang diwajibkan ISA 230",
+              "rows": 6,
+              "columns": 4
+            },
+            {
+              "title": "Ciri kertas kerja yang baik",
+              "rows": 5,
+              "columns": 3
+            },
+            {
+              "title": "Wesel tagih Renaldo Machine Co. per 30 November 2020 (Figure 5-4, kertas kerja C-1)",
+              "rows": 8,
+              "columns": 6
+            },
+            {
+              "title": "Tick mark pada kertas kerja C-1",
+              "rows": 5,
+              "columns": 3
+            },
+            {
+              "title": "Ketentuan ISA 230 setelah laporan auditor terbit",
+              "rows": 5,
+              "columns": 3
+            },
+            {
+              "title": "Siapa boleh mengakses kertas kerja",
+              "rows": 5,
+              "columns": 3
+            },
+            {
+              "title": "Faktor yang menggeser jumlah bukti dan dokumentasi (Figure 5-5)",
+              "rows": 5,
+              "columns": 2
+            },
+            {
+              "title": "Pasangan istilah yang sering tertukar di TM11",
+              "rows": 6,
+              "columns": 2
+            }
+          ],
+          "closedDepth": 5,
+          "status": "revision-written; see progress checkpoint for validation and source limits"
+        },
+        {
+          "tm": 12,
+          "title": "Model Risiko Audit, Penilaian Risiko, dan Risiko Kecurangan",
+          "sourceIntro": "**Sumber utama:** Arens dkk., Ch.7, pp.222–244. **Standar:** SA/ISA 315 (Revised 2019), SA/ISA 240, SA/ISA 330, dan SA/ISA 200 sebagai dasar definisi.",
+          "sections": [
+            "0. Fondasi: risiko audit menentukan di mana bukti dikumpulkan",
+            "1. Model risiko audit",
+            "2. Dari pemahaman entitas ke penilaian risiko",
+            "3. Menilai inherent risk dan menentukan risiko signifikan",
+            "4. Respons terhadap risiko: keseluruhan dan tingkat asersi",
+            "5. Risiko kecurangan: konsep dan penilaian",
+            "6. Fraud triangle dan faktor risiko fraud",
+            "7. Respons terhadap risiko fraud",
+            "Kasus latihan",
+            "Uji pemahaman",
+            "Exam toolkit"
+          ],
+          "denseTables": [
+            {
+              "title": "Kesalahpahaman umum tentang risiko audit",
+              "rows": 7,
+              "columns": 3
+            },
+            {
+              "title": "Perbandingan Company A dan Company B pada persediaan (Figure 7-3)",
+              "rows": 6,
+              "columns": 3
+            },
+            {
+              "title": "Langkah penilaian risiko menurut ISA 315 (Revised 2019)",
+              "rows": 8,
+              "columns": 3
+            },
+            {
+              "title": "Contoh risiko yang berdampak menyeluruh pada laporan keuangan",
+              "rows": 7,
+              "columns": 3
+            },
+            {
+              "title": "Lima inherent risk factors dan contohnya",
+              "rows": 5,
+              "columns": 4
+            },
+            {
+              "title": "Peristiwa dan kondisi yang mengindikasikan risiko pada tingkat asersi (Table 7-3)",
+              "rows": 5,
+              "columns": 2
+            },
+            {
+              "title": "Kategori asersi menurut ISA 315 (A190)",
+              "rows": 7,
+              "columns": 3
+            },
+            {
+              "title": "Konsekuensi menetapkan sebuah risiko sebagai signifikan",
+              "rows": 5,
+              "columns": 3
+            },
+            {
+              "title": "Respons keseluruhan dan respons tingkat asersi",
+              "rows": 5,
+              "columns": 3
+            },
+            {
+              "title": "Fraud dan tanggung jawab auditor menurut ISA 240",
+              "rows": 9,
+              "columns": 3
+            },
+            {
+              "title": "Prosedur penilaian risiko fraud menurut ISA 240",
+              "rows": 7,
+              "columns": 3
+            },
+            {
+              "title": "Evaluasi bukti dan langkah setelah ada indikasi fraud",
+              "rows": 5,
+              "columns": 3
+            },
+            {
+              "title": "Pasangan istilah yang sering tertukar di TM12",
+              "rows": 8,
+              "columns": 2
+            }
+          ],
+          "closedDepth": 11,
+          "status": "revision-written; see progress checkpoint for validation and source limits"
+        },
+        {
+          "tm": 13,
+          "title": "Pengendalian Internal COSO dan Pengendalian Teknologi Informasi",
+          "sourceIntro": "**Sumber utama:** Arens dkk., Ch.8, pp.255–286. **Standar:** SA/ISA 315 (Revised 2019) paras. 12, 21–27, A90–A183, serta Appendix 3, 5, dan 6. Kerangka COSO 2013 dirujuk lewat Table 8-1 buku.",
+          "sections": [
+            "0. Fondasi: pengendalian menentukan seberapa jauh angka bisa dipercaya",
+            "1. Tujuan, tanggung jawab, dan batas pengendalian internal",
+            "2. Lima komponen COSO",
+            "3. Lingkungan pengendalian",
+            "4. Penilaian risiko dan pemantauan oleh entitas",
+            "5. Sistem informasi dan komunikasi",
+            "6. Aktivitas pengendalian",
+            "7. Pengendalian TI: general controls dan application controls",
+            "8. Lingkungan TI dan teknologi baru",
+            "9. Pengendalian pada bisnis kecil",
+            "10. Dari pemahaman ke evaluasi: apa yang dikerjakan auditor pada pengendalian",
+            "Kasus latihan",
+            "Uji pemahaman",
+            "Exam toolkit"
+          ],
+          "denseTables": [
+            {
+              "title": "Kesalahpahaman umum tentang pengendalian internal",
+              "rows": 7,
+              "columns": 3
+            },
+            {
+              "title": "17 prinsip COSO: nomor di buku dan nomor di dokumen COSO 2013",
+              "rows": 17,
+              "columns": 4
+            },
+            {
+              "title": "Komponen COSO menurut sifat pengendalian dan tingkat risiko yang dipengaruhi",
+              "rows": 5,
+              "columns": 5
+            },
+            {
+              "title": "Lima prinsip lingkungan pengendalian dan hal yang dinilai auditor",
+              "rows": 5,
+              "columns": 4
+            },
+            {
+              "title": "Pemicu perubahan yang menaikkan risiko pada sistem pengendalian",
+              "rows": 10,
+              "columns": 3
+            },
+            {
+              "title": "Fitur pengendalian yang dapat menurunkan risiko fraud (Table 8-2)",
+              "rows": 5,
+              "columns": 4
+            },
+            {
+              "title": "Dua bentuk pemantauan dan sumber informasinya",
+              "rows": 5,
+              "columns": 3
+            },
+            {
+              "title": "Cara memperoleh pemahaman atas sistem informasi",
+              "rows": 5,
+              "columns": 3
+            },
+            {
+              "title": "Cara mengelompokkan aktivitas pengendalian",
+              "rows": 8,
+              "columns": 5
+            },
+            {
+              "title": "Lima pemisahan tugas dan risiko yang dicegah",
+              "rows": 5,
+              "columns": 4
+            },
+            {
+              "title": "Lima aktivitas pengendalian: daftar buku dan daftar ISA 315",
+              "rows": 5,
+              "columns": 3
+            },
+            {
+              "title": "Enam kategori general controls (Table 8-3)",
+              "rows": 6,
+              "columns": 4
+            },
+            {
+              "title": "Processing controls (Table 8-5)",
+              "rows": 5,
+              "columns": 4
+            },
+            {
+              "title": "Batch faktur vendor sebelum entri data",
+              "rows": 6,
+              "columns": 3
+            },
+            {
+              "title": "Hasil perbandingan total kontrol pada lima skenario kesalahan entri",
+              "rows": 5,
+              "columns": 6
+            },
+            {
+              "title": "Kategori general controls di buku dan padanannya dalam ISA 315 Appendix 6",
+              "rows": 6,
+              "columns": 3
+            },
+            {
+              "title": "Kompleksitas sistem TI pada tiga tingkat (ringkasan Table 8-7)",
+              "rows": 7,
+              "columns": 4
+            },
+            {
+              "title": "Perlindungan atas komunikasi elektronik",
+              "rows": 5,
+              "columns": 3
+            },
+            {
+              "title": "Risiko dan pengendalian pada bisnis kecil",
+              "rows": 5,
+              "columns": 4
+            },
+            {
+              "title": "Pengendalian yang dapat dijalankan pemilik-manajer",
+              "rows": 6,
+              "columns": 3
+            },
+            {
+              "title": "Cara hasil pemahaman pengendalian dipakai dalam audit",
+              "rows": 5,
+              "columns": 3
+            },
+            {
+              "title": "Contoh keadaan yang dapat menandakan defisiensi pengendalian signifikan",
+              "rows": 5,
+              "columns": 2
+            },
+            {
+              "title": "Pasangan istilah yang sering tertukar di TM13",
+              "rows": 12,
+              "columns": 2
+            }
+          ],
+          "closedDepth": 9,
+          "status": "revision-written; see progress checkpoint for validation and source limits"
+        },
+        {
+          "tm": 14,
+          "title": "Pengujian Pengendalian (TOC) dan Prosedur Substantif",
+          "sourceIntro": "**Sumber utama:** Arens dkk., Ch.9, pp.294–321, dan Ch.10, pp.337–340. **Standar:** SA/ISA 330 paras. 4–23 dan A4–A60; SA/ISA 265 paras. 6–11 dan A1–A30; SA/ISA 315 (Revised 2019) sebagai rujukan balik ke TM13.",
+          "sections": [
+            "0. Fondasi: pengendalian yang tampak baik di atas kertas belum tentu berjalan",
+            "1. Memahami dan mendokumentasikan sistem pengendalian",
+            "2. Mengevaluasi komponen: dari lingkungan pengendalian sampai control activities",
+            "3. Menilai control risk per asersi: control risk matrix dan analisis defisiensi",
+            "4. Dari control risk ke pendekatan audit",
+            "5. Merancang tests of controls",
+            "6. Extent, timing, dan evaluasi hasil tests of controls",
+            "7. Organisasi jasa dan keahlian TI",
+            "8. Prosedur substantif yang wajib dilakukan",
+            "9. Melaporkan defisiensi pengendalian",
+            "Kasus latihan",
+            "Uji pemahaman",
+            "Exam toolkit"
+          ],
+          "denseTables": [
+            {
+              "title": "Kesalahpahaman umum tentang pengujian pengendalian dan prosedur substantif",
+              "rows": 7,
+              "columns": 3
+            },
+            {
+              "title": "Prosedur penilaian risiko untuk memahami sistem pengendalian",
+              "rows": 6,
+              "columns": 4
+            },
+            {
+              "title": "Tujuan kuesioner pengendalian pendapatan Hillsburg dan asersi yang dijawab",
+              "rows": 7,
+              "columns": 5
+            },
+            {
+              "title": "Asersi transaksi penjualan yang dipakai dalam control risk matrix",
+              "rows": 6,
+              "columns": 4
+            },
+            {
+              "title": "Pedoman umum efektivitas control activities (Table 9-2)",
+              "rows": 8,
+              "columns": 3
+            },
+            {
+              "title": "Kontrol dan defisiensi dalam control risk matrix Hillsburg dengan asersi yang dijawab",
+              "rows": 14,
+              "columns": 4
+            },
+            {
+              "title": "Penilaian awal control risk Hillsburg per asersi",
+              "rows": 7,
+              "columns": 5
+            },
+            {
+              "title": "Langkah dalam alur keputusan pendekatan substantif atau gabungan (Figure 9-8)",
+              "rows": 6,
+              "columns": 5
+            },
+            {
+              "title": "Ilustrasi tests of controls atas kontrol kunci Hillsburg (Table 9-3)",
+              "rows": 12,
+              "columns": 4
+            },
+            {
+              "title": "Faktor yang menentukan extent tests of controls",
+              "rows": 5,
+              "columns": 4
+            },
+            {
+              "title": "Aturan timing tests of controls menurut ISA 330",
+              "rows": 5,
+              "columns": 4
+            },
+            {
+              "title": "Faktor yang memperpendek periode pengujian ulang atau menghentikan pemakaian bukti tahun lalu",
+              "rows": 6,
+              "columns": 2
+            },
+            {
+              "title": "Respons auditor ketika menemukan deviasi dari kontrol yang diandalkan",
+              "rows": 6,
+              "columns": 3
+            },
+            {
+              "title": "Lima tugas spesialis TI dalam tim audit",
+              "rows": 5,
+              "columns": 3
+            },
+            {
+              "title": "Keadaan yang mewajibkan prosedur substantif menurut ISA 330",
+              "rows": 5,
+              "columns": 4
+            },
+            {
+              "title": "Prosedur substantif pada tanggal interim dan pengaruhnya",
+              "rows": 6,
+              "columns": 3
+            },
+            {
+              "title": "Faktor yang dipertimbangkan dalam menilai defisiensi signifikan (ISA 265 A6)",
+              "rows": 8,
+              "columns": 3
+            },
+            {
+              "title": "Keadaan yang menandakan defisiensi signifikan menurut buku dan ISA 265",
+              "rows": 7,
+              "columns": 4
+            },
+            {
+              "title": "Pasangan istilah yang sering tertukar di TM14",
+              "rows": 12,
+              "columns": 2
+            }
+          ],
+          "closedDepth": 10,
+          "status": "revision-written; see progress checkpoint for validation and source limits"
+        },
+        {
+          "tm": 15,
+          "title": "CAATs dan Perancangan Program Audit",
+          "sourceIntro": "**Sumber utama:** Arens dkk., Ch.10, pp.330–337 dan pp.340–352; Ch.9, p.316; Ch.5, pp.150–153; Ch.11, pp.395–397. **Standar:** SA/ISA 300 paras. 7–12 dan A9–A23 beserta Appendix; SA/ISA 330 paras. 5–7, 18–25 dan A1–A16, A62–A64; SA/ISA 500 paras. A15–A28; SA/ISA 240 para. A38. **Sumber luar buku:** Jakšić (2009) untuk integrated test facility, parallel simulation, dan online audit monitor.",
+          "sections": [
+            "0. Fondasi: teknologi klien mengubah strategi, dan strategi menentukan program",
+            "1. Strategi audit menyeluruh dan working paper-nya",
+            "2. Rencana audit dan prosedur lanjutan",
+            "3. Bauran prosedur dan pendekatan audit",
+            "4. Merancang prosedur lanjutan yang efektif: nature, timing, dan extent",
+            "5. CAATs dan audit data analytics",
+            "6. Merancang audit program",
+            "7. Ketika bukti mengubah rencana",
+            "Kasus latihan",
+            "Uji pemahaman",
+            "Exam toolkit"
+          ],
+          "denseTables": [
+            {
+              "title": "Kesalahpahaman umum tentang strategi, bauran prosedur, CAATs, dan program audit",
+              "rows": 8,
+              "columns": 3
+            },
+            {
+              "title": "Isi working paper strategi audit Hillsburg (Figure 10-2)",
+              "rows": 10,
+              "columns": 3
+            },
+            {
+              "title": "Tipe prosedur audit, definisi, dan batas bukti menurut ISA 500",
+              "rows": 7,
+              "columns": 4
+            },
+            {
+              "title": "Pertimbangan timing prosedur lanjutan",
+              "rows": 8,
+              "columns": 3
+            },
+            {
+              "title": "Apa yang dikatakan standar tentang CAATs",
+              "rows": 5,
+              "columns": 3
+            },
+            {
+              "title": "Pemakaian ADA pada tahap audit menurut Ch.10 dan Ch.11",
+              "rows": 5,
+              "columns": 4
+            },
+            {
+              "title": "Enam teknik CAATs, cara kerja, dan batasnya",
+              "rows": 6,
+              "columns": 5
+            },
+            {
+              "title": "Memilih teknik CAATs menurut tujuan auditor",
+              "rows": 5,
+              "columns": 4
+            },
+            {
+              "title": "Syarat dan batas pemakaian CAATs dan ADA",
+              "rows": 8,
+              "columns": 3
+            },
+            {
+              "title": "Program tests of details atas saldo piutang usaha (Table 10-4)",
+              "rows": 8,
+              "columns": 6
+            },
+            {
+              "title": "Jumlah langkah Table 10-4 yang menjawab tiap asersi piutang (hitungan penulis)",
+              "rows": 7,
+              "columns": 3
+            },
+            {
+              "title": "Pemicu perubahan rencana audit dan akibatnya",
+              "rows": 5,
+              "columns": 3
+            },
+            {
+              "title": "Faktor yang memengaruhi pertimbangan bukti yang cukup dan tepat (ISA 330 A64)",
+              "rows": 7,
+              "columns": 2
+            },
+            {
+              "title": "Pasangan istilah yang sering tertukar di TM15",
+              "rows": 13,
+              "columns": 2
+            }
+          ],
+          "closedDepth": 8,
+          "status": "revision-written; see progress checkpoint for validation and source limits"
+        }
+      ]
+    },
+    {
+      "code": "AKK202",
+      "meetings": [
+        {
+          "tm": 9,
+          "title": "Liabilitas Jangka Panjang: Harga Obligasi dan Suku Bunga Efektif",
+          "sourceIntro": "TM09 melanjutkan fondasi liabilitas dengan penilaian obligasi, amortisasi diskonto dan premi, serta penerbitan di antara tanggal bunga. Fokusnya adalah memisahkan kas kupon dari beban bunga efektif.",
+          "sections": [
+            "1. Fondasi dan alur belajar",
+            "2. Kontrak, jenis, dan risiko obligasi",
+            "3. Penilaian dan konsistensi periode",
+            "4. Kasus Evermaster: diskonto dan premi",
+            "5. Penerbitan antar-tanggal dan biaya emisi",
+            "6. Penyajian dan analisis",
+            "7. Latihan dan uji pemahaman",
+            "8. Exam Toolkit"
+          ],
+          "denseTables": [],
+          "closedDepth": 3,
+          "status": "revision-written; see progress checkpoint for validation and source limits"
+        },
+        {
+          "tm": 10,
+          "title": "Wesel Jangka Panjang, Pelunasan Utang, dan Opsi Nilai Wajar",
+          "sourceIntro": "TM10 membahas long-term notes payable (wesel bayar jangka panjang), extinguishment (penghentian utang), modifikasi persyaratan, dan fair value option (opsi nilai wajar). Bedakan penghapusan utang dari pembayaran bunga dan pelepasan aset.",
+          "sections": [
+            "1. Fondasi dan alur belajar",
+            "2. Wesel dan pengukuran awal",
+            "3. Nilai kini dan penghentian utang",
+            "4. Kasus wesel dan pelunasan Evermaster",
+            "5. Pelunasan aset, saham, dan modifikasi",
+            "6. Opsi nilai wajar dan rasio utang",
+            "7. Latihan dan uji pemahaman",
+            "8. Exam Toolkit"
+          ],
+          "denseTables": [],
+          "closedDepth": 3,
+          "status": "revision-written; see progress checkpoint for validation and source limits"
+        },
+        {
+          "tm": 11,
+          "title": "Ekuitas Pemegang Saham, Saham Treasuri, dan Dividen",
+          "sourceIntro": "TM11 membahas equity (ekuitas), penerbitan saham, treasury shares (saham treasuri), dan dividend policy (kebijakan dividen). Jurnal memakai aturan IFRS yang dijelaskan buku, termasuk dividen saham pada nilai nominal.",
+          "sections": [
+            "1. Fondasi dan alur belajar",
+            "2. Komponen ekuitas dan penerbitan saham",
+            "3. Saham preferen dan saham treasuri",
+            "4. Kasus Pacific: penerbitan kembali treasuri",
+            "5. Dividen kas, properti, dan saham",
+            "6. Hibah pemerintah dan analisis ekuitas",
+            "7. Latihan dan uji pemahaman",
+            "8. Exam Toolkit"
+          ],
+          "denseTables": [],
+          "closedDepth": 3,
+          "status": "revision-written; see progress checkpoint for validation and source limits"
+        },
+        {
+          "tm": 12,
+          "title": "Sekuritas Dilutif: Konversi, Waran, dan Kompensasi Saham",
+          "sourceIntro": "TM12 membedakan convertible debt (utang konversi), share warrants (waran saham), dan share compensation (kompensasi saham). Fokusnya pada pemisahan liabilitas dan ekuitas serta pengakuan jasa karyawan selama masa vesting.",
+          "sections": [
+            "1. Fondasi dan alur belajar",
+            "2. Instrumen majemuk dan metode residual",
+            "3. Pengukuran Roche dan amortisasi liabilitas",
+            "4. Konversi, pembelian kembali, dan inducement",
+            "5. Waran dan kompensasi berbasis saham",
+            "6. Penyajian dan hubungan dengan EPS",
+            "7. Latihan dan uji pemahaman",
+            "8. Exam Toolkit"
+          ],
+          "denseTables": [],
+          "closedDepth": 3,
+          "status": "revision-written; see progress checkpoint for validation and source limits"
+        },
+        {
+          "tm": 13,
+          "title": "Earnings Per Share: EPS Dasar dan EPS Dilusian",
+          "sourceIntro": "TM13 menghitung basic earnings per share (EPS dasar) dan diluted earnings per share (EPS dilusian). Penyelesaian dimulai dari laba untuk saham biasa dan rata-rata tertimbang saham, lalu menguji setiap instrumen potensial.",
+          "sections": [
+            "1. Fondasi dan alur belajar",
+            "2. Pembilang dan penyebut EPS dasar",
+            "3. Kasus Franks: pembobotan saham",
+            "4. If-converted method untuk obligasi",
+            "5. Opsi, waran, dan antidilusi",
+            "6. Penyajian, urutan, dan saham kontinjensi",
+            "7. Latihan dan uji pemahaman",
+            "8. Exam Toolkit"
+          ],
+          "denseTables": [
+            {
+              "title": "Perhitungan saham rata-rata tertimbang Franks",
+              "rows": 5,
+              "columns": 4
+            }
+          ],
+          "closedDepth": 3,
+          "status": "revision-written; see progress checkpoint for validation and source limits"
+        },
+        {
+          "tm": 14,
+          "title": "Investasi I: Efek Utang, Nilai Wajar, dan Kerugian Kredit",
+          "sourceIntro": "TM14 membahas debt investments (investasi efek utang), pemilihan kategori pengukuran, pendapatan bunga efektif, perubahan nilai wajar, dan expected credit loss (kerugian kredit ekspektasian). TM15 melanjutkan investasi ekuitas dan metode ekuitas.",
+          "sections": [
+            "1. Fondasi dan alur belajar",
+            "2. Klasifikasi efek utang",
+            "3. Bunga efektif dan amortized cost",
+            "4. Kasus Graff: bunga dan FVOCI",
+            "5. Kerugian kredit ekspektasian",
+            "6. Recycling, reklasifikasi, dan hierarki",
+            "7. Latihan dan uji pemahaman",
+            "8. Exam Toolkit"
+          ],
+          "denseTables": [],
+          "closedDepth": 3,
+          "status": "revision-written; see progress checkpoint for validation and source limits"
+        },
+        {
+          "tm": 15,
+          "title": "Investasi II: Efek Ekuitas, Metode Ekuitas, dan Konsolidasi",
+          "sourceIntro": "TM15 melanjutkan investasi dengan equity investments (efek ekuitas), significant influence (pengaruh signifikan), equity method (metode ekuitas), dan pengantar consolidation (konsolidasi). Bedakan dividen sebagai pendapatan dengan dividen sebagai pengurang investasi.",
+          "sections": [
+            "1. Fondasi dan alur belajar",
+            "2. Tingkat pengaruh dan metode pelaporan",
+            "3. Nilai wajar efek ekuitas",
+            "4. Penjualan ekuitas OCI tanpa recycling",
+            "5. Equity method dan kasus Meredith",
+            "6. Pengendalian, batas kerugian, dan penyajian",
+            "7. Latihan dan uji pemahaman",
+            "8. Exam Toolkit"
+          ],
+          "denseTables": [],
+          "closedDepth": 4,
+          "status": "revision-written; see progress checkpoint for validation and source limits"
+        }
+      ]
+    },
+    {
+      "code": "AKK203",
+      "meetings": [
+        {
+          "tm": 8,
+          "title": "Sistem Akuntansi Pemerintah Pusat dan Daerah: Pencatatan sampai Konsolidasi",
+          "sourceIntro": "Mulai dari batas entitas, ikuti perpindahan kas dan pengakuan transaksi, lalu rekonsiliasi sebelum konsolidasi. Analogi kantor pusat–cabang membantu membaca akun internal, tetapi tidak mengubah SKPD menjadi anak perusahaan.",
+          "sections": [
+            "1. Fondasi: siapa mencatat, siapa melaporkan?",
+            "2. Dua jalur SAPP dan alur SAPD",
+            "3. Rekening timbal balik dan rekonsiliasi",
+            "4. Kasus: dana UP Rp50 juta"
+          ],
+          "denseTables": [],
+          "closedDepth": 3,
+          "status": "revision-written; see progress checkpoint for validation and source limits"
+        },
+        {
+          "tm": 9,
+          "title": "Pengukuran Kinerja Pemerintah: Input, Output, Outcome dan Value for Money",
+          "sourceIntro": "Anggaran yang tersisa belum cukup untuk membuktikan keberhasilan program. Pisahkan sumber daya yang dibeli, layanan yang dihasilkan, dan perubahan yang ingin dicapai sebelum menilai ekonomi, efisiensi, dan efektivitas.",
+          "sections": [
+            "1. Fondasi: ukur tujuan program, bukan hanya pengeluaran",
+            "2. Tiga pertanyaan Value for Money",
+            "3. Dari indikator menuju evaluasi",
+            "4. Kasus bertahap"
+          ],
+          "denseTables": [],
+          "closedDepth": 2,
+          "status": "revision-written; see progress checkpoint for validation and source limits"
+        },
+        {
+          "tm": 10,
+          "title": "Audit Organisasi Pemerintah: APIP, BPK, Opini dan Tindak Lanjut",
+          "sourceIntro": "Bedakan pihak pemeriksa, tujuan penugasan, kriteria yang dipakai, dan bentuk hasilnya. Opini atas laporan keuangan, simpulan kinerja, temuan kepatuhan dan tindak lanjut tidak boleh dipadatkan menjadi satu label keberhasilan.",
+          "sections": [
+            "1. Fondasi: pengawasan intern dan pemeriksaan eksternal",
+            "2. Tujuan, kriteria dan bentuk hasil",
+            "3. Opini: empat kriteria dan dua masalah berbeda",
+            "4. Temuan sampai tindak lanjut"
+          ],
+          "denseTables": [],
+          "closedDepth": 2,
+          "status": "revision-written; see progress checkpoint for validation and source limits"
+        },
+        {
+          "tm": 11,
+          "title": "Laporan Keuangan LSM dan Organisasi Nonlaba: Sumber Daya, Pembatasan dan Laporan",
+          "sourceIntro": "TM11 membahas laporan LSM: identifikasi sumber daya, pahami pembatasan donor, lalu hubungkan perubahan aset neto dengan kas dan posisi keuangan. Pelaporan bantuan partai politik diperkenalkan terpisah sebagai jembatan menuju TM12.",
+          "sections": [
+            "1. Fondasi: pilih kerangka pelaporan dahulu",
+            "2. Pembatasan donor dan penggunaan dana",
+            "3. Kasus penyusunan LSM",
+            "4. Pendalaman entitas khusus dan jembatan TM12"
+          ],
+          "denseTables": [
+            {
+              "title": "Rekonsiliasi aset neto ilustratif",
+              "rows": 6,
+              "columns": 4
+            }
+          ],
+          "closedDepth": 2,
+          "status": "revision-written; see progress checkpoint for validation and source limits"
+        },
+        {
+          "tm": 13,
+          "title": "Pengelolaan Keuangan BLU dan BLUD: Fleksibilitas, Layanan dan Pelaporan",
+          "sourceIntro": "Fleksibilitas keuangan diberikan untuk mendukung layanan. Pelajari status entitas, sumber dana dan otorisasinya sebelum menghitung belanja, kemudian hubungkan pendapatan layanan dengan kas serta laporan berbasis SAP.",
+          "sections": [
+            "1. Fondasi: status entitas menentukan jalurnya",
+            "2. Fleksibilitas tetap memerlukan pertanggungjawaban",
+            "3. Dari layanan sampai laporan",
+            "4. Hubungkan ke kinerja layanan"
+          ],
+          "denseTables": [],
+          "closedDepth": 2,
+          "status": "revision-written; see progress checkpoint for validation and source limits"
+        },
+        {
+          "tm": 14,
+          "title": "Topik Penelitian Akuntansi Sektor Publik: Dari Isu ke Pertanyaan dan Bukti",
+          "sourceIntro": "Topik riset perlu lebih dari daftar teknologi dan slogan transparansi. Mulai dari persoalan akuntansi publik, rumuskan mekanisme yang ingin diuji, pilih data, lalu batasi kesimpulan sesuai bukti.",
+          "sections": [
+            "1. Fondasi: pisahkan kebijakan, pelaksanaan dan hasil",
+            "2. Digital governance: apa yang dapat diuji?",
+            "3. Green budgeting: penandaan bukan dampak",
+            "4. Kasus rancangan dan batas simpulan"
+          ],
+          "denseTables": [
+            {
+              "title": "Dari isu digital menjadi rancangan pengujian",
+              "rows": 5,
+              "columns": 2
+            }
+          ],
+          "closedDepth": 2,
+          "status": "revision-written; see progress checkpoint for validation and source limits"
+        }
+      ]
+    },
+    {
+      "code": "PJK301",
+      "meetings": [
+        {
+          "tm": 9,
+          "title": "Konsep PPh 21/26, TER, dan Natura",
+          "sourceIntro": "Membedakan penerima, objek, pemotong, serta dasar PPh Pasal 21 dan 26. Memilih kategori TER dan menilai natura dengan batas serta bukti yang tepat. Contoh dan latihan di bawah menyatakan tahun kasus, dasar aturan, satuan, dan pembulatan.",
+          "sections": [
+            "Dasar pemotongan, subjek, dan objek",
+            "Singkatan dan pengecualian pemotongan",
+            "TER dan masa pajak terakhir",
+            "Cara memilih TER bulanan",
+            "Natura, kenikmatan, dan batas yang harus diuji",
+            "Fasilitas kendaraan dan pembuktian",
+            "Hak, kewajiban, dan administrasi lintas tahun",
+            "PPh 26 dan perjanjian pajak",
+            "Bacaan terbuka sesuai RPP",
+            "Rujukan yang dapat ditelusuri"
+          ],
+          "denseTables": [],
+          "closedDepth": 1,
+          "status": "revision-written; see progress checkpoint for validation and source limits"
+        },
+        {
+          "tm": 10,
+          "title": "Penghitungan PPh 21/26 Berbagai Penerima",
+          "sourceIntro": "Memilih metode untuk pegawai tetap, tidak tetap, bukan pegawai, pensiunan, peserta kegiatan, pesangon, dan SPLN. Menghitung bruto, neto, PTKP, PKP, pajak per lapisan, dan selisih masa terakhir. Contoh dan latihan di bawah menyatakan tahun kasus, dasar aturan, satuan, dan pembulatan.",
+          "sections": [
+            "Pegawai tetap: dari bruto sampai selisih masa terakhir",
+            "Urutan kertas kerja masa terakhir",
+            "Masuk pertengahan tahun dan awal kewajiban subjektif",
+            "Pensiunan berkala dan penerima tidak teratur",
+            "Pegawai tidak tetap dan pola pembayaran",
+            "Bukan pegawai, peserta kegiatan, dan SPLN",
+            "Pesangon, manfaat pensiun sekaligus, dan tahun kalender",
+            "Lebih potong dan audit bukti",
+            "Bacaan terbuka sesuai RPP",
+            "Rujukan yang dapat ditelusuri"
+          ],
+          "denseTables": [
+            {
+              "title": "Pilih dasar menurut penerima pada 2024",
+              "rows": 7,
+              "columns": 3
+            }
+          ],
+          "closedDepth": 1,
+          "status": "revision-written; see progress checkpoint for validation and source limits"
+        },
+        {
+          "tm": 11,
+          "title": "PPh Orang Pribadi dan Rekonsiliasi Fiskal Badan",
+          "sourceIntro": "Menghitung PPh orang pribadi melalui pembukuan atau NPPN dengan syarat masing-masing. Menyusun rekonsiliasi fiskal badan, fasilitas Pasal 31E, serta kredit pajak reguler. Contoh dan latihan di bawah menyatakan tahun kasus, dasar aturan, satuan, dan pembulatan.",
+          "sections": [
+            "OP dengan pembukuan dan NPPN",
+            "Urutan pengurang dan tarif OP",
+            "Rekonsiliasi fiskal badan",
+            "Dividen, natura, dan konflik dengan materi lama",
+            "Fasilitas badan Pasal 31E dan kredit",
+            "Kertas kerja, rugi, dan pelaporan",
+            "Bacaan terbuka sesuai RPP",
+            "Rujukan yang dapat ditelusuri"
+          ],
+          "denseTables": [
+            {
+              "title": "Lapisan tarif OP dan pembulatan PKP",
+              "rows": 5,
+              "columns": 2
+            }
+          ],
+          "closedDepth": 1,
+          "status": "revision-written; see progress checkpoint for validation and source limits"
+        },
+        {
+          "tm": 12,
+          "title": "Dasar PPN, PKP, Objek, dan Tarif",
+          "sourceIntro": "Mengidentifikasi objek, pengecualian, status PKP, dan karakter pemungutan PPN. Memilih DPP dan tarif menurut tahun, termasuk harga sudah mengandung PPN dan impor. Contoh dan latihan di bawah menyatakan tahun kasus, dasar aturan, satuan, dan pembulatan.",
+          "sections": [
+            "Latar belakang dan karakter PPN",
+            "PKP, objek, dan pengecualian",
+            "Ambang PKP dan tahun mulai kewajiban",
+            "Tarif formal dan tahun transaksi",
+            "DPP dan harga termasuk pajak",
+            "Impor dan mekanisme kredit",
+            "Kewajiban PKP dan kontrol dokumen",
+            "Bacaan terbuka sesuai RPP",
+            "Rujukan yang dapat ditelusuri"
+          ],
+          "denseTables": [],
+          "closedDepth": 1,
+          "status": "revision-written; see progress checkpoint for validation and source limits"
+        },
+        {
+          "tm": 13,
+          "title": "PPnBM, Saat Terutang, Faktur, dan Retur",
+          "sourceIntro": "Menghitung PPN serta PPnBM dengan saat, tempat, klasifikasi, dan tahun transaksi yang jelas. Membedakan faktur biasa, gabungan, pengganti, pembatalan, serta dokumen yang dipersamakan. Contoh dan latihan di bawah menyatakan tahun kasus, dasar aturan, satuan, dan pembulatan.",
+          "sections": [
+            "PPnBM: karakter, tarif, dan penghitungan",
+            "Saat dan tempat terutang",
+            "Pembukuan PKP dan jenis dokumen",
+            "Pembetulan, penggantian, dan sanksi",
+            "Alur faktur pada kasus tahun 2024",
+            "Valuta asing, retur, dan pembatalan",
+            "Bacaan terbuka sesuai RPP",
+            "Rujukan yang dapat ditelusuri"
+          ],
+          "denseTables": [
+            {
+              "title": "Dokumen dan pemicu koreksi",
+              "rows": 5,
+              "columns": 3
+            }
+          ],
+          "closedDepth": 1,
+          "status": "revision-written; see progress checkpoint for validation and source limits"
+        },
+        {
+          "tm": 14,
+          "title": "Pengkreditan PM, Restitusi, Pemungut, dan Fasilitas",
+          "sourceIntro": "Memilih mekanisme PM aktual, PM bersama, pedoman sebelum PKP, atau besaran tertentu. Menghitung kredit awal, penghitungan kembali, serta saldo setelah pungutan pihak pemungut. Contoh dan latihan di bawah menyatakan tahun kasus, dasar aturan, satuan, dan pembulatan.",
+          "sections": [
+            "Pengkreditan dan larangan PM",
+            "Identifikasi langsung dan PM bersama",
+            "Pedoman lama dan besaran tertentu: baca tahun soal",
+            "Penghitungan kembali aset dan penyesuaian",
+            "Pemungut dan fasilitas",
+            "Restitusi, jangka penyelesaian, dan SPT masa",
+            "Bacaan terbuka sesuai RPP",
+            "Rujukan yang dapat ditelusuri"
+          ],
+          "denseTables": [],
+          "closedDepth": 1,
+          "status": "revision-written; see progress checkpoint for validation and source limits"
+        },
+        {
+          "tm": 15,
+          "title": "Pajak Karbon dan Analisis Perdagangan Karbon",
+          "sourceIntro": "Menjelaskan subjek, objek, saat terutang, tarif, dan batas penerapan pajak karbon. Menghitung simulasi emisi dengan satuan konsisten serta membandingkan biaya pengurangan. Contoh dan latihan di bawah menyatakan tahun kasus, dasar aturan, satuan, dan pembulatan.",
+          "sections": [
+            "Landasan, subjek, objek, dan saat terutang",
+            "Tarif dan batas kepastian penerapan",
+            "Cap, unit perdagangan, dan simulasi DPP",
+            "Analisis biaya, kebijakan PPN/PPnBM dan pajak daerah",
+            "Contoh kebijakan penurunan emisi pada 2024",
+            "Mekanisme pasar dan bukti unit karbon",
+            "Perdagangan karbon dan etika pelaporan",
+            "Bacaan terbuka sesuai RPP",
+            "Rujukan yang dapat ditelusuri"
+          ],
+          "denseTables": [
+            {
+              "title": "Batas aturan dan asumsi simulasi",
+              "rows": 5,
+              "columns": 3
+            }
+          ],
+          "closedDepth": 1,
+          "status": "revision-written; see progress checkpoint for validation and source limits"
+        }
+      ]
+    },
+    {
+      "code": "MNK102",
+      "meetings": [
+        {
+          "tm": 9,
+          "title": "Struktur Modal dan Leverage",
+          "sourceIntro": "Brigham & Houston, FFM 16e (2022), Bab 14, hal. cetak 478-520 (PDF 520-562). Halaman cetak buku memiliki selisih 42 dari halaman PDF.",
+          "sections": [
+            "Kilat",
+            "Inti",
+            "0. Baca bobot buku, pasar, dan target",
+            "1. Pisahkan risiko operasi dari risiko pendanaan",
+            "2. Cari nilai maksimum, lalu periksa EPS",
+            "3. MM, biaya distress, informasi dan fleksibilitas",
+            "3.1 Baca MM dengan asumsi yang terpisah",
+            "3.2 MM dengan pajak perusahaan: manfaat bunga",
+            "3.3 Teori pendanaan untuk keputusan nyata",
+            "3.4 Grafik sumber untuk risiko dan struktur optimal",
+            "4. Kerangka pengerjaan kasus",
+            "Kasus latihan",
+            "Persiapan Ujian"
+          ],
+          "denseTables": [
+            {
+              "rows": 12,
+              "columns": 2
+            }
+          ],
+          "closedDepth": 1,
+          "status": "revision-written; see progress checkpoint for validation and source limits"
+        },
+        {
+          "tm": 10,
+          "title": "Distribusi kepada Pemegang Saham",
+          "sourceIntro": "Brigham & Houston, FFM 16e (2022), Bab 15, hal. cetak 521-556 (PDF 563-598). Halaman cetak buku memiliki selisih 42 dari halaman PDF.",
+          "sections": [
+            "Kilat",
+            "Inti",
+            "1. Distribusi memerlukan laba, kas, dan peluang investasi",
+            "2. Dividen residual secara bertahap",
+            "3. Teori dividen dan penafsiran informasi",
+            "4. Prosedur pembayaran dan mekanisme saham",
+            "5. Buyback dan nilai",
+            "6. Uji pembagian kas terhadap kebutuhan investor",
+            "Kasus latihan",
+            "Persiapan Ujian"
+          ],
+          "denseTables": [
+            {
+              "rows": 5,
+              "columns": 3
+            },
+            {
+              "rows": 6,
+              "columns": 3
+            },
+            {
+              "rows": 5,
+              "columns": 2
+            }
+          ],
+          "closedDepth": 1,
+          "status": "revision-written; see progress checkpoint for validation and source limits"
+        },
+        {
+          "tm": 11,
+          "title": "Modal Kerja I: Siklus dan Anggaran Kas",
+          "sourceIntro": "Brigham & Houston, FFM 16e (2022), Bab 16, hal. cetak 559-581 (PDF 601-623). Halaman cetak buku memiliki selisih 42 dari halaman PDF.",
+          "sections": [
+            "Kilat",
+            "Inti",
+            "1. Bedakan kebijakan investasi dengan kebijakan pendanaan",
+            "2. Siklus konversi kas dan unit harian",
+            "3. Anggaran kas menunjukkan kebutuhan dana tepat waktu",
+            "4. Kebijakan kas, sekuritas dan piutang",
+            "5. Hubungkan angka dengan keputusan kas",
+            "Kasus latihan",
+            "Persiapan Ujian"
+          ],
+          "denseTables": [
+            {
+              "rows": 7,
+              "columns": 3
+            }
+          ],
+          "closedDepth": 1,
+          "status": "revision-written; see progress checkpoint for validation and source limits"
+        },
+        {
+          "tm": 12,
+          "title": "Modal Kerja II: Persediaan dan Pendanaan",
+          "sourceIntro": "Brigham & Houston, FFM 16e (2022), Bab 16, hal. cetak 577-589 (PDF 619-631). Halaman cetak buku memiliki selisih 42 dari halaman PDF.",
+          "sections": [
+            "Kilat",
+            "Inti",
+            "1. Persediaan menyediakan layanan sekaligus menyerap dana",
+            "2. Diskon pemasok adalah keputusan biaya pendanaan",
+            "3. Biaya bank ditentukan dari arus kas bersih",
+            "4. Fasilitas dan risiko pembiayaan jangka pendek",
+            "5. Bandingkan biaya fasilitas dan cicilan",
+            "Kasus latihan",
+            "Persiapan Ujian"
+          ],
+          "denseTables": [
+            {
+              "rows": 8,
+              "columns": 3
+            }
+          ],
+          "closedDepth": 1,
+          "status": "revision-written; see progress checkpoint for validation and source limits"
+        },
+        {
+          "tm": 13,
+          "title": "Manajemen Keuangan Multinasional",
+          "sourceIntro": "Brigham & Houston, FFM 16e (2022), Bab 18, hal. cetak 625-661 (PDF 667-703). Halaman cetak buku memiliki selisih 42 dari halaman PDF.",
+          "sections": [
+            "Kilat",
+            "Inti",
+            "0. Kenali sistem nilai tukar",
+            "1. Lokasi lintas negara menambah dimensi keputusan",
+            "2. Arah kurs dan kurs silang",
+            "3. Spot, forward, dan paritas suku bunga",
+            "4. PPP dan inflasi sebagai model proyeksi",
+            "5. Lindung nilai dan penilaian proyek",
+            "6. Baca pasar dana dan kas yang kembali ke induk",
+            "Kasus latihan",
+            "Persiapan Ujian"
+          ],
+          "denseTables": [
+            {
+              "rows": 5,
+              "columns": 2
+            },
+            {
+              "rows": 8,
+              "columns": 3
+            },
+            {
+              "rows": 5,
+              "columns": 2
+            }
+          ],
+          "closedDepth": 1,
+          "status": "revision-written; see progress checkpoint for validation and source limits"
+        },
+        {
+          "tm": 14,
+          "title": "Merger dan Akuisisi",
+          "sourceIntro": "Brigham & Houston, FFM 16e (2022), Bab 21, hal. cetak 741-767 (PDF 783-809). Halaman cetak buku memiliki selisih 42 dari halaman PDF.",
+          "sections": [
+            "Kilat",
+            "Inti",
+            "1. Alasan penggabungan dan bentuk transaksi",
+            "2. Bedakan nilai operasi dan nilai ekuitas",
+            "3. Batas tawaran dan siapa memperoleh sinergi",
+            "4. Alternatif dan pemeriksaan pelaksanaan",
+            "5. Periksa asal sinergi dan risiko tawaran",
+            "Kasus latihan",
+            "Persiapan Ujian"
+          ],
+          "denseTables": [
+            {
+              "rows": 8,
+              "columns": 3
+            }
+          ],
+          "closedDepth": 1,
+          "status": "revision-written; see progress checkpoint for validation and source limits"
+        },
+        {
+          "tm": 15,
+          "title": "Corporate Failure dan Analisis Kesulitan Keuangan",
+          "sourceIntro": "Altman (2002), Corporate Distress Prediction Models, halaman PDF 9-15, Figure 2 dan bagian 5-7; Brigham & Houston, FFM 16e (2022), Bab 7, hal. cetak 261-262 (PDF 303-304). Halaman cetak buku memiliki selisih 42 dari halaman PDF.",
+          "sections": [
+            "Kilat",
+            "Inti",
+            "1. Identifikasi jenis kesulitan sebelum memilih tindakan",
+            "2. Altman original: variabel, unit dan populasi",
+            "3. Varian model tidak boleh ditukar sebagian",
+            "4. Reorganisasi dan likuidasi sebagai keputusan ekonomi",
+            "5. Hubungkan sinyal skor dengan keputusan",
+            "Kasus latihan",
+            "Persiapan Ujian"
+          ],
+          "denseTables": [
+            {
+              "rows": 5,
+              "columns": 4
+            },
+            {
+              "rows": 7,
+              "columns": 3
+            }
+          ],
+          "closedDepth": 1,
+          "status": "revision-written; see progress checkpoint for validation and source limits"
+        }
+      ]
+    },
+    {
+      "code": "MNU108",
+      "meetings": [
+        {
+          "tm": 9,
+          "title": "Mengelola inovasi dan perubahan",
+          "sourceIntro": "Proyek MRP Chopper's tertahan meskipun pengusul yakin manfaatnya besar. Bab ini membantu kamu melihat mengapa ide dan kesiapan orang harus diurus bersama. [hal. 295–296]",
+          "sections": [
+            "1. Kilat: Mengelola inovasi dan perubahan",
+            "2. Inovasi dan perubahan: ide harus dipakai",
+            "3. Ambidextrous: ruang mencoba dan disiplin menjalankan",
+            "4. Tiga strategi untuk produk dan proses baru",
+            "5. Hubungan horizontal dan open innovation",
+            "6. Peran dan struktur yang membawa gagasan",
+            "7. Mengubah people dan culture melalui OD",
+            "8. Lewin, resistensi dan taktik implementasi",
+            "Persiapan ujian"
+          ],
+          "denseTables": [
+            {
+              "title": "Creativity: orang dan lingkungan kerjanya",
+              "rows": 6,
+              "columns": 2
+            },
+            {
+              "title": "Contoh historis Exhibit 8.3, daftar tahun 2021",
+              "rows": 10,
+              "columns": 3
+            },
+            {
+              "title": "Batas pencarian ide",
+              "rows": 5,
+              "columns": 2
+            },
+            {
+              "title": "Pilih fungsi dukungan yang dibutuhkan",
+              "rows": 5,
+              "columns": 2
+            },
+            {
+              "title": "Tactics for Implementing Change",
+              "rows": 5,
+              "columns": 2
+            },
+            {
+              "title": "Jangan tertukar",
+              "rows": 5,
+              "columns": 2
+            }
+          ],
+          "closedDepth": 2,
+          "status": "reviewed-existing-detail-retained; see reviewed-courses report for scope"
+        },
+        {
+          "tm": 10,
+          "title": "Talenta, HRM strategis dan inclusion",
+          "sourceIntro": "Perusahaan dalam kasus RPP harus menghemat biaya tanpa kehilangan kemampuan untuk pulih. Memilih orang, mengembangkan talenta dan merawat lingkungan kerja perlu dipikirkan bersama. [hal. 358]",
+          "sections": [
+            "1. Kilat: Talenta, HRM strategis dan inclusion",
+            "2. HRM strategis dan human capital",
+            "3. Social contract dan employability",
+            "4. Finding the right people: cocok bagi dua pihak",
+            "5. Developing talent dan performance management",
+            "6. Maintaining: rewards, fairness dan departure",
+            "7. Diversity, inclusion dan bias",
+            "8. Mengurangi hambatan karier dan membangun inclusion",
+            "Persiapan ujian"
+          ],
+          "denseTables": [
+            {
+              "title": "Exhibit 9.4: hukum federal historis dalam buku",
+              "rows": 7,
+              "columns": 3
+            },
+            {
+              "title": "Perangkat seleksi",
+              "rows": 8,
+              "columns": 2
+            },
+            {
+              "title": "Exhibit 9.8: relevansi pertanyaan dan batas konteks AS",
+              "rows": 8,
+              "columns": 3
+            },
+            {
+              "title": "Cara membangun dan menilai kemampuan",
+              "rows": 6,
+              "columns": 2
+            },
+            {
+              "title": "Changes in Performance Management, Exhibit 9.12",
+              "rows": 6,
+              "columns": 2
+            },
+            {
+              "title": "Exhibit 9.11: contoh pola feedback pada sumber",
+              "rows": 6,
+              "columns": 2
+            },
+            {
+              "title": "Bedakan dasar keputusan HR",
+              "rows": 6,
+              "columns": 2
+            },
+            {
+              "title": "Jenis bias dan respons",
+              "rows": 6,
+              "columns": 2
+            },
+            {
+              "title": "Exhibit 9.13: ranking historis sumber Fortune Januari 2020",
+              "rows": 10,
+              "columns": 4
+            },
+            {
+              "title": "Exhibit 9.14: contoh tonggak historis versi buku",
+              "rows": 10,
+              "columns": 2
+            },
+            {
+              "title": "Hambatan dan tindakan",
+              "rows": 8,
+              "columns": 2
+            },
+            {
+              "title": "Diversity initiatives and programs",
+              "rows": 6,
+              "columns": 2
+            },
+            {
+              "title": "Jangan tertukar",
+              "rows": 5,
+              "columns": 2
+            }
+          ],
+          "closedDepth": 6,
+          "status": "reviewed-existing-detail-retained; see reviewed-courses report for scope"
+        },
+        {
+          "tm": 11,
+          "title": "Understanding Individual Behavior",
+          "sourceIntro": "Dua orang dapat menafsirkan kejadian yang sama secara berbeda. Pelajari cara memeriksa persepsi, memahami pola diri dan mengelola emosi serta tuntutan kerja dengan bukti.",
+          "sections": [
+            "1. Kilat: Understanding Individual Behavior",
+            "2. Self-awareness, attitudes dan trust",
+            "3. Perception dan attribution",
+            "4. Personality: dimensi, ketekunan dan cara memecahkan masalah",
+            "5. Emotions dan emotional intelligence",
+            "6. Managing yourself: komitmen menjadi tindakan",
+            "7. Stress, resilience dan tanggung jawab organisasi",
+            "Persiapan ujian"
+          ],
+          "denseTables": [
+            {
+              "title": "Big Five",
+              "rows": 5,
+              "columns": 2
+            }
+          ],
+          "closedDepth": 2,
+          "status": "reviewed-existing-detail-retained; see reviewed-courses report for scope"
+        },
+        {
+          "tm": 12,
+          "title": "Leadership",
+          "sourceIntro": "Gaya leadership yang membantu satu tim dapat menghambat tim lain. Mulai dari tujuan, kondisi tugas dan readiness pengikut, kemudian pilih perilaku serta cara menggunakan pengaruh.",
+          "sections": [
+            "1. Kilat: Leadership",
+            "2. Leadership dan management saling melengkapi",
+            "3. Pendekatan leadership untuk lingkungan yang berubah",
+            "4. Traits, strengths dan perilaku",
+            "5. Hersey–Blanchard: diagnosis readiness per tugas",
+            "6. Fiedler, substitutes dan neutralizers",
+            "7. Charismatic, transformational dan transactional",
+            "8. Followership, power dan taktik pengaruh",
+            "Persiapan ujian"
+          ],
+          "denseTables": [
+            {
+              "title": "Karakteristik yang dinilai pada sumber",
+              "rows": 10,
+              "columns": 2
+            },
+            {
+              "title": "Delapan situasi pada Exhibit 11.7",
+              "rows": 8,
+              "columns": 4
+            },
+            {
+              "title": "Substitutes dan neutralizers: Exhibit 11.8",
+              "rows": 10,
+              "columns": 3
+            },
+            {
+              "title": "Lima basis power",
+              "rows": 5,
+              "columns": 3
+            }
+          ],
+          "closedDepth": 3,
+          "status": "reviewed-existing-detail-retained; see reviewed-courses report for scope"
+        },
+        {
+          "tm": 13,
+          "title": "Motivating Employees",
+          "sourceIntro": "Bonus dapat memotivasi sebagian orang sekaligus merusak kerja sama. Pelajari kebutuhan, persepsi fairness, hubungan usaha/reward dan desain pekerjaan untuk memilih tindakan yang sesuai.",
+          "sections": [
+            "1. Kilat: Motivating Employees",
+            "2. Needs, behavior, rewards dan feedback",
+            "3. Content theories: kebutuhan apa yang hendak dipenuhi?",
+            "4. Herzberg: menghilangkan dissatisfaction dan menumbuhkan satisfaction",
+            "5. Process theories: goal setting dan equity",
+            "6. Expectancy: effort, performance dan outcome",
+            "7. Reinforcement dan social learning",
+            "8. Job design dan Job Characteristics Model",
+            "9. Incentive compensation, empowerment dan engagement",
+            "Persiapan ujian"
+          ],
+          "denseTables": [
+            {
+              "title": "Persentase yang mengalami kondisi tertentu",
+              "rows": 12,
+              "columns": 3
+            }
+          ],
+          "closedDepth": 2,
+          "status": "reviewed-existing-detail-retained; see reviewed-courses report for scope"
+        },
+        {
+          "tm": 14,
+          "title": "Managing Communication and Leading Teams",
+          "sourceIntro": "RPP menggabungkan komunikasi dan tim: kualitas pesan memengaruhi trust, sedangkan proses tim menentukan apakah informasi menjadi tindakan bersama. Hubungkan kedua bab saat menganalisis Brainchild.",
+          "sections": [
+            "1. Kilat: Managing Communication and Leading Teams",
+            "2. Communication champion dan siklus komunikasi",
+            "3. Purpose, persuasion dan open climate",
+            "4. Networks dan channel richness",
+            "5. Feedback, candor, questions, listening dan nonverbal cues",
+            "6. Workplace communication: formal, informal dan digital",
+            "7. Teamwork dan tipe tim",
+            "8. Virtual leadership, dilemmas dan effectiveness",
+            "9. Development, cohesiveness dan norms",
+            "10. Conflict dan negotiation",
+            "Persiapan ujian"
+          ],
+          "denseTables": [
+            {
+              "title": "Ten Keys to Effective Listening",
+              "rows": 10,
+              "columns": 2
+            },
+            {
+              "title": "Tipe tim tambahan",
+              "rows": 5,
+              "columns": 2
+            },
+            {
+              "title": "Five common dysfunctions → keadaan efektif",
+              "rows": 5,
+              "columns": 2
+            },
+            {
+              "title": "Jebakan gabungan komunikasi/tim",
+              "rows": 5,
+              "columns": 2
+            }
+          ],
+          "closedDepth": 2,
+          "status": "reviewed-existing-detail-retained; see reviewed-courses report for scope"
+        },
+        {
+          "tm": 15,
+          "title": "Managing Quality and Performance",
+          "sourceIntro": "Angka performance memberi sinyal, tetapi keputusan memerlukan standards, data yang valid dan diagnosis. Hubungkan quality, scorecard, budget serta financial ratios untuk memilih koreksi yang tepat.",
+          "sections": [
+            "1. Kilat: Managing Quality and Performance",
+            "2. Organizational control dan empat langkah feedback",
+            "3. Balanced scorecard: mission menjadi ukuran serta tindakan",
+            "4. Hierarchical, decentralized dan algorithmic control",
+            "5. TQM, benchmarking dan Six Sigma",
+            "6. Budgetary control dan responsibility center",
+            "7. Financial statements: posisi dan performance",
+            "8. Financial ratios: sebut numerator, denominator dan batas",
+            "Persiapan ujian"
+          ],
+          "denseTables": [
+            {
+              "title": "Exhibit 15.3: dua filosofi",
+              "rows": 7,
+              "columns": 3
+            },
+            {
+              "title": "Teknik TQM",
+              "rows": 5,
+              "columns": 2
+            },
+            {
+              "title": "Quality Program Success Factors",
+              "rows": 5,
+              "columns": 2
+            },
+            {
+              "title": "Jenis budget",
+              "rows": 5,
+              "columns": 2
+            },
+            {
+              "title": "Exhibit 15.6: New Creations Landscaping, 31 Desember 2019",
+              "rows": 20,
+              "columns": 2
+            },
+            {
+              "title": "Exhibit 15.7: tahun berakhir 31 Desember 2019",
+              "rows": 15,
+              "columns": 2
+            },
+            {
+              "title": "Exhibit 15.8: rumus menurut buku",
+              "rows": 8,
+              "columns": 3
+            },
+            {
+              "title": "Turunan contoh 15.6–15.7 dengan basis eksplisit",
+              "rows": 7,
+              "columns": 3
+            },
+            {
+              "title": "Jebakan ujian",
+              "rows": 5,
+              "columns": 2
+            }
+          ],
+          "closedDepth": 2,
+          "status": "reviewed-existing-detail-retained; see reviewed-courses report for scope"
+        }
+      ]
+    },
+    {
+      "code": "MNU307",
+      "meetings": [
+        {
+          "tm": 9,
+          "title": "THEORYBRIDGE.COM dan cara menganalisis kasus strategi",
+          "sourceIntro": "Pisahkan fakta kasus dari hasil analisismu, tentukan masalah dasar sebelum memilih alat, lalu beri rekomendasi yang langkah pertamanya bisa dijalankan.",
+          "sections": [
+            "Kilat",
+            "Inti",
+            "1. Memahami tujuan case analysis dan tiga kemampuan yang dilatih",
+            "2. Menjalankan lima langkah analisis kasus",
+            "3. Memilih sudut pandang dan memakai empat faktor business plan",
+            "4. Membaca latar TheoryBridge.com dan dua masalah gap riset dan praktik",
+            "5. Memetakan model bisnis: brief, freemium, dan pembanding Dropbox",
+            "6. Menilai tim dan proses: percobaan pertama gagal, desain kedua mengubah urutan kerja",
+            "7. Membaca produk dan strategi dua jalur: individu dan perusahaan",
+            "8. Menjawab pertanyaan Bill: dari gejala ke rekomendasi",
+            "Persiapan ujian"
+          ],
+          "denseTables": [
+            {
+              "rows": 5,
+              "columns": 3
+            },
+            {
+              "rows": 6,
+              "columns": 2
+            },
+            {
+              "rows": 5,
+              "columns": 3
+            },
+            {
+              "rows": 10,
+              "columns": 2
+            },
+            {
+              "rows": 6,
+              "columns": 3
+            },
+            {
+              "rows": 5,
+              "columns": 2
+            },
+            {
+              "rows": 5,
+              "columns": 2
+            },
+            {
+              "rows": 16,
+              "columns": 3
+            }
+          ],
+          "closedDepth": 8,
+          "status": "reviewed-existing-detail-retained; see reviewed-courses report for scope"
+        },
+        {
+          "tm": 10,
+          "title": "H&M's Dilemma dan pilihan strategi di industri fast fashion",
+          "sourceIntro": "Dilema H&M muncul karena model murah dan cepat bergantung pada pemasok yang tidak ia miliki, sehingga rekomendasi harus menyentuh cara H&M mengukur dan mengawasi rantai pasoknya, bukan hanya cara ia berkomunikasi.",
+          "sections": [
+            "Kilat",
+            "Inti",
+            "1. Membaca dilema CEO dan profil H&M",
+            "2. Memetakan industri fast fashion dan tiga pemimpinnya",
+            "3. Membaca angka keuangan H&M dengan rasio Appendix 1",
+            "4. Menghitung beban planet dan manusia dari fast fashion",
+            "5. Menilai inisiatif CSR H&M: yang tertulis dan yang dipertanyakan",
+            "6. Memakai alat Chapter 1: stakeholder, tiga theater CSR, dan triple bottom line",
+            "7. Membaca strategi biaya rendah, alih daya, dan risiko Tiongkok",
+            "8. Menjawab dilema: dari gejala ke rekomendasi",
+            "Persiapan ujian"
+          ],
+          "denseTables": [
+            {
+              "rows": 5,
+              "columns": 3
+            },
+            {
+              "rows": 6,
+              "columns": 4
+            },
+            {
+              "rows": 9,
+              "columns": 3
+            },
+            {
+              "rows": 7,
+              "columns": 2
+            },
+            {
+              "rows": 5,
+              "columns": 3
+            },
+            {
+              "rows": 7,
+              "columns": 4
+            },
+            {
+              "rows": 5,
+              "columns": 2
+            },
+            {
+              "rows": 14,
+              "columns": 3
+            }
+          ],
+          "closedDepth": 6,
+          "status": "reviewed-existing-detail-retained; see reviewed-courses report for scope"
+        },
+        {
+          "tm": 11,
+          "title": "Louis Vuitton dan cara LVMH mengelola portofolio merek mewah",
+          "sourceIntro": "Nilai LVMH lahir dari dua keputusan yang sengaja berlawanan, yaitu kebebasan bagi pencipta merek dan disiplin bagi pembuat produk, jadi rekomendasi apa pun untuk pertumbuhan harus menjaga keduanya.",
+          "sections": [
+            "Kilat",
+            "Inti",
+            "1. Portofolio LVMH dan jalan menuju Tiffany",
+            "2. Membaca strategi korporat: nilai dari induk, bukan dari berbagi kegiatan",
+            "3. Kreativitas longgar, produksi ketat: dua cara mengendalikan perilaku",
+            "4. Struktur house dan kantor pusat kecil",
+            "5. Membaca angka LVMH dengan rasio Appendix 1",
+            "6. Ke mana LVMH tumbuh: akuisisi, online, atau merek yang sudah ada",
+            "7. Menjawab kasus: dari gejala ke rekomendasi",
+            "Persiapan ujian"
+          ],
+          "denseTables": [
+            {
+              "rows": 5,
+              "columns": 2
+            },
+            {
+              "rows": 6,
+              "columns": 4
+            },
+            {
+              "rows": 5,
+              "columns": 4
+            },
+            {
+              "rows": 5,
+              "columns": 2
+            },
+            {
+              "rows": 5,
+              "columns": 4
+            },
+            {
+              "rows": 7,
+              "columns": 4
+            },
+            {
+              "rows": 5,
+              "columns": 5
+            },
+            {
+              "rows": 5,
+              "columns": 2
+            },
+            {
+              "rows": 15,
+              "columns": 3
+            }
+          ],
+          "closedDepth": 6,
+          "status": "reviewed-existing-detail-retained; see reviewed-courses report for scope"
+        },
+        {
+          "tm": 12,
+          "title": "Emirates Airline dan strategi hub, layanan premium, dan guncangan pandemi",
+          "sourceIntro": "Strategi Emirates bertumpu pada hub dan layanan premium yang membuat biaya tetapnya besar, jadi ketika penumpang hilang hampir seluruh biaya tetap ikut bertahan, dan rekomendasi harus menjaga keunggulan layanan tanpa menambah beban tetap.",
+          "sections": [
+            "Kilat",
+            "Inti",
+            "1. Dari Dubai ke dunia: asal usul dan strategi hub",
+            "2. Tekanan permintaan dan lingkungan persaingan",
+            "3. Strategi internasional dan risiko politik",
+            "4. Layanan premium dan jebakan diferensiasi",
+            "5. Orang, budaya, dan merek: awak kabin sebagai produk",
+            "6. Membaca angka Emirates dengan rasio Appendix 1",
+            "7. Menjawab kasus: dari gejala ke rekomendasi",
+            "Persiapan ujian"
+          ],
+          "denseTables": [
+            {
+              "rows": 6,
+              "columns": 5
+            },
+            {
+              "rows": 6,
+              "columns": 5
+            },
+            {
+              "rows": 6,
+              "columns": 4
+            },
+            {
+              "rows": 14,
+              "columns": 3
+            },
+            {
+              "rows": 5,
+              "columns": 5
+            },
+            {
+              "rows": 6,
+              "columns": 4
+            },
+            {
+              "rows": 5,
+              "columns": 2
+            },
+            {
+              "rows": 16,
+              "columns": 3
+            }
+          ],
+          "closedDepth": 6,
+          "status": "reviewed-existing-detail-retained; see reviewed-courses report for scope"
+        },
+        {
+          "tm": 13,
+          "title": "Samsung Electronics dan perpindahan dari harga murah ke merek premium, inovasi cepat, dan sumber pertumbuhan baru",
+          "sourceIntro": "Samsung membuktikan bahwa perpindahan dari harga rendah ke diferensiasi menuntut perubahan orang, merek, kecepatan, dan desain sekaligus, tetapi kasus tidak memberi data margin per divisi, jadi rekomendasi pertumbuhan harus berani menunjuk arah dan jujur menandai data yang belum ada.",
+          "sections": [
+            "Kilat",
+            "Inti",
+            "1. Samsung 2021: raksasa yang diguncang kepemimpinan",
+            "2. Meninggalkan strategi yang gagal: dari harga rendah ke premium",
+            "3. Membangun merek premium: produk, saluran, dan orang",
+            "4. Kecepatan, inovasi, dan corporate entrepreneurship",
+            "5. Desain, komponen sendiri, dan keberlanjutan model",
+            "6. Membaca angka Samsung dengan rasio Appendix 1",
+            "7. Menjawab kasus: dari gejala ke rekomendasi",
+            "Persiapan ujian"
+          ],
+          "denseTables": [
+            {
+              "rows": 6,
+              "columns": 4
+            },
+            {
+              "rows": 5,
+              "columns": 4
+            },
+            {
+              "rows": 5,
+              "columns": 3
+            },
+            {
+              "rows": 5,
+              "columns": 3
+            },
+            {
+              "rows": 7,
+              "columns": 5
+            },
+            {
+              "rows": 5,
+              "columns": 2
+            },
+            {
+              "rows": 16,
+              "columns": 3
+            }
+          ],
+          "closedDepth": 6,
+          "status": "reviewed-existing-detail-retained; see reviewed-courses report for scope"
+        },
+        {
+          "tm": 14,
+          "title": "Alibaba Group dan strategi platform, pertumbuhan lewat investasi, tekanan regulasi, serta persaingan domestik dan global",
+          "sourceIntro": "Alibaba membuktikan bahwa platform ringan aset bisa tumbuh sangat cepat, tetapi angka kasus menunjukkan pertumbuhan pendapatan 2021 tidak menjadi pertumbuhan laba operasi, sehingga rekomendasi harus mengembalikan kualitas laba sambil memilih mesin pertumbuhan berikutnya dan menandai data yang kasus tidak berikan.",
+          "sections": [
+            "Kilat",
+            "Inti",
+            "1. Dari apartemen Hangzhou ke pasar modal Amerika",
+            "2. Model platform: pasar tanpa gudang dan ekosistemnya",
+            "3. Strategi pertumbuhan: akuisisi, aliansi, dan ritel fisik",
+            "4. Persaingan: lima pesaing dan aliansi mereka",
+            "5. Regulasi, etika, dan risiko internasional",
+            "6. Membaca angka Alibaba dengan rasio Appendix 1",
+            "7. Menjawab kasus: dari gejala ke rekomendasi",
+            "Persiapan ujian"
+          ],
+          "denseTables": [
+            {
+              "rows": 8,
+              "columns": 3
+            },
+            {
+              "rows": 6,
+              "columns": 3
+            },
+            {
+              "rows": 7,
+              "columns": 4
+            },
+            {
+              "rows": 9,
+              "columns": 3
+            },
+            {
+              "rows": 9,
+              "columns": 4
+            },
+            {
+              "rows": 5,
+              "columns": 3
+            },
+            {
+              "rows": 6,
+              "columns": 5
+            },
+            {
+              "rows": 10,
+              "columns": 4
+            },
+            {
+              "rows": 6,
+              "columns": 4
+            },
+            {
+              "rows": 5,
+              "columns": 2
+            },
+            {
+              "rows": 16,
+              "columns": 3
+            }
+          ],
+          "closedDepth": 6,
+          "status": "reviewed-existing-detail-retained; see reviewed-courses report for scope"
+        },
+        {
+          "tm": 15,
+          "title": "Procter & Gamble dan upaya menyegarkan merek besar lewat fokus portofolio, inovasi terbuka, desentralisasi, dan suksesi kepemimpinan",
+          "sourceIntro": "Angka FY2021 P&G kuat, jadi masalahnya bukan kerugian: kasus menunjukkan pola kepemimpinan yang berganti, portofolio yang terus dipangkas, inovasi yang tertahan, dan kekhawatiran pertumbuhan pasca-pandemi, sehingga rekomendasi harus memisahkan kekuatan angka dari masalah strategi dan menandai data yang kasus tidak berikan.",
+          "sections": [
+            "Kilat",
+            "Inti",
+            "1. Dari ikon Amerika ke CEO baru",
+            "2. Kepemimpinan dan tata kelola: dari Jager sampai McDonald",
+            "3. Orang dan budaya: Proctoids, tinjauan talenta, dan promosi dari dalam",
+            "4. Merek dan portofolio: dari akuisisi ke \"less will be more\"",
+            "5. Inovasi terbuka, desentralisasi, dan struktur",
+            "6. Membaca angka P&G dengan rasio Appendix 1",
+            "7. Menjawab kasus: dari gejala ke rekomendasi",
+            "Persiapan ujian"
+          ],
+          "denseTables": [
+            {
+              "rows": 10,
+              "columns": 2
+            },
+            {
+              "rows": 7,
+              "columns": 3
+            },
+            {
+              "rows": 5,
+              "columns": 4
+            },
+            {
+              "rows": 8,
+              "columns": 5
+            },
+            {
+              "rows": 12,
+              "columns": 4
+            },
+            {
+              "rows": 7,
+              "columns": 4
+            },
+            {
+              "rows": 6,
+              "columns": 6
+            },
+            {
+              "rows": 5,
+              "columns": 2
+            },
+            {
+              "rows": 16,
+              "columns": 3
+            }
+          ],
+          "closedDepth": 6,
+          "status": "reviewed-existing-detail-retained; see reviewed-courses report for scope"
+        }
+      ]
+    }
+  ]
+}

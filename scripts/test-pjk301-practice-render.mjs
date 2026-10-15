@@ -125,10 +125,16 @@ try {
         for (const cell of [...block.headers, ...block.rows.flat()]) assert.ok(container.textContent.includes(cell), 'Reading table cell remains visible: TM' + tm);
       }
     }
-    const buttons = [...container.querySelectorAll('button[aria-expanded="false"]')];
+    const closed = [...container.querySelectorAll('button[aria-expanded="false"]')];
+    const depthButtons = closed.filter(button => button.textContent.trim().startsWith('Buka pendalaman:'));
+    const buttons = closed.filter(button => !depthButtons.includes(button));
     assert.equal(buttons.length,2,'Two examples initially closed');
+    assert.equal(depthButtons.length, readings[tm].blocks.filter(b => b.kind === 'pendalaman').length, 'Depth has its own closed control');
     await React.act(async () => buttons.forEach(click));
     for (const block of readings[tm].blocks.filter(b=>b.kind==='solution-reveal')) assert.ok(container.textContent.includes(block.blocks[0].text),'Calculation solution opens intact');
+    assert.ok(depthButtons.every(button => button.getAttribute('aria-expanded') === 'false'), 'Opening exercise solutions leaves depth closed');
+    await React.act(async () => depthButtons.forEach(click));
+    for (const block of readings[tm].blocks.filter(b => b.kind === 'pendalaman')) assert.ok(container.textContent.includes(block.blocks[0].text), 'Additional explanation opens independently');
   }
   await mount(React.createElement(AdvancedFlashcardTab,{course,cards}));
   const change = async (select,value) => React.act(async()=>{select.value=value;select.dispatchEvent(new dom.window.Event('change',{bubbles:true}));});

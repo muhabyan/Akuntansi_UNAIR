@@ -2,7 +2,7 @@
 
 Status: READY_WITH_SCOPE_LIMITATION
 
-SHA256 05 (CRLF): 9b12ca0c01792f9dcb361a379643367822da64a0383d1a5bc1a3a99b497666ee
+SHA256 05 (CRLF): 39930f5424cf942fbb6ef6ded5d136ea25f531f8b5bc46310e1468c09facbfd7
 
 Brigham & Houston, FFM 16e (2022), Bab 21, hal. cetak 741-767 (PDF 783-809)
 
@@ -136,3 +136,6 @@ Satuan juta USD; standalone berarti nilai perusahaan ketika beroperasi sendiri. 
 Gain_A=96.5-86.5=10\qquad Gain_B=86.5-62.5=24
 Manfaat 10 + 24 = 34 juta USD. [hal. 752; PDF 794]
 ```
+## Elaborasi 14 Oktober 2026
+
+Sumber 05 diperbarui untuk tujuan spesifik, contoh terbimbing dekat rumus, dan alur penalaran. Angka ilustrasi baru diberi label penulis; tabel, rumus, gambar dan dua kasus sumber dipertahankan. TM09 mengurutkan teori sebelum kerangka kasus. SHA256 05: 39930f5424cf942fbb6ef6ded5d136ea25f531f8b5bc46310e1468c09facbfd7. Validasi terakhir dicatat di docs/pra-uas-elaboration-progress.md.

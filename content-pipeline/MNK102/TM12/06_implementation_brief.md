@@ -1,6 +1,6 @@
 # Implementasi MNK102 TM12
 
-Masukan otoritatif: 05_student_learning_version.md; SHA256 737dda1913a632ed12210a74fa94dc1a283fdaf3f9ce6ffa2f7f9af8b4dc435a.
+Masukan otoritatif: 05_student_learning_version.md; SHA256 bc161276d81749fd8ded8766464a1d308ecf043fb5e41993595713f0826b71ef.
 
 Konverter scripts/convert-mnk102.mjs menghasilkan src/data/mankeu/modules/tm12.ts, ekspor TM12_READING, Reading.layout layered, kunci 12. Output CRLF. Jangan mengedit teks TypeScript hasil konverter.
 
@@ -69,3 +69,6 @@ pesan utama: Tambahan pendanaan 20 hari memiliki biaya 2/98.
 versi HP: overview dengan kartu teks; grafik desktop tetap dapat dibuka
 alt text: Trade Credit: diskon atau pendanaan. Tambahan pendanaan 20 hari memiliki biaya 2/98.
 ```
+## Elaborasi 14 Oktober 2026
+
+Sumber 05 diperbarui untuk tujuan spesifik, contoh terbimbing dekat rumus, dan alur penalaran. Angka ilustrasi baru diberi label penulis; tabel, rumus, gambar dan dua kasus sumber dipertahankan. TM09 mengurutkan teori sebelum kerangka kasus. SHA256 05: bc161276d81749fd8ded8766464a1d308ecf043fb5e41993595713f0826b71ef. Validasi terakhir dicatat di docs/pra-uas-elaboration-progress.md.
