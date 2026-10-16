@@ -8,6 +8,8 @@ import Typewriter from './Typewriter';
 import Aks1Logo3D from './Aks1Logo3D';
 
 import StudyScheduleWidget from './StudyScheduleWidget';
+import LearningResume from './LearningResume';
+import { useLearningJournal } from '../hooks/useLearningJournal';
 
 interface HomeViewProps {
   onSelectSemester: (semesterId: string) => void;
@@ -19,6 +21,7 @@ const ACTIVE_SEMESTERS = SEMESTERS.filter((semester) => !semester.locked);
 
 export default function HomeView({ onSelectSemester, onOpenCourseDirectly, onOpenGuide }: HomeViewProps) {
   const { countDone, isDone } = useStudyProgress();
+  const { visits } = useLearningJournal();
 
   const { continueItems, hasRecordedProgress } = useMemo(() => {
     const items: Array<{
@@ -83,8 +86,8 @@ export default function HomeView({ onSelectSemester, onOpenCourseDirectly, onOpe
     return () => observer.disconnect();
   }, []);
 
-  return (
-    <>
+  const returning = hasRecordedProgress || visits.length > 0;
+  const hero = (<>
       {/* Hero Section. From 1024px it fills the first screen below the header (min 100svh, so the next section starts
           below the fold) and centres its text 4svh above the middle; 768-1023px starts 34px below the header. */}
       <section className="relative z-10 flex min-h-[82svh] flex-col justify-center overflow-hidden bg-bg pb-[calc(4rem+env(safe-area-inset-bottom))] pt-[calc(4.25rem+env(safe-area-inset-top))] md:min-h-0 md:justify-start md:pb-0 md:pt-[calc(var(--page-top)-0.5rem)] lg:min-h-[100svh] lg:justify-center lg:pb-[8svh] lg:pt-[var(--site-header-rest-h)]">
@@ -126,8 +129,14 @@ export default function HomeView({ onSelectSemester, onOpenCourseDirectly, onOpe
         </div>
       </section>
 
+  </>);
+
+  return (
+    <>
+      {!returning && hero}
+
       {/* Returning-student study continuation, powered only by existing progress keys. */}
-      <section id="continue-learning" className="relative z-10 border-y border-line bg-surface">
+      <section id="continue-learning" className={`relative z-10 border-y border-line bg-surface ${returning ? 'pt-[var(--page-top)]' : ''}`}>
         <div className="mx-auto max-w-7xl px-5 py-6 sm:py-8 md:px-10 md:py-10 lg:px-14">
           <div className="mb-4 flex flex-col gap-2 sm:mb-5 sm:flex-row sm:items-end sm:justify-between">
             <div>
@@ -139,6 +148,7 @@ export default function HomeView({ onSelectSemester, onOpenCourseDirectly, onOpe
             </p>
           </div>
 
+          <LearningResume onOpen={onOpenCourseDirectly} />
           {continueItems.length > 0 ? (
             <div className="overflow-hidden rounded-2xl border border-blue-100 bg-white/85 shadow-sm shadow-blue-950/5 dark:border-blue-900/50 dark:bg-gray-900/80">
               {continueItems.map((item) => {
@@ -188,6 +198,8 @@ export default function HomeView({ onSelectSemester, onOpenCourseDirectly, onOpe
           )}
         </div>
       </section>
+
+      {returning && <details className="mx-auto w-full max-w-7xl px-5 py-3 md:px-10"><summary className="min-h-11 cursor-pointer py-2 text-sm font-semibold text-gray-600 dark:text-gray-300">Tentang AkuntansiHub</summary>{hero}</details>}
 
       {onOpenCourseDirectly && (
         <section className="relative z-10 mx-auto max-w-7xl px-5 md:px-10 lg:px-14">

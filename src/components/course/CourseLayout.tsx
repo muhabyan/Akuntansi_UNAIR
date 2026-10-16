@@ -25,6 +25,9 @@ import { getArsipFiles } from '../../data/arsipRegistry';
 import ArsipViewerTab from '../ArsipViewerTab';
 
 import CourseSidebar from './CourseSidebar';
+import LearningScope from './LearningScope';
+import QuickPractice, { QuickPracticeLink } from './QuickPractice';
+import { useLearningJournal } from '../../hooks/useLearningJournal';
 import CourseHeader from './CourseHeader';
 import CourseBlockCard from './CourseBlockCard';
 import { renderText } from './MarkdownContent';
@@ -328,7 +331,7 @@ function ReadingPanel({
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (document.activeElement?.tagName === 'INPUT' || document.activeElement?.tagName === 'TEXTAREA') return;
+      if (document.activeElement?.closest('input, textarea, select, button, a, [contenteditable="true"], [role="dialog"]')) return;
       if (e.key === 'ArrowLeft' && !isFirst) {
         onPrev();
       } else if (e.key === 'ArrowRight' && !isLast) {
@@ -349,11 +352,13 @@ function ReadingPanel({
   }, []);
 
   return (
+    <LearningScope courseCode={courseCode} tm={reading.tm} reading={reading}>
     <div
       className={`reading-layout grid min-w-0 gap-6 lg:grid-cols-[minmax(0,64rem)_12.5rem] lg:justify-center${sharedFrame ? ` ${SHARED_FRAME_CLASS}` : ''}`}
       data-outline-expanded={desktopOutlineOpen}
     >
       <article
+        data-learning-reading
         className="min-w-0 animate-fade-in-up"
         onTouchStart={onTouchStart}
         onTouchMove={onTouchMove}
@@ -406,6 +411,7 @@ function ReadingPanel({
         </div>
 
         <CourseHeader courseName={courseName} reading={reading} onBack={onBack} showZenControl={false} postUtsLabel={postLabel} reviewKind={reviewKind} />
+        <QuickPracticeLink />
 
         <SharedFrameContext.Provider value={sharedFrame}>
           <div ref={readingDocumentRef} className={`reading-document akbi-reading-flow min-w-0${(courseCode === 'SII306') ? ' sia-reading-document' : ''}`}>
@@ -455,6 +461,7 @@ function ReadingPanel({
           </div>
         </SharedFrameContext.Provider>
 
+        <QuickPractice reading={reading} />
         <footer className="reading-completion reading-prose-block mt-14 border-t border-gray-200 pt-7 dark:border-gray-800 md:mt-16 md:pt-8">
           <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-blue-600 dark:text-blue-400">Selesai membaca?</p>
           <h2 className="mt-1.5 text-lg font-bold text-gray-900 dark:text-white">Catat progres, lalu lanjutkan saat siap.</h2>
@@ -484,6 +491,7 @@ function ReadingPanel({
       <ReadingOutline items={outlineItems} variant="desktop" activeId={activeOutlineId} isOpen={desktopOutlineOpen} onOpenChange={setDesktopOutlineOpen} />
       <ReadingOutline items={outlineItems} variant="mobile" activeId={activeOutlineId} isOpen={mobileOutlineOpen} onOpenChange={setMobileOutlineOpen} />
     </div>
+    </LearningScope>
   );
 }
 
@@ -517,7 +525,7 @@ function UniversalCourseDashboard({
         </h2>
         <p className="mt-1.5 text-sm text-gray-600 dark:text-gray-400">
           {isComplete
-            ? `Semua ${totalCount} materi sudah ditandai selesai. Mulai ulang dari awal bila ingin meninjau.`
+            ? `Seluruh bacaan terbit pada jalur ini sudah ditandai selesai. Tinjau kembali atau pilih jalur lain. Total mata kuliah: ${totalCount} materi.`
             : `${completedCount} dari ${totalCount} materi sudah selesai.`}
         </p>
       </div>
@@ -687,6 +695,7 @@ export default function CourseLayout({ course, initialTab = 'tm1-7', initialTm =
   const isSiaCourse = course.code === 'SII306';
   const { isDone, toggle } = useStudyProgress();
   const [activeTab, setActiveTab] = useState<TabType>(() => mapInitialTab(initialTab));
+  const learningJournal = useLearningJournal();
   const [searchQuery, setSearchQuery] = useState('');
   const [isSortedAsc, setIsSortedAsc] = useState(true);
   const [selectedMeetingTm, setSelectedMeetingTm] = useState<number | null>(initialTm);
@@ -789,9 +798,13 @@ export default function CourseLayout({ course, initialTab = 'tm1-7', initialTm =
   }, [availableTms, course.code, course.materiTM1_7, course.materiTM8_14, isDone]);
 
   const nextTm = useMemo(() => {
-    return availableTms.find((t) => !isDone(materialKey(course.code, t))) ?? availableTms[0] ?? null;
-  }, [availableTms, course.code, isDone]);
-  const isCourseComplete = stats.total > 0 && stats.completed === stats.total;
+    const phaseTms = activeTab === 'pra_uts' ? utsTms : activeTab === 'pra_uas' ? uasTms : availableTms;
+    const recent = learningJournal.visits.find(visit => visit.courseCode === course.code && phaseTms.includes(visit.tm));
+    if (recent && !isDone(materialKey(course.code, recent.tm))) return recent.tm;
+    return phaseTms.find((t) => !isDone(materialKey(course.code, t))) ?? phaseTms[0] ?? null;
+  }, [availableTms, activeTab, utsTms, uasTms, learningJournal.visits, course.code, isDone]);
+  const phaseTms = activeTab === 'pra_uts' ? utsTms : activeTab === 'pra_uas' ? uasTms : availableTms;
+  const isCourseComplete = phaseTms.length > 0 && phaseTms.every(t => isDone(materialKey(course.code, t)));
 
 
 
