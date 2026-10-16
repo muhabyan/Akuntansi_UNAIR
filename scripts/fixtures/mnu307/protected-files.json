@@ -29,7 +29,11 @@
   },
   "src/components/course/CourseLayout.tsx": {
     "worktree": "297f5477cbc5690c084eee95e534ee81b4bf65bbcabcc2f443e18e99aa092e74",
-    "repository": "3a637b474bff02ca1e47d65f0bc77fdd113eb2c52cfa911b625e6e77d547b15c"
+    "repository": "3a637b474bff02ca1e47d65f0bc77fdd113eb2c52cfa911b625e6e77d547b15c",
+    "authorizedTutorLearning20261016": [
+      "27257122875ef5d2ec59584bbf3cce6bc1115dfb09c158c7f6a90ebb7f546145",
+      "67ce8f1cc6b63e52a1476fdfb87688271f2481cb995898edb6b7b219adf636c2"
+    ]
   },
   "src/components/course/CourseSidebar.tsx": {
     "worktree": "f69a879c34ae9b93b92e848e6d328ab44f0a7123eae099136eb0df7f47323b57",
@@ -49,7 +53,11 @@
   },
   "src/components/course/LayeredBlocks.tsx": {
     "worktree": "a1a593c01948b11616f6f890c12c18c7db34394e4376564260f64cdaedd1af75",
-    "repository": "a35075a4de37d749687c41653166eb5c73f2c0e59b768d510bd67a951877210a"
+    "repository": "a35075a4de37d749687c41653166eb5c73f2c0e59b768d510bd67a951877210a",
+    "authorizedTutorLearning20261016": [
+      "2468d0cf8c9afed3b1a81b50fe5a1589b20fefd95f040f36363cb7c304b0abab",
+      "63be81143eeb05e0e113991bff5cd802c12c5bfbc4cc9a8cc5b17413840a8103"
+    ]
   },
   "src/components/course/MarkdownContent.tsx": {
     "worktree": "43cfd50f17f3d717c27ef86d21076b42e497334d23b18508ac70a65fd9971b8a",
