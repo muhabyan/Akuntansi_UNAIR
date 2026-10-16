@@ -84,7 +84,8 @@ try {
   globalThis.fetch = async (url, options) => { calls.push({ url, options }); return { ok: true, json: async () => url.includes('/models?') ? { models: [{ name: 'models/gemini-unit', displayName: 'Model uji', supportedGenerationMethods: ['generateContent'] }] } : { modelVersion: 'gemini-unit', candidates: [{ content: { parts: [{ text: 'Terhubung' }] } }] } }; };
   function SettingsHarness() {
     const state = useGeminiSettings();
-    return React.createElement(AITutorSettings, { ...state, onSave: state.saveApiKey, onModelChange: state.setModel, onFallbackChange: state.setAllowFallback });
+    if (!state.isReady) return null;
+    return React.createElement(AITutorSettings, { ...state, onSave: state.saveApiKey });
   }
   await act(async () => { root.render(React.createElement(SettingsHarness)); await pause(); });
   assert.equal(button('Cek koneksi').disabled, true);
@@ -106,6 +107,61 @@ try {
   await click(button('Cek koneksi'));
   assert.ok(document.querySelector('[role="status"]').textContent.includes('Key ditolak'));
   assert.ok(!document.body.textContent.includes('upstream secret-key'));
+  const change = (node, value) => act(async () => { Simulate.change(node, { target: { value } }); await pause(); });
+  const providerSelect = () => document.querySelectorAll('select')[0];
+  const modelSelect = () => document.querySelectorAll('select')[1];
+  const keyInput = () => document.querySelector('input[type="password"]');
+  const beforeSwitch = calls.length;
+  await change(providerSelect(), 'openai');
+  assert.equal(button('Cek koneksi').disabled, true, 'Switching providers cannot reuse the active key');
+  assert.equal(document.querySelector('input[type="checkbox"]').checked, false, 'Remembering a previous key does not opt in a new provider key');
+  assert.equal(localStorage.getItem('aks1_gemini_api_key'), 'unit-test-key', 'Draft selection does not alter active credentials');
+  assert.equal(JSON.parse(localStorage.getItem('akuntansihub:ai-options')).provider, 'gemini');
+  assert.equal(modelSelect().value, 'auto'); assert.ok(!document.querySelector('option[value="gemini-unit"]'));
+  assert.equal(calls.length, beforeSwitch);
+  await change(keyInput(), 'sk-proj-unit');
+  globalThis.fetch = async (url, options) => { calls.push({ url, options }); return { ok: true, json: async () => url.endsWith('/models') ? { data: [{ id: 'gpt-6-luna' }, { id: 'gpt-image-1' }] } : { model: 'gpt-6-luna-resolved', output: [{ type: 'message', role: 'assistant', content: [{ type: 'output_text', text: 'Terhubung' }] }] } }; };
+  await click(button('Muat model')); await change(modelSelect(), 'gpt-6-luna');
+  assert.ok(!document.querySelector('option[value="gpt-image-1"]'));
+  await click(button('Cek koneksi'));
+  assert.equal(calls.at(-1).url, 'https://api.openai.com/v1/responses');
+  assert.equal(calls.at(-1).options.headers.Authorization, 'Bearer sk-proj-unit');
+  assert.ok(document.querySelector('[role="status"]').textContent.includes('gpt-6-luna-resolved'));
+  const beforeOpenAISave = calls.length;
+  await click(button('Simpan & mulai belajar'));
+  assert.equal(calls.length, beforeOpenAISave);
+  assert.equal(localStorage.getItem('aks1_gemini_api_key'), null, 'Replacing a saved key with a session key removes the old saved key');
+  assert.deepEqual(JSON.parse(localStorage.getItem('akuntansihub:ai-options')), { provider: 'openai', model: 'gpt-6-luna', allowFallback: false });
+  await change(providerSelect(), 'anthropic');
+  assert.equal(modelSelect().value, 'auto'); assert.equal(button('Cek koneksi').disabled, true);
+  await change(keyInput(), 'sk-proj-wrong');
+  assert.ok(document.querySelector('[role="alert"]').textContent.includes('Key tidak cocok'));
+  assert.equal(button('Cek koneksi').disabled, true); assert.equal(button('Simpan & mulai belajar').disabled, true);
+  await change(keyInput(), 'sk-ant-unit');
+  globalThis.fetch = async (url, options) => { calls.push({ url, options }); return { ok: true, json: async () => ({ model: 'claude-resolved', content: [{ type: 'text', text: 'Terhubung' }] }) }; };
+  await click(button('Cek koneksi'));
+  assert.equal(calls.at(-1).url, 'https://api.anthropic.com/v1/messages');
+  assert.equal(calls.at(-1).options.headers['x-api-key'], 'sk-ant-unit');
+  await act(async () => { Simulate.change(document.querySelector('input[type="checkbox"]'), { target: { checked: true } }); await pause(); });
+  await click(button('Simpan & mulai belajar'));
+  assert.equal(localStorage.getItem('aks1_gemini_api_key'), 'sk-ant-unit');
+  assert.equal(JSON.parse(localStorage.getItem('akuntansihub:ai-options')).provider, 'anthropic');
+  const remountSettings = async () => {
+    await act(async () => root.unmount()); root = createRoot(document.getElementById('root'));
+    await act(async () => { root.render(React.createElement(SettingsHarness)); await pause(); });
+  };
+  await remountSettings();
+  assert.equal(providerSelect().value, 'anthropic'); assert.equal(button('Cek koneksi').disabled, false);
+  for (const [key, provider] of [['AIzaLegacy', 'gemini'], ['gsk_legacy', 'groq']]) {
+    localStorage.removeItem('akuntansihub:ai-options'); localStorage.setItem('aks1_gemini_api_key', key);
+    await remountSettings();
+    assert.equal(providerSelect().value, provider); assert.equal(button('Cek koneksi').disabled, false, 'Recognizable legacy keys migrate without network calls');
+  }
+  localStorage.removeItem('akuntansihub:ai-options'); localStorage.setItem('aks1_gemini_api_key', 'unrecognized-legacy');
+  await remountSettings();
+  assert.equal(button('Cek koneksi').disabled, true, 'Unrecognized legacy key must be entered again with an explicit provider');
+  await remountSettings();
+  assert.equal(button('Cek koneksi').disabled, true, 'Reloading must not silently assign an unrecognized legacy key to Gemini');
   console.log('Learning and Tutor settings DOM PASS: selected phase, saved notes, review-only practice, restore/delete, no false completion, returning home, model loading, generation probe, opt-in key storage, safe errors.');
 } finally { globalThis.fetch = originalFetch; if (root) await act(async () => root.unmount()); await server.close(); dom.window.close(); }
 // The unauthenticated Supabase singleton retains background timers after DOM teardown.

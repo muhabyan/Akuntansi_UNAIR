@@ -11,7 +11,7 @@ import ReactMarkdown from 'react-markdown';
 
 export default function AITutorFloating() {
   const [isOpen, setIsOpen] = useState(false);
-  const { apiKey, saveApiKey, removeApiKey, hasKey, model, setModel, allowFallback, setAllowFallback, storageWarning, rememberKey } = useGeminiSettings();
+  const { apiKey, provider, saveApiKey, removeApiKey, isReady, hasKey, model, allowFallback, storageWarning, rememberKey } = useGeminiSettings();
   const panelRef = useRef<HTMLDivElement | null>(null);
   const [showSettings, setShowSettings] = useState(false);
   const [mode, setMode] = useState<TutorMode>('learn');
@@ -114,7 +114,7 @@ export default function AITutorFloating() {
     setIsLoading(true); setRequestError(''); setFailedHistory(null); setPendingCommand(null);
     const controller = new AbortController(); requestRef.current = controller;
     try {
-      const reply = await chatWithAI(history, apiKey, buildTutorPrompt(mode, mode === 'learn' && shareContext ? context.text : '', window.location.pathname), { model, allowFallback, signal: controller.signal });
+      const reply = await chatWithAI(history, apiKey, buildTutorPrompt(mode, mode === 'learn' && shareContext ? context.text : '', window.location.pathname), { provider, model, allowFallback, signal: controller.signal });
       if (controller.signal.aborted) return;
       const parsed = parseTutorReply(reply.content, mode);
       setPendingCommand(parsed.command);
@@ -210,9 +210,9 @@ export default function AITutorFloating() {
           </div>
 
           {storageWarning && <p role="status" className="shrink-0 px-4 py-2 text-xs text-amber-700 dark:text-amber-200">{storageWarning}</p>}
-          {!hasKey || showSettings ? (
-            <AITutorSettings apiKey={apiKey} model={model} allowFallback={allowFallback} rememberKey={rememberKey} onModelChange={setModel} onFallbackChange={setAllowFallback}
-              onSave={(key, remember) => { requestRef.current?.abort(); saveApiKey(key, remember); setShowSettings(false); setLastModel(''); setFailedHistory(null); setRequestError(''); setPendingCommand(null); }}
+          {!isReady ? <p role="status" className="p-5 text-sm">Memuat pengaturan AI…</p> : !hasKey || showSettings ? (
+            <AITutorSettings apiKey={apiKey} provider={provider} model={model} allowFallback={allowFallback} rememberKey={rememberKey}
+              onSave={(key, remember, selectedProvider, selectedModel, fallback) => { requestRef.current?.abort(); saveApiKey(key, remember, selectedProvider, selectedModel, fallback); setShowSettings(false); setLastModel(''); setFailedHistory(null); setRequestError(''); setPendingCommand(null); }}
               onCancel={hasKey ? () => setShowSettings(false) : undefined} />
           ) : (
             /* Chat Interface */

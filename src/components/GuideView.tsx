@@ -243,7 +243,7 @@ export default function GuideView({ onHome }: { onHome: () => void }) {
 
               <ul className="space-y-3">
                 <li className="flex items-center gap-3 text-sm font-medium text-slate-700 dark:text-slate-300">
-                  <Zap className="w-5 h-5 text-purple-500" /> Gemini atau Groq dengan API key milikmu; kuota dan biaya mengikuti akun penyedia
+                  <Zap className="w-5 h-5 text-purple-500" /> Pilih Gemini, Groq, OpenAI, atau Claude dengan API key milikmu; kuota dan biaya mengikuti akun penyedia
                 </li>
                 <li className="flex items-center gap-3 text-sm font-medium text-slate-700 dark:text-slate-300">
                   <Zap className="w-5 h-5 text-purple-500" /> Pilih model dan cek koneksi di pengaturan; periksa jawaban AI terhadap sumber materi
