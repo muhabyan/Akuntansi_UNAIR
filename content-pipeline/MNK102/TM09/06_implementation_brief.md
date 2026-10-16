@@ -1,6 +1,6 @@
 # Implementasi MNK102 TM09
 
-Masukan otoritatif: 05_student_learning_version.md; SHA256 0756e85851fc8ab78ed51efc0584bf0d8804e1bbb53a832be2f057e24ea8b470.
+Masukan otoritatif: 05_student_learning_version.md; SHA256 2c903f3a286cde9a0d620f19c05d4c102988b676afb1aa5a979d28e7d033a339.
 
 Konverter scripts/convert-mnk102.mjs menghasilkan src/data/mankeu/modules/tm9.ts, ekspor TM9_READING, Reading.layout layered, kunci 9. Output CRLF. Jangan mengedit teks TypeScript hasil konverter.
 
@@ -391,3 +391,6 @@ pesan utama: Sintesis label untuk diagram kosong latihan Campus Deli; bukan kunc
 versi HP: overview dengan kartu teks; grafik desktop tetap dapat dibuka
 alt text: Campus Deli: hubungan struktur modal dan harga. Sintesis label untuk diagram kosong latihan Campus Deli; bukan kunci resmi penerbit.
 ```
+## Elaborasi 14 Oktober 2026
+
+Sumber 05 diperbarui untuk tujuan spesifik, contoh terbimbing dekat rumus, dan alur penalaran. Angka ilustrasi baru diberi label penulis; tabel, rumus, gambar dan dua kasus sumber dipertahankan. TM09 mengurutkan teori sebelum kerangka kasus. SHA256 05: 2c903f3a286cde9a0d620f19c05d4c102988b676afb1aa5a979d28e7d033a339. Validasi terakhir dicatat di docs/pra-uas-elaboration-progress.md.

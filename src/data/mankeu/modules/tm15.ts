@@ -7,9 +7,9 @@ export const TM15_READING: Reading = {
   "title": "Corporate Failure dan Analisis Kesulitan Keuangan",
   "intro": "Altman (2002), Corporate Distress Prediction Models, halaman PDF 9-15, Figure 2 dan bagian 5-7; Brigham & Houston, FFM 16e (2022), Bab 7, hal. cetak 261-262 (PDF 303-304). Halaman cetak buku memiliki selisih 42 dari halaman PDF.",
   "objectives": [
-    "Memilih konsep dan asumsi yang sesuai kasus.",
-    "Menunjukkan langkah hitungan, satuan, pembulatan, dan keputusan.",
-    "Menjelaskan batas model serta rujukannya."
+    "Membedakan masalah likuiditas, distress dan status hukum dalam batas sumber.",
+    "Mengidentifikasi rasio, unit, populasi dan batas satu varian Altman secara konsisten.",
+    "Menggunakan skor sebagai awal analisis dan membandingkan alternatif pemulihan tanpa mengubahnya menjadi probabilitas gagal."
   ],
   "layout": "layered",
   "ref": "Altman (2002), Corporate Distress Prediction Models, halaman PDF 9-15, Figure 2 dan bagian 5-7; Brigham & Houston, FFM 16e (2022), Bab 7, hal. cetak 261-262 (PDF 303-304)",
@@ -81,7 +81,7 @@ export const TM15_READING: Reading = {
         {
           "kind": "callout",
           "variant": "gist",
-          "text": "**Kalau cuma sempat ingat satu hal:** arus kas, tingkat, satuan, dan periode harus konsisten sebelum kamu mengambil keputusan."
+          "text": "**Kalau cuma sempat ingat satu hal:** Z-score menyaring risiko pada populasi dan varian tertentu; keputusan tetap memerlukan pemeriksaan kas, jatuh tempo dan nilai pemulihan."
         },
         {
           "kind": "callout",
@@ -219,6 +219,26 @@ export const TM15_READING: Reading = {
           "text": "Artikel juga membahas perubahan hasil pengujian dan false positive, perusahaan yang ditandai bermasalah tetapi tidak gagal. [Altman 2002 PDF13-14]"
         },
         {
+          "kind": "h3",
+          "text": "Contoh terbimbing: rasio desimal, kontribusi dan batas simpulan"
+        },
+        {
+          "kind": "p",
+          "text": "Ilustrasi penulis untuk varian original: X1 = 0,10; X2 = 0,20; X3 = 0,08; X4 = 0,50; X5 = 1,20. Diasumsikan definisi data dan populasi sesuai varian. Koefisien mengikuti artikel primer yang telah dirujuk: [Altman 2002, PDF 10-14]."
+        },
+        {
+          "kind": "ol",
+          "items": [
+            "Kontribusi setiap rasio adalah 0,120; 0,280; 0,264; 0,300; dan 1,200. Jumlahnya Z = 2,164. Menulis rasio 10% sebagai angka 10 akan mengubah skala dan menghasilkan skor keliru.",
+            "Dengan batas original yang digunakan modul, 2,164 berada di zona abu-abu. Ini klasifikasi skor, bukan peluang gagal 2,164% atau 216,4%.",
+            "Jika hanya X3 turun dari 0,08 ke 0,02, kontribusinya berkurang 3,3 × 0,06 = 0,198. Skor baru 1,966. Hasil ini menunjukkan kepekaan terhadap EBIT pada asumsi rasio lain tetap, bukan membuktikan penyebab perubahan perusahaan nyata."
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "Langkah berikutnya adalah memeriksa data, jadwal pembayaran, kas dan prospek pemulihan. Jangan mengganti nilai pasar ekuitas dengan nilai buku sambil mempertahankan seluruh koefisien dan batas original."
+        },
+        {
           "kind": "self-check",
           "question": "Apa pembilang dan penyebut X4 original?",
           "answer": [
@@ -345,7 +365,7 @@ export const TM15_READING: Reading = {
     },
     {
       "kind": "section",
-      "title": "4a. Hubungkan sinyal skor dengan keputusan",
+      "title": "5. Hubungkan sinyal skor dengan keputusan",
       "layer": "main",
       "blocks": [
         {

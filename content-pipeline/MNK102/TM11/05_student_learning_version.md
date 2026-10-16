@@ -3,9 +3,9 @@
 Brigham & Houston, FFM 16e (2022), Bab 16, hal. cetak 559-581 (PDF 601-623). Halaman cetak buku memiliki selisih 42 dari halaman PDF.
 
 **Setelah TM ini kamu bisa:**
-1. Memilih konsep dan asumsi yang sesuai kasus.
-2. Menunjukkan langkah hitungan, satuan, pembulatan, dan keputusan.
-3. Menjelaskan batas model serta rujukannya.
+1. Membedakan kebijakan investasi aset lancar dari pilihan tenor pendanaan.
+2. Menghitung dan menafsirkan CCC dengan satuan serta arus yang konsisten.
+3. Menyusun anggaran kas dan menilai kebijakan kredit dari tambahan manfaat, biaya dan risiko.
 
 ## Kilat
 
@@ -30,7 +30,7 @@ alt text: Modal Kerja I: Siklus dan Anggaran Kas: peta keputusan. Mulai dari jen
 
 Brigham & Houston, FFM 16e (2022), Bab 16, hal. cetak 559-581 (PDF 601-623)
 
-> **Kalau cuma sempat ingat satu hal:** arus kas, tingkat, satuan, dan periode harus konsisten sebelum kamu mengambil keputusan.
+> **Kalau cuma sempat ingat satu hal:** tanggal pembayaran dan penagihan menentukan kebutuhan kas; laba dan saldo akhir bulan belum cukup menunjukkan tekanan di antaranya.
 
 > **Catatan sumber:** Kontrak membagi Bab 16 menjadi dua pertemuan tanpa batas subbab; paket memilih kebijakan aset, CCC, kas, dan piutang pada TM11, persediaan dan pendanaan pada TM12. Model anggaran buku dibulatkan ke juta USD.
 
@@ -77,6 +77,16 @@ DIO=\frac{Persediaan}{COGS/365}\qquad DSO=\frac{Piutang}{Penjualan\ kredit/365}\
 [hal. 567-568; PDF 609-610]
 ```
 
+### Contoh terbimbing: siklus operasi berbeda dari jeda pendanaan kas
+
+Ilustrasi penulis: persediaan tersimpan 60 hari, pelanggan membayar 45 hari setelah penjualan, dan pemasok dibayar 30 hari setelah pembelian. Dasar konsep: [hal. 565-569; PDF 607-611].
+
+1. Pada hari 0 barang dibeli secara kredit. Pembayaran pemasok baru mengeluarkan kas pada hari 30.
+2. Barang terjual pada hari 60. Penerimaan pelanggan terjadi pada hari 60 + 45 = 105.
+3. Siklus operasi dari pembelian hingga penagihan adalah 105 hari. Jeda yang harus didanai setelah membayar pemasok adalah 105 - 30 = 75 hari, sehingga CCC = 60 + 45 - 30 = 75 hari.
+
+DPO dikurangkan karena pemasok menanggung sebagian jeda pendanaan. Memperpanjangnya tanpa memperhatikan syarat kredit dapat mengorbankan diskon atau hubungan pemasok; CCC yang turun perlu dibaca bersama biaya dan risiko.
+
 <!-- self-check question="Mengapa DPO dikurangkan pada CCC?" -->
 Cash conversion cycle adalah jeda antara pembayaran kas untuk operasi dan penerimaan kas pelanggan. Persediaan menambah waktu sampai barang terjual, piutang menambah waktu sampai kas diterima, sementara utang pemasok menyediakan pendanaan sementara. [hal. cetak 565-569; PDF 607-611]
 <!-- self-check:end -->
@@ -94,6 +104,12 @@ Periksa pola intrabulan jika arus besar terjadi sebelum pelanggan membayar. [hal
 Kas_{pra}=Kas_{awal}+Penerimaan-Pembayaran\qquad Pinjaman=\max(0,Kas_{minimum}-Kas_{pra})
 Kas pada tanggal pembayaran dan penerimaan aktual. [hal. 570-573; PDF 612-615]
 ```
+
+### Contoh terbimbing: kapan pinjaman dibutuhkan?
+
+Ilustrasi penulis dalam juta rupiah: kas awal 10, penerimaan bulan ini 20, pembayaran 35 dan kas minimum 10. Kas sebelum pendanaan = 10 + 20 - 35 = minus 5. Pinjaman untuk mencapai saldo minimum = 10 - (minus 5) = 15, sehingga kas akhir setelah pinjaman menjadi 10. Kebutuhan pinjaman berbeda dari selisih pembayaran dan penerimaan karena kas awal serta saldo minimum ikut dihitung. Dasar anggaran kas: [hal. 570-573; PDF 612-615].
+
+Jika pembayaran besar terjadi sebelum penerimaan, kebutuhan di tengah bulan dapat lebih tinggi daripada 15. Periksa urutan tanggalnya sebelum menetapkan plafon bank.
 
 <!-- self-check question="Mengapa penjualan kredit belum masuk kas bulan yang sama?" -->
 Cash budget menempatkan penerimaan dan pembayaran pada bulan benar-benar terjadi. Penjualan kredit masuk kas saat tertagih, belanja modal dan pelunasan utang merupakan pembayaran meski bukan seluruhnya biaya laba periode itu. [hal. cetak 570-573; PDF 612-615]
@@ -152,7 +168,7 @@ versi HP: overview dengan kartu teks; grafik desktop tetap dapat dibuka
 alt text: Cash Conversion Cycle: lini waktu GFI. DIO 60 + DSO 60 - DPO 40 = CCC 80 hari.
 ```
 
-## 4a. Hubungkan angka dengan keputusan kas
+## 5. Hubungkan angka dengan keputusan kas
 
 Rasio harian menggunakan pembagi yang sesuai arusnya. Buku menghitung inventory conversion period dengan persediaan dibagi penjualan harian, dan payables deferral period dengan utang dagang dibagi pembelian harian. Buku juga memperbolehkan COGS harian pada kedua rasio tersebut karena persediaan dan utang dicatat pada biaya. Pendekatan biaya perlu dinyatakan, terutama saat margin membuat penjualan berbeda dari biaya. [hal. 567-568; PDF 609-610]
 

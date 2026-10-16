@@ -1,0 +1,157 @@
+{
+  "tm": 8,
+  "layout": "layered",
+  "title": "Sistem Akuntansi Pemerintah Pusat dan Daerah: Pencatatan sampai Konsolidasi",
+  "ref": "Kontrak ASP TM8; PP 71/2010 PSAP 11; PMK 217/PMK.05/2022; Permendagri 77/2020",
+  "intro": "Mulai dari batas entitas, ikuti perpindahan kas dan pengakuan transaksi, lalu rekonsiliasi sebelum konsolidasi. Analogi kantor pusat–cabang membantu membaca akun internal, tetapi tidak mengubah SKPD menjadi anak perusahaan.",
+  "objectives": [
+    "Membedakan SAPP, SAPD, entitas akuntansi dan entitas pelaporan.",
+    "Memisahkan pemberian uang persediaan dari pengakuan beban atau belanja.",
+    "Menelusuri saldo timbal balik dan jurnal eliminasi pada kertas kerja."
+  ],
+  "blocks": [
+    {
+      "kind": "section",
+      "layer": "main",
+      "title": "1. Fondasi: siapa mencatat, siapa melaporkan?",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Entitas akuntansi mengelola anggaran/barang, menyelenggarakan akuntansi, dan menyampaikan laporan kepada entitas pelaporan. Entitas pelaporan menggabungkan satu atau lebih entitas untuk pertanggungjawaban keuangan. Pada pemda, SKPD menyusun laporan unitnya; pemerintah daerah menjadi batas LKPD. PPKD menjalankan fungsi pengelolaan keuangan yang berbeda dari sekadar menjumlah laporan. Sumber: [PP 71/2010, Lampiran I PSAP 11 paras. 6–16](https://www.ksap.org/sap/wp-content/uploads/2012/08/PP_71_TAHUN_2010-_-oke.pdf)"
+        },
+        {
+          "kind": "p",
+          "text": "SAPP adalah sistem pemerintah pusat, sedangkan SAPD sistem pemerintah daerah. Keduanya mengikuti SAP, tetapi pejabat, dokumen dan jenjang organisasi berbeda. Jangan memakai nama BUD untuk kas pusat atau menganggap setiap jurnal SKPD berlaku pada semua unit pusat."
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "layer": "main",
+      "title": "2. Dua jalur SAPP dan alur SAPD",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "SAPP mencakup SAI pada kementerian/lembaga dan SABUN pada fungsi Bendahara Umum Negara. SAI berjalan berjenjang dari satuan kerja sampai kementerian/lembaga dan mencakup informasi keuangan serta BMN. LKPP mengonsolidasikan laporan kementerian/lembaga dan BUN. Sumber: [JDIH Kemenkeu, PMK 217/PMK.05/2022](https://jdih.kemenkeu.go.id/dok/217-pmk-05-2022/summary)."
+        },
+        {
+          "kind": "p",
+          "text": "Pada contoh SAPD, ikuti SPP sebagai permintaan, SPM sebagai perintah membayar, dan SP2D sebagai perintah pencairan. Dokumen membantu menelusuri otorisasi dan kas; pengakuan beban, aset, utang, atau belanja tetap bergantung pada peristiwa dan basis laporan. Sumber: Permendagri 77/2020, formulir SPP-GU dan SPM-GU pada halaman PDF 274–275 dan 290."
+        },
+        {
+          "kind": "pendalaman",
+          "title": "UP, GU, TU dan LS: jangan samakan kas dengan beban",
+          "blocks": [
+            {
+              "kind": "p",
+              "text": "UP menyediakan uang kerja kepada bendahara. GU mengganti uang persediaan yang telah dipakai dan dipertanggungjawabkan; penerimaan GU menambah kembali kas bendahara. TU menyediakan tambahan untuk kebutuhan yang ditentukan, sedangkan LS membayar langsung kepada penerima sesuai mekanisme. Ini jalur pembayaran, bukan nama jenis beban."
+            },
+            {
+              "kind": "p",
+              "text": "Akui transaksi belanja/beban/aset dari bukti dan tahap yang tepat. Contohnya, beban dari pemakaian persediaan berbeda dari pembelian persediaan. Penggantian UP tidak membebankan pengeluaran yang sama dua kali. Pisahkan jurnal finansial dari jurnal pelaksanaan anggaran. Sumber: Permendagri 77/2020, bagian pelaksanaan dan penatausahaan; PP 71/2010, Kerangka Konseptual paras. 42–45."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "layer": "main",
+      "title": "3. Rekening timbal balik dan rekonsiliasi",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Dalam ilustrasi hubungan antarkantor, RK-SKPD di pembukuan PPKD dan RK-PPKD di pembukuan SKPD mencatat hubungan internal. Ketika dana mengalir ke SKPD, pasangan saldo bertambah pada sisi berlawanan. Dana tersebut belum menjadi pendapatan dari pihak luar bagi pemda sebagai satu entitas. Sumber konsep konsolidasi: [PP 71/2010, Lampiran I PSAP 11 paras. 6–16](https://www.ksap.org/sap/wp-content/uploads/2012/08/PP_71_TAHUN_2010-_-oke.pdf)"
+        },
+        {
+          "kind": "p",
+          "text": "Sebelum eliminasi, cocokkan unit lawan, tanggal, dokumen dan nominal. Selisih dapat berasal dari perbedaan waktu atau kesalahan pencatatan; jangan langsung membuat jurnal pengimbang tanpa bukti. Konsolidasi menghilangkan hubungan internal, sementara kas, aset, beban, dan kewajiban kepada pihak luar tetap disajikan."
+        },
+        {
+          "kind": "pendalaman",
+          "title": "Setoran Rp30 juta: arah pasangan akun berbalik",
+          "blocks": [
+            {
+              "kind": "p",
+              "text": "Ilustrasi penulis melanjutkan mekanisme lama: bendahara penerimaan SKPD menyetor kas Rp30 juta ke kas daerah. Di SKPD, debit RK-PPKD dan kredit kas bendahara penerimaan; di PPKD, debit kas daerah dan kredit RK-SKPD. Ini perpindahan kas internal. Pengakuan pendapatan dari pihak luar, jika telah terjadi, dicatat pada peristiwa dasarnya dan tidak diulang sebagai pendapatan baru pemda saat setoran. Konsep: PSAP 11 paras. 6 dan 12."
+            }
+          ]
+        },
+        {
+          "kind": "pendalaman",
+          "title": "Batas analogi HOBO dan batas eliminasi",
+          "blocks": [
+            {
+              "kind": "p",
+              "text": "Home office–branch adalah alat bantu memahami pasangan akun. RK-PPKD bukan utang kepada kreditur eksternal dan RK-SKPD bukan investasi saham pada perusahaan anak. Nama dan posisi akun mengikuti sistem serta kebijakan akuntansi yang digunakan."
+            },
+            {
+              "kind": "p",
+              "text": "PSAP 11 para. 12 mensyaratkan eliminasi akun timbal balik; jika belum dimungkinkan, keadaan tersebut diungkapkan dalam CaLK. Karena itu pernyataan bahwa selisih pasti selalu nol tanpa pengecualian terlalu mutlak. Pengungkapan juga tidak menggantikan upaya rekonsiliasi. Sumber: [PP 71/2010, Lampiran I PSAP 11 paras. 6–16](https://www.ksap.org/sap/wp-content/uploads/2012/08/PP_71_TAHUN_2010-_-oke.pdf)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "layer": "main",
+      "title": "4. Kasus: dana UP Rp50 juta",
+      "blocks": [
+        {
+          "kind": "example",
+          "title": "Contoh terbimbing: Dari dua buku ke satu laporan",
+          "blocks": [
+            {
+              "kind": "p",
+              "text": "Ilustrasi penulis, bukan kejadian aktual suatu dinas: pada 5 Maret, PPKD menyalurkan UP Rp50 juta kepada bendahara SKPD. Belum ada belanja kepada pihak luar. Susun jurnal dua pihak dan jelaskan eliminasi."
+            },
+            {
+              "kind": "table",
+              "title": "Pencatatan finansial ilustratif",
+              "headers": [
+                "Lokasi",
+                "Debit",
+                "Kredit"
+              ],
+              "rows": [
+                [
+                  "PPKD",
+                  "RK-SKPD Rp50 juta",
+                  "Kas di Kas Daerah Rp50 juta"
+                ],
+                [
+                  "SKPD",
+                  "Kas di Bendahara Pengeluaran Rp50 juta",
+                  "RK-PPKD Rp50 juta"
+                ],
+                [
+                  "Kertas kerja eliminasi",
+                  "RK-PPKD Rp50 juta",
+                  "RK-SKPD Rp50 juta"
+                ]
+              ],
+              "caption": "Ilustrasi jurnal hubungan internal untuk menjelaskan PSAP 11 paras. 6 dan 12; bukan kode akun baku seluruh pemda.",
+              "stackOnMobile": true
+            },
+            {
+              "kind": "p",
+              "text": "Dari sisi pemda, kas hanya berpindah tempat. Eliminasi pasangan RK tidak menghapus kas Rp50 juta yang masih dikuasai bendahara. Jika kas kemudian dipakai, catat peristiwa pemakaian dan pertanggungjawabannya tersendiri."
+            }
+          ]
+        },
+        {
+          "kind": "self-check",
+          "question": "Mengapa penerimaan GU tidak otomatis menjadi beban kedua untuk pengeluaran yang sama?",
+          "answer": [
+            {
+              "kind": "p",
+              "text": "GU mengganti kas yang sudah dipertanggungjawabkan. Beban/aset mengikuti transaksi dasarnya, sedangkan penerimaan penggantian mengisi kembali kas. Mencatat ulang beban pada penggantian akan menggandakan pengakuan."
+            }
+          ],
+          "signal": "Tulis alasan dengan menyebut dasar perbandingan atau batas entitas sebelum membuka jawaban."
+        }
+      ]
+    }
+  ]
+}

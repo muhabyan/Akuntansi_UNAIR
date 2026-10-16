@@ -1,0 +1,154 @@
+{
+  "tm": 14,
+  "layout": "layered",
+  "title": "Topik Penelitian Akuntansi Sektor Publik: Dari Isu ke Pertanyaan dan Bukti",
+  "ref": "Kontrak ASP TM14; publikasi Kemendagri tentang SIPD; Kemenkeu tentang climate budget tagging",
+  "intro": "Topik riset perlu lebih dari daftar teknologi dan slogan transparansi. Mulai dari persoalan akuntansi publik, rumuskan mekanisme yang ingin diuji, pilih data, lalu batasi kesimpulan sesuai bukti.",
+  "objectives": [
+    "Membedakan isu, pertanyaan riset, indikator dan metode.",
+    "Menganalisis digitalisasi dan penandaan anggaran tanpa mengasumsikan keberhasilannya.",
+    "Menyusun rancangan kecil yang membedakan hubungan statistik dari sebab-akibat."
+  ],
+  "blocks": [
+    {
+      "kind": "section",
+      "layer": "main",
+      "title": "1. Fondasi: pisahkan kebijakan, pelaksanaan dan hasil",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Sebuah kebijakan mempunyai tujuan, tetapi keberhasilannya perlu diperiksa. Pisahkan desain sistem, pelaksanaan nyata, keluaran administratif, dan manfaat bagi masyarakat. Pada TM ini, penjelasan kebijakan memakai sumber resmi; rancangan pertanyaan serta contoh metode adalah usulan penulis, bukan hasil penelitian empiris."
+        },
+        {
+          "kind": "p",
+          "text": "Untuk setiap artikel yang dibaca, catat pertanyaan, teori atau mekanisme, unit analisis, periode data, ukuran variabel, metode, hasil, dan keterbatasan. Jangan mengambil kesimpulan artikel tanpa melihat desain dan konteksnya. Kontrak kelas meminta artikel terkait; sumber kebijakan di sini menjadi titik awal mencari pertanyaan, bukan pengganti telaah artikel akademik."
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "layer": "main",
+      "title": "2. Digital governance: apa yang dapat diuji?",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Kemendagri menjelaskan SIPD sebagai keterhubungan data dan proses perencanaan, penganggaran, pelaksanaan, pengendalian serta evaluasi. Kehadiran platform tidak dengan sendirinya membuktikan seluruh data sudah konsisten atau semua pengguna mempunyai akses yang sama. Sumber desain kebijakan: [Kemendagri, penjelasan SIPD dan keterhubungan proses pemerintahan](https://www.bangda.kemendagri.go.id/berita/baca_kontent/423/sistem_informasi_pembangunan_daerah_dalam_peningkatan_partisipasi_masyarakat)"
+        },
+        {
+          "kind": "table",
+          "title": "Dari isu digital menjadi rancangan pengujian",
+          "headers": [
+            "Unsur",
+            "Contoh rancangan penulis"
+          ],
+          "rows": [
+            [
+              "Pertanyaan",
+              "Apakah penggunaan sistem berkaitan dengan berkurangnya koreksi laporan?"
+            ],
+            [
+              "Mekanisme",
+              "Validasi dan penggunaan ulang data dapat mengurangi pengetikan ganda"
+            ],
+            [
+              "Indikator",
+              "Jumlah koreksi per laporan, waktu penyelesaian dan transaksi yang harus diinput ulang"
+            ],
+            [
+              "Bukti",
+              "Dokumen, log berizin, observasi proses dan wawancara pelaksana"
+            ],
+            [
+              "Penjelasan alternatif",
+              "Pelatihan, pergantian staf, perubahan kebijakan dan kualitas data awal"
+            ]
+          ],
+          "caption": "Rancangan ilustratif penulis; tidak menyatakan hubungan tersebut sudah terbukti.",
+          "stackOnMobile": true
+        },
+        {
+          "kind": "pendalaman",
+          "title": "Batas klaim sistem otomatis dan anti-fraud",
+          "blocks": [
+            {
+              "kind": "p",
+              "text": "Jangan menyatakan setiap usulan di luar perencanaan pasti otomatis ditolak atau setiap tindakan langsung terbuka bagi publik tanpa bukti fitur, akses dan prosedurnya. Jika ingin menguji kontrol digital, cari aturan validasi, hak akses, jejak perubahan, penanganan pengecualian dan bukti pelaksanaan."
+            },
+            {
+              "kind": "p",
+              "text": "Kemendagri dan KPK masih mengembangkan interoperabilitas SIPD–MCSP pada 2026. Berita pengembangan tidak sama dengan bukti semua fungsi telah sempurna: [Kemendagri, penguatan interoperabilitas SIPD–MCSP](https://www.bangda.kemendagri.go.id/berita/baca_kontent/1685/kemendagri-kpk_perkuat_interoperabilitas_sipd-mcsp_untuk_tingkatkan_transparansi_perencanaan_pembangunan_daerah)."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "layer": "main",
+      "title": "3. Green budgeting: penandaan bukan dampak",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Climate budget tagging menelusuri anggaran mitigasi dan adaptasi serta informasi kegiatan dan output. Data berlabel iklim membantu mengamati alokasi, tetapi label anggaran belum membuktikan penurunan emisi. Sumber: [Kemenkeu, penjelasan climate budget tagging, 30 Maret 2021](https://fiskal.kemenkeu.go.id/publikasi/siaran-pers-detil/273)"
+        },
+        {
+          "kind": "p",
+          "text": "Sebagai rancangan penulis, pisahkan alokasi yang ditandai, realisasi belanja, output fisik dan perubahan lingkungan. Tentukan cakupan serta periode yang sama, lalu cegah penghitungan ganda kegiatan yang mempunyai lebih dari satu label. Bandingkan kualitas penandaan dengan bukti tujuan kegiatan, bukan hanya besarnya persentase."
+        },
+        {
+          "kind": "pendalaman",
+          "title": "Tiga arah riset lanjutan",
+          "blocks": [
+            {
+              "kind": "p",
+              "text": "Digitalisasi: bagaimana kualitas data dan kemampuan staf menjelaskan keterlambatan laporan? Akuntabilitas lingkungan: apakah kegiatan berlabel iklim memiliki indikator hasil yang dapat diverifikasi? Integritas: bagaimana laporan pelanggaran diterima, ditelaah dan ditindaklanjuti? Ini kandidat pertanyaan yang masih perlu telaah artikel, pemilihan teori, ketersediaan data dan persetujuan akses."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "layer": "main",
+      "title": "4. Kasus rancangan dan batas simpulan",
+      "blocks": [
+        {
+          "kind": "example",
+          "title": "Contoh terbimbing: Jumlah koreksi turun setelah aplikasi digunakan",
+          "blocks": [
+            {
+              "kind": "p",
+              "text": "Ilustrasi penulis: satu dinas melaporkan koreksi turun sesudah memakai aplikasi. Pada saat yang sama ada pelatihan dan pergantian staf. Apakah aplikasi terbukti menjadi penyebab?"
+            },
+            {
+              "kind": "p",
+              "text": "Belum. Urutan waktu mendukung pertanyaan, tetapi pelatihan dan perubahan staf menjadi penjelasan alternatif. Periksa tren sebelum penerapan, konsistensi definisi koreksi, perubahan volume transaksi dan unit pembanding yang layak. Wawancara serta dokumen membantu menjelaskan mekanisme, tetapi tidak otomatis menghapus seluruh bias."
+            }
+          ]
+        },
+        {
+          "kind": "solution-reveal",
+          "title": "Rasio belanja iklim",
+          "prompt": "Ilustrasi penulis: belanja ditandai iklim Rp20 miliar dari total Rp100 miliar pada cakupan dan periode sama. Apa yang dapat dinyatakan?",
+          "blocks": [
+            {
+              "kind": "p",
+              "text": "Porsi anggaran yang ditandai adalah 20%. Angka itu menyatakan komposisi alokasi pada definisi kasus, bukan efektivitas mitigasi 20% atau penurunan emisi 20%. Untuk dampak, diperlukan ukuran hasil dan rancangan evaluasi yang sesuai."
+            }
+          ]
+        },
+        {
+          "kind": "self-check",
+          "question": "Apa beda pertanyaan riset dengan pernyataan bahwa SIPD pasti mencegah korupsi?",
+          "answer": [
+            {
+              "kind": "p",
+              "text": "Pertanyaan riset membuka kemungkinan hasil berbeda dan menyebut hubungan yang bisa diuji. Pernyataan pasti menyimpulkan hasil sebelum data. Rumuskan mekanisme, bukti kontrol dan kemungkinan penjelasan alternatif."
+            }
+          ],
+          "signal": "Tulis alasan dengan menyebut dasar perbandingan atau batas entitas sebelum membuka jawaban."
+        }
+      ]
+    }
+  ]
+}

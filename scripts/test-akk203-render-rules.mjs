@@ -9,6 +9,6 @@ const uasScope=new Set(['src/data/asp/aspData.ts',...Array.from({length:6},(_,i)
 for(const [file,expected] of Object.entries(snapshot)) {
   const actual=createHash('sha256').update(fs.readFileSync(file)).digest('hex');
   const uasHash=createHash('sha256').update(fs.readFileSync(file,'utf8').replace(/\r\n/g,'\n')).digest('hex');
-  assert.ok([expected.worktree,expected.repository].includes(actual)||(uasScope.has(file)&&uasApproved[file]===uasHash),`out-of-scope file changed: ${file} (historical bytes or explicitly audited ASP UAS replacement)`);
+  assert.ok([expected.worktree,expected.repository,...(expected.authorizedPraUasElaboration20261014??[])].includes(actual)||(uasScope.has(file)&&uasApproved[file]===uasHash),`out-of-scope file changed: ${file} (historical bytes or explicitly reviewed ASP replacement)`);
 }
 console.log(`AKK203 render rules PASS: ${Object.keys(snapshot).length} protected files byte-identical`);

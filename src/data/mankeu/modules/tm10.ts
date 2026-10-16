@@ -7,9 +7,9 @@ export const TM10_READING: Reading = {
   "title": "Distribusi kepada Pemegang Saham",
   "intro": "Brigham & Houston, FFM 16e (2022), Bab 15, hal. cetak 521-556 (PDF 563-598). Halaman cetak buku memiliki selisih 42 dari halaman PDF.",
   "objectives": [
-    "Memilih konsep dan asumsi yang sesuai kasus.",
-    "Menunjukkan langkah hitungan, satuan, pembulatan, dan keputusan.",
-    "Menjelaskan batas model serta rujukannya."
+    "Menghubungkan laba, arus kas, kebutuhan investasi dan target struktur modal.",
+    "Menghitung dividen residual serta membedakan payout, DPS dan kebutuhan dana tambahan.",
+    "Menjelaskan teori distribusi, tanggal hak dividen, split dan buyback tanpa menganggap perubahan EPS otomatis menciptakan nilai."
   ],
   "layout": "layered",
   "ref": "Brigham & Houston, FFM 16e (2022), Bab 15, hal. cetak 521-556 (PDF 563-598)",
@@ -81,7 +81,7 @@ export const TM10_READING: Reading = {
         {
           "kind": "callout",
           "variant": "gist",
-          "text": "**Kalau cuma sempat ingat satu hal:** arus kas, tingkat, satuan, dan periode harus konsisten sebelum kamu mengambil keputusan."
+          "text": "**Kalau cuma sempat ingat satu hal:** biayai porsi ekuitas investasi layak terlebih dahulu, lalu periksa sisa laba dan kas sebelum menetapkan distribusi."
         },
         {
           "kind": "callout",
@@ -151,6 +151,26 @@ export const TM10_READING: Reading = {
           "kind": "formula",
           "text": "Div=\\max(0,NI-w_E\\,CapEx)\\qquad Payout=\\frac{Div}{NI}\\qquad DPS=\\frac{Div}{N}",
           "note": "NI laba bersih; wE bobot ekuitas target; CapEx anggaran modal; N jumlah saham. Payout adalah rasio dividen terhadap laba; DPS dividen per saham. [hal. 530; PDF 572]"
+        },
+        {
+          "kind": "h3",
+          "text": "Contoh terbimbing: sisa laba setelah kebutuhan ekuitas"
+        },
+        {
+          "kind": "p",
+          "text": "Ilustrasi penulis dalam juta rupiah: laba bersih 150, anggaran investasi layak 200, dan target ekuitas 60%. Dasar model: [hal. 529-532; PDF 571-574]."
+        },
+        {
+          "kind": "ol",
+          "items": [
+            "Porsi ekuitas proyek = 60% × 200 = 120. Porsi utang target = 40% × 200 = 80; seluruh proyek tidak harus dibiayai dari laba.",
+            "Laba yang tersisa setelah kebutuhan ekuitas = 150 - 120 = 30. Dividen residual 30 dan payout = 30/150 = 20%.",
+            "Jika anggaran investasi layak berubah menjadi 300, kebutuhan ekuitas menjadi 180. Dividen residual nol dan masih dibutuhkan dana ekuitas tambahan 30. Hasilnya tidak ditulis sebagai dividen minus 30."
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "Kebijakan residual adalah kerangka pembiayaan. Setelah hitungan, periksa kas yang benar-benar tersedia, kontrak dan tujuan kestabilan pembayaran. Angka laba saja belum membuktikan kas dapat dibagikan."
         },
         {
           "kind": "self-check",
@@ -399,7 +419,7 @@ export const TM10_READING: Reading = {
     },
     {
       "kind": "section",
-      "title": "5a. Uji pembagian kas terhadap kebutuhan investor",
+      "title": "6. Uji pembagian kas terhadap kebutuhan investor",
       "layer": "main",
       "blocks": [
         {

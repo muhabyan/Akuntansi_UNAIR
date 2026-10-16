@@ -6,7 +6,7 @@
 // compared with it exactly, so adding or dropping a course anywhere has to be a deliberate edit here too.
 //
 // Edited by hand, never generated: AKK202, AKS301, PJK301 (formerly PJK202; all artefacts), AKA201 (all artefacts; TM01–TM07
-// rebuilt from the content package) and the quiz and bank soal of AKS201 and MNK201 (expanded in eb2282c). The flashcards of AKS201 still match their generator. MNK201 flashcards are maintained from MNK102 sources.
+// rebuilt from the content package) and all practice of AKS201 and MNK201. AKS201 post-UTS corrections are maintained from content-pipeline/AKK203; pre-UTS objects have an independent preservation check.
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 

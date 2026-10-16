@@ -7,6 +7,8 @@ import { AlertTriangle, ArrowUp, ChevronDown, ChevronUp, Eye, Info, Layers, Ligh
 import type { CalloutVariant, ContentBlock } from '../../types';
 import { renderText } from './MarkdownContent';
 import TableHeading from './TableHeading';
+import LearningNote from './LearningNote';
+import { useLearningScope } from './LearningScope';
 import { InsideBoxContext, useInsideBox, useLayered } from './layeredContext';
 
 /** A paragraph that is only a source reference: `(ARENS p.3)`, *Sumber: ...*, or one opening with a bold
@@ -168,6 +170,7 @@ export function PendalamanBlock({ title, children }: { title: string; children: 
 const MIN_WORDS = 5;
 
 export function SelfCheckCard({ question, signal, children }: { question: string; signal?: string; children: ReactNode }) {
+  const learningScope = useLearningScope();
   const [draft, setDraft] = useState('');
   const [tried, setTried] = useState(false);
   const [revealed, setRevealed] = useState(false);
@@ -183,7 +186,8 @@ export function SelfCheckCard({ question, signal, children }: { question: string
           value={draft}
           onChange={(event) => setDraft(event.target.value)}
           rows={3}
-          placeholder="Jawab dengan kata-katamu sendiri. Tidak disimpan."
+          maxLength={4000}
+          placeholder={learningScope ? "Jawab dengan kata-katamu sendiri. Simpan catatan bila diperlukan." : "Jawab dengan kata-katamu sendiri. Tidak disimpan."}
           className="mt-1.5 block w-full resize-y rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm font-normal leading-6 text-gray-900 placeholder:text-gray-400 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 dark:border-gray-600 dark:bg-gray-900 dark:text-gray-100"
         />
       </label>
@@ -212,6 +216,7 @@ export function SelfCheckCard({ question, signal, children }: { question: string
           </InsideBoxContext.Provider>
         </div>
       )}
+      <LearningNote question={question} draft={draft} revealed={revealed} onRestore={setDraft} />
     </div>
   );
 }

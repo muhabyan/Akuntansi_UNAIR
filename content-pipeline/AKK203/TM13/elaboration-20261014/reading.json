@@ -1,0 +1,122 @@
+{
+  "tm": 13,
+  "layout": "layered",
+  "title": "Pengelolaan Keuangan BLU dan BLUD: Fleksibilitas, Layanan dan Pelaporan",
+  "ref": "Kontrak ASP TM13; PSAP 13; Permendagri 79/2018; PMK 220/PMK.05/2016",
+  "intro": "Fleksibilitas keuangan diberikan untuk mendukung layanan. Pelajari status entitas, sumber dana dan otorisasinya sebelum menghitung belanja, kemudian hubungkan pendapatan layanan dengan kas serta laporan berbasis SAP.",
+  "objectives": [
+    "Membedakan BLU, BLUD dan PTN-BH.",
+    "Menjelaskan batas penggunaan langsung pendapatan dan anggaran fleksibel.",
+    "Menghubungkan layanan, pendapatan akrual, kas dan laporan BLU/BLUD."
+  ],
+  "blocks": [
+    {
+      "kind": "section",
+      "layer": "main",
+      "title": "1. Fondasi: status entitas menentukan jalurnya",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "BLU/BLUD adalah instansi pelayanan pemerintah dengan kekayaan negara/daerah yang tidak dipisahkan. Fleksibilitas bertujuan meningkatkan layanan melalui praktik pengelolaan yang sehat. Status ini berbeda dari badan hukum yang mengelola kekayaan dipisahkan. Sumber: PP 71/2010 PSAP 11 paras. 18–21, halaman PDF 205."
+        },
+        {
+          "kind": "p",
+          "text": "PTN-BH mempunyai status hukum dan tata kelola berbeda dari PTN-BLU. Karena itu contoh universitas berstatus badan hukum tidak otomatis menjadi contoh penerapan seluruh aturan BLU. Sumber: [DJPb, perbedaan PTN-BH dan PTN-BLU, 7 Januari 2026](https://djpb.kemenkeu.go.id/kppn/bandaaceh/id/data-publikasi/berita/3075-bagaimana-pola-pengelolaan-keuangan-ptn-bh-apa-perbedaan-dengan-ptn-blu.html)."
+        },
+        {
+          "kind": "pendalaman",
+          "title": "Pusat, daerah, dan rujukan lama dalam kontrak",
+          "blocks": [
+            {
+              "kind": "p",
+              "text": "Pisahkan aturan pengelolaan BLU pusat dari BLUD daerah. Permendagri 79/2018 menggantikan Permendagri 61/2007 yang masih tercantum dalam kontrak kelas. Pembaruan rujukan ini penting sebelum memakai prosedur atau kewenangan tertentu. Sumber: [JDIH BPK, status Permendagri 79/2018](https://peraturan.bpk.go.id/Details/111301)."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "layer": "main",
+      "title": "2. Fleksibilitas tetap memerlukan pertanggungjawaban",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Pendapatan yang dikelola langsung tetap merupakan pendapatan negara/daerah. Penggunaan langsung tidak berarti kas bebas di luar anggaran dan pelaporan. Pendapatan serta belanja dilaporkan untuk persetujuan/pengesahan kepada fungsi perbendaharaan sesuai mekanisme yang berlaku. Sumber: [KSAP, PSAP 13 paras. 4–12, 19–22 dan 76–83](https://www.ksap.org/sap/wp-content/uploads/2012/08/PSAP-13-PLK-BLU-Ver-PMK-217.pdf)"
+        },
+        {
+          "kind": "p",
+          "text": "Untuk soal anggaran, tentukan pagu yang menjadi dasar, persentase ambang yang benar-benar disetujui, sumber pendapatan, kebutuhan belanja, ketersediaan kas serta kewenangan revisi. Persentase angka soal tidak menetapkan aturan universal bagi semua BLU/BLUD. Kewenangan pengadaan, investasi kas dan remunerasi juga memerlukan aturan serta otorisasi tersendiri."
+        },
+        {
+          "kind": "example",
+          "title": "Contoh terbimbing: Ambang anggaran sebagai asumsi soal",
+          "blocks": [
+            {
+              "kind": "p",
+              "text": "Ilustrasi penulis: untuk komponen yang dinyatakan dalam soal berlaku pagu Rp50 miliar dan ambang 15%; kebutuhan Rp56 miliar. Hitung batas aritmetis. Asumsikan persentase telah disetujui untuk dasar tersebut."
+            },
+            {
+              "kind": "p",
+              "text": "Batas ilustratif = Rp50 miliar × 1,15 = Rp57,5 miliar. Rp56 miliar berada Rp1,5 miliar di bawah batas. Ini menyelesaikan perbandingan angka. Sebelum menyimpulkan boleh membelanjakan, periksa dasar ambang, sumber dana, kas, otorisasi dan prosedur. Hasil aritmetis tidak memberikan izin belanja dengan sendirinya."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "layer": "main",
+      "title": "3. Dari layanan sampai laporan",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Pendapatan-LO dari pelayanan yang selesai diberikan diakui ketika hak tagih timbul; penerimaan kas dapat terjadi kemudian. LRA menelusuri pelaksanaan anggaran dengan mekanisme pengakuan/pengesahan yang relevan. Jadi pendapatan, penerimaan kas dan pengesahan tidak harus berada pada tanggal yang sama. Sumber: [KSAP, PSAP 13 paras. 4–12, 19–22 dan 76–83](https://www.ksap.org/sap/wp-content/uploads/2012/08/PSAP-13-PLK-BLU-Ver-PMK-217.pdf)"
+        },
+        {
+          "kind": "pendalaman",
+          "title": "Komponen laporan dan konsolidasi",
+          "blocks": [
+            {
+              "kind": "p",
+              "text": "PSAP 13 memuat LRA, LPSAL, Neraca, LO, LAK, LPE dan CaLK. BLU dapat menjadi entitas pelaporan sekaligus entitas akuntansi untuk konsolidasi. Hindari rumusan universal bahwa semua BLU wajib membuat SAK untuk KAP dan SAP untuk konsolidasi. Sumber: [KSAP, PSAP 13 paras. 4–12, 19–22 dan 76–83](https://www.ksap.org/sap/wp-content/uploads/2012/08/PSAP-13-PLK-BLU-Ver-PMK-217.pdf)"
+            }
+          ]
+        },
+        {
+          "kind": "solution-reveal",
+          "title": "Kas belum diterima",
+          "prompt": "Ilustrasi penulis: rumah sakit menyelesaikan layanan Rp10 juta dan hak tagih telah timbul, tetapi pembayaran baru diterima periode berikutnya. Apa yang perlu dipisahkan?",
+          "blocks": [
+            {
+              "kind": "p",
+              "text": "Pisahkan pendapatan-LO dan piutang pada saat hak timbul dari penerimaan kas serta penyelesaian piutang kemudian. Analisis pengakuan pendapatan-LRA menurut mekanisme yang berlaku tersendiri. Jangan membuat pendapatan-LO kedua ketika tagihan yang sama dibayar. Ilustrasi memakai prinsip PSAP 13 paras. 21–22 dan 76–78."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "layer": "main",
+      "title": "4. Hubungkan ke kinerja layanan",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Analisis keuangan perlu ditemani data layanan. Dalam rumah sakit, usulkan ukuran biaya per layanan, waktu tunggu, mutu dan akses pasien; definisikan cakupan masing-masing agar pembanding adil. Surplus akrual, saldo kas, dan keberhasilan layanan menjawab pertanyaan berbeda. Ini usulan analisis penulis yang menghubungkan TM9 dengan TM13."
+        },
+        {
+          "kind": "self-check",
+          "question": "Mengapa pendapatan boleh dikelola langsung tetapi tetap masuk pertanggungjawaban pemerintah?",
+          "answer": [
+            {
+              "kind": "p",
+              "text": "Fleksibilitas mengubah mekanisme pengelolaan, bukan mengubah BLU/BLUD menjadi pemilik dana di luar pemerintah. Pendapatan dan belanja tetap dicatat, dilaporkan dan dikonsolidasikan sesuai batas entitas serta ketentuan yang berlaku."
+            }
+          ],
+          "signal": "Tulis alasan dengan menyebut dasar perbandingan atau batas entitas sebelum membuka jawaban."
+        }
+      ]
+    }
+  ]
+}

@@ -2,7 +2,7 @@
 
 Status: READY_WITH_SCOPE_LIMITATION
 
-SHA256 05 (CRLF): bc7bc3142867f044bbc32534bb8e336337a37288e95d4f2f351134256fd4489b
+SHA256 05 (CRLF): 76b54ff8c3608cd8c3776686c4d76be5ad7adea9277c0287ccc3669ace5ea107
 
 Brigham & Houston, FFM 16e (2022), Bab 15, hal. cetak 521-556 (PDF 563-598)
 
@@ -163,3 +163,6 @@ Batas investasi dibulatkan menjadi 166,67 juta USD. [hal. 530; PDF 572]
 N_1=2(100)=200\qquad EPS_1=4/2=2\qquad DPS_1=2/2=1\qquad P_1=60/2=30
 Jumlah saham dalam lembar; EPS, DPS, harga dalam USD per saham. [hal. 543; PDF 585]
 ```
+## Elaborasi 14 Oktober 2026
+
+Sumber 05 diperbarui untuk tujuan spesifik, contoh terbimbing dekat rumus, dan alur penalaran. Angka ilustrasi baru diberi label penulis; tabel, rumus, gambar dan dua kasus sumber dipertahankan. TM09 mengurutkan teori sebelum kerangka kasus. SHA256 05: 76b54ff8c3608cd8c3776686c4d76be5ad7adea9277c0287ccc3669ace5ea107. Validasi terakhir dicatat di docs/pra-uas-elaboration-progress.md.

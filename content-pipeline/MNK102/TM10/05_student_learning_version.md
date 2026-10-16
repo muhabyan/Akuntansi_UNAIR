@@ -3,9 +3,9 @@
 Brigham & Houston, FFM 16e (2022), Bab 15, hal. cetak 521-556 (PDF 563-598). Halaman cetak buku memiliki selisih 42 dari halaman PDF.
 
 **Setelah TM ini kamu bisa:**
-1. Memilih konsep dan asumsi yang sesuai kasus.
-2. Menunjukkan langkah hitungan, satuan, pembulatan, dan keputusan.
-3. Menjelaskan batas model serta rujukannya.
+1. Menghubungkan laba, arus kas, kebutuhan investasi dan target struktur modal.
+2. Menghitung dividen residual serta membedakan payout, DPS dan kebutuhan dana tambahan.
+3. Menjelaskan teori distribusi, tanggal hak dividen, split dan buyback tanpa menganggap perubahan EPS otomatis menciptakan nilai.
 
 ## Kilat
 
@@ -30,7 +30,7 @@ alt text: Distribusi kepada Pemegang Saham: peta keputusan. Mulai dari jenis kep
 
 Brigham & Houston, FFM 16e (2022), Bab 15, hal. cetak 521-556 (PDF 563-598)
 
-> **Kalau cuma sempat ingat satu hal:** arus kas, tingkat, satuan, dan periode harus konsisten sebelum kamu mengambil keputusan.
+> **Kalau cuma sempat ingat satu hal:** biayai porsi ekuitas investasi layak terlebih dahulu, lalu periksa sisa laba dan kas sebelum menetapkan distribusi.
 
 > **Catatan sumber:** Tanggal dan pajak mengikuti konteks pasar Amerika pada buku. Tidak ada klaim tarif atau tanggal berlaku di Indonesia. Arsip ujian tidak tersedia.
 
@@ -63,6 +63,16 @@ Jangan menghasilkan dividen negatif. Target investasi harus sudah dinilai layak;
 Div=\max(0,NI-w_E\,CapEx)\qquad Payout=\frac{Div}{NI}\qquad DPS=\frac{Div}{N}
 NI laba bersih; wE bobot ekuitas target; CapEx anggaran modal; N jumlah saham. Payout adalah rasio dividen terhadap laba; DPS dividen per saham. [hal. 530; PDF 572]
 ```
+
+### Contoh terbimbing: sisa laba setelah kebutuhan ekuitas
+
+Ilustrasi penulis dalam juta rupiah: laba bersih 150, anggaran investasi layak 200, dan target ekuitas 60%. Dasar model: [hal. 529-532; PDF 571-574].
+
+1. Porsi ekuitas proyek = 60% × 200 = 120. Porsi utang target = 40% × 200 = 80; seluruh proyek tidak harus dibiayai dari laba.
+2. Laba yang tersisa setelah kebutuhan ekuitas = 150 - 120 = 30. Dividen residual 30 dan payout = 30/150 = 20%.
+3. Jika anggaran investasi layak berubah menjadi 300, kebutuhan ekuitas menjadi 180. Dividen residual nol dan masih dibutuhkan dana ekuitas tambahan 30. Hasilnya tidak ditulis sebagai dividen minus 30.
+
+Kebijakan residual adalah kerangka pembiayaan. Setelah hitungan, periksa kas yang benar-benar tersedia, kontrak dan tujuan kestabilan pembayaran. Angka laba saja belum membuktikan kas dapat dibagikan.
 
 <!-- self-check question="Apa yang terjadi jika kebutuhan ekuitas melebihi laba?" -->
 Dividen residual menjadi nol dan selisih kebutuhan ekuitas perlu didanai. Contoh: laba 100 dan kebutuhan ekuitas 120 juta USD memberi kekurangan 20 juta USD, bukan dividen negatif. Angka ilustrasi buatan. [hal. 530; PDF 572]
@@ -139,7 +149,7 @@ versi HP: overview dengan kartu teks; grafik desktop tetap dapat dibuka
 alt text: Dividend Procedure: tanggal dan hak. Urutan mengikuti prosedur pasar buku; jeda bukan aturan BEI.
 ```
 
-## 5a. Uji pembagian kas terhadap kebutuhan investor
+## 6. Uji pembagian kas terhadap kebutuhan investor
 
 Dalam dividend irrelevance, investor yang membutuhkan kas dapat menjual sedikit saham, sedangkan investor yang menerima dividen dapat membelinya kembali. Mekanisme homemade dividend, dividen yang dibentuk sendiri, mengandalkan ketiadaan pajak dan biaya transaksi. Dalam kenyataan, biaya transaksi, pajak, kebutuhan pendapatan dan informasi membuat kebijakan distribusi relevan bagi kelompok investor tertentu. [hal. 523-527; PDF 565-569]
 

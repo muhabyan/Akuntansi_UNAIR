@@ -1,6 +1,6 @@
 # Implementasi MNK102 TM10
 
-Masukan otoritatif: 05_student_learning_version.md; SHA256 bc7bc3142867f044bbc32534bb8e336337a37288e95d4f2f351134256fd4489b.
+Masukan otoritatif: 05_student_learning_version.md; SHA256 76b54ff8c3608cd8c3776686c4d76be5ad7adea9277c0287ccc3669ace5ea107.
 
 Konverter scripts/convert-mnk102.mjs menghasilkan src/data/mankeu/modules/tm10.ts, ekspor TM10_READING, Reading.layout layered, kunci 10. Output CRLF. Jangan mengedit teks TypeScript hasil konverter.
 
@@ -110,3 +110,6 @@ versi HP: grafik 360 unit dengan label 16 unit; rincian desktop dapat dibuka
 alt text: Residual Dividend: investasi dan sisa laba. Investasi layak mendapat porsi ekuitas target dahulu; dividen memakai sisa laba.
 data: {"panels": [{"title": "Laba 100; target ekuitas 60%", "xlabel": "Anggaran modal (juta USD)", "ylabel": "Dividen (juta USD)", "series": [{"label": "Dividen residual", "points": [[0, 100], [50, 70], [100, 40], [150, 10], [166.6666667, 0], [200, 0]]}], "xmin": 0, "xmax": 200, "ymin": 0, "ymax": 110, "xticks": [0, 50, 100, 150, 200], "markers": [{"x": 50, "y": 70, "label": "Contoh buku: 50 menghasilkan 70"}, {"x": 166.6666667, "y": 0, "label": "Dividen nol: 100/0,60 = 166,67"}]}]}
 ```
+## Elaborasi 14 Oktober 2026
+
+Sumber 05 diperbarui untuk tujuan spesifik, contoh terbimbing dekat rumus, dan alur penalaran. Angka ilustrasi baru diberi label penulis; tabel, rumus, gambar dan dua kasus sumber dipertahankan. TM09 mengurutkan teori sebelum kerangka kasus. SHA256 05: 76b54ff8c3608cd8c3776686c4d76be5ad7adea9277c0287ccc3669ace5ea107. Validasi terakhir dicatat di docs/pra-uas-elaboration-progress.md.

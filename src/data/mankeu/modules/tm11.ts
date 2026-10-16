@@ -7,9 +7,9 @@ export const TM11_READING: Reading = {
   "title": "Modal Kerja I: Siklus dan Anggaran Kas",
   "intro": "Brigham & Houston, FFM 16e (2022), Bab 16, hal. cetak 559-581 (PDF 601-623). Halaman cetak buku memiliki selisih 42 dari halaman PDF.",
   "objectives": [
-    "Memilih konsep dan asumsi yang sesuai kasus.",
-    "Menunjukkan langkah hitungan, satuan, pembulatan, dan keputusan.",
-    "Menjelaskan batas model serta rujukannya."
+    "Membedakan kebijakan investasi aset lancar dari pilihan tenor pendanaan.",
+    "Menghitung dan menafsirkan CCC dengan satuan serta arus yang konsisten.",
+    "Menyusun anggaran kas dan menilai kebijakan kredit dari tambahan manfaat, biaya dan risiko."
   ],
   "layout": "layered",
   "ref": "Brigham & Houston, FFM 16e (2022), Bab 16, hal. cetak 559-581 (PDF 601-623)",
@@ -81,7 +81,7 @@ export const TM11_READING: Reading = {
         {
           "kind": "callout",
           "variant": "gist",
-          "text": "**Kalau cuma sempat ingat satu hal:** arus kas, tingkat, satuan, dan periode harus konsisten sebelum kamu mengambil keputusan."
+          "text": "**Kalau cuma sempat ingat satu hal:** tanggal pembayaran dan penagihan menentukan kebutuhan kas; laba dan saldo akhir bulan belum cukup menunjukkan tekanan di antaranya."
         },
         {
           "kind": "callout",
@@ -184,6 +184,26 @@ export const TM11_READING: Reading = {
           "note": "[hal. 567-568; PDF 609-610]"
         },
         {
+          "kind": "h3",
+          "text": "Contoh terbimbing: siklus operasi berbeda dari jeda pendanaan kas"
+        },
+        {
+          "kind": "p",
+          "text": "Ilustrasi penulis: persediaan tersimpan 60 hari, pelanggan membayar 45 hari setelah penjualan, dan pemasok dibayar 30 hari setelah pembelian. Dasar konsep: [hal. 565-569; PDF 607-611]."
+        },
+        {
+          "kind": "ol",
+          "items": [
+            "Pada hari 0 barang dibeli secara kredit. Pembayaran pemasok baru mengeluarkan kas pada hari 30.",
+            "Barang terjual pada hari 60. Penerimaan pelanggan terjadi pada hari 60 + 45 = 105.",
+            "Siklus operasi dari pembelian hingga penagihan adalah 105 hari. Jeda yang harus didanai setelah membayar pemasok adalah 105 - 30 = 75 hari, sehingga CCC = 60 + 45 - 30 = 75 hari."
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "DPO dikurangkan karena pemasok menanggung sebagian jeda pendanaan. Memperpanjangnya tanpa memperhatikan syarat kredit dapat mengorbankan diskon atau hubungan pemasok; CCC yang turun perlu dibaca bersama biaya dan risiko."
+        },
+        {
           "kind": "self-check",
           "question": "Mengapa DPO dikurangkan pada CCC?",
           "answer": [
@@ -216,6 +236,18 @@ export const TM11_READING: Reading = {
           "kind": "formula",
           "text": "Kas_{pra}=Kas_{awal}+Penerimaan-Pembayaran\\qquad Pinjaman=\\max(0,Kas_{minimum}-Kas_{pra})",
           "note": "Kas pada tanggal pembayaran dan penerimaan aktual. [hal. 570-573; PDF 612-615]"
+        },
+        {
+          "kind": "h3",
+          "text": "Contoh terbimbing: kapan pinjaman dibutuhkan?"
+        },
+        {
+          "kind": "p",
+          "text": "Ilustrasi penulis dalam juta rupiah: kas awal 10, penerimaan bulan ini 20, pembayaran 35 dan kas minimum 10. Kas sebelum pendanaan = 10 + 20 - 35 = minus 5. Pinjaman untuk mencapai saldo minimum = 10 - (minus 5) = 15, sehingga kas akhir setelah pinjaman menjadi 10. Kebutuhan pinjaman berbeda dari selisih pembayaran dan penerimaan karena kas awal serta saldo minimum ikut dihitung. Dasar anggaran kas: [hal. 570-573; PDF 612-615]."
+        },
+        {
+          "kind": "p",
+          "text": "Jika pembayaran besar terjadi sebelum penerimaan, kebutuhan di tengah bulan dapat lebih tinggi daripada 15. Periksa urutan tanggalnya sebelum menetapkan plafon bank."
         },
         {
           "kind": "self-check",
@@ -391,7 +423,7 @@ export const TM11_READING: Reading = {
     },
     {
       "kind": "section",
-      "title": "4a. Hubungkan angka dengan keputusan kas",
+      "title": "5. Hubungkan angka dengan keputusan kas",
       "layer": "main",
       "blocks": [
         {

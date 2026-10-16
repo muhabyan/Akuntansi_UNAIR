@@ -3,9 +3,9 @@
 Brigham & Houston, FFM 16e (2022), Bab 14, hal. cetak 478-520 (PDF 520-562). Halaman cetak buku memiliki selisih 42 dari halaman PDF.
 
 **Setelah TM ini kamu bisa:**
-1. Memilih konsep dan asumsi yang sesuai kasus.
-2. Menunjukkan langkah hitungan, satuan, pembulatan, dan keputusan.
-3. Menjelaskan batas model serta rujukannya.
+1. Memisahkan risiko bisnis, operating leverage dan financial leverage.
+2. Menggunakan bobot pasar, D/E, beta dan WACC dengan asumsi yang tepat.
+3. Membandingkan model MM, trade-off, informasi dan fleksibilitas sebelum mengambil keputusan pendanaan.
 
 ## Kilat
 
@@ -30,7 +30,7 @@ alt text: Struktur Modal dan Leverage: peta keputusan. Mulai dari jenis keputusa
 
 Brigham & Houston, FFM 16e (2022), Bab 14, hal. cetak 478-520 (PDF 520-562)
 
-> **Kalau cuma sempat ingat satu hal:** arus kas, tingkat, satuan, dan periode harus konsisten sebelum kamu mengambil keputusan.
+> **Kalau cuma sempat ingat satu hal:** bauran pendanaan mengubah risiko pemilik; EPS yang naik belum membuktikan nilai perusahaan naik.
 
 > **Catatan sumber:** Edisi 15 pada kontrak belum tersedia; pemetaan topik memakai 16e. DOL merupakan rumus turunan EBIT dalam latihan, bukan definisi bernomor pada bab. Arsip ujian tidak tersedia.
 
@@ -73,6 +73,16 @@ Perubahan DOL tidak boleh ditafsirkan sebagai probabilitas bangkrut. Financial l
 \operatorname{DOL}=\frac{S-VC}{EBIT}\qquad ROIC=\frac{EBIT(1-T)}{IC}\qquad ROE=\frac{(EBIT-I)(1-T)}{E}
 S pendapatan penjualan; VC biaya variabel; EBIT laba operasi sebelum bunga dan pajak; IC modal investasi; I bunga; E ekuitas. T adalah pajak pada asumsi kasus. DOL diturunkan dari perubahan EBIT dengan harga dan biaya variabel tetap. [hal. 487; PDF 529] [hal. 491; PDF 533]
 ```
+
+### Contoh terbimbing: mengapa EBIT lebih peka daripada penjualan
+
+Ilustrasi penulis, seluruh angka dalam juta rupiah: penjualan 1.000, biaya variabel 600 dan biaya tetap operasi 200. Belum ada bunga. Ini penerapan DOL pada tingkat penjualan tertentu, bukan data Bigbee pada buku. Dasar konsep: [hal. 484-487; PDF 526-529].
+
+1. Margin kontribusi = 1.000 - 600 = 400. EBIT = 400 - 200 = 200. DOL = 400/200 = 2 kali.
+2. Jika penjualan naik 10% dan harga serta proporsi biaya variabel tetap, penjualan menjadi 1.100 dan biaya variabel 660. Biaya tetap tetap 200, sehingga EBIT menjadi 240.
+3. EBIT naik 40/200 = 20%, sesuai 2 × 10%. Perubahan ini berasal dari struktur biaya operasi. Menambahkan bunga akan memerlukan analisis pendanaan tersendiri.
+
+Jika asumsi harga, biaya per unit atau kapasitas berubah, jangan langsung menerapkan sensitivitas tersebut. Rasio ini juga tidak menyatakan probabilitas kebangkrutan.
 
 <!-- self-check question="Apa beda risiko bisnis dan risiko keuangan?" -->
 Risiko bisnis berasal dari operasi dan sudah ada tanpa utang. Risiko keuangan adalah tambahan risiko ekuitas akibat kewajiban pendanaan, terutama bunga. [hal. 483-494; PDF 525-536]
@@ -134,23 +144,7 @@ V_L=V_U+TD
 Ketika tambahan biaya kesulitan keuangan melebihi tambahan manfaat pajak. Pada D2 keduanya sama secara marginal; melewati D2 nilai turun dalam grafik trade-off. [hal. 502-503; PDF 544-545]
 <!-- self-check:end -->
 
-## 4. Kerangka pengerjaan kasus
-
-Data apa yang harus ditetapkan sebelum menghitung?
-
-- Susun EBIT dan NOPAT dengan unit mata uang yang konsisten.
-- Hitung saham dibeli, saham tersisa, bunga, laba bersih dan EPS.
-- Ubah rasio total modal menjadi D/E sebelum menghitung beta.
-- Bandingkan WACC serta nilai pada arus kas yang dinyatakan.
-- Uji penurunan EBIT, kenaikan bunga dan keterbatasan manfaat pajak. Semua tarif adalah asumsi kasus.
-
-
-<!-- self-check question="Data apa yang harus ditetapkan sebelum menghitung?" -->
-Ikuti urutan data, satuan, rumus, dan interpretasi pada sumber. [hal. 487; PDF 529] [hal. 491; PDF 533] [hal. 487; PDF 529] [hal. 491; PDF 533]
-<!-- self-check:end -->
-
-
-## 3a. Baca MM dengan asumsi yang terpisah
+## 3.1 Baca MM dengan asumsi yang terpisah
 
 Mengapa utang yang lebih murah belum tentu menurunkan WACC?
 
@@ -199,7 +193,32 @@ Panel trade-off pada Figure 14.8 menunjukkan nilai saham, bukan nilai total peru
 Utang membuat ekuitas lebih berisiko. Pada ilustrasi D/E = 1, rE 18% dan rD 6%, sehingga rata-rata berbobot tetap 12%. Kesimpulan memerlukan asumsi MM tanpa pajak dan operasi tetap. [hal. 500; PDF 542; Damodaran, Capital Structure, bagian The Miller-Modigliani Theorem]
 <!-- self-check:end -->
 
-## 3b. Teori pendanaan untuk keputusan nyata
+## 3.2 MM dengan pajak perusahaan: manfaat bunga
+
+Dalam ilustrasi pajak perusahaan, T = 25%, rU = 12% dan rD = 6% setahun. Setiap titik membandingkan perusahaan dengan operasi tetap dan utang permanen tersendiri. Tidak ada pajak pribadi, biaya distress, biaya transaksi atau perubahan risiko utang. Seluruh perisai bunga dapat dipakai. Parameter buatan ini berbeda dari estimasi Bigbee. [hal. 501-503; PDF 543-545; turunan WACC dan VL = VU + TD]
+
+```formula
+r_E=r_U+(1-T)(r_U-r_D)\frac{D}{E}\qquad WACC=r_U\left(1-T\frac{D}{D+E}\right)
+Hubungan biaya ekuitas dan WACC pada penyederhanaan utang tetap dan penghematan bunga terpakai. Diturunkan dengan menyamakan kas operasi tetap pada VL = VU + TD dan pembobotan biaya modal. [hal. 495 dan 501; PDF 537 dan 543]
+```
+
+
+```visual
+id: V-TM09-12
+jenis: chart
+judul: MM dengan pajak perusahaan: biaya modal dan nilai
+sumber: Disusun dari hal. 495 dan 501 (PDF 537 dan 543). Parameter ilustrasi buatan T 25%, rU 12%, rD 6%, VU 100.
+isi: ["D/E 1: biaya ekuitas 16,5% per tahun", "D/E 1: WACC 10,5% per tahun", "VL lebih tinggi dari VU melalui perisai bunga"]
+hubungan: Sumbu, satuan, legenda dan penanda dibaca bersama asumsi pada teks
+pesan utama: Kurva pajak perusahaan berbeda dari MM tanpa pajak dan belum memuat biaya distress.
+versi HP: grafik 360 unit dengan label 16 unit; rincian desktop dapat dibuka
+alt text: MM dengan pajak perusahaan: biaya modal dan nilai. Kurva pajak perusahaan berbeda dari MM tanpa pajak dan belum memuat biaya distress.
+data: {"panels": [{"title": "Biaya modal: pajak perusahaan 25%", "xlabel": "D/E nilai pasar (kali)", "ylabel": "Biaya (% per tahun)", "series": [{"label": "Biaya ekuitas rE", "points": [[0, 12.0], [0.5, 14.25], [1, 16.5], [1.5, 18.75], [2, 21.0]]}, {"label": "WACC", "points": [[0, 12.0], [0.5, 11.0], [1, 10.5], [1.5, 10.2], [2, 10.0]]}, {"label": "Utang setelah pajak", "points": [[0, 4.5], [2, 4.5]]}], "xmin": 0, "xmax": 2, "ymin": 0, "ymax": 24, "xticks": [0, 0.5, 1, 1.5, 2], "markers": [{"x": 1, "y": 10.5, "label": "D/E 1: WACC 10,5%"}]}, {"title": "Nilai operasi plus perisai bunga", "xlabel": "D/E nilai pasar (kali)", "ylabel": "Indeks nilai (VU = 100)", "series": [{"label": "VL dengan pajak perusahaan", "points": [[0, 100.0], [0.5, 109.0909090909091], [1, 114.28571428571429], [1.5, 117.6470588235294], [2, 120.0]]}, {"label": "VU tanpa utang", "points": [[0, 100], [2, 100]]}], "xmin": 0, "xmax": 2, "ymin": 0, "ymax": 130, "xticks": [0, 0.5, 1, 1.5, 2]}]}
+```
+
+Cara membaca: pada D/E = 1, VL = 114,2857 dan D = 57,1429 dalam satuan indeks. Perisai pajak 0,25D = 14,2857 menjembatani VU 100 dengan VL. D/E berbeda dari utang/modal, sehingga jangan membaca x = 1 sebagai utang 100% dari total modal. Kenaikan nilai ini berasal dari manfaat pajak yang diasumsikan, bukan perubahan EBIT. [hal. 500-503; PDF 542-545; turunan ilustrasi]
+
+## 3.3 Teori pendanaan untuk keputusan nyata
 
 Utang dapat mendisiplinkan manajer karena kas perlu disisihkan untuk pembayaran wajib. Disiplin ini dapat mengurangi pengeluaran yang tidak menambah nilai, tetapi tekanan utang juga dapat menghambat proyek yang layak. Pecking order mendahulukan dana internal, lalu utang, lalu saham baru. Windows of opportunity berarti manajer mempertimbangkan penilaian pasar saat memilih penerbitan klaim. Ketiganya memberi penjelasan berbeda dari trade-off pajak dan distress. [hal. 504-506; PDF 546-548]
 
@@ -238,32 +257,7 @@ versi HP: overview dengan kartu teks; grafik desktop tetap dapat dibuka
 alt text: Tax Shield and Distress Costs: perisai pajak dan biaya kesulitan. Bentuk kurva bersifat konseptual; tidak menyatakan harga pada setiap tingkat utang.
 ```
 
-## 3c. MM dengan pajak perusahaan: manfaat bunga
-
-Dalam ilustrasi pajak perusahaan, T = 25%, rU = 12% dan rD = 6% setahun. Setiap titik membandingkan perusahaan dengan operasi tetap dan utang permanen tersendiri. Tidak ada pajak pribadi, biaya distress, biaya transaksi atau perubahan risiko utang. Seluruh perisai bunga dapat dipakai. Parameter buatan ini berbeda dari estimasi Bigbee. [hal. 501-503; PDF 543-545; turunan WACC dan VL = VU + TD]
-
-```formula
-r_E=r_U+(1-T)(r_U-r_D)\frac{D}{E}\qquad WACC=r_U\left(1-T\frac{D}{D+E}\right)
-Hubungan biaya ekuitas dan WACC pada penyederhanaan utang tetap dan penghematan bunga terpakai. Diturunkan dengan menyamakan kas operasi tetap pada VL = VU + TD dan pembobotan biaya modal. [hal. 495 dan 501; PDF 537 dan 543]
-```
-
-
-```visual
-id: V-TM09-12
-jenis: chart
-judul: MM dengan pajak perusahaan: biaya modal dan nilai
-sumber: Disusun dari hal. 495 dan 501 (PDF 537 dan 543). Parameter ilustrasi buatan T 25%, rU 12%, rD 6%, VU 100.
-isi: ["D/E 1: biaya ekuitas 16,5% per tahun", "D/E 1: WACC 10,5% per tahun", "VL lebih tinggi dari VU melalui perisai bunga"]
-hubungan: Sumbu, satuan, legenda dan penanda dibaca bersama asumsi pada teks
-pesan utama: Kurva pajak perusahaan berbeda dari MM tanpa pajak dan belum memuat biaya distress.
-versi HP: grafik 360 unit dengan label 16 unit; rincian desktop dapat dibuka
-alt text: MM dengan pajak perusahaan: biaya modal dan nilai. Kurva pajak perusahaan berbeda dari MM tanpa pajak dan belum memuat biaya distress.
-data: {"panels": [{"title": "Biaya modal: pajak perusahaan 25%", "xlabel": "D/E nilai pasar (kali)", "ylabel": "Biaya (% per tahun)", "series": [{"label": "Biaya ekuitas rE", "points": [[0, 12.0], [0.5, 14.25], [1, 16.5], [1.5, 18.75], [2, 21.0]]}, {"label": "WACC", "points": [[0, 12.0], [0.5, 11.0], [1, 10.5], [1.5, 10.2], [2, 10.0]]}, {"label": "Utang setelah pajak", "points": [[0, 4.5], [2, 4.5]]}], "xmin": 0, "xmax": 2, "ymin": 0, "ymax": 24, "xticks": [0, 0.5, 1, 1.5, 2], "markers": [{"x": 1, "y": 10.5, "label": "D/E 1: WACC 10,5%"}]}, {"title": "Nilai operasi plus perisai bunga", "xlabel": "D/E nilai pasar (kali)", "ylabel": "Indeks nilai (VU = 100)", "series": [{"label": "VL dengan pajak perusahaan", "points": [[0, 100.0], [0.5, 109.0909090909091], [1, 114.28571428571429], [1.5, 117.6470588235294], [2, 120.0]]}, {"label": "VU tanpa utang", "points": [[0, 100], [2, 100]]}], "xmin": 0, "xmax": 2, "ymin": 0, "ymax": 130, "xticks": [0, 0.5, 1, 1.5, 2]}]}
-```
-
-Cara membaca: pada D/E = 1, VL = 114,2857 dan D = 57,1429 dalam satuan indeks. Perisai pajak 0,25D = 14,2857 menjembatani VU 100 dengan VL. D/E berbeda dari utang/modal, sehingga jangan membaca x = 1 sebagai utang 100% dari total modal. Kenaikan nilai ini berasal dari manfaat pajak yang diasumsikan, bukan perubahan EBIT. [hal. 500-503; PDF 542-545; turunan ilustrasi]
-
-## 3d. Grafik sumber untuk risiko dan struktur optimal
+## 3.4 Grafik sumber untuk risiko dan struktur optimal
 
 ```visual
 id: V-TM09-02
@@ -366,6 +360,22 @@ Cara membaca Figure 14.2: pendapatan dan biaya berpotongan pada EBIT nol. Plan A
 Pada distribusi ROIC/ROE, batang menunjukkan probabilitas setiap skenario permintaan dari tabel. Tinggi batang tidak berarti density dari kurva kontinu. Leverage dapat memperlebar sebaran hasil tanpa menghilangkan risiko operasi. [hal. 487-492; PDF 529-534]
 
 Figure 14.7 menunjukkan EPS tertinggi pada utang 50%, sementara WACC terendah 10,86% dan harga tertinggi 20,81 USD berada pada utang 30%. Tabel menggunakan payout seluruh laba, g nol dan estimasi biaya modal. Titik tertinggi EPS tidak dapat menggantikan penilaian harga dan risiko. [hal. 495-499; PDF 537-541]
+
+## 4. Kerangka pengerjaan kasus
+
+Data apa yang harus ditetapkan sebelum menghitung?
+
+- Susun EBIT dan NOPAT dengan unit mata uang yang konsisten.
+- Hitung saham dibeli, saham tersisa, bunga, laba bersih dan EPS.
+- Ubah rasio total modal menjadi D/E sebelum menghitung beta.
+- Bandingkan WACC serta nilai pada arus kas yang dinyatakan.
+- Uji penurunan EBIT, kenaikan bunga dan keterbatasan manfaat pajak. Semua tarif adalah asumsi kasus.
+
+
+<!-- self-check question="Data apa yang harus ditetapkan sebelum menghitung?" -->
+Tetapkan EBIT, pajak asumsi, nilai pasar modal, bunga dan jumlah saham. Bedakan laba operasi dari bunga, ubah bobot D/(D+E) menjadi D/E bila rumus memerlukannya, lalu samakan periode dan unit sebelum menghitung EPS atau WACC. [hal. 487-498; PDF 529-540]
+<!-- self-check:end -->
+
 
 <!-- pendalaman:start judul="Pendalaman: model dan bukti sumber" -->
 ### Pendalaman: model dan bukti sumber

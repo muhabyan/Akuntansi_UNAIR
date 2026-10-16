@@ -3,9 +3,9 @@
 Brigham & Houston, FFM 16e (2022), Bab 21, hal. cetak 741-767 (PDF 783-809). Halaman cetak buku memiliki selisih 42 dari halaman PDF.
 
 **Setelah TM ini kamu bisa:**
-1. Memilih konsep dan asumsi yang sesuai kasus.
-2. Menunjukkan langkah hitungan, satuan, pembulatan, dan keputusan.
-3. Menjelaskan batas model serta rujukannya.
+1. Membedakan alasan merger dari sinergi yang didukung bukti.
+2. Memilih arus kas dan tingkat diskonto yang sepadan serta memisahkan nilai operasi dari ekuitas.
+3. Menghitung batas tawaran dan pembagian sinergi setelah biaya, lalu menilai risiko pelaksanaannya.
 
 ## Kilat
 
@@ -30,7 +30,7 @@ alt text: Merger dan Akuisisi: peta keputusan. Mulai dari jenis keputusan, pilih
 
 Brigham & Houston, FFM 16e (2022), Bab 21, hal. cetak 741-767 (PDF 783-809)
 
-> **Kalau cuma sempat ingat satu hal:** arus kas, tingkat, satuan, dan periode harus konsisten sebelum kamu mengambil keputusan.
+> **Kalau cuma sempat ingat satu hal:** nilai sinergi bersih menentukan ruang tawar; premi kepada penjual mengurangi bagian manfaat yang tersisa bagi pembeli.
 
 > **Catatan sumber:** Bab 21 memakai equity residual method pada kasus Apex. Alternatif FCF/WACC dijelaskan sebagai model berbeda; sinergi dalam proyeksi Apex tidak dihitung ulang.
 
@@ -102,6 +102,16 @@ Synergy adalah tambahan nilai, Premium harga tawaran dikurangi nilai target mand
 
 Pembayaran dengan saham menukar kepemilikan pemegang saham lama. Harga tawaran menentukan pembagian manfaat sinergi antara pengakuisisi dan target. Nilai merger perlu didasarkan pada arus kas dan risiko yang konsisten, serta diperiksa melalui due diligence. [hal. 750; PDF 792] [hal. 752; PDF 794]
 
+### Contoh terbimbing: siapa menerima sinergi?
+
+Ilustrasi penulis, seluruh nilai kini dalam miliar rupiah: pembeli berdiri sendiri 500, target 300, sinergi bruto 80 dan biaya integrasi 10. Asumsikan sinergi serta biaya belum tercakup dalam nilai terpisah; tidak ada perubahan pendanaan atau biaya lain. Dasar analisis: [hal. 747-752; PDF 789-794].
+
+1. Sinergi bersih = 80 - 10 = 70. Nilai bersama setelah integrasi = 500 + 300 + 70 = 870.
+2. Batas harga target untuk tidak merugikan pembeli = 300 + 70 = 370. Pada harga ini, seluruh manfaat tambahan 70 diberikan kepada pemilik target.
+3. Jika penawaran tunai 350, premi penjual = 350 - 300 = 50. Bagian manfaat pembeli = 70 - 50 = 20. Nilai bersih yang tersisa bagi pembeli = 870 - 350 = 520 dibanding nilai awal 500.
+
+Jika sinergi sudah dimasukkan ke proyeksi kas yang didiskonto, jangan menambahkannya lagi di luar hasil penilaian. Demikian juga biaya integrasi tidak boleh dikurangkan dua kali. Harga di bawah batas model masih memerlukan uji kelayakan proyeksi dan pelaksanaan.
+
 <!-- self-check question="Mengapa sinergi tidak ditambahkan dua kali?" -->
 Pembayaran dengan saham menukar kepemilikan pemegang saham lama. Harga tawaran menentukan pembagian manfaat sinergi antara pengakuisisi dan target. [hal. 750; PDF 792] [hal. 752; PDF 794]
 <!-- self-check:end -->
@@ -142,7 +152,7 @@ alt text: A View of Merger Analysis: rentang tawaran. Tawaran membagi total manf
 data: {"panels":[{"title":"Manfaat pemegang saham","xlabel":"Harga target (juta USD)","ylabel":"Perubahan kekayaan (juta USD)","series":[{"label":"Hightech (acquirer)","points":[[52.5,44],[106.5,-10]]},{"label":"Apex (target)","points":[[52.5,-10],[106.5,44]]}],"xmin":52.5,"xmax":106.5,"ymin":-15,"ymax":45,"xticks":[62.5,86.5,96.5]}]}
 ```
 
-## 4a. Periksa asal sinergi dan risiko tawaran
+## 5. Periksa asal sinergi dan risiko tawaran
 
 Sumber sinergi buku terdiri atas operating economies, penghematan operasi; financial economies, penghematan pendanaan dan transaksi; differential efficiency, perbaikan pengelolaan aset; serta market power, kekuatan pasar. Kekuatan pasar yang menekan persaingan dapat menghadapi pembatasan hukum pada konteks sumber. Tidak semua sumber sinergi pasti tersedia pada setiap merger. [hal. 742; PDF 784]
 

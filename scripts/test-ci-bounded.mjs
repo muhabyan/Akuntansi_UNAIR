@@ -6,6 +6,8 @@ const root = process.cwd();
 const timeoutMs = Number(process.env.CI_TEST_TIMEOUT_MS ?? 120_000);
 
 const standardTasks = [
+  ['ai_tutor', 'scripts/test-ai-tutor.mjs'],
+  ['learning_flow', 'scripts/test-learning-flow.mjs'],
   ['table_titles', 'scripts/test-table-titles.mjs'],
   ['reading_lifecycle', 'scripts/test-reading-lifecycle.mjs'],
   ['mnu307_tm01_canonical', 'scripts/test-mnu307-tm01-canonical.mjs'],
@@ -28,6 +30,7 @@ const standardTasks = [
   ['akk203_tm06_canonical', 'scripts/test-akk203-tm06-canonical.mjs'],
   ['akk203_tm07_canonical', 'scripts/test-akk203-tm07-canonical.mjs'],
   ['akk203_render_rules', 'scripts/test-akk203-render-rules.mjs'],
+  ['akk203_pra_uas_elaboration', 'scripts/test-akk203-pra-uas-elaboration.mjs'],
   ['data_validation', 'scripts/validate-data.mjs'],
   ['sia_canonical_readings', 'scripts/test-sia-canonical.mjs'],
   ['aks301_alignment', 'scripts/test-aks301-alignment.mjs'],

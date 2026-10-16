@@ -1,6 +1,6 @@
 # Implementasi MNK102 TM15
 
-Masukan otoritatif: 05_student_learning_version.md; SHA256 2f7059b66735ea263c1fcd7b7f638f60542557fe52707cc2c86f833a3b736e73.
+Masukan otoritatif: 05_student_learning_version.md; SHA256 b011ffe39d313910dd59e1f7790116c83bdc3e2fc6fc0b901e57d54b5ebb2df1.
 
 Konverter scripts/convert-mnk102.mjs menghasilkan src/data/mankeu/modules/tm15.ts, ekspor TM15_READING, Reading.layout layered, kunci 15. Output CRLF. Jangan mengedit teks TypeScript hasil konverter.
 
@@ -57,3 +57,6 @@ pesan utama: Jumlah kontribusi menghasilkan skor tanpa satuan; skor belum menjad
 versi HP: overview dengan kartu teks; grafik desktop tetap dapat dibuka
 alt text: Original Z-Score: komponen rasio. Jumlah kontribusi menghasilkan skor tanpa satuan; skor belum menjadi probabilitas gagal.
 ```
+## Elaborasi 14 Oktober 2026
+
+Sumber 05 diperbarui untuk tujuan spesifik, contoh terbimbing dekat rumus, dan alur penalaran. Angka ilustrasi baru diberi label penulis; tabel, rumus, gambar dan dua kasus sumber dipertahankan. TM09 mengurutkan teori sebelum kerangka kasus. SHA256 05: b011ffe39d313910dd59e1f7790116c83bdc3e2fc6fc0b901e57d54b5ebb2df1. Validasi terakhir dicatat di docs/pra-uas-elaboration-progress.md.
