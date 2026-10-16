@@ -3,248 +3,1020 @@
   "tm": 9,
   "reading": {
     "tm": 9,
-    "title": "Keamanan Informasi, Ancaman Siber & Manajemen Kelangsungan Bisnis (BCP/DRP)",
-    "ref": "Richardson et al. AIS 4e · Ch. 12, hal. cetak 420-439 (PDF 445-464)",
-    "intro": "Menganalisis prinsip CIA Triad (Confidentiality, Integrity, Availability) dalam sistem akuntansi. Membedakan kriptografi simetris vs asimetris, teknik mitigasi serangan siber seperti ransomware dan phishing, serta perancangan Business Continuity Plan (BCP) dan Disaster Recovery Plan (DRP).",
+    "title": "Integrated Project: Proses, Database, dan Laporan",
+    "ref": "Richardson et al. AIS 4e · Ch. 10, Integrated Project, hal. cetak 376–385 (PDF 401–410)",
+    "intro": "Gabungkan proses bisnis, model data, pencatatan, kontrol, dan bukti audit dalam satu kasus. Kita menelusuri pembelian, penjualan, penerimaan, serta pembayaran hingga saldo akhir, lalu memeriksa bagaimana kegagalan akses atau data dapat merusak hasil yang terlihat seimbang.",
     "objectives": [
-      "Menjelaskan prinsip CIA Triad sebagai fondasi keamanan sistem akuntansi.",
-      "Membedakan mekanisme enkripsi simetris (AES) vs asimetris (RSA/Public-Private Key) dan fungsi tanda tangan digital (Digital Signature).",
-      "Mengidentifikasi vektor ancaman siber: Ransomware, Social Engineering (Phishing), Man-in-the-Middle, dan SQL Injection.",
-      "Merumuskan metrik pemulihan bencana: Recovery Point Objective (RPO) dan Recovery Time Objective (RTO).",
-      "Membandingkan kelebihan dan kelemahan situs pemulihan bencana (Hot Site, Warm Site, Cold Site)."
+      "Menjelaskan langkah integrated project: kebutuhan, BPMN, UML/REA, database dan query.",
+      "Menentukan PK, FK, linking table, serta referential integrity dalam model latihan.",
+      "Menghitung saldo dan menyusun jurnal yang saling terhubung dengan asumsi jelas.",
+      "Menghubungkan risiko kasus dengan kontrol, bukti audit, analitika dan pemulihan.",
+      "Mengerjakan latihan komprehensif dengan urutan alasan yang dapat ditelusuri."
     ],
     "blocks": [
       {
-        "kind": "figure",
-        "caption": "Gambar 9.1: Prinsip Keamanan Informasi CIA Triad dan Skema Tanda Tangan Digital Kriptografi Asimetris.",
-        "svg": "<svg class=\"course-diagram-svg\" viewBox=\"0 0 680 250\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif\">\n  <rect class=\"svg-bg\" x=\"10\" y=\"10\" width=\"660\" height=\"230\" rx=\"12\" fill=\"#0f172a\" stroke=\"#334155\" stroke-width=\"1.5\"/>\n  <rect class=\"svg-header\" x=\"10\" y=\"10\" width=\"660\" height=\"38\" rx=\"12\" fill=\"#1e293b\" fill-opacity=\"0.6\"/>\n  <line class=\"svg-divider\" x1=\"10\" y1=\"48\" x2=\"670\" y2=\"48\" stroke=\"#334155\" stroke-width=\"1\"/>\n  <text class=\"svg-title text-accent-blue\" x=\"340\" y=\"34\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">KEAMANAN INFORMASI AKUNTANSI: CIA TRIAD &amp; KRIPTOGRAFI ASIMETRIS</text>\n\n  <!-- Left: CIA Triad -->\n  <rect class=\"svg-card\" x=\"30\" y=\"58\" width=\"210\" height=\"170\" rx=\"8\" fill=\"#1e293b\" stroke=\"#38bdf8\" stroke-width=\"1.5\"/>\n  <text class=\"text-accent-blue\" x=\"135\" y=\"78\" fill=\"#38bdf8\" font-size=\"10.5\" font-weight=\"700\" text-anchor=\"middle\">PRINSIP CIA TRIAD</text>\n  <line class=\"svg-divider\" x1=\"40\" y1=\"88\" x2=\"230\" y2=\"88\" stroke=\"#334155\"/>\n\n  <rect class=\"svg-subcard\" x=\"40\" y=\"96\" width=\"190\" height=\"36\" rx=\"4\" fill=\"#0f172a\" stroke=\"#0284c7\"/>\n  <text class=\"text-accent-blue\" x=\"135\" y=\"112\" fill=\"#38bdf8\" font-size=\"8.5\" font-weight=\"700\" text-anchor=\"middle\">Confidentiality (Kerahasiaan)</text>\n  <text class=\"svg-muted\" x=\"135\" y=\"124\" fill=\"#94a3b8\" font-size=\"7.5\" text-anchor=\"middle\">Akses Terbatas: Enkripsi &amp; Role-Based Access</text>\n\n  <rect class=\"svg-subcard\" x=\"40\" y=\"138\" width=\"190\" height=\"36\" rx=\"4\" fill=\"#0f172a\" stroke=\"#34d399\"/>\n  <text class=\"text-accent-green\" x=\"135\" y=\"154\" fill=\"#34d399\" font-size=\"8.5\" font-weight=\"700\" text-anchor=\"middle\">Integrity (Keutuhan Data)</text>\n  <text class=\"svg-muted\" x=\"135\" y=\"166\" fill=\"#94a3b8\" font-size=\"7.5\" text-anchor=\"middle\">Cegah Modifikasi Ilegal: Hash &amp; Checksum</text>\n\n  <rect class=\"svg-subcard\" x=\"40\" y=\"180\" width=\"190\" height=\"36\" rx=\"4\" fill=\"#0f172a\" stroke=\"#f59e0b\"/>\n  <text class=\"text-accent-amber\" x=\"135\" y=\"196\" fill=\"#fbbf24\" font-size=\"8.5\" font-weight=\"700\" text-anchor=\"middle\">Availability (Ketersediaan)</text>\n  <text class=\"svg-muted\" x=\"135\" y=\"208\" fill=\"#94a3b8\" font-size=\"7.5\" text-anchor=\"middle\">Sistem Selalu Siap: Backup, DRP, Redundansi</text>\n\n  <!-- Right: Public-Key Cryptography Flow -->\n  <rect class=\"svg-card\" x=\"260\" y=\"58\" width=\"390\" height=\"170\" rx=\"8\" fill=\"#1e293b\" stroke=\"#a855f7\" stroke-width=\"1.5\"/>\n  <text class=\"text-accent-purple\" x=\"455\" y=\"78\" fill=\"#a78bfa\" font-size=\"10.5\" font-weight=\"700\" text-anchor=\"middle\">ENKRIPSI KUNCI PUBLIK &amp; TANDA TANGAN DIGITAL (DIGITAL SIGNATURE)</text>\n  <line class=\"svg-divider\" x1=\"270\" y1=\"88\" x2=\"640\" y2=\"88\" stroke=\"#334155\"/>\n\n  <!-- Pengirim -->\n  <rect class=\"svg-subcard\" x=\"275\" y=\"98\" width=\"105\" height=\"52\" rx=\"4\" fill=\"#0f172a\" stroke=\"#a855f7\"/>\n  <text class=\"text-accent-purple\" x=\"327\" y=\"114\" fill=\"#a78bfa\" font-size=\"8\" font-weight=\"700\" text-anchor=\"middle\">Dokumen Jurnal</text>\n  <text class=\"svg-text\" x=\"327\" y=\"126\" fill=\"#cbd5e1\" font-size=\"7\" text-anchor=\"middle\">+ Private Key Pengirim</text>\n  <text class=\"text-accent-purple\" x=\"327\" y=\"140\" fill=\"#a78bfa\" font-size=\"7.5\" font-weight=\"600\" text-anchor=\"middle\">&#8594; Digital Signature</text>\n\n  <!-- Arrow -->\n  <line x1=\"385\" y1=\"124\" x2=\"415\" y2=\"124\" stroke=\"#a855f7\" stroke-width=\"2\"/>\n  <text class=\"svg-muted\" x=\"400\" y=\"118\" fill=\"#94a3b8\" font-size=\"7\" text-anchor=\"middle\">Kirim</text>\n\n  <!-- Penerima -->\n  <rect class=\"svg-subcard\" x=\"420\" y=\"98\" width=\"110\" height=\"52\" rx=\"4\" fill=\"#0f172a\" stroke=\"#34d399\"/>\n  <text class=\"text-accent-green\" x=\"475\" y=\"114\" fill=\"#34d399\" font-size=\"8\" font-weight=\"700\" text-anchor=\"middle\">Verifikasi Penerima</text>\n  <text class=\"svg-text\" x=\"475\" y=\"126\" fill=\"#cbd5e1\" font-size=\"7\" text-anchor=\"middle\">Pakai Public Key Pengirim</text>\n  <text class=\"text-accent-green\" x=\"475\" y=\"140\" fill=\"#34d399\" font-size=\"7.5\" font-weight=\"600\" text-anchor=\"middle\">&#10003; Sah &amp; Asli</text>\n\n  <!-- Key takeaways -->\n  <rect class=\"svg-subcard\" x=\"275\" y=\"158\" width=\"365\" height=\"58\" rx=\"4\" fill=\"#0f172a\" stroke=\"#38bdf8\"/>\n  <text class=\"text-accent-blue\" x=\"457\" y=\"174\" fill=\"#38bdf8\" font-size=\"8\" font-weight=\"700\" text-anchor=\"middle\">3 FUNGSI UTAMA DIGITAL SIGNATURE PADA SIA:</text>\n  <text class=\"svg-text\" x=\"457\" y=\"188\" fill=\"#cbd5e1\" font-size=\"7.5\" text-anchor=\"middle\">1. Autentikasi Sumber Transaksi &#8226; 2. Integritas Data (Bebas Modifikasi)</text>\n  <text class=\"text-accent-green\" x=\"457\" y=\"202\" fill=\"#34d399\" font-size=\"7.5\" font-weight=\"600\" text-anchor=\"middle\">3. Non-Repudiation: Pengirim Tidak Bisa Menyangkal Otorisasi Transaksi</text>\n</svg>"
-      },
-      {
-        "kind": "h2",
-        "text": "Prinsip CIA Triad dalam Sistem Akuntansi"
-      },
-      {
-        "kind": "ul",
-        "items": [
-          "Confidentiality (Kerahasiaan): Informasi sensitif (seperti data gaji direksi, nomor rekening bank, dan daftar harga negosiasi) terlindung dari akses pihak tidak berwenang. Diimplementasikan dengan enkripsi data dan Role-Based Access Control (RBAC).",
-          "Integrity (Integritas): Data transaksi dan laporan keuangan akurat, lengkap, dan terlindung dari modifikasi tidak sah (tamper-proof). Diimplementasikan dengan hash functions (SHA-256) dan write-once logs.",
-          "Availability (Ketersediaan): Sistem akuntansi dan data keuangan dapat diakses oleh personil yang berwenang kapan pun dibutuhkan untuk operasional atau audit. Diimplementasikan dengan server redundancy, UPS, dan backup data."
+        "kind": "example",
+        "title": "Seimbang belum tentu lengkap",
+        "blocks": [
+          {
+            "kind": "p",
+            "text": "Sistem membukukan setiap jurnal secara seimbang, tetapi satu penerimaan barang tidak pernah dimasukkan. Neraca saldo tetap seimbang karena debit dan kredit transaksi itu sama-sama tidak tercatat. Integrasi SIA membutuhkan kontrol **kelengkapan peristiwa**, keterkaitan data, dan rekonsiliasi ke bukti sumber."
+          }
         ]
       },
       {
         "kind": "h2",
-        "text": "Kriptografi & Tanda Tangan Digital (Digital Signatures)"
-      },
-      {
-        "kind": "table",
-        "caption": "Tabel 9.1: Perbandingan Kriptografi Simetris vs Asimetris",
-        "headers": [
-          "Karakteristik",
-          "Kriptografi Simetris (Secret Key)",
-          "Kriptografi Asimetris (Public-Private Key)"
-        ],
-        "rows": [
-          [
-            "Kunci Enkripsi & Dekripsi",
-            "Menggunakan SATU kunci rahasia yang sama untuk enkripsi dan dekripsi.",
-            "Menggunakan SEPASANG kunci: Public Key (dibagikan bebas) dan Private Key (disimpan rahasia)."
-          ],
-          [
-            "Kecepatan Komputasi",
-            "Sangat cepat, cocok untuk mengenkripsi database bervolume gigabyte/terabyte.",
-            "Lebih lambat (sekitar 1.000x lebih lambat dari simetris), hanya efisien untuk data kecil."
-          ],
-          [
-            "Masalah Utama",
-            "Distribusi kunci: bagaimana membagikan kunci rahasia secara aman kepada pihak kedua tanpa disadap?",
-            "Distribusi kunci mudah melalui Public Key, namun membutuhkan infrastruktur sertifikat digital (PKI)."
-          ],
-          [
-            "Penerapan Akuntansi",
-            "Enkripsi seluruh database ERP yang sedang tersimpan (Data at Rest) menggunakan standar AES-256.",
-            "Tanda tangan digital (Digital Signature) untuk otorisasi transfer kawat dan validasi faktur elektronik pajak."
-          ]
-        ]
+        "text": "1. Integrated project: satu proses analisis yang utuh"
       },
       {
         "kind": "p",
-        "text": "Mekanisme Tanda Tangan Digital (Digital Signature): Pengirim membuat ringkasan hash dari dokumen, lalu mengenkripsi hash tersebut menggunakan Private Key miliknya. Penerima mendeskripsi tanda tangan menggunakan Public Key pengirim dan mencocokkan nilai hash. Ini menjamin dua hal kritis: Non-repudiation (pengirim tidak bisa menyangkal telah menyetujui transaksi) dan Data Integrity (dokumen terbukti tidak mengalami perubahan 1 byte pun selama transmisi)."
+        "text": "Ch. 10 menghubungkan perencanaan proyek, kebutuhan bisnis, pemodelan proses, model data terpadu, implementasi database, dan query laporan. Ini bukan sekadar menggambar kotak modul ERP. Model proses menjelaskan kegiatan dan tanggung jawab; model data menjelaskan apa yang harus dicatat serta hubungannya. Richardson pp. 376–385."
       },
       {
-        "kind": "h2",
-        "text": "Perencanaan Kelangsungan Bisnis: RPO, RTO, dan Situs Pemulihan"
+        "kind": "figure",
+        "title": "Dari kebutuhan sampai laporan",
+        "svg": "<svg class=\"course-diagram-svg\" role=\"img\" aria-label=\"Dari kebutuhan sampai laporan\" viewBox=\"0 0 800 278\" xmlns=\"http://www.w3.org/2000/svg\" style=\"font-family:Inter,Arial,sans-serif;width:100%;height:auto\"><title>Dari kebutuhan sampai laporan</title><defs><marker id=\"integrated-project-a-false\" markerWidth=\"6\" markerHeight=\"6\" refX=\"5\" refY=\"3\" orient=\"auto\"><path d=\"M0 0 L6 3 L0 6\" fill=\"none\" stroke=\"#64748b\" stroke-width=\"1.5\"/></marker></defs><g><rect x=\"16\" y=\"16\" width=\"365\" height=\"108\" rx=\"12\" fill=\"#eff6ff\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"45\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">1. Kebutuhan + proses</text>\n      <text x=\"32\" y=\"72\" fill=\"#334155\" font-size=\"14\">Tujuan, lingkup, dokumen, pelaku.</text><text x=\"32\" y=\"94\" fill=\"#334155\" font-size=\"14\">BPMN: aktivitas dan pesan.</text></g><path d=\"M384 70 h23\" marker-end=\"url(#integrated-project-a-false)\" stroke=\"#64748b\" stroke-width=\"2\"/><g><rect x=\"411\" y=\"16\" width=\"365\" height=\"108\" rx=\"12\" fill=\"#ecfdf5\" stroke=\"#94a3b8\"/>\n      <text x=\"427\" y=\"45\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">2. UML / REA terpadu</text>\n      <text x=\"427\" y=\"72\" fill=\"#334155\" font-size=\"14\">Resources, Events, Agents.</text><text x=\"427\" y=\"94\" fill=\"#334155\" font-size=\"14\">Tentukan hubungan dan multiplicity.</text></g><path d=\"M593.5 126 v12 H198.5 v10\" fill=\"none\" marker-end=\"url(#integrated-project-a-false)\" stroke=\"#64748b\" stroke-width=\"2\"/><g><rect x=\"16\" y=\"154\" width=\"365\" height=\"108\" rx=\"12\" fill=\"#eff6ff\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"183\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">3. Database relasional</text>\n      <text x=\"32\" y=\"210\" fill=\"#334155\" font-size=\"14\">PK, tipe data, FK, linking table.</text><text x=\"32\" y=\"232\" fill=\"#334155\" font-size=\"14\">Bersihkan dan validasi data impor.</text></g><path d=\"M384 208 h23\" marker-end=\"url(#integrated-project-a-false)\" stroke=\"#64748b\" stroke-width=\"2\"/><g><rect x=\"411\" y=\"154\" width=\"365\" height=\"108\" rx=\"12\" fill=\"#ecfdf5\" stroke=\"#94a3b8\"/>\n      <text x=\"427\" y=\"183\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">4. Query + validasi</text>\n      <text x=\"427\" y=\"210\" fill=\"#334155\" font-size=\"14\">Saldo, laba dan informasi bisnis.</text><text x=\"427\" y=\"232\" fill=\"#334155\" font-size=\"14\">Rekonsiliasi hasil ke peristiwa.</text></g></svg>",
+        "mobileSvg": "<svg class=\"course-diagram-svg\" role=\"img\" aria-label=\"Dari kebutuhan sampai laporan\" viewBox=\"0 0 360 566\" xmlns=\"http://www.w3.org/2000/svg\" style=\"font-family:Inter,Arial,sans-serif;width:100%;height:auto\"><title>Dari kebutuhan sampai laporan</title><defs><marker id=\"integrated-project-a-true\" markerWidth=\"6\" markerHeight=\"6\" refX=\"5\" refY=\"3\" orient=\"auto\"><path d=\"M0 0 L6 3 L0 6\" fill=\"none\" stroke=\"#64748b\" stroke-width=\"1.5\"/></marker></defs><g><rect x=\"16\" y=\"16\" width=\"328\" height=\"108\" rx=\"12\" fill=\"#eff6ff\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"45\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">1. Kebutuhan + proses</text>\n      <text x=\"32\" y=\"72\" fill=\"#334155\" font-size=\"14\">Tujuan, lingkup, dokumen, pelaku.</text><text x=\"32\" y=\"94\" fill=\"#334155\" font-size=\"14\">BPMN: aktivitas dan pesan.</text></g><path d=\"M180 128 v22\" marker-end=\"url(#integrated-project-a-true)\" stroke=\"#64748b\" stroke-width=\"2\"/><g><rect x=\"16\" y=\"158\" width=\"328\" height=\"108\" rx=\"12\" fill=\"#ecfdf5\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"187\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">2. UML / REA terpadu</text>\n      <text x=\"32\" y=\"214\" fill=\"#334155\" font-size=\"14\">Resources, Events, Agents.</text><text x=\"32\" y=\"236\" fill=\"#334155\" font-size=\"14\">Tentukan hubungan dan multiplicity.</text></g><path d=\"M180 270 v22\" marker-end=\"url(#integrated-project-a-true)\" stroke=\"#64748b\" stroke-width=\"2\"/><g><rect x=\"16\" y=\"300\" width=\"328\" height=\"108\" rx=\"12\" fill=\"#eff6ff\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"329\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">3. Database relasional</text>\n      <text x=\"32\" y=\"356\" fill=\"#334155\" font-size=\"14\">PK, tipe data, FK, linking table.</text><text x=\"32\" y=\"378\" fill=\"#334155\" font-size=\"14\">Bersihkan dan validasi data impor.</text></g><path d=\"M180 412 v22\" marker-end=\"url(#integrated-project-a-true)\" stroke=\"#64748b\" stroke-width=\"2\"/><g><rect x=\"16\" y=\"442\" width=\"328\" height=\"108\" rx=\"12\" fill=\"#ecfdf5\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"471\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">4. Query + validasi</text>\n      <text x=\"32\" y=\"498\" fill=\"#334155\" font-size=\"14\">Saldo, laba dan informasi bisnis.</text><text x=\"32\" y=\"520\" fill=\"#334155\" font-size=\"14\">Rekonsiliasi hasil ke peristiwa.</text></g></svg>",
+        "caption": "Alur pedagogis buatan mengikuti Ch. 10. Kebutuhan dan model dapat direvisi setelah validasi.",
+        "altText": "1. Kebutuhan + proses: Tujuan, lingkup, dokumen, pelaku. BPMN: aktivitas dan pesan.; 2. UML / REA terpadu: Resources, Events, Agents. Tentukan hubungan dan multiplicity.; 3. Database relasional: PK, tipe data, FK, linking table. Bersihkan dan validasi data impor.; 4. Query + validasi: Saldo, laba dan informasi bisnis. Rekonsiliasi hasil ke peristiwa.",
+        "transcript": [
+          "1. Kebutuhan + proses: Tujuan, lingkup, dokumen, pelaku. BPMN: aktivitas dan pesan.",
+          "2. UML / REA terpadu: Resources, Events, Agents. Tentukan hubungan dan multiplicity.",
+          "3. Database relasional: PK, tipe data, FK, linking table. Bersihkan dan validasi data impor.",
+          "4. Query + validasi: Saldo, laba dan informasi bisnis. Rekonsiliasi hasil ke peristiwa."
+        ]
       },
       {
         "kind": "table",
-        "caption": "Tabel 9.2: Metrik Pemulihan Bencana dan Perbandingan Fasilitas Alternatif",
+        "title": "Hubungan siklus bisnis dan laporan",
         "headers": [
-          "Parameter",
-          "Hot Site",
-          "Warm Site",
-          "Cold Site"
+          "Siklus",
+          "Resource / event / agent",
+          "Dampak"
         ],
         "rows": [
           [
-            "Biaya Investasi",
-            "Sangat Mahal (operasi 24/7 paralel).",
-            "Moderat (perangkat keras siap, data dipulihkan terjadwal).",
-            "Paling Ekonomis (hanya sewa gedung kosong)."
+            "Sales and collections",
+            "Inventory dan Cash; Sales dan Cash Receipts; Customer dan Employee.",
+            "Penjualan, HPP, piutang serta kas bergantung peristiwa dan alokasi."
           ],
           [
-            "Recovery Time Objective (RTO): Berapa lama sistem boleh mati?",
-            "Hitungan menit hingga detik (hampir instan).",
-            "Hitungan beberapa jam hingga 1 hari.",
-            "Hitungan hari hingga minggu."
+            "Purchases and payments",
+            "Inventory dan Cash; Purchases dan Cash Disbursements; Vendor dan Employee.",
+            "Persediaan, utang dan kas; pembelian barang belum otomatis menjadi HPP."
           ],
           [
-            "Recovery Point Objective (RPO): Berapa jam transaksi yang boleh hilang?",
-            "Mendekati 0 detik (data direplikasi secara sinkron real-time).",
-            "Maksimal data backup hari sebelumnya (misal 24 jam).",
-            "Seluruh data sejak backup tape fisik terakhir."
-          ],
-          [
-            "Kelayakan Penggunaan",
-            "Bank, bursa efek, sistem pembayaran nasional.",
-            "Perusahaan manufaktur dan distribusi skala menengah.",
-            "Organisasi dengan operasional non-kritis."
+            "Payroll",
+            "Jasa/waktu kerja dan Cash; Timecards serta Payroll; Employees dalam peran berbeda.",
+            "Beban, kewajiban dan kas sesuai akrual serta pembayaran."
           ]
+        ],
+        "stackOnMobile": true
+      },
+      {
+        "kind": "p",
+        "text": "Model terpadu berbagi master data seperti Employees, Inventory, dan Cash. Satu pegawai dapat muncul sebagai pekerja, supervisor, atau petugas pembayaran. Alias tabel pada perangkat database dapat mewakili peran berbeda tanpa berarti perusahaan harus menduplikasi orang yang sama. Exhibit 10.8–10.9, pp. 383–384."
+      },
+      {
+        "kind": "h2",
+        "text": "2. Dari multiplicity ke PK dan FK"
+      },
+      {
+        "kind": "table",
+        "title": "Skema latihan yang mendukung pembayaran parsial",
+        "headers": [
+          "Tabel",
+          "Kunci / hubungan",
+          "Tujuan"
+        ],
+        "rows": [
+          [
+            "Customers",
+            "Customer_ID sebagai PK.",
+            "Satu pelanggan dapat memiliki banyak invoice."
+          ],
+          [
+            "Invoices",
+            "Invoice_ID PK; Customer_ID FK.",
+            "Header invoice pada satu pelanggan."
+          ],
+          [
+            "Invoice_Lines",
+            "(Invoice_ID, Line_No) PK; Product_ID FK.",
+            "Banyak item per invoice; menghubungkan invoice dan barang."
+          ],
+          [
+            "Cash_Receipts",
+            "Receipt_ID PK; tanggal dan nilai penerimaan.",
+            "Catat satu kejadian penerimaan kas."
+          ],
+          [
+            "Receipt_Allocations",
+            "(Receipt_ID, Invoice_ID) PK dalam asumsi satu alokasi per pasangan.",
+            "Hubungkan banyak penerimaan dengan banyak invoice."
+          ],
+          [
+            "Products",
+            "Product_ID PK.",
+            "Master barang yang dipakai oleh penjualan/pembelian."
+          ]
+        ],
+        "stackOnMobile": true
+      },
+      {
+        "kind": "p",
+        "text": "Dalam asumsi model ini, invoice bisa belum dibayar sehingga memiliki 0..* alokasi. Penerimaan kas bisa dialokasikan ke beberapa invoice; kebijakan uang muka perlu dimodelkan bila diizinkan. **Referential integrity** menolak FK yang merujuk header/master yang tidak ada. Kontrol itu tidak otomatis memastikan barang benar diterima atau nilai alokasi tidak melebihi saldo; aturan tambahan diperlukan."
+      },
+      {
+        "kind": "figure",
+        "title": "Menautkan invoice dan pembayaran",
+        "svg": "<svg class=\"course-diagram-svg\" role=\"img\" aria-label=\"Menautkan invoice dan pembayaran\" viewBox=\"0 0 800 278\" xmlns=\"http://www.w3.org/2000/svg\" style=\"font-family:Inter,Arial,sans-serif;width:100%;height:auto\"><title>Menautkan invoice dan pembayaran</title><defs><marker id=\"integrated-data-a-false\" markerWidth=\"6\" markerHeight=\"6\" refX=\"5\" refY=\"3\" orient=\"auto\"><path d=\"M0 0 L6 3 L0 6\" fill=\"none\" stroke=\"#64748b\" stroke-width=\"1.5\"/></marker></defs><g><rect x=\"16\" y=\"16\" width=\"365\" height=\"108\" rx=\"12\" fill=\"#eff6ff\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"45\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">1. Invoice I-01</text>\n      <text x=\"32\" y=\"72\" fill=\"#334155\" font-size=\"14\">Customer C-01 · nilai Rp90 juta.</text><text x=\"32\" y=\"94\" fill=\"#334155\" font-size=\"14\">Invoice_ID unik pada header.</text></g><path d=\"M384 70 h23\" marker-end=\"url(#integrated-data-a-false)\" stroke=\"#64748b\" stroke-width=\"2\"/><g><rect x=\"411\" y=\"16\" width=\"365\" height=\"108\" rx=\"12\" fill=\"#ecfdf5\" stroke=\"#94a3b8\"/>\n      <text x=\"427\" y=\"45\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">2. Penerimaan R-01</text>\n      <text x=\"427\" y=\"72\" fill=\"#334155\" font-size=\"14\">Kas diterima Rp60 juta.</text><text x=\"427\" y=\"94\" fill=\"#334155\" font-size=\"14\">Receipt_ID unik pada kejadian.</text></g><path d=\"M593.5 126 v12 H198.5 v10\" fill=\"none\" marker-end=\"url(#integrated-data-a-false)\" stroke=\"#64748b\" stroke-width=\"2\"/><g><rect x=\"16\" y=\"154\" width=\"365\" height=\"108\" rx=\"12\" fill=\"#eff6ff\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"183\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">3. Alokasi R-01 / I-01</text>\n      <text x=\"32\" y=\"210\" fill=\"#334155\" font-size=\"14\">Nilai yang dialokasikan Rp60 juta.</text><text x=\"32\" y=\"232\" fill=\"#334155\" font-size=\"14\">FK harus mengarah ke data valid.</text></g><path d=\"M384 208 h23\" marker-end=\"url(#integrated-data-a-false)\" stroke=\"#64748b\" stroke-width=\"2\"/><g><rect x=\"411\" y=\"154\" width=\"365\" height=\"108\" rx=\"12\" fill=\"#ecfdf5\" stroke=\"#94a3b8\"/>\n      <text x=\"427\" y=\"183\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">4. Saldo invoice</text>\n      <text x=\"427\" y=\"210\" fill=\"#334155\" font-size=\"14\">90 − 60 = Rp30 juta.</text><text x=\"427\" y=\"232\" fill=\"#334155\" font-size=\"14\">Cocokkan dengan subledger.</text></g></svg>",
+        "mobileSvg": "<svg class=\"course-diagram-svg\" role=\"img\" aria-label=\"Menautkan invoice dan pembayaran\" viewBox=\"0 0 360 566\" xmlns=\"http://www.w3.org/2000/svg\" style=\"font-family:Inter,Arial,sans-serif;width:100%;height:auto\"><title>Menautkan invoice dan pembayaran</title><defs><marker id=\"integrated-data-a-true\" markerWidth=\"6\" markerHeight=\"6\" refX=\"5\" refY=\"3\" orient=\"auto\"><path d=\"M0 0 L6 3 L0 6\" fill=\"none\" stroke=\"#64748b\" stroke-width=\"1.5\"/></marker></defs><g><rect x=\"16\" y=\"16\" width=\"328\" height=\"108\" rx=\"12\" fill=\"#eff6ff\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"45\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">1. Invoice I-01</text>\n      <text x=\"32\" y=\"72\" fill=\"#334155\" font-size=\"14\">Customer C-01 · nilai Rp90 juta.</text><text x=\"32\" y=\"94\" fill=\"#334155\" font-size=\"14\">Invoice_ID unik pada header.</text></g><path d=\"M180 128 v22\" marker-end=\"url(#integrated-data-a-true)\" stroke=\"#64748b\" stroke-width=\"2\"/><g><rect x=\"16\" y=\"158\" width=\"328\" height=\"108\" rx=\"12\" fill=\"#ecfdf5\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"187\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">2. Penerimaan R-01</text>\n      <text x=\"32\" y=\"214\" fill=\"#334155\" font-size=\"14\">Kas diterima Rp60 juta.</text><text x=\"32\" y=\"236\" fill=\"#334155\" font-size=\"14\">Receipt_ID unik pada kejadian.</text></g><path d=\"M180 270 v22\" marker-end=\"url(#integrated-data-a-true)\" stroke=\"#64748b\" stroke-width=\"2\"/><g><rect x=\"16\" y=\"300\" width=\"328\" height=\"108\" rx=\"12\" fill=\"#eff6ff\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"329\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">3. Alokasi R-01 / I-01</text>\n      <text x=\"32\" y=\"356\" fill=\"#334155\" font-size=\"14\">Nilai yang dialokasikan Rp60 juta.</text><text x=\"32\" y=\"378\" fill=\"#334155\" font-size=\"14\">FK harus mengarah ke data valid.</text></g><path d=\"M180 412 v22\" marker-end=\"url(#integrated-data-a-true)\" stroke=\"#64748b\" stroke-width=\"2\"/><g><rect x=\"16\" y=\"442\" width=\"328\" height=\"108\" rx=\"12\" fill=\"#ecfdf5\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"471\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">4. Saldo invoice</text>\n      <text x=\"32\" y=\"498\" fill=\"#334155\" font-size=\"14\">90 − 60 = Rp30 juta.</text><text x=\"32\" y=\"520\" fill=\"#334155\" font-size=\"14\">Cocokkan dengan subledger.</text></g></svg>",
+        "caption": "Skema latihan, bukan salinan persis skema buku. Hubungan many-to-many diterapkan melalui tabel alokasi.",
+        "altText": "1. Invoice I-01: Customer C-01 · nilai Rp90 juta. Invoice_ID unik pada header.; 2. Penerimaan R-01: Kas diterima Rp60 juta. Receipt_ID unik pada kejadian.; 3. Alokasi R-01 / I-01: Nilai yang dialokasikan Rp60 juta. FK harus mengarah ke data valid.; 4. Saldo invoice: 90 − 60 = Rp30 juta. Cocokkan dengan subledger.",
+        "transcript": [
+          "1. Invoice I-01: Customer C-01 · nilai Rp90 juta. Invoice_ID unik pada header.",
+          "2. Penerimaan R-01: Kas diterima Rp60 juta. Receipt_ID unik pada kejadian.",
+          "3. Alokasi R-01 / I-01: Nilai yang dialokasikan Rp60 juta. FK harus mengarah ke data valid.",
+          "4. Saldo invoice: 90 − 60 = Rp30 juta. Cocokkan dengan subledger."
+        ]
+      },
+      {
+        "kind": "h2",
+        "text": "3. Kasus angka: satu bulan PT Global Distribusi Utama"
+      },
+      {
+        "kind": "example",
+        "title": "Baca asumsi sebelum menghitung",
+        "blocks": [
+          {
+            "kind": "p",
+            "text": "Satuan seluruh angka adalah Rp juta. Saldo awal: Kas 100, Persediaan 40, Modal 140; piutang dan utang awal nol. Persediaan perpetual, tanpa PPN, diskon, retur, depresiasi, pajak, dan biaya lain. Barang diterima/diterima baik serta penyerahan penjualan memenuhi asumsi pengakuan kasus. Tidak ada transaksi selain yang disebutkan."
+          },
+          {
+            "kind": "table",
+            "title": "Lima peristiwa dalam periode",
+            "headers": [
+              "Peristiwa",
+              "Nilai",
+              "Bukti / kontrol"
+            ],
+            "rows": [
+              [
+                "Beli barang kredit dan terima",
+                "50",
+                "PO disetujui, laporan penerimaan dan invoice cocok."
+              ],
+              [
+                "Jual kredit, penyerahan terpenuhi",
+                "Harga 90; HPP 55",
+                "Delivery, invoice, pelanggan, dan biaya barang dapat ditelusuri."
+              ],
+              [
+                "Terima pembayaran sebagian",
+                "60",
+                "Penerimaan kas dialokasikan ke invoice penjualan."
+              ],
+              [
+                "Bayar sebagian utang",
+                "35",
+                "Pembayaran dialokasikan ke pembelian yang disetujui."
+              ],
+              [
+                "Bayar gaji periode berjalan",
+                "10",
+                "Timecard dan payroll disetujui secara terpisah."
+              ]
+            ],
+            "stackOnMobile": true
+          }
+        ]
+      },
+      {
+        "kind": "h2",
+        "text": "4. Pembahasan langsung: jurnal dan saldo akhir"
+      },
+      {
+        "kind": "p",
+        "text": "Langkah pertama adalah membedakan pesanan dan peristiwa yang telah memenuhi pengakuan. Purchase order saja tidak menghasilkan jurnal dalam kasus ini. Saat barang diterima, persediaan dan utang bertambah. Saat penjualan terpenuhi, piutang serta pendapatan bertambah, dan biaya barang keluar menjadi HPP."
+      },
+      {
+        "kind": "journal",
+        "title": "1 · Penerimaan pembelian kredit",
+        "caption": "Rp juta; tidak ada jurnal saat PO saja diterbitkan.",
+        "lines": [
+          {
+            "account": "Persediaan",
+            "debit": "50"
+          },
+          {
+            "account": "Utang Usaha",
+            "credit": "50",
+            "isCredit": true
+          }
+        ]
+      },
+      {
+        "kind": "journal",
+        "title": "2a · Penjualan kredit",
+        "caption": "Rp juta; penyerahan memenuhi asumsi pengakuan.",
+        "lines": [
+          {
+            "account": "Piutang Usaha",
+            "debit": "90"
+          },
+          {
+            "account": "Penjualan",
+            "credit": "90",
+            "isCredit": true
+          }
+        ]
+      },
+      {
+        "kind": "journal",
+        "title": "2b · Biaya barang yang dijual",
+        "caption": "Rp juta; perpetual.",
+        "lines": [
+          {
+            "account": "Harga Pokok Penjualan",
+            "debit": "55"
+          },
+          {
+            "account": "Persediaan",
+            "credit": "55",
+            "isCredit": true
+          }
+        ]
+      },
+      {
+        "kind": "journal",
+        "title": "3 · Penerimaan sebagian piutang",
+        "caption": "Rp juta; pembayaran bukan penjualan baru.",
+        "lines": [
+          {
+            "account": "Kas",
+            "debit": "60"
+          },
+          {
+            "account": "Piutang Usaha",
+            "credit": "60",
+            "isCredit": true
+          }
+        ]
+      },
+      {
+        "kind": "journal",
+        "title": "4 · Pembayaran sebagian utang",
+        "caption": "Rp juta; bukan HPP kedua kali.",
+        "lines": [
+          {
+            "account": "Utang Usaha",
+            "debit": "35"
+          },
+          {
+            "account": "Kas",
+            "credit": "35",
+            "isCredit": true
+          }
+        ]
+      },
+      {
+        "kind": "journal",
+        "title": "5 · Pembayaran gaji periode berjalan",
+        "caption": "Rp juta; dalam kasus tidak ada utang gaji awal atau potongan.",
+        "lines": [
+          {
+            "account": "Beban Gaji",
+            "debit": "10"
+          },
+          {
+            "account": "Kas",
+            "credit": "10",
+            "isCredit": true
+          }
+        ]
+      },
+      {
+        "kind": "table",
+        "title": "Rekonsiliasi saldo akhir",
+        "headers": [
+          "Pos",
+          "Perhitungan Rp juta",
+          "Hasil"
+        ],
+        "rows": [
+          [
+            "Kas",
+            "100 + 60 − 35 − 10",
+            "115"
+          ],
+          [
+            "Piutang",
+            "0 + 90 − 60",
+            "30"
+          ],
+          [
+            "Persediaan",
+            "40 + 50 − 55",
+            "35"
+          ],
+          [
+            "Utang usaha",
+            "0 + 50 − 35",
+            "15"
+          ],
+          [
+            "Laba periode",
+            "90 − 55 − 10",
+            "25"
+          ],
+          [
+            "Ekuitas akhir",
+            "140 + 25",
+            "165"
+          ],
+          [
+            "Persamaan akuntansi",
+            "Aset 115 + 30 + 35 = 180; utang 15 + ekuitas 165 = 180.",
+            "Seimbang"
+          ]
+        ],
+        "stackOnMobile": true
+      },
+      {
+        "kind": "figure",
+        "title": "Angka yang harus saling cocok",
+        "svg": "<svg class=\"course-diagram-svg\" role=\"img\" aria-label=\"Angka yang harus saling cocok\" viewBox=\"0 0 800 278\" xmlns=\"http://www.w3.org/2000/svg\" style=\"font-family:Inter,Arial,sans-serif;width:100%;height:auto\"><title>Angka yang harus saling cocok</title><defs><marker id=\"integrated-balance-a-false\" markerWidth=\"6\" markerHeight=\"6\" refX=\"5\" refY=\"3\" orient=\"auto\"><path d=\"M0 0 L6 3 L0 6\" fill=\"none\" stroke=\"#64748b\" stroke-width=\"1.5\"/></marker></defs><g><rect x=\"16\" y=\"16\" width=\"365\" height=\"108\" rx=\"12\" fill=\"#eff6ff\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"45\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">1. Laba 25</text>\n      <text x=\"32\" y=\"72\" fill=\"#334155\" font-size=\"14\">Penjualan 90 − HPP 55 − gaji 10.</text><text x=\"32\" y=\"94\" fill=\"#334155\" font-size=\"14\">Pembelian 50 tidak langsung HPP.</text></g><path d=\"M384 70 h23\" marker-end=\"url(#integrated-balance-a-false)\" stroke=\"#64748b\" stroke-width=\"2\"/><g><rect x=\"411\" y=\"16\" width=\"365\" height=\"108\" rx=\"12\" fill=\"#ecfdf5\" stroke=\"#94a3b8\"/>\n      <text x=\"427\" y=\"45\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">2. Kas akhir 115</text>\n      <text x=\"427\" y=\"72\" fill=\"#334155\" font-size=\"14\">Kas awal 100 + penerimaan 60.</text><text x=\"427\" y=\"94\" fill=\"#334155\" font-size=\"14\">Kurangi bayar utang 35 dan gaji 10.</text></g><path d=\"M593.5 126 v12 H198.5 v10\" fill=\"none\" marker-end=\"url(#integrated-balance-a-false)\" stroke=\"#64748b\" stroke-width=\"2\"/><g><rect x=\"16\" y=\"154\" width=\"365\" height=\"108\" rx=\"12\" fill=\"#eff6ff\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"183\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">3. Piutang 30; utang 15</text>\n      <text x=\"32\" y=\"210\" fill=\"#334155\" font-size=\"14\">Jual 90 − kas terkait 60.</text><text x=\"32\" y=\"232\" fill=\"#334155\" font-size=\"14\">Beli 50 − bayar terkait 35.</text></g><path d=\"M384 208 h23\" marker-end=\"url(#integrated-balance-a-false)\" stroke=\"#64748b\" stroke-width=\"2\"/><g><rect x=\"411\" y=\"154\" width=\"365\" height=\"108\" rx=\"12\" fill=\"#ecfdf5\" stroke=\"#94a3b8\"/>\n      <text x=\"427\" y=\"183\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">4. Aset = utang + ekuitas</text>\n      <text x=\"427\" y=\"210\" fill=\"#334155\" font-size=\"14\">115 + 30 + 35 = 180.</text><text x=\"427\" y=\"232\" fill=\"#334155\" font-size=\"14\">15 + (140 + 25) = 180.</text></g></svg>",
+        "mobileSvg": "<svg class=\"course-diagram-svg\" role=\"img\" aria-label=\"Angka yang harus saling cocok\" viewBox=\"0 0 360 566\" xmlns=\"http://www.w3.org/2000/svg\" style=\"font-family:Inter,Arial,sans-serif;width:100%;height:auto\"><title>Angka yang harus saling cocok</title><defs><marker id=\"integrated-balance-a-true\" markerWidth=\"6\" markerHeight=\"6\" refX=\"5\" refY=\"3\" orient=\"auto\"><path d=\"M0 0 L6 3 L0 6\" fill=\"none\" stroke=\"#64748b\" stroke-width=\"1.5\"/></marker></defs><g><rect x=\"16\" y=\"16\" width=\"328\" height=\"108\" rx=\"12\" fill=\"#eff6ff\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"45\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">1. Laba 25</text>\n      <text x=\"32\" y=\"72\" fill=\"#334155\" font-size=\"14\">Penjualan 90 − HPP 55 − gaji 10.</text><text x=\"32\" y=\"94\" fill=\"#334155\" font-size=\"14\">Pembelian 50 tidak langsung HPP.</text></g><path d=\"M180 128 v22\" marker-end=\"url(#integrated-balance-a-true)\" stroke=\"#64748b\" stroke-width=\"2\"/><g><rect x=\"16\" y=\"158\" width=\"328\" height=\"108\" rx=\"12\" fill=\"#ecfdf5\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"187\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">2. Kas akhir 115</text>\n      <text x=\"32\" y=\"214\" fill=\"#334155\" font-size=\"14\">Kas awal 100 + penerimaan 60.</text><text x=\"32\" y=\"236\" fill=\"#334155\" font-size=\"14\">Kurangi bayar utang 35 dan gaji 10.</text></g><path d=\"M180 270 v22\" marker-end=\"url(#integrated-balance-a-true)\" stroke=\"#64748b\" stroke-width=\"2\"/><g><rect x=\"16\" y=\"300\" width=\"328\" height=\"108\" rx=\"12\" fill=\"#eff6ff\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"329\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">3. Piutang 30; utang 15</text>\n      <text x=\"32\" y=\"356\" fill=\"#334155\" font-size=\"14\">Jual 90 − kas terkait 60.</text><text x=\"32\" y=\"378\" fill=\"#334155\" font-size=\"14\">Beli 50 − bayar terkait 35.</text></g><path d=\"M180 412 v22\" marker-end=\"url(#integrated-balance-a-true)\" stroke=\"#64748b\" stroke-width=\"2\"/><g><rect x=\"16\" y=\"442\" width=\"328\" height=\"108\" rx=\"12\" fill=\"#ecfdf5\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"471\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">4. Aset = utang + ekuitas</text>\n      <text x=\"32\" y=\"498\" fill=\"#334155\" font-size=\"14\">115 + 30 + 35 = 180.</text><text x=\"32\" y=\"520\" fill=\"#334155\" font-size=\"14\">15 + (140 + 25) = 180.</text></g></svg>",
+        "caption": "Semua angka Rp juta dan berdasarkan asumsi kasus. Seimbang membantu validasi aritmetika, tetapi tidak membuktikan kelengkapan atau keabsahan.",
+        "altText": "1. Laba 25: Penjualan 90 − HPP 55 − gaji 10. Pembelian 50 tidak langsung HPP.; 2. Kas akhir 115: Kas awal 100 + penerimaan 60. Kurangi bayar utang 35 dan gaji 10.; 3. Piutang 30; utang 15: Jual 90 − kas terkait 60. Beli 50 − bayar terkait 35.; 4. Aset = utang + ekuitas: 115 + 30 + 35 = 180. 15 + (140 + 25) = 180.",
+        "transcript": [
+          "1. Laba 25: Penjualan 90 − HPP 55 − gaji 10. Pembelian 50 tidak langsung HPP.",
+          "2. Kas akhir 115: Kas awal 100 + penerimaan 60. Kurangi bayar utang 35 dan gaji 10.",
+          "3. Piutang 30; utang 15: Jual 90 − kas terkait 60. Beli 50 − bayar terkait 35.",
+          "4. Aset = utang + ekuitas: 115 + 30 + 35 = 180. 15 + (140 + 25) = 180."
         ]
       },
       {
         "kind": "callout",
         "variant": "warning",
-        "title": "Protokol Backup 3-2-1",
-        "text": "Untuk mencegah kehancuran data akibat serangan ransomware, terapkan aturan 3-2-1: Simpan 3 salinan data, pada 2 media penyimpanan berbeda (misal SSD server lokal dan cloud storage), dengan 1 salinan disimpan di lokasi offsite yang terputus jaringan (air-gapped immutable backup)."
+        "title": "Jangan mengambil satu bullet buku sebagai aturan umum",
+        "text": "Ch. 10 merangkum hubungan event dan laporan secara singkat. Dalam sistem perpetual umum, pembelian menambah persediaan, sedangkan HPP muncul dari biaya barang yang dijual. Saldo awal, alokasi, retur, diskon, write-off, dan cutoff mengubah formula sederhana piutang/utang. Contoh di sini sengaja menyatakan unsur yang diabaikan."
+      },
+      {
+        "kind": "h2",
+        "text": "5. Audit trail dan query laporan"
+      },
+      {
+        "kind": "p",
+        "text": "Jejak audit menghubungkan penerimaan kas → alokasi → invoice → pengiriman → pesanan pelanggan, dengan pelaku, waktu, dan bukti pada tiap tahap. Penelusuran hingga pembelian bahan baku memerlukan data batch/lot, produksi, atau costing yang memang tersedia; tidak otomatis ada satu rantai klik langsung. Keberhasilan posting otomatis bergantung pada konfigurasi dan pengendalian sistem."
+      },
+      {
+        "kind": "code",
+        "language": "sql",
+        "caption": "Query ilustratif saldo per invoice. Total alokasi perlu cutoff serta validasi terpisah.",
+        "text": "WITH Allocated AS (\n  SELECT Invoice_ID, SUM(Allocated_Amount) AS Total_Paid\n  FROM Receipt_Allocations\n  GROUP BY Invoice_ID\n)\nSELECT i.Invoice_ID,\n       i.Invoice_Amount - COALESCE(a.Total_Paid, 0) AS Outstanding\nFROM Invoices i\nLEFT JOIN Allocated a ON a.Invoice_ID = i.Invoice_ID;"
+      },
+      {
+        "kind": "p",
+        "text": "Gunakan LEFT JOIN agar invoice tanpa pembayaran tetap masuk. Nilai Outstanding negatif perlu diperiksa sebagai kemungkinan kelebihan alokasi, kredit, atau salah data. Uji keunikan PK, tipe tanggal/angka, FK, dan control total setelah impor sebelum mengandalkan laporan. Richardson pp. 383–384 (PDF 408–409)."
+      },
+      {
+        "kind": "h2",
+        "text": "6. Kasus pengendalian: diagnosis sampai bukti audit"
+      },
+      {
+        "kind": "example",
+        "title": "Empat temuan dan tindak lanjut",
+        "blocks": [
+          {
+            "kind": "table",
+            "title": "Matriks jawaban yang dapat diuji",
+            "headers": [
+              "Kondisi → risiko",
+              "Kontrol dan pemilik",
+              "Bukti / prosedur audit"
+            ],
+            "rows": [
+              [
+                "Staf membuat vendor sekaligus membayar → vendor fiktif dan kas hilang.",
+                "Pisahkan master vendor, approval dan treasury; supervisor meninjau perubahan rekening.",
+                "Periksa role, uji akun yang konflik, telusuri perubahan vendor ke konfirmasi."
+              ],
+              [
+                "Developer bebas mengubah produksi → logika komisi dapat disusupi.",
+                "Change management, release independen, akses darurat terbatas dan direview.",
+                "Bandingkan daftar perubahan ke log; reperformance komisi dengan aturan resmi."
+              ],
+              [
+                "Jurnal malam dekat threshold → potensi override/pemecahan.",
+                "Approval kumulatif berbasis kebijakan dan review exception oleh pihak independen.",
+                "Validasi populasi, kelompokkan transaksi terkait, inspeksi dokumen; anomali belum bukti fraud."
+              ],
+              [
+                "Backup hanya di server yang sama → gangguan bisa merusak semua salinan.",
+                "Pemilik TI menyediakan salinan terlindungi dan uji restore sesuai target bisnis.",
+                "Inspeksi hasil backup/restore, durasi dan data yang pulih; nilai RPO/RTO."
+              ]
+            ],
+            "stackOnMobile": true
+          }
+        ]
+      },
+      {
+        "kind": "p",
+        "text": "Tambahkan risiko sisa pada setiap rekomendasi. Pemisahan tugas tidak mencegah seluruh kolusi; log tidak membantu jika tidak ditinjau; blockchain tidak memperbaiki input fisik yang palsu; bot tidak menyelesaikan sengketa otomatis. Menghubungkan batas ini menunjukkan pemahaman sistem secara utuh."
+      },
+      {
+        "kind": "h2",
+        "text": "7. Latihan mandiri komprehensif"
+      },
+      {
+        "kind": "self-check",
+        "question": "Dengan data kasus yang sama, penerimaan pelanggan ternyata 50, bukan 60. Hitung perubahan kas, piutang, laba, dan persamaan akuntansi.",
+        "answer": [
+          {
+            "kind": "p",
+            "text": "Kas akhir = 100 + 50 − 35 − 10 = 105. Piutang = 90 − 50 = 40. Persediaan 35, utang 15, laba 25, ekuitas 165 tetap. Aset = 105 + 40 + 35 = 180. Perubahan penerimaan kas menukar komposisi aset; tidak menciptakan penjualan atau laba baru."
+          }
+        ],
+        "signal": "Jika alasannya belum jelas, kembali ke contoh sebelum membuka jawaban."
+      },
+      {
+        "kind": "self-check",
+        "question": "Satu invoice pembelian dan penerimaan barang Rp8 juta terlewat dari data impor. Mengapa laporan masih seimbang, dan bagaimana mendeteksinya?",
+        "answer": [
+          {
+            "kind": "p",
+            "text": "Persediaan dan utang sama-sama kurang Rp8 juta sehingga persamaan tetap seimbang. Cocokkan receiving report dan urutan dokumen ke catatan pembelian, rekonsiliasi subledger, serta periksa invoice pemasok yang belum tercatat. Uji dari dokumen sumber ke catatan membantu menilai kelengkapan."
+          }
+        ],
+        "signal": "Jika alasannya belum jelas, kembali ke contoh sebelum membuka jawaban."
+      },
+      {
+        "kind": "callout",
+        "variant": "info",
+        "title": "Peta belajar pra-UAS",
+        "text": "TM8: conversion. TM9: integrated project. TM10: internal controls. TM11: cybersecurity. TM12: reporting/XBRL. TM13: blockchain dan AI automation. TM14: justifikasi investasi dan manajemen proyek TI."
+      },
+      {
+        "kind": "pendalaman",
+        "title": "Pelengkap: AMPS, aging, dan kualitas data untuk query (Ch. 2–3)",
+        "blocks": [
+          {
+            "kind": "example",
+            "title": "Penjualan naik, mengapa kas belum masuk?",
+            "blocks": [
+              {
+                "kind": "p",
+                "text": "Manajer melihat penjualan naik dan menyimpulkan kinerja baik. Namun invoice belum tertagih. Pertanyaan yang lebih berguna: berapa saldo piutang yang sudah jatuh tempo, terkonsentrasi pada pelanggan mana, dan tindakan penagihan apa yang diperlukan? Angka total penjualan saja belum menjawabnya."
+              }
+            ]
+          },
+          {
+            "kind": "h2",
+            "text": "1. AMPS: dari pertanyaan sampai cerita yang dapat ditindaklanjuti"
+          },
+          {
+            "kind": "p",
+            "text": "Buku utama memakai **AMPS: Ask the Question, Master the Data, Perform the Analysis, Share the Story**. Prosesnya berulang: analisis dapat menunjukkan data yang kurang atau membuat pertanyaan awal perlu diperbaiki. Richardson Ch. 2 pp. 50–60. Analitika bukan kegiatan membuat grafik dahulu lalu mencari cerita yang cocok."
+          },
+          {
+            "kind": "figure",
+            "title": "AMPS pada masalah penagihan",
+            "svg": "<svg class=\"course-diagram-svg\" role=\"img\" aria-label=\"AMPS pada masalah penagihan\" viewBox=\"0 0 800 278\" xmlns=\"http://www.w3.org/2000/svg\" style=\"font-family:Inter,Arial,sans-serif;width:100%;height:auto\"><title>AMPS pada masalah penagihan</title><defs><marker id=\"amps-uas-a-false\" markerWidth=\"6\" markerHeight=\"6\" refX=\"5\" refY=\"3\" orient=\"auto\"><path d=\"M0 0 L6 3 L0 6\" fill=\"none\" stroke=\"#64748b\" stroke-width=\"1.5\"/></marker></defs><g><rect x=\"16\" y=\"16\" width=\"365\" height=\"108\" rx=\"12\" fill=\"#eff6ff\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"45\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">1. Ask the Question</text>\n      <text x=\"32\" y=\"72\" fill=\"#334155\" font-size=\"14\">Piutang mana terlambat dibayar?</text><text x=\"32\" y=\"94\" fill=\"#334155\" font-size=\"14\">Tetapkan tanggal analisis dan unit.</text></g><path d=\"M384 70 h23\" marker-end=\"url(#amps-uas-a-false)\" stroke=\"#64748b\" stroke-width=\"2\"/><g><rect x=\"411\" y=\"16\" width=\"365\" height=\"108\" rx=\"12\" fill=\"#ecfdf5\" stroke=\"#94a3b8\"/>\n      <text x=\"427\" y=\"45\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">2. Master the Data</text>\n      <text x=\"427\" y=\"72\" fill=\"#334155\" font-size=\"14\">Gabungkan invoice dan alokasi kas.</text><text x=\"427\" y=\"94\" fill=\"#334155\" font-size=\"14\">Uji kunci, kelengkapan, cutoff.</text></g><path d=\"M593.5 126 v12 H198.5 v10\" fill=\"none\" marker-end=\"url(#amps-uas-a-false)\" stroke=\"#64748b\" stroke-width=\"2\"/><g><rect x=\"16\" y=\"154\" width=\"365\" height=\"108\" rx=\"12\" fill=\"#eff6ff\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"183\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">3. Perform the Analysis</text>\n      <text x=\"32\" y=\"210\" fill=\"#334155\" font-size=\"14\">Hitung saldo dan days past due.</text><text x=\"32\" y=\"232\" fill=\"#334155\" font-size=\"14\">Kelompokkan umur serta pelanggan.</text></g><path d=\"M384 208 h23\" marker-end=\"url(#amps-uas-a-false)\" stroke=\"#64748b\" stroke-width=\"2\"/><g><rect x=\"411\" y=\"154\" width=\"365\" height=\"108\" rx=\"12\" fill=\"#ecfdf5\" stroke=\"#94a3b8\"/>\n      <text x=\"427\" y=\"183\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">4. Share the Story</text>\n      <text x=\"427\" y=\"210\" fill=\"#334155\" font-size=\"14\">Tampilkan nominal, proporsi, batas.</text><text x=\"427\" y=\"232\" fill=\"#334155\" font-size=\"14\">Tentukan pemilik tindak lanjut.</text></g></svg>",
+            "mobileSvg": "<svg class=\"course-diagram-svg\" role=\"img\" aria-label=\"AMPS pada masalah penagihan\" viewBox=\"0 0 360 566\" xmlns=\"http://www.w3.org/2000/svg\" style=\"font-family:Inter,Arial,sans-serif;width:100%;height:auto\"><title>AMPS pada masalah penagihan</title><defs><marker id=\"amps-uas-a-true\" markerWidth=\"6\" markerHeight=\"6\" refX=\"5\" refY=\"3\" orient=\"auto\"><path d=\"M0 0 L6 3 L0 6\" fill=\"none\" stroke=\"#64748b\" stroke-width=\"1.5\"/></marker></defs><g><rect x=\"16\" y=\"16\" width=\"328\" height=\"108\" rx=\"12\" fill=\"#eff6ff\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"45\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">1. Ask the Question</text>\n      <text x=\"32\" y=\"72\" fill=\"#334155\" font-size=\"14\">Piutang mana terlambat dibayar?</text><text x=\"32\" y=\"94\" fill=\"#334155\" font-size=\"14\">Tetapkan tanggal analisis dan unit.</text></g><path d=\"M180 128 v22\" marker-end=\"url(#amps-uas-a-true)\" stroke=\"#64748b\" stroke-width=\"2\"/><g><rect x=\"16\" y=\"158\" width=\"328\" height=\"108\" rx=\"12\" fill=\"#ecfdf5\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"187\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">2. Master the Data</text>\n      <text x=\"32\" y=\"214\" fill=\"#334155\" font-size=\"14\">Gabungkan invoice dan alokasi kas.</text><text x=\"32\" y=\"236\" fill=\"#334155\" font-size=\"14\">Uji kunci, kelengkapan, cutoff.</text></g><path d=\"M180 270 v22\" marker-end=\"url(#amps-uas-a-true)\" stroke=\"#64748b\" stroke-width=\"2\"/><g><rect x=\"16\" y=\"300\" width=\"328\" height=\"108\" rx=\"12\" fill=\"#eff6ff\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"329\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">3. Perform the Analysis</text>\n      <text x=\"32\" y=\"356\" fill=\"#334155\" font-size=\"14\">Hitung saldo dan days past due.</text><text x=\"32\" y=\"378\" fill=\"#334155\" font-size=\"14\">Kelompokkan umur serta pelanggan.</text></g><path d=\"M180 412 v22\" marker-end=\"url(#amps-uas-a-true)\" stroke=\"#64748b\" stroke-width=\"2\"/><g><rect x=\"16\" y=\"442\" width=\"328\" height=\"108\" rx=\"12\" fill=\"#ecfdf5\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"471\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">4. Share the Story</text>\n      <text x=\"32\" y=\"498\" fill=\"#334155\" font-size=\"14\">Tampilkan nominal, proporsi, batas.</text><text x=\"32\" y=\"520\" fill=\"#334155\" font-size=\"14\">Tentukan pemilik tindak lanjut.</text></g></svg>",
+            "caption": "Ilustrasi buatan menggunakan AMPS dari buku utama. Hasil review dapat mengembalikan pekerjaan ke tahap data atau pertanyaan.",
+            "altText": "1. Ask the Question: Piutang mana terlambat dibayar? Tetapkan tanggal analisis dan unit.; 2. Master the Data: Gabungkan invoice dan alokasi kas. Uji kunci, kelengkapan, cutoff.; 3. Perform the Analysis: Hitung saldo dan days past due. Kelompokkan umur serta pelanggan.; 4. Share the Story: Tampilkan nominal, proporsi, batas. Tentukan pemilik tindak lanjut.",
+            "transcript": [
+              "1. Ask the Question: Piutang mana terlambat dibayar? Tetapkan tanggal analisis dan unit.",
+              "2. Master the Data: Gabungkan invoice dan alokasi kas. Uji kunci, kelengkapan, cutoff.",
+              "3. Perform the Analysis: Hitung saldo dan days past due. Kelompokkan umur serta pelanggan.",
+              "4. Share the Story: Tampilkan nominal, proporsi, batas. Tentukan pemilik tindak lanjut."
+            ]
+          },
+          {
+            "kind": "table",
+            "title": "Pertanyaan harus menentukan kebutuhan data",
+            "headers": [
+              "Pertanyaan",
+              "Unit observasi",
+              "Data minimum / batas"
+            ],
+            "rows": [
+              [
+                "Invoice mana belum lunas?",
+                "Satu invoice pada tanggal analisis.",
+                "Invoice ID, nilai invoice, kredit/retur, alokasi kas hingga tanggal analisis."
+              ],
+              [
+                "Siapa paling terlambat?",
+                "Pelanggan dan invoice terkait.",
+                "Customer ID, due date, saldo; jangan hanya memakai umur sejak invoice."
+              ],
+              [
+                "Ada pembayaran ganda?",
+                "Pembayaran atau pasangan pembayaran.",
+                "Vendor ID, referensi, nilai, tanggal, rekening; tentukan pembatalan dan pembayaran cicilan."
+              ]
+            ],
+            "stackOnMobile": true
+          },
+          {
+            "kind": "pendalaman",
+            "title": "IMPACT sebagai kerangka pelengkap",
+            "blocks": [
+              {
+                "kind": "p",
+                "text": "IMPACT lazim dikenalkan dalam literatur Data Analytics for Accounting oleh Richardson, Teeter, dan Terrell: Identify questions, Master the data, Perform the test plan, Address and refine results, Communicate insights, Track outcomes. Materi lama menggunakan nama ini tanpa membedakan sumber. Untuk kesinambungan dengan TM2 dan buku AIS 4e, alur utama di sini memakai AMPS; evaluasi hasil serta pemantauan tindak lanjut tetap dijelaskan. IMPACT tidak diklaim sebagai model utama Ch. 2 AIS."
+              }
+            ]
+          },
+          {
+            "kind": "h2",
+            "text": "2. Empat jenis analitika dan big data"
+          },
+          {
+            "kind": "table",
+            "title": "Jenis analitika mengikuti pertanyaan",
+            "headers": [
+              "Jenis",
+              "Pertanyaan",
+              "Contoh / batas"
+            ],
+            "rows": [
+              [
+                "Descriptive",
+                "Apa yang terjadi?",
+                "Aging piutang dan tren penjualan; menggambarkan data yang tersedia."
+              ],
+              [
+                "Diagnostic",
+                "Mengapa terjadi?",
+                "Telusuri keterlambatan menurut dispute, pelanggan atau proses; korelasi saja belum membuktikan sebab."
+              ],
+              [
+                "Predictive",
+                "Apa yang mungkin terjadi?",
+                "Prediksi keterlambatan berdasarkan pola historis; perlu validasi dan ketidakpastian."
+              ],
+              [
+                "Prescriptive",
+                "Apa tindakan terbaik dalam batas tertentu?",
+                "Prioritas penagihan dengan keterbatasan staf dan biaya; hasil bergantung asumsi serta tujuan."
+              ]
+            ],
+            "stackOnMobile": true
+          },
+          {
+            "kind": "p",
+            "text": "**Big data** dapat dipahami melalui volume (jumlah), velocity (kecepatan), variety (ragam), dan veracity (keandalan). File invoice terstruktur, email sengketa yang tidak terstruktur, dan log ERP bisa memberi informasi berbeda. Data berukuran besar tidak otomatis lebih relevan atau bebas kesalahan. Hak akses, privasi, retensi, serta tujuan pemakaian tetap harus diperhatikan."
+          },
+          {
+            "kind": "h2",
+            "text": "3. Master the Data: ETL dan kontrol mutu"
+          },
+          {
+            "kind": "ol",
+            "items": [
+              "Extract: ambil data dari sistem sumber dengan lingkup, tanggal, parameter, dan hak yang jelas; simpan salinan sumber yang terlindungi.",
+              "Transform: seragamkan tipe tanggal/mata uang, tangani nilai kosong, pisahkan transaksi batal, dan dokumentasikan koreksi.",
+              "Load: muat data bersih ke tabel analisis dengan tipe data dan kunci yang tepat.",
+              "Validasi hasil: cocokkan jumlah baris dan total nilai ke sumber, uji duplikasi, serta simpan catatan perubahan dan versi query."
+            ]
+          },
+          {
+            "kind": "p",
+            "text": "Tentukan **grain** atau satuan satu baris. Tabel invoice bisa satu baris per invoice; tabel line item bisa beberapa baris per invoice. Jika invoice senilai Rp10 juta dengan dua baris barang langsung digabung dengan dua penerimaan kas, join bisa membuat empat baris dan menggandakan agregat. Agregasikan setiap sisi sesuai kunci sebelum digabung atau gunakan model alokasi yang benar."
+          },
+          {
+            "kind": "figure",
+            "title": "Mencegah saldo berlipat karena join",
+            "svg": "<svg class=\"course-diagram-svg\" role=\"img\" aria-label=\"Mencegah saldo berlipat karena join\" viewBox=\"0 0 800 278\" xmlns=\"http://www.w3.org/2000/svg\" style=\"font-family:Inter,Arial,sans-serif;width:100%;height:auto\"><title>Mencegah saldo berlipat karena join</title><defs><marker id=\"etl-join-a-false\" markerWidth=\"6\" markerHeight=\"6\" refX=\"5\" refY=\"3\" orient=\"auto\"><path d=\"M0 0 L6 3 L0 6\" fill=\"none\" stroke=\"#64748b\" stroke-width=\"1.5\"/></marker></defs><g><rect x=\"16\" y=\"16\" width=\"365\" height=\"108\" rx=\"12\" fill=\"#eff6ff\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"45\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">1. Invoice</text>\n      <text x=\"32\" y=\"72\" fill=\"#334155\" font-size=\"14\">Satu baris per Invoice_ID.</text><text x=\"32\" y=\"94\" fill=\"#334155\" font-size=\"14\">Nilai invoice tidak diulang per item.</text></g><path d=\"M384 70 h23\" marker-end=\"url(#etl-join-a-false)\" stroke=\"#64748b\" stroke-width=\"2\"/><g><rect x=\"411\" y=\"16\" width=\"365\" height=\"108\" rx=\"12\" fill=\"#ecfdf5\" stroke=\"#94a3b8\"/>\n      <text x=\"427\" y=\"45\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">2. Alokasi penerimaan</text>\n      <text x=\"427\" y=\"72\" fill=\"#334155\" font-size=\"14\">Banyak baris untuk satu invoice.</text><text x=\"427\" y=\"94\" fill=\"#334155\" font-size=\"14\">Jumlahkan kas per Invoice_ID dulu.</text></g><path d=\"M593.5 126 v12 H198.5 v10\" fill=\"none\" marker-end=\"url(#etl-join-a-false)\" stroke=\"#64748b\" stroke-width=\"2\"/><g><rect x=\"16\" y=\"154\" width=\"365\" height=\"108\" rx=\"12\" fill=\"#eff6ff\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"183\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">3. Gabungkan agregat</text>\n      <text x=\"32\" y=\"210\" fill=\"#334155\" font-size=\"14\">LEFT JOIN menjaga invoice terbuka.</text><text x=\"32\" y=\"232\" fill=\"#334155\" font-size=\"14\">Kas kosong diperlakukan 0.</text></g><path d=\"M384 208 h23\" marker-end=\"url(#etl-join-a-false)\" stroke=\"#64748b\" stroke-width=\"2\"/><g><rect x=\"411\" y=\"154\" width=\"365\" height=\"108\" rx=\"12\" fill=\"#ecfdf5\" stroke=\"#94a3b8\"/>\n      <text x=\"427\" y=\"183\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">4. Rekonsiliasi</text>\n      <text x=\"427\" y=\"210\" fill=\"#334155\" font-size=\"14\">Total saldo cocok subledger.</text><text x=\"427\" y=\"232\" fill=\"#334155\" font-size=\"14\">Selisih ditelusuri sebelum grafik.</text></g></svg>",
+            "mobileSvg": "<svg class=\"course-diagram-svg\" role=\"img\" aria-label=\"Mencegah saldo berlipat karena join\" viewBox=\"0 0 360 566\" xmlns=\"http://www.w3.org/2000/svg\" style=\"font-family:Inter,Arial,sans-serif;width:100%;height:auto\"><title>Mencegah saldo berlipat karena join</title><defs><marker id=\"etl-join-a-true\" markerWidth=\"6\" markerHeight=\"6\" refX=\"5\" refY=\"3\" orient=\"auto\"><path d=\"M0 0 L6 3 L0 6\" fill=\"none\" stroke=\"#64748b\" stroke-width=\"1.5\"/></marker></defs><g><rect x=\"16\" y=\"16\" width=\"328\" height=\"108\" rx=\"12\" fill=\"#eff6ff\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"45\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">1. Invoice</text>\n      <text x=\"32\" y=\"72\" fill=\"#334155\" font-size=\"14\">Satu baris per Invoice_ID.</text><text x=\"32\" y=\"94\" fill=\"#334155\" font-size=\"14\">Nilai invoice tidak diulang per item.</text></g><path d=\"M180 128 v22\" marker-end=\"url(#etl-join-a-true)\" stroke=\"#64748b\" stroke-width=\"2\"/><g><rect x=\"16\" y=\"158\" width=\"328\" height=\"108\" rx=\"12\" fill=\"#ecfdf5\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"187\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">2. Alokasi penerimaan</text>\n      <text x=\"32\" y=\"214\" fill=\"#334155\" font-size=\"14\">Banyak baris untuk satu invoice.</text><text x=\"32\" y=\"236\" fill=\"#334155\" font-size=\"14\">Jumlahkan kas per Invoice_ID dulu.</text></g><path d=\"M180 270 v22\" marker-end=\"url(#etl-join-a-true)\" stroke=\"#64748b\" stroke-width=\"2\"/><g><rect x=\"16\" y=\"300\" width=\"328\" height=\"108\" rx=\"12\" fill=\"#eff6ff\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"329\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">3. Gabungkan agregat</text>\n      <text x=\"32\" y=\"356\" fill=\"#334155\" font-size=\"14\">LEFT JOIN menjaga invoice terbuka.</text><text x=\"32\" y=\"378\" fill=\"#334155\" font-size=\"14\">Kas kosong diperlakukan 0.</text></g><path d=\"M180 412 v22\" marker-end=\"url(#etl-join-a-true)\" stroke=\"#64748b\" stroke-width=\"2\"/><g><rect x=\"16\" y=\"442\" width=\"328\" height=\"108\" rx=\"12\" fill=\"#ecfdf5\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"471\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">4. Rekonsiliasi</text>\n      <text x=\"32\" y=\"498\" fill=\"#334155\" font-size=\"14\">Total saldo cocok subledger.</text><text x=\"32\" y=\"520\" fill=\"#334155\" font-size=\"14\">Selisih ditelusuri sebelum grafik.</text></g></svg>",
+            "caption": "Model analisis buatan: satu invoice dapat dibayar beberapa kali. Kredit/retur dan cutoff harus dimasukkan bila ada.",
+            "altText": "1. Invoice: Satu baris per Invoice_ID. Nilai invoice tidak diulang per item.; 2. Alokasi penerimaan: Banyak baris untuk satu invoice. Jumlahkan kas per Invoice_ID dulu.; 3. Gabungkan agregat: LEFT JOIN menjaga invoice terbuka. Kas kosong diperlakukan 0.; 4. Rekonsiliasi: Total saldo cocok subledger. Selisih ditelusuri sebelum grafik.",
+            "transcript": [
+              "1. Invoice: Satu baris per Invoice_ID. Nilai invoice tidak diulang per item.",
+              "2. Alokasi penerimaan: Banyak baris untuk satu invoice. Jumlahkan kas per Invoice_ID dulu.",
+              "3. Gabungkan agregat: LEFT JOIN menjaga invoice terbuka. Kas kosong diperlakukan 0.",
+              "4. Rekonsiliasi: Total saldo cocok subledger. Selisih ditelusuri sebelum grafik."
+            ]
+          },
+          {
+            "kind": "table",
+            "title": "Checklist kualitas data",
+            "headers": [
+              "Uji",
+              "Contoh masalah",
+              "Tindakan"
+            ],
+            "rows": [
+              [
+                "Completeness",
+                "Sebagian cabang atau periode tidak ikut diekspor.",
+                "Rekonsiliasi record count dan control total ke sumber."
+              ],
+              [
+                "Validity",
+                "Tanggal tidak dapat dibaca atau vendor tidak dikenal.",
+                "Periksa format dan master; pisahkan exception."
+              ],
+              [
+                "Uniqueness",
+                "Invoice_ID duplikat pada tabel yang seharusnya unik.",
+                "Periksa grain dan sumber; jangan menghapus tanpa investigasi."
+              ],
+              [
+                "Accuracy",
+                "Nilai/konversi mata uang salah.",
+                "Cocokkan ke dokumen dan aturan transformasi."
+              ],
+              [
+                "Timeliness / cutoff",
+                "Pembayaran setelah tanggal analisis mengurangi saldo masa lalu.",
+                "Filter transaksi berdasarkan tanggal efektif yang disepakati."
+              ]
+            ],
+            "stackOnMobile": true
+          },
+          {
+            "kind": "h2",
+            "text": "4. Contoh bertahap: aging piutang yang dapat direkonsiliasi"
+          },
+          {
+            "kind": "example",
+            "title": "Asumsi latihan per satu tanggal analisis",
+            "blocks": [
+              {
+                "kind": "p",
+                "text": "Seluruh nilai dalam Rp juta, tanpa saldo awal, retur, pajak, write-off, atau valuta asing. Penerimaan kas sudah dialokasikan ke invoice yang benar dan hanya sampai tanggal analisis."
+              },
+              {
+                "kind": "table",
+                "title": "Data invoice setelah agregasi kas",
+                "headers": [
+                  "Invoice",
+                  "Nilai",
+                  "Kas dialokasikan",
+                  "Saldo",
+                  "Hari lewat jatuh tempo"
+                ],
+                "rows": [
+                  [
+                    "I-01",
+                    "50",
+                    "10",
+                    "40",
+                    "−5 (belum jatuh tempo)"
+                  ],
+                  [
+                    "I-02",
+                    "45",
+                    "15",
+                    "30",
+                    "20"
+                  ],
+                  [
+                    "I-03",
+                    "30",
+                    "10",
+                    "20",
+                    "45"
+                  ],
+                  [
+                    "I-04",
+                    "20",
+                    "10",
+                    "10",
+                    "75"
+                  ],
+                  [
+                    "Total",
+                    "145",
+                    "45",
+                    "100",
+                    "Satu tanggal analisis"
+                  ]
+                ],
+                "stackOnMobile": true
+              },
+              {
+                "kind": "ol",
+                "items": [
+                  "Saldo per invoice = nilai invoice − kredit/retur yang relevan − kas teralokasi. I-02: 45 − 15 = Rp30 juta.",
+                  "Days past due = tanggal analisis − due date. Nilai negatif berarti belum jatuh tempo. Dalam asumsi ini nilai 0 masih jatuh tempo hari ini; overdue dimulai >0.",
+                  "Kelompokkan: belum jatuh tempo/hari ini 40; 1–30 hari 30; 31–60 hari 20; >60 hari 10.",
+                  "Uji total: 145 − 45 = 100, sama dengan 40 + 30 + 20 + 10.",
+                  "Saldo overdue = 30 + 20 + 10 = 60. Proporsi overdue = 60 ÷ 100 × 100% = 60%.",
+                  "Prioritaskan investigasi saldo tua dan sengketa, tetapi jangan otomatis menyimpulkan semua overdue menjadi kerugian kredit."
+                ]
+              }
+            ]
+          },
+          {
+            "kind": "figure",
+            "title": "Aging piutang: Rp100 juta, Rp60 juta sudah lewat jatuh tempo",
+            "svg": "<svg class=\"course-diagram-svg\" viewBox=\"0 0 650 330\" xmlns=\"http://www.w3.org/2000/svg\" style=\"font-family:Inter,Arial,sans-serif;width:100%;height:auto\"><title>Saldo piutang per kelompok umur</title><rect width=\"650\" height=\"330\" rx=\"14\" fill=\"#f8fafc\"/><g stroke=\"#cbd5e1\"><path d=\"M155 45 V270 H565\"/><path d=\"M255 45 V270 M355 45 V270 M455 45 V270 M555 45 V270\"/></g><g fill=\"#475569\" font-size=\"15\" text-anchor=\"end\"><text x=\"140\" y=\"83\">Belum jatuh tempo</text><text x=\"140\" y=\"139\">1–30 hari</text><text x=\"140\" y=\"195\">31–60 hari</text><text x=\"140\" y=\"251\">&gt;60 hari</text></g><rect x=\"155\" y=\"58\" width=\"400\" height=\"36\" rx=\"4\" fill=\"#0369a1\"/><rect x=\"155\" y=\"114\" width=\"300\" height=\"36\" rx=\"4\" fill=\"#b45309\"/><rect x=\"155\" y=\"170\" width=\"200\" height=\"36\" rx=\"4\" fill=\"#b45309\"/><rect x=\"155\" y=\"226\" width=\"100\" height=\"36\" rx=\"4\" fill=\"#b45309\"/><g fill=\"#fff\" font-size=\"16\" font-weight=\"700\"><text x=\"170\" y=\"82\">40</text><text x=\"170\" y=\"138\">30</text><text x=\"170\" y=\"194\">20</text><text x=\"170\" y=\"250\">10</text></g><g fill=\"#475569\" font-size=\"13\" text-anchor=\"middle\"><text x=\"155\" y=\"292\">0</text><text x=\"255\" y=\"292\">10</text><text x=\"355\" y=\"292\">20</text><text x=\"455\" y=\"292\">30</text><text x=\"555\" y=\"292\">40</text><text x=\"355\" y=\"317\">Saldo piutang (Rp juta) · tanggal analisis sama</text></g></svg>",
+            "mobileSvg": "<svg class=\"course-diagram-svg\" viewBox=\"0 0 360 430\" xmlns=\"http://www.w3.org/2000/svg\" style=\"font-family:Inter,Arial,sans-serif;width:100%;height:auto\"><title>Aging dalam Rp juta</title><rect width=\"360\" height=\"430\" rx=\"14\" fill=\"#f8fafc\"/><g fill=\"#0f172a\" font-size=\"15\"><text x=\"18\" y=\"35\">Belum jatuh tempo · 40</text><text x=\"18\" y=\"125\">1–30 hari · 30</text><text x=\"18\" y=\"215\">31–60 hari · 20</text><text x=\"18\" y=\"305\">Lebih dari 60 hari · 10</text></g><rect x=\"18\" y=\"49\" width=\"300\" height=\"28\" rx=\"4\" fill=\"#0369a1\"/><rect x=\"18\" y=\"139\" width=\"225\" height=\"28\" rx=\"4\" fill=\"#b45309\"/><rect x=\"18\" y=\"229\" width=\"150\" height=\"28\" rx=\"4\" fill=\"#b45309\"/><rect x=\"18\" y=\"319\" width=\"75\" height=\"28\" rx=\"4\" fill=\"#b45309\"/><path d=\"M18 370 H318\" stroke=\"#64748b\"/><g fill=\"#475569\" font-size=\"13\" text-anchor=\"middle\"><text x=\"18\" y=\"391\">0</text><text x=\"93\" y=\"391\">10</text><text x=\"168\" y=\"391\">20</text><text x=\"243\" y=\"391\">30</text><text x=\"318\" y=\"391\">40</text><text x=\"168\" y=\"417\">Saldo piutang (Rp juta)</text></g></svg>",
+            "altText": "Belum jatuh tempo 40 juta; 1 sampai 30 hari lewat jatuh tempo 30 juta; 31 sampai 60 hari 20 juta; lebih dari 60 hari 10 juta. Total 100 juta.",
+            "transcript": [
+              "Belum jatuh tempo: Rp40 juta.",
+              "Lewat jatuh tempo 1–30 hari: Rp30 juta.",
+              "Lewat jatuh tempo 31–60 hari: Rp20 juta.",
+              "Lewat jatuh tempo >60 hari: Rp10 juta.",
+              "Total Rp100 juta; jumlah lewat jatuh tempo Rp60 juta atau 60%. Grafik memakai skala nol dan satu tanggal analisis."
+            ],
+            "caption": "Data latihan buatan. Umur dihitung dari due date, saldo setelah alokasi penerimaan kas. Nilai penuh tersedia pada tabel kasus."
+          },
+          {
+            "kind": "code",
+            "language": "sql",
+            "caption": "Query ilustratif; nama tabel adalah model latihan, bukan skema Sunset Graphics. DATE_DIFF bergantung pada DBMS.",
+            "text": "WITH Paid AS (\n  SELECT Invoice_ID, SUM(Allocated_Amount) AS Paid_Amount\n  FROM Receipt_Allocations\n  WHERE Receipt_Date <= :analysis_date\n  GROUP BY Invoice_ID\n)\nSELECT i.Invoice_ID, i.Due_Date,\n       i.Invoice_Amount - COALESCE(p.Paid_Amount, 0) AS Balance\nFROM Invoices i\nLEFT JOIN Paid p ON p.Invoice_ID = i.Invoice_ID\nWHERE i.Invoice_Date <= :analysis_date;"
+          },
+          {
+            "kind": "h2",
+            "text": "5. Anomali, threshold, dan batas Benford"
+          },
+          {
+            "kind": "p",
+            "text": "Contoh analisis audit: bandingkan Entered_By dan Approved_By untuk mencari self-approval; cari nomor invoice vendor yang sama; kelompokkan pembayaran kecil berulang mendekati batas approval; telusuri jurnal di luar jam normal. Semua hasil ini adalah **exception untuk ditelusuri**. Pembayaran cicilan, proses batch malam, atau pengguna layanan dapat memberi penjelasan sah."
+          },
+          {
+            "kind": "example",
+            "title": "Dua invoice Rp49 juta dan batas approval Rp50 juta",
+            "blocks": [
+              {
+                "kind": "p",
+                "text": "Dua pembayaran ke vendor sama dalam satu hari menghasilkan total Rp98 juta. Ini alasan memeriksa kemungkinan pemecahan transaksi. Periksa apakah keduanya berasal dari satu pembelian, siapa pembuat/penyetuju, dokumen penerimaan, dan hubungan pihak terkait. Nilai individual di bawah batas belum membuktikan niat menghindari kontrol."
+              }
+            ]
+          },
+          {
+            "kind": "pendalaman",
+            "title": "Benford: rumus, contoh, dan kapan tidak layak",
+            "blocks": [
+              {
+                "kind": "formula",
+                "text": "P(D_1=d)=\\log_{10}\\left(1+\\frac{1}{d}\\right),\\quad d=1,\\ldots,9",
+                "note": "D₁ adalah digit pertama bukan nol. P(1) ≈30,1%; P(9) ≈4,6%. Ini pola teoritis untuk populasi yang sesuai, bukan hukum yang berlaku pada setiap kolom angka."
+              },
+              {
+                "kind": "p",
+                "text": "Benford dapat berguna untuk populasi numerik alami dengan rentang yang cukup lebar. Nomor identitas, nomor cek berurutan, harga yang ditetapkan, dan populasi yang sengaja dibatasi dekat threshold bisa tidak cocok. Pada 1.000 observasi yang layak, jumlah teoritis berawalan 1 sekitar 301; selisih aktual tetap perlu analisis statistik, konteks, dan bukti transaksi. Pengujian berulang juga dapat menambah false positive."
+              },
+              {
+                "kind": "callout",
+                "variant": "warning",
+                "title": "Batas sumber Benford",
+                "text": "Ini perluasan analitika audit, bukan pengganti AMPS atau inti bab AIS yang dirujuk. Deviasi statistik tidak membuktikan fabrikasi, materialitas, atau siapa pelakunya. Pada populasi yang tidak layak, jangan menafsirkan deviasi sebagai temuan fraud."
+              }
+            ]
+          },
+          {
+            "kind": "h2",
+            "text": "6. Memilih dan membaca visual"
+          },
+          {
+            "kind": "table",
+            "title": "Pertanyaan menentukan grafik",
+            "headers": [
+              "Tujuan",
+              "Pilihan",
+              "Hal yang diperiksa"
+            ],
+            "rows": [
+              [
+                "Bandingkan kategori",
+                "Bar chart",
+                "Skala nol, unit, urutan, label; hindari efek 3D."
+              ],
+              [
+                "Lihat tren waktu",
+                "Line chart",
+                "Interval waktu konsisten, perubahan metode, data hilang."
+              ],
+              [
+                "Lihat distribusi",
+                "Histogram / box plot",
+                "Lebar bin, outlier, dan jumlah observasi."
+              ],
+              [
+                "Lihat hubungan dua variabel",
+                "Scatter plot",
+                "Skala, outlier, kelompok; hubungan belum membuktikan sebab."
+              ],
+              [
+                "Tunjukkan bagian dari total",
+                "Stacked bar / pie sederhana",
+                "Kategori menjumlah ke total yang jelas; kategori banyak sulit dibandingkan."
+              ]
+            ],
+            "stackOnMobile": true
+          },
+          {
+            "kind": "p",
+            "text": "Pada grafik aging, panjang batang menunjukkan nominal pada unit yang sama. Angka 60% harus menyebut penyebut Rp100 juta dan tanggal analisis. Warna membantu menandai overdue, tetapi label dan urutan tetap membawa makna untuk pembaca yang tidak membedakan warna. Cerita akhir harus menyebut temuan, batas data, tindakan, penanggung jawab, serta kapan hasilnya ditinjau."
+          },
+          {
+            "kind": "h2",
+            "text": "7. Uji pemahaman"
+          },
+          {
+            "kind": "self-check",
+            "question": "Setelah join line item dan penerimaan, total invoice naik dua kali lipat. Apakah penjualan sebenarnya naik?",
+            "answer": [
+              {
+                "kind": "p",
+                "text": "Belum dapat disimpulkan. Periksa grain dan multiplicity join. Bandingkan count serta total sebelum/sesudah, agregasikan kas pada tingkat invoice, dan pastikan setiap invoice hanya dihitung sesuai model."
+              }
+            ],
+            "signal": "Jika alasannya belum jelas, kembali ke contoh sebelum membuka jawaban."
+          },
+          {
+            "kind": "self-check",
+            "question": "Digit 9 ditemukan sangat banyak pada jurnal Rp90–99 juta. Apakah ini bukti fraud?",
+            "answer": [
+              {
+                "kind": "p",
+                "text": "Tidak. Rentang yang sengaja dibatasi itu memang membuat digit 9 dominan sehingga pembandingan Benford bisa tidak layak. Investigasi threshold avoidance dengan dokumen, hubungan transaksi, akses, dan approval."
+              }
+            ],
+            "signal": "Jika alasannya belum jelas, kembali ke contoh sebelum membuka jawaban."
+          },
+          {
+            "kind": "callout",
+            "variant": "info",
+            "title": "Sumber dan batas pembahasan",
+            "text": "Richardson Ch. 2 pp. 49–60 (AMPS, data, jenis analitika) dan Ch. 3 pp. 110–126 (pemilihan dan pembacaan visual). Query, aging dan threshold adalah perluasan latihan. IMPACT dan Benford ditandai sebagai pelengkap agar tidak diatribusikan keliru ke bab buku utama. Angka, perusahaan, diagram, dan skenario latihan di halaman ini adalah ilustrasi buatan kecuali dinyatakan lain. Urutan materi inti mengikuti RPS-SIA, Pembagian Mengajar Gasal 2025/2026, halaman 1; pendalaman di luar bab terjadwal diberi label pelengkap."
+          }
+        ]
+      },
+      {
+        "kind": "callout",
+        "variant": "info",
+        "title": "Sumber dan batas pembahasan",
+        "text": "Richardson Ch. 10 pp. 376–385 (PDF 401–410); Exhibit 10.8–10.9 pp. 383–384 untuk integrasi, PK/FK, dan query. Kasus angka, model alokasi pembayaran, matriks audit dan jurnal adalah latihan buatan yang menghubungkan topik TM1–TM13; bukan simulasi resmi soal dosen. Angka, perusahaan, diagram, dan skenario latihan di halaman ini adalah ilustrasi buatan kecuali dinyatakan lain. Urutan materi inti mengikuti RPS-SIA, Pembagian Mengajar Gasal 2025/2026, halaman 1; pendalaman di luar bab terjadwal diberi label pelengkap."
       }
     ]
   },
   "questions": [
     {
       "tm": 9,
-      "topic": "Keamanan Siber & Kriptografi",
+      "topic": "Integrated Project",
       "difficulty": "medium",
-      "q": "Tiga pilar utama keamanan sistem informasi akuntansi yang dikenal sebagai CIA Triad adalah...",
+      "q": "Apa urutan logis integrated project?",
       "options": [
-        "Control, Inspection, Audit",
-        "Confidentiality, Integrity, Availability",
-        "Compliance, Integration, Accuracy",
-        "Cost, Investment, Accounting"
+        "Buat tampilan laporan, hapus sumber, lalu tentukan kebutuhan.",
+        "Kebutuhan, proses, model data, database, lalu query tervalidasi.",
+        "Pasang database, abaikan relasi, lalu kumpulkan pertanyaan.",
+        "Jumlahkan seluruh event sebagai kas tanpa pemetaan akun."
       ],
       "answer": 1,
-      "explanation": "CIA Triad: Confidentiality (data hanya bisa dibaca oleh pihak berwenang), Integrity (data terlindung dari manipulasi ilegal), dan Availability (sistem dan data siap diakses saat dibutuhkan operasional bisnis)."
+      "explanation": "Business requirements memandu model proses dan data; model menjadi blueprint database dan query. Rujukan: Richardson AIS 4e, Ch.10 pp.376–385 (PDF 401–410)."
     },
     {
       "tm": 9,
-      "topic": "Keamanan Siber & Kriptografi",
-      "difficulty": "advanced",
-      "q": "Dalam sistem Kriptografi Asimetris (Public-Key Cryptography), jika Perusahaan A ingin mengirimkan dokumen keuangan rahasia ke Auditor B sehingga HANYA Auditor B yang bisa membacanya, maka dokumen tersebut harus dienkripsi menggunakan...",
-      "options": [
-        "Private Key milik Perusahaan A",
-        "Public Key milik Auditor B",
-        "Private Key milik Auditor B",
-        "Public Key milik Perusahaan A"
-      ],
-      "answer": 1,
-      "explanation": "Untuk kerahasiaan (encryption): Pengirim mengenkripsi pesan menggunakan Public Key Penerima (Auditor B). Pesan tersebut secara matematis hanya dapat didekripsi menggunakan Private Key rahasia milik Auditor B."
-    },
-    {
-      "tm": 9,
-      "topic": "Keamanan Siber & Kriptografi",
-      "difficulty": "advanced",
-      "q": "Fungsi utama dari Tanda Tangan Digital (Digital Signature) yang dibuat dengan mengenkripsi hash dokumen menggunakan Private Key pengirim adalah menjamin...",
-      "options": [
-        "Kecepatan transmisi jaringan internet 5G",
-        "Otentikasi pengirim, keutuhan data (data integrity), dan ketiadaan sangkalan (non-repudiation)",
-        "Ukuran file dokumen menjadi lebih kecil 90%",
-        "Penghapusan kewajiban pelaporan pajak SPT tahunan"
-      ],
-      "answer": 1,
-      "explanation": "Digital Signature membuktikan secara kriptografis bahwa dokumen benar-benar berasal dari pemilik private key (otentikasi), isi dokumen tidak diubah satu bit pun saat transit (integritas), dan pengirim tidak dapat menyangkal telah menandatanganinya (non-repudiation)."
-    },
-    {
-      "tm": 9,
-      "topic": "Keamanan Siber & Kriptografi",
+      "topic": "Integrated Project",
       "difficulty": "medium",
-      "q": "Dalam perencanaan kelangsungan usaha dan pemulihan bencana (BCP/DRP), metrik RPO (Recovery Point Objective) mengukur...",
+      "q": "Setelah impor data, tindakan yang mendukung keandalan query adalah...",
       "options": [
-        "Jumlah waktu maksimal sistem boleh offline sebelum perusahaan bangkrut",
-        "Batas maksimal toleransi kehilangan data transaksi (misal: data 2 jam terakhir sebelum server down)",
-        "Biaya pembelian genset cadangan listrik",
-        "Gaji konsultan keamanan siber per jam"
+        "Memakai nama pelanggan sebagai PK meskipun duplikat.",
+        "Menunda pemeriksaan FK sampai seluruh laporan diterbitkan.",
+        "Menetapkan PK, tipe data, struktur dan referential integrity.",
+        "Menggabungkan seluruh master dan event ke satu kolom teks."
       ],
-      "answer": 1,
-      "explanation": "RPO (Recovery Point Objective) mengukur toleransi kehilangan data dalam satuan waktu (misal: backup tiap jam berarti RPO = 1 jam). Sedangkan RTO (Recovery Time Objective) mengukur target kecepatan memulihkan sistem hingga online kembali."
+      "answer": 2,
+      "explanation": "Periksa kunci, tipe data dan relasi setelah impor. Rincian langkah ini berada pada PDF 408–409. Rujukan: Richardson AIS 4e, Ch.10 pp.376–385 (PDF 401–410)."
     },
     {
       "tm": 9,
-      "topic": "Keamanan Siber & Kriptografi",
+      "topic": "Integrated Project",
       "difficulty": "medium",
-      "q": "Serangan siber di mana pelaku menyisipkan kode berbahaya ke formulir input web sehingga sistem database mengeksekusi perintah manipulasi data secara tidak sah disebut...",
+      "q": "Kas awal 100, penerimaan 60, pembayaran vendor 35 dan gaji 10 (Rp juta). Kas akhir adalah...",
       "options": [
-        "SQL Injection Attack",
-        "Denial of Service (DoS)",
-        "Social Engineering",
-        "Brute Force Attack"
+        "Rp75 juta.",
+        "Rp100 juta.",
+        "Rp125 juta.",
+        "Rp115 juta."
+      ],
+      "answer": 3,
+      "explanation": "100 + 60 − 35 − 10 = 115. Laba tidak sama dengan perubahan kas. Rujukan: Richardson AIS 4e, Ch.10 pp.376–385 (PDF 401–410)."
+    },
+    {
+      "tm": 9,
+      "topic": "Integrated Project",
+      "difficulty": "medium",
+      "q": "Invoice dapat dibayar beberapa kali. Mengapa kas perlu diagregasi per invoice sebelum join?",
+      "options": [
+        "Untuk menghindari penggandaan nilai karena hubungan banyak baris.",
+        "Untuk memastikan invoice tanpa pembayaran dikeluarkan dari analisis.",
+        "Untuk menghapus seluruh baris pembayaran yang nominalnya sama.",
+        "Untuk mengganti invoice ID dengan tanggal posting perusahaan."
       ],
       "answer": 0,
-      "explanation": "SQL Injection mengeksploitasi kelemahan validasi form input aplikasi akuntansi. Jika input tidak disanitasi, peretas dapat memasukkan sintaks SQL seperti \"' OR '1'='1\" untuk mencuri seluruh data laporan keuangan atau menghapus tabel transaksi."
+      "explanation": "Grain dan multiplicity join dapat menggandakan agregat. Tabel alokasi dan LEFT JOIN membantu menjaga invoice terbuka. Rujukan: Richardson AIS 4e, Ch.10 pp.376–385 (PDF 401–410)."
+    },
+    {
+      "tm": 9,
+      "topic": "Integrated Project",
+      "difficulty": "medium",
+      "q": "Neraca saldo seimbang. Apa simpulan yang dapat didukung?",
+      "options": [
+        "Semua transaksi pasti telah tercatat dan seluruh barang ada.",
+        "Aritmetika debit-kredit seimbang; kelengkapan masih harus diuji.",
+        "Seluruh harga dan estimasi sudah pasti wajar tanpa bukti lain.",
+        "Semua akses pengguna sudah sesuai otorisasi dan jabatan."
+      ],
+      "answer": 1,
+      "explanation": "Transaksi yang sama-sama tidak dicatat pada debit/kredit tidak merusak keseimbangan. Perlu bukti sumber dan kontrol kelengkapan. Rujukan: Richardson AIS 4e, Ch.10 pp.376–385 (PDF 401–410)."
     }
   ],
   "flashcards": [
     {
-      "id": "aks301-tm09-01",
+      "id": "aks301-v3-tm09-01",
       "phase": "pra-uas",
       "tm": 9,
-      "topic": "Keamanan Informasi & Computer Fraud",
+      "topic": "Integrated Project",
       "category": "Konsep",
-      "front": "Triad Keamanan Informasi (CIA Triad)",
-      "back": "Confidentiality (Kerahasiaan data dari pihak tak berhak), Integrity (Akurasi & keutuhan data), dan Availability (Ketersediaan sistem saat dibutuhkan). Rujukan: Richardson et al. AIS 4e · Ch. 12, hal. cetak 420-439 (PDF 445-464)."
+      "front": "Urutan Integrated Project",
+      "back": "Kebutuhan → model proses → UML/REA terpadu → database → query dan validasi. Rujukan: Richardson AIS 4e, Ch.10 pp.376–385 (PDF 401–410)."
     },
     {
-      "id": "aks301-tm09-02",
+      "id": "aks301-v3-tm09-02",
       "phase": "pra-uas",
       "tm": 9,
-      "topic": "Keamanan Informasi & Computer Fraud",
+      "topic": "Integrated Project",
       "category": "Konsep",
-      "front": "Metode Phishing & Social Engineering",
-      "back": "Upaya memanipulasi psikologis korban melalui email atau situs web tiruan palsu untuk mencuri kredensial login akun dan data rahasia. Rujukan: Richardson et al. AIS 4e · Ch. 12, hal. cetak 420-439 (PDF 445-464)."
+      "front": "Kunci dan integritas referensial",
+      "back": "PK unik dan tidak null; FK mengarah data yang valid sesuai aturan. Ini tidak membuktikan substansi barang. Rujukan: Richardson AIS 4e, Ch.10 pp.376–385 (PDF 401–410)."
     },
     {
-      "id": "aks301-tm09-03",
+      "id": "aks301-v3-tm09-03",
       "phase": "pra-uas",
       "tm": 9,
-      "topic": "Keamanan Informasi & Computer Fraud",
+      "topic": "Integrated Project",
       "category": "Konsep",
-      "front": "Ransomware & Malware",
-      "back": "Perangkat lunak jahat yang mengenkripsi seluruh file dan basis data sistem perusahaan, lalu menuntut uang tebusan untuk kunci pembuka enkripsi. Rujukan: Richardson et al. AIS 4e · Ch. 12, hal. cetak 420-439 (PDF 445-464)."
+      "front": "Saldo piutang",
+      "back": "Masukkan saldo awal, penjualan, alokasi kas, retur/kredit dan penyesuaian; nyatakan asumsi formula sederhana. Rujukan: Richardson AIS 4e, Ch.10 pp.376–385 (PDF 401–410)."
     },
     {
-      "id": "aks301-tm09-04",
+      "id": "aks301-v3-tm09-04",
       "phase": "pra-uas",
       "tm": 9,
-      "topic": "Keamanan Informasi & Computer Fraud",
+      "topic": "Integrated Project",
       "category": "Konsep",
-      "front": "Enkripsi Simetris vs Asimetris",
-      "back": "Simetris memakai satu kunci yang sama untuk enkripsi dan dekripsi (cepat). Asimetris memakai sepasang Public Key dan Private Key. Rujukan: Richardson et al. AIS 4e · Ch. 12, hal. cetak 420-439 (PDF 445-464)."
+      "front": "Grain dan join",
+      "back": "Satu baris mewakili unit yang jelas. Join banyak baris dapat menggandakan total; agregasikan dan rekonsiliasi. Rujukan: Richardson AIS 4e, Ch.10 pp.376–385 (PDF 401–410)."
     },
     {
-      "id": "aks301-tm09-05",
+      "id": "aks301-v3-tm09-05",
       "phase": "pra-uas",
       "tm": 9,
-      "topic": "Keamanan Informasi & Computer Fraud",
+      "topic": "Integrated Project",
       "category": "Konsep",
-      "front": "Fungsi Tanda Tangan Digital (Digital Signature)",
-      "back": "Menjamin keaslian pengirim (autentikasi), keutuhan isi dokumen (integritas), dan pencegahan penyangkalan transaksi (non-repudiation). Rujukan: Richardson et al. AIS 4e · Ch. 12, hal. cetak 420-439 (PDF 445-464)."
+      "front": "Audit trail",
+      "back": "Tautkan dokumen, pelaku, waktu dan perubahan. Penelusuran ke bahan baku memerlukan traceability yang tersedia. Rujukan: Richardson AIS 4e, Ch.10 pp.376–385 (PDF 401–410)."
     },
     {
-      "id": "aks301-tm09-06",
+      "id": "aks301-v3-tm09-06",
       "phase": "pra-uas",
       "tm": 9,
-      "topic": "Keamanan Informasi & Computer Fraud",
-      "category": "Mekanisme",
-      "front": "Pusat Pemulihan Bencana: Hot Site vs Cold Site",
-      "back": "Hot Site adalah fasilitas komputasi duplikat lengkap yang siap beroperasi dalam hitungan menit. Cold Site hanya ruang gedung tanpa instalasi komputer lengkap. Rujukan: Richardson et al. AIS 4e · Ch. 12, hal. cetak 420-439 (PDF 445-464)."
+      "topic": "Integrated Project",
+      "category": "Konsep",
+      "front": "Saldo seimbang",
+      "back": "Debit = kredit membantu aritmetika; transaksi yang sama-sama terlewat tetap dapat membuat laporan salah. Rujukan: Richardson AIS 4e, Ch.10 pp.376–385 (PDF 401–410)."
     }
   ],
-  "scope": "Snapshot audit pasca-UTS. Kebenaran sumber dan batas diperiksa terpisah dari kesamaan implementasi."
+  "bank": {
+    "type": "case",
+    "scope": "TM 9: Integrated Project",
+    "difficulty": "Komprehensif",
+    "estimatedTime": "30–45 menit",
+    "question": "Studi Kasus 9: Integrated Project",
+    "context": "Ilustrasi latihan buatan. Distributor mengimpor data sales, purchases, receipts dan payments untuk laporan terpadu.",
+    "data": [
+      "Rp juta: kas awal 100; persediaan awal 40; modal awal 140; AR/AP awal nol.",
+      "Beli kredit 50; jual kredit 90 dengan HPP 55; terima piutang 60; bayar utang 35; bayar gaji periode 10.",
+      "Tanpa pajak, diskon, retur, depresiasi atau transaksi lain; pengakuan penyerahan dan penerimaan barang terpenuhi."
+    ],
+    "instructions": [
+      "Hitung kas, piutang, inventory, utang, laba dan ekuitas akhir.",
+      "Tunjukkan hubungan invoice–alokasi–receipts yang mendukung pembayaran parsial.",
+      "Jelaskan uji PK/FK, cutoff, control total dan keterbatasan saldo seimbang."
+    ],
+    "outputFormat": [
+      "Alur/diagram dan analisis konsep",
+      "Perhitungan atau rancangan dengan asumsi jelas",
+      "Kontrol, bukti dan batas simpulan"
+    ],
+    "rubric": [
+      "Ketepatan konsep dan pemetaan (30%)",
+      "Ketepatan langkah serta perhitungan/rancangan (40%)",
+      "Alasan, bukti dan batas jawaban (30%)"
+    ],
+    "answerGuide": "Kas 115; AR 30; inventory 35; AP 15; laba 25; ekuitas 165. Aset 180 = utang 15 + ekuitas 165. Invoice dan receipts mempunyai PK; alokasi menautkan keduanya dan nilai terkait. Agregasikan kas per invoice sebelum join agar tidak berlipat. Periksa record count, total sumber, tipe data, referential integrity dan cutoff. Pembelian menambah persediaan, HPP muncul dari barang dijual. Seimbang tidak membuktikan kelengkapan atau barang ada. Rujukan: Richardson AIS 4e, Ch.10 pp.376–385 (PDF 401–410)."
+  },
+  "scope": "Active package revised 2026-10-16 against RPS-SIA p.1; supersedes historical catalog mapping. See docs/sia-pra-uas-20261016.md."
 }

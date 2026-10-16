@@ -1,7 +1,9 @@
-# SII306 TM9: snapshot hasil audit
+# SII306 TM9: Integrated Project: Proses, Database, dan Laporan
 
-04 JSON SHA256: c6814c277969caeee05d92ce09326901124a1284046da45913941f19e6e713ce
+Active revision: 2026-10-16. RPS-SIA p.1.
 
-Sumber terdaftar: Richardson et al. AIS 4e · Ch. 12, hal. cetak 420-439 (PDF 445-464)
+Richardson et al. AIS 4e · Ch. 10, Integrated Project, hal. cetak 376–385 (PDF 401–410)
 
-Batas verifikasi sumber ada pada docs/audit-2026-10-12/SII306.md. Snapshot JSON mempertahankan teks data historis; 05 menormalkan gaya penulisan untuk dibaca mahasiswa. Snapshot ini mengunci isi implementasi dan tidak menyatakan semua klaim sumber lengkap.
+SHA256: 5abc9880eaa6db2733c91e33e033e81030db7d1bf0bee1f3970aeb923c102ae6
+
+Audit directory retained for compatibility; the previous October 12 mapping is superseded. Source/coverage decisions: docs/sia-pra-uas-20261016.md.

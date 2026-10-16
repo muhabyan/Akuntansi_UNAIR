@@ -1,0 +1,93 @@
+import type { Reading } from '../../../types';
+import { h, p, ol, table, note, warn, example, check, extra, source } from '../uasBlocks';
+import { conceptMap } from '../uasVisuals';
+import { projectNetwork, projectGantt } from '../projectVisuals';
+
+export const SIA_TM14: Reading = {
+  tm: 14, title: 'Justifying and Planning IT Initiatives Using Project Management Techniques',
+  ref: 'RPS-SIA minggu 14 · Richardson AIS 4e · Ch. 17, pp. 550–571 (PDF 575–596)',
+  intro: 'Proyek TI harus menjawab masalah bisnis, layak secara ekonomi, dan dapat dilaksanakan. Bangun business case, bedakan laba dan arus kas, uji sensitivitas, lalu susun lingkup serta jadwal yang memperhitungkan ketergantungan. Contoh NPV dan critical path ditunjukkan langkah demi langkah.',
+  objectives: ['Menyusun business case dengan kebutuhan, alternatif, manfaat, biaya dan risiko.', 'Menghitung payback serta NPV dan membedakan ARR/IRR beserta batasnya.', 'Menjelaskan lima fase SDLC serta Waterfall dan Agile.', 'Menghubungkan scope, time, cost, sponsor dan pengendalian perubahan.', 'Menerapkan WBS/100% rule, jaringan, forward/backward pass, float dan Gantt.'],
+  blocks: [
+    example('ERP baru karena masalah apa?', p('Usulan “beli ERP karena pesaing sudah memakai” belum menjadi business case. Mulai dari masalah: penutupan buku memerlukan 12 hari karena data cabang tidak seragam. Tetapkan hasil yang diharapkan, alternatif perbaikan, siapa yang memperoleh manfaat, kapan manfaat muncul, dan bagaimana mencocokkannya dengan biaya serta risiko.')),
+    h('1. Business case: kebutuhan sebelum teknologi'),
+    conceptMap('it-business-case', 'Empat tahap justifikasi ekonomi', [
+      { title: 'Business requirements', lines: ['Definisikan masalah dan ukuran sukses.', 'Hubungkan dengan strategi organisasi.'] },
+      { title: 'Alternatif solusi', lines: ['Perbaiki proses, upgrade, beli, bangun.', 'Nilai opsi tidak melanjutkan proyek.'] },
+      { title: 'Manfaat, biaya, risiko', lines: ['Sebutkan nominal, waktu dan asumsi.', 'Jangan hitung manfaat dua kali.'] },
+      { title: 'Value proposition', lines: ['Bandingkan hasil dan sensitivitas.', 'Rekomendasikan dengan batas jelas.'] },
+    ], 'Adaptasi buatan dari Exhibit 17.1, Richardson p.553. Estimasi manfaat, biaya dan risiko saling terkait.'),
+    table('Komponen business case yang dapat diperiksa', ['Komponen', 'Pertanyaan', 'Contoh'], [
+      ['Kebutuhan', 'Masalah apa, lingkup mana, ukuran sukses apa?', 'Tutup buku turun dari 12 menjadi 7 hari dengan tingkat kesalahan terkendali.'],
+      ['Alternatif', 'Apakah teknologi baru merupakan satu-satunya cara?', 'Standarisasi proses dahulu, upgrade sistem, SaaS, atau bangun sendiri.'],
+      ['Manfaat', 'Siapa mendapat manfaat dan kapan?', 'Kurangi overtime atau risiko salah bayar; kapasitas berbeda dari kas.'],
+      ['Biaya', 'Apa biaya awal dan berulang sepanjang umur solusi?', 'Lisensi, migrasi, integrasi, pelatihan, operasi, maintenance, downtime dan exit.'],
+      ['Risiko', 'Apa yang bisa menggagalkan hasil?', 'Teknologi tidak sesuai, perubahan tidak diterima, manfaat terlambat.'],
+      ['Keputusan', 'Apa rekomendasi, kriteria dan pemiliknya?', 'Sponsor menyetujui pilot dengan tolok ukur dan titik evaluasi.'],
+    ]),
+    p('Manfaat dapat berupa revenue enhancement, revenue protection, cost savings dan cost avoidance. Pisahkan manfaat berwujud yang dapat diukur dari manfaat yang sulit dimonetisasi. Mempercepat pekerjaan bisa melepas kapasitas tanpa menurunkan pembayaran gaji. Biaya akuisisi meliputi implementasi langsung/tidak langsung; biaya operasi mencakup dukungan sepanjang umur sistem. Richardson pp.554–557.'),
+    h('2. Metrik ekonomi: satu angka tidak cukup'),
+    table('Metrik dan batasnya', ['Metrik', 'Cara memahami', 'Batas'], [
+      ['Payback', 'Waktu sampai investasi awal tertutup arus kas masuk bersih.', 'Payback sederhana mengabaikan nilai waktu uang dan kas setelah titik pulih.'],
+      ['ARR', 'Laba akuntansi rata-rata dibanding investasi sesuai definisi yang dipakai.', 'Laba berbeda dari arus kas dan definisi penyebut harus eksplisit.'],
+      ['NPV', 'Present value seluruh arus kas masuk dikurangi keluar.', 'Sensitif pada estimasi kas, timing dan discount rate.'],
+      ['IRR', 'Tingkat diskonto yang membuat NPV nol.', 'Dapat menyesatkan untuk pola kas tidak biasa dan perbandingan skala proyek.'],
+    ]),
+    { kind: 'formula', text: '\\mathrm{NPV}=-I_0+\\sum_{t=1}^{n}\\frac{CF_t}{(1+r)^t}', note: 'I₀ = pengeluaran awal; CFₜ = arus kas bersih pada periode t; r = tingkat diskonto yang konsisten dengan satuan periode dan asumsi kas.' },
+    example('Asumsi latihan: investasi Rp120 juta',
+      p('Investasi dibayar hari ini Rp120 juta. Arus kas bersih tambahan Rp50 juta setiap akhir tahun selama tiga tahun, sudah setelah biaya operasi; nilai residu nol. Diskonto 10% per tahun. Untuk menyederhanakan, abaikan pajak dan inflasi.'),
+      table('Diskonto arus kas', ['Waktu', 'Arus kas Rp juta', 'Present value Rp juta'], [
+        ['0', '−120', '−120'], ['Akhir tahun 1', '50', '50 / 1,10 = 45,45'],
+        ['Akhir tahun 2', '50', '50 / 1,10² = 41,32'], ['Akhir tahun 3', '50', '50 / 1,10³ = 37,57'],
+      ]),
+      ol('Total PV masuk tanpa pembulatan antara = 124,3426.', 'NPV = 124,3426 − 120 = Rp4,3426 juta, dibulatkan Rp4,34 juta.', 'Payback sederhana secara interpolasi = 120 / 50 = 2,4 tahun jika kas dianggap merata; jika benar-benar hanya diterima di akhir tahun, pengembalian terjadi pada akhir tahun ke-3.', 'NPV positif dalam asumsi kasus mendukung nilai ekonomi, tetapi margin kecil sehingga sensitivitas penting. Keputusan juga mempertimbangkan risiko, sumber daya dan alternatif.')),
+    p('Jika arus kas tidak merata, jumlahkan kas tiap periode dan cari saat kumulatif menutup investasi, bukan membagi investasi dengan kas rata-rata tanpa penjelasan. Jangan memasukkan depresiasi sebagai pengeluaran kas kedua kali; dampak pajaknya hanya dimasukkan bila model memang mencakup pajak.'),
+    h('3. Risiko dan sensitivitas nilai proyek'),
+    example('Manfaat turun 10%',
+      p('Kas bersih menjadi Rp45 juta/tahun. Total PV = 45 × (1/1,1 + 1/1,1² + 1/1,1³) = Rp111,9083 juta. NPV menjadi **−Rp8,09 juta**. Penurunan manfaat yang tampak kecil mengubah simpulan ekonomi.'),
+      p('Titik impas kas tahunan = 120 ÷ 2,486852 = sekitar Rp48,25 juta/tahun. Bandingkan estimasi Rp50 juta dengan ambang ini. Gunakan skenario biaya lebih tinggi, peluncuran terlambat, dan adopsi lebih rendah, lalu jelaskan mana asumsi yang paling menentukan.')),
+    table('Jenis risiko proyek', ['Risiko', 'Makna', 'Tindakan'], [
+      ['Alignment', 'Solusi tidak mendukung strategi/kebutuhan.', 'Uji kebutuhan dan kriteria sukses dengan pemilik bisnis.'],
+      ['Technology', 'Solusi tidak bekerja seperti direncanakan.', 'Pilot, pengujian integrasi, keamanan dan kapasitas.'],
+      ['Implementation / change', 'Organisasi tidak dapat menerapkan atau memakai solusi dengan baik.', 'Pelatihan, peran pemilik, data migrasi bersih, dukungan dan umpan balik.'],
+    ]),
+    h('4. Systems Development Life Cycle (SDLC)'),
+    conceptMap('sdlc-uas', 'Lima fase SDLC', [
+      { title: 'Planning', lines: ['Kebutuhan, kelayakan, business case.', 'Tetapkan sponsor dan lingkup.'] },
+      { title: 'Analysis', lines: ['Rinci kebutuhan pengguna/proses.', 'Apa yang harus dicapai sistem?'] },
+      { title: 'Design', lines: ['Rancang data, kontrol dan antarmuka.', 'Bagaimana kebutuhan dipenuhi?'] },
+      { title: 'Implementation', lines: ['Bangun, uji, migrasi, latih, terapkan.', 'Verifikasi hasil sebelum produksi.'] },
+      { title: 'Maintenance', lines: ['Koreksi, dukung dan perbarui.', 'Perubahan besar memulai siklus baru.'] },
+    ], 'Lima fase pada Richardson pp.561–562. Angka adalah urutan pembelajaran; SDLC berulang, bukan selesai selamanya setelah go-live.'),
+    table('Waterfall dan Agile', ['Aspek', 'Waterfall', 'Agile'], [
+      ['Pola', 'Fase cenderung berurutan dengan keluaran dan persetujuan.', 'Iterasi/increment dengan kolaborasi dan umpan balik.'],
+      ['Kesesuaian', 'Kebutuhan cukup stabil dan urutan dapat direncanakan.', 'Kebutuhan berkembang dan pembelajaran iteratif diperlukan.'],
+      ['Kontrol', 'Baseline, dokumentasi, pengujian, approval tetap penting.', 'Backlog, acceptance criteria, pengujian dan approval tetap penting.'],
+    ]),
+    p('Agile bukan izin untuk melewati dokumentasi atau kontrol. Waterfall pun tidak menjamin proyek pasti tepat waktu. Nilai kompleksitas, ketidakpastian, regulasi, kemampuan tim dan ketergantungan. Akuntan membantu mendefinisikan kebutuhan data, mapping akun, pengujian laporan, rekonsiliasi migrasi serta kontrol pengguna.'),
+    h('5. Lingkup, sponsor, dan pengendalian perubahan'),
+    p('Proyek bersifat sementara dengan hasil yang didefinisikan. **Project sponsor** menyediakan dukungan, wewenang dan keputusan strategis; **project manager** mengkoordinasikan pelaksanaan, sumber daya, jadwal dan pelaporan. Scope, time dan cost saling memengaruhi: menambah lingkup tanpa menambah waktu atau sumber daya dapat menurunkan mutu atau meningkatkan risiko.'),
+    p('**Scope creep** adalah perluasan tanpa pengendalian yang memadai. Perubahan yang sah perlu analisis dampak, persetujuan dan pembaruan baseline. Rencana TI harus selaras strategi, memiliki lingkup/waktu yang relevan, manfaat realistis, kinerja terukur, evaluasi berkala, komunikasi, akuntabilitas dan komitmen. Richardson pp.563–568.'),
+    note('15-15 rule adalah heuristik buku', 'Buku menyajikan keterlambatan atau kelebihan anggaran >15% sebagai sinyal penting untuk menilai kembali kelanjutan proyek. Ini bukan hukum bahwa proyek pasti gagal atau wajib dihentikan; sponsor perlu menilai manfaat tersisa, biaya tambahan dan alternatif.'),
+    h('6. WBS, dependency, dan critical path'),
+    p('**Work breakdown structure (WBS)** memecah seluruh lingkup menjadi pekerjaan yang dapat dikelola. **100% rule** menuntut cakupan pekerjaan lengkap, termasuk pekerjaan internal, eksternal dan interim; bukan berarti semua durasi harus diperkirakan 100% tepat atau setiap tugas sudah selesai. Dari daftar pekerjaan, tentukan dependency, durasi dan sumber daya.'),
+    table('Data jaringan latihan', ['Aktivitas', 'Durasi hari', 'Predecessor'], [
+      ['A · Kebutuhan', '2', 'Tidak ada'], ['B · Konfigurasi', '3', 'A'], ['C · Bersihkan data', '4', 'A'], ['D · Uji terpadu', '2', 'B dan C'],
+    ]),
+    projectNetwork,
+    example('Forward pass, backward pass dan float',
+      ol('Forward pass: ES awal A = 0; EF = ES + durasi. A selesai 2, B selesai 5 dan C selesai 6.', 'D harus menunggu B dan C, sehingga ES D = max(5,6) = 6 dan EF D = 8.', 'Backward pass dari akhir 8: LS D = 6. B harus selesai ≤6 sehingga LS B = 3; C LS = 2. A harus selesai paling lambat min(3,2) = 2 sehingga LS A = 0.', 'Total float = LS − ES. A = 0; B = 1; C = 0; D = 0.', 'Critical path A–C–D sepanjang 8 hari. Bila C terlambat 1 hari tanpa kompensasi, proyek selesai hari 9. B terlambat 1 hari masih dapat selesai hari 6 sehingga D tetap mulai 6.'),
+      table('Hasil perhitungan jadwal', ['Aktivitas', 'ES / EF', 'LS / LF', 'Float'], [
+        ['A', '0 / 2', '0 / 2', '0'], ['B', '2 / 5', '3 / 6', '1'], ['C', '2 / 6', '2 / 6', '0'], ['D', '6 / 8', '6 / 8', '0'],
+      ])),
+    warn('Asumsi sumber daya', 'Critical path memberi durasi minimum menurut dependency ketika sumber daya cukup. Jika B dan C harus memakai orang yang sama dan tidak dapat paralel, jadwal perlu resource leveling. Contoh 8 hari tidak lagi otomatis berlaku. Jalur kritis dapat lebih dari satu atau berubah setelah durasi berubah.'),
+    projectGantt,
+    extra('PERT probabilistik dan dummy activity',
+      p('PERT dapat memakai estimasi tiga titik: optimistic (a), most likely (m), dan pessimistic (b). Expected duration lazimnya (a + 4m + b) / 6; estimasi bukan kepastian. Contoh jaringan halaman ini memakai durasi deterministik agar hitung dependency terlihat. Pada activity-on-arrow, dummy activity menunjukkan dependency tanpa pekerjaan/durasi tambahan; activity-on-node dapat menyatakan dependency langsung lewat panah.'),
+      { kind: 'formula', text: 't_e=\\frac{a+4m+b}{6}', note: 'Pelengkap teknik penjadwalan. Misal a=2, m=4, b=8 memberi 26/6 ≈4,33 hari; jangan mengganti semua durasi jaringan tanpa menghitung ulang.' }),
+    h('7. Uji pemahaman'),
+    check('B terlambat dua hari dari rencana awal. Kapan proyek selesai?', p('B selesai 7, C selesai 6; D mulai max(7,6) = 7 lalu selesai 9. Float B hanya satu hari, sehingga satu hari keterlambatan melewati float menunda proyek satu hari.')),
+    check('NPV dasar positif tetapi skenario manfaat turun 10% negatif. Apa yang sebaiknya ditulis dalam rekomendasi?', p('Jelaskan bahwa nilai proyek sensitif terhadap manfaat. Uji bukti estimasi, lakukan pilot/komitmen pemilik manfaat, bandingkan alternatif, dan tetapkan batas evaluasi. Jangan menyatakan layak tanpa menyebut asumsi dan margin risikonya.')),
+    source('RPS-SIA minggu 14; Richardson Ch.17 pp.550–571 (PDF 575–596): business case pp.552–560, SDLC pp.561–563, planning/project constraints pp.563–568, WBS/PERT/Gantt pp.569–570. Perhitungan NPV, jaringan dan seluruh angka adalah latihan buatan; PERT tiga titik merupakan pelengkap metode.'),
+  ],
+};

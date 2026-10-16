@@ -1,7 +1,9 @@
-# SII306 TM14: snapshot hasil audit
+# SII306 TM14: Justifying and Planning IT Initiatives Using Project Management Techniques
 
-04 JSON SHA256: f89079b01797b815ee832d22feb403f37dbe60b8ce96382ff83d18efd13328f4
+Active revision: 2026-10-16. RPS-SIA p.1.
 
-Sumber terdaftar: Richardson et al. AIS 4e · Ch. 10, Integrated Project, hal. 376-385 (PDF 401-410)
+RPS-SIA minggu 14 · Richardson AIS 4e · Ch. 17, pp. 550–571 (PDF 575–596)
 
-Batas verifikasi sumber ada pada docs/audit-2026-10-12/SII306.md. Snapshot JSON mempertahankan teks data historis; 05 menormalkan gaya penulisan untuk dibaca mahasiswa. Snapshot ini mengunci isi implementasi dan tidak menyatakan semua klaim sumber lengkap.
+SHA256: e0cfe70ebd05892e87f48262f31c565afff97fc3e2bb760a16c3af1dd1315d5d
+
+Audit directory retained for compatibility; the previous October 12 mapping is superseded. Source/coverage decisions: docs/sia-pra-uas-20261016.md.

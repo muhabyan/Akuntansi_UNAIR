@@ -1,56 +1,56 @@
 [
   {
-    "id": "aks301-tm14-01",
+    "id": "aks301-v3-tm14-01",
     "phase": "pra-uas",
     "tm": 14,
-    "topic": "Review Komprehensif UAS Sistem Informasi Akuntansi",
+    "topic": "Justifying and Planning IT Initiatives",
     "category": "Konsep",
-    "front": "Fokus Utama Soal Ujian Akhir Semester (UAS) SIA",
-    "back": "Perkiraan prioritas dari RPP dan materi: proses transaksi, kelemahan pengendalian, metode audit TI dan batas teknologi. Arsip UAS yang mendukung bentuk/bobot spesifik belum ditemukan. Rujukan: Richardson et al. AIS 4e · Ch. 10, Integrated Project, hal. 376-385 (PDF 401-410)."
+    "front": "Business case",
+    "back": "Kebutuhan, alternatif, manfaat, biaya, risiko, value proposition dan ukuran sukses; mulai dari masalah bisnis. Rujukan: Richardson AIS 4e, Ch.17 pp.550–571 (PDF 575–596)."
   },
   {
-    "id": "aks301-tm14-02",
+    "id": "aks301-v3-tm14-02",
     "phase": "pra-uas",
     "tm": 14,
-    "topic": "Review Komprehensif UAS Sistem Informasi Akuntansi",
+    "topic": "Justifying and Planning IT Initiatives",
     "category": "Konsep",
-    "front": "Mendiagnosis Single Point of Failure (SPOF)",
-    "back": "Mengidentifikasi kelemahan di mana kegagalan satu komponen kontrol atau staf tunggal dapat meruntuhkan seluruh keandalan sistem akuntansi. Rujukan: Richardson et al. AIS 4e · Ch. 10, Integrated Project, hal. 376-385 (PDF 401-410)."
+    "front": "NPV dan payback",
+    "back": "NPV mendiskontokan kas menurut waktu. Payback sederhana mengukur pemulihan investasi; nyatakan asumsi timing. Rujukan: Richardson AIS 4e, Ch.17 pp.550–571 (PDF 575–596)."
   },
   {
-    "id": "aks301-tm14-03",
+    "id": "aks301-v3-tm14-03",
     "phase": "pra-uas",
     "tm": 14,
-    "topic": "Review Komprehensif UAS Sistem Informasi Akuntansi",
+    "topic": "Justifying and Planning IT Initiatives",
     "category": "Konsep",
-    "front": "Analisis Celah Pemisahan Tugas (SoD Matrix)",
-    "back": "Memastikan tidak ada staf yang memegang akses gabungan yang berbahaya: misalnya staf yang membuat master data vendor tidak boleh memproses pembayaran faktur. Rujukan: Richardson et al. AIS 4e · Ch. 10, Integrated Project, hal. 376-385 (PDF 401-410)."
+    "front": "Lima fase SDLC",
+    "back": "Planning, analysis, design, implementation, maintenance. Perubahan besar dapat memulai siklus kembali. Rujukan: Richardson AIS 4e, Ch.17 pp.550–571 (PDF 575–596)."
   },
   {
-    "id": "aks301-tm14-04",
+    "id": "aks301-v3-tm14-04",
     "phase": "pra-uas",
     "tm": 14,
-    "topic": "Review Komprehensif UAS Sistem Informasi Akuntansi",
-    "category": "Standar",
-    "front": "Perlakuan Audit atas Bukti Elektronik",
-    "back": "Bukti digital memerlukan pemeliharaan jejak audit (audit trail) dan verifikasi bahwa pengendalian umum TI (GITC) berfungsi efektif sepanjang tahun. Rujukan: Richardson et al. AIS 4e · Ch. 10, Integrated Project, hal. 376-385 (PDF 401-410)."
+    "topic": "Justifying and Planning IT Initiatives",
+    "category": "Konsep",
+    "front": "Triple constraint",
+    "back": "Scope, time dan cost saling terkait; perubahan memerlukan analisis dampak, approval dan baseline baru. Rujukan: Richardson AIS 4e, Ch.17 pp.550–571 (PDF 575–596)."
   },
   {
-    "id": "aks301-tm14-05",
+    "id": "aks301-v3-tm14-05",
     "phase": "pra-uas",
     "tm": 14,
-    "topic": "Review Komprehensif UAS Sistem Informasi Akuntansi",
+    "topic": "Justifying and Planning IT Initiatives",
     "category": "Konsep",
-    "front": "Peran Laporan SOC 1 (SSAE 18 / ISAE 3402)",
-    "back": "SOC 1 berkaitan dengan pengendalian organisasi jasa yang relevan bagi pengendalian internal pelaporan keuangan entitas pengguna. Jenis, periode, pengecualian dan kontrol pelengkap pengguna harus dibaca. Rujukan standar: ISA 402 paragraf 8 dan 16-17. Rujukan: Richardson et al. AIS 4e · Ch. 10, Integrated Project, hal. 376-385 (PDF 401-410)."
+    "front": "WBS dan 100% rule",
+    "back": "Pecah seluruh lingkup, termasuk pekerjaan internal/eksternal/interim. Kelengkapan lingkup tidak berarti estimasi pasti. Rujukan: Richardson AIS 4e, Ch.17 pp.550–571 (PDF 575–596)."
   },
   {
-    "id": "aks301-tm14-06",
+    "id": "aks301-v3-tm14-06",
     "phase": "pra-uas",
     "tm": 14,
-    "topic": "Review Komprehensif UAS Sistem Informasi Akuntansi",
+    "topic": "Justifying and Planning IT Initiatives",
     "category": "Konsep",
-    "front": "Saran Sukses Ujian Akhir Semester SIA",
-    "back": "Gunakan diagram alur atau bagan saat menjelaskan usulan perbaikan sistem; identifikasi risiko bisnis terlebih dahulu sebelum menawarkan aktivitas pengendalian. Rujukan: Richardson et al. AIS 4e · Ch. 10, Integrated Project, hal. 376-385 (PDF 401-410)."
+    "front": "Critical path dan float",
+    "back": "Jalur terlama menentukan minimum durasi menurut dependency dan sumber daya memadai. Float mengukur kelonggaran; jalur bisa berubah. Rujukan: Richardson AIS 4e, Ch.17 pp.550–571 (PDF 575–596)."
   }
 ]

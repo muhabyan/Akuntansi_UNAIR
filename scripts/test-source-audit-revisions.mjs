@@ -15,7 +15,11 @@ for(const tm of [8,9,10,11,12,13,14]){
   assert.deepEqual(snapshot.reading,m.SII306_READINGS[tm]);
   assert.deepEqual(snapshot.questions,m.SII306_QUIZ_UAS.filter(q=>q.tm===tm));
 }
-assert.match(m.SII306_READINGS[8].ref,/Ch\. 11/);assert.match(m.SII306_READINGS[9].ref,/Ch\. 12/);assert.match(m.SII306_READINGS[11].ref,/Ch\. 2 dan 3/);
+// RPS-SIA p.1 supersedes the historical catalog mapping used by the October 12 audit.
+for (const [tm, chapter] of [[8,9],[9,10],[10,11],[11,12],[12,14],[13,15],[14,17]]) {
+  assert.match(m.SII306_READINGS[tm].ref, new RegExp(`Ch\\. ${chapter}\\b`));
+  assert.equal(m.SII306_QUIZ_UAS.filter(item=>item.tm===tm).length,5);
+}
 assert.doesNotMatch(JSON.stringify(m.SII306_READINGS[13]),/Nol Rekonsiliasi|Auditor Otomatis|tidak ada perselisihan saldo/);
 const q=m.SII306_QUIZ_UAS.filter(q=>q.tm===13);
 assert.equal(q.length,5);q.forEach(q=>assert.match(q.q+q.explanation,/Rujukan:|Grigg \(2005\)/));
@@ -27,7 +31,7 @@ for(const i of [11,19,21,24,30,31,32,33,34]){
   assert.equal(item.options.length,4);
   assert.ok(Math.max(...item.options.map(s=>s.length))/Math.min(...item.options.map(s=>s.length))<2);
 }
-assert.match(m.SII306_QUIZ_UAS[34].explanation,/PDF 408-409/);
+assert.match(m.SII306_QUIZ_UAS[6].explanation,/PDF 408[–-]409/);
 assert.match(JSON.stringify(m.SII306_READINGS[13]),/IAS 2 tidak berlaku, IAS 38/);
 assert.match(JSON.stringify(m.SII306_READINGS[13]),/PSAK 202.*PSAK 238/);
 assert.ok(m.ARIMA_AUDIT_BLOCKS.some(b=>b.kind==='formula'&&b.text.includes('y_t-y_{t-1}')));

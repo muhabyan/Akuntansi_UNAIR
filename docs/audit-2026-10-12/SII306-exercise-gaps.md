@@ -1,5 +1,7 @@
 # SII306: butir untuk pemeriksaan sumber/pengecoh
 
+> Arsip temuan 12 Oktober: seluruh 35 kuis, 42 flashcard dan tujuh kasus pra-UAS telah ditulis ulang mengikuti RPS pada 16 Oktober 2026. ID/urutan dan pemetaan topik di bawah bukan versi latihan aktif. Lihat [laporan revisi SIA pra-UAS](../sia-pra-uas-20261016.md).
+
 Daftar ini menunjukkan celah anchor, bukan sertifikat kebenaran isi. Rasio panjang >3 adalah sinyal editorial dan tidak otomatis berarti jawaban dapat ditebak.
 
 | Jenis | ID atau urutan set UAS | TM/scope | Pokok butir |

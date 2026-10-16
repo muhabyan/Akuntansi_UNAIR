@@ -139,12 +139,12 @@ export async function testCanonical(tm) {
 }
 export function testProtected() {
   const snapshot=JSON.parse(fs.readFileSync('scripts/fixtures/mnu307/protected-files.json','utf8'));
-  // 16 Oct: user authorized shared learning-flow changes. Only CourseLayout and LayeredBlocks
-  // gain exact LF/CRLF variants; content, case, visual and unrelated-file guards stay intact.
-  for(const [file,hash] of Object.entries(snapshot))assert.ok([hash.worktree,hash.repository,...(hash.authorizedAudit20261012??[]),...(hash.authorizedMnu108PostUas20261013??[]),...(hash.authorizedPraUasElaboration20261014??[]),...(hash.authorizedTutorLearning20261016??[])].includes(createHash('sha256').update(fs.readFileSync(file)).digest('hex')),`protected file changed: ${file} (exact checkout variants and reviewed audit revisions explicitly recorded)`);
+  // Preserve the exact reviewed SIA and Tutor variants when their branches are combined.
+  // Content, case, visual and unrelated-file guards stay intact.
+  for(const [file,hash] of Object.entries(snapshot))assert.ok([hash.worktree,hash.repository,...(hash.authorizedAudit20261012??[]),...(hash.authorizedMnu108PostUas20261013??[]),...(hash.authorizedPraUasElaboration20261014??[]),...(hash.authorizedSiaRps20261016??[]),...(hash.authorizedTutorLearning20261016??[])].includes(createHash('sha256').update(fs.readFileSync(file)).digest('hex')),`protected file changed: ${file} (exact checkout variants and reviewed audit revisions explicitly recorded)`);
   // Only the seventh Manstrat card is editable; every preceding and subsequent byte is guarded.
   const course=fs.readFileSync('src/data/courseData.ts','utf8').replace(/\r\n/g,'\n').replace(/const MNU307_TM1_7 = materi\(\[\n((?:[^\n]*\n){6})(?:[^\n]*\n)/,'const MNU307_TM1_7 = materi([\n$1');
   const catalog=JSON.parse(fs.readFileSync('scripts/fixtures/mnu307/course-catalog-guard.json','utf8'));
-  assert.ok([catalog.sha256,...(catalog.authorizedMnu108PostUas20261013??[])].includes(createHash('sha256').update(course).digest('hex')));
+  assert.ok([catalog.sha256,...(catalog.authorizedMnu108PostUas20261013??[]),...(catalog.authorizedSiaRps20261016??[])].includes(createHash('sha256').update(course).digest('hex')));
   console.log(`MNU307 shared render rules PASS: ${Object.keys(snapshot).length} exact snapshots; explicitly recorded MNU108 UAS revision allowed, with other catalog entries guarded separately`);
 }

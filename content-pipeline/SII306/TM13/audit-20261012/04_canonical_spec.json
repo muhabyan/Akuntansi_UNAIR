@@ -3,230 +3,843 @@
   "tm": 13,
   "reading": {
     "tm": 13,
-    "title": "Teknologi Blockchain, Smart Contracts & Akuntansi Tiga Entri (Triple-Entry Accounting)",
-    "ref": "Richardson et al. AIS 4e · Ch. 15, hal. 494-508 (PDF 519-533)",
-    "intro": "Membahas disrupsi teknologi Distributed Ledger Technology (DLT) dan Blockchain terhadap sistem akuntansi. Memahami arsitektur blok, kriptografi hash, konsensus, Smart Contracts, evolusi menuju Triple-Entry Accounting, serta audit atas aset digital.",
+    "title": "Emerging Technologies: Blockchain dan AI Automation",
+    "ref": "Richardson et al. AIS 4e · Ch. 15, hal. cetak 494–516 (PDF 519–541); cloud: Ch. 6 p. 270 (PDF 295)",
+    "intro": "Pelajari blockchain, smart contract dan shared receipt, lalu hubungkan dengan AI/ML serta otomasi RPA. Contoh pembelian dan rekonsiliasi menunjukkan manfaat, batas bukti digital, risiko input, exception, pengawasan manusia dan perhitungan manfaat otomasi.",
     "objectives": [
-      "Menjelaskan karakteristik dasar Blockchain: Desentralisasi, Immutability, Transparansi, dan Kriptografi Hash.",
-      "Membedakan jaringan Public Blockchain (Permissionless) vs Private/Consortium Blockchain (Permissioned).",
-      "Memahami konsep Triple-Entry Accounting dan dampaknya terhadap otomatisasi verifikasi audit.",
-      "Menganalisis mekanisme kerja Smart Contracts dalam otomatisasi siklus pendapatan dan pengeluaran.",
-      "Mengevaluasi tantangan audit aset kripto dan kepatuhan standar akuntansi (PSAK/IFRS terkait aset takberwujud)."
+      "Menjelaskan transaksi, hash, blok, konsensus dan peran kunci.",
+      "Membedakan jaringan permissioned/permissionless dan kebutuhan database terpusat.",
+      "Menjelaskan smart contract beserta oracle problem dan pencegahan pembayaran ganda.",
+      "Membedakan shared receipt/triple-entry dari pembukuan double-entry serta kebutuhan audit.",
+      "Membandingkan cloud accounting dengan blockchain dan menilai pembagian tanggung jawab.",
+      "Menilai AI/ML, kelayakan RPA, exception, kontrol bot serta manfaat otomasi."
     ],
     "blocks": [
       {
-        "kind": "figure",
-        "caption": "Gambar 13.1: Struktur Rantai Blok (Blockchain) dan Paradigma Akuntansi Tiga Entri (Triple-Entry Accounting).",
-        "svg": "<svg class=\"course-diagram-svg\" viewBox=\"0 0 680 250\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif\">\n  <rect class=\"svg-bg\" x=\"10\" y=\"10\" width=\"660\" height=\"230\" rx=\"12\" fill=\"#0f172a\" stroke=\"#334155\" stroke-width=\"1.5\"/>\n  <rect class=\"svg-header\" x=\"10\" y=\"10\" width=\"660\" height=\"38\" rx=\"12\" fill=\"#1e293b\" fill-opacity=\"0.6\"/>\n  <line class=\"svg-divider\" x1=\"10\" y1=\"48\" x2=\"670\" y2=\"48\" stroke=\"#334155\" stroke-width=\"1\"/>\n  <text class=\"svg-title text-accent-amber\" x=\"340\" y=\"34\" fill=\"#fbbf24\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">TEKNOLOGI BLOCKCHAIN &amp; PARADIGMA TRIPLE-ENTRY ACCOUNTING</text>\n\n  <!-- Evolution of Bookkeeping Box -->\n  <rect class=\"svg-card\" x=\"25\" y=\"58\" width=\"180\" height=\"170\" rx=\"8\" fill=\"#1e293b\" stroke=\"#38bdf8\" stroke-width=\"1.5\"/>\n  <text class=\"text-accent-blue\" x=\"115\" y=\"78\" fill=\"#38bdf8\" font-size=\"10\" font-weight=\"700\" text-anchor=\"middle\">EVOLUSI TATA BUKU</text>\n  <line class=\"svg-divider\" x1=\"35\" y1=\"88\" x2=\"195\" y2=\"88\" stroke=\"#334155\"/>\n  \n  <rect class=\"svg-subcard\" x=\"35\" y=\"96\" width=\"160\" height=\"34\" rx=\"4\" fill=\"#0f172a\" stroke=\"#334155\"/>\n  <text class=\"svg-muted\" x=\"115\" y=\"110\" fill=\"#94a3b8\" font-size=\"7.5\" text-anchor=\"middle\">Abad Pertengahan: Single-Entry</text>\n  <text class=\"svg-text\" x=\"115\" y=\"122\" fill=\"#cbd5e1\" font-size=\"7\" text-anchor=\"middle\">Catatan kas masuk &amp; keluar tunggal</text>\n\n  <rect class=\"svg-subcard\" x=\"35\" y=\"136\" width=\"160\" height=\"38\" rx=\"4\" fill=\"#0f172a\" stroke=\"#38bdf8\"/>\n  <text class=\"text-accent-blue\" x=\"115\" y=\"150\" fill=\"#38bdf8\" font-size=\"7.5\" font-weight=\"700\" text-anchor=\"middle\">1494: Double-Entry (Pacioli)</text>\n  <text class=\"svg-muted\" x=\"115\" y=\"162\" fill=\"#94a3b8\" font-size=\"7\" text-anchor=\"middle\">Debit = Kredit | Buku Besar Mandiri</text>\n  <text class=\"text-accent-red\" x=\"115\" y=\"172\" fill=\"#f87171\" font-size=\"6.5\" text-anchor=\"middle\">&#10007; Perlu Rekonsiliasi Eksternal</text>\n\n  <rect class=\"svg-subcard\" x=\"35\" y=\"180\" width=\"160\" height=\"38\" rx=\"4\" fill=\"#0f172a\" stroke=\"#10b981\"/>\n  <text class=\"text-accent-green\" x=\"115\" y=\"194\" fill=\"#34d399\" font-size=\"7.5\" font-weight=\"800\" text-anchor=\"middle\">Modern: Triple-Entry</text>\n  <text class=\"svg-muted\" x=\"115\" y=\"206\" fill=\"#94a3b8\" font-size=\"7\" text-anchor=\"middle\">Debit + Kredit + Kriptografis Ledger</text>\n\n  <!-- Blockchain Chain Diagram -->\n  <rect class=\"svg-card\" x=\"220\" y=\"58\" width=\"430\" height=\"170\" rx=\"8\" fill=\"#1e293b\" stroke=\"#fbbf24\" stroke-width=\"1.5\"/>\n  <text class=\"text-accent-amber\" x=\"435\" y=\"78\" fill=\"#fbbf24\" font-size=\"10.5\" font-weight=\"700\" text-anchor=\"middle\">STRUKTUR BLOK TERDISTRIBUSI &amp; KONSENSUS IMMUTABLE</text>\n  <line class=\"svg-divider\" x1=\"230\" y1=\"88\" x2=\"640\" y2=\"88\" stroke=\"#334155\"/>\n\n  <!-- Block N-1 -->\n  <rect class=\"svg-subcard\" x=\"235\" y=\"96\" width=\"115\" height=\"120\" rx=\"6\" fill=\"#0f172a\" stroke=\"#334155\"/>\n  <text class=\"text-accent-amber\" x=\"292\" y=\"112\" fill=\"#fbbf24\" font-size=\"8.5\" font-weight=\"700\" text-anchor=\"middle\">BLOK #1042</text>\n  <line class=\"svg-divider\" x1=\"245\" y1=\"118\" x2=\"340\" y2=\"118\" stroke=\"#334155\"/>\n  <text class=\"svg-muted\" x=\"292\" y=\"132\" fill=\"#94a3b8\" font-size=\"7\" text-anchor=\"middle\">Prev Hash: 000ab7...</text>\n  <text class=\"text-accent-green\" x=\"292\" y=\"146\" fill=\"#34d399\" font-size=\"7.5\" font-weight=\"600\" text-anchor=\"middle\">Merkle Root Tx:</text>\n  <text class=\"svg-text\" x=\"292\" y=\"158\" fill=\"#cbd5e1\" font-size=\"6.5\" text-anchor=\"middle\">PT A &#8594; PT B: Rp 500 jt</text>\n  <text class=\"svg-muted\" x=\"292\" y=\"170\" fill=\"#94a3b8\" font-size=\"7\" text-anchor=\"middle\">Timestamp &amp; Nonce</text>\n  <rect class=\"svg-subcard\" x=\"245\" y=\"180\" width=\"95\" height=\"28\" rx=\"2\" fill=\"#0f172a\" stroke=\"#fbbf24\"/>\n  <text class=\"text-accent-amber\" x=\"292\" y=\"196\" fill=\"#fbbf24\" font-size=\"7\" font-weight=\"700\" text-anchor=\"middle\">Hash: e83f91...</text>\n\n  <!-- Hash Link Arrow -->\n  <line x1=\"350\" y1=\"156\" x2=\"375\" y2=\"156\" stroke=\"#fbbf24\" stroke-width=\"2\"/>\n  <polygon points=\"375,152 385,156 375,160\" fill=\"#fbbf24\"/>\n\n  <!-- Block N -->\n  <rect class=\"svg-subcard\" x=\"385\" y=\"96\" width=\"115\" height=\"120\" rx=\"6\" fill=\"#0f172a\" stroke=\"#10b981\"/>\n  <text class=\"text-accent-green\" x=\"442\" y=\"112\" fill=\"#34d399\" font-size=\"8.5\" font-weight=\"700\" text-anchor=\"middle\">BLOK #1043</text>\n  <line class=\"svg-divider\" x1=\"395\" y1=\"118\" x2=\"490\" y2=\"118\" stroke=\"#334155\"/>\n  <text class=\"text-accent-amber\" x=\"442\" y=\"132\" fill=\"#fbbf24\" font-size=\"7\" font-weight=\"600\" text-anchor=\"middle\">Prev: e83f91...</text>\n  <text class=\"text-accent-green\" x=\"442\" y=\"146\" fill=\"#34d399\" font-size=\"7.5\" font-weight=\"600\" text-anchor=\"middle\">Merkle Root Tx:</text>\n  <text class=\"svg-text\" x=\"442\" y=\"158\" fill=\"#cbd5e1\" font-size=\"6.5\" text-anchor=\"middle\">PT B &#8594; PT C: Rp 120 jt</text>\n  <text class=\"svg-muted\" x=\"442\" y=\"170\" fill=\"#94a3b8\" font-size=\"7\" text-anchor=\"middle\">Smart Contract Auto</text>\n  <rect class=\"svg-subcard\" x=\"395\" y=\"180\" width=\"95\" height=\"28\" rx=\"2\" fill=\"#0f172a\" stroke=\"#10b981\"/>\n  <text class=\"text-accent-green\" x=\"442\" y=\"196\" fill=\"#34d399\" font-size=\"7\" font-weight=\"700\" text-anchor=\"middle\">Hash: a194bc...</text>\n\n  <!-- Right: Audit impact -->\n  <rect class=\"svg-subcard\" x=\"515\" y=\"96\" width=\"125\" height=\"120\" rx=\"6\" fill=\"#0f172a\" stroke=\"#38bdf8\"/>\n  <text class=\"text-accent-blue\" x=\"577\" y=\"112\" fill=\"#38bdf8\" font-size=\"8\" font-weight=\"700\" text-anchor=\"middle\">DAMPAK AUDIT:</text>\n  <text class=\"svg-text\" x=\"577\" y=\"128\" fill=\"#cbd5e1\" font-size=\"7\" text-anchor=\"middle\">&#10003; Sulit Diubah Tanpa Jejak</text>\n  <text class=\"svg-muted\" x=\"577\" y=\"138\" fill=\"#94a3b8\" font-size=\"6.5\" text-anchor=\"middle\">(Immutable Ledger)</text>\n  <text class=\"svg-text\" x=\"577\" y=\"152\" fill=\"#cbd5e1\" font-size=\"7\" text-anchor=\"middle\">&#10003; Rekonsiliasi Tetap Diuji</text>\n  <text class=\"svg-muted\" x=\"577\" y=\"162\" fill=\"#94a3b8\" font-size=\"6.5\" text-anchor=\"middle\">(Single Source of Truth)</text>\n  <text class=\"svg-text\" x=\"577\" y=\"176\" fill=\"#cbd5e1\" font-size=\"7\" text-anchor=\"middle\">&#10003; Real-Time Audit</text>\n  <text class=\"text-accent-green\" x=\"577\" y=\"196\" fill=\"#34d399\" font-size=\"7\" font-weight=\"700\" text-anchor=\"middle\">Auditor Menilai Bukti</text>\n</svg>"
-      },
-      {
-        "kind": "h2",
-        "text": "Arsitektur Blockchain & Mekanisme Kriptografi"
-      },
-      {
-        "kind": "p",
-        "text": "Blockchain adalah buku besar digital terdistribusi (Distributed Ledger Technology / DLT) yang mencatat transaksi secara kronologis dalam rangkaian 'blok' yang saling terhubung menggunakan fungsi hash kriptografi (seperti SHA-256). Setiap blok memuat tiga komponen utama:"
-      },
-      {
-        "kind": "ul",
-        "items": [
-          "Data Transaksi: Catatan peristiwa ekonomi (misal: 'PT A mentransfer 100 token komoditas ke PT B').",
-          "Hash Blok Ini: Sidik jari digital unik yang dihasilkan dari komputasi seluruh isi blok saat ini.",
-          "Previous Hash (Hash Blok Sebelumnya): Tautan kriptografis ke blok sebelumnya yang menciptakan rantai (chain) yang tidak dapat diputus."
+        "kind": "example",
+        "title": "Catatan sama, barang tetap bisa bermasalah",
+        "blocks": [
+          {
+            "kind": "p",
+            "text": "Pembeli dan pemasok melihat catatan digital yang sama: “100 unit diterima baik”. Sensor yang mengirim data ternyata salah dikalibrasi, dan sebagian barang rusak. Catatan bersama membantu menelusuri siapa memasukkan informasi serta kapan, tetapi inspeksi fisik, syarat penerimaan, dan penyelesaian sengketa tetap dibutuhkan."
+          }
         ]
       },
       {
-        "kind": "p",
-        "text": "Immutability berarti catatan sulit diubah tanpa memengaruhi hash dan mekanisme validasi jaringan. Batasnya bergantung pada rancangan konsensus, kendali jaringan dan akses kunci. Catatan yang konsisten masih dapat memuat transaksi dunia nyata yang salah. Auditor tetap memeriksa keberadaan, hak, nilai dan pengendalian. Rujukan: Richardson AIS 4e, hal. 497-507 (PDF 522-532)."
+        "kind": "h2",
+        "text": "1. Mengapa memakai distributed ledger?"
       },
       {
-        "kind": "h2",
-        "text": "Revolusi Triple-Entry Accounting"
+        "kind": "p",
+        "text": "Blockchain merupakan salah satu bentuk distributed ledger: transaksi disimpan dalam rangkaian blok dengan keterkaitan kriptografis dan aturan validasi bersama. Peserta mempertahankan salinan sesuai desain jaringan. Ini berbeda dari database tunggal yang dikendalikan satu pengelola. Tidak semua distributed ledger memakai bentuk rantai blok, dan blockchain tidak harus memakai mata uang kripto publik."
+      },
+      {
+        "kind": "p",
+        "text": "Pertanyaan bisnisnya: apakah beberapa pihak perlu berbagi catatan, apakah satu pengelola pusat dapat dipercaya, dan apakah biaya koordinasi serta validasi bersama sepadan? Jika data hanya dipakai satu organisasi dengan otoritas yang jelas, database terpusat dengan kontrol yang baik dapat lebih sederhana. Richardson pp. 495–498."
+      },
+      {
+        "kind": "figure",
+        "title": "Dari pengajuan sampai catatan bersama",
+        "svg": "<svg class=\"course-diagram-svg\" role=\"img\" aria-label=\"Dari pengajuan sampai catatan bersama\" viewBox=\"0 0 800 278\" xmlns=\"http://www.w3.org/2000/svg\" style=\"font-family:Inter,Arial,sans-serif;width:100%;height:auto\"><title>Dari pengajuan sampai catatan bersama</title><defs><marker id=\"blockchain-flow-a-false\" markerWidth=\"6\" markerHeight=\"6\" refX=\"5\" refY=\"3\" orient=\"auto\"><path d=\"M0 0 L6 3 L0 6\" fill=\"none\" stroke=\"#64748b\" stroke-width=\"1.5\"/></marker></defs><g><rect x=\"16\" y=\"16\" width=\"365\" height=\"108\" rx=\"12\" fill=\"#eff6ff\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"45\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">1. Transaksi diajukan</text>\n      <text x=\"32\" y=\"72\" fill=\"#334155\" font-size=\"14\">Identitas/kunci dan data transaksi.</text><text x=\"32\" y=\"94\" fill=\"#334155\" font-size=\"14\">Signature diperiksa sesuai aturan.</text></g><path d=\"M384 70 h23\" marker-end=\"url(#blockchain-flow-a-false)\" stroke=\"#64748b\" stroke-width=\"2\"/><g><rect x=\"411\" y=\"16\" width=\"365\" height=\"108\" rx=\"12\" fill=\"#ecfdf5\" stroke=\"#94a3b8\"/>\n      <text x=\"427\" y=\"45\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">2. Validasi jaringan</text>\n      <text x=\"427\" y=\"72\" fill=\"#334155\" font-size=\"14\">Periksa aturan dan urutan transaksi.</text><text x=\"427\" y=\"94\" fill=\"#334155\" font-size=\"14\">Mekanisme konsensus bergantung desain.</text></g><path d=\"M593.5 126 v12 H198.5 v10\" fill=\"none\" marker-end=\"url(#blockchain-flow-a-false)\" stroke=\"#64748b\" stroke-width=\"2\"/><g><rect x=\"16\" y=\"154\" width=\"365\" height=\"108\" rx=\"12\" fill=\"#eff6ff\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"183\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">3. Blok terhubung</text>\n      <text x=\"32\" y=\"210\" fill=\"#334155\" font-size=\"14\">Blok merujuk hash blok sebelumnya.</text><text x=\"32\" y=\"232\" fill=\"#334155\" font-size=\"14\">Perubahan meninggalkan inkonsistensi.</text></g><path d=\"M384 208 h23\" marker-end=\"url(#blockchain-flow-a-false)\" stroke=\"#64748b\" stroke-width=\"2\"/><g><rect x=\"411\" y=\"154\" width=\"365\" height=\"108\" rx=\"12\" fill=\"#ecfdf5\" stroke=\"#94a3b8\"/>\n      <text x=\"427\" y=\"183\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">4. Peserta membaca riwayat</text>\n      <text x=\"427\" y=\"210\" fill=\"#334155\" font-size=\"14\">Salinan konsisten menurut protokol.</text><text x=\"427\" y=\"232\" fill=\"#334155\" font-size=\"14\">Koreksi lazimnya entri lanjutan.</text></g></svg>",
+        "mobileSvg": "<svg class=\"course-diagram-svg\" role=\"img\" aria-label=\"Dari pengajuan sampai catatan bersama\" viewBox=\"0 0 360 566\" xmlns=\"http://www.w3.org/2000/svg\" style=\"font-family:Inter,Arial,sans-serif;width:100%;height:auto\"><title>Dari pengajuan sampai catatan bersama</title><defs><marker id=\"blockchain-flow-a-true\" markerWidth=\"6\" markerHeight=\"6\" refX=\"5\" refY=\"3\" orient=\"auto\"><path d=\"M0 0 L6 3 L0 6\" fill=\"none\" stroke=\"#64748b\" stroke-width=\"1.5\"/></marker></defs><g><rect x=\"16\" y=\"16\" width=\"328\" height=\"108\" rx=\"12\" fill=\"#eff6ff\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"45\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">1. Transaksi diajukan</text>\n      <text x=\"32\" y=\"72\" fill=\"#334155\" font-size=\"14\">Identitas/kunci dan data transaksi.</text><text x=\"32\" y=\"94\" fill=\"#334155\" font-size=\"14\">Signature diperiksa sesuai aturan.</text></g><path d=\"M180 128 v22\" marker-end=\"url(#blockchain-flow-a-true)\" stroke=\"#64748b\" stroke-width=\"2\"/><g><rect x=\"16\" y=\"158\" width=\"328\" height=\"108\" rx=\"12\" fill=\"#ecfdf5\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"187\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">2. Validasi jaringan</text>\n      <text x=\"32\" y=\"214\" fill=\"#334155\" font-size=\"14\">Periksa aturan dan urutan transaksi.</text><text x=\"32\" y=\"236\" fill=\"#334155\" font-size=\"14\">Mekanisme konsensus bergantung desain.</text></g><path d=\"M180 270 v22\" marker-end=\"url(#blockchain-flow-a-true)\" stroke=\"#64748b\" stroke-width=\"2\"/><g><rect x=\"16\" y=\"300\" width=\"328\" height=\"108\" rx=\"12\" fill=\"#eff6ff\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"329\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">3. Blok terhubung</text>\n      <text x=\"32\" y=\"356\" fill=\"#334155\" font-size=\"14\">Blok merujuk hash blok sebelumnya.</text><text x=\"32\" y=\"378\" fill=\"#334155\" font-size=\"14\">Perubahan meninggalkan inkonsistensi.</text></g><path d=\"M180 412 v22\" marker-end=\"url(#blockchain-flow-a-true)\" stroke=\"#64748b\" stroke-width=\"2\"/><g><rect x=\"16\" y=\"442\" width=\"328\" height=\"108\" rx=\"12\" fill=\"#ecfdf5\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"471\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">4. Peserta membaca riwayat</text>\n      <text x=\"32\" y=\"498\" fill=\"#334155\" font-size=\"14\">Salinan konsisten menurut protokol.</text><text x=\"32\" y=\"520\" fill=\"#334155\" font-size=\"14\">Koreksi lazimnya entri lanjutan.</text></g></svg>",
+        "caption": "Alur konseptual buatan; bukan diagram implementasi jaringan tertentu. Data input dunia nyata tetap harus diverifikasi.",
+        "altText": "1. Transaksi diajukan: Identitas/kunci dan data transaksi. Signature diperiksa sesuai aturan.; 2. Validasi jaringan: Periksa aturan dan urutan transaksi. Mekanisme konsensus bergantung desain.; 3. Blok terhubung: Blok merujuk hash blok sebelumnya. Perubahan meninggalkan inkonsistensi.; 4. Peserta membaca riwayat: Salinan konsisten menurut protokol. Koreksi lazimnya entri lanjutan.",
+        "transcript": [
+          "1. Transaksi diajukan: Identitas/kunci dan data transaksi. Signature diperiksa sesuai aturan.",
+          "2. Validasi jaringan: Periksa aturan dan urutan transaksi. Mekanisme konsensus bergantung desain.",
+          "3. Blok terhubung: Blok merujuk hash blok sebelumnya. Perubahan meninggalkan inkonsistensi.",
+          "4. Peserta membaca riwayat: Salinan konsisten menurut protokol. Koreksi lazimnya entri lanjutan."
+        ]
       },
       {
         "kind": "table",
-        "caption": "Tabel 13.1: perbandingan pencatatan dan tanda terima. Sumber pelengkap: Grigg (2005), The Initial Role of a Receipt, Recovering Double Entry dan Triple Entry, https://iang.org/papers/triple_entry.html. Gagasan paper dibedakan dari standar akuntansi.",
+        "title": "Komponen yang perlu dibedakan",
         "headers": [
-          "Era Akuntansi",
-          "Mekanisme Pembukuan",
-          "Kelemahan & Kebutuhan Audit",
-          "Pihak yang Memverifikasi"
+          "Komponen",
+          "Peran",
+          "Batas"
         ],
         "rows": [
           [
-            "Single-entry",
-            "Hanya mencatat penambahan atau pengurangan kas dalam satu daftar.",
-            "Tidak ada mekanisme kontrol internal keseimbangan; mudah terjadi kehilangan catatan.",
-            "Pencatat itu sendiri (sangat subjektif)."
+            "Hash",
+            "Ringkasan kriptografis yang menghubungkan dan memeriksa data.",
+            "Tidak membuat data rahasia atau membuktikan kondisi barang."
           ],
           [
-            "Double-entry",
-            "Pada buku masing-masing entitas, transaksi memengaruhi akun dengan total debit sama dengan total kredit.",
-            "Keseimbangan debit/kredit tidak membuktikan keberadaan, kelengkapan atau ketepatan nilai transaksi.",
-            "Pencatat dan pengendalian internal; auditor menguji bukti yang relevan."
+            "Signature dan kunci",
+            "Mendukung autentikasi pengajuan transaksi.",
+            "Kunci dicuri dapat disalahgunakan; pengamanan kunci penting."
           ],
           [
-            "Gagasan triple-entry Grigg (2005)",
-            "Tanda terima bertanda tangan digital menjadi bukti bersama pihak terkait, di samping pencatatan mereka.",
-            "Perbedaan catatan dapat berkurang; hak, nilai dan kelengkapan transaksi tetap memerlukan pemeriksaan.",
-            "Pihak memverifikasi tanda terima; paper 2005 tidak mensyaratkan public blockchain modern."
+            "Konsensus",
+            "Aturan menyepakati state/urutan yang diterima jaringan.",
+            "Valid menurut protokol belum tentu benar secara ekonomi."
+          ],
+          [
+            "Replikasi",
+            "Mendistribusikan salinan ledger.",
+            "Tetap ada risiko jaringan, governance, aplikasi dan hak akses."
           ]
+        ],
+        "stackOnMobile": true
+      },
+      {
+        "kind": "callout",
+        "variant": "warning",
+        "title": "Immutability memiliki konteks",
+        "text": "Catatan dirancang tahan perubahan dan dapat memperlihatkan manipulasi, bergantung protokol, konsensus, kendali peserta, serta pengelolaan kunci. Ini bukan jaminan absolut. Transaksi koreksi dapat ditambahkan untuk memperbaiki konsekuensi bisnis tanpa menghapus riwayat."
+      },
+      {
+        "kind": "p",
+        "text": "Jejak perkembangan singkat: Bitcoin mempertemukan mekanisme kriptografi, jaringan terdistribusi dan konsensus dalam rancangan 2008 yang mulai beroperasi 2009. Pemanfaatan berikutnya meluas ke ledger konsorsium dan smart contracts. Blockchain sebagai infrastruktur perlu dibedakan dari cryptocurrency sebagai salah satu penggunaannya. Richardson Ch.15 pp.495–504."
+      },
+      {
+        "kind": "h2",
+        "text": "2. Jenis jaringan dan governance"
+      },
+      {
+        "kind": "table",
+        "title": "Izin peserta berbeda dari siapa yang mengelola",
+        "headers": [
+          "Jenis",
+          "Karakter",
+          "Pertimbangan"
+        ],
+        "rows": [
+          [
+            "Permissionless",
+            "Partisipasi validasi terbuka sesuai protokol.",
+            "Konsensus, biaya, privasi, kapasitas, dan finalitas perlu ditinjau."
+          ],
+          [
+            "Permissioned",
+            "Keanggotaan/hak dibatasi kepada peserta berizin.",
+            "Siapa menerima anggota, mengubah aturan, dan mengawasi validator?"
+          ],
+          [
+            "Private / consortium",
+            "Pengelolaan oleh satu organisasi atau kelompok organisasi.",
+            "Pembagian kuasa, konflik, akses data, dan prosedur keluar anggota."
+          ]
+        ],
+        "stackOnMobile": true
+      },
+      {
+        "kind": "p",
+        "text": "Public/private sering membahas keterbukaan atau pengelolaan, sementara permissioned/permissionless membahas izin partisipasi. Jangan menganggap istilah itu selalu sinonim. Proof of work, proof of stake, dan mekanisme lain memberi pendekatan berbeda untuk konsensus; tidak semua jaringan memakai mining atau menyimpan data secara rahasia. Richardson pp. 498–504."
+      },
+      {
+        "kind": "h2",
+        "text": "3. Smart contract dan oracle problem"
+      },
+      {
+        "kind": "p",
+        "text": "**Smart contract** adalah program yang menjalankan aturan pada lingkungan blockchain ketika kondisi yang didefinisikan terpenuhi. Nama “contract” tidak otomatis berarti seluruh syarat hukum dan substansi kontrak bisnis sudah tercakup. Kode membutuhkan data tentang dunia luar dari **oracle**, seperti sensor, sistem gudang, atau inspektur. Kesalahan oracle dapat memicu aksi salah meskipun program berjalan sesuai kode."
+      },
+      {
+        "kind": "figure",
+        "title": "Gerbang bukti sebelum pembayaran",
+        "svg": "<svg class=\"course-diagram-svg\" role=\"img\" aria-label=\"Gerbang bukti sebelum pembayaran\" viewBox=\"0 0 800 278\" xmlns=\"http://www.w3.org/2000/svg\" style=\"font-family:Inter,Arial,sans-serif;width:100%;height:auto\"><title>Gerbang bukti sebelum pembayaran</title><defs><marker id=\"oracle-a-false\" markerWidth=\"6\" markerHeight=\"6\" refX=\"5\" refY=\"3\" orient=\"auto\"><path d=\"M0 0 L6 3 L0 6\" fill=\"none\" stroke=\"#64748b\" stroke-width=\"1.5\"/></marker></defs><g><rect x=\"16\" y=\"16\" width=\"365\" height=\"108\" rx=\"12\" fill=\"#eff6ff\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"45\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">1. Dunia fisik</text>\n      <text x=\"32\" y=\"72\" fill=\"#334155\" font-size=\"14\">Jumlah, mutu dan penerimaan barang.</text><text x=\"32\" y=\"94\" fill=\"#334155\" font-size=\"14\">Periksa dokumen dan inspeksi.</text></g><path d=\"M384 70 h23\" marker-end=\"url(#oracle-a-false)\" stroke=\"#64748b\" stroke-width=\"2\"/><g><rect x=\"411\" y=\"16\" width=\"365\" height=\"108\" rx=\"12\" fill=\"#ecfdf5\" stroke=\"#94a3b8\"/>\n      <text x=\"427\" y=\"45\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">2. Oracle tepercaya</text>\n      <text x=\"427\" y=\"72\" fill=\"#334155\" font-size=\"14\">Identitas sumber, waktu, validasi.</text><text x=\"427\" y=\"94\" fill=\"#334155\" font-size=\"14\">Bandingkan sensor dan reviewer.</text></g><path d=\"M593.5 126 v12 H198.5 v10\" fill=\"none\" marker-end=\"url(#oracle-a-false)\" stroke=\"#64748b\" stroke-width=\"2\"/><g><rect x=\"16\" y=\"154\" width=\"365\" height=\"108\" rx=\"12\" fill=\"#eff6ff\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"183\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">3. Smart contract</text>\n      <text x=\"32\" y=\"210\" fill=\"#334155\" font-size=\"14\">Cek syarat, hak dan status bayar.</text><text x=\"32\" y=\"232\" fill=\"#334155\" font-size=\"14\">Jika ragu, tahan dan eskalasi.</text></g><path d=\"M384 208 h23\" marker-end=\"url(#oracle-a-false)\" stroke=\"#64748b\" stroke-width=\"2\"/><g><rect x=\"411\" y=\"154\" width=\"365\" height=\"108\" rx=\"12\" fill=\"#ecfdf5\" stroke=\"#94a3b8\"/>\n      <text x=\"427\" y=\"183\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">4. Settlement + catatan</text>\n      <text x=\"427\" y=\"210\" fill=\"#334155\" font-size=\"14\">Pembayaran hanya sekali.</text><text x=\"427\" y=\"232\" fill=\"#334155\" font-size=\"14\">Rekonsiliasi bank dan buku besar.</text></g></svg>",
+        "mobileSvg": "<svg class=\"course-diagram-svg\" role=\"img\" aria-label=\"Gerbang bukti sebelum pembayaran\" viewBox=\"0 0 360 566\" xmlns=\"http://www.w3.org/2000/svg\" style=\"font-family:Inter,Arial,sans-serif;width:100%;height:auto\"><title>Gerbang bukti sebelum pembayaran</title><defs><marker id=\"oracle-a-true\" markerWidth=\"6\" markerHeight=\"6\" refX=\"5\" refY=\"3\" orient=\"auto\"><path d=\"M0 0 L6 3 L0 6\" fill=\"none\" stroke=\"#64748b\" stroke-width=\"1.5\"/></marker></defs><g><rect x=\"16\" y=\"16\" width=\"328\" height=\"108\" rx=\"12\" fill=\"#eff6ff\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"45\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">1. Dunia fisik</text>\n      <text x=\"32\" y=\"72\" fill=\"#334155\" font-size=\"14\">Jumlah, mutu dan penerimaan barang.</text><text x=\"32\" y=\"94\" fill=\"#334155\" font-size=\"14\">Periksa dokumen dan inspeksi.</text></g><path d=\"M180 128 v22\" marker-end=\"url(#oracle-a-true)\" stroke=\"#64748b\" stroke-width=\"2\"/><g><rect x=\"16\" y=\"158\" width=\"328\" height=\"108\" rx=\"12\" fill=\"#ecfdf5\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"187\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">2. Oracle tepercaya</text>\n      <text x=\"32\" y=\"214\" fill=\"#334155\" font-size=\"14\">Identitas sumber, waktu, validasi.</text><text x=\"32\" y=\"236\" fill=\"#334155\" font-size=\"14\">Bandingkan sensor dan reviewer.</text></g><path d=\"M180 270 v22\" marker-end=\"url(#oracle-a-true)\" stroke=\"#64748b\" stroke-width=\"2\"/><g><rect x=\"16\" y=\"300\" width=\"328\" height=\"108\" rx=\"12\" fill=\"#eff6ff\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"329\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">3. Smart contract</text>\n      <text x=\"32\" y=\"356\" fill=\"#334155\" font-size=\"14\">Cek syarat, hak dan status bayar.</text><text x=\"32\" y=\"378\" fill=\"#334155\" font-size=\"14\">Jika ragu, tahan dan eskalasi.</text></g><path d=\"M180 412 v22\" marker-end=\"url(#oracle-a-true)\" stroke=\"#64748b\" stroke-width=\"2\"/><g><rect x=\"16\" y=\"442\" width=\"328\" height=\"108\" rx=\"12\" fill=\"#ecfdf5\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"471\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">4. Settlement + catatan</text>\n      <text x=\"32\" y=\"498\" fill=\"#334155\" font-size=\"14\">Pembayaran hanya sekali.</text><text x=\"32\" y=\"520\" fill=\"#334155\" font-size=\"14\">Rekonsiliasi bank dan buku besar.</text></g></svg>",
+        "caption": "Ilustrasi buatan. Titik paling awal sering berada di luar blockchain: data fisik yang masuk harus andal.",
+        "altText": "1. Dunia fisik: Jumlah, mutu dan penerimaan barang. Periksa dokumen dan inspeksi.; 2. Oracle tepercaya: Identitas sumber, waktu, validasi. Bandingkan sensor dan reviewer.; 3. Smart contract: Cek syarat, hak dan status bayar. Jika ragu, tahan dan eskalasi.; 4. Settlement + catatan: Pembayaran hanya sekali. Rekonsiliasi bank dan buku besar.",
+        "transcript": [
+          "1. Dunia fisik: Jumlah, mutu dan penerimaan barang. Periksa dokumen dan inspeksi.",
+          "2. Oracle tepercaya: Identitas sumber, waktu, validasi. Bandingkan sensor dan reviewer.",
+          "3. Smart contract: Cek syarat, hak dan status bayar. Jika ragu, tahan dan eskalasi.",
+          "4. Settlement + catatan: Pembayaran hanya sekali. Rekonsiliasi bank dan buku besar."
+        ]
+      },
+      {
+        "kind": "example",
+        "title": "Asumsi latihan: penerimaan 100 unit dan diskon 2%",
+        "blocks": [
+          {
+            "kind": "p",
+            "text": "Nilai invoice Rp100 juta. Pembayaran Rp98 juta hanya jika kontrak bisnis memang memberi diskon 2%, seluruh syarat terpenuhi, dan transaksi belum pernah dibayar. Apabila 10 unit rusak, program menahan pembayaran untuk penyelesaian, bukan mengubah laporan menjadi “diterima baik”."
+          },
+          {
+            "kind": "code",
+            "language": "text",
+            "caption": "Pseudocode pedagogis; bukan kode siap produksi atau kontrak hukum.",
+            "text": "IF caller_is_authorized\n   AND oracle_evidence_is_valid_and_current\n   AND accepted_quantity == ordered_quantity\n   AND quality_approval == TRUE\n   AND invoice_is_approved\n   AND discount_terms_are_satisfied\n   AND invoice_status == \"UNPAID\":\n       reserve_invoice_once()\n       request_settlement(invoice_amount * 0.98)\n       confirm_settlement_before_marking_paid()\n       record_receipt_and_audit_event()\nELSE:\n       hold_and_route_exception_for_review()"
+          },
+          {
+            "kind": "p",
+            "text": "Status, penguncian, dan konfirmasi settlement mencegah retry menciptakan pembayaran ganda. Jika pembayaran melalui bank di luar jaringan, event blockchain saja belum membuktikan transfer bank sukses. Rekonsiliasi tetap diperlukan."
+          }
+        ]
+      },
+      {
+        "kind": "table",
+        "title": "Risiko smart contract dan kontrol",
+        "headers": [
+          "Risiko",
+          "Kontrol",
+          "Bukti"
+        ],
+        "rows": [
+          [
+            "Oracle salah atau dimanipulasi",
+            "Validasi sumber dan inspeksi independen; tangani data tidak konsisten.",
+            "Log sensor, hasil inspeksi, approval dan exception."
+          ],
+          [
+            "Bug / aturan kontrak tidak tepat",
+            "Review kode, test case, approval bisnis dan pengelolaan perubahan.",
+            "Versi, uji kondisi batas, persetujuan dan prosedur darurat."
+          ],
+          [
+            "Kunci dicuri",
+            "Penyimpanan aman, pemisahan peran dan multi-approval sesuai risiko.",
+            "Inventaris kunci, kebijakan akses dan log."
+          ],
+          [
+            "Salah bayar / double payment",
+            "Status transaksi unik dan konfirmasi settlement.",
+            "Ledger status, referensi bank serta hasil rekonsiliasi."
+          ]
+        ],
+        "stackOnMobile": true
+      },
+      {
+        "kind": "h2",
+        "text": "4. Double-entry, shared receipt, dan triple-entry"
+      },
+      {
+        "kind": "p",
+        "text": "Double-entry tetap mencatat dua sisi setiap transaksi pada pembukuan masing-masing entitas. Pada konsep triple-entry, bukti transaksi yang ditandatangani dan dapat diverifikasi bersama menjadi lapisan bukti tambahan. “Entri ketiga” bukan sisi ketiga yang mengubah persamaan debit = kredit. Konsep shared receipt juga tidak mensyaratkan semua implementasi menggunakan blockchain."
+      },
+      {
+        "kind": "p",
+        "text": "Sumber pelengkap primer untuk shared signed receipt: [Ian Grigg, Triple Entry Accounting (2005)](https://iang.org/papers/triple_entry.html). Konsep ini mendahului public blockchain modern."
+      },
+      {
+        "kind": "figure",
+        "title": "Pembukuan masing-masing dan bukti bersama",
+        "svg": "<svg class=\"course-diagram-svg\" role=\"img\" aria-label=\"Pembukuan masing-masing dan bukti bersama\" viewBox=\"0 0 800 278\" xmlns=\"http://www.w3.org/2000/svg\" style=\"font-family:Inter,Arial,sans-serif;width:100%;height:auto\"><title>Pembukuan masing-masing dan bukti bersama</title><defs><marker id=\"triple-entry-a-false\" markerWidth=\"6\" markerHeight=\"6\" refX=\"5\" refY=\"3\" orient=\"auto\"><path d=\"M0 0 L6 3 L0 6\" fill=\"none\" stroke=\"#64748b\" stroke-width=\"1.5\"/></marker></defs><g><rect x=\"16\" y=\"16\" width=\"365\" height=\"108\" rx=\"12\" fill=\"#eff6ff\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"45\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">1. Pembeli</text>\n      <text x=\"32\" y=\"72\" fill=\"#334155\" font-size=\"14\">Dr Persediaan; Cr Utang.</text><text x=\"32\" y=\"94\" fill=\"#334155\" font-size=\"14\">Pembukuan dan estimasi sendiri.</text></g><g><rect x=\"411\" y=\"16\" width=\"365\" height=\"108\" rx=\"12\" fill=\"#ecfdf5\" stroke=\"#94a3b8\"/>\n      <text x=\"427\" y=\"45\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">2. Pemasok</text>\n      <text x=\"427\" y=\"72\" fill=\"#334155\" font-size=\"14\">Dr Piutang; Cr Penjualan.</text><text x=\"427\" y=\"94\" fill=\"#334155\" font-size=\"14\">Biaya barang dicatat terpisah.</text></g><g><rect x=\"16\" y=\"154\" width=\"365\" height=\"108\" rx=\"12\" fill=\"#eff6ff\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"183\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">3. Shared receipt</text>\n      <text x=\"32\" y=\"210\" fill=\"#334155\" font-size=\"14\">Bukti transaksi terverifikasi bersama.</text><text x=\"32\" y=\"232\" fill=\"#334155\" font-size=\"14\">Menautkan catatan antarpihak.</text></g><g><rect x=\"411\" y=\"154\" width=\"365\" height=\"108\" rx=\"12\" fill=\"#ecfdf5\" stroke=\"#94a3b8\"/>\n      <text x=\"427\" y=\"183\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">4. Audit dan rekonsiliasi</text>\n      <text x=\"427\" y=\"210\" fill=\"#334155\" font-size=\"14\">Periksa hak, nilai, cutoff, sengketa.</text><text x=\"427\" y=\"232\" fill=\"#334155\" font-size=\"14\">Cocokkan ledger, bank, dan GL.</text></g></svg>",
+        "mobileSvg": "<svg class=\"course-diagram-svg\" role=\"img\" aria-label=\"Pembukuan masing-masing dan bukti bersama\" viewBox=\"0 0 360 566\" xmlns=\"http://www.w3.org/2000/svg\" style=\"font-family:Inter,Arial,sans-serif;width:100%;height:auto\"><title>Pembukuan masing-masing dan bukti bersama</title><defs><marker id=\"triple-entry-a-true\" markerWidth=\"6\" markerHeight=\"6\" refX=\"5\" refY=\"3\" orient=\"auto\"><path d=\"M0 0 L6 3 L0 6\" fill=\"none\" stroke=\"#64748b\" stroke-width=\"1.5\"/></marker></defs><g><rect x=\"16\" y=\"16\" width=\"328\" height=\"108\" rx=\"12\" fill=\"#eff6ff\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"45\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">1. Pembeli</text>\n      <text x=\"32\" y=\"72\" fill=\"#334155\" font-size=\"14\">Dr Persediaan; Cr Utang.</text><text x=\"32\" y=\"94\" fill=\"#334155\" font-size=\"14\">Pembukuan dan estimasi sendiri.</text></g><g><rect x=\"16\" y=\"158\" width=\"328\" height=\"108\" rx=\"12\" fill=\"#ecfdf5\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"187\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">2. Pemasok</text>\n      <text x=\"32\" y=\"214\" fill=\"#334155\" font-size=\"14\">Dr Piutang; Cr Penjualan.</text><text x=\"32\" y=\"236\" fill=\"#334155\" font-size=\"14\">Biaya barang dicatat terpisah.</text></g><g><rect x=\"16\" y=\"300\" width=\"328\" height=\"108\" rx=\"12\" fill=\"#eff6ff\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"329\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">3. Shared receipt</text>\n      <text x=\"32\" y=\"356\" fill=\"#334155\" font-size=\"14\">Bukti transaksi terverifikasi bersama.</text><text x=\"32\" y=\"378\" fill=\"#334155\" font-size=\"14\">Menautkan catatan antarpihak.</text></g><g><rect x=\"16\" y=\"442\" width=\"328\" height=\"108\" rx=\"12\" fill=\"#ecfdf5\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"471\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">4. Audit dan rekonsiliasi</text>\n      <text x=\"32\" y=\"498\" fill=\"#334155\" font-size=\"14\">Periksa hak, nilai, cutoff, sengketa.</text><text x=\"32\" y=\"520\" fill=\"#334155\" font-size=\"14\">Cocokkan ledger, bank, dan GL.</text></g></svg>",
+        "caption": "Ilustrasi transaksi kredit, tanpa pajak. Shared receipt membantu konsistensi bukti tetapi tidak menggantikan pembukuan entitas.",
+        "altText": "1. Pembeli: Dr Persediaan; Cr Utang. Pembukuan dan estimasi sendiri.; 2. Pemasok: Dr Piutang; Cr Penjualan. Biaya barang dicatat terpisah.; 3. Shared receipt: Bukti transaksi terverifikasi bersama. Menautkan catatan antarpihak.; 4. Audit dan rekonsiliasi: Periksa hak, nilai, cutoff, sengketa. Cocokkan ledger, bank, dan GL.",
+        "transcript": [
+          "1. Pembeli: Dr Persediaan; Cr Utang. Pembukuan dan estimasi sendiri.",
+          "2. Pemasok: Dr Piutang; Cr Penjualan. Biaya barang dicatat terpisah.",
+          "3. Shared receipt: Bukti transaksi terverifikasi bersama. Menautkan catatan antarpihak.",
+          "4. Audit dan rekonsiliasi: Periksa hak, nilai, cutoff, sengketa. Cocokkan ledger, bank, dan GL."
+        ]
+      },
+      {
+        "kind": "example",
+        "title": "Apa yang masih diuji auditor?",
+        "blocks": [
+          {
+            "kind": "ul",
+            "items": [
+              "Keberadaan dan kondisi: apakah barang benar ada dan layak?",
+              "Hak dan kewajiban: apakah entitas memiliki hak atau kewajiban terkait?",
+              "Penilaian: apakah harga, penurunan nilai, atau estimasi lain tepat?",
+              "Kelengkapan dan cutoff: apakah transaksi di luar jaringan atau di akhir periode telah masuk dengan benar?",
+              "Kontrol: apakah kunci, oracle, perubahan program, dan akses peserta terjaga?"
+            ]
+          }
         ]
       },
       {
         "kind": "h2",
-        "text": "Penerapan Smart Contracts dalam Rantai Pasok (Supply Chain)"
+        "text": "5. Cloud accounting berbeda dari blockchain"
+      },
+      {
+        "kind": "table",
+        "title": "Dua pilihan arsitektur",
+        "headers": [
+          "Aspek",
+          "Cloud accounting / SaaS",
+          "Blockchain"
+        ],
+        "rows": [
+          [
+            "Fokus",
+            "Aplikasi dan data dilayani penyedia melalui jaringan.",
+            "Catatan bersama dengan aturan validasi jaringan."
+          ],
+          [
+            "Pengelolaan",
+            "Penyedia mengelola bagian layanan sesuai kontrak.",
+            "Peserta dan validator mengikuti governance protokol."
+          ],
+          [
+            "Risiko utama",
+            "Akses, integrasi, outage, konfigurasi, portabilitas dan ketergantungan penyedia.",
+            "Kunci, konsensus, oracle, privasi, bug dan governance."
+          ],
+          [
+            "Tanggung jawab pengguna",
+            "Hak akses, kualitas input, approval, monitoring penyedia, pemulihan bisnis.",
+            "Input, akses, validasi substansi, kontrol aplikasi dan pembukuan."
+          ]
+        ],
+        "stackOnMobile": true
       },
       {
         "kind": "p",
-        "text": "Smart Contract adalah program komputer yang disimpan di dalam blockchain yang mengeksekusi tindakan secara otomatis jika kondisi tertentu yang telah disepakati terpenuhi ('If/Then Statement')."
+        "text": "Keduanya bisa dipakai bersama. Cloud tidak otomatis berarti ledger terdistribusi, dan blockchain bisa dijalankan pada infrastruktur cloud. Evaluasi SLA, lokasi/retensi data, kemampuan ekspor, pemulihan, dan strategi keluar penyedia. Kontrol serta laporan SOC yang relevan dari TM11 tetap perlu diperiksa."
       },
       {
-        "kind": "p",
-        "text": "Contoh Siklus Pengadaan Terotomatisasi Smart Contract:"
-      },
-      {
-        "kind": "ul",
-        "items": [
-          "Syarat: 'JIKA sensor IoT pada kontainer mengonfirmasi barang telah tiba di pelabuhan Tanjung Perak dengan suhu terjaga di bawah -18°C DAN bea cukai terverifikasi lolos...'",
-          "Eksekusi Otomatis: '...MAKA smart contract seketika melepaskan pembayaran dana dari rekening escrow pembeli ke rekening vendor dan menerbitkan bukti pelunasan digital tanpa menunggu persetujuan faktur kertas selama 30 hari.'"
+        "kind": "pendalaman",
+        "title": "Pelengkap: batas perlakuan akuntansi cryptocurrency",
+        "blocks": [
+          {
+            "kind": "p",
+            "text": "Agenda decision IFRIC Juni 2019 membahas cryptocurrency dengan karakteristik tertentu, bukan seluruh token digital. IAS 2 dipakai bila dipegang untuk dijual dalam kegiatan usaha normal; bila IAS 2 tidak berlaku, IAS 38 dipakai. Jangka investasi panjang tidak menjadi syarat tunggal. Periksa hak kontraktual serta pengungkapan, dan jangan memperluas keputusan ini ke semua aset kripto. Rujukan: [IFRIC, Holdings of Cryptocurrencies, Juni 2019, PDF 1–3](https://www.ifrs.org/content/dam/ifrs/supporting-implementation/agenda-decisions/2019/holdings-of-cryptocurrencies-june-2019.pdf). Penomoran Indonesia efektif 1 Januari 2024 adalah PSAK 202 Persediaan dan PSAK 238 Aset Takberwujud, menurut dokumen IAI Perubahan Penomoran PSAK/ISAK, PDF 1–2; pemetaan nomor tidak menggantikan pemeriksaan teks standar nasional."
+          }
         ]
       },
       {
+        "kind": "h2",
+        "text": "6. Uji pemahaman"
+      },
+      {
+        "kind": "self-check",
+        "question": "Seluruh anggota konsorsium melihat penerimaan 100 unit. Apakah barang pasti diterima baik?",
+        "answer": [
+          {
+            "kind": "p",
+            "text": "Tidak. Konsistensi catatan tidak membuktikan sensor, petugas, dan dokumen benar. Periksa oracle, bukti fisik, kondisi, kewenangan serta sengketa."
+          }
+        ],
+        "signal": "Jika alasannya belum jelas, kembali ke contoh sebelum membuka jawaban."
+      },
+      {
+        "kind": "self-check",
+        "question": "Apakah transaksi koreksi bertentangan dengan konsep riwayat tahan perubahan?",
+        "answer": [
+          {
+            "kind": "p",
+            "text": "Tidak selalu. Entri lanjutan dapat membatalkan atau mengoreksi konsekuensi bisnis sambil mempertahankan jejak sebelumnya. Kontrol tetap harus mengatur siapa yang berwenang dan bagaimana buku besar diperbarui."
+          }
+        ],
+        "signal": "Jika alasannya belum jelas, kembali ke contoh sebelum membuka jawaban."
+      },
+      {
+        "kind": "example",
+        "title": "Cepat mencocokkan belum tentu benar",
+        "blocks": [
+          {
+            "kind": "p",
+            "text": "Bot mencocokkan semua baris rekening koran dengan buku bank berdasarkan nominal. Dua pembayaran berbeda kebetulan bernilai sama dan dianggap cocok. Otomasi berhasil menekan waktu kerja, tetapi gagal menjaga integritas rekonsiliasi. Aturan pencocokan, unit transaksi, dan penanganan exception harus dirancang sebelum proses dijalankan massal."
+          }
+        ]
+      },
+      {
+        "kind": "h2",
+        "text": "7. RPA, AI, dan machine learning"
+      },
+      {
+        "kind": "p",
+        "text": "**Robotic process automation (RPA)** menggunakan perangkat lunak untuk menjalankan langkah kerja berulang berbasis aturan, misalnya membuka aplikasi, mengambil data, mengisi kolom, dan memindahkan file. Robot ini bukan robot fisik. Perubahan antarmuka atau kredensial dapat membuat alur yang tadinya benar gagal. Richardson membahas RPA pada p. 515 (PDF 540)."
+      },
+      {
+        "kind": "table",
+        "title": "Teknologi menurut cara kerjanya",
+        "headers": [
+          "Pilihan",
+          "Cara",
+          "Contoh dan batas"
+        ],
+        "rows": [
+          [
+            "RPA berbasis aturan",
+            "Menjalankan langkah yang telah ditentukan.",
+            "Ambil laporan ERP dan bandingkan referensi; aturan berubah → bot perlu diperbarui."
+          ],
+          [
+            "API / integrasi langsung",
+            "Sistem bertukar data melalui antarmuka terstruktur.",
+            "Impor transaksi tanpa klik UI; tetap perlu otorisasi, validasi, retry dan log."
+          ],
+          [
+            "AI",
+            "Istilah luas untuk kemampuan komputer melakukan tugas yang memerlukan kecerdasan.",
+            "Klasifikasi dokumen, pemahaman bahasa, rekomendasi; hasil perlu dievaluasi."
+          ],
+          [
+            "Machine learning",
+            "Model mempelajari pola dari data.",
+            "Prediksi keterlambatan; mutu dipengaruhi representasi, label dan perubahan pola."
+          ],
+          [
+            "OCR + AI + RPA",
+            "Baca dokumen, ekstrak informasi, lalu jalankan alur.",
+            "Ekstraksi invoice perlu confidence threshold dan review untuk field meragukan."
+          ]
+        ],
+        "stackOnMobile": true
+      },
+      {
+        "kind": "p",
+        "text": "AI dapat membantu proses yang masukannya tidak terstruktur, sedangkan RPA menjalankan aksi yang terdefinisi. Menggabungkan keduanya tidak menghilangkan kebutuhan kontrol. AI bisa salah membaca rekening, dan bot dapat meneruskan hasil salah dengan sangat konsisten. Pilih teknologi sesuai proses, bukan sekadar label produk."
+      },
+      {
+        "kind": "h2",
+        "text": "8. Proses mana yang layak diotomasi?"
+      },
+      {
+        "kind": "figure",
+        "title": "Menilai kesiapan proses",
+        "svg": "<svg class=\"course-diagram-svg\" role=\"img\" aria-label=\"Menilai kesiapan proses\" viewBox=\"0 0 800 278\" xmlns=\"http://www.w3.org/2000/svg\" style=\"font-family:Inter,Arial,sans-serif;width:100%;height:auto\"><title>Menilai kesiapan proses</title><defs><marker id=\"rpa-fit-a-false\" markerWidth=\"6\" markerHeight=\"6\" refX=\"5\" refY=\"3\" orient=\"auto\"><path d=\"M0 0 L6 3 L0 6\" fill=\"none\" stroke=\"#64748b\" stroke-width=\"1.5\"/></marker></defs><g><rect x=\"16\" y=\"16\" width=\"365\" height=\"108\" rx=\"12\" fill=\"#eff6ff\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"45\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">1. Aturan jelas</text>\n      <text x=\"32\" y=\"72\" fill=\"#334155\" font-size=\"14\">Input, keputusan, output terdefinisi.</text><text x=\"32\" y=\"94\" fill=\"#334155\" font-size=\"14\">Sengketa perlu jalur manusia.</text></g><g><rect x=\"411\" y=\"16\" width=\"365\" height=\"108\" rx=\"12\" fill=\"#ecfdf5\" stroke=\"#94a3b8\"/>\n      <text x=\"427\" y=\"45\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">2. Data siap</text>\n      <text x=\"427\" y=\"72\" fill=\"#334155\" font-size=\"14\">Digital, terstruktur, dapat divalidasi.</text><text x=\"427\" y=\"94\" fill=\"#334155\" font-size=\"14\">Kualitas sumber diuji dahulu.</text></g><g><rect x=\"16\" y=\"154\" width=\"365\" height=\"108\" rx=\"12\" fill=\"#eff6ff\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"183\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">3. Proses stabil</text>\n      <text x=\"32\" y=\"210\" fill=\"#334155\" font-size=\"14\">Volume berulang dan UI konsisten.</text><text x=\"32\" y=\"232\" fill=\"#334155\" font-size=\"14\">Perubahan harus dikelola.</text></g><g><rect x=\"411\" y=\"154\" width=\"365\" height=\"108\" rx=\"12\" fill=\"#ecfdf5\" stroke=\"#94a3b8\"/>\n      <text x=\"427\" y=\"183\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">4. Kontrol siap</text>\n      <text x=\"427\" y=\"210\" fill=\"#334155\" font-size=\"14\">Pemilik, log, akses, stop dan retry.</text><text x=\"427\" y=\"232\" fill=\"#334155\" font-size=\"14\">Manfaat dinilai setelah biaya.</text></g></svg>",
+        "mobileSvg": "<svg class=\"course-diagram-svg\" role=\"img\" aria-label=\"Menilai kesiapan proses\" viewBox=\"0 0 360 588\" xmlns=\"http://www.w3.org/2000/svg\" style=\"font-family:Inter,Arial,sans-serif;width:100%;height:auto\"><title>Menilai kesiapan proses</title><defs><marker id=\"rpa-fit-a-true\" markerWidth=\"6\" markerHeight=\"6\" refX=\"5\" refY=\"3\" orient=\"auto\"><path d=\"M0 0 L6 3 L0 6\" fill=\"none\" stroke=\"#64748b\" stroke-width=\"1.5\"/></marker></defs><g><rect x=\"16\" y=\"16\" width=\"328\" height=\"108\" rx=\"12\" fill=\"#eff6ff\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"45\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">1. Aturan jelas</text>\n      <text x=\"32\" y=\"72\" fill=\"#334155\" font-size=\"14\">Input, keputusan, output terdefinisi.</text><text x=\"32\" y=\"94\" fill=\"#334155\" font-size=\"14\">Sengketa perlu jalur manusia.</text></g><g><rect x=\"16\" y=\"158\" width=\"328\" height=\"130\" rx=\"12\" fill=\"#ecfdf5\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"187\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">2. Data siap</text>\n      <text x=\"32\" y=\"214\" fill=\"#334155\" font-size=\"14\">Digital, terstruktur, dapat</text><text x=\"32\" y=\"236\" fill=\"#334155\" font-size=\"14\">divalidasi.</text><text x=\"32\" y=\"258\" fill=\"#334155\" font-size=\"14\">Kualitas sumber diuji dahulu.</text></g><g><rect x=\"16\" y=\"322\" width=\"328\" height=\"108\" rx=\"12\" fill=\"#eff6ff\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"351\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">3. Proses stabil</text>\n      <text x=\"32\" y=\"378\" fill=\"#334155\" font-size=\"14\">Volume berulang dan UI konsisten.</text><text x=\"32\" y=\"400\" fill=\"#334155\" font-size=\"14\">Perubahan harus dikelola.</text></g><g><rect x=\"16\" y=\"464\" width=\"328\" height=\"108\" rx=\"12\" fill=\"#ecfdf5\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"493\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">4. Kontrol siap</text>\n      <text x=\"32\" y=\"520\" fill=\"#334155\" font-size=\"14\">Pemilik, log, akses, stop dan retry.</text><text x=\"32\" y=\"542\" fill=\"#334155\" font-size=\"14\">Manfaat dinilai setelah biaya.</text></g></svg>",
+        "caption": "Kriteria praktis buatan; kelayakan bersifat spektrum. Banyak exception dapat mengurangi manfaat, bukan otomatis membuat semua otomasi mustahil.",
+        "altText": "1. Aturan jelas: Input, keputusan, output terdefinisi. Sengketa perlu jalur manusia.; 2. Data siap: Digital, terstruktur, dapat divalidasi. Kualitas sumber diuji dahulu.; 3. Proses stabil: Volume berulang dan UI konsisten. Perubahan harus dikelola.; 4. Kontrol siap: Pemilik, log, akses, stop dan retry. Manfaat dinilai setelah biaya.",
+        "transcript": [
+          "1. Aturan jelas: Input, keputusan, output terdefinisi. Sengketa perlu jalur manusia.",
+          "2. Data siap: Digital, terstruktur, dapat divalidasi. Kualitas sumber diuji dahulu.",
+          "3. Proses stabil: Volume berulang dan UI konsisten. Perubahan harus dikelola.",
+          "4. Kontrol siap: Pemilik, log, akses, stop dan retry. Manfaat dinilai setelah biaya."
+        ]
+      },
+      {
+        "kind": "table",
+        "title": "Bandingkan dua kandidat",
+        "headers": [
+          "Aspek",
+          "Rekonsiliasi bank rutin",
+          "Penilaian sengketa piutang"
+        ],
+        "rows": [
+          [
+            "Aturan",
+            "Referensi, nominal, tanggal dan toleransi dapat ditentukan.",
+            "Memerlukan interpretasi kontrak, bukti, dan negosiasi."
+          ],
+          [
+            "Data",
+            "File bank dan buku bank relatif terstruktur.",
+            "Email, dokumen hukum, dan informasi yang belum lengkap."
+          ],
+          [
+            "Tindakan",
+            "Cocokkan dan hasilkan exception untuk reviewer.",
+            "AI dapat meringkas; keputusan akhir tetap memerlukan pihak berwenang."
+          ],
+          [
+            "Prioritas",
+            "Kandidat awal jika sumber dan kontrol siap.",
+            "Otomasi bagian administratif lebih layak daripada keputusan penuh."
+          ]
+        ],
+        "stackOnMobile": true
+      },
+      {
+        "kind": "pendalaman",
+        "title": "Attended dan unattended",
+        "blocks": [
+          {
+            "kind": "p",
+            "text": "Attended automation membantu pengguna dalam sesi kerja dengan keterlibatan manusia. Unattended automation berjalan dengan penjadwalan/pemicu dan pengelolaan terpusat tanpa interaksi pengguna pada setiap langkah. Keduanya tetap memerlukan pemilik, pengamanan kredensial, log, serta penanganan kegagalan. Ini istilah implementasi pelengkap, bukan pembeda “RPA versus AI”."
+          }
+        ]
+      },
+      {
+        "kind": "h2",
+        "text": "9. Merancang rekonsiliasi yang aman"
+      },
+      {
+        "kind": "figure",
+        "title": "Alur bot dengan gerbang review",
+        "svg": "<svg class=\"course-diagram-svg\" role=\"img\" aria-label=\"Alur bot dengan gerbang review\" viewBox=\"0 0 800 278\" xmlns=\"http://www.w3.org/2000/svg\" style=\"font-family:Inter,Arial,sans-serif;width:100%;height:auto\"><title>Alur bot dengan gerbang review</title><defs><marker id=\"rpa-bank-a-false\" markerWidth=\"6\" markerHeight=\"6\" refX=\"5\" refY=\"3\" orient=\"auto\"><path d=\"M0 0 L6 3 L0 6\" fill=\"none\" stroke=\"#64748b\" stroke-width=\"1.5\"/></marker></defs><g><rect x=\"16\" y=\"16\" width=\"365\" height=\"108\" rx=\"12\" fill=\"#eff6ff\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"45\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">1. Ambil dan validasi</text>\n      <text x=\"32\" y=\"72\" fill=\"#334155\" font-size=\"14\">Bank + GL, periode dan rekening.</text><text x=\"32\" y=\"94\" fill=\"#334155\" font-size=\"14\">Cocokkan jumlah serta total file.</text></g><path d=\"M384 70 h23\" marker-end=\"url(#rpa-bank-a-false)\" stroke=\"#64748b\" stroke-width=\"2\"/><g><rect x=\"411\" y=\"16\" width=\"365\" height=\"108\" rx=\"12\" fill=\"#ecfdf5\" stroke=\"#94a3b8\"/>\n      <text x=\"427\" y=\"45\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">2. Cocokkan aturan</text>\n      <text x=\"427\" y=\"72\" fill=\"#334155\" font-size=\"14\">Referensi + nilai + tanggal.</text><text x=\"427\" y=\"94\" fill=\"#334155\" font-size=\"14\">Bedakan pasangan unik dan ambigu.</text></g><path d=\"M593.5 126 v12 H198.5 v10\" fill=\"none\" marker-end=\"url(#rpa-bank-a-false)\" stroke=\"#64748b\" stroke-width=\"2\"/><g><rect x=\"16\" y=\"154\" width=\"365\" height=\"108\" rx=\"12\" fill=\"#eff6ff\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"183\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">3. Review exception</text>\n      <text x=\"32\" y=\"210\" fill=\"#334155\" font-size=\"14\">Belum cocok, ganda, beda nilai.</text><text x=\"32\" y=\"232\" fill=\"#334155\" font-size=\"14\">Reviewer mencari sebab dan bukti.</text></g><path d=\"M384 208 h23\" marker-end=\"url(#rpa-bank-a-false)\" stroke=\"#64748b\" stroke-width=\"2\"/><g><rect x=\"411\" y=\"154\" width=\"365\" height=\"108\" rx=\"12\" fill=\"#ecfdf5\" stroke=\"#94a3b8\"/>\n      <text x=\"427\" y=\"183\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">4. Setujui dan arsipkan</text>\n      <text x=\"427\" y=\"210\" fill=\"#334155\" font-size=\"14\">Posting hanya bila terotorisasi.</text><text x=\"427\" y=\"232\" fill=\"#334155\" font-size=\"14\">Log, hasil, approval, dan versi.</text></g></svg>",
+        "mobileSvg": "<svg class=\"course-diagram-svg\" role=\"img\" aria-label=\"Alur bot dengan gerbang review\" viewBox=\"0 0 360 566\" xmlns=\"http://www.w3.org/2000/svg\" style=\"font-family:Inter,Arial,sans-serif;width:100%;height:auto\"><title>Alur bot dengan gerbang review</title><defs><marker id=\"rpa-bank-a-true\" markerWidth=\"6\" markerHeight=\"6\" refX=\"5\" refY=\"3\" orient=\"auto\"><path d=\"M0 0 L6 3 L0 6\" fill=\"none\" stroke=\"#64748b\" stroke-width=\"1.5\"/></marker></defs><g><rect x=\"16\" y=\"16\" width=\"328\" height=\"108\" rx=\"12\" fill=\"#eff6ff\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"45\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">1. Ambil dan validasi</text>\n      <text x=\"32\" y=\"72\" fill=\"#334155\" font-size=\"14\">Bank + GL, periode dan rekening.</text><text x=\"32\" y=\"94\" fill=\"#334155\" font-size=\"14\">Cocokkan jumlah serta total file.</text></g><path d=\"M180 128 v22\" marker-end=\"url(#rpa-bank-a-true)\" stroke=\"#64748b\" stroke-width=\"2\"/><g><rect x=\"16\" y=\"158\" width=\"328\" height=\"108\" rx=\"12\" fill=\"#ecfdf5\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"187\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">2. Cocokkan aturan</text>\n      <text x=\"32\" y=\"214\" fill=\"#334155\" font-size=\"14\">Referensi + nilai + tanggal.</text><text x=\"32\" y=\"236\" fill=\"#334155\" font-size=\"14\">Bedakan pasangan unik dan ambigu.</text></g><path d=\"M180 270 v22\" marker-end=\"url(#rpa-bank-a-true)\" stroke=\"#64748b\" stroke-width=\"2\"/><g><rect x=\"16\" y=\"300\" width=\"328\" height=\"108\" rx=\"12\" fill=\"#eff6ff\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"329\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">3. Review exception</text>\n      <text x=\"32\" y=\"356\" fill=\"#334155\" font-size=\"14\">Belum cocok, ganda, beda nilai.</text><text x=\"32\" y=\"378\" fill=\"#334155\" font-size=\"14\">Reviewer mencari sebab dan bukti.</text></g><path d=\"M180 412 v22\" marker-end=\"url(#rpa-bank-a-true)\" stroke=\"#64748b\" stroke-width=\"2\"/><g><rect x=\"16\" y=\"442\" width=\"328\" height=\"108\" rx=\"12\" fill=\"#ecfdf5\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"471\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">4. Setujui dan arsipkan</text>\n      <text x=\"32\" y=\"498\" fill=\"#334155\" font-size=\"14\">Posting hanya bila terotorisasi.</text><text x=\"32\" y=\"520\" fill=\"#334155\" font-size=\"14\">Log, hasil, approval, dan versi.</text></g></svg>",
+        "caption": "Ilustrasi buatan. Garis dari pencocokan ke posting selalu melalui review/otorisasi sesuai desain; exception tidak dipaksa menjadi cocok.",
+        "altText": "1. Ambil dan validasi: Bank + GL, periode dan rekening. Cocokkan jumlah serta total file.; 2. Cocokkan aturan: Referensi + nilai + tanggal. Bedakan pasangan unik dan ambigu.; 3. Review exception: Belum cocok, ganda, beda nilai. Reviewer mencari sebab dan bukti.; 4. Setujui dan arsipkan: Posting hanya bila terotorisasi. Log, hasil, approval, dan versi.",
+        "transcript": [
+          "1. Ambil dan validasi: Bank + GL, periode dan rekening. Cocokkan jumlah serta total file.",
+          "2. Cocokkan aturan: Referensi + nilai + tanggal. Bedakan pasangan unik dan ambigu.",
+          "3. Review exception: Belum cocok, ganda, beda nilai. Reviewer mencari sebab dan bukti.",
+          "4. Setujui dan arsipkan: Posting hanya bila terotorisasi. Log, hasil, approval, dan versi."
+        ]
+      },
+      {
+        "kind": "example",
+        "title": "Lima baris, tiga hasil berbeda",
+        "blocks": [
+          {
+            "kind": "table",
+            "title": "Seluruh nominal Rp juta; jendela tanggal ditetapkan dalam asumsi",
+            "headers": [
+              "Bank",
+              "Buku bank",
+              "Hasil"
+            ],
+            "rows": [
+              [
+                "REF-A · 10",
+                "REF-A · 10",
+                "Cocok unik dengan aturan yang terpenuhi."
+              ],
+              [
+                "REF-B · 7",
+                "REF-B · 6,8",
+                "Exception selisih 0,2; jangan langsung tulis biaya bank."
+              ],
+              [
+                "REF-C · 5",
+                "Tidak ditemukan",
+                "Belum cocok; cek cutoff dan bukti sebelum jurnal."
+              ],
+              [
+                "REF-D · 4",
+                "Dua catatan bernilai 4 dengan referensi tidak jelas",
+                "Ambigu; perlu investigasi, bukan dipilih acak."
+              ],
+              [
+                "Tidak ditemukan",
+                "REF-E · 3",
+                "Transaksi buku belum tampak di bank; cek outstanding/timing."
+              ]
+            ],
+            "stackOnMobile": true
+          },
+          {
+            "kind": "p",
+            "text": "Selisih dapat berupa biaya bank, kesalahan pencatatan, transaksi dalam perjalanan, atau aktivitas tidak sah. Penyebab berbeda menghasilkan tindak lanjut berbeda. Bot sebaiknya menandai dan menyertakan bukti, lalu reviewer menentukan koreksi atau item rekonsiliasi."
+          }
+        ]
+      },
+      {
+        "kind": "p",
+        "text": "**Idempotency** berarti pengulangan pekerjaan tidak menciptakan pembayaran/jurnal ganda. Simpan kunci transaksi unik dan status pemrosesan; periksa hasil sebelum mencoba ulang. Timeout jaringan tidak selalu berarti aksi gagal. Bot yang mengulang seluruh batch tanpa memeriksa transaksi yang sudah diposting dapat menggandakan catatan."
+      },
+      {
+        "kind": "h2",
+        "text": "10. Bot governance dan pengendalian perubahan"
+      },
+      {
+        "kind": "table",
+        "title": "Risiko otomasi dan kontrolnya",
+        "headers": [
+          "Risiko",
+          "Kontrol",
+          "Bukti"
+        ],
+        "rows": [
+          [
+            "Akun bot terlalu berkuasa",
+            "Identitas layanan yang dapat ditelusuri, least privilege, rahasia di penyimpanan aman.",
+            "Daftar izin, pemilik akun, hasil review akses dan log."
+          ],
+          [
+            "Bot mengusulkan sekaligus menyetujui pembayaran",
+            "Pemisahan pembuat dan penyetuju tetap berlaku untuk bot.",
+            "Alur approval dan identitas reviewer independen."
+          ],
+          [
+            "Perubahan UI / aturan",
+            "Uji regresi dan persetujuan sebelum rilis; sediakan stop/rollback.",
+            "Versi, test case, approval, dan hasil monitoring."
+          ],
+          [
+            "Retry menimbulkan transaksi ganda",
+            "Kunci unik, cek status dan pemrosesan idempotent.",
+            "Log retry serta uji simulasi kegagalan."
+          ],
+          [
+            "Exception tidak ditangani",
+            "Queue berpenanggung jawab dan batas waktu menurut risiko.",
+            "Umur exception, keputusan, bukti penyelesaian."
+          ]
+        ],
+        "stackOnMobile": true
+      },
+      {
+        "kind": "p",
+        "text": "Bot memiliki pemilik bisnis dan pemilik teknis. Pemilik bisnis bertanggung jawab atas aturan serta hasil; tim teknis mengelola operasi dan perubahan. Sebelum produksi, jalankan pilot atau parallel run yang membandingkan hasil dengan prosedur terkontrol. Setelah rilis, ukur akurasi, exception, kegagalan, waktu penanganan, dan manfaat aktual."
+      },
+      {
+        "kind": "h2",
+        "text": "11. Menghitung manfaat tanpa menyamakan waktu dengan kas"
+      },
+      {
+        "kind": "example",
+        "title": "Asumsi latihan: PT Mitra Logistik",
+        "blocks": [
+          {
+            "kind": "ol",
+            "items": [
+              "Sebelum otomasi: 3 staf × 4 jam × 250 hari = 3.000 jam/tahun.",
+              "Setelah otomasi: review dan exception memerlukan total 2 jam staf per hari × 250 = 500 jam/tahun.",
+              "Kapasitas yang dilepas = 3.000 − 500 = 2.500 jam/tahun.",
+              "Dengan asumsi nilai kapasitas Rp60.000/jam, manfaat kapasitas = Rp150 juta/tahun.",
+              "Biaya berulang lisensi/operasi Rp30 juta dan pemeliharaan Rp20 juta: manfaat bersih ekuivalen = 150 − 30 − 20 = Rp100 juta/tahun.",
+              "Investasi awal Rp120 juta: simple payback ekuivalen = 120 ÷ 100 = 1,2 tahun, jika manfaat stabil dan arus terjadi sesuai asumsi."
+            ]
+          },
+          {
+            "kind": "callout",
+            "variant": "warning",
+            "title": "Kapasitas tidak otomatis menjadi penghematan kas",
+            "text": "Jika gaji tetap dibayar dan waktu dialihkan ke tugas lain, Rp150 juta adalah nilai kapasitas, bukan kas yang pasti dihemat. Payback kas harus memakai perubahan arus kas aktual. Perhitungan sederhana juga belum memasukkan pajak, nilai waktu uang, pertumbuhan volume, dan risiko proyek."
+          }
+        ]
+      },
+      {
+        "kind": "figure",
+        "title": "Jembatan manfaat otomasi dalam kasus",
+        "svg": "<svg class=\"course-diagram-svg\" role=\"img\" aria-label=\"Jembatan manfaat otomasi dalam kasus\" viewBox=\"0 0 800 278\" xmlns=\"http://www.w3.org/2000/svg\" style=\"font-family:Inter,Arial,sans-serif;width:100%;height:auto\"><title>Jembatan manfaat otomasi dalam kasus</title><defs><marker id=\"rpa-value-a-false\" markerWidth=\"6\" markerHeight=\"6\" refX=\"5\" refY=\"3\" orient=\"auto\"><path d=\"M0 0 L6 3 L0 6\" fill=\"none\" stroke=\"#64748b\" stroke-width=\"1.5\"/></marker></defs><g><rect x=\"16\" y=\"16\" width=\"365\" height=\"108\" rx=\"12\" fill=\"#eff6ff\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"45\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">1. 3.000 jam awal</text>\n      <text x=\"32\" y=\"72\" fill=\"#334155\" font-size=\"14\">3 staf × 4 jam × 250 hari.</text><text x=\"32\" y=\"94\" fill=\"#334155\" font-size=\"14\">Semua jam adalah jam kerja staf.</text></g><path d=\"M384 70 h23\" marker-end=\"url(#rpa-value-a-false)\" stroke=\"#64748b\" stroke-width=\"2\"/><g><rect x=\"411\" y=\"16\" width=\"365\" height=\"108\" rx=\"12\" fill=\"#ecfdf5\" stroke=\"#94a3b8\"/>\n      <text x=\"427\" y=\"45\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">2. 500 jam tersisa</text>\n      <text x=\"427\" y=\"72\" fill=\"#334155\" font-size=\"14\">Review tetap memerlukan manusia.</text><text x=\"427\" y=\"94\" fill=\"#334155\" font-size=\"14\">500 = 2 jam × 250 hari.</text></g><path d=\"M593.5 126 v12 H198.5 v10\" fill=\"none\" marker-end=\"url(#rpa-value-a-false)\" stroke=\"#64748b\" stroke-width=\"2\"/><g><rect x=\"16\" y=\"154\" width=\"365\" height=\"108\" rx=\"12\" fill=\"#eff6ff\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"183\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">3. 2.500 jam kapasitas</text>\n      <text x=\"32\" y=\"210\" fill=\"#334155\" font-size=\"14\">Nilai asumsi Rp150 juta/tahun.</text><text x=\"32\" y=\"232\" fill=\"#334155\" font-size=\"14\">Bukan otomatis kas dihemat.</text></g><path d=\"M384 208 h23\" marker-end=\"url(#rpa-value-a-false)\" stroke=\"#64748b\" stroke-width=\"2\"/><g><rect x=\"411\" y=\"154\" width=\"365\" height=\"108\" rx=\"12\" fill=\"#ecfdf5\" stroke=\"#94a3b8\"/>\n      <text x=\"427\" y=\"183\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">4. Kurangi biaya berulang</text>\n      <text x=\"427\" y=\"210\" fill=\"#334155\" font-size=\"14\">Rp50 juta/tahun → bersih 100.</text><text x=\"427\" y=\"232\" fill=\"#334155\" font-size=\"14\">Payback ekuivalen: 1,2 tahun.</text></g></svg>",
+        "mobileSvg": "<svg class=\"course-diagram-svg\" role=\"img\" aria-label=\"Jembatan manfaat otomasi dalam kasus\" viewBox=\"0 0 360 566\" xmlns=\"http://www.w3.org/2000/svg\" style=\"font-family:Inter,Arial,sans-serif;width:100%;height:auto\"><title>Jembatan manfaat otomasi dalam kasus</title><defs><marker id=\"rpa-value-a-true\" markerWidth=\"6\" markerHeight=\"6\" refX=\"5\" refY=\"3\" orient=\"auto\"><path d=\"M0 0 L6 3 L0 6\" fill=\"none\" stroke=\"#64748b\" stroke-width=\"1.5\"/></marker></defs><g><rect x=\"16\" y=\"16\" width=\"328\" height=\"108\" rx=\"12\" fill=\"#eff6ff\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"45\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">1. 3.000 jam awal</text>\n      <text x=\"32\" y=\"72\" fill=\"#334155\" font-size=\"14\">3 staf × 4 jam × 250 hari.</text><text x=\"32\" y=\"94\" fill=\"#334155\" font-size=\"14\">Semua jam adalah jam kerja staf.</text></g><path d=\"M180 128 v22\" marker-end=\"url(#rpa-value-a-true)\" stroke=\"#64748b\" stroke-width=\"2\"/><g><rect x=\"16\" y=\"158\" width=\"328\" height=\"108\" rx=\"12\" fill=\"#ecfdf5\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"187\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">2. 500 jam tersisa</text>\n      <text x=\"32\" y=\"214\" fill=\"#334155\" font-size=\"14\">Review tetap memerlukan manusia.</text><text x=\"32\" y=\"236\" fill=\"#334155\" font-size=\"14\">500 = 2 jam × 250 hari.</text></g><path d=\"M180 270 v22\" marker-end=\"url(#rpa-value-a-true)\" stroke=\"#64748b\" stroke-width=\"2\"/><g><rect x=\"16\" y=\"300\" width=\"328\" height=\"108\" rx=\"12\" fill=\"#eff6ff\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"329\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">3. 2.500 jam kapasitas</text>\n      <text x=\"32\" y=\"356\" fill=\"#334155\" font-size=\"14\">Nilai asumsi Rp150 juta/tahun.</text><text x=\"32\" y=\"378\" fill=\"#334155\" font-size=\"14\">Bukan otomatis kas dihemat.</text></g><path d=\"M180 412 v22\" marker-end=\"url(#rpa-value-a-true)\" stroke=\"#64748b\" stroke-width=\"2\"/><g><rect x=\"16\" y=\"442\" width=\"328\" height=\"108\" rx=\"12\" fill=\"#ecfdf5\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"471\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">4. Kurangi biaya berulang</text>\n      <text x=\"32\" y=\"498\" fill=\"#334155\" font-size=\"14\">Rp50 juta/tahun → bersih 100.</text><text x=\"32\" y=\"520\" fill=\"#334155\" font-size=\"14\">Payback ekuivalen: 1,2 tahun.</text></g></svg>",
+        "caption": "Angka buatan dan satuan konsisten; bagan menunjukkan perhitungan, bukan janji hasil suatu produk.",
+        "altText": "1. 3.000 jam awal: 3 staf × 4 jam × 250 hari. Semua jam adalah jam kerja staf.; 2. 500 jam tersisa: Review tetap memerlukan manusia. 500 = 2 jam × 250 hari.; 3. 2.500 jam kapasitas: Nilai asumsi Rp150 juta/tahun. Bukan otomatis kas dihemat.; 4. Kurangi biaya berulang: Rp50 juta/tahun → bersih 100. Payback ekuivalen: 1,2 tahun.",
+        "transcript": [
+          "1. 3.000 jam awal: 3 staf × 4 jam × 250 hari. Semua jam adalah jam kerja staf.",
+          "2. 500 jam tersisa: Review tetap memerlukan manusia. 500 = 2 jam × 250 hari.",
+          "3. 2.500 jam kapasitas: Nilai asumsi Rp150 juta/tahun. Bukan otomatis kas dihemat.",
+          "4. Kurangi biaya berulang: Rp50 juta/tahun → bersih 100. Payback ekuivalen: 1,2 tahun."
+        ]
+      },
+      {
+        "kind": "h2",
+        "text": "12. Menilai model AI dan batas keputusan otomatis"
+      },
+      {
+        "kind": "p",
+        "text": "**Supervised learning** belajar dari contoh dengan label, misalnya invoice valid/tidak valid. **Unsupervised learning** mencari pola atau kelompok tanpa label hasil yang sama. Outlier yang berbeda dari pola mayoritas belum otomatis salah. Pemisahan data training dan testing serta pencegahan data leakage dibutuhkan agar evaluasi mencerminkan data baru. Richardson pp. 509–514."
+      },
+      {
+        "kind": "table",
+        "title": "Kesalahan klasifikasi perlu dinilai dari dampaknya",
+        "headers": [
+          "Hasil",
+          "Arti dalam penyaringan fraud",
+          "Konsekuensi"
+        ],
+        "rows": [
+          [
+            "True positive",
+            "Transaksi bermasalah ditandai.",
+            "Masuk pemeriksaan yang relevan."
+          ],
+          [
+            "False positive",
+            "Transaksi sah ikut ditandai.",
+            "Beban review dan potensi keterlambatan."
+          ],
+          [
+            "False negative",
+            "Transaksi bermasalah tidak ditandai.",
+            "Risiko kerugian lolos dari penyaringan."
+          ],
+          [
+            "True negative",
+            "Transaksi sah tidak ditandai.",
+            "Pemrosesan berjalan sesuai rancangan."
+          ]
+        ],
+        "stackOnMobile": true
+      },
+      {
+        "kind": "p",
+        "text": "Pada 1.000 transaksi dengan 10 masalah, model yang menyebut semuanya normal punya akurasi 99% tetapi menangkap nol masalah. Karena itu evaluasi juga **precision** (dari yang ditandai, berapa yang benar bermasalah) dan **recall** (dari seluruh masalah, berapa yang tertangkap), bersama biaya serta kapasitas review. Perubahan pola bisnis dapat mengurangi kinerja model atau menimbulkan drift."
+      },
+      {
         "kind": "callout",
-        "variant": "key",
-        "title": "Perlakuan Akuntansi Aset Kripto",
-        "text": "Agenda decision IFRIC Juni 2019 membahas cryptocurrency dengan karakteristik tertentu, bukan seluruh token digital. IAS 2 dipakai bila dipegang untuk dijual dalam kegiatan usaha normal; bila IAS 2 tidak berlaku, IAS 38 dipakai. Jangka investasi panjang tidak menjadi syarat tunggal. Periksa hak kontraktual serta pengungkapan, dan jangan memperluas keputusan ini ke semua aset kripto. Rujukan: [IFRIC, Holdings of Cryptocurrencies, Juni 2019, PDF 1-3](https://www.ifrs.org/content/dam/ifrs/supporting-implementation/agenda-decisions/2019/holdings-of-cryptocurrencies-june-2019.pdf). Penomoran Indonesia efektif 1 Januari 2024 adalah PSAK 202 Persediaan dan PSAK 238 Aset Takberwujud, menurut dokumen IAI Perubahan Penomoran PSAK/ISAK, PDF 1-2; pemetaan nomor tidak menggantikan pemeriksaan teks standar nasional."
+        "variant": "warning",
+        "title": "Pelengkap AI generatif",
+        "text": "Ringkasan kontrak atau usulan jurnal dari AI generatif bisa keliru atau mengarang rujukan. Verifikasi terhadap dokumen sumber, lindungi data, dan pertahankan review pihak berwenang. Bagian ini perluasan pedagogis; buku yang dibaca berfokus pada AI/ML dan RPA, bukan panduan produk AI terkini."
+      },
+      {
+        "kind": "h2",
+        "text": "13. Uji pemahaman"
+      },
+      {
+        "kind": "self-check",
+        "question": "Bot menemukan dua transaksi bernilai sama. Apakah keduanya boleh langsung dianggap cocok?",
+        "answer": [
+          {
+            "kind": "p",
+            "text": "Tidak. Periksa referensi, rekening, tanggal, dan keunikan pasangan. Pasangan ambigu masuk exception. Simpan bukti keputusan agar proses dapat ditelusuri."
+          }
+        ],
+        "signal": "Jika alasannya belum jelas, kembali ke contoh sebelum membuka jawaban."
+      },
+      {
+        "kind": "self-check",
+        "question": "AI punya akurasi 99%. Mengapa belum tentu layak menyetujui pembayaran?",
+        "answer": [
+          {
+            "kind": "p",
+            "text": "Akurasi dapat didominasi transaksi normal. Periksa false negative, false positive, mutu label, data baru, batas otorisasi, dan dampak kesalahan. Model pemberi rekomendasi tidak otomatis menjadi penyetuju pembayaran."
+          }
+        ],
+        "signal": "Jika alasannya belum jelas, kembali ke contoh sebelum membuka jawaban."
+      },
+      {
+        "kind": "callout",
+        "variant": "info",
+        "title": "Sumber dan batas pembahasan",
+        "text": "Richardson Ch. 15 pp. 508–516 (PDF 533–541), terutama AI/ML pp. 509–514 dan RPA p. 515. Idempotency, rancangan rekonsiliasi, evaluasi klasifikasi, serta contoh manfaat adalah perluasan latihan pengendalian. Angka, perusahaan, diagram, dan skenario latihan di halaman ini adalah ilustrasi buatan kecuali dinyatakan lain. Urutan materi inti mengikuti RPS-SIA, Pembagian Mengajar Gasal 2025/2026, halaman 1; pendalaman di luar bab terjadwal diberi label pelengkap."
+      },
+      {
+        "kind": "callout",
+        "variant": "info",
+        "title": "Sumber dan batas pembahasan",
+        "text": "Richardson Ch. 15 pp. 494–508 (PDF 519–533), terutama evaluasi kebutuhan dan audit pp. 497–507; cloud sebagai penghubung Ch. 6 p. 270 (PDF 295). [NISTIR 8202](https://nvlpubs.nist.gov/nistpubs/ir/2018/NIST.IR.8202.pdf) menjadi pelengkap batas tamper-resistance dan oracle. Triple-entry dibahas sebagai konsep shared receipt, bukan standar pembukuan wajib. Angka, perusahaan, diagram, dan skenario latihan di halaman ini adalah ilustrasi buatan kecuali dinyatakan lain. Urutan materi inti mengikuti RPS-SIA, Pembagian Mengajar Gasal 2025/2026, halaman 1; pendalaman di luar bab terjadwal diberi label pelengkap."
       }
     ]
   },
   "questions": [
     {
       "tm": 13,
-      "topic": "Blockchain & Triple-Entry Accounting",
+      "topic": "Blockchain dan AI Automation",
       "difficulty": "medium",
-      "q": "Dalam arsitektur blockchain, elemen mana yang menghubungkan blok dengan catatan blok sebelumnya? Rujukan: Richardson AIS 4e, hal. 497-499 (PDF 522-524).",
+      "q": "Apa yang menghubungkan sebuah blok dengan blok sebelumnya?",
       "options": [
-        "Alamat jaringan validator saat ini",
-        "Hash Pointer / Previous Block Hash",
-        "Kunci privat milik penerima transaksi",
-        "Jumlah saldo agregat seluruh transaksi"
+        "Saldo kas agregat seluruh peserta.",
+        "Previous block hash / hash pointer.",
+        "Private key milik semua penerima.",
+        "Nama staf pembuat laporan laba."
       ],
       "answer": 1,
-      "explanation": "Previous hash mengikat data blok sebelumnya. Perubahan data mengubah digest, sehingga validasi hubungan perlu diperiksa ulang. Alamat jaringan dan saldo bukan pengganti hubungan hash; kunci privat tidak disalin sebagai tautan antarbIok. Rujukan: Richardson AIS 4e, hal. 497-499 (PDF 522-524)."
+      "explanation": "Hash mengikat riwayat data; tidak otomatis membuktikan kondisi barang dunia nyata. Rujukan: Richardson AIS 4e, Ch.15 pp.494–516 (PDF 519–541)."
     },
     {
       "tm": 13,
-      "topic": "Blockchain & Triple-Entry Accounting",
-      "difficulty": "advanced",
-      "q": "Apa peran tambahan pada konsep triple-entry Ian Grigg? Sumber pelengkap primer: Grigg (2005), bagian The Initial Role of a Receipt dan Triple Entry.",
-      "options": [
-        "Menyediakan akun debit ketiga untuk setiap transaksi",
-        "Menyediakan tanda terima bertanda tangan sebagai bukti bersama",
-        "Menghapus pencatatan lokal setelah validator menyetujui transaksi",
-        "Menggantikan pemeriksaan nilai aset dengan verifikasi tanda tangan"
-      ],
-      "answer": 1,
-      "explanation": "Grigg menjelaskan tanda terima bersama yang mendukung catatan pihak terkait. Paper tahun 2005 itu tidak mensyaratkan public blockchain modern. Tanda terima tidak menetapkan satu jurnal universal atau menggantikan pengujian nilai aset. Sumber pelengkap primer: [Grigg (2005), The Initial Role of a Receipt dan Triple Entry](https://iang.org/papers/triple_entry.html)."
-    },
-    {
-      "tm": 13,
-      "topic": "Blockchain & Triple-Entry Accounting",
-      "difficulty": "advanced",
-      "q": "Kode yang menjalankan tindakan ketika kondisi kontrak terpenuhi disebut apa? Rujukan: Richardson AIS 4e, Ch. 15, Blockchain Applications, hal. 504-507 (PDF 529-532).",
-      "options": [
-        "Electronic data interchange protocol",
-        "Smart contract execution code",
-        "Virtual private network tunnel",
-        "Relational database query view"
-      ],
-      "answer": 1,
-      "explanation": "Smart contract mengeksekusi kode berdasarkan kondisi yang didefinisikan. Jika syarat bergantung pada sensor atau data luar, keandalan input itu tetap perlu diuji. EDI bertukar dokumen, VPN menghubungkan jaringan dan view menyajikan hasil query. Rujukan: Richardson AIS 4e, Ch. 15, Blockchain Applications, hal. 504-507 (PDF 529-532)."
-    },
-    {
-      "tm": 13,
-      "topic": "Blockchain & Triple-Entry Accounting",
+      "topic": "Blockchain dan AI Automation",
       "difficulty": "medium",
-      "q": "Apa manfaat utama immutability bagi pemeriksaan catatan? Rujukan: Richardson AIS 4e, hal. 497-507 (PDF 522-532).",
+      "q": "Apa yang dimaksud oracle problem?",
       "options": [
-        "Memberi bukti bahwa nilai wajar aset selalu benar",
-        "Membantu menelusuri perubahan melalui hash dan validasi jaringan",
-        "Menghilangkan kebutuhan menguji otorisasi transaksi oleh pelanggan",
-        "Menjamin seluruh transaksi dunia nyata masuk ke ledger"
+        "Seluruh konsensus harus menggunakan proof of work.",
+        "Setiap receipt wajib mengganti catatan double-entry.",
+        "Input dunia luar bisa salah meskipun kode berjalan sesuai aturan.",
+        "Semua database terpusat wajib dipindahkan ke public blockchain."
       ],
-      "answer": 1,
-      "explanation": "Hash dan validasi jaringan membuat perubahan catatan lebih mudah ditelusuri. Risiko manipulasi dan kesalahan input tetap perlu diuji; validasi ledger tidak membuktikan keberadaan atau nilai transaksi dunia nyata. Rujukan: Richardson AIS 4e, hal. 497-507 (PDF 522-532)."
+      "answer": 2,
+      "explanation": "Sensor, petugas dan sistem luar perlu kontrol keandalan. Validasi ledger belum cukup untuk substansi. Rujukan: Richardson AIS 4e, Ch.15 pp.494–516 (PDF 519–541)."
     },
     {
       "tm": 13,
-      "topic": "Blockchain & Triple-Entry Accounting",
-      "difficulty": "advanced",
-      "q": "Mengapa validasi ledger belum cukup sebagai bukti semua asersi laporan keuangan? Rujukan: Richardson AIS 4e, hal. 507 (PDF 532).",
+      "topic": "Blockchain dan AI Automation",
+      "difficulty": "medium",
+      "q": "Apa arti shared receipt pada konsep triple-entry?",
       "options": [
-        "Karena pemeriksaan ledger sepenuhnya menggantikan asersi keberadaan aset",
-        "Karena catatan tervalidasi belum membuktikan hak dan nilai transaksi",
-        "Karena jumlah validator langsung menentukan kewajaran laporan keuangan",
-        "Karena bentuk hash menentukan klasifikasi akun dan estimasi akuntansi"
+        "Sisi debit ketiga yang mengganti persamaan akuntansi.",
+        "Bukti seluruh aset pasti ada tanpa pemeriksaan fisik.",
+        "Penghapusan semua jurnal internal setelah settlement.",
+        "Bukti bersama terverifikasi yang mendukung catatan pihak terkait."
+      ],
+      "answer": 3,
+      "explanation": "Double-entry tetap ada pada masing-masing entitas; shared signed receipt bukan pengganti semua rekonsiliasi. Sumber pelengkap: Grigg (2005). Rujukan: Richardson AIS 4e, Ch.15 pp.494–516 (PDF 519–541)."
+    },
+    {
+      "tm": 13,
+      "topic": "Blockchain dan AI Automation",
+      "difficulty": "medium",
+      "q": "Bot gagal mendapat respons setelah meminta pembayaran. Kontrol retry yang tepat adalah...",
+      "options": [
+        "Periksa status dan kunci unik agar pembayaran tidak terduplikasi.",
+        "Ulangi seluruh batch tanpa melihat transaksi yang sudah sukses.",
+        "Hapus seluruh audit trail untuk mempercepat proses berikutnya.",
+        "Berikan akun bot hak menyetujui semua transaksi tanpa batas."
+      ],
+      "answer": 0,
+      "explanation": "Timeout tidak selalu berarti aksi gagal. Idempotency, status settlement, approval serta log diperlukan. Rujukan: Richardson AIS 4e, Ch.15 pp.494–516 (PDF 519–541)."
+    },
+    {
+      "tm": 13,
+      "topic": "Blockchain dan AI Automation",
+      "difficulty": "medium",
+      "q": "Model mendeteksi fraud dengan akurasi 99% pada populasi yang hampir semuanya normal. Evaluasi berikutnya adalah...",
+      "options": [
+        "Hentikan semua pengujian karena angka 99% cukup untuk approval.",
+        "Nilai false positive/negative, precision, recall dan dampak kesalahan.",
+        "Hilangkan semua reviewer karena komputer tidak dapat keliru.",
+        "Gunakan data training sebagai bukti tunggal kinerja data baru."
       ],
       "answer": 1,
-      "explanation": "Validasi jaringan memeriksa catatan menurut aturan jaringan. Kesepakatan fiktif atau nilai aset keliru masih dapat masuk. Auditor perlu bukti keberadaan, hak, kelengkapan dan penilaian, serta memahami kontrol input. Rujukan: Richardson AIS 4e, hal. 507 (PDF 532)."
+      "explanation": "Akurasi tinggi bisa melewatkan semua kejadian langka; kualitas data, drift dan review tetap perlu dinilai. Rujukan: Richardson AIS 4e, Ch.15 pp.494–516 (PDF 519–541)."
     }
   ],
   "flashcards": [
     {
-      "id": "aks301-tm13-01",
+      "id": "aks301-v3-tm13-01",
       "phase": "pra-uas",
       "tm": 13,
-      "topic": "Blockchain, Smart Contracts & Cloud Accounting",
+      "topic": "Blockchain dan AI Automation",
       "category": "Konsep",
-      "front": "Karakteristik Buku Besar Terdistribusi (Blockchain)",
-      "back": "Ledger memakai hash, validasi dan aturan jaringan untuk menjaga konsistensi. Algoritme, transparansi dan desentralisasi bergantung rancangan; perubahan sulit dilakukan tanpa jejak, tetapi integritas ledger tidak membuktikan transaksi dunia nyata benar. Rujukan: Richardson et al. AIS 4e · Ch. 15, hal. 494-508 (PDF 519-533)."
+      "front": "Blockchain dan batasnya",
+      "back": "Hash, signature, konsensus dan replikasi membantu konsistensi riwayat. Integritas ledger belum membuktikan transaksi fisik benar. Rujukan: Richardson AIS 4e, Ch.15 pp.494–516 (PDF 519–541)."
     },
     {
-      "id": "aks301-tm13-02",
+      "id": "aks301-v3-tm13-02",
       "phase": "pra-uas",
       "tm": 13,
-      "topic": "Blockchain, Smart Contracts & Cloud Accounting",
+      "topic": "Blockchain dan AI Automation",
       "category": "Konsep",
-      "front": "Triple-Entry Accounting",
-      "back": "Grigg (2005) menekankan receipt bersama yang ditandatangani secara kriptografis di samping pencatatan internal. Konsep ini tidak mensyaratkan shared public blockchain. Rujukan: Grigg (2005), Triple Entry Accounting, bagian Signed Receipts, https://iang.org/papers/triple_entry.html."
+      "front": "Oracle problem",
+      "back": "Input sensor/petugas/sistem luar dapat salah. Uji sumber, identitas, inspeksi, approval dan exception. Rujukan: Richardson AIS 4e, Ch.15 pp.494–516 (PDF 519–541)."
     },
     {
-      "id": "aks301-tm13-03",
+      "id": "aks301-v3-tm13-03",
       "phase": "pra-uas",
       "tm": 13,
-      "topic": "Blockchain, Smart Contracts & Cloud Accounting",
-      "category": "Mekanisme",
-      "front": "Smart Contracts (Kontrak Pintar)",
-      "back": "Program menjalankan ketentuan yang dikodekan ketika input/kondisi dipenuhi. Input atau oracle dapat salah; eksekusi otomatis tidak sendirian membuktikan hak, kewajiban atau nilai transaksi. Rujukan: Richardson et al. AIS 4e · Ch. 15, hal. 494-508 (PDF 519-533)."
-    },
-    {
-      "id": "aks301-tm13-04",
-      "phase": "pra-uas",
-      "tm": 13,
-      "topic": "Blockchain, Smart Contracts & Cloud Accounting",
-      "category": "Perbandingan",
-      "front": "Public vs Private (Permissioned) Blockchain",
-      "back": "Public (siapa saja boleh bergabung, misal: Bitcoin). Private/Consortium (hanya entitas yang diizinkan dan diverifikasi yang boleh mengakses jaringan). Rujukan: Richardson et al. AIS 4e · Ch. 15, hal. 494-508 (PDF 519-533)."
-    },
-    {
-      "id": "aks301-tm13-05",
-      "phase": "pra-uas",
-      "tm": 13,
-      "topic": "Blockchain, Smart Contracts & Cloud Accounting",
+      "topic": "Blockchain dan AI Automation",
       "category": "Konsep",
-      "front": "Manfaat Cloud Accounting (SaaS)",
-      "back": "Akses laporan keuangan kapan saja di mana saja, skalabilitas kapasitas fleksibel, pencadangan data otomatis, dan biaya modal TI lebih rendah. Rujukan: Richardson et al. AIS 4e · Ch. 15, hal. 494-508 (PDF 519-533)."
+      "front": "Triple-entry",
+      "back": "Shared signed receipt mendukung catatan pihak terkait; bukan sisi debit ketiga atau pengganti seluruh double-entry. Rujukan: Richardson AIS 4e, Ch.15 pp.494–516 (PDF 519–541)."
     },
     {
-      "id": "aks301-tm13-06",
+      "id": "aks301-v3-tm13-04",
       "phase": "pra-uas",
       "tm": 13,
-      "topic": "Blockchain, Smart Contracts & Cloud Accounting",
+      "topic": "Blockchain dan AI Automation",
       "category": "Konsep",
-      "front": "Risiko Pengendalian Cloud Computing",
-      "back": "Periksa ketergantungan vendor, akses, privasi, kontinuitas dan pengendalian yang harus dijalankan pelanggan. Pilih laporan assurance yang sesuai risiko/cakupan serta periode; SOC 1 dan SOC 2 mempunyai tujuan berbeda, bukan kewajiban universal untuk semua cloud. Rujukan: Richardson et al. AIS 4e · Ch. 15, hal. 494-508 (PDF 519-533)."
+      "front": "RPA dan AI",
+      "back": "RPA menjalankan aturan berulang; AI/ML memakai kemampuan/pola untuk tugas seperti klasifikasi. Keduanya butuh kontrol. Rujukan: Richardson AIS 4e, Ch.15 pp.494–516 (PDF 519–541)."
+    },
+    {
+      "id": "aks301-v3-tm13-05",
+      "phase": "pra-uas",
+      "tm": 13,
+      "topic": "Blockchain dan AI Automation",
+      "category": "Konsep",
+      "front": "Bot governance",
+      "back": "Identitas terpisah, least privilege, vault, approval, pengujian perubahan, exception, log serta retry idempotent. Rujukan: Richardson AIS 4e, Ch.15 pp.494–516 (PDF 519–541)."
+    },
+    {
+      "id": "aks301-v3-tm13-06",
+      "phase": "pra-uas",
+      "tm": 13,
+      "topic": "Blockchain dan AI Automation",
+      "category": "Konsep",
+      "front": "Evaluasi AI",
+      "back": "Nilai false positive/negative, precision/recall, mutu data, bias dan drift. Akurasi saja dapat menyesatkan untuk kejadian langka. Rujukan: Richardson AIS 4e, Ch.15 pp.494–516 (PDF 519–541)."
     }
   ],
-  "scope": "Snapshot audit pasca-UTS. Kebenaran sumber dan batas diperiksa terpisah dari kesamaan implementasi."
+  "bank": {
+    "type": "case",
+    "scope": "TM 13: Blockchain dan AI Automation",
+    "difficulty": "Komprehensif",
+    "estimatedTime": "30–45 menit",
+    "question": "Studi Kasus 13: Blockchain dan AI Automation",
+    "context": "Ilustrasi latihan buatan. Konsorsium memakai sensor dan smart contract; bot mengambil data lalu mengajukan settlement.",
+    "data": [
+      "Invoice Rp100 juta; diskon kontraktual 2% hanya jika seluruh syarat diterima baik terpenuhi.",
+      "Sensor menyebut 100 unit diterima, tetapi inspektur menemukan 10 rusak.",
+      "Bot timeout setelah permintaan pembayaran; model AI memakai akurasi sebagai satu-satunya ukuran."
+    ],
+    "instructions": [
+      "Jelaskan oracle problem, shared receipt dan batas bukti ledger.",
+      "Rancang pseudocode pemeriksaan syarat/status, exception dan retry.",
+      "Nilai kontrol bot serta ukuran kualitas AI."
+    ],
+    "outputFormat": [
+      "Alur/diagram dan analisis konsep",
+      "Perhitungan atau rancangan dengan asumsi jelas",
+      "Kontrol, bukti dan batas simpulan"
+    ],
+    "rubric": [
+      "Ketepatan konsep dan pemetaan (30%)",
+      "Ketepatan langkah serta perhitungan/rancangan (40%)",
+      "Alasan, bukti dan batas jawaban (30%)"
+    ],
+    "answerGuide": "Tahan pembayaran karena bukti mutu tidak konsisten; angka Rp98 juta hanya berlaku bila syarat diskon/penerimaan terpenuhi. Ledger konsisten belum membuktikan kondisi fisik. Shared receipt mendukung double-entry, bukan sisi debit ketiga. Validasi caller, oracle dan approval; cek UNPAID; reservasi satu kali; minta settlement; konfirmasi sebelum PAID; jika ambigu masuk reviewer. Gunakan identitas bot terbatas, vault, log, change control dan idempotency. AI perlu evaluasi false positive/negative, precision/recall, mutu data dan drift, bukan akurasi saja. Rujukan: Richardson AIS 4e, Ch.15 pp.494–516 (PDF 519–541)."
+  },
+  "scope": "Active package revised 2026-10-16 against RPS-SIA p.1; supersedes historical catalog mapping. See docs/sia-pra-uas-20261016.md."
 }
