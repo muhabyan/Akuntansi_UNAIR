@@ -225,9 +225,9 @@ export default function GuideView({ onHome }: { onHome: () => void }) {
               <div className="w-12 h-12 rounded-xl bg-purple-100 dark:bg-purple-900/50 flex items-center justify-center mb-6">
                 <Bot className="w-6 h-6 text-purple-600 dark:text-purple-400" />
               </div>
-              <h2 className="text-3xl font-bold mb-4 text-slate-900 dark:text-white">AI Tutor Cerdas & Navigasi Suara</h2>
+              <h2 className="text-3xl font-bold mb-4 text-slate-900 dark:text-white">AI Tutor untuk belajar dan navigasi</h2>
               <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
-                Buntu saat mengerjakan soal? Tanya langsung ke AI Tutor. Hebatnya lagi, AI ini memiliki kapabilitas <strong>Agentic Actions</strong>! Kamu bisa memerintahkannya untuk membuka halaman materi, menambahkan jadwal belajar, atau menandai jadwal selesai.
+                Gunakan mode Belajar untuk membahas konsep dan hitungan bertahap. Kutipan dari posisi baca dapat diperiksa sebelum disertakan. Mode Navigasi &amp; jadwal mengusulkan tindakan yang kamu periksa dahulu; perubahan jadwal memerlukan login.
               </p>
               
               <div className="bg-purple-50 dark:bg-purple-900/20 border border-purple-100 dark:border-purple-800 rounded-xl p-4 mb-6">
@@ -243,10 +243,10 @@ export default function GuideView({ onHome }: { onHome: () => void }) {
 
               <ul className="space-y-3">
                 <li className="flex items-center gap-3 text-sm font-medium text-slate-700 dark:text-slate-300">
-                  <Zap className="w-5 h-5 text-purple-500" /> Respons cepat dengan Groq
+                  <Zap className="w-5 h-5 text-purple-500" /> Gemini atau Groq dengan API key milikmu; kuota dan biaya mengikuti akun penyedia
                 </li>
                 <li className="flex items-center gap-3 text-sm font-medium text-slate-700 dark:text-slate-300">
-                  <Zap className="w-5 h-5 text-purple-500" /> Siap dibuka saat dibutuhkan
+                  <Zap className="w-5 h-5 text-purple-500" /> Pilih model dan cek koneksi di pengaturan; periksa jawaban AI terhadap sumber materi
                 </li>
               </ul>
             </div>

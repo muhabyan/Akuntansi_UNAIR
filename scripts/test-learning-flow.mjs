@@ -1,0 +1,112 @@
+import assert from 'node:assert/strict';
+import os from 'node:os';
+import path from 'node:path';
+import { JSDOM } from 'jsdom';
+import { createServer } from 'vite';
+const dom = new JSDOM('<!doctype html><html><body><div id="root"></div></body></html>', { url: 'http://localhost/course/AKA201' });
+const { window } = dom;
+const { document, localStorage } = window;
+for (const key of ['window', 'document', 'HTMLElement', 'SVGElement', 'Node', 'Event', 'KeyboardEvent', 'MouseEvent', 'PopStateEvent', 'localStorage', 'sessionStorage', 'MutationObserver', 'Element', 'HTMLButtonElement', 'HTMLAnchorElement', 'CustomEvent']) globalThis[key] = dom.window[key];
+Object.defineProperty(globalThis, 'navigator', { value: dom.window.navigator, configurable: true });
+globalThis.getComputedStyle = dom.window.getComputedStyle.bind(dom.window);
+globalThis.requestAnimationFrame = callback => setTimeout(callback, 0); globalThis.cancelAnimationFrame = clearTimeout;
+globalThis.IS_REACT_ACT_ENVIRONMENT = true;
+class Observer { observe() {} unobserve() {} disconnect() {} }
+window.IntersectionObserver = globalThis.IntersectionObserver = Observer; window.ResizeObserver = globalThis.ResizeObserver = Observer;
+window.scrollTo = () => {}; window.HTMLElement.prototype.scrollIntoView = () => {};
+window.matchMedia = () => ({ matches: false, addEventListener() {}, removeEventListener() {} });
+const { default: React, act } = await import('react');
+const { createRoot } = await import('react-dom/client');
+const { Simulate } = await import('react-dom/test-utils');
+const server = await createServer({ root: process.cwd(), cacheDir: path.join(os.tmpdir(), `tutor-learning-${process.pid}`), appType: 'custom', server: { middlewareMode: true }, optimizeDeps: { noDiscovery: true }, logLevel: 'silent' });
+const pause = () => new Promise(resolve => setTimeout(resolve, 40));
+const settle = () => act(pause);
+const button = (text, scope = document) => [...scope.querySelectorAll('button')].find(node => node.textContent.trim() === text);
+const click = node => act(async () => { assert.ok(node, 'button exists'); node.click(); await pause(); });
+const wait = async predicate => { for (let i = 0; i < 200; i++) { if (predicate()) return; await settle(); } assert.fail('Timed out waiting for UI'); };
+let root;
+const originalFetch = globalThis.fetch;
+try {
+  const [{ default: CourseLayout }, { SEMESTERS }, { default: HomeView }, { LEARNING_KEY }, { default: AITutorSettings }, { useGeminiSettings }] = await Promise.all([
+    server.ssrLoadModule('/src/components/course/CourseLayout.tsx'), server.ssrLoadModule('/src/data/courseData.ts'), server.ssrLoadModule('/src/components/HomeView.tsx'), server.ssrLoadModule('/src/lib/learningJournal.ts'),
+    server.ssrLoadModule('/src/components/AITutorSettings.tsx'), server.ssrLoadModule('/src/hooks/useGeminiSettings.ts'),
+  ]);
+  const course = SEMESTERS.flatMap(s => s.groups.flatMap(g => g.courses)).find(c => c.code === 'AKA201');
+  root = createRoot(document.getElementById('root'));
+  const renderCourse = async tab => { await act(async () => { root.render(React.createElement(CourseLayout, { course, initialTab: tab, onBack() {} })); await pause(); }); await wait(() => document.querySelector('#course-next-step-title')); };
+  await renderCourse('tm8-14');
+  assert.match(document.querySelector('#course-next-step-title').textContent, /^TM 9 /, 'Pre-UAS continuation starts in selected phase');
+  await click(button('Lanjut TM 9'));
+  await wait(() => document.querySelector('[data-learning-reading]'));
+  assert.ok(JSON.parse(localStorage.getItem(LEARNING_KEY)).visits.some(v => v.courseCode === 'AKA201' && v.tm === 9));
+  const historyLength = window.history.length;
+  await click(button('Latihan singkat tanpa timer'));
+  assert.equal(window.history.length, historyLength, 'Practice shortcut preserves reading Back history');
+  const short = document.querySelector('[aria-label="Latihan singkat dan tindak lanjut"]');
+  assert.ok(short, 'Short practice is attached to the actual reading');
+  const originalChecks = document.querySelectorAll('.reading-document .layered-self-check').length;
+  await click(button('Mulai latihan singkat (3 soal)', short));
+  assert.equal(short.querySelectorAll('.layered-self-check').length, 3);
+  const first = short.querySelector('.layered-self-check');
+  assert.equal(button('Lihat contoh jawaban', first).disabled, true);
+  await act(async () => { Simulate.change(first.querySelector('textarea'), { target: { value: 'Jawaban latihan yang sengaja saya tulis sendiri.' } }); await pause(); });
+  await click(button('Simpan catatan', first));
+  assert.ok(first.textContent.includes('Catatan tersimpan di browser ini.'));
+  await click(button('Lihat contoh jawaban', first));
+  await click(button('Perlu diulang', first));
+  const stored = JSON.parse(localStorage.getItem(LEARNING_KEY));
+  assert.equal(Object.values(stored.attempts).filter(entry => entry.rating === 'review').length, 1);
+  assert.equal(localStorage.getItem('akuntansi-feb-unair:study-progress') ?? '{}', '{}', 'Trying a question does not mark material complete');
+  await click(button('Tutup latihan', short));
+  assert.equal(document.querySelectorAll('.reading-document .layered-self-check').length, originalChecks, 'Original checks are preserved');
+  await click(button('Ulangi yang masih sulit (1)', short));
+  assert.equal(short.querySelectorAll('.layered-self-check').length, 1);
+  await click(short.querySelector('[data-learning-note] summary'));
+  await click(button('Muat catatan tersimpan', short));
+  assert.equal(short.querySelector('textarea').value, 'Jawaban latihan yang sengaja saya tulis sendiri.');
+  await click(button('Hapus catatan ini', short));
+  assert.equal(Object.keys(JSON.parse(localStorage.getItem(LEARNING_KEY)).attempts).length, 0);
+
+  await act(async () => { root.unmount(); await pause(); }); root = createRoot(document.getElementById('root'));
+  await renderCourse('tm1-7');
+  assert.match(document.querySelector('#course-next-step-title').textContent, /^TM 1 /, 'Recent pre-UAS visit does not override a selected pre-UTS phase');
+  await click(button('TM 9–15'));
+  assert.match(document.querySelector('#course-next-step-title').textContent, /^TM 9 /);
+  const openCalls = [];
+  await act(async () => { root.render(React.createElement(HomeView, { onSelectSemester() {}, onOpenCourseDirectly: (...args) => openCalls.push(args) })); await pause(); });
+  const resume = document.querySelector('[aria-label="Bacaan terakhir"]'); assert.ok(resume);
+  assert.ok(document.querySelector('#continue-learning').getBoundingClientRect().top <= 0);
+  assert.ok(document.querySelector('details')?.textContent.includes('Tentang AkuntansiHub'));
+  assert.equal(document.querySelector('#continue-learning').previousElementSibling, null, 'Returning student sees continuation before hero');
+  await click(resume.querySelector('button'));
+  assert.deepEqual(openCalls[0], ['AKA201', 'tm-9']);
+  const calls = [];
+  globalThis.fetch = async (url, options) => { calls.push({ url, options }); return { ok: true, json: async () => url.includes('/models?') ? { models: [{ name: 'models/gemini-unit', displayName: 'Model uji', supportedGenerationMethods: ['generateContent'] }] } : { modelVersion: 'gemini-unit', candidates: [{ content: { parts: [{ text: 'Terhubung' }] } }] } }; };
+  function SettingsHarness() {
+    const state = useGeminiSettings();
+    return React.createElement(AITutorSettings, { ...state, onSave: state.saveApiKey, onModelChange: state.setModel, onFallbackChange: state.setAllowFallback });
+  }
+  await act(async () => { root.render(React.createElement(SettingsHarness)); await pause(); });
+  assert.equal(button('Cek koneksi').disabled, true);
+  await act(async () => { Simulate.change(document.querySelector('input[type="password"]'), { target: { value: 'unit-test-key' } }); await pause(); });
+  assert.equal(button('Cek koneksi').disabled, false);
+  await click(button('Muat model'));
+  assert.ok(document.querySelector('option[value="gemini-unit"]'));
+  await click(button('Cek koneksi'));
+  assert.ok(document.querySelector('[role="status"]').textContent.includes('Generasi berhasil. Model: gemini-unit'));
+  const countBeforeSave = calls.length;
+  await click(button('Simpan & mulai belajar'));
+  assert.equal(calls.length, countBeforeSave, 'Saving a key does not silently invoke generation');
+  assert.equal(localStorage.getItem('aks1_gemini_api_key'), null, 'Default key stays in memory');
+  const remember = [...document.querySelectorAll('input[type="checkbox"]')][0];
+  await act(async () => { Simulate.change(remember, { target: { checked: true } }); await pause(); });
+  await click(button('Simpan & mulai belajar'));
+  assert.equal(localStorage.getItem('aks1_gemini_api_key'), 'unit-test-key', 'Key is persisted only when requested');
+  globalThis.fetch = async () => ({ ok: false, status: 401, json: async () => ({ error: { message: 'upstream secret-key' } }) });
+  await click(button('Cek koneksi'));
+  assert.ok(document.querySelector('[role="status"]').textContent.includes('Key ditolak'));
+  assert.ok(!document.body.textContent.includes('upstream secret-key'));
+  console.log('Learning and Tutor settings DOM PASS: selected phase, saved notes, review-only practice, restore/delete, no false completion, returning home, model loading, generation probe, opt-in key storage, safe errors.');
+} finally { globalThis.fetch = originalFetch; if (root) await act(async () => root.unmount()); await server.close(); dom.window.close(); }
+// The unauthenticated Supabase singleton retains background timers after DOM teardown.
+process.exit(0);

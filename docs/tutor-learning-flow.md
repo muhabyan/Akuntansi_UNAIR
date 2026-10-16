@@ -1,0 +1,39 @@
+# AI Tutor dan tindak lanjut belajar — 16 Oktober 2026
+
+Pengguna menyetujui perbaikan hasil audit 15 Oktober, lalu memilih tetap memakai API key masing-masing pengguna. Checkout ini terpisah dari pekerjaan SIA yang sedang berlangsung; basis main `45d4db0` sudah memuat PR62. Tidak ada bahan di `sources/`, bacaan, angka, soal, atau kunci jawaban mata kuliah yang diubah.
+
+## Perilaku akhir
+
+- Pengaturan Tutor mendukung key Gemini/Groq, pilihan menyimpan key di browser (default key baru hanya memori sesi), daftar model, dan uji generasi yang jelas memakai kuota. Key lama tetap dapat dibaca. Key tidak dimasukkan ke URL, riwayat, notifikasi atau pesan error.
+- Gemini otomatis memakai alias `gemini-flash-latest`. Alias dapat mengikuti stable/preview/experimental; pilihan versi tertentu tersedia dari daftar API. Groq memakai default yang dikelola aplikasi, bukan klaim alias latest. Model aktual dari respons ditampilkan setelah generasi. ID publik disentralisasi dalam `src/lib/aiClient.ts`.
+- Fallback bersifat opt-in dan hanya untuk model otomatis yang tidak tersedia; memakai satu model cadangan yang dinyatakan dan provider yang sama. Key ditolak, kuota habis, jaringan dan layanan gagal tidak memicu pergantian model. Model yang dipilih tetap tidak berganti diam-diam. Daftar API bukan jaminan harga, sisa kuota atau kualitas jawaban.
+- Timeout 45 detik, riwayat permintaan dibatasi hingga 12 pesan/24.000 karakter, error terpisah dari percakapan, dan coba lagi tidak menggandakan pesan pengguna. Error upstream tidak ditampilkan mentah. Isi riwayat chat lokal dibatasi 60 pesan.
+- Mode Belajar memberi penjelasan bertahap; tidak lagi dipaksa dua kalimat. Mode Navigasi & jadwal menggunakan registry kursus/TM aktual dan hanya menampilkan usulan yang divalidasi. Pengguna harus menekan Jalankan usulan sebelum event aplikasi dikirim. Jadwal tetap memerlukan login dan pemeriksaan kapasitas/bentrok yang sudah ada; UI tidak menyatakan penyimpanan backend berhasil tanpa bukti.
+- Kutipan bersumber dari teks yang dipilih di dokumen belajar atau blok sekitar posisi baca, bukan 15.000 karakter pertama seluruh halaman. Maksimal 9.000 karakter, dapat diperiksa/diperbarui/dinonaktifkan. Mode tindakan tidak mengirim kutipan materi atau daftar jadwal. Pemilihan dalam akun/chat tidak dibaca sebagai materi.
+- Bacaan dengan self-check mempunyai tautan latihan singkat di awal dan sesi hingga tiga pertanyaan di akhir. Pertanyaan/jawaban berasal dari data materi yang sama; tidak dibuat model. Pertanyaan yang ditandai sulit diutamakan dan dapat diulang tersendiri. Tautan bagian asal menuju bagian tempat pertanyaan tersedia, bukan klaim diagnosis otomatis bagian teori yang salah.
+- Catatan jawaban disimpan hanya melalui tombol yang dipilih pengguna; tersedia muat/hapus dan status perlu diulang/sudah bisa menjelaskan. Status adalah penilaian diri, terpisah dari centang selesai serta nilai ujian. Tidak ada auto-grading jawaban bebas atau janji penguasaan. Catatan memakai versi isi bacaan agar jawaban lama tidak dianggap hasil untuk isi yang berubah.
+- Catatan dan riwayat baca disimpan lokal pada perangkat/browser, bukan sinkronisasi akun; batas 200 catatan dan 40 kunjungan mata kuliah. Penyimpanan gagal ditampilkan, bukan dilaporkan berhasil. Catatan lama dapat terlepas dari tampilan setelah isi versi berubah; pengelolaan riwayat lintas versi belum ditambahkan.
+- Rekomendasi pada jalur pra-UTS/pra-UAS menghormati jalur aktif dan kunjungan terakhir yang belum dicentang. Beranda pengguna dengan progres/kunjungan mendahulukan sesi lanjutan; hero tetap tersedia melalui Tentang AkuntansiHub. Pengunjung baru tetap mendapat pengenalan awal.
+- Label/penjelasan biaya, privasi, sumber, dan mode Tutor diselaraskan di panduan. UI memakai gaya yang ada; kontrol tambahan dapat dibuka seperlunya.
+
+## Validasi dan pelindung historis
+
+`scripts/test-ai-tutor.mjs` menguji permintaan provider tiruan, autentikasi, error/timeout/cancel, fallback, pin model, pemotongan riwayat, pemuatan daftar model, penolakan perintah invalid, registry semester lanjut, pengambilan konteks, dan penyimpanan berversi. Tidak memakai key sungguhan.
+
+`scripts/test-learning-flow.mjs` memasang CourseLayout dan data AKA201 asli di DOM: jalur aktif, tiga pertanyaan, simpan/muat/hapus, ulangi sulit, preservasi pertanyaan asli, centang selesai yang tidak berubah, beranda pengguna kembali, lalu UI pengaturan dengan hook asli dan respons API tiruan. Keduanya masuk tes standar.
+
+Pemeriksaan historis MNU307 melindungi hash seluruh komponen bersama pada saat paket dahulu ditulis. Scope baru yang disetujui pengguna memerlukan perubahan **CourseLayout.tsx dan LayeredBlocks.tsx saja** dari daftar tersebut. Field `authorizedTutorLearning20261016` mencatat varian LF/CRLF tepat kedua berkas itu; varian lama dan seluruh pemeriksaan isi/kasus/visual tetap dipertahankan. Bukan pengecualian global atau penggantian baseline buku. Pemeriksaan lanjutan akan gagal untuk perubahan lain yang tidak dicatat.
+
+Validasi: 81/81 tes standar lulus; tes alur/pengaturan diulang setelah perapian pintasan dan kontrol catatan, lulus. Lint seluruh repo (391 TypeScript/TSX), TypeScript dan build produksi lulus. Pratinjau IAB pada lebar 390 dan 1280 memverifikasi rekomendasi pra-UAS TM9, akses sesi singkat, simpan/muat dan status perlu diulang; tidak ada luapan horizontal pada keadaan bacaan yang diperiksa. Panel pengaturan, nama kontrol dan fokus input juga diperiksa tanpa key. Beranda pengguna kembali diperiksa pada DOM dan browser.
+
+Bukti browser lokal disimpan di `../tmp/tutor-learning-proof/`; log `../tmp/tutor-{all-tests-final,learning-dom-final,lint-final,build-final}.log`. Pemanggilan generasi nyata serta saldo/izin akun pengguna belum diperiksa karena tidak tersedia key pengguna; pengujian jaringan memakai respons tiruan. Tidak ada jadwal atau nilai produksi diubah. Situs utama belum diubah oleh cabang ini.
+
+## Rujukan implementasi
+
+- [Versi/alias model Gemini](https://ai.google.dev/gemini-api/docs/models#latest), diperiksa 16 Oktober 2026.
+- [Models API dan supportedGenerationMethods](https://ai.google.dev/api/models).
+- [Error Gemini](https://ai.google.dev/gemini-api/docs/troubleshooting).
+- [Model Groq](https://console.groq.com/docs/models).
+- [API key dan pengelolaan rahasia](https://ai.google.dev/gemini-api/docs/api-key?hl=en).
+
+Mode key sendiri bukan penyimpanan key bersama yang aman di frontend. Bila nanti pengguna memilih layanan key pengelola, diperlukan backend, pembatasan penggunaan dan keputusan anggaran terpisah; tidak termasuk perubahan ini.

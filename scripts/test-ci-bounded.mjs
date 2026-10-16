@@ -6,6 +6,8 @@ const root = process.cwd();
 const timeoutMs = Number(process.env.CI_TEST_TIMEOUT_MS ?? 120_000);
 
 const standardTasks = [
+  ['ai_tutor', 'scripts/test-ai-tutor.mjs'],
+  ['learning_flow', 'scripts/test-learning-flow.mjs'],
   ['table_titles', 'scripts/test-table-titles.mjs'],
   ['reading_lifecycle', 'scripts/test-reading-lifecycle.mjs'],
   ['mnu307_tm01_canonical', 'scripts/test-mnu307-tm01-canonical.mjs'],

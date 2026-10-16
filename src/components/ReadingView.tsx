@@ -11,6 +11,8 @@ import { StatementFull, StatementBuilder } from './StatementBuilder';
 import { InteractiveMatchBuilder, JournalBuilder as InteractiveJournalBuilder, TableFillBuilder, TAccountBuilder } from './InteractivePracticeBuilders';
 import type { Course, ContentBlock, CalloutVariant } from '../types';
 import TTSPlayer from './TTSPlayer';
+import LearningScope from './course/LearningScope';
+import QuickPractice, { QuickPracticeLink } from './course/QuickPractice';
 import CourseHeader from './course/CourseHeader';
 import ReadingOutline, { buildReadingOutline, getReadingBlockId } from './course/ReadingOutline';
 
@@ -432,10 +434,12 @@ export default function ReadingView({ course, tm, onBack, onSelectTm }: ReadingV
   }
 
   return (
+    <LearningScope key={`${course.code}:${tm}`} courseCode={course.code} tm={tm} reading={reading}>
     <div className="-mt-16 mx-auto max-w-7xl px-4 md:px-8">
       <div className="reading-layout grid min-w-0 gap-8 lg:grid-cols-[minmax(0,48rem)_16.5rem] xl:grid-cols-[minmax(0,50rem)_17.5rem] lg:justify-center xl:gap-10">
-        <article className="min-w-0 pb-6">
+        <article data-learning-reading className="min-w-0 pb-6">
           <CourseHeader courseName={course.name} reading={reading} onBack={onBack} />
+          <QuickPracticeLink />
 
           <div className="mb-6"><TTSPlayer title={reading.title} intro={reading.intro} blocks={reading.blocks} /></div>
           <ReadingOutline items={outlineItems} variant="mobile" />
@@ -448,6 +452,7 @@ export default function ReadingView({ course, tm, onBack, onSelectTm }: ReadingV
             ))}
           </div>
 
+          <QuickPractice reading={reading} />
           <footer className="reading-completion mt-14 border-t border-gray-200 pt-7 dark:border-gray-800 md:mt-16 md:pt-8">
             <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-blue-600 dark:text-blue-400">Selesai membaca?</p>
             <h2 className="mt-1.5 text-lg font-bold text-gray-900 dark:text-white">Catat progres, lalu lanjutkan saat siap.</h2>
@@ -469,5 +474,6 @@ export default function ReadingView({ course, tm, onBack, onSelectTm }: ReadingV
         <ReadingOutline items={outlineItems} variant="desktop" />
       </div>
     </div>
+    </LearningScope>
   );
 }
