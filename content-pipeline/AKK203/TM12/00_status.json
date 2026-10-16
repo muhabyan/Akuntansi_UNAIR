@@ -1,0 +1,14 @@
+{
+  "course": "AKK203",
+  "tm": 12,
+  "implementationStatus": "COMPLETE_FOR_DRAFT_REVIEW",
+  "technicalStatus": "PASS",
+  "sourceStatus": "NEEDS_HUMAN_REVIEW",
+  "sourceComplete": false,
+  "canonicalSha256": "78b24fdb1a2db71dc54edf4ce05fd86f51897499f19db167be3f9ba8d75b00d4",
+  "evidence": "../qa-evidence.json",
+  "limitations": [
+    "Final SAK dan DN Bab 3 belum tersedia; latihan menyebut asumsi pengakuan dan format historis.",
+    "Tarif daerah aktual dan ketentuan pemilu spesifik belum ditetapkan; latihan memakai tarif dasar dengan syarat eksplisit."
+  ]
+}

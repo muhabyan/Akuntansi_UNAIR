@@ -1,0 +1,533 @@
+{
+  "retained": [
+    {
+      "id": "aks201-tm08-03",
+      "oldTm": 8,
+      "newTm": 8,
+      "oldFront": "Permendagri No. 77 Tahun 2020",
+      "newFront": "Permendagri No. 77 Tahun 2020",
+      "reason": "Konsep inti sama; uraian sumber/batas diperjelas dan TM mengikuti RPP."
+    },
+    {
+      "id": "aks201-tm08-05",
+      "oldTm": 8,
+      "newTm": 8,
+      "oldFront": "Satuan Kerja Perangkat Daerah (SKPD)",
+      "newFront": "Satuan Kerja Perangkat Daerah (SKPD)",
+      "reason": "Konsep inti sama; uraian sumber/batas diperjelas dan TM mengikuti RPP."
+    },
+    {
+      "id": "aks201-tm08-06",
+      "oldTm": 8,
+      "newTm": 8,
+      "oldFront": "Hubungan Kantor Pusat - Kantor Cabang (HO-BO)",
+      "newFront": "Akun timbal balik SKPD dan PPKD",
+      "reason": "Konsep inti sama; uraian sumber/batas diperjelas dan TM mengikuti RPP."
+    },
+    {
+      "id": "aks201-tm09-01",
+      "oldTm": 9,
+      "newTm": 9,
+      "oldFront": "Konsep Value for Money (3E)",
+      "newFront": "Konsep Value for Money (3 E)",
+      "reason": "Konsep inti sama; uraian sumber/batas diperjelas dan TM mengikuti RPP."
+    },
+    {
+      "id": "aks201-tm09-02",
+      "oldTm": 9,
+      "newTm": 9,
+      "oldFront": "Definisi Ekonomis (Economy)",
+      "newFront": "Definisi Ekonomis (Economy)",
+      "reason": "Konsep inti sama; uraian sumber/batas diperjelas dan TM mengikuti RPP."
+    },
+    {
+      "id": "aks201-tm09-03",
+      "oldTm": 9,
+      "newTm": 9,
+      "oldFront": "Definisi Efisiensi (Efficiency)",
+      "newFront": "Definisi Efisiensi (Efficiency)",
+      "reason": "Konsep inti sama; uraian sumber/batas diperjelas dan TM mengikuti RPP."
+    },
+    {
+      "id": "aks201-tm09-04",
+      "oldTm": 9,
+      "newTm": 9,
+      "oldFront": "Definisi Efektivitas (Effectiveness)",
+      "newFront": "Definisi Efektivitas (Effectiveness)",
+      "reason": "Konsep inti sama; uraian sumber/batas diperjelas dan TM mengikuti RPP."
+    },
+    {
+      "id": "aks201-tm09-05",
+      "oldTm": 9,
+      "newTm": 9,
+      "oldFront": "Sistem Akuntabilitas Kinerja Instansi Pemerintah (SAKIP)",
+      "newFront": "Sistem Akuntabilitas Kinerja Instansi Pemerintah (SAKIP)",
+      "reason": "Konsep inti sama; uraian sumber/batas diperjelas dan TM mengikuti RPP."
+    },
+    {
+      "id": "aks201-tm09-06",
+      "oldTm": 9,
+      "newTm": 9,
+      "oldFront": "Indikator Kinerja Utama (IKU / KPI)",
+      "newFront": "Indikator Kinerja Utama (IKU / KPI)",
+      "reason": "Konsep inti sama; uraian sumber/batas diperjelas dan TM mengikuti RPP."
+    },
+    {
+      "id": "aks201-tm10-01",
+      "oldTm": 10,
+      "newTm": 10,
+      "oldFront": "Peran BPK RI (Badan Pemeriksa Keuangan)",
+      "newFront": "Peran BPK RI (Badan Pemeriksa Keuangan)",
+      "reason": "Konsep inti sama; uraian sumber/batas diperjelas dan TM mengikuti RPP."
+    },
+    {
+      "id": "aks201-tm10-02",
+      "oldTm": 10,
+      "newTm": 10,
+      "oldFront": "Aparat Pengawasan Intern Pemerintah (APIP)",
+      "newFront": "Aparat Pengawasan Intern Pemerintah (APIP)",
+      "reason": "Konsep inti sama; uraian sumber/batas diperjelas dan TM mengikuti RPP."
+    },
+    {
+      "id": "aks201-tm10-03",
+      "oldTm": 10,
+      "newTm": 10,
+      "oldFront": "Tiga Jenis Pemeriksaan BPK RI",
+      "newFront": "Tiga Jenis Pemeriksaan BPK RI",
+      "reason": "Konsep inti sama; uraian sumber/batas diperjelas dan TM mengikuti RPP."
+    },
+    {
+      "id": "aks201-tm10-04",
+      "oldTm": 10,
+      "newTm": 10,
+      "oldFront": "Empat Jenis Opini BPK atas Laporan Keuangan",
+      "newFront": "Empat Jenis Opini BPK atas Laporan Keuangan",
+      "reason": "Konsep inti sama; uraian sumber/batas diperjelas dan TM mengikuti RPP."
+    },
+    {
+      "id": "aks201-tm11-03",
+      "oldTm": 11,
+      "newTm": 12,
+      "oldFront": "Akuntansi Partai Politik (UU No. 2/2011)",
+      "newFront": "Akuntansi Partai Politik (UU No. 2/2011)",
+      "reason": "Konsep inti sama; uraian sumber/batas diperjelas dan TM mengikuti RPP."
+    },
+    {
+      "id": "aks201-tm12-01",
+      "oldTm": 12,
+      "newTm": 13,
+      "oldFront": "Definisi Badan Layanan Umum (BLU/BLUD)",
+      "newFront": "BLU/BLUD dan fokus layanan",
+      "reason": "Konsep inti sama; uraian sumber/batas diperjelas dan TM mengikuti RPP."
+    }
+  ],
+  "new": [
+    {
+      "id": "akk203-uas-tm08-01",
+      "tm": 8,
+      "front": "Komponen SAPP",
+      "reason": "Konsep baru atau makna lama berubah; tidak meminjam identitas SRS lama."
+    },
+    {
+      "id": "akk203-uas-tm08-02",
+      "tm": 8,
+      "front": "SAI dan UAPA",
+      "reason": "Konsep baru atau makna lama berubah; tidak meminjam identitas SRS lama."
+    },
+    {
+      "id": "akk203-uas-tm08-06",
+      "tm": 8,
+      "front": "Eliminasi akun LRA pusat",
+      "reason": "Konsep baru atau makna lama berubah; tidak meminjam identitas SRS lama."
+    },
+    {
+      "id": "akk203-uas-tm10-05",
+      "tm": 10,
+      "front": "Tenggat jawaban tindak lanjut",
+      "reason": "Konsep baru atau makna lama berubah; tidak meminjam identitas SRS lama."
+    },
+    {
+      "id": "akk203-uas-tm10-06",
+      "tm": 10,
+      "front": "Transisi SPKN 2026",
+      "reason": "Konsep baru atau makna lama berubah; tidak meminjam identitas SRS lama."
+    },
+    {
+      "id": "akk203-uas-tm11-01",
+      "tm": 11,
+      "front": "LSM dan badan hukum",
+      "reason": "Konsep baru atau makna lama berubah; tidak meminjam identitas SRS lama."
+    },
+    {
+      "id": "akk203-uas-tm11-02",
+      "tm": 11,
+      "front": "ISAK 335 dan pengakuan",
+      "reason": "Konsep baru atau makna lama berubah; tidak meminjam identitas SRS lama."
+    },
+    {
+      "id": "akk203-uas-tm11-03",
+      "tm": 11,
+      "front": "Dua kelas aset neto",
+      "reason": "Konsep baru atau makna lama berubah; tidak meminjam identitas SRS lama."
+    },
+    {
+      "id": "akk203-uas-tm11-04",
+      "tm": 11,
+      "front": "Pembebasan pembatasan",
+      "reason": "Konsep baru atau makna lama berubah; tidak meminjam identitas SRS lama."
+    },
+    {
+      "id": "akk203-uas-tm11-05",
+      "tm": 11,
+      "front": "Hubungan laporan nonlaba",
+      "reason": "Konsep baru atau makna lama berubah; tidak meminjam identitas SRS lama."
+    },
+    {
+      "id": "akk203-uas-tm11-06",
+      "tm": 11,
+      "front": "Ambang audit yayasan",
+      "reason": "Konsep baru atau makna lama berubah; tidak meminjam identitas SRS lama."
+    },
+    {
+      "id": "akk203-uas-tm12-02",
+      "tm": 12,
+      "front": "Audit tahunan entitas partai",
+      "reason": "Konsep baru atau makna lama berubah; tidak meminjam identitas SRS lama."
+    },
+    {
+      "id": "akk203-uas-tm12-03",
+      "tm": 12,
+      "front": "Sumbangan orang bukan anggota",
+      "reason": "Konsep baru atau makna lama berubah; tidak meminjam identitas SRS lama."
+    },
+    {
+      "id": "akk203-uas-tm12-04",
+      "tm": 12,
+      "front": "Sumbangan perusahaan/badan usaha",
+      "reason": "Konsep baru atau makna lama berubah; tidak meminjam identitas SRS lama."
+    },
+    {
+      "id": "akk203-uas-tm12-05",
+      "tm": 12,
+      "front": "Bantuan berdasarkan suara",
+      "reason": "Konsep baru atau makna lama berubah; tidak meminjam identitas SRS lama."
+    },
+    {
+      "id": "akk203-uas-tm12-06",
+      "tm": 12,
+      "front": "LPJ bantuan dan kas entitas",
+      "reason": "Konsep baru atau makna lama berubah; tidak meminjam identitas SRS lama."
+    },
+    {
+      "id": "akk203-uas-tm13-02",
+      "tm": 13,
+      "front": "Tujuh laporan BLU",
+      "reason": "Konsep baru atau makna lama berubah; tidak meminjam identitas SRS lama."
+    },
+    {
+      "id": "akk203-uas-tm13-03",
+      "tm": 13,
+      "front": "LRA dan LO layanan",
+      "reason": "Konsep baru atau makna lama berubah; tidak meminjam identitas SRS lama."
+    },
+    {
+      "id": "akk203-uas-tm13-04",
+      "tm": 13,
+      "front": "Sistem BLU pusat terbaru dalam paket",
+      "reason": "Konsep baru atau makna lama berubah; tidak meminjam identitas SRS lama."
+    },
+    {
+      "id": "akk203-uas-tm13-05",
+      "tm": 13,
+      "front": "Konsolidasi BLU",
+      "reason": "Konsep baru atau makna lama berubah; tidak meminjam identitas SRS lama."
+    },
+    {
+      "id": "akk203-uas-tm13-06",
+      "tm": 13,
+      "front": "Ambang fleksibilitas BLUD",
+      "reason": "Konsep baru atau makna lama berubah; tidak meminjam identitas SRS lama."
+    },
+    {
+      "id": "akk203-uas-tm14-01",
+      "tm": 14,
+      "front": "Randomisasi dalam penelitian",
+      "reason": "Konsep baru atau makna lama berubah; tidak meminjam identitas SRS lama."
+    },
+    {
+      "id": "akk203-uas-tm14-02",
+      "tm": 14,
+      "front": "Proksi percent missing Olken",
+      "reason": "Konsep baru atau makna lama berubah; tidak meminjam identitas SRS lama."
+    },
+    {
+      "id": "akk203-uas-tm14-03",
+      "tm": 14,
+      "front": "Efek jalan model tanpa efek tetap",
+      "reason": "Konsep baru atau makna lama berubah; tidak meminjam identitas SRS lama."
+    },
+    {
+      "id": "akk203-uas-tm14-04",
+      "tm": 14,
+      "front": "Sampel desain dan analisis",
+      "reason": "Konsep baru atau makna lama berubah; tidak meminjam identitas SRS lama."
+    },
+    {
+      "id": "akk203-uas-tm14-05",
+      "tm": 14,
+      "front": "Validitas internal dan eksternal",
+      "reason": "Konsep baru atau makna lama berubah; tidak meminjam identitas SRS lama."
+    },
+    {
+      "id": "akk203-uas-tm14-06",
+      "tm": 14,
+      "front": "Kerangka ulasan penelitian",
+      "reason": "Konsep baru atau makna lama berubah; tidak meminjam identitas SRS lama."
+    }
+  ],
+  "retired": [
+    {
+      "id": "aks201-tm08-01",
+      "phase": "pra-uas",
+      "tm": 8,
+      "topic": "Sistem Akuntansi Pemerintah Pusat (SAPP) & Daerah (SAPD)",
+      "category": "Klasifikasi",
+      "front": "Sistem Akuntansi Pemerintah Pusat (SAPP)",
+      "back": "Terdiri dari: Si AP (Sistem Akuntansi Bendahara Umum Negara) dan SAI (Sistem Akuntansi Instansi pada tiap Kementerian/Lembaga)."
+    },
+    {
+      "id": "aks201-tm08-02",
+      "phase": "pra-uas",
+      "tm": 8,
+      "topic": "Sistem Akuntansi Pemerintah Pusat (SAPP) & Daerah (SAPD)",
+      "category": "Mekanisme",
+      "front": "Aplikasi SPAN & SAKTI di Kemenkeu",
+      "back": "Sistem Perbendaharaan dan Anggaran Negara (SPAN) dan SAKTI mengintegrasikan proses penganggaran, komitmen, pembayaran, dan akuntansi secara real-time."
+    },
+    {
+      "id": "aks201-tm08-04",
+      "phase": "pra-uas",
+      "tm": 8,
+      "topic": "Sistem Akuntansi Pemerintah Pusat (SAPP) & Daerah (SAPD)",
+      "category": "Mekanisme",
+      "front": "Pejabat Pengelola Keuangan Daerah (PPKD)",
+      "back": "Kepala BPKAD yang bertindak sebagai Bendahara Umum Daerah (BUD) dan menyusun laporan keuangan konsolidasian Pemda."
+    },
+    {
+      "id": "aks201-tm10-05",
+      "phase": "pra-uas",
+      "tm": 10,
+      "topic": "Audit Sektor Publik: APIP & BPK RI",
+      "category": "Hukum",
+      "front": "Standar Pemeriksaan Keuangan Negara (SPKN)",
+      "back": "Peraturan BPK No. 1/2017 yang menjadi panduan baku bagi seluruh auditor dalam melaksanakan penugasan pemeriksaan keuangan negara."
+    },
+    {
+      "id": "aks201-tm10-06",
+      "phase": "pra-uas",
+      "tm": 10,
+      "topic": "Audit Sektor Publik: APIP & BPK RI",
+      "category": "Konsep",
+      "front": "Tindak Lanjut Hasil Pemeriksaan (TLHP)",
+      "back": "Pejabat yang diperiksa wajib menindaklanjuti rekomendasi laporan pemeriksaan BPK dalam waktu paling lambat 60 hari."
+    },
+    {
+      "id": "aks201-tm11-01",
+      "phase": "pra-uas",
+      "tm": 11,
+      "topic": "Akuntansi Nirlaba, Parpol & Keuangan Desa",
+      "category": "Hukum",
+      "front": "Akuntansi Dana Desa (UU No. 6/2014)",
+      "back": "Pengelolaan keuangan dan pendapatan desa (APBDesa) bersumber dari Dana Desa (APBN), Alokasi Dana Desa (APBD), dan PADes."
+    },
+    {
+      "id": "aks201-tm11-02",
+      "phase": "pra-uas",
+      "tm": 11,
+      "topic": "Akuntansi Nirlaba, Parpol & Keuangan Desa",
+      "category": "Mekanisme",
+      "front": "Aplikasi SISKEUDES",
+      "back": "Sistem Informasi Keuangan Desa yang dikembangkan BPKP dan Kemendagri untuk memudahkan tata kelola dan pelaporan keuangan desa."
+    },
+    {
+      "id": "aks201-tm11-04",
+      "phase": "pra-uas",
+      "tm": 11,
+      "topic": "Akuntansi Nirlaba, Parpol & Keuangan Desa",
+      "category": "Hukum",
+      "front": "Transparansi Donasi Politik",
+      "back": "Partai politik dilarang menerima sumbangan dari pihak anonim, BUMN, atau asing, dan wajib membatasi batas sumbangan individu/korporasi."
+    },
+    {
+      "id": "aks201-tm11-05",
+      "phase": "pra-uas",
+      "tm": 11,
+      "topic": "Akuntansi Nirlaba, Parpol & Keuangan Desa",
+      "category": "Konsep",
+      "front": "Laporan Dana Kampanye",
+      "back": "Laporan Awal Dana Kampanye (LADK) dan Laporan Penerimaan dan Pengeluaran Dana Kampanye (LPPDK) yang diaudit KAP independen."
+    },
+    {
+      "id": "aks201-tm11-06",
+      "phase": "pra-uas",
+      "tm": 11,
+      "topic": "Akuntansi Nirlaba, Parpol & Keuangan Desa",
+      "category": "Konsep",
+      "front": "Akuntansi Rumah Sakit Nonlaba",
+      "back": "Penerapan ISAK 35 dengan pemisahan pendapatan operasional pelayanan medis, hibah bersyarat, dan donasi alat kesehatan."
+    },
+    {
+      "id": "aks201-tm12-02",
+      "phase": "pra-uas",
+      "tm": 12,
+      "topic": "Pengelolaan Keuangan BLU & BLUD (PP 23/2005)",
+      "category": "Konsep",
+      "front": "Fleksibilitas Pengelolaan Keuangan BLU",
+      "back": "Pendapatan fungsional non-pajak (tarif layanan) dapat langsung digunakan untuk belanja operasional tanpa harus disetor dulu ke kas negara."
+    },
+    {
+      "id": "aks201-tm12-03",
+      "phase": "pra-uas",
+      "tm": 12,
+      "topic": "Pengelolaan Keuangan BLU & BLUD (PP 23/2005)",
+      "category": "Konsep",
+      "front": "Remunerasi Pegawai BLU",
+      "back": "BLU dapat memberikan remunerasi bagi pejabat dan pegawai berdasarkan tingkat tanggung jawab dan tuntutan profesionalisme."
+    },
+    {
+      "id": "aks201-tm12-04",
+      "phase": "pra-uas",
+      "tm": 12,
+      "topic": "Pengelolaan Keuangan BLU & BLUD (PP 23/2005)",
+      "category": "Standar",
+      "front": "PSAP 13: Akuntansi Badan Layanan Umum",
+      "back": "Standar akuntansi yang mengatur penyusunan laporan keuangan BLU yang dikonsolidasikan ke kementerian pembina."
+    },
+    {
+      "id": "aks201-tm12-05",
+      "phase": "pra-uas",
+      "tm": 12,
+      "topic": "Pengelolaan Keuangan BLU & BLUD (PP 23/2005)",
+      "category": "Contoh",
+      "front": "Contoh Entitas BLU / BLUD",
+      "back": "Perguruan Tinggi Negeri Badan Layanan Umum (PTN-BLU), Rumah Sakit Umum Daerah (RSUD BLUD), dan Politeknik Kedinasan."
+    },
+    {
+      "id": "aks201-tm12-06",
+      "phase": "pra-uas",
+      "tm": 12,
+      "topic": "Pengelolaan Keuangan BLU & BLUD (PP 23/2005)",
+      "category": "Mekanisme",
+      "front": "Ambang Batas Belanja (Flexibility Budget Threshold)",
+      "back": "Persentase toleransi pelampauan pagu belanja anggaran operasional BLU yang ditetapkan Menteri Keuangan/Kepala Daerah."
+    },
+    {
+      "id": "aks201-tm13-01",
+      "phase": "pra-uas",
+      "tm": 13,
+      "topic": "Isu Kontemporer Akuntansi Sektor Publik",
+      "category": "Konsep",
+      "front": "Sistem Pemerintahan Berbasis Elektronik (SPBE)",
+      "back": "Penyelenggaraan tata kelola pemerintahan yang memanfaatkan teknologi informasi dan komunikasi terintegrasi (Perpres 95/2018)."
+    },
+    {
+      "id": "aks201-tm13-02",
+      "phase": "pra-uas",
+      "tm": 13,
+      "topic": "Isu Kontemporer Akuntansi Sektor Publik",
+      "category": "Konsep",
+      "front": "Pengadaan Barang/Jasa Elektronik (e-Catalog LKPP)",
+      "back": "Digitalisasi pengadaan pemerintah melalui e-Purchasing untuk menekan celah korupsi dan meningkatkan efisiensi belanja APBN/APBD."
+    },
+    {
+      "id": "aks201-tm13-03",
+      "phase": "pra-uas",
+      "tm": 13,
+      "topic": "Isu Kontemporer Akuntansi Sektor Publik",
+      "category": "Konsep",
+      "front": "Akuntansi Aset Warisan Budaya (Heritage Assets)",
+      "back": "Perlakuan akuntansi atas monumen, candi, dan situs bersejarah yang sulit diukur nilai pasarnya namun wajib diungkapkan di Ca LK."
+    },
+    {
+      "id": "aks201-tm13-04",
+      "phase": "pra-uas",
+      "tm": 13,
+      "topic": "Isu Kontemporer Akuntansi Sektor Publik",
+      "category": "Konsep",
+      "front": "Sustainability Reporting di Sektor Publik",
+      "back": "Penerapan inisiatif Green Budgeting (Penandaan Anggaran Perubahan Iklim / Climate Budget Tagging) pada APBN."
+    },
+    {
+      "id": "aks201-tm13-05",
+      "phase": "pra-uas",
+      "tm": 13,
+      "topic": "Isu Kontemporer Akuntansi Sektor Publik",
+      "category": "Konsep",
+      "front": "Fraud di Sektor Publik & Pengadaan",
+      "back": "Modus mark-up harga, proyek fiktif, gratifikasi tender, dan korupsi dana bantuan sosial yang ditangani oleh KPK, Kejaksaan, dan BPKP."
+    },
+    {
+      "id": "aks201-tm13-06",
+      "phase": "pra-uas",
+      "tm": 13,
+      "topic": "Isu Kontemporer Akuntansi Sektor Publik",
+      "category": "Konsep",
+      "front": "Penerapan PSAK Non-Laba Internasional (IPSAS)",
+      "back": "International Public Sector Accounting Standards (IPSAS) sebagai kiblat konvergensi SAP akrual Indonesia di masa depan."
+    },
+    {
+      "id": "aks201-tm14-01",
+      "phase": "pra-uas",
+      "tm": 14,
+      "topic": "Review Komprehensif UAS Akuntansi Sektor Publik",
+      "category": "Konsep",
+      "front": "Fokus Utama Ujian Akhir Semester (UAS)",
+      "back": "Kuasai SAPP vs SAPD (Jurnal RK-PPKD dan RK-SKPD), Akuntansi BLU/BLUD, Audit BPK (SPKN & jenis opini), serta Indikator 3E Value for Money."
+    },
+    {
+      "id": "aks201-tm14-02",
+      "phase": "pra-uas",
+      "tm": 14,
+      "topic": "Review Komprehensif UAS Akuntansi Sektor Publik",
+      "category": "Jurnal",
+      "front": "Jurnal Penerimaan Kas Pajak di Daerah",
+      "back": "SKPD mencatat: Debit Kas di Bendahara Penerimaan; Kredit Pendapatan Pajak-LO (Finansial) dan Perubahan SAL (Anggaran)."
+    },
+    {
+      "id": "aks201-tm14-03",
+      "phase": "pra-uas",
+      "tm": 14,
+      "topic": "Review Komprehensif UAS Akuntansi Sektor Publik",
+      "category": "Jurnal",
+      "front": "Jurnal Transfer Dana dari BUD ke SKPD",
+      "back": "SKPD: Debit Kas di Bendahara Pengeluaran; Kredit RK PPKD. PPKD: Debit RK SKPD; Kredit Kas di Kas Daerah."
+    },
+    {
+      "id": "aks201-tm14-04",
+      "phase": "pra-uas",
+      "tm": 14,
+      "topic": "Review Komprehensif UAS Akuntansi Sektor Publik",
+      "category": "Rumus",
+      "front": "Analisis Kasus Kinerja Value for Money",
+      "back": "Hitung rasio efisiensi (Biaya Aktual / Biaya Anggaran Ã— 100%) dan efektivitas (Output Aktual / Target Output Ã— 100%)."
+    },
+    {
+      "id": "aks201-tm14-05",
+      "phase": "pra-uas",
+      "tm": 14,
+      "topic": "Review Komprehensif UAS Akuntansi Sektor Publik",
+      "category": "Konsep",
+      "front": "Kriteria Perolehan Opini WTP BPK",
+      "back": "(1) Kesesuaian dengan SAP, (2) Kecukupan pengungkapan, (3) Kepatuhan perundang-undangan, dan (4) Efektivitas sistem pengendalian intern (SPI)."
+    },
+    {
+      "id": "aks201-tm14-06",
+      "phase": "pra-uas",
+      "tm": 14,
+      "topic": "Review Komprehensif UAS Akuntansi Sektor Publik",
+      "category": "Konsep",
+      "front": "Saran Ujian Akhir Semester ASP",
+      "back": "Pahami posisi akun dalam laporan keuangan: jangan mencampuradukkan pendapatan LRA dengan pendapatan LO pada lembar jawaban ujian."
+    }
+  ]
+}

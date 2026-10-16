@@ -1,0 +1,18 @@
+{
+  "tm": 8,
+  "canonicalSha256": "5b765a2a24d954f0ad0bc3083d3b9ce062d675790e33997082eac57456e8ab54",
+  "sourceStatus": "NEEDS_HUMAN_REVIEW",
+  "sourceComplete": false,
+  "visuals": 5,
+  "quiz": 9,
+  "cards": 6,
+  "cases": 2,
+  "independentChecks": "scripts/test-akk203-pra-uas.mjs",
+  "renderChecks": "scripts/test-akk203-pra-uas-render.mjs",
+  "browserChecks": "scripts/test-akk203-pra-uas-browser.mjs",
+  "technicalEvidence": "../qa-evidence.json",
+  "limitations": [
+    "DN Bab 10 belum tersedia penuh. IBS edisi 2 ditemukan melalui penerbit: pengantar dan Bab 1 terbaca pada pratinjau cetakan 2019, tetapi Bab 2 penugasan belum terbaca penuh. Tahun/cetakan RPP 2011 dipisahkan dari versi yang diakses.",
+    "Format sumber daerah bertanda xxx; angka latihan adalah asumsi, tanpa kode BAS historis."
+  ]
+}

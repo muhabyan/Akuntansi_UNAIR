@@ -1,0 +1,14 @@
+{
+  "course": "AKK203",
+  "tm": 11,
+  "implementationStatus": "COMPLETE_FOR_DRAFT_REVIEW",
+  "technicalStatus": "PASS",
+  "sourceStatus": "NEEDS_HUMAN_REVIEW",
+  "sourceComplete": false,
+  "canonicalSha256": "a2fa365be167fc4792ab486033e383dddfb664ac24306153b5fd1ad561123ac4",
+  "evidence": "../qa-evidence.json",
+  "limitations": [
+    "Teks final SAK/ISAK 335 dan amendemen 2026 belum tersedia utuh; ilustrasi DE 2018 tidak membuktikan kepatuhan aktual.",
+    "DN Bab 3 dan bahan dosen pasca-UTS belum tersedia; contoh buku belum teraudit."
+  ]
+}

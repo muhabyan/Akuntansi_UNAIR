@@ -155,7 +155,6 @@ const COURSES_DATA = {
     ]
   },
 
-
 };
 
 // Eksekusi penulisan file

@@ -559,7 +559,7 @@ async function resolveCourseContent(courseCode: string): Promise<LoadedCourseCon
     case 'AKK203':
     case 'AKS201': {
       const module = await import('../asp/aspData');
-      const { ASP_ACTIVE_READINGS } = await import('../asp/elaboratedReadings');
+      const { ASP_ACTIVE_READINGS } = await import('../asp/activeReadings');
       return { readings: ASP_ACTIVE_READINGS, reviews: module.AKS201_REVIEW_READINGS };
     }
     case 'MNK102':

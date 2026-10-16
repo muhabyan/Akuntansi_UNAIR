@@ -12,6 +12,17 @@ export interface AppRelease {
 
 export const RELEASES: AppRelease[] = [
   {
+    version: 'v1.3.9',
+    date: '14 Oktober 2026',
+    headline: 'Akuntansi Sektor Publik menuju UAS sesuai RPP',
+    notes: [
+      'AKK203 TM8-14 memuat sistem pusat/daerah, kinerja, audit, LSM, partai politik, BLU/BLUD dan pembacaan penelitian. Ulasan UAS tersedia terpisah.',
+      'Tersedia 60 kuis, 42 flashcard dan 14 kasus dengan rujukan, langkah hitungan serta asumsi latihan. Identitas kartu dipertahankan ketika maknanya tetap.',
+      'Diagram, tabel dan grafik menjelaskan basis laporan, konsolidasi, pengukuran kinerja serta batas hasil penelitian. Versi aturan lama dan pembaruan dipisahkan.',
+      'Buku RPP, teks final SAK/ISAK 335 dan daftar artikel dosen masih perlu dilengkapi. Laporan audit mencatat celah sumber; materi pra-UTS dipertahankan.',
+    ],
+  },
+  {
     version: 'v1.3.8',
     date: '13 Oktober 2026',
     headline: 'Pengantar Manajemen menuju UAS sesuai RPP',

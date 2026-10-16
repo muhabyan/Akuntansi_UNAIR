@@ -1,0 +1,95 @@
+{
+  "tm": 15,
+  "title": "Ulasan pra-UAS ASP: Hubungan Sistem, Laporan dan Bukti",
+  "ref": "RPP ASP TM 8-14; register sumber paket AKK 203",
+  "intro": "Gunakan ulasan ini setelah membaca Inti setiap pertemuan. Bandingkan entitas, periode, basis laporan dan bukti sebelum memilih rumus atau aturan.",
+  "layout": "layered",
+  "coreReadingMinutes": 10,
+  "objectives": [
+    "Memilih kerangka sesuai entitas",
+    "Menghubungkan laporan dan bukti",
+    "Memeriksa hitungan dan batas kesimpulan"
+  ],
+  "blocks": [
+    {
+      "kind": "section",
+      "layer": "fondasi",
+      "title": "Kilat",
+      "blocks": [
+        {
+          "kind": "ul",
+          "items": [
+            "SAPP/SAPD: tentukan sistem, entitas dan konsolidasi.",
+            "Kinerja/audit: ukuran, bukti dan ketidakpastian.",
+            "LSM/parpol/BLU: bedakan kerangka, laporan entitas dan dana tertentu.",
+            "Riset: identifikasi desain, proksi, model dan batas generalisasi."
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "layer": "main",
+      "title": "Peta Inti dan pemeriksaan",
+      "blocks": [
+        {
+          "kind": "table",
+          "title": "Tujuh pertemuan, tujuh keputusan",
+          "headers": [
+            "TM",
+            "Pertanyaan inti",
+            "Rujukan bacaan"
+          ],
+          "rows": [
+            [
+              "8",
+              "SAPP: dua jalur dengan fungsi berbeda",
+              "[PMK 217/PMK.05/2022 Ps.2-3,20-26,37-40; cetak/PDF 10-11,20-23,25-27](https://jdih.kemenkeu.go.id/api/download/84e2ae15-d735-487c-af36-e81644ee4b58/217~PMK.05~2022Per.pdf#page=10) | [Permendagri 64/2013 Lampiran II bagian j; cetak 33-37, PDF 71-75](https://peraturan.bpk.go.id/Details/111750/permendagri-no-64-tahun-2013) | [PMK 100/2025 Ps.6-7 dan Lampiran II. A.13; cetak/PDF 4,18-19](https://jdih.kemenkeu.go.id/api/download/29cc2a09-15f9-4155-9a87-88b9023ce686/2025pmkeuangan100.pdf#page=4) | [Permendagri 64/2013 Ps.4-6; PDF 5-6; Permendagri 77/2020 Lampiran Bab VII](https://peraturan.bpk.go.id/Details/111750/permendagri-no-64-tahun-2013)"
+            ],
+            [
+              "9",
+              "Kinerja: hubungkan sumber daya dengan hasil",
+              "[Perpres 29/2014 Ps.5,9,15-18,24; cetak/PDF 6,8,10-11,13](https://peraturan.bpk.go.id/Download/262284/Perpres%20Nomor%2029%20Tahun%202014.pdf#page=6) | [Permen PAN-RB 53/2014 Lampiran II. A-F dan Anak Lampiran II/1; cetak 15-18, PDF 19-22](https://peraturan.bpk.go.id/Download/123556/PERMENPAN%20NOMOR%2053%20TAHUN%202014.pdf#page=19) | [Permen PAN-RB 88/2021 Lampiran I. B dan III. B.1; cetak/PDF 8,20-24](https://peraturan.bpk.go.id/Download/196187/Permen%20PANRB%20No.%2088%20Tahun%202021.pdf#page=8) | [ISSAI 300 par.11, versi editorial IFPP 2019; PP 60/2008 Ps.50(2), cetak/PDF 23](https://peraturan.go.id/files/pp60-2008.pdf#page=23)"
+            ],
+            [
+              "10",
+              "APIP dan BPK: posisi dan tanggung jawab",
+              "[UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28](https://peraturan.bpk.go.id/Details/40509/uu-no-15-tahun-2004) | [PP 60/2008 Ps.2-3,47-54; cetak/PDF 3-4,21-25](https://peraturan.go.id/files/pp60-2008.pdf#page=3) | [Peraturan BPK 1/2017 Ps.3-5 dan KK par.14,18,21-42; cetak4-5,5-13 KK; PDF 4-5,17-25](https://peraturan.bpk.go.id/Download/20433/Peraturan%20BPK%20Nomor%201%20Tahun%202017.pdf) | [Peraturan BPK 1/2026 Ps.7-9; cetak/PDF 3-4; diundangkan10 April2026, berlaku10 April2028](https://peraturan.bpk.go.id/Download/411430/Salinan%20PBPK%201%20Tahun%202026.pdf#page=3)"
+            ],
+            [
+              "11",
+              "LSM: tentukan bentuk badan dan kerangka laporan",
+              "[UU 16/2001 Ps.48-50; cetak/PDF 15-16; UU 28/2004 Ps. I angka16 perubahanPs.52; cetak/PDF 9-10](https://peraturan.bpk.go.id/Download/30439/UU%20Nomor%2028%20Tahun%202004.pdf#page=15) | [IAI DE ISAK 35(2018) par.7-12, CI 01-04; cetak35.1-35.5, PDF 15-19; contoh historis, bukan teks standar final](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=15) | [IAI DE ISAK 35(2018) contoh posisi keuangan/penghasilan/perubahan aset neto/arus kas/Ca LK; cetak35.6-35.19, PDF 20-33; historis](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=20) | [IAI penomoran efektif 1 Januari2024: ISAK 35→335; IAI pengesahan amendemen 3 Juni2026; PSAK 118 efektif 1 Januari2027 menurut pengumuman18 Juni2025](https://web.iaiglobal.or.id/Berita-IAI/detail/pengesahan_amendemen_isak_335)"
+            ],
+            [
+              "12",
+              "Sumber dana partai dan tujuan pencatatan",
+              "[UU 2/2008 sebagaimana diubah UU 2/2011 Ps.34,34A,35,39; cetak/PDF 10-12 UU 2/2011](https://peraturan.bpk.go.id/Download/224586/UU%20No.%202%20Tahun%202011.pdf) | [PP 5/2009 sebagaimana diubah PP 1/2018 Ps.5,9,16; cetak/PDF 2-4 PP 1/2018](https://peraturan.bpk.go.id/Download/76860/PP%20Nomor%201%20Tahun%202018.pdf#page=2) | [Permendagri 36/2018 Ps.27-37 dan lampiran LPJ; cetak/PDF 18-22,31-34; dibaca bersama perubahan 78/2020](https://peraturan.go.id/files/bn630-2018.pdf#page=18) | [IAI DE ISAK 35(2018) CI 01-04 dan contoh laporan, PDF 19-33; ilustrasi penyajian historis, pengakuan diasumsikan dalam latihan](https://web.iaiglobal.or.id/assets/files/file_berita/DE%20ISAK%2035.pdf#page=19) | [Permendagri 78/2020 perubahan Ps.8-9A,28A,29-29A,37,39A; cetak/PDF 4-9; formulir terbaru PDF 18-20](https://peraturan.bpk.go.id/Download/156015/Permendagri%20Nomor%2078%20Tahun%202020.pdf#page=4)"
+            ],
+            [
+              "13",
+              "BLU dan BLUD: layanan, fleksibilitas dan batas entitas",
+              "[SAP 2026, PSAP 13 par.6-12,17-31,76-88,116-123; cetak250-266/PDF 257-273](https://www.ksap.org/sap/wp-content/uploads/2026/01/2026-0101-Buku-SAP-2026-Besar.pdf#page=257) | [PMK 128/2024, lampiran Sistem Akuntansi dan Pelaporan Keuangan BLU, PDF 17-20,168-175; berlaku untuk LK 2024 dan seterusnya](https://jdih.kemenkeu.go.id/download/c6ab0355-774d-4a2f-9190-363cdda2c9c6/2024pmkeuangan128.pdf#page=17) | [Permendagri 79/2018 Ps.50-54,74-75,99-100; cetak/PDF 31-34,36-38,47-50; mengganti61/2007](https://peraturan.bpk.go.id/Download/102253/Permendagri%20Nomor%2079%20Tahun%202018.pdf#page=31)"
+            ],
+            [
+              "14",
+              "Pertanyaan riset: hubungan akuntabilitas dan bukti",
+              "[Olken(2007), Monitoring Corruption: Evidence from a Field Experiment in Indonesia, JPE 115(2), cetak200-249/PDF 1-50; sumber tambahan pilihan, bukan artikel dosen yang terkonfirmasi](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=1) | [Olken(2007) desain dan pengukuran, cetak202-211,216-217/PDF 3-12,17-18](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=3) | [Olken(2007) Table 4 dan pembahasan, cetak218-221/PDF 19-22; Figure 1 pada PDF 21](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf#page=19)"
+            ]
+          ],
+          "stackOnMobile": true
+        }
+      ]
+    },
+    {
+      "kind": "pendalaman",
+      "title": "Pendalaman: batas sumber dan penerapan",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Buku yang ditugaskan RPP belum tersedia. Teks final SAK/ISAK 335 belum tersedia utuh, dan RPP tidak menamai artikel riset. Materi ini menjadi draft dengan sumber resmi tambahan; gunakan laporan celah untuk melengkapi verifikasi akademik sebelum menyatakan semua bab selesai."
+        }
+      ]
+    }
+  ]
+}

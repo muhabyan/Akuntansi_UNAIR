@@ -1,0 +1,14 @@
+{
+  "course": "AKK203",
+  "tm": 14,
+  "implementationStatus": "COMPLETE_FOR_DRAFT_REVIEW",
+  "technicalStatus": "PASS",
+  "sourceStatus": "NEEDS_HUMAN_REVIEW",
+  "sourceComplete": false,
+  "canonicalSha256": "f52a177c1703fb0d3c591691d9752e7386cb16374d406843a652d7fda665afd5",
+  "evidence": "../qa-evidence.json",
+  "limitations": [
+    "RPP tidak menyebut judul artikel; bahan dosen dan daftar artikel yang ditugaskan belum tersedia.",
+    "Artikel 2007 memberi latihan membaca bukti historis, bukan tinjauan semua penelitian ASP terbaru."
+  ]
+}

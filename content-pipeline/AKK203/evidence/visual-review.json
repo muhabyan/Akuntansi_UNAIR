@@ -1,0 +1,668 @@
+{
+  "reviewDate": "2026-10-14",
+  "screenshots": 164,
+  "visuals": 41,
+  "reviewMethod": "132 screenshots remain byte-identical to previously reviewed images. All 28 changed frames were re-inspected in 14 contact sheets. Four new Eutopia frames were inspected individually in 375/1440 px and both themes. Previous review of 160 frames retained as evidence.",
+  "previousReview": "visual-review-before-book-revision.json",
+  "changedFramesReinspected": 28,
+  "newFramesInspected": 4,
+  "unchangedFramesPreviouslyReviewed": 132,
+  "files": [
+    {
+      "path": "qa-akk203-uas.local/tm10-1440-dark-figure1.png",
+      "sha256": "917ad2b9983e2391e2c20d85d0fd3865f51616ed5f86baa2cf433e393699d3c9"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm10-1440-dark-figure2.png",
+      "sha256": "25414b6d8d4ab314795cf0d7f99e3e4915b67f55d6f8cbbbacc40f5f6ccf7ed8"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm10-1440-dark-figure3.png",
+      "sha256": "848e568d1a31d7c1257041a048e2ddcecc2fbda3cb97bb694af0ba311ffe7e31"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm10-1440-dark-figure4.png",
+      "sha256": "0db96976454fa1014e8fbad53c9a29523898e665867e913eb424ba16321cecc2"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm10-1440-dark-figure5.png",
+      "sha256": "921195579c2e18c994bc43c0e752b84315c2166cce17693deb3563dc3f8db3f7"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm10-1440-dark-figure6.png",
+      "sha256": "334ee9ab1924f796229727ffe1e430fb96639e9228f20e70f4daad4b0ac93f39"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm10-1440-light-figure1.png",
+      "sha256": "8bf28fbb8723d737e86c8516501462fc37dc01f49a4780711fb3f22b4c899cb7"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm10-1440-light-figure2.png",
+      "sha256": "a2755395474ec3fef537eed6e148d3fb9f2761ca8d9e7d81a6cbd516cafe32d6"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm10-1440-light-figure3.png",
+      "sha256": "e8020fe471a34fb371d2cb73d6fc72b0ce9a7be96d2ef1ee4c494c40f471c048"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm10-1440-light-figure4.png",
+      "sha256": "af69583ad00593a0bb84b360d5e4eecd9d944778cfbb358b53ecfdc0645a2097"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm10-1440-light-figure5.png",
+      "sha256": "7054f8dffe6bb6eefef6243bb625b6a7f4075593cb4734d2eae6cd3b1e32a9ea"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm10-1440-light-figure6.png",
+      "sha256": "41d6808e1f4c164d8ac77ea3bfd7e1e326cb1f7dd60e26fffc79c872b8d911c7"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm10-375-dark-figure1.png",
+      "sha256": "b87d674587371e5f003e0985a0e79010ec64f27f5124eb1195cb362ae1b13094"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm10-375-dark-figure2.png",
+      "sha256": "8482062886aa2c94b479232750eb125fd268ea043bdfef44b9ab48e2d454e556"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm10-375-dark-figure3.png",
+      "sha256": "a112b7a936b51d207e36048f8a0ba9301be74991b3c477f3d9c7d2c62d8d15f0"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm10-375-dark-figure4.png",
+      "sha256": "afa38cb87a2207aa66917e917c803e36368a6d600703086add054b317e1b0e08"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm10-375-dark-figure5.png",
+      "sha256": "f896b85c87c919c91ec686f9d0caeb37a82a4f6f5f7281f27bad0b30b8da48de"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm10-375-dark-figure6.png",
+      "sha256": "76e07863e3168620e1b4bdff63eb187196781ef4492a122c43d0ca3f8c16689e"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm10-375-light-figure1.png",
+      "sha256": "b3eac1424c758f4c8a70388ccfbf8d6cf223c2a1808daa688a020160a4912dc5"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm10-375-light-figure2.png",
+      "sha256": "48639b5c154ce25b001a66b9f92200cf915c59f481ec54bcfc371fc3f4c2477f"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm10-375-light-figure3.png",
+      "sha256": "0e321ec891c3c947525961075d6ed5cdd77f52176d33ca4d3709aab7ab0b832f"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm10-375-light-figure4.png",
+      "sha256": "e6b75ae94944873a6bda599277c20bfa3837f28c703c1f52e62d0f5c78cd8c9e"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm10-375-light-figure5.png",
+      "sha256": "59a140bb76c5234b4f6c324334fb81f9f223ea5c5db1704de9d1e68881a52da8"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm10-375-light-figure6.png",
+      "sha256": "835658291d1a66e111c54053839a4a38ca07e5a453a22db30b1a187cd0803bc2"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm11-1440-dark-figure1.png",
+      "sha256": "2ae5b62da4b479cd3b3c64faa4ca77c5371a574fd473f4f1908df24a5ef20641"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm11-1440-dark-figure2.png",
+      "sha256": "f15c89b31e03ae7963895e0c4c76a46dc6a763bee85e616a1e08c3b7ed5af618"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm11-1440-dark-figure3.png",
+      "sha256": "a547a81994ca69df231ef7b149cc52398f22d9cb063f4b0e4476788b2f0c20f5"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm11-1440-dark-figure4.png",
+      "sha256": "a3a5abaa350c0971fb45af329e9bf79beac20786ac37f2685213692f8ad986ca"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm11-1440-dark-figure5.png",
+      "sha256": "e84fac10936eb56b6f5266a05c9f9f05f9449eaed887c4697e4fc9b0aa8cbfe7"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm11-1440-light-figure1.png",
+      "sha256": "b3f4cf9f30ad52aa65a3eb66a1bb697f8c3ab434317b3f830f2ed43c1a0e74ab"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm11-1440-light-figure2.png",
+      "sha256": "a2ba3382a3c0630c1b5340248db1c7b59c3bbffa5d202e2b040dbe87149cedfc"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm11-1440-light-figure3.png",
+      "sha256": "2d1d65d75dd7d5c8d09ff80d691c797e48b735cd40136c41ace1d1a485712504"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm11-1440-light-figure4.png",
+      "sha256": "30866b719c9fc51785ca77eb2cb54c3b950cbf6544e5f8d71cc2af81938879f0"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm11-1440-light-figure5.png",
+      "sha256": "223f0f22a9cefb2a7361140d9377082073cc19b57af615a07319b6f9daa559d2"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm11-375-dark-figure1.png",
+      "sha256": "519f9f6ed3d5fc13e7a94a382a3e10c5831ab7478a1b03e4268c91bdf92e176b"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm11-375-dark-figure2.png",
+      "sha256": "4c760960a5d7ca131f5a898087424fb2f435a4168a1d803e245b05552219e204"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm11-375-dark-figure3.png",
+      "sha256": "bf4bde7de7d69de4a26783d78177b7241c730bd11e6def400c6a6dcbbc0d01ca"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm11-375-dark-figure4.png",
+      "sha256": "84e44c6bb633a75230ee5c4feaad91e3df688c48158931422a42b22f7fd75e85"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm11-375-dark-figure5.png",
+      "sha256": "01026418db7adf76c03f6dd0cca1a74807dced9a0ba56be5d119f59df7cedd20"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm11-375-light-figure1.png",
+      "sha256": "afbbd1cf1d940582aac79bf5388192c20dbc9ac8298d704637fc7bf3543ba63d"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm11-375-light-figure2.png",
+      "sha256": "d10b6c5baabadf6951a2a416ac083bc55c9b39d48fb9b1988b6c8fe36f382c3e"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm11-375-light-figure3.png",
+      "sha256": "e5ec5a08e4cff06e8d8b77cb092f2f175095dcbf17d89e2a2d55104b053bbb09"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm11-375-light-figure4.png",
+      "sha256": "4d65fef276df1f8a697cd5741efe7014c51713d7aaedb8c8788e867c778db33d"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm11-375-light-figure5.png",
+      "sha256": "9cc13731faa0845c2894d87eb5dc185c0bf1a5f075ce3064959d90cbc7624699"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm12-1440-dark-figure1.png",
+      "sha256": "0c107195eb23e42c7ea2e1d7956588021d531773972a047b59b62276b3f8f9ed"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm12-1440-dark-figure2.png",
+      "sha256": "8b0fb12287da0be3500d8ecef77059c9079c1751a904e3c754dde86929c41eaa"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm12-1440-dark-figure3.png",
+      "sha256": "6da19ca65af788e6049fe9d509126eeac5aa6b6084829c7d0d7a434ef20f0d30"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm12-1440-dark-figure4.png",
+      "sha256": "43f4b952501b48b8cd8a74634930e14effd60dbb3b408fefd5843ae1c21d4809"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm12-1440-light-figure1.png",
+      "sha256": "b394fd5c6c068b313a4332569eb61f9aedb445b7cf3b4a12211ce35bf7cc29e7"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm12-1440-light-figure2.png",
+      "sha256": "8fbada8f86a6d51d00c3e3502f5cb8329204f970eb97a1680e4ddb71d78c3543"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm12-1440-light-figure3.png",
+      "sha256": "0b0f26bd4a053e542708574c1d9fa897f8ed2712354ff4ddc8b2d6932646b7c4"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm12-1440-light-figure4.png",
+      "sha256": "c6a0e7a7a1e421c3c503ea329c09aca1eb12847fc6df57295af28b1e79cce3ab"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm12-375-dark-figure1.png",
+      "sha256": "7f1a1ed26c812d82c39081387c9c44bb77928411e5b4c2396d66687e11fc437e"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm12-375-dark-figure2.png",
+      "sha256": "a9bf700aab558d183a9bdbf1fd992ed002081a0e2639d7a691f329748a8ef971"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm12-375-dark-figure3.png",
+      "sha256": "c3387af02b1a25f5f9d808cda2dfa4d9c7b1d7bd2a7f9e5095e69941ebf40b27"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm12-375-dark-figure4.png",
+      "sha256": "e66ed56e8598edf8a7a9b4b74ad3b86ed0e2d0e7f3d0b1e3c5ddefd43d4a930a"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm12-375-light-figure1.png",
+      "sha256": "e02492e52501e0a1378e6e0ab19bc48821cd8cf9363db991bfc8ac2530ac73b0"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm12-375-light-figure2.png",
+      "sha256": "475aa9eab1c99bdbfa14e7a96d0ec184e8b6d25e188fc532bf10594d9438b1d4"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm12-375-light-figure3.png",
+      "sha256": "336df32dacf8772815e4f47b6df91fdc65950dd22305ad135f29da07213ce2da"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm12-375-light-figure4.png",
+      "sha256": "9cf9fb0e3fbfc6455b9c0d1d309df76ce67241c3b62d1ade7794cd6fd90f20e6"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm13-1440-dark-figure1.png",
+      "sha256": "8fbf3f6c1b829fb83faf997a8962a98d4d83e70fb1ebb1cf145802bb8a31148e"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm13-1440-dark-figure2.png",
+      "sha256": "d5e7b15ad20f431d467619c49d14f306068885daaf4814b766804975754a5bce"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm13-1440-dark-figure3.png",
+      "sha256": "32f8e43419166c220e9cf8c9a269bd86b3a52ee209a26a957b11af0bc1bc27ee"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm13-1440-dark-figure4.png",
+      "sha256": "ad88798e91cf84504f031dba3e28363db882f2910d58cdfd99c383ea4c6af251"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm13-1440-dark-figure5.png",
+      "sha256": "8624e5bd7bddfbc8f95857d37ab8782bddb07bd1b47e881f81eb6e19f46181c3"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm13-1440-dark-figure6.png",
+      "sha256": "0501ea05ec904a970bc2c28f90fcc91253cccb633582a52dfc6b82f7e1daeca1"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm13-1440-dark-figure7.png",
+      "sha256": "16e165d28d52105e6375e16abd2bd7518d4059948d94aba5fbb6e11a38cdc208"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm13-1440-light-figure1.png",
+      "sha256": "d2e9cc71d77450d22c6a480125e4475e87be0adf9ef070f5765883bcb0ec3a82"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm13-1440-light-figure2.png",
+      "sha256": "c15a5482ff53ae9a5423733e23c5e63c4767d50d60c0ee5c4af586fa32480ba4"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm13-1440-light-figure3.png",
+      "sha256": "74a8317afb339e8fd1c64eaf6ceaf55e386df061105b48e7cc000e1f592dc3bd"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm13-1440-light-figure4.png",
+      "sha256": "8bd361f43c6135b229d58fd9f53054e1e335204c2fc832c49cc0d5575878d053"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm13-1440-light-figure5.png",
+      "sha256": "ffb5619d06ee6d5808cde9c34a65fb359610e574c13c6b269b41889e01e8c5bc"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm13-1440-light-figure6.png",
+      "sha256": "c97b75712b726d0f501a8aa0edb36a91214ce05d11e347c56e995af9fc0fdd4b"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm13-1440-light-figure7.png",
+      "sha256": "d56f3f3687d0e270e83e4fe1e09cba9ce9051a0633d285bd7c3b79c41de9cf63"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm13-375-dark-figure1.png",
+      "sha256": "1d39012c61c24b4421b08bff6203c3271b0e9cee9aa4f5d298fb3c07c7e9ffbc"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm13-375-dark-figure2.png",
+      "sha256": "657d678fc827b0ca717082da627e9b79a569865ba11246a5f809fbe8bb9832e9"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm13-375-dark-figure3.png",
+      "sha256": "4925b280bd07ec3f7880a97ab8902740f5da22f306fa9270370c02fd62cd6347"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm13-375-dark-figure4.png",
+      "sha256": "09d8d7890bc0e0c1d791c92b1894ce82bd6cbf0d78594c88fbb1f3f1e88f34f7"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm13-375-dark-figure5.png",
+      "sha256": "86d38a04657c0887bde2f142b578087643ea43cb79fac2dcf8a905b522c6086d"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm13-375-dark-figure6.png",
+      "sha256": "1c8ae0d6e1c503625d6619a3f1e5e082fd19c99873408062acc4fc45813b5bb7"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm13-375-dark-figure7.png",
+      "sha256": "7161266f3de9f2b4f288c30e569b3a57b205040f511c8187c60f4446731205d5"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm13-375-light-figure1.png",
+      "sha256": "0f5bec0cafa2e2cc65d5def77fc409e480db7be567cb015882441e2372d33fee"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm13-375-light-figure2.png",
+      "sha256": "ec332f6feaaafd2c2f5021213e8310271ee8cdefe72895e5f7f816a4d6cce0f1"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm13-375-light-figure3.png",
+      "sha256": "74a6e75569ba16ad01eedc4620b825e47827d8ccbdc9b30bd3cf31404ce8936a"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm13-375-light-figure4.png",
+      "sha256": "2932dcd525432d57bfea595be1da27624557ebe8dc5a502f65b40e6e5d285606"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm13-375-light-figure5.png",
+      "sha256": "a43447b5d86a694e1a1e0efa0999ec2e2b28b4a260432e7dc61cf501a5b64c92"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm13-375-light-figure6.png",
+      "sha256": "39f41594308255a95ed47e40099f9fd74b7cfe3685ce6463ef6a98146213a241"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm13-375-light-figure7.png",
+      "sha256": "065f8375928382c6f993d71ca77f325896f2703a7dad6db2bc1f9eccaadc84cc"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm14-1440-dark-figure1.png",
+      "sha256": "6bc6c40f0093476cce15c34b4c31c3bcb3b4681bf61689af71e60ef602981fe3"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm14-1440-dark-figure2.png",
+      "sha256": "2cee8ac294db4c388eeb6ec1996b7e2823ed8d1d6e48b34ead69b8a48b550f6f"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm14-1440-dark-figure3.png",
+      "sha256": "ad1232c7593950e5cd221bd164087469ba0e330f719cd6114019ad175a4259ab"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm14-1440-dark-figure4.png",
+      "sha256": "7d66e809e6acc408b54aaeb4e9f4132a18c39ab6c5b3860fd31ed7955dc98339"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm14-1440-dark-figure5.png",
+      "sha256": "7ff4e97fdc008b555fd258ed8b47fddfa2abfdb3d10b5b4c8c4ac60a360ce15f"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm14-1440-dark-figure6.png",
+      "sha256": "f59e3dd1eb66d4fdab59300a35fb7d166861852854dacf2aa5e4eaf3dc72eec7"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm14-1440-dark-figure7.png",
+      "sha256": "03ef5f0fdaba54fca095343f234fa2e575c4542cead8787fc39ddfb926d8627b"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm14-1440-light-figure1.png",
+      "sha256": "d9fbb00f14f7b37b8110267b278b42a43ff662739055332dc586fa35f6121b1b"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm14-1440-light-figure2.png",
+      "sha256": "e4aeff0a825d3b58b796f74a7d580b7be644ca1dfe61a58bba687351dd0732b9"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm14-1440-light-figure3.png",
+      "sha256": "70dbd9f26cbad0eba16d1dde3609a162787b02dc11f70646bed47f4120b52c43"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm14-1440-light-figure4.png",
+      "sha256": "4f866e851ae663386c5f52682bdbaa03ac14ffc103cd3e6cffa0527121d11340"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm14-1440-light-figure5.png",
+      "sha256": "c64b0460e91cf1f9de9253f40b55221c038faee0fbb3e38e20b65fc8122f8eb6"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm14-1440-light-figure6.png",
+      "sha256": "33d5151ebf4d3b29f31ac5a0d499656dc0454ac13c4daec826424bd9d8db92b1"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm14-1440-light-figure7.png",
+      "sha256": "12bc6174c853ee836f066933be72a5593e57ccf0c6c057ed8ccebd5667a9b3ce"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm14-375-dark-figure1.png",
+      "sha256": "a676a2e82f6dbbb451908d90eb5eb760838ba981e1976e1dd698557a38f26400"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm14-375-dark-figure2.png",
+      "sha256": "683ca7e14918204360c87373790b96ffe8c3c068a83505c1d211de3136b90598"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm14-375-dark-figure3.png",
+      "sha256": "4e57008ab232f86a45297ef6ac4e9a85517f5eacd97349e6fcd6e856194f4eab"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm14-375-dark-figure4.png",
+      "sha256": "b601f743e832fd5679d5b61e7b6c395cb308a995d3a27088787e1f28f5208dad"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm14-375-dark-figure5.png",
+      "sha256": "f726ce634ee889908a65b4ade65b14b2fd983998248f3793155e8a7319f5f1a0"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm14-375-dark-figure6.png",
+      "sha256": "70a82d0f52545d09e4aebffff90833ed0a4691becf85cb6c9d1ce0063a54b2e4"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm14-375-dark-figure7.png",
+      "sha256": "33c12656b3cbe9557b207643aba0b5db8405c360b983937b3f75317341836585"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm14-375-light-figure1.png",
+      "sha256": "48c235888cbc653a017f55af1f133dc1fc26233fd6feac405aa037effee9fbdb"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm14-375-light-figure2.png",
+      "sha256": "7e45881ffe072e6c4261dd4c4127006cfb188d25ad37c23c88a7a309215ee86f"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm14-375-light-figure3.png",
+      "sha256": "80ca24558a952ed9d1259138e08ba4c0e779fbc47d94e877d6e9fac179224622"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm14-375-light-figure4.png",
+      "sha256": "e333e37d5d552986edd21254c360320d21a52fb3e791147e8567daed7b68b790"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm14-375-light-figure5.png",
+      "sha256": "9a8d779ec453fd4da003598fc890f64647f01044f55a586173ca9d9077deff40"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm14-375-light-figure6.png",
+      "sha256": "dba7194ba44656299c6035fd066251059d4a26e3cbabfd7aad8dd3e067fd14d3"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm14-375-light-figure7.png",
+      "sha256": "3f351b875fa4e367bf277af61d05488afd825bc915ccae489520da2ef5c4f31f"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm8-1440-dark-figure1.png",
+      "sha256": "676daf24ecee59bfe56f04663483e4753dbb3aa430f1a5a568e13300acb03a47"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm8-1440-dark-figure2.png",
+      "sha256": "3db47ee040c165b416fb384ab866cbca973e9f4766a7f2af82fa68f4c52528bc"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm8-1440-dark-figure3.png",
+      "sha256": "4c39c55bb0a358b28d6fab342ff7bb49fed31da236726e641a8dde5b341eb846"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm8-1440-dark-figure4.png",
+      "sha256": "6d4bfb272488d4482569ada2143e5444997f9a75ddc71be1b6ed8c5ccae598c6"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm8-1440-dark-figure5.png",
+      "sha256": "f9a3ff575f72023196f58c1ba2e6679db6bd8c8e105ac2c28e3983278563fc3c"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm8-1440-light-figure1.png",
+      "sha256": "28a86a183aa7d9aafa4e8c802113f714787068cffbeb53dd37db40e37d3422b1"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm8-1440-light-figure2.png",
+      "sha256": "27b5192ba961dda4beb063dbefb57d2326d856e00181feec9159416cb44a4a65"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm8-1440-light-figure3.png",
+      "sha256": "f432f6fb451a8e2a6b04de01bcd0c826b2800c00520b94c20239fa687b8d2fa7"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm8-1440-light-figure4.png",
+      "sha256": "4769cffaafbcb2a3d37bd3cafb124cdefff2a681bd25816f24c583800d3a0af3"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm8-1440-light-figure5.png",
+      "sha256": "6b359a3d7d4fbbb123e59e32cfdb59ec31a6c3d1ac767243a0a4fa8eb4bd3514"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm8-375-dark-figure1.png",
+      "sha256": "5ea3e9d454bcdf0f0a5a4fc25943df9c51b513015eb763c9e0eec455b78a66d1"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm8-375-dark-figure2.png",
+      "sha256": "b01c228f9fcb78769989a088232f1224f0cffc3e42138ed225886e8c6be3fdea"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm8-375-dark-figure3.png",
+      "sha256": "b84628e195ada19436dff6db74d19c18ad642764e157357c1cc6ad6645e5453f"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm8-375-dark-figure4.png",
+      "sha256": "d067ad2006b58adc63e14eebbe591b63b07d1d2677d5af06e812f69b80f96208"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm8-375-dark-figure5.png",
+      "sha256": "560ea29aeaceefcc455213e5d281b1cfcc466566a0a19f68592cc5159ae99c51"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm8-375-light-figure1.png",
+      "sha256": "069078c6159ae839bda4949bcc0bbd4a01409535c30c0e2b65242cc3d7d5ebc8"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm8-375-light-figure2.png",
+      "sha256": "2595c5a382b78c0d5945d86b30319397356fee3989cba964e4de5d4e70448ab3"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm8-375-light-figure3.png",
+      "sha256": "7f303877b6093a6c36d0495f2990981084903b7f1e2858b15b098ce77ab16694"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm8-375-light-figure4.png",
+      "sha256": "e961a5960ed18d266f14b7850c7558d9a208197e33cdeb2ce19cbf837ddbe680"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm8-375-light-figure5.png",
+      "sha256": "d5c35d40d894463b25ee5e7095ba007c085927861d409113f3d6c71a4a24db19"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm9-1440-dark-figure1.png",
+      "sha256": "5092bf5cf2a318fc113d195a0e1f60eabea6f48b18caae82e1e088e9191ab1ab"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm9-1440-dark-figure2.png",
+      "sha256": "1828229988d5ef195e7e7e0de5abc79438334c62113011132a358145bbf5857a"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm9-1440-dark-figure3.png",
+      "sha256": "42201a1d6619da784982032514312eb5a35bef8b84a75e8ac722e3c73fb50cc0"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm9-1440-dark-figure4.png",
+      "sha256": "e0681c71a4b8ea17b49eac4f8a79187d932893671214cfd6aa0c3d882d5b03cf"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm9-1440-dark-figure5.png",
+      "sha256": "491b462abe777244cae656d192e0ef20325e5ce1e993a3f5ff59bd55294488d4"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm9-1440-dark-figure6.png",
+      "sha256": "add1e0cb62d7f0c17832958696cf4b955b4cca7e1f347928c1cec97bb0b58673"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm9-1440-dark-figure7.png",
+      "sha256": "39558b3150c4550f6fee9f18db15ac4f2526ee74788b9a5f1c5bac0c2b816fea"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm9-1440-light-figure1.png",
+      "sha256": "11ffa08b8abee5efe9fab0d0278174a2a8e5fc21d9d36a73452fcc1a54d0a4fa"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm9-1440-light-figure2.png",
+      "sha256": "fda7b760b2fe5a639e20f1d8bb326ac6f6eb4e3a0cff6e5464e3260efa8cc1bd"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm9-1440-light-figure3.png",
+      "sha256": "2cd82a5b05955f7861bae262faa8dc0ecdb1056268f520e481f9ae0808068b25"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm9-1440-light-figure4.png",
+      "sha256": "7bb63e0967f5f3fbb08d7251564902b4a8f57f30ef65c68d1a52348058f62653"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm9-1440-light-figure5.png",
+      "sha256": "fb1e06bd5cfe9066b0c67e29e902fa6b3a3d67d8da74b359925f0f61586a6564"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm9-1440-light-figure6.png",
+      "sha256": "c7eaac89ea10e4598f60ad2cd96503f85515607b3bd05714d667e0877bb7ca1b"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm9-1440-light-figure7.png",
+      "sha256": "f100589a0ff287dce586262895cb13c9149f7fb676a8a8a4852a35b6f29270d0"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm9-375-dark-figure1.png",
+      "sha256": "d5d90eba4beb730392bfd50fcc69d6517de4993379eabb6beb9d442abf3b8cd2"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm9-375-dark-figure2.png",
+      "sha256": "9f8b0c2747484be3f604b629eafeb27dcb82a83529eca77578d6d9a9c5d862b6"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm9-375-dark-figure3.png",
+      "sha256": "aba59b1af05d196c2d8ba2d7b39c938271e4ccd256ad514c1f642ae5ddb92af4"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm9-375-dark-figure4.png",
+      "sha256": "26b5d3b7fb815617abcadb5554786f32678f3b62e2cc26f94d2380c561ab5fc6"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm9-375-dark-figure5.png",
+      "sha256": "af48b675051fe7722d71a834d993036714d81b7a588ea7d26cfd11d6da74f509"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm9-375-dark-figure6.png",
+      "sha256": "1663f4d2c97f76c6182e14b71210023da10907be80d05ddf447a689cd753e8c8"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm9-375-dark-figure7.png",
+      "sha256": "b6bfaa5e68ade0728cfb8a58311fc4d748fa276b058937b533fea080081b4bd5"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm9-375-light-figure1.png",
+      "sha256": "9d054be118d55568085280c05a0da1e4b17afe57669c2d6ff965fcaa89465c79"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm9-375-light-figure2.png",
+      "sha256": "4b8f405d910b6af320a22a3ac16fdbccb6fa6ff4b04b0538e97c3fc757a0196f"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm9-375-light-figure3.png",
+      "sha256": "dada70fc9c427a5788c5f6836ffa29e9db811e95e232d32e3e81745c51d53246"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm9-375-light-figure4.png",
+      "sha256": "aceca8a2e86828895f73fccd304338e9dbdc24da6a2f36bca531fd68862c0774"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm9-375-light-figure5.png",
+      "sha256": "9f3e8cf16ade0aaa94f307b5e3bec84590466c3aaa8623f07b06fcceaaf40dd6"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm9-375-light-figure6.png",
+      "sha256": "17779118b1498aa7a96c1e84c38bce289f018845acd9bb2bc31e2a7925d5be12"
+    },
+    {
+      "path": "qa-akk203-uas.local/tm9-375-light-figure7.png",
+      "sha256": "dbb15babe2c7a6af32e2842a1b1558bcda3fe1c9d4f9822b25f78edfb320fc50"
+    }
+  ]
+}

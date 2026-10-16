@@ -1,0 +1,18 @@
+{
+  "tm": 14,
+  "canonicalSha256": "f52a177c1703fb0d3c591691d9752e7386cb16374d406843a652d7fda665afd5",
+  "sourceStatus": "NEEDS_HUMAN_REVIEW",
+  "sourceComplete": false,
+  "visuals": 7,
+  "quiz": 8,
+  "cards": 6,
+  "cases": 2,
+  "independentChecks": "scripts/test-akk203-pra-uas.mjs",
+  "renderChecks": "scripts/test-akk203-pra-uas-render.mjs",
+  "browserChecks": "scripts/test-akk203-pra-uas-browser.mjs",
+  "technicalEvidence": "../qa-evidence.json",
+  "limitations": [
+    "RPP tidak menyebut judul artikel; bahan dosen dan daftar artikel yang ditugaskan belum tersedia.",
+    "Artikel 2007 memberi latihan membaca bukti historis, bukan tinjauan semua penelitian ASP terbaru."
+  ]
+}

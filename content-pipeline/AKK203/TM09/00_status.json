@@ -1,0 +1,14 @@
+{
+  "course": "AKK203",
+  "tm": 9,
+  "implementationStatus": "COMPLETE_FOR_DRAFT_REVIEW",
+  "technicalStatus": "PASS",
+  "sourceStatus": "NEEDS_HUMAN_REVIEW",
+  "sourceComplete": false,
+  "canonicalSha256": "096c07ebd99b0dc15bfc35063635cf06321778786becaf998abbb6272d2d4525",
+  "evidence": "../qa-evidence.json",
+  "limitations": [
+    "MD Bab 8 dan DN Bab 8 belum terbaca penuh setelah pencarian penerbit, perpustakaan dan pratinjau. JP Bab 2 tersedia dan sudah diaudit; konflik tahun edisi pada RPP dicatat.",
+    "Definisi ISSAI 300 merupakan sumber tambahan konsep; aturan audit nasional tidak digantikan."
+  ]
+}

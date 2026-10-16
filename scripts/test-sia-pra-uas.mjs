@@ -15,7 +15,8 @@ const flatten=blocks=>blocks.flatMap(b=>[b,...(b.blocks?flatten(b.blocks):[]),..
 const parser=new (new JSDOM()).window.DOMParser();
 const baseline=JSON.parse(fs.readFileSync('scripts/fixtures/sia-pra-uas-baseline.json','utf8'));
 const outsideSia=fs.readFileSync('src/data/courseData.ts','utf8').replace(/\r\n/g,'\n').replace(/const SII306_TM8_14 = materi\(\[[\s\S]*?\], 8\);/,'SIA_POST_CATALOG');
-assert.equal(createHash('sha256').update(outsideSia).digest('hex'),baseline.catalogOutsideSiaPost,'Every catalog byte outside SIA post-UTS is preserved');
+const integration=JSON.parse(fs.readFileSync('scripts/fixtures/akk203-merge-approved-20261016.json','utf8'));
+assert.ok([baseline.catalogOutsideSiaPost,integration.catalogOutsideSia].includes(createHash('sha256').update(outsideSia).digest('hex')),'Catalog outside SIA matches the historical or explicitly reviewed ASP version exactly');
 assert.ok(m.SII306_FC.filter(c=>c.tm>=8).every(c=>!baseline.previousPostCardIds.includes(c.id)),'RPS changes must not repurpose old-topic SRS mastery');
 let figures=0,journals=0;
 for(let tm=8;tm<=14;tm++){

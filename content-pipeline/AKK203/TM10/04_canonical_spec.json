@@ -1,0 +1,1111 @@
+{
+  "course": "AKK 203",
+  "newCode": "FEB 25603014",
+  "tm": 10,
+  "rpp": "SAP, SPKN; JP Bab 2 dan 9 sesuai RPP PDF 5",
+  "reading": {
+    "tm": 10,
+    "title": "Audit Organisasi Pemerintah: APIP dan BPK",
+    "ref": "[UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28](https://peraturan.bpk.go.id/Details/40509/uu-no-15-tahun-2004) | [PP 60/2008 Ps.2-3,47-54; cetak/PDF 3-4,21-25](https://peraturan.go.id/files/pp60-2008.pdf#page=3) | [Peraturan BPK 1/2017 Ps.3-5 dan KK par.14,18,21-42; cetak 4-5,5-13 KK; PDF 4-5,17-25](https://peraturan.bpk.go.id/Download/20433/Peraturan%20BPK%20Nomor%201%20Tahun%202017.pdf) | [Peraturan BPK 1/2026 Ps.7-9; cetak/PDF 3-4; diundangkan 10 April 2026, berlaku 10 April 2028](https://peraturan.bpk.go.id/Download/411430/Salinan%20PBPK%201%20Tahun%202026.pdf#page=3) | [Jones-Pendlebury ed.6 (2010), Bab 9, cetak 127-140/PDF 138-151](https://opac.feb.uinjkt.ac.id/repository/4a92513b40668f056ddd4e5117aca16e.pdf#page=138)",
+    "intro": "Opini laporan keuangan, kualitas layanan dan tindak lanjut rekomendasi menjawab pertanyaan berbeda. Kamu akan memilih tujuan pemeriksaan, menilai bukti, lalu menyatakan kesimpulan yang sesuai ruang lingkup.",
+    "layout": "layered",
+    "coreReadingMinutes": 20,
+    "objectives": [
+      "APIP dan BPK: posisi dan tanggung jawab",
+      "Jenis pemeriksaan mengikuti tujuan",
+      "Unsur pemeriksaan: kriteria dan bukti",
+      "Opini dan batasnya",
+      "LHP dan tindak lanjut 60 hari",
+      "SPKN: bedakan pengundangan dan penerapan"
+    ],
+    "blocks": [
+      {
+        "kind": "section",
+        "layer": "fondasi",
+        "title": "Kilat",
+        "blocks": [
+          {
+            "kind": "figure",
+            "spec": {
+              "id": "ASP-UAS-10-KILAT",
+              "type": "process",
+              "title": "Peta Audit Organisasi Pemerintah: APIP dan BPK",
+              "nodes": [
+                {
+                  "title": "Tentukan konteks",
+                  "items": [
+                    "SAP, SPKN; JP Bab 2 dan 9 sesuai RPP PDF 5"
+                  ]
+                },
+                {
+                  "title": "APIP dan BPK: posisi dan tanggung jawab",
+                  "items": []
+                },
+                {
+                  "title": "Jenis pemeriksaan mengikuti tujuan",
+                  "items": []
+                },
+                {
+                  "title": "Unsur pemeriksaan: kriteria dan bukti",
+                  "items": []
+                },
+                {
+                  "title": "Opini dan batasnya",
+                  "items": []
+                },
+                {
+                  "title": "LHP dan tindak lanjut 60 hari",
+                  "items": []
+                },
+                {
+                  "title": "SPKN: bedakan pengundangan dan penerapan",
+                  "items": []
+                }
+              ],
+              "source": "[UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28](https://peraturan.bpk.go.id/Details/40509/uu-no-15-tahun-2004)",
+              "alt": "Peta Audit Organisasi Pemerintah: APIP dan BPK. Tentukan konteks → APIP dan BPK: posisi dan tanggung jawab → Jenis pemeriksaan mengikuti tujuan → Unsur pemeriksaan: kriteria dan bukti → Opini dan batasnya → LHP dan tindak lanjut 60 hari → SPKN: bedakan pengundangan dan penerapan",
+              "footer": "Skematis: hubungan konsep, tanpa skala angka."
+            }
+          },
+          {
+            "kind": "ul",
+            "items": [
+              "Pilih tujuan pemeriksaan sebelum menilai temuan.",
+              "APIP melakukan pengawasan intern;BPK memeriksa secara mandiri.",
+              "Kriteria serta bukti cukup dan tepat mendukung kesimpulan.",
+              "WTP tidak menjamin bebas fraud atau efektifnya seluruh program.",
+              "60 hari adalah tenggat jawaban/penjelasan tindak lanjut.",
+              "SPKN 2026 mulai berlaku 10 April 2028."
+            ]
+          },
+          {
+            "kind": "p",
+            "text": "Kalau cuma sempat ingat satu hal: Pilih tujuan pemeriksaan sebelum menilai temuan."
+          },
+          {
+            "kind": "callout",
+            "variant": "note",
+            "title": "Cakupan dan periode sumber",
+            "text": "RPP: SAP, SPKN; JP Bab 2 dan 9 sesuai RPP PDF 5. JP Bab 2 dan 9 serta bahan dosen audit belum tersedia."
+          }
+        ]
+      },
+      {
+        "kind": "section",
+        "layer": "main",
+        "title": "APIP dan BPK: posisi dan tanggung jawab",
+        "source": "[UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28](https://peraturan.bpk.go.id/Details/40509/uu-no-15-tahun-2004) [PP 60/2008 Ps.2-3,47-54; cetak/PDF 3-4,21-25](https://peraturan.go.id/files/pp60-2008.pdf#page=3)",
+        "blocks": [
+          {
+            "kind": "p",
+            "text": "Instansi perlu pengawasan di dalam organisasi dan pemeriksaan yang mandiri. APIP, Aparat Pengawasan Intern Pemerintah, mencakup BPKP, inspektorat jenderal atau unit sejenis, inspektorat provinsi dan kabupaten/kota. PP 60/2008 menyebut audit, reviu, evaluasi, pemantauan dan pengawasan lainnya sebagai kegiatan pengawasan intern. [UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28](https://peraturan.bpk.go.id/Details/40509/uu-no-15-tahun-2004) [PP 60/2008 Ps.2-3,47-54; cetak/PDF 3-4,21-25](https://peraturan.go.id/files/pp60-2008.pdf#page=3)"
+          },
+          {
+            "kind": "p",
+            "text": "BPK memeriksa pengelolaan dan tanggung jawab keuangan negara. Objek, rencana, waktu, metode dan penyajian pemeriksaan ditentukan secara bebas dan mandiri menurut UU 15/2004. Pimpinan instansi tetap bertanggung jawab mengelola dan menindaklanjuti. Pengawasan intern yang baik menyediakan bukti serta perbaikan; keberadaannya tidak menghapus mandat pemeriksaan BPK. [UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28](https://peraturan.bpk.go.id/Details/40509/uu-no-15-tahun-2004) [PP 60/2008 Ps.2-3,47-54; cetak/PDF 3-4,21-25](https://peraturan.go.id/files/pp60-2008.pdf#page=3)"
+          },
+          {
+            "kind": "table",
+            "title": "APIP dan BPK dalam kasus",
+            "headers": [
+              "Aspek",
+              "APIP",
+              "BPK"
+            ],
+            "rows": [
+              [
+                "Posisi",
+                "Pengawasan intern pemerintah",
+                "Pemeriksaan eksternal bebas dan mandiri"
+              ],
+              [
+                "Aktivitas",
+                "Audit, reviu, evaluasi, pemantauan, lainnya",
+                "Keuangan, kinerja dan PDTT"
+              ],
+              [
+                "Pihak yang dituju",
+                "Pimpinan instansi sesuai mandat",
+                "Lembaga perwakilan dan pemerintah menurut UU"
+              ],
+              [
+                "Tanggung jawab manajemen",
+                "Tetap pada pimpinan",
+                "Tetap pada pejabat pengelola"
+              ]
+            ],
+            "caption": "[UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28](https://peraturan.bpk.go.id/Details/40509/uu-no-15-tahun-2004) [PP 60/2008 Ps.2-3,47-54; cetak/PDF 3-4,21-25](https://peraturan.go.id/files/pp60-2008.pdf#page=3)",
+            "stackOnMobile": true
+          },
+          {
+            "kind": "self-check",
+            "question": "Apakah reviu APIP memindahkan tanggung jawab laporan keuangan dari pimpinan?",
+            "answer": [
+              {
+                "kind": "p",
+                "text": "Tidak. Pimpinan tetap bertanggung jawab; reviu memberi pengawasan atas pelaporan. [UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28](https://peraturan.bpk.go.id/Details/40509/uu-no-15-tahun-2004) [PP 60/2008 Ps.2-3,47-54; cetak/PDF 3-4,21-25](https://peraturan.go.id/files/pp60-2008.pdf#page=3)"
+              }
+            ],
+            "signal": "Jika alasanmu berbeda, kembali ke sumber dan identifikasi fakta yang belum mendukung jawaban."
+          }
+        ]
+      },
+      {
+        "kind": "section",
+        "layer": "main",
+        "title": "Jenis pemeriksaan mengikuti tujuan",
+        "source": "[UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28](https://peraturan.bpk.go.id/Details/40509/uu-no-15-tahun-2004) [Peraturan BPK 1/2017 Ps.3-5 dan KK par.14,18,21-42; cetak 4-5,5-13 KK; PDF 4-5,17-25](https://peraturan.bpk.go.id/Download/20433/Peraturan%20BPK%20Nomor%201%20Tahun%202017.pdf)",
+        "blocks": [
+          {
+            "kind": "p",
+            "text": "Jika pertanyaanmu menyangkut kewajaran laporan keuangan, pemeriksaan keuangan memberi opini. Jika pertanyaanmu menyangkut ekonomi, efisiensi atau efektivitas, pemeriksaan kinerja menghasilkan kesimpulan dan rekomendasi. PDTT, pemeriksaan dengan tujuan tertentu, memberi kesimpulan sesuai tujuan penugasan; dapat berbentuk kepatuhan atau investigatif. [UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28](https://peraturan.bpk.go.id/Details/40509/uu-no-15-tahun-2004) [Peraturan BPK 1/2017 Ps.3-5 dan KK par.14,18,21-42; cetak 4-5,5-13 KK; PDF 4-5,17-25](https://peraturan.bpk.go.id/Download/20433/Peraturan%20BPK%20Nomor%201%20Tahun%202017.pdf)"
+          },
+          {
+            "kind": "p",
+            "text": "Jangan menyamakan semua pemeriksaan dengan investigasi pidana. Tujuan, hal pokok dan kriteria menentukan bukti yang dibutuhkan. Informasi yang sama dapat relevan pada beberapa jenis penugasan, tetapi keluaran dan pertanyaannya berbeda. Menilai kualitas layanan dari opini laporan keuangan saja tidak menjawab sasaran pemeriksaan kinerja. [UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28](https://peraturan.bpk.go.id/Details/40509/uu-no-15-tahun-2004) [Peraturan BPK 1/2017 Ps.3-5 dan KK par.14,18,21-42; cetak 4-5,5-13 KK; PDF 4-5,17-25](https://peraturan.bpk.go.id/Download/20433/Peraturan%20BPK%20Nomor%201%20Tahun%202017.pdf)"
+          },
+          {
+            "kind": "figure",
+            "spec": {
+              "id": "ASP-UAS-10-JENIS",
+              "type": "parallel",
+              "title": "Tiga tujuan pemeriksaan",
+              "nodes": [
+                {
+                  "title": "Keuangan",
+                  "items": [
+                    "Kewajaran LK → opini"
+                  ]
+                },
+                {
+                  "title": "Kinerja",
+                  "items": [
+                    "Ekonomi, efisiensi, efektivitas → kesimpulan/rekomendasi"
+                  ]
+                },
+                {
+                  "title": "PDTT",
+                  "items": [
+                    "Tujuan khusus → kesimpulan sesuai tujuan"
+                  ]
+                }
+              ],
+              "source": "[Peraturan BPK 1/2017 Ps.3-5 dan KK par.14,18,21-42; cetak 4-5,5-13 KK; PDF 4-5,17-25](https://peraturan.bpk.go.id/Download/20433/Peraturan%20BPK%20Nomor%201%20Tahun%202017.pdf)",
+              "alt": "Tiga tujuan pemeriksaan. Cabang terpisah dibandingkan sesuai label. Tidak menunjukkan urutan waktu.",
+              "footer": "Skematis: hubungan konsep, tanpa skala angka."
+            }
+          },
+          {
+            "kind": "self-check",
+            "question": "Pemeriksa menilai keterlambatan layanan dan pemborosan sumber daya. Jenis yang relevan?",
+            "answer": [
+              {
+                "kind": "p",
+                "text": "Pemeriksaan kinerja, dengan tujuan dan kriteria yang dirumuskan pada aspek ekonomi, efisiensi atau efektivitas. [UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28](https://peraturan.bpk.go.id/Details/40509/uu-no-15-tahun-2004) [Peraturan BPK 1/2017 Ps.3-5 dan KK par.14,18,21-42; cetak 4-5,5-13 KK; PDF 4-5,17-25](https://peraturan.bpk.go.id/Download/20433/Peraturan%20BPK%20Nomor%201%20Tahun%202017.pdf)"
+              }
+            ],
+            "signal": "Jika alasanmu berbeda, kembali ke sumber dan identifikasi fakta yang belum mendukung jawaban."
+          }
+        ]
+      },
+      {
+        "kind": "section",
+        "layer": "main",
+        "title": "Unsur pemeriksaan: kriteria dan bukti",
+        "source": "[Peraturan BPK 1/2017 Ps.3-5 dan KK par.14,18,21-42; cetak 4-5,5-13 KK; PDF 4-5,17-25](https://peraturan.bpk.go.id/Download/20433/Peraturan%20BPK%20Nomor%201%20Tahun%202017.pdf)",
+        "blocks": [
+          {
+            "kind": "p",
+            "text": "Subject matter berarti hal pokok yang diperiksa, misalnya laporan, kinerja, proses atau kepatuhan. Criteria berarti tolok ukur untuk menilai hal pokok. Pemeriksa, pihak bertanggung jawab, dan pengguna LHP membentuk hubungan tiga pihak. Bukti menghubungkan keadaan yang ditemukan dengan kriteria. [Peraturan BPK 1/2017 Ps.3-5 dan KK par.14,18,21-42; cetak 4-5,5-13 KK; PDF 4-5,17-25](https://peraturan.bpk.go.id/Download/20433/Peraturan%20BPK%20Nomor%201%20Tahun%202017.pdf)"
+          },
+          {
+            "kind": "p",
+            "text": "Kecukupan menyangkut jumlah bukti; ketepatan menyangkut mutu, relevansi dan validitas. Banyak bukti bermutu buruk belum menutup kekurangan bukti yang tepat. Pemeriksa menggunakan inspeksi, observasi, konfirmasi, permintaan keterangan, rekalkulasi atau prosedur relevan lain. Kesimpulan harus mengikuti bukti yang cukup dan tepat, bukan dugaan berdasarkan satu dokumen yang belum dikonfirmasi. [Peraturan BPK 1/2017 Ps.3-5 dan KK par.14,18,21-42; cetak 4-5,5-13 KK; PDF 4-5,17-25](https://peraturan.bpk.go.id/Download/20433/Peraturan%20BPK%20Nomor%201%20Tahun%202017.pdf)"
+          },
+          {
+            "kind": "figure",
+            "spec": {
+              "id": "ASP-UAS-10-BUKTI",
+              "type": "process",
+              "title": "Dari tujuan sampai kesimpulan",
+              "nodes": [
+                {
+                  "title": "Tujuan dan hal pokok",
+                  "items": [
+                    "Apa yang dinilai?"
+                  ]
+                },
+                {
+                  "title": "Kriteria",
+                  "items": [
+                    "Tolok ukur yang relevan"
+                  ]
+                },
+                {
+                  "title": "Bukti",
+                  "items": [
+                    "Cukup dan tepat"
+                  ]
+                },
+                {
+                  "title": "Analisis",
+                  "items": [
+                    "Bandingkan kondisi dengan kriteria"
+                  ]
+                },
+                {
+                  "title": "LHP",
+                  "items": [
+                    "Kesimpulan sesuai jenis penugasan"
+                  ]
+                }
+              ],
+              "source": "[Peraturan BPK 1/2017 Ps.3-5 dan KK par.14,18,21-42; cetak 4-5,5-13 KK; PDF 4-5,17-25](https://peraturan.bpk.go.id/Download/20433/Peraturan%20BPK%20Nomor%201%20Tahun%202017.pdf)",
+              "alt": "Dari tujuan sampai kesimpulan. Tujuan dan hal pokok → Kriteria → Bukti → Analisis → LHP",
+              "footer": "Skematis: hubungan konsep, tanpa skala angka."
+            }
+          },
+          {
+            "kind": "self-check",
+            "question": "Mengapa 100 salinan dokumen yang sama tidak otomatis lebih meyakinkan daripada satu konfirmasi independen?",
+            "answer": [
+              {
+                "kind": "p",
+                "text": "Penggandaan jumlah tidak menaikkan mutu atau independensi bukti. Kecukupan dan ketepatan harus dinilai bersama. [Peraturan BPK 1/2017 Ps.3-5 dan KK par.14,18,21-42; cetak 4-5,5-13 KK; PDF 4-5,17-25](https://peraturan.bpk.go.id/Download/20433/Peraturan%20BPK%20Nomor%201%20Tahun%202017.pdf)"
+              }
+            ],
+            "signal": "Jika alasanmu berbeda, kembali ke sumber dan identifikasi fakta yang belum mendukung jawaban."
+          }
+        ]
+      },
+      {
+        "kind": "section",
+        "layer": "main",
+        "title": "Opini dan batasnya",
+        "source": "[UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28](https://peraturan.bpk.go.id/Details/40509/uu-no-15-tahun-2004)",
+        "blocks": [
+          {
+            "kind": "p",
+            "text": "UU 15/2004 menyebut opini sebagai kesimpulan profesional atas kewajaran informasi dalam laporan keuangan. Penjelasan Pasal 16 memuat empat kriteria: kesesuaian dengan SAP, kecukupan pengungkapan, kepatuhan terhadap peraturan, serta efektivitas sistem pengendalian intern. Empat jenis opini adalah WTP, WDP, tidak wajar dan pernyataan menolak memberikan opini. [UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28](https://peraturan.bpk.go.id/Details/40509/uu-no-15-tahun-2004)"
+          },
+          {
+            "kind": "p",
+            "text": "WTP menjawab kewajaran laporan menurut kriteria pemeriksaan. Opini itu tidak menyatakan bahwa seluruh transaksi bebas kecurangan atau seluruh program efektif. Kasus dokumen aset yang hilang memerlukan penilaian atas bukti alternatif, materialitas dan pengaruh terhadap laporan. Nominal yang besar saja belum menentukan satu jenis opini secara otomatis. Latihan di sini melatih analisis bukti, tanpa menggantikan pertimbangan profesional pemeriksa. [UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28](https://peraturan.bpk.go.id/Details/40509/uu-no-15-tahun-2004)"
+          },
+          {
+            "kind": "table",
+            "title": "Informasi dan kesimpulan yang diizinkan",
+            "headers": [
+              "Informasi",
+              "Makna yang dapat dijelaskan",
+              "Batas"
+            ],
+            "rows": [
+              [
+                "WTP",
+                "LK dinilai wajar menurut kriteria pemeriksaan",
+                "Tidak menjamin bebas fraud atau semua hasil program baik"
+              ],
+              [
+                "Dokumen aset hilang",
+                "Keterbatasan bukti perlu ditelusuri",
+                "Opini membutuhkan cakupan dan bukti alternatif"
+              ],
+              [
+                "Temuan kinerja",
+                "Aspek layanan/3 E perlu diperbaiki",
+                "Tidak otomatis mengubah opini LK"
+              ],
+              [
+                "PDTT",
+                "Kesimpulan khusus sesuai tujuan",
+                "Tidak selalu investigasi pidana"
+              ]
+            ],
+            "caption": "[UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28](https://peraturan.bpk.go.id/Details/40509/uu-no-15-tahun-2004) [Peraturan BPK 1/2017 Ps.3-5 dan KK par.14,18,21-42; cetak 4-5,5-13 KK; PDF 4-5,17-25](https://peraturan.bpk.go.id/Download/20433/Peraturan%20BPK%20Nomor%201%20Tahun%202017.pdf)",
+            "stackOnMobile": true
+          },
+          {
+            "kind": "self-check",
+            "question": "Bolehkah WTP dipakai sebagai satu-satunya indikator efektivitas program?",
+            "answer": [
+              {
+                "kind": "p",
+                "text": "Tidak. Opini menilai kewajaran laporan; efektivitas membutuhkan bukti tentang tujuan dan hasil program. [UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28](https://peraturan.bpk.go.id/Details/40509/uu-no-15-tahun-2004)"
+              }
+            ],
+            "signal": "Jika alasanmu berbeda, kembali ke sumber dan identifikasi fakta yang belum mendukung jawaban."
+          }
+        ]
+      },
+      {
+        "kind": "section",
+        "layer": "main",
+        "title": "LHP dan tindak lanjut 60 hari",
+        "source": "[UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28](https://peraturan.bpk.go.id/Details/40509/uu-no-15-tahun-2004)",
+        "blocks": [
+          {
+            "kind": "p",
+            "text": "LHP, Laporan Hasil Pemeriksaan, memuat hasil sesuai jenis pemeriksaan. LHP yang disampaikan kepada lembaga perwakilan terbuka untuk umum, dengan pengecualian rahasia negara. Pengguna laporan memerlukan rekomendasi yang dapat dihubungkan dengan masalah dan tindakan perbaikan. [UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28](https://peraturan.bpk.go.id/Details/40509/uu-no-15-tahun-2004)"
+          },
+          {
+            "kind": "p",
+            "text": "Pasal 20 mewajibkan pejabat menindaklanjuti rekomendasi dan menyampaikan jawaban atau penjelasan kepada BPK paling lambat 60 hari setelah LHP diterima. Tenggat ini melekat pada jawaban atau penjelasan. Penjelasan Pasal 20 mengizinkan alasan yang sah bila sebagian atau seluruh rekomendasi belum dapat dilaksanakan. BPK memantau tindak lanjut; surat jawaban tidak otomatis membuktikan rekomendasi telah selesai. [UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28](https://peraturan.bpk.go.id/Details/40509/uu-no-15-tahun-2004)"
+          },
+          {
+            "kind": "figure",
+            "spec": {
+              "id": "ASP-UAS-10-TL",
+              "type": "process",
+              "title": "Tindak lanjut berdasarkan bukti",
+              "nodes": [
+                {
+                  "title": "LHP diterima",
+                  "items": [
+                    "Catat tanggal penerimaan"
+                  ]
+                },
+                {
+                  "title": "Pejabat menindaklanjuti",
+                  "items": [
+                    "Tetapkan tindakan dan penanggung jawab"
+                  ]
+                },
+                {
+                  "title": "Jawaban/penjelasan kepada BPK",
+                  "items": [
+                    "Paling lambat 60 hari; sertakan bukti/alasan sah"
+                  ]
+                },
+                {
+                  "title": "BPK memantau",
+                  "items": [
+                    "Nilai hasil tindak lanjut"
+                  ]
+                },
+                {
+                  "title": "Perbaikan berlanjut",
+                  "items": [
+                    "Selesaikan masalah yang masih ada"
+                  ]
+                }
+              ],
+              "source": "[UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28](https://peraturan.bpk.go.id/Details/40509/uu-no-15-tahun-2004)",
+              "alt": "Tindak lanjut berdasarkan bukti. LHP diterima → Pejabat menindaklanjuti → Jawaban/penjelasan kepada BPK → BPK memantau → Perbaikan berlanjut",
+              "footer": "Skematis: hubungan konsep, tanpa skala angka."
+            }
+          },
+          {
+            "kind": "self-check",
+            "question": "Apa yang salah dengan kalimat seluruh rekomendasi pasti selesai dalam 60 hari?",
+            "answer": [
+              {
+                "kind": "p",
+                "text": "UU menetapkan tenggat jawaban/penjelasan 60 hari. Pelaksanaan dan hasilnya tetap harus dijelaskan serta dipantau. [UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28](https://peraturan.bpk.go.id/Details/40509/uu-no-15-tahun-2004)"
+              }
+            ],
+            "signal": "Jika alasanmu berbeda, kembali ke sumber dan identifikasi fakta yang belum mendukung jawaban."
+          }
+        ]
+      },
+      {
+        "kind": "section",
+        "layer": "main",
+        "title": "SPKN: bedakan pengundangan dan penerapan",
+        "source": "[Peraturan BPK 1/2017 Ps.3-5 dan KK par.14,18,21-42; cetak 4-5,5-13 KK; PDF 4-5,17-25](https://peraturan.bpk.go.id/Download/20433/Peraturan%20BPK%20Nomor%201%20Tahun%202017.pdf) [Peraturan BPK 1/2026 Ps.7-9; cetak/PDF 3-4; diundangkan 10 April 2026, berlaku 10 April 2028](https://peraturan.bpk.go.id/Download/411430/Salinan%20PBPK%201%20Tahun%202026.pdf#page=3)",
+        "blocks": [
+          {
+            "kind": "p",
+            "text": "Peraturan BPK 1/2017 memuat kerangka konseptual dan PSP 100,200,300 tentang standar umum, pelaksanaan dan pelaporan. Lingkupnya termasuk APIP ketika melakukan audit kinerja dan audit tujuan tertentu menurut Pasal 5. Standar pengawasan intern juga perlu dibaca sesuai mandat penugasan. [Peraturan BPK 1/2017 Ps.3-5 dan KK par.14,18,21-42; cetak 4-5,5-13 KK; PDF 4-5,17-25](https://peraturan.bpk.go.id/Download/20433/Peraturan%20BPK%20Nomor%201%20Tahun%202017.pdf) [Peraturan BPK 1/2026 Ps.7-9; cetak/PDF 3-4; diundangkan 10 April 2026, berlaku 10 April 2028](https://peraturan.bpk.go.id/Download/411430/Salinan%20PBPK%201%20Tahun%202026.pdf#page=3)"
+          },
+          {
+            "kind": "p",
+            "text": "SPKN baru, Peraturan BPK 1/2026, diundangkan 10 April 2026. Pasal 9 menetapkan mulai berlaku dua tahun sejak pengundangan, yaitu 10 April 2028. Pasal 8 mencabut peraturan 2017 pada saat peraturan baru mulai berlaku. Pada tanggal audit 14 Oktober 2026, gunakan 2017 sebagai kerangka aktif dan jelaskan 2026 sebagai pembaruan yang belum mulai diterapkan. Label status pada portal perlu dibaca bersama pasal transisi. [Peraturan BPK 1/2017 Ps.3-5 dan KK par.14,18,21-42; cetak 4-5,5-13 KK; PDF 4-5,17-25](https://peraturan.bpk.go.id/Download/20433/Peraturan%20BPK%20Nomor%201%20Tahun%202017.pdf) [Peraturan BPK 1/2026 Ps.7-9; cetak/PDF 3-4; diundangkan 10 April 2026, berlaku 10 April 2028](https://peraturan.bpk.go.id/Download/411430/Salinan%20PBPK%201%20Tahun%202026.pdf#page=3)"
+          },
+          {
+            "kind": "figure",
+            "spec": {
+              "id": "ASP-UAS-10-VERSI",
+              "type": "process",
+              "title": "Garis waktu SPKN",
+              "nodes": [
+                {
+                  "title": "2017",
+                  "items": [
+                    "Kerangka dan PSP 100/200/300"
+                  ]
+                },
+                {
+                  "title": "10 April 2026",
+                  "items": [
+                    "SPKN baru diundangkan"
+                  ]
+                },
+                {
+                  "title": "14 Oktober 2026",
+                  "items": [
+                    "Audit paket: 2017 masih digunakan"
+                  ]
+                },
+                {
+                  "title": "10 April 2028",
+                  "items": [
+                    "Mulai berlaku 2026; pencabutan 2017"
+                  ]
+                }
+              ],
+              "source": "[Peraturan BPK 1/2026 Ps.7-9; cetak/PDF 3-4; diundangkan 10 April 2026, berlaku 10 April 2028](https://peraturan.bpk.go.id/Download/411430/Salinan%20PBPK%201%20Tahun%202026.pdf#page=3)",
+              "alt": "Garis waktu SPKN. 2017 → 10 April 2026 → 14 Oktober 2026 → 10 April 2028",
+              "footer": "Skematis: hubungan konsep, tanpa skala angka."
+            }
+          },
+          {
+            "kind": "self-check",
+            "question": "Apakah tanggal pengundangan 2026 berarti SPKN 2017 langsung tidak berlaku?",
+            "answer": [
+              {
+                "kind": "p",
+                "text": "Tidak. Pasal 8-9 menempatkan pencabutan pada saat peraturan 2026 mulai berlaku setelah dua tahun. [Peraturan BPK 1/2017 Ps.3-5 dan KK par.14,18,21-42; cetak 4-5,5-13 KK; PDF 4-5,17-25](https://peraturan.bpk.go.id/Download/20433/Peraturan%20BPK%20Nomor%201%20Tahun%202017.pdf) [Peraturan BPK 1/2026 Ps.7-9; cetak/PDF 3-4; diundangkan 10 April 2026, berlaku 10 April 2028](https://peraturan.bpk.go.id/Download/411430/Salinan%20PBPK%201%20Tahun%202026.pdf#page=3)"
+              }
+            ],
+            "signal": "Jika alasanmu berbeda, kembali ke sumber dan identifikasi fakta yang belum mendukung jawaban."
+          }
+        ]
+      },
+      {
+        "kind": "pendalaman",
+        "title": "Pendalaman: lima unsur SPIP dan hubungan audit",
+        "blocks": [
+          {
+            "kind": "figure",
+            "spec": {
+              "id": "ASP-UAS-10-SPIP",
+              "type": "parallel",
+              "title": "Unsur SPIP",
+              "nodes": [
+                {
+                  "title": "Lingkungan pengendalian",
+                  "items": [
+                    "Integritas dan struktur"
+                  ]
+                },
+                {
+                  "title": "Penilaian risiko",
+                  "items": [
+                    "Risiko terhadap tujuan"
+                  ]
+                },
+                {
+                  "title": "Kegiatan pengendalian",
+                  "items": [
+                    "Respons atas risiko"
+                  ]
+                },
+                {
+                  "title": "Informasi dan komunikasi",
+                  "items": [
+                    "Informasi untuk tanggung jawab"
+                  ]
+                },
+                {
+                  "title": "Pemantauan",
+                  "items": [
+                    "Nilai efektivitas pengendalian"
+                  ]
+                }
+              ],
+              "source": "[PP 60/2008 Ps.2-3,47-54; cetak/PDF 3-4,21-25](https://peraturan.go.id/files/pp60-2008.pdf#page=3)",
+              "alt": "Unsur SPIP. Cabang terpisah dibandingkan sesuai label. Tidak menunjukkan urutan waktu.",
+              "footer": "Skematis: hubungan konsep, tanpa skala angka."
+            }
+          },
+          {
+            "kind": "p",
+            "text": "SPIP memberi keyakinan memadai tentang tujuan, pelaporan, pengamanan aset dan kepatuhan. Kelima unsur saling mendukung, tanpa urutan waktu wajib. Audit/reviu tidak dapat menggantikan pengendalian harian oleh manajemen. [PP 60/2008 Ps.2-3,47-54; cetak/PDF 3-4,21-25](https://peraturan.go.id/files/pp60-2008.pdf#page=3)"
+          },
+          {
+            "kind": "p",
+            "text": "JP Bab 9 sudah dibaca lengkap dalam edisi keenam 2010. Buku memberi kerangka perbandingan internasional; mandat APIP/BPK tetap mengikuti peraturan Indonesia. Independensi memerlukan sikap objektif dan dukungan kelembagaan. Tekanan anggaran, akses bukti atau pengubahan laporan dapat mengganggu pemeriksaan. [Jones-Pendlebury ed.6 (2010), Bab 9, cetak 127-140/PDF 138-151](https://opac.feb.uinjkt.ac.id/repository/4a92513b40668f056ddd4e5117aca16e.pdf#page=138)"
+          },
+          {
+            "kind": "table",
+            "title": "Kerangka buku dan batas penerapan",
+            "headers": [
+              "Konsep",
+              "Implikasi untuk analisis kasus"
+            ],
+            "rows": [
+              [
+                "Independensi",
+                "Periksa mandat, akses bukti, sumber daya dan kebebasan pelaporan."
+              ],
+              [
+                "Pengendalian intern",
+                "Kontrol mengurangi risiko; kolusi, kesalahan dan pengabaian oleh manajemen tetap mungkin."
+              ],
+              [
+                "Materialitas",
+                "Nilai uang perlu dibaca bersama sensitivitas sifat transaksi dan kepentingan publik."
+              ],
+              [
+                "Pemeriksaan anggaran",
+                "Target dan prediksi memerlukan pemeriksaan asumsi; bukti transaksi realisasi mempunyai dasar berbeda."
+              ]
+            ],
+            "caption": "[Jones-Pendlebury ed.6 (2010), Bab 9, cetak 127-140/PDF 138-151](https://opac.feb.uinjkt.ac.id/repository/4a92513b40668f056ddd4e5117aca16e.pdf#page=138) Kerangka konseptual; keputusan penugasan Indonesia mengikuti SPKN.",
+            "stackOnMobile": true
+          },
+          {
+            "kind": "p",
+            "text": "Contoh buatan: biaya perjalanan pejabat bernilai kecil dapat sensitif karena sifat dan penerima manfaatnya. Menilai seluruh temuan dengan satu persen seragam dapat melewatkan aspek kualitatif. Anggaran masa depan juga tidak memberikan kepastian bahwa hasil akan terjadi. Pilih kesimpulan sesuai objek, kriteria dan bukti yang benar-benar diperiksa. [Jones-Pendlebury ed.6 (2010), Bab 9, cetak 127-140/PDF 138-151](https://opac.feb.uinjkt.ac.id/repository/4a92513b40668f056ddd4e5117aca16e.pdf#page=138)"
+          }
+        ]
+      },
+      {
+        "kind": "section",
+        "layer": "latihan",
+        "title": "Persiapan ujian",
+        "blocks": [
+          {
+            "kind": "table",
+            "title": "Jebakan dan langkah koreksi",
+            "headers": [
+              "Jebakan",
+              "Langkah yang benar"
+            ],
+            "rows": [
+              [
+                "Opini ditebak dari nominal satu masalah",
+                "Minta bukti alternatif, cakupan dan materialitas."
+              ],
+              [
+                "60 hari digambarkan jaminan selesai semua rekomendasi",
+                "Pisahkan jawaban/penjelasan dari status pelaksanaan."
+              ],
+              [
+                "Aturan baru disamakan dengan tanggal pengundangan",
+                "Gunakan transisiPasal 7-9 SPKN 2026."
+              ]
+            ],
+            "caption": "[UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28](https://peraturan.bpk.go.id/Details/40509/uu-no-15-tahun-2004)",
+            "stackOnMobile": true
+          }
+        ]
+      },
+      {
+        "kind": "solution-reveal",
+        "title": "Latihan buatan: bukti aset belum cukup",
+        "prompt": "Daftar asetRp 8 miliar kehilangan dokumen awal. Pemeriksa belum menyelesaikan observasi dan konfirmasi. Pilih langkah, bukan tebak opini.",
+        "blocks": [
+          {
+            "kind": "p",
+            "text": "Fakta: dokumen awal hilang. Asumsi: masih ada bukti alternatif yang mungkin diperoleh. Analisis: lakukan observasi, konfirmasi, dan pemeriksaan catatan pendukung; nilai materialitas serta dampak terhadap hal pokok. Belum ada dasar untuk memutuskan jenis opini final."
+          },
+          {
+            "kind": "p",
+            "text": "Menganggap otomatis disclaimer mengabaikan bukti alternatif. Menganggap otomatis WTP karena aset terlihat mengabaikan hak, nilai dan pengungkapan. Keputusan: selesaikan prosedur dan dokumentasikan hasil sebelum menyimpulkan. [UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28](https://peraturan.bpk.go.id/Details/40509/uu-no-15-tahun-2004) [Peraturan BPK 1/2017 Ps.3-5 dan KK par.14,18,21-42; cetak 4-5,5-13 KK; PDF 4-5,17-25](https://peraturan.bpk.go.id/Download/20433/Peraturan%20BPK%20Nomor%201%20Tahun%202017.pdf)"
+          }
+        ],
+        "revealLabel": "Tampilkan langkah dan pemeriksaan"
+      },
+      {
+        "kind": "solution-reveal",
+        "title": "Latihan buatan: tindak lanjut yang belum selesai",
+        "prompt": "Hari ke 45 sejak LHP diterima, tindak lanjut belum lengkap. Pejabat akan menunggu sampai semua selesai untuk menjawab BPK.",
+        "blocks": [
+          {
+            "kind": "p",
+            "text": "UU mewajibkan jawaban/penjelasan paling lambat 60 hari. Pejabat harus menyampaikan tindakan yang telah dilakukan, bukti, rencana penyelesaian dan alasan sah atas bagian yang belum dapat dilaksanakan. Menunggu tanpa jawaban dapat melewati tenggat."
+          },
+          {
+            "kind": "p",
+            "text": "Surat umum tanpa bukti tidak cukup untuk menyatakan penyelesaian. BPK memantau tindak lanjut dan menilai penjelasan. Angka hari 45 adalah asumsi latihan, tidak mengubah tenggat sumber. [UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28](https://peraturan.bpk.go.id/Details/40509/uu-no-15-tahun-2004)"
+          }
+        ],
+        "revealLabel": "Tampilkan langkah dan pemeriksaan"
+      }
+    ]
+  },
+  "quiz": [
+    {
+      "id": "akk203-uas-tm10-01",
+      "tm": 10,
+      "topic": "APIP",
+      "skill": "Analisis dasar, mekanisme dan batas penerapan",
+      "difficulty": "medium",
+      "q": "APIP: bentuk kegiatan pengawasan intern menurut PP 60?",
+      "options": [
+        "Opini WTP bagi semua warga dan penerima layanan",
+        "Penyusunan putusan pidana bagi semua program",
+        "Audit, reviu, evaluasi, pemantauan dan lainnya",
+        "Penggantian seluruh tanggung jawab pimpinan"
+      ],
+      "answer": 2,
+      "explanation": "Pasal 48 menjelaskan lima bentuk kegiatan. Opini eksternal, putusan pidana dan pemindahan tanggung jawab bukan klasifikasi pengawasan intern tersebut. Rujukan: [PP 60/2008 Ps.2-3,47-54; cetak/PDF 3-4,21-25](https://peraturan.go.id/files/pp60-2008.pdf#page=3)",
+      "sourceRef": "[PP 60/2008 Ps.2-3,47-54; cetak/PDF 3-4,21-25](https://peraturan.go.id/files/pp60-2008.pdf#page=3)",
+      "sourceAnchors": [
+        "[PP 60/2008 Ps.2-3,47-54; cetak/PDF 3-4,21-25](https://peraturan.go.id/files/pp60-2008.pdf#page=3)"
+      ]
+    },
+    {
+      "id": "akk203-uas-tm10-02",
+      "tm": 10,
+      "topic": "BPK",
+      "skill": "Analisis dasar, mekanisme dan batas penerapan",
+      "difficulty": "medium",
+      "q": "BPK: siapa menentukan objek, waktu dan metode pemeriksaan?",
+      "options": [
+        "Pejabat objek secara mutlak tanpa peran BPK",
+        "Donor yayasan untuk seluruh anggaran negara",
+        "Penyedia aplikasi karena data ada dalam sistem",
+        "BPK secara bebas dan mandiri sesuai UU 15/2004"
+      ],
+      "answer": 3,
+      "explanation": "Pasal 6 memberi kemandirian kepada BPK. Objek, donor, dan penyedia sistem dapat memberi informasi sesuai kebutuhan, tetapi tidak mengambil alih kewenangan penentuan pemeriksaan. Rujukan: [UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28](https://peraturan.bpk.go.id/Details/40509/uu-no-15-tahun-2004)",
+      "sourceRef": "[UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28](https://peraturan.bpk.go.id/Details/40509/uu-no-15-tahun-2004)",
+      "sourceAnchors": [
+        "[UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28](https://peraturan.bpk.go.id/Details/40509/uu-no-15-tahun-2004)"
+      ]
+    },
+    {
+      "id": "akk203-uas-tm10-03",
+      "tm": 10,
+      "topic": "Jenis pemeriksaan",
+      "skill": "Analisis dasar, mekanisme dan batas penerapan",
+      "difficulty": "medium",
+      "q": "Jenis pemeriksaan: menilai ekonomi dan hasil program termasuk?",
+      "options": [
+        "Pemeriksaan kinerja dengan kriteria yang relevan",
+        "Pemeriksaan keuangan untuk opini semua layanan",
+        "Audit dana kampanye untuk seluruh kementerian",
+        "Jurnal konsolidasi untuk mengubah hasil program"
+      ],
+      "answer": 0,
+      "explanation": "Pemeriksaan kinerja memeriksa aspek 3 E. Opini LK tidak otomatis menjawab hasil program; kampanye berbeda lingkup, sedangkan jurnal adalah proses akuntansi. Rujukan: [UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28](https://peraturan.bpk.go.id/Details/40509/uu-no-15-tahun-2004) [Peraturan BPK 1/2017 Ps.3-5 dan KK par.14,18,21-42; cetak 4-5,5-13 KK; PDF 4-5,17-25](https://peraturan.bpk.go.id/Download/20433/Peraturan%20BPK%20Nomor%201%20Tahun%202017.pdf)",
+      "sourceRef": "[UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28](https://peraturan.bpk.go.id/Details/40509/uu-no-15-tahun-2004) [Peraturan BPK 1/2017 Ps.3-5 dan KK par.14,18,21-42; cetak 4-5,5-13 KK; PDF 4-5,17-25](https://peraturan.bpk.go.id/Download/20433/Peraturan%20BPK%20Nomor%201%20Tahun%202017.pdf)",
+      "sourceAnchors": [
+        "[UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28](https://peraturan.bpk.go.id/Details/40509/uu-no-15-tahun-2004) [Peraturan BPK 1/2017 Ps.3-5 dan KK par.14,18,21-42; cetak 4-5,5-13 KK; PDF 4-5,17-25](https://peraturan.bpk.go.id/Download/20433/Peraturan%20BPK%20Nomor%201%20Tahun%202017.pdf)"
+      ]
+    },
+    {
+      "id": "akk203-uas-tm10-04",
+      "tm": 10,
+      "topic": "Bukti",
+      "skill": "Analisis dasar, mekanisme dan batas penerapan",
+      "difficulty": "medium",
+      "q": "Bukti: apa beda kecukupan dan ketepatan?",
+      "options": [
+        "Kecukupan mutu; ketepatan hanya jumlah salinan",
+        "Kecukupan jumlah; ketepatan mutu dan relevansi",
+        "Kecukupan opini; ketepatan hanya serapan biaya",
+        "Kecukupan aplikasi; ketepatan tanggal pengadaan"
+      ],
+      "answer": 1,
+      "explanation": "KK par 34-36 membedakan kuantitas dengan kualitas bukti. Opsi terbalik menukar definisi. Opini, serapan, aplikasi atau tanggal tunggal tidak menggantikan kedua dimensi penilaian bukti. Rujukan: [Peraturan BPK 1/2017 Ps.3-5 dan KK par.14,18,21-42; cetak 4-5,5-13 KK; PDF 4-5,17-25](https://peraturan.bpk.go.id/Download/20433/Peraturan%20BPK%20Nomor%201%20Tahun%202017.pdf)",
+      "sourceRef": "[Peraturan BPK 1/2017 Ps.3-5 dan KK par.14,18,21-42; cetak 4-5,5-13 KK; PDF 4-5,17-25](https://peraturan.bpk.go.id/Download/20433/Peraturan%20BPK%20Nomor%201%20Tahun%202017.pdf)",
+      "sourceAnchors": [
+        "[Peraturan BPK 1/2017 Ps.3-5 dan KK par.14,18,21-42; cetak 4-5,5-13 KK; PDF 4-5,17-25](https://peraturan.bpk.go.id/Download/20433/Peraturan%20BPK%20Nomor%201%20Tahun%202017.pdf)"
+      ]
+    },
+    {
+      "id": "akk203-uas-tm10-05",
+      "tm": 10,
+      "topic": "Opini WTP",
+      "skill": "Analisis dasar, mekanisme dan batas penerapan",
+      "difficulty": "medium",
+      "q": "Opini WTP: kesimpulan yang paling tepat?",
+      "options": [
+        "Semua transaksi pasti tanpa kecurangan",
+        "Seluruh program pasti mencapai hasil",
+        "Kewajaran LK menurut kriteria pemeriksaan",
+        "Seluruh rekomendasi BPK pasti selesai"
+      ],
+      "answer": 2,
+      "explanation": "Opini menjawab kewajaran informasi LK. Tiga alternatif mengubah opini menjadi jaminan fraud, efektivitas atau tindak lanjut yang memerlukan bukti terpisah. Rujukan: [UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28](https://peraturan.bpk.go.id/Details/40509/uu-no-15-tahun-2004)",
+      "sourceRef": "[UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28](https://peraturan.bpk.go.id/Details/40509/uu-no-15-tahun-2004)",
+      "sourceAnchors": [
+        "[UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28](https://peraturan.bpk.go.id/Details/40509/uu-no-15-tahun-2004)"
+      ]
+    },
+    {
+      "id": "akk203-uas-tm10-06",
+      "tm": 10,
+      "topic": "Latihan buatan",
+      "skill": "Analisis dasar, mekanisme dan batas penerapan",
+      "difficulty": "advanced",
+      "q": "Latihan buatan: dokumen aset hilang, bukti alternatif belum diuji. Keputusan?",
+      "options": [
+        "Langsung tetapkandisclaimer dari satu dokumen",
+        "Langsung tetapkan WTP karena aset terlihat",
+        "Hapus aset seluruhnya supaya audit selesai",
+        "Uji bukti alternatif dan dampak sebelum opini"
+      ],
+      "answer": 3,
+      "explanation": "Perlu bukti cukup dan tepat beserta penilaian materialitas dan cakupan. Disclaimer dan WTP otomatis melompati analisis. Penghapusan aset tanpa dasar juga dapat menciptakan salah saji. Rujukan: [UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28](https://peraturan.bpk.go.id/Details/40509/uu-no-15-tahun-2004) [Peraturan BPK 1/2017 Ps.3-5 dan KK par.14,18,21-42; cetak 4-5,5-13 KK; PDF 4-5,17-25](https://peraturan.bpk.go.id/Download/20433/Peraturan%20BPK%20Nomor%201%20Tahun%202017.pdf)",
+      "sourceRef": "[UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28](https://peraturan.bpk.go.id/Details/40509/uu-no-15-tahun-2004) [Peraturan BPK 1/2017 Ps.3-5 dan KK par.14,18,21-42; cetak 4-5,5-13 KK; PDF 4-5,17-25](https://peraturan.bpk.go.id/Download/20433/Peraturan%20BPK%20Nomor%201%20Tahun%202017.pdf)",
+      "sourceAnchors": [
+        "[UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28](https://peraturan.bpk.go.id/Details/40509/uu-no-15-tahun-2004) [Peraturan BPK 1/2017 Ps.3-5 dan KK par.14,18,21-42; cetak 4-5,5-13 KK; PDF 4-5,17-25](https://peraturan.bpk.go.id/Download/20433/Peraturan%20BPK%20Nomor%201%20Tahun%202017.pdf)"
+      ]
+    },
+    {
+      "id": "akk203-uas-tm10-07",
+      "tm": 10,
+      "topic": "Tindak lanjut",
+      "skill": "Analisis dasar, mekanisme dan batas penerapan",
+      "difficulty": "medium",
+      "q": "Tindak lanjut: 60 hari pada UU 15/2004 melekat pada apa?",
+      "options": [
+        "Jawaban atau penjelasan sejak LHP diterima",
+        "Jaminan seluruh rekomendasi selesai mutlak",
+        "Batas penerbitan semua laporan keuangan",
+        "Batas semua proyek fisik mulai dibangun"
+      ],
+      "answer": 0,
+      "explanation": "Pasal 20(3) menempatkan tenggat pada jawaban/penjelasan. Kewajiban melaksanakan tetap ada dan dipantau. Alternatif menyamakan tenggat dengan hasil final atau pekerjaan yang tidak diatur pasal itu. Rujukan: [UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28](https://peraturan.bpk.go.id/Details/40509/uu-no-15-tahun-2004)",
+      "sourceRef": "[UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28](https://peraturan.bpk.go.id/Details/40509/uu-no-15-tahun-2004)",
+      "sourceAnchors": [
+        "[UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28](https://peraturan.bpk.go.id/Details/40509/uu-no-15-tahun-2004)"
+      ]
+    },
+    {
+      "id": "akk203-uas-tm10-08",
+      "tm": 10,
+      "topic": "SPKN",
+      "skill": "Analisis dasar, mekanisme dan batas penerapan",
+      "difficulty": "medium",
+      "q": "SPKN: pada 14 Oktober 2026, bagaimana membaca aturan 2026?",
+      "options": [
+        "Langsung mengganti 2017 sejak 10 April 2026",
+        "Diundangkan, mulai berlaku 10 April 2028",
+        "Berlaku 2025 karena sebelum tahun akademik",
+        "Tidak pernah berlaku karena standar lama ada"
+      ],
+      "answer": 1,
+      "explanation": "Pasal 9 memberi jeda dua tahun sejak 10 April 2026. Pencabutan 2017 terjadi saat mulai berlaku. Alternatif mengabaikan jeda atau menyimpulkan standar baru tidak akan berlaku. Rujukan: [Peraturan BPK 1/2026 Ps.7-9; cetak/PDF 3-4; diundangkan 10 April 2026, berlaku 10 April 2028](https://peraturan.bpk.go.id/Download/411430/Salinan%20PBPK%201%20Tahun%202026.pdf#page=3)",
+      "sourceRef": "[Peraturan BPK 1/2026 Ps.7-9; cetak/PDF 3-4; diundangkan 10 April 2026, berlaku 10 April 2028](https://peraturan.bpk.go.id/Download/411430/Salinan%20PBPK%201%20Tahun%202026.pdf#page=3)",
+      "sourceAnchors": [
+        "[Peraturan BPK 1/2026 Ps.7-9; cetak/PDF 3-4; diundangkan 10 April 2026, berlaku 10 April 2028](https://peraturan.bpk.go.id/Download/411430/Salinan%20PBPK%201%20Tahun%202026.pdf#page=3)"
+      ]
+    },
+    {
+      "id": "akk203-uas-tm10-09",
+      "tm": 10,
+      "topic": "PDTT",
+      "skill": "Analisis dasar, mekanisme dan batas penerapan",
+      "difficulty": "medium",
+      "q": "PDTT: apakah selalu merupakan investigasi pidana?",
+      "options": [
+        "Ya; semua PDTT selalu menghasilkan putusan",
+        "Ya; semua PDTT menggantikan opini tahunan",
+        "Tidak; tujuan khusus dapat berupa kepatuhan",
+        "Tidak;PDTT hanya jurnal penyusutan aset"
+      ],
+      "answer": 2,
+      "explanation": "KK 2017 menyebut kepatuhan dan investigatif sebagai bentuk PDTT. Pemeriksa memberi kesimpulan sesuai tujuan, tidak otomatis putusan pidana atau pengganti opini. Jurnal penyusutan bukan jenis penugasan PDTT. Rujukan: [Peraturan BPK 1/2017 Ps.3-5 dan KK par.14,18,21-42; cetak 4-5,5-13 KK; PDF 4-5,17-25](https://peraturan.bpk.go.id/Download/20433/Peraturan%20BPK%20Nomor%201%20Tahun%202017.pdf)",
+      "sourceRef": "[Peraturan BPK 1/2017 Ps.3-5 dan KK par.14,18,21-42; cetak 4-5,5-13 KK; PDF 4-5,17-25](https://peraturan.bpk.go.id/Download/20433/Peraturan%20BPK%20Nomor%201%20Tahun%202017.pdf)",
+      "sourceAnchors": [
+        "[Peraturan BPK 1/2017 Ps.3-5 dan KK par.14,18,21-42; cetak 4-5,5-13 KK; PDF 4-5,17-25](https://peraturan.bpk.go.id/Download/20433/Peraturan%20BPK%20Nomor%201%20Tahun%202017.pdf)"
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "id": "aks201-tm10-01",
+      "phase": "pra-uas",
+      "tm": 10,
+      "topic": "ASP TM 10",
+      "category": "Hukum",
+      "front": "Peran BPK RI (Badan Pemeriksa Keuangan)",
+      "back": "BPK memeriksa pengelolaan dan tanggung jawab keuangan negara secara bebas dan mandiri. UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28"
+    },
+    {
+      "id": "aks201-tm10-02",
+      "phase": "pra-uas",
+      "tm": 10,
+      "topic": "ASP TM 10",
+      "category": "Mekanisme",
+      "front": "Aparat Pengawasan Intern Pemerintah (APIP)",
+      "back": "BPKP, inspektorat jenderal/unit sejenis, inspektorat provinsi serta kabupaten/kota melakukan pengawasan intern. PP 60/2008 Ps.2-3,47-54; cetak/PDF 3-4,21-25"
+    },
+    {
+      "id": "aks201-tm10-03",
+      "phase": "pra-uas",
+      "tm": 10,
+      "topic": "ASP TM 10",
+      "category": "Standar",
+      "front": "Tiga Jenis Pemeriksaan BPK RI",
+      "back": "Keuangan untuk opini LK; kinerja untuk aspek 3 E;PDTT sesuai tujuan, dapat berupa kepatuhan atau investigatif. Peraturan BPK 1/2017 Ps.3-5 dan KK par.14,18,21-42; cetak 4-5,5-13 KK; PDF 4-5,17-25"
+    },
+    {
+      "id": "aks201-tm10-04",
+      "phase": "pra-uas",
+      "tm": 10,
+      "topic": "ASP TM 10",
+      "category": "Standar",
+      "front": "Empat Jenis Opini BPK atas Laporan Keuangan",
+      "back": "WTP, WDP, tidak wajar dan pernyataan menolak memberikan opini. UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28"
+    },
+    {
+      "id": "akk203-uas-tm10-05",
+      "phase": "pra-uas",
+      "tm": 10,
+      "topic": "ASP TM 10",
+      "category": "Hukum",
+      "front": "Tenggat jawaban tindak lanjut",
+      "back": "Jawaban/penjelasan kepada BPK paling lambat 60 hari setelah LHP diterima. Pelaksanaan tetap dipantau. UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28"
+    },
+    {
+      "id": "akk203-uas-tm10-06",
+      "phase": "pra-uas",
+      "tm": 10,
+      "topic": "ASP TM 10",
+      "category": "Standar",
+      "front": "Transisi SPKN 2026",
+      "back": "Diundangkan 10 April 2026; mulai berlaku 10 April 2028. Pencabutan 2017 mengikuti saat mulai berlaku. Peraturan BPK 1/2026 Ps.7-9; cetak/PDF 3-4; diundangkan 10 April 2026, berlaku 10 April 2028"
+    }
+  ],
+  "bank": [
+    {
+      "type": "case",
+      "scope": "TM 10: Latihan buatan: desain pemeriksaan layanan",
+      "difficulty": "Komprehensif",
+      "estimatedTime": "20-30 menit",
+      "question": "Latihan buatan: desain pemeriksaan layanan",
+      "context": "Laporan keuangan sudah mendapat WTP, tetapi waktu tunggu layanan melebihi sasaran. Angka layanan dan bukti belum ditelaah. Rujukan: UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28 PP 60/2008 Ps.2-3,47-54; cetak/PDF 3-4,21-25 Peraturan BPK 1/2017 Ps.3-5 dan KK par.14,18,21-42; cetak 4-5,5-13 KK; PDF 4-5,17-25",
+      "data": [
+        "Opini menjawab kewajaran LK.",
+        "Pertanyaan penugasan adalah efektivitas layanan."
+      ],
+      "instructions": [
+        "Tentukan jenis pemeriksaan dan kriteria.",
+        "Susun bukti serta batas kesimpulan."
+      ],
+      "outputFormat": [
+        "Pisahkan fakta, asumsi, analisis dan keputusan.",
+        "Tunjukkan hitungan atau bukti, lalu jelaskan batas kesimpulan."
+      ],
+      "rubric": [
+        "Ketepatan kerangka dan sumber: 30%.",
+        "Langkah, bukti dan pemeriksaan: 40%.",
+        "Keputusan serta kelemahan alternatif: 30%."
+      ],
+      "answerGuide": "Fakta: WTP dan informasi waktu tunggu. Asumsi: tujuan penugasan menilai layanan. Pemeriksaan kinerja relevan; tetapkan target, definisi waktu, populasi, periode dan mutu sebagai kriteria. Kumpulkan catatan antrean, observasi, konfirmasi serta analisis penyebab. WTP tidak membuktikan efektivitas. Keputusan: nilai kinerja melalui bukti yang tepat tanpa mengubah makna opini LK. Alternatif sekadar menyalin opini tidak menjawab masalah. Menyimpulkan fraud dari keterlambatan tanpa bukti juga melampaui fakta. Rujukan: UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28 PP 60/2008 Ps.2-3,47-54; cetak/PDF 3-4,21-25 Peraturan BPK 1/2017 Ps.3-5 dan KK par.14,18,21-42; cetak 4-5,5-13 KK; PDF 4-5,17-25"
+    },
+    {
+      "type": "case",
+      "scope": "TM 10: Latihan buatan: bukti dan jawaban tindak lanjut",
+      "difficulty": "Komprehensif",
+      "estimatedTime": "20-30 menit",
+      "question": "Latihan buatan: bukti dan jawaban tindak lanjut",
+      "context": "Hari ke 45, pejabat belum menyelesaikan rekomendasi perbaikan daftar aset. Dokumen pembelian sebagian hilang, konfirmasi belum dilakukan. Rujukan: UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28 Peraturan BPK 1/2017 Ps.3-5 dan KK par.14,18,21-42; cetak 4-5,5-13 KK; PDF 4-5,17-25",
+      "data": [
+        "Tenggat jawaban adalah 60 hari sejak penerimaan LHP.",
+        "Rp 8 miliar adalah nilai aset buatan untuk latihan."
+      ],
+      "instructions": [
+        "Jelaskan langkah bukti alternatif.",
+        "Susun isi jawaban yang layak dan jelaskan risiko alternatif."
+      ],
+      "outputFormat": [
+        "Pisahkan fakta, asumsi, analisis dan keputusan.",
+        "Tunjukkan hitungan atau bukti, lalu jelaskan batas kesimpulan."
+      ],
+      "rubric": [
+        "Ketepatan kerangka dan sumber: 30%.",
+        "Langkah, bukti dan pemeriksaan: 40%.",
+        "Keputusan serta kelemahan alternatif: 30%."
+      ],
+      "answerGuide": "Fakta: hari 45, dokumen tidak lengkap, prosedur alternatif belum selesai. Asumsi: bukti tambahan masih dapat diperoleh dan tidak ada simpulan materialitas final. Lakukan konfirmasi, observasi dan pemeriksaan catatan terkait; nilai cakupan serta hasilnya. Sampaikan jawaban/penjelasan dalam 60 hari dengan tindakan, bukti, sisa masalah dan alasan sah. Tidak dapat menentukan opini dari nominalRp 8 miliar saja. Menunggu semua selesai tanpa menjawab berisiko melampaui tenggat. Surat tanpa bukti tidak menyatakan rekomendasi selesai. BPK tetap memantau. Rujukan: UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28 Peraturan BPK 1/2017 Ps.3-5 dan KK par.14,18,21-42; cetak 4-5,5-13 KK; PDF 4-5,17-25"
+    }
+  ],
+  "audit": {
+    "findings": [
+      "Awal: Opini ditebak dari nominal satu masalah Perbaikan: Minta bukti alternatif, cakupan dan materialitas.",
+      "Awal: 60 hari digambarkan jaminan selesai semua rekomendasi Perbaikan: Pisahkan jawaban/penjelasan dari status pelaksanaan.",
+      "Awal: Aturan baru disamakan dengan tanggal pengundangan Perbaikan: Gunakan transisiPasal 7-9 SPKN 2026.",
+      "Revisi buku: memperdalam independensi kelembagaan, materialitas kualitatif dan perbedaan assurance anggaran/realisasi dari JP Bab 9; tidak mengganti mandat Indonesia dengan praktik negara lain."
+    ],
+    "limitations": [
+      "JP Bab 2 dan 9 tersedia dan sudah diaudit dalam edisi keenam 2010. RPP menulis 2000 sehingga konflik tahun dicatat. Bahan dosen khusus audit belum diperoleh.",
+      "Latihan opini tidak memberi aturan otomatis materialitas/pervasiveness yang memerlukan standar penugasan rinci."
+    ],
+    "appendix": [
+      "Penyelesaian ganti kerugian dan sanksi rinci UU 15 tidak menjadi fokus inti TM 10.",
+      "Lampiran SPKN 2026 sesudah batang tubuh belum diterapkan sebagai standar aktif pada paket ini.",
+      "JP Bab 9 cetak 140/PDF 151: further reading diinventarisasi sebagai tambahan, tidak menjadi artikel wajib TM14 tanpa daftar dosen."
+    ],
+    "status": "NEEDS_HUMAN_REVIEW",
+    "practiceSources": [
+      {
+        "kind": "cards",
+        "id": "aks201-tm10-01",
+        "field": "back",
+        "label": "UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28",
+        "url": "https://peraturan.bpk.go.id/Details/40509/uu-no-15-tahun-2004"
+      },
+      {
+        "kind": "cards",
+        "id": "aks201-tm10-02",
+        "field": "back",
+        "label": "PP 60/2008 Ps.2-3,47-54; cetak/PDF 3-4,21-25",
+        "url": "https://peraturan.go.id/files/pp60-2008.pdf#page=3"
+      },
+      {
+        "kind": "cards",
+        "id": "aks201-tm10-03",
+        "field": "back",
+        "label": "Peraturan BPK 1/2017 Ps.3-5 dan KK par.14,18,21-42; cetak 4-5,5-13 KK; PDF 4-5,17-25",
+        "url": "https://peraturan.bpk.go.id/Download/20433/Peraturan%20BPK%20Nomor%201%20Tahun%202017.pdf"
+      },
+      {
+        "kind": "cards",
+        "id": "aks201-tm10-04",
+        "field": "back",
+        "label": "UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28",
+        "url": "https://peraturan.bpk.go.id/Details/40509/uu-no-15-tahun-2004"
+      },
+      {
+        "kind": "cards",
+        "id": "akk203-uas-tm10-05",
+        "field": "back",
+        "label": "UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28",
+        "url": "https://peraturan.bpk.go.id/Details/40509/uu-no-15-tahun-2004"
+      },
+      {
+        "kind": "cards",
+        "id": "akk203-uas-tm10-06",
+        "field": "back",
+        "label": "Peraturan BPK 1/2026 Ps.7-9; cetak/PDF 3-4; diundangkan 10 April 2026, berlaku 10 April 2028",
+        "url": "https://peraturan.bpk.go.id/Download/411430/Salinan%20PBPK%201%20Tahun%202026.pdf#page=3"
+      },
+      {
+        "kind": "bank",
+        "id": "tm10-case1",
+        "field": "context",
+        "label": "UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28",
+        "url": "https://peraturan.bpk.go.id/Details/40509/uu-no-15-tahun-2004"
+      },
+      {
+        "kind": "bank",
+        "id": "tm10-case1",
+        "field": "context",
+        "label": "PP 60/2008 Ps.2-3,47-54; cetak/PDF 3-4,21-25",
+        "url": "https://peraturan.go.id/files/pp60-2008.pdf#page=3"
+      },
+      {
+        "kind": "bank",
+        "id": "tm10-case1",
+        "field": "context",
+        "label": "Peraturan BPK 1/2017 Ps.3-5 dan KK par.14,18,21-42; cetak 4-5,5-13 KK; PDF 4-5,17-25",
+        "url": "https://peraturan.bpk.go.id/Download/20433/Peraturan%20BPK%20Nomor%201%20Tahun%202017.pdf"
+      },
+      {
+        "kind": "bank",
+        "id": "tm10-case1",
+        "field": "answerGuide",
+        "label": "UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28",
+        "url": "https://peraturan.bpk.go.id/Details/40509/uu-no-15-tahun-2004"
+      },
+      {
+        "kind": "bank",
+        "id": "tm10-case1",
+        "field": "answerGuide",
+        "label": "PP 60/2008 Ps.2-3,47-54; cetak/PDF 3-4,21-25",
+        "url": "https://peraturan.go.id/files/pp60-2008.pdf#page=3"
+      },
+      {
+        "kind": "bank",
+        "id": "tm10-case1",
+        "field": "answerGuide",
+        "label": "Peraturan BPK 1/2017 Ps.3-5 dan KK par.14,18,21-42; cetak 4-5,5-13 KK; PDF 4-5,17-25",
+        "url": "https://peraturan.bpk.go.id/Download/20433/Peraturan%20BPK%20Nomor%201%20Tahun%202017.pdf"
+      },
+      {
+        "kind": "bank",
+        "id": "tm10-case2",
+        "field": "context",
+        "label": "UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28",
+        "url": "https://peraturan.bpk.go.id/Details/40509/uu-no-15-tahun-2004"
+      },
+      {
+        "kind": "bank",
+        "id": "tm10-case2",
+        "field": "context",
+        "label": "Peraturan BPK 1/2017 Ps.3-5 dan KK par.14,18,21-42; cetak 4-5,5-13 KK; PDF 4-5,17-25",
+        "url": "https://peraturan.bpk.go.id/Download/20433/Peraturan%20BPK%20Nomor%201%20Tahun%202017.pdf"
+      },
+      {
+        "kind": "bank",
+        "id": "tm10-case2",
+        "field": "answerGuide",
+        "label": "UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28",
+        "url": "https://peraturan.bpk.go.id/Details/40509/uu-no-15-tahun-2004"
+      },
+      {
+        "kind": "bank",
+        "id": "tm10-case2",
+        "field": "answerGuide",
+        "label": "Peraturan BPK 1/2017 Ps.3-5 dan KK par.14,18,21-42; cetak 4-5,5-13 KK; PDF 4-5,17-25",
+        "url": "https://peraturan.bpk.go.id/Download/20433/Peraturan%20BPK%20Nomor%201%20Tahun%202017.pdf"
+      }
+    ]
+  },
+  "coverage": [
+    {
+      "concept": "APIP dan BPK: posisi dan tanggung jawab",
+      "source": "[UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28](https://peraturan.bpk.go.id/Details/40509/uu-no-15-tahun-2004) [PP 60/2008 Ps.2-3,47-54; cetak/PDF 3-4,21-25](https://peraturan.go.id/files/pp60-2008.pdf#page=3)",
+      "before": "Ringkas atau belum dipisahkan menurut konteks/versi",
+      "after": "Penjelasan mekanisme, perbandingan, cek pemahaman dan batas sumber",
+      "assumptions": "Angka buatan hanya pada latihan berlabel; aturan bergantung entitas/periode",
+      "sourceExercises": "Tidak ada nomor kasus khusus dalam RPP. Format/ilustrasi resmi digunakan bila tersedia."
+    },
+    {
+      "concept": "Jenis pemeriksaan mengikuti tujuan",
+      "source": "[UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28](https://peraturan.bpk.go.id/Details/40509/uu-no-15-tahun-2004) [Peraturan BPK 1/2017 Ps.3-5 dan KK par.14,18,21-42; cetak 4-5,5-13 KK; PDF 4-5,17-25](https://peraturan.bpk.go.id/Download/20433/Peraturan%20BPK%20Nomor%201%20Tahun%202017.pdf)",
+      "before": "Ringkas atau belum dipisahkan menurut konteks/versi",
+      "after": "Penjelasan mekanisme, perbandingan, cek pemahaman dan batas sumber",
+      "assumptions": "Angka buatan hanya pada latihan berlabel; aturan bergantung entitas/periode",
+      "sourceExercises": "Tidak ada nomor kasus khusus dalam RPP. Format/ilustrasi resmi digunakan bila tersedia."
+    },
+    {
+      "concept": "Unsur pemeriksaan: kriteria dan bukti",
+      "source": "[Peraturan BPK 1/2017 Ps.3-5 dan KK par.14,18,21-42; cetak 4-5,5-13 KK; PDF 4-5,17-25](https://peraturan.bpk.go.id/Download/20433/Peraturan%20BPK%20Nomor%201%20Tahun%202017.pdf)",
+      "before": "Ringkas atau belum dipisahkan menurut konteks/versi",
+      "after": "Penjelasan mekanisme, perbandingan, cek pemahaman dan batas sumber",
+      "assumptions": "Angka buatan hanya pada latihan berlabel; aturan bergantung entitas/periode",
+      "sourceExercises": "Tidak ada nomor kasus khusus dalam RPP. Format/ilustrasi resmi digunakan bila tersedia."
+    },
+    {
+      "concept": "Opini dan batasnya",
+      "source": "[UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28](https://peraturan.bpk.go.id/Details/40509/uu-no-15-tahun-2004)",
+      "before": "Ringkas atau belum dipisahkan menurut konteks/versi",
+      "after": "Penjelasan mekanisme, perbandingan, cek pemahaman dan batas sumber",
+      "assumptions": "Angka buatan hanya pada latihan berlabel; aturan bergantung entitas/periode",
+      "sourceExercises": "Tidak ada nomor kasus khusus dalam RPP. Format/ilustrasi resmi digunakan bila tersedia."
+    },
+    {
+      "concept": "LHP dan tindak lanjut 60 hari",
+      "source": "[UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28](https://peraturan.bpk.go.id/Details/40509/uu-no-15-tahun-2004)",
+      "before": "Ringkas atau belum dipisahkan menurut konteks/versi",
+      "after": "Penjelasan mekanisme, perbandingan, cek pemahaman dan batas sumber",
+      "assumptions": "Angka buatan hanya pada latihan berlabel; aturan bergantung entitas/periode",
+      "sourceExercises": "Tidak ada nomor kasus khusus dalam RPP. Format/ilustrasi resmi digunakan bila tersedia."
+    },
+    {
+      "concept": "SPKN: bedakan pengundangan dan penerapan",
+      "source": "[Peraturan BPK 1/2017 Ps.3-5 dan KK par.14,18,21-42; cetak 4-5,5-13 KK; PDF 4-5,17-25](https://peraturan.bpk.go.id/Download/20433/Peraturan%20BPK%20Nomor%201%20Tahun%202017.pdf) [Peraturan BPK 1/2026 Ps.7-9; cetak/PDF 3-4; diundangkan 10 April 2026, berlaku 10 April 2028](https://peraturan.bpk.go.id/Download/411430/Salinan%20PBPK%201%20Tahun%202026.pdf#page=3)",
+      "before": "Ringkas atau belum dipisahkan menurut konteks/versi",
+      "after": "Penjelasan mekanisme, perbandingan, cek pemahaman dan batas sumber",
+      "assumptions": "Angka buatan hanya pada latihan berlabel; aturan bergantung entitas/periode",
+      "sourceExercises": "Tidak ada nomor kasus khusus dalam RPP. Format/ilustrasi resmi digunakan bila tersedia."
+    },
+    {
+      "concept": "JP: independensi, materialitas dan pemeriksaan anggaran",
+      "source": "[Jones-Pendlebury ed.6 (2010), Bab 9, cetak 127-140/PDF 138-151](https://opac.feb.uinjkt.ac.id/repository/4a92513b40668f056ddd4e5117aca16e.pdf#page=138)",
+      "before": "Penekanan dominan jenis pemeriksaan dan aturan nasional",
+      "after": "Batas bukti/assurance dan tekanan kelembagaan dijelaskan dengan contoh berlabel",
+      "assumptions": "Buku internasional konseptual; objek Indonesia tetap memakai mandat dan SPKN",
+      "sourceExercises": "Bab 9 tidak memiliki latihan bernomor; further reading dicatat dalam Lampiran A"
+    }
+  ]
+}

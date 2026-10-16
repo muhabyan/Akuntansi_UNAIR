@@ -242,237 +242,370 @@ export const AKS201_BANK_UTS: BankSoal[] = [
 
 export const AKS201_BANK_UAS: BankSoal[] = [
   {
-    "type": "analysis",
-    "scope": "TM 11: Penyusunan Laporan LSM dan Pembatasan Donor",
+    "type": "case",
+    "scope": "TM 8: Latihan buatan: desain penggabungan laporan",
     "difficulty": "Komprehensif",
-    "estimatedTime": "35–40 menit",
-    "question": "Kasus LSM: hubungkan transaksi, perubahan aset neto, kas dan posisi keuangan",
-    "context": "Ilustrasi penulis; semua angka juta rupiah. Saldo awal nol. Donasi tunai tanpa pembatasan40 dan untuk program60, dengan pengakuan diasumsikan terpenuhi dan tanpa kewajiban pengembalian. Pembayaran program25 dari dana terbatas dan administrasi10 dari dana bebas. Tidak ada aset tetap, utang, piutang, pajak atau OCI.",
+    "estimatedTime": "20-30 menit",
+    "question": "Latihan buatan: desain penggabungan laporan",
+    "context": "Satker mempunyai catatan kas, BMN, dan laporan anggaran yang belum cocok. Diasumsikan berada dalam K/L pemerintah pusat. Rujukan: PMK 217/PMK.05/2022 Ps.2-3,20-26,37-40; cetak/PDF 10-11,20-23,25-27",
     "data": [
-      "Donasi: bebas40; program60.",
-      "Pengeluaran: program25; administrasi10."
+      "Keuangan dan barang mempunyai jalur pelaporan terkait.",
+      "Selisih nilai aset belum dijelaskan."
     ],
     "instructions": [
-      "Susun perubahan aset neto setiap kelas.",
-      "Jelaskan pelepasan pembatasan tanpa pendapatan baru.",
-      "Rekonsiliasikan surplus, arus kas dan posisi akhir.",
-      "Sebutkan asumsi dan tambahan informasi dalam CaLK."
+      "Susun urutan pemeriksaan dan penggabungan.",
+      "Jelaskan peran SAI, SABUN, UAPA dan LKPP."
     ],
     "outputFormat": [
-      "Rekonsiliasi dua kelas aset neto",
-      "Hubungan surplus dan kas",
-      "Posisi keuangan akhir",
-      "Catatan asumsi"
+      "Pisahkan fakta, asumsi, analisis dan keputusan.",
+      "Tunjukkan hitungan atau bukti, lalu jelaskan batas kesimpulan."
     ],
     "rubric": [
-      "Ketepatan perhitungan dan rekonsiliasi(25%)",
-      "Kesesuaian konsep dan sumber(25%)",
-      "Kecukupan bukti serta asumsi(25%)",
-      "Kejelasan simpulan dan batasnya(25%)"
+      "Ketepatan kerangka dan sumber: 30%.",
+      "Langkah, bukti dan pemeriksaan: 40%.",
+      "Keputusan serta kelemahan alternatif: 30%."
     ],
-    "answerGuide": "Pendapatan100 dan beban35 menghasilkan surplus65. Tanpa pembatasan:40+25-25-10=30. Dengan pembatasan:60-25=35. Pelepasan25 dan-25 memberi total nol. Kas akhir100-35=65; kewajiban nol dan aset neto65. Kesamaan kas dan surplus hanya mengikuti asumsi transaksi seluruhnya tunai. CaLK menjelaskan tujuan donor, pelepasan25 dan sisa pembatasan35."
-  },
-  {
-    "type": "journal",
-    "scope": "TM 8: Akuntansi Konsolidasi dan Jurnal Eliminasi Pemda",
-    "difficulty": "Komprehensif",
-    "estimatedTime": "35–40 menit",
-    "question": "Studi Kasus 9: Akuntansi Hubungan Timbal Balik Kantor Pusat - Kantor Cabang (HOBO) antara PPKD dan SKPD serta Jurnal Eliminasi Konsolidasian",
-    "context": "Ilustrasi penulis, bukan data atau LHP aktual. Pemerintah Kota Metropolitan menerapkan sistem akuntansi desentralisasi berbasis HOBO. PPKD bertindak sebagai Kantor Pusat (Home Office / BUD) dan SKPD Dinas Perhubungan bertindak sebagai Kantor Cabang (Branch Office). Selama tahun anggaran 2025 terjadi transaksi resiprokal berikut:\n1. 15 Januari: PPKD menerbitkan SP2D Uang Persediaan (UP) sebesar Rp 100.000.000 ke rekening Bendahara Pengeluaran Dinas Perhubungan.\n2. 18 Agustus: Dinas Perhubungan menerima uang retribusi parkir Rp 60.000.000 di Bendahara Penerimaan, dan pada 19 Agustus menyetorkan seluruh uang kas tersebut ke Kas Daerah (Kasda).\n3. 10 Oktober: Pengadaan rambu lalu lintas dan marka jalan senilai Rp 500.000.000 dilaksanakan rekanan. Tagihan dibayar langsung oleh Kasda via SP2D-LS (Belanja Modal Dinas Perhubungan).\n4. 31 Desember: Saldo akun RK-SKPD pada buku besar PPKD tercatat Debet Rp 540.000.000 dan saldo akun RK-PPKD pada buku besar Dinas Perhubungan tercatat Kredit Rp 540.000.000. Ilustrasi penulis dengan daftar transaksi parsial dan saldo timbal balik yang diberikan; bukan laporan aktual kota atau daftar lengkap transaksi penutupan tahun. Untuk pengadaan diasumsikan aset langsung memenuhi pengakuan dan pembayaran terjadi tanpa utang yang sudah tercatat sebelumnya.",
-    "data": [
-      "Transaksi 1: SP2D-UP Kasda ke SKPD Rp 100.000.000.",
-      "Transaksi 2: Penerimaan Retribusi Rp 60.000.000 dan Penyetoran ke Kasda Rp 60.000.000.",
-      "Transaksi 3: Pengadaan Aset Tetap SP2D-LS Rp 500.000.000.",
-      "Saldo Akhir Resiprokal: RK-SKPD (Debet Rp 540 juta) dan RK-PPKD (Kredit Rp 540 juta)."
-    ],
-    "instructions": [
-      "Susun ayat jurnal finansial yang dicatat oleh Dinas Perhubungan (SKPD) untuk Transaksi 1, 2, dan 3.",
-      "Susun ayat jurnal finansial berpasangan yang dicatat oleh PPKD (BUD) untuk Transaksi 1, 2, dan 3.",
-      "Buktikan rekonsiliasi saldo akun RK-PPKD di SKPD dan akun RK-SKPD di PPKD per 31 Desember sehingga menghasilkan angka resiprokal Rp 540.000.000.",
-      "Susun Jurnal Eliminasi yang wajib dibuat oleh Tim Konsolidasi Pemda pada Kertas Kerja Konsolidasian (Consolidation Worksheet) agar akun perantara ini tidak muncul di Neraca Kota Metropolitan."
-    ],
-    "outputFormat": [
-      "Tabel Jurnal Finansial Komparatif SKPD vs PPKD",
-      "Rekonsiliasi Buku Besar Akun Resiprokal HOBO",
-      "Ayat Jurnal Eliminasi Konsolidasian Akhir Tahun",
-      "Penjelasan Dampak terhadap Neraca Konsolidasi"
-    ],
-    "rubric": [
-      "Ketepatan perhitungan dan rekonsiliasi(25%)",
-      "Kesesuaian konsep dan sumber(25%)",
-      "Kecukupan bukti serta asumsi(25%)",
-      "Kejelasan simpulan dan batasnya(25%)"
-    ],
-    "answerGuide": "1. Jurnal Finansial pada SKPD Dinas Perhubungan:\n• Transaksi 1 (Terima UP):\n  (D) Kas di Bendahara Pengeluaran ..................... Rp 100.000.000\n      (K) RK-PPKD ...................................... Rp 100.000.000\n• Transaksi 2 (Terima & Setor Retribusi):\n  Saat terima di bendahara:\n  (D) Kas di Bendahara Penerimaan ...................... Rp 60.000.000\n      (K) Pendapatan Retribusi Parkir - LO ............. Rp 60.000.000\n  Saat setor ke Kasda:\n  (D) RK-PPKD .......................................... Rp 60.000.000\n      (K) Kas di Bendahara Penerimaan .................. Rp 60.000.000\n• Transaksi 3 (Pengadaan Rambu SP2D-LS):\n  (D) Aset Tetap - Rambu & Marka Jalan ................. Rp 500.000.000\n      (K) RK-PPKD ...................................... Rp 500.000.000\n\n2. Jurnal Finansial Berpasangan pada PPKD (BUD):\n• Transaksi 1 (Penerbitan SP2D-UP):\n  (D) RK-SKPD Dinas Perhubungan ........................ Rp 100.000.000\n      (K) Kas di Kasda ................................. Rp 100.000.000\n• Transaksi 2 (Terima Setoran Retribusi di Kasda):\n  (D) Kas di Kasda ..................................... Rp 60.000.000\n      (K) RK-SKPD Dinas Perhubungan .................... Rp 60.000.000\n• Transaksi 3 (Penerbitan SP2D-LS Belanja Modal SKPD):\n  (D) RK-SKPD Dinas Perhubungan ........................ Rp 500.000.000\n      (K) Kas di Kasda ................................. Rp 500.000.000\n\n3. Rekonsiliasi Saldo Resiprokal per 31 Desember:\n• Buku Besar RK-PPKD di SKPD (Kredit = Menambah hubungan internal):\n  - Kredit UP: +Rp 100.000.000\n  - Debet Setoran Retribusi: -Rp 60.000.000\n  - Kredit Belanja Modal LS: +Rp 500.000.000\n  - Saldo Akhir RK-PPKD = Kredit Rp 540.000.000.\n• Buku Besar RK-SKPD di PPKD (Debet = Hubungan internal):\n  - Debet Kirim UP: +Rp 100.000.000\n  - Kredit Terima Retribusi: -Rp 60.000.000\n  - Debet Bayar Belanja Modal LS: +Rp 500.000.000\n  - Saldo Akhir RK-SKPD = Debet Rp 540.000.000.\n• Kedua saldo saling mencerminkan (mirror balance) secara presisi.\n\n4. Jurnal Eliminasi Konsolidasian Pemda:\n• Pada kertas kerja konsolidasi laporan keuangan pemda per 31 Desember:\n  (D) RK-PPKD (Ekuitas) ................................ Rp 540.000.000\n      (K) RK-SKPD (Aset) ............................... Rp 540.000.000\n• Dampak: Akun RK-PPKD dan RK-SKPD tereliminasi menjadi nol. Pada Neraca Konsolidasi Pemda, beberapa dampak yang ditelusuri adalah Aset Tetap Rp 500 juta, Kas di Bendahara Rp 100 juta, dan Kas di Kasda (berkurang bersih Rp 540 juta)."
+    "answerGuide": "Fakta: dua jalur memberi nilai berbeda. Asumsi: dokumen tersedia dan unit berada dalam K/L. Analisis: rekonsiliasi UAKPA dengan barang, identifikasi koreksi, kemudian penggabungan sesuai struktur. UAPA menghasilkan LK K/L; LK K/L dan LK BUN dikonsolidasikan menjadi LKPP. Keputusan: tunda penggabungan saldo yang belum andal sampai selisih dijelaskan. Mengandalkan aplikasi tanpa memeriksa bukti mempertahankan salah saji. Memasukkan laporan satker langsung ke LKPD mencampur pusat dan daerah. Rujukan: PMK 217/PMK.05/2022 Ps.2-3,20-26,37-40; cetak/PDF 10-11,20-23,25-27"
   },
   {
     "type": "case",
-    "scope": "TM 9: Pengukuran Kinerja Value for Money",
+    "scope": "TM 8: Latihan buatan: worksheet eliminasi daerah",
     "difficulty": "Komprehensif",
-    "estimatedTime": "35–40 menit",
-    "question": "Studi Kasus 10: Analisis Komprehensif Kinerja Pelayanan Publik Berbasis Paradigma Value for Money (3E) dan Indeks Standar Pelayanan Minimal",
-    "context": "Ilustrasi penulis, bukan data atau LHP aktual. Dinas Kesehatan Kabupaten Sukamaju mengelola 'Program Penurunan Stunting Anak Balita' pada tahun anggaran 2025 dengan pagu alokasi anggaran Rp 10.000.000.000. Target output program adalah mendistribusikan 200.000 paket makanan tambahan gizi (PMT) untuk 20.000 balita sasaran. Target outcome adalah menurunkan prevalensi stunting daerah dari 24% menjadi minimal 16% (penurunan 8% poin). Setelah program selesai dievaluasi pada akhir tahun, data realisasi menunjukkan: Realisasi belanja aktual adalah Rp 8.800.000.000; Jumlah paket PMT yang berhasil diproduksi dan didistribusikan adalah 220.000 paket; dan Berdasarkan survei kesehatan nasional (SKI), prevalensi stunting berhasil turun menjadi 14% (penurunan 10% poin).",
+    "estimatedTime": "20-30 menit",
+    "question": "Latihan buatan: worksheet eliminasi daerah",
+    "context": "Pasangan RK dalam satu daerah mempunyai saldo debit RK-SKPD Rp 100 juta dan kredit RK-PPKD Rp 98 juta. Selisih adalah penerimaan SKPD belum tercatat, didukung bukti sah. Rujukan: Permendagri 64/2013 Lampiran II bagian j; cetak 33-37, PDF 71-75",
     "data": [
-      "Data Input:\n• Anggaran Pagu: Rp 10.000.000.000\n• Realisasi Belanja Aktual: Rp 8.800.000.000",
-      "Data Output:\n• Target Produksi Paket PMT: 200.000 paket (Biaya Standar = Rp 50.000/paket)\n• Realisasi Produksi Aktual: 220.000 paket",
-      "Data Outcome:\n• Target Penurunan Stunting: Dari 24% ke 16% (Target Capaian = Penurunan 8% poin)\n• Realisasi Penurunan Stunting Aktual: Dari 24% ke 14% (Realisasi Capaian = Penurunan 10% poin)",
-      "Kriteria Penilaian Kemenkeu/Kemendagri:\n  - Ekonomis: Realisasi Belanja ≤ Anggaran (Rasio < 100% = Ekonomis)\n  - Efisiensi: Biaya Aktual per Unit Output ≤ Standar (Rasio Biaya Satuan < 100% = Efisien)\n  - Efektivitas: Realisasi Capaian Outcome / Target Outcome ≥ 100% = Sangat Efektif"
+      "Nilai rupiah bulat; periode sama.",
+      "Bukti Rp 2 juta telah dikonfirmasi."
     ],
     "instructions": [
-      "Hitung penyerapan anggaran dan jelaskan bukti tambahan untuk menilai ekonomi.",
-      "Hitung biaya aktual dan anggaran per paket dengan cakupan biaya sebanding.",
-      "Hitung penurunan prevalensi dalam poin persentase dan capaian terhadap target.",
-      "Evaluasi tigaE beserta keterbatasan sebab-akibat."
+      "Hitung selisih.",
+      "Jelaskan koreksi sebelum eliminasi dan tunjukkan jurnal konsolidasi."
     ],
     "outputFormat": [
-      "Kalkulasi Rasio Ekonomis",
-      "Kalkulasi Rasio Efisiensi (Unit Cost Analysis)",
-      "Kalkulasi Rasio Efektivitas Capaian Outcome",
-      "Matriks Evaluasi Kinerja Value for Money (VFM)",
-      "Analisis Teoretis Hubungan Efisiensi versus Efektivitas"
+      "Pisahkan fakta, asumsi, analisis dan keputusan.",
+      "Tunjukkan hitungan atau bukti, lalu jelaskan batas kesimpulan."
     ],
     "rubric": [
-      "Ketepatan perhitungan dan rekonsiliasi(25%)",
-      "Kesesuaian konsep dan sumber(25%)",
-      "Kecukupan bukti serta asumsi(25%)",
-      "Kejelasan simpulan dan batasnya(25%)"
+      "Ketepatan kerangka dan sumber: 30%.",
+      "Langkah, bukti dan pemeriksaan: 40%.",
+      "Keputusan serta kelemahan alternatif: 30%."
     ],
-    "answerGuide": "Penyerapan8,8/10=88%; sisa1,2 miliar. Ekonomi memerlukan harga pembanding, mutu, kuantitas dan waktu input. Biaya rencana10 miliar/200.000=Rp 50.000/paket; aktual8,8 miliar/220.000=Rp 40.000/paket, rasio80%, dengan asumsi biaya dan mutu sebanding. Output110% dari target. Target penurunan24%-16%=8 poin persentase; aktual24%-14%=10 poin; capaian10/8=125%. Target numerik terlampaui, tetapi data belum membuktikan seluruh perubahan disebabkan program. Jangan menambah fakta pemantauan klinis atau menyatakan VFM sempurna tanpa bukti."
+    "answerGuide": "Fakta: Rp 100 juta dan Rp 98 juta. Asumsi: bukti Rp 2 juta valid, satu periode, satu pemda. Selisih = Rp 2 juta. Koreksi pencatatan unit yang belum lengkap menurut transaksi sumber, lalu verifikasi dua saldo Rp 100 juta. Pada worksheet: debit RK-PPKD Rp 100 juta; kredit RK-SKPD Rp 100 juta. Debit/kredit seimbang dan akun internal menjadi nol. Jangan memakai pendapatan baru untuk menutup selisih tanpa transaksi. Eliminasi Rp 98 juta sebelum koreksi menyisakan hubungan internal. Angka latihan tidak berasal dari xxx pada lampiran. Rujukan: Permendagri 64/2013 Lampiran II bagian j; cetak 33-37, PDF 71-75"
   },
   {
-    "type": "analysis",
-    "scope": "TM 10: Pemeriksaan BPK, Pertimbangan Opini dan Tindak Lanjut",
+    "type": "case",
+    "scope": "TM 9: Adaptasi ilustrasi sumber JP, sekolah A Eutopia",
     "difficulty": "Komprehensif",
-    "estimatedTime": "35–40 menit",
-    "question": "Studi Kasus 11: Analisis Laporan Hasil Pemeriksaan (LHP) BPK RI, Penentuan Kategori Opini Audit, dan Penyusunan Action Plan Tindak Lanjut 60 Hari",
-    "context": "Ilustrasi penulis, bukan data atau LHP aktual. Badan Pemeriksa Keuangan (BPK RI) Perwakilan Provinsi menyelesaikan audit atas Laporan Keuangan Pemerintah Daerah (LKPD) Kabupaten Sejahtera Tahun Anggaran 2024. Dalam draf temuan audit, tim pemeriksa BPK menemukan 3 masalah signifikan:\n1. Kelemahan SPI Aset Tetap: Aset Tetap Peralatan dan Mesin senilai Rp 85 miliar tidak didukung Kartu Inventaris Barang (KIB) yang memadai dan fisik barang senilai Rp 32 miliar tidak diketahui keberadaannya.\n2. Ketidakpatuhan Perundang-undangan: Ditemukan kekurangan volume pekerjaan fisik pada 12 paket proyek peningkatan jalan di Dinas Bina Marga sebesar Rp 14 miliar yang telah dibayar penuh 100% kepada kontraktor.\n3. Kas di Bendahara Pengeluaran: Terdapat tekor kas (kas tekor) di Sekretariat DPRD senilai Rp 3,5 miliar yang digunakan bendahara untuk kepentingan pribadi tanpa SPJ sah.\nTotal belanja modal pemda adalah Rp 400 miliar dan total aset tetap tercatat Rp 2.500 miliar.",
+    "estimatedTime": "20-30 menit",
+    "question": "Adaptasi ilustrasi sumber: menilai sekolah A di Eutopia",
+    "context": "Kota Eutopia adalah rekaan buku. Anggaran 20x2 sekolah A £3.000.000 untuk 450 murid dan 70 guru penuh waktu. Seluruh sekolah kota memakai £10.000.000, 1.950 murid dan 350 guru penuh waktu. Rujukan: Jones-Pendlebury ed.6 (2010), Exhibit 2.1-2.6, cetak 22-26/PDF 33-37.",
     "data": [
-      "Temuan 1 (Aset Tetap): Fisik aset Rp 32 miliar tidak dapat ditelusuri keberadaannya (dari total aset tetap Rp 2,5 triliun).\n• Materialitas: Dampak material pada akun Neraca Aset Tetap.",
-      "Temuan 2 (Kelebihan Bayar Kontraktor): Kekurangan volume pekerjaan jalan Rp 14 miliar (telah dibayar kas 100%).\n• Pelanggaran hukum dan potensi kerugian daerah.",
-      "Temuan 3 (Tekor Kas Bendahara): Penggelapan kas kasda Rp 3,5 miliar di Setwan.",
-      "Ketentuan Regulasi: UU No. 15 Tahun 2004 Pasal 16 & Pasal 20 (Opini Audit dan Kewajiban Tindak Lanjut 60 Hari Kalender)."
+      "Inspeksi terakhir memberi nilai 3 dari skala 4 sampai 1, berarti baik dalam ilustrasi buku.",
+      "Hasil tes sekolah di bawah target nasional; latar murid memengaruhi hasil.",
+      "Guru paruh waktu dan asisten digunakan tetapi jumlahnya tidak diberikan."
     ],
     "instructions": [
-      "Hubungkan ketiga masalah dengan empat kriteria opini tanpa mengarang isi CaLK.",
-      "Bedakan salah saji dan keterbatasan bukti; jelaskan informasi tambahan sebelum menentukan opini.",
-      "Jelaskan tenggat jawaban atau penjelasan tindak lanjut menurut Pasal 20.",
-      "Susun rencana tindak lanjut, penanggung jawab dan bukti penyelesaiannya."
+      "Hitung anggaran per murid dan murid per guru penuh waktu.",
+      "Nilai apakah kesimpulan sekolah pasti buruk dapat diterima."
     ],
     "outputFormat": [
-      "Evaluasi 4 Kriteria Audit BPK",
-      "Penetapan dan Justifikasi Opini Audit BPK",
-      "Ketentuan Hukum Tindak Lanjut Rekomendasi LHP",
-      "Matriks Rencana Aksi (Action Plan) 60 Hari"
+      "Pisahkan fakta, asumsi, analisis dan keputusan.",
+      "Tunjukkan hitungan atau bukti, lalu jelaskan batas kesimpulan."
     ],
     "rubric": [
-      "Ketepatan perhitungan dan rekonsiliasi(25%)",
-      "Kesesuaian konsep dan sumber(25%)",
-      "Kecukupan bukti serta asumsi(25%)",
-      "Kejelasan simpulan dan batasnya(25%)"
+      "Ketepatan kerangka dan sumber: 30%.",
+      "Langkah, bukti dan pemeriksaan: 40%.",
+      "Keputusan serta kelemahan alternatif: 30%."
     ],
-    "answerGuide": "Masalah aset85 miliar dan keberadaan32 miliar memerlukan penelusuran, bukti alternatif serta penilaian salah saji. Kekurangan volume14 miliar dan tekor kas3,5 miliar memerlukan pemeriksaan bukti, koreksi serta pemulihan sesuai ketentuan. Isi CaLK tidak diberikan sehingga jangan menyimpulkan pengungkapan pasti tidak ada. Opini belum dapat dipastikan dari nominal kasus saja. WDP memerlukan masalah material tidak pervasif; TW menyangkut salah saji material dan pervasif; TMP menyangkut bukti tidak cukup dengan kemungkinan dampak material dan pervasif. Jawaban/penjelasan tindak lanjut disampaikan paling lambat60 hari setelah LHP diterima, sesuai UU15/2004 Pasal 20. Rencana tindakan: verifikasi aset dan dokumen, hitung serta tagih kelebihan bayar sesuai prosedur, rekonsiliasi kas dan telusuri tanggung jawab; tetapkan petugas, tenggat dan bukti. Jangan menetapkan kesalahan pidana atau sanksi otomatis dari ringkasan kasus."
+    "answerGuide": "Fakta: anggaran, murid, guru dan penilaian inspeksi berasal dari ilustrasi buku. Asumsi hitungan: anggaran dipakai sebagai proksi biaya, bukan realisasi; murid dan guru penuh waktu memakai periode yang sama. Analisis: sekolah A 3.000.000/450 = £6.666,67 per murid; kota 10.000.000/1.950 = £5.128,21. Buku menampilkan £6.666 dan £5.128. Rasio murid/guru 450/70 = 6,43 dan 1.950/350 = 5,57; buku menampilkan 6,4 dan 5,6. Pembulatan hitungan ulang dua desimal. Inspeksi baik dan hasil tes di bawah target memberi sinyal yang perlu dijelaskan. Keputusan: periksa biaya aktual, mutu serta latar murid sebelum membuat peringkat. Alternatif menyatakan buruk dari anggaran per murid mengabaikan mutu; menyatakan efisien dari rasio guru mengabaikan guru paruh waktu/asisten; inspeksi baik tidak meniadakan kelemahan capaian tes. Rujukan: Jones-Pendlebury ed.6 (2010), Exhibit 2.1-2.6, cetak 22-26/PDF 33-37."
   },
   {
-    "type": "calculation",
-    "scope": "TM 12: Akuntansi Partai Politik, Bantuan APBN/APBD, & Audit BPK",
-    "difficulty": "Menengah",
-    "estimatedTime": "30–35 menit",
-    "question": "Studi Kasus 12: Akuntansi Bantuan Keuangan Partai Politik dari APBD Berdasarkan Permendagri 78/2020 dan Pemeriksaan Kepatuhan",
-    "context": "Ilustrasi penulis, bukan data atau LHP aktual. Dewan Pimpinan Cabang (DPC) Partai Amanat Rakyat di Kabupaten Sejahtera memperoleh 80.000 suara sah pada pemilu legislatif terakhir. Berdasarkan Peraturan Bupati, nilai bantuan keuangan partai politik per suara sah ditetapkan sebesar Rp 3.000 per suara. Pada tahun anggaran 2025, DPC menerima pencairan dana bantuan keuangan APBD sebesar Rp 240.000.000. Sepanjang tahun, bendahara partai mencatat pengeluaran sebagai berikut:\n• Kegiatan Workshop dan Pendidikan Politik Kader Perempuan & Pemuda: Rp 120.000.000\n• Pembelian Kaos, Bendera, dan Spanduk Kampanye Pilkada: Rp 45.000.000\n• Sewa Kantor Sekretariat DPC dan Tagihan Listrik/Internet: Rp 55.000.000\n• Pembelian Alat Tulis Kantor dan Komputer Sekretariat: Rp 20.000.000",
+    "type": "case",
+    "scope": "TM 9: Adaptasi format sumber: susun perjanjian kinerja",
+    "difficulty": "Komprehensif",
+    "estimatedTime": "20-30 menit",
+    "question": "Adaptasi format sumber: susun perjanjian kinerja",
+    "context": "Gunakan format perjanjian kinerja SKPD pada sumber. Angka berikut buatan: sasaran waktu tunggu, target 20 menit, realisasi 25 menit. Rujukan: Perpres 29/2014 Ps.5,9,15-18,24; cetak/PDF 6,8,10-11,13 Permen PAN-RB 53/2014 Lampiran II. A-F dan Anak Lampiran II/1; cetak 15-18, PDF 19-22",
     "data": [
-      "Suara Sah Pemilu: 80.000 suara sah.",
-      "Nilai Bantuan: Rp 3.000 / suara sah (Total Dana Cair APBD = Rp 240.000.000).",
-      "Realisasi Belanja Partai:\n  - Workshop Pendidikan Politik: Rp 120.000.000 (50,0%)\n  - Alat Peraga Kampanye Pilkada: Rp 45.000.000 (18,75%)\n  - Sewa Kantor & Utilitas Sekretariat: Rp 55.000.000 (22,92%)\n  - ATK & Komputer Sekretariat: Rp 20.000.000 (8,33%)\n  - Total Pengeluaran = Rp 240.000.000 (100%).",
-      "Ketentuan Regulasi: UU No. 2 Tahun 2011 Pasal 34 & Permendagri No. 78 Tahun 2020 (Alokasi minimal 60% untuk pendidikan politik, maksimal 40% untuk operasional kesekretariatan; Larangan keras penggunaan dana bantuan APBD untuk kegiatan kampanye pemilu/pilkada)."
+      "Satuan: menit; lebih rendah diinginkan.",
+      "Jumlah rapat tercatat naik, mutu data antrean belum direviu."
     ],
     "instructions": [
-      "Rekonsiliasikan80.000 suara dengan tarif ilustratifRp3.000 dan bantuanRp240 juta.",
-      "Hitung persentase setiap kelompok pengeluaran terhadap bantuan.",
-      "Evaluasi prioritas dan jenis penggunaan menurut Pasal 27 tanpa menambah rasio60/40.",
-      "Jelaskan dokumen serta bukti yang diperlukan sebelum menyimpulkan kepatuhan dan tindak lanjut."
+      "Tetapkan indikator dan sumber data.",
+      "Jelaskan analisis capaian dan rekomendasi."
     ],
     "outputFormat": [
-      "Perhitungan Plafon Alokasi Regulasi (60% vs 40%)",
-      "Tabel Klasifikasi Belanja Partai (Eligible vs Ineligible)",
-      "Evaluasi Kepatuhan terhadap Permendagri 78/2020",
-      "Temuan Pemeriksaan BPK RI dan Sanksi Hukum"
+      "Pisahkan fakta, asumsi, analisis dan keputusan.",
+      "Tunjukkan hitungan atau bukti, lalu jelaskan batas kesimpulan."
     ],
     "rubric": [
-      "Ketepatan perhitungan dan rekonsiliasi(25%)",
-      "Kesesuaian konsep dan sumber(25%)",
-      "Kecukupan bukti serta asumsi(25%)",
-      "Kejelasan simpulan dan batasnya(25%)"
+      "Ketepatan kerangka dan sumber: 30%.",
+      "Langkah, bukti dan pemeriksaan: 40%.",
+      "Keputusan serta kelemahan alternatif: 30%."
     ],
-    "answerGuide": "80.000×Rp 3.000=Rp 240 juta. Pendidikan120/240=50%; sekretariat(55+20)/240=31,25%; kampanye45/240=18,75%. Pasal 27 Permendagri36/2018 menyebut prioritas pendidikan dan penggunaan sekretariat; jangan membuat batas60/40 dari pasal tersebut. Telusuri substansi kegiatan dan bukti, pisahkan kampanye dari penggunaan bantuan yang diatur, lalu analisis aturan dasar beserta 78/2020. Ringkasan ini belum menetapkan hasil pemeriksaan aktual atau penghentian bantuan secara otomatis."
+    "answerGuide": "Fakta: waktu 25 menit dibanding target 20. Asumsi: pencatatan konsisten, populasi sama. Susun sasaran layanan lebih cepat, indikator rata-rata waktu tunggu dengan definisi titik mulai/akhir, target 20 menit, penanggung jawab dan anggaran. Selisih 5 menit atau 25% lebih lama. Verifikasi data sebelum menyimpulkan sebab. Keputusan: analisis hambatan layanan dan lakukan perbaikan yang diuji pada periode berikutnya. Jumlah rapat hanya kegiatan pendukung; menggantikan outcome dengan rapat mengubah sasaran. Mengubah target setelah hasil diketahui tanpa penjelasan merusak perbandingan. Rujukan: Perpres 29/2014 Ps.5,9,15-18,24; cetak/PDF 6,8,10-11,13 Permen PAN-RB 53/2014 Lampiran II. A-F dan Anak Lampiran II/1; cetak 15-18, PDF 19-22"
   },
   {
-    "type": "calculation",
-    "scope": "TM 13: Pola Pengelolaan Keuangan BLU/BLUD & Fleksibilitas RBA",
+    "type": "case",
+    "scope": "TM 10: Latihan buatan: desain pemeriksaan layanan",
     "difficulty": "Komprehensif",
-    "estimatedTime": "35–40 menit",
-    "question": "Studi Kasus 13: Pola Pengelolaan Keuangan BLUD Rumah Sakit: Fleksibilitas Penggunaan Pendapatan Langsung, RBA, dan Ambang Batas Belanja",
-    "context": "Ilustrasi penulis, bukan data atau LHP aktual. RSUD Sehat Mandiri adalah Rumah Sakit Umum Daerah yang menerapkan Pola Pengelolaan Keuangan Badan Layanan Umum Daerah (PPK-BLUD) penuh. Pada DPA-RBA Tahun Anggaran 2025, target Pendapatan Layanan Medis ditetapkan Rp 50.000.000.000 dengan pagu Belanja Operasional sebesar Rp 48.000.000.000. Kepala Daerah menetapkan Ambang Batas Fleksibilitas Belanja (Flexibility Threshold) sebesar 10% dari pagu belanja DPA. Sepanjang tahun 2025, karena lonjakan pasien rawat inap, realisasi Pendapatan Layanan Medis RSUD melonjak menjadi Rp 58.000.000.000 (melampaui target sebesar Rp 8.000.000.000 atau tumbuh 16%). Manajemen rumah sakit menambah pembelian obat-obatan dan insentif tenaga medis sehingga realisasi belanja operasional menjadi Rp 53.500.000.000.",
+    "estimatedTime": "20-30 menit",
+    "question": "Latihan buatan: desain pemeriksaan layanan",
+    "context": "Laporan keuangan sudah mendapat WTP, tetapi waktu tunggu layanan melebihi sasaran. Angka layanan dan bukti belum ditelaah. Rujukan: UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28 PP 60/2008 Ps.2-3,47-54; cetak/PDF 3-4,21-25 Peraturan BPK 1/2017 Ps.3-5 dan KK par.14,18,21-42; cetak 4-5,5-13 KK; PDF 4-5,17-25",
     "data": [
-      "Target Pendapatan Jasa Layanan DPA: Rp 50.000.000.000.",
-      "Realisasi Pendapatan Aktual: Rp 58.000.000.000 (Kenaikan Rp 8.000.000.000 atau 16%).",
-      "Pagu Belanja DPA Awal: Rp 48.000.000.000.",
-      "Ambang Batas Fleksibilitas Belanja: 10,00% dari pagu belanja awal.",
-      "Realisasi Belanja Aktual: Rp 53.500.000.000 (Melampaui pagu belanja awal sebesar Rp 5.500.000.000).",
-      "Ketentuan Regulasi: Permendagri No. 79 Tahun 2018 tentang Badan Layanan Umum Daerah (Penggunaan langsung pendapatan BLUD dan mekanisme perubahan RBA)."
+      "Opini menjawab kewajaran LK.",
+      "Pertanyaan penugasan adalah efektivitas layanan."
     ],
     "instructions": [
-      "Jelaskan penggunaan langsung pendapatan dan kewajiban pelaporannya.",
-      "Hitung batas aritmetis menurut asumsi pagu48 miliar dan ambang10%.",
-      "Bandingkan53,5 miliar dengan batas dan jelaskan syarat otorisasi yang masih perlu diperiksa.",
-      "Hitung selisih pendapatan58 miliar dan belanja53,5 miliar; bedakan dari surplus akrual dan kas akhir.",
-      "Jelaskan kebutuhan bukti pengesahan serta konsolidasi, tanpa menukar nama dokumen yang belum diverifikasi."
+      "Tentukan jenis pemeriksaan dan kriteria.",
+      "Susun bukti serta batas kesimpulan."
     ],
     "outputFormat": [
-      "Penjelasan Teoretis Fleksibilitas PPK-BLUD",
-      "Kalkulasi Batas Maksimal Belanja Ambang Fleksibilitas",
-      "Analisis Kepatuhan Hukum Belanja Operasional",
-      "Kalkulasi Surplus Kas Operasional BLUD",
-      "Prosedur Akuntansi Konsolidasi ke PPKD"
+      "Pisahkan fakta, asumsi, analisis dan keputusan.",
+      "Tunjukkan hitungan atau bukti, lalu jelaskan batas kesimpulan."
     ],
     "rubric": [
-      "Ketepatan perhitungan dan rekonsiliasi(25%)",
-      "Kesesuaian konsep dan sumber(25%)",
-      "Kecukupan bukti serta asumsi(25%)",
-      "Kejelasan simpulan dan batasnya(25%)"
+      "Ketepatan kerangka dan sumber: 30%.",
+      "Langkah, bukti dan pemeriksaan: 40%.",
+      "Keputusan serta kelemahan alternatif: 30%."
     ],
-    "answerGuide": "Pada asumsi soal,48×1,10=52,8 miliar. Belanja53,5 miliar melebihi angka tersebut0,7 miliar; kenaikan dari pagu awal5,5 miliar berbeda dari kelebihan ambang0,7 miliar. Tidak ada belanja yang dinyatakan sah otomatis hanya karena di bawah angka ambang: periksa sumber dana, dasar persentase, kas dan otorisasi. Selisih58-53,5=4,5 miliar. Nilai ini belum otomatis surplus-LO atau kas akhir tanpa informasi akrual dan saldo awal. Pendapatan yang dikelola langsung tetap dilaporkan/disahkan menurut mekanisme relevan; gunakan PSAP 13 untuk pelaporan dan konsolidasi serta ketentuan pengelolaan BLUD yang berlaku."
+    "answerGuide": "Fakta: WTP dan informasi waktu tunggu. Asumsi: tujuan penugasan menilai layanan. Pemeriksaan kinerja relevan; tetapkan target, definisi waktu, populasi, periode dan mutu sebagai kriteria. Kumpulkan catatan antrean, observasi, konfirmasi serta analisis penyebab. WTP tidak membuktikan efektivitas. Keputusan: nilai kinerja melalui bukti yang tepat tanpa mengubah makna opini LK. Alternatif sekadar menyalin opini tidak menjawab masalah. Menyimpulkan fraud dari keterlambatan tanpa bukti juga melampaui fakta. Rujukan: UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28 PP 60/2008 Ps.2-3,47-54; cetak/PDF 3-4,21-25 Peraturan BPK 1/2017 Ps.3-5 dan KK par.14,18,21-42; cetak 4-5,5-13 KK; PDF 4-5,17-25"
   },
   {
-    "type": "analysis",
-    "scope": "TM 14: Topik Kontemporer, SIPD, Green Budgeting, & Anti-Fraud Pengadaan",
+    "type": "case",
+    "scope": "TM 10: Latihan buatan: bukti dan jawaban tindak lanjut",
     "difficulty": "Komprehensif",
-    "estimatedTime": "35–40 menit",
-    "question": "Studi Kasus 14: Integrasi Sistem Informasi Pemerintahan Daerah (SIPD), Climate Budget Tagging, dan Mitigasi Fraud Pengadaan Barang dan Jasa",
-    "context": "Ilustrasi penulis, bukan data atau LHP aktual. Pemerintah Kota Hijau Lestari sedang melakukan modernisasi tata kelola fiskal daerah dengan mengintegrasikan sistem perencanaan dan penatausahaan keuangan ke dalam Sistem Informasi Pemerintahan Daerah (SIPD RI). Pada APBD 2026, Walikota berkomitmen menerapkan 'Green Budgeting' melalui metodologi Climate Budget Tagging (CBT) untuk menandai belanja mitigasi bencana banjir dan penurunan emisi karbon. Namun di sisi lain, hasil evaluasi integritas KPK menunjukkan celah risiko fraud pengadaan barang dan jasa pada tahap perencanaan e-Katalog dan pemecahan paket pekerjaan (split contracts) untuk menghindari tender terbuka. Angka berikut adalah asumsi ilustrasi penulis, bukan data pemerintah aktual: total belanjaRp3.000 miliar; mitigasiRp180 miliar dan adaptasiRp270 miliar, keduanya tanpa tumpang tindih. Terdapat indikasi40 paket paving masing-masingRp195 juta dan harga katalog yang perlu dibandingkan; identifikasi belum menetapkan pelanggaran.",
+    "estimatedTime": "20-30 menit",
+    "question": "Latihan buatan: bukti dan jawaban tindak lanjut",
+    "context": "Hari ke 45, pejabat belum menyelesaikan rekomendasi perbaikan daftar aset. Dokumen pembelian sebagian hilang, konfirmasi belum dilakukan. Rujukan: UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28 Peraturan BPK 1/2017 Ps.3-5 dan KK par.14,18,21-42; cetak 4-5,5-13 KK; PDF 4-5,17-25",
     "data": [
-      "Total Belanja APBD Kota: Rp 3.000.000.000.000 (Rp 3 triliun).",
-      "Inisiatif Climate Budget Tagging (CBT):\n  - Sub-kegiatan Mitigasi Iklim Ter-tagging (Ruang Terbuka Hijau, Transportasi Listrik massal): Rp 180 miliar.\n  - Sub-kegiatan Adaptasi Iklim (Normalisasi tanggul sungai, drainase porus): Rp 270 miliar.\n  - Total Belanja Perubahan Iklim = Rp 450 miliar.",
-      "Indikasi Fraud Pengadaan Barang/Jasa (PBJ):\n  - Pemecahan 40 paket pengadaan paving jalan lingkungan masing-masing bernilai Rp 195.000.000 (total Rp 7,8 miliar) melalui Pengadaan Langsung non-tender kepada 3 rekanan yang terafiliasi dengan keluarga pejabat dinas.\n  - Penggelembungan harga satuan (mark-up) pada e-Katalog lokal untuk komoditas bibit pohon penghijauan sebesar 50% di atas harga pasar wajar."
+      "Tenggat jawaban adalah 60 hari sejak penerimaan LHP.",
+      "Rp 8 miliar adalah nilai aset buatan untuk latihan."
     ],
     "instructions": [
-      "Hitung porsi belanja yang ditandai dan batas kesimpulannya.",
-      "Rancang pengujian keterhubungan dokumen serta jejak perubahan SIPD.",
-      "Identifikasi bukti untuk menguji indikasi pemecahan paket dan kewajaran harga; periksa versi aturan pengadaan pada tanggal kasus.",
-      "Usulkan kontrol akses, analisis data dan penanganan laporan pelanggaran beserta bukti efektivitasnya."
+      "Jelaskan langkah bukti alternatif.",
+      "Susun isi jawaban yang layak dan jelaskan risiko alternatif."
     ],
     "outputFormat": [
-      "Kalkulasi Rasio Green Budgeting (CBT) & Analisis Kebijakan",
-      "Analisis Peran Sistemik SIPD dalam Integritas Anggaran",
-      "Analisis Yuridis Pelanggaran Fraud Pengadaan (PBJ)",
-      "Strategi Pengendalian Intern APIP & Whistleblowing System"
+      "Pisahkan fakta, asumsi, analisis dan keputusan.",
+      "Tunjukkan hitungan atau bukti, lalu jelaskan batas kesimpulan."
     ],
     "rubric": [
-      "Ketepatan perhitungan dan rekonsiliasi(25%)",
-      "Kesesuaian konsep dan sumber(25%)",
-      "Kecukupan bukti serta asumsi(25%)",
-      "Kejelasan simpulan dan batasnya(25%)"
+      "Ketepatan kerangka dan sumber: 30%.",
+      "Langkah, bukti dan pemeriksaan: 40%.",
+      "Keputusan serta kelemahan alternatif: 30%."
     ],
-    "answerGuide": "(180+270)/3.000×100%=15%. Ini porsi belanja berlabel pada asumsi tanpa tumpang tindih, bukan ukuran penurunan emisi. Periksa konsistensi kode, otorisasi, jejak perubahan dan data yang benar-benar tersedia; jangan menganggap sistem otomatis menolak semua penyimpangan.40×195 juta=7,8 miliar menjadi dasar pertanyaan tentang kebutuhan paket, waktu, penyedia dan tujuan pemisahan. Tidak ada kesimpulan pidana atau ambang pengadaan universal tanpa bukti serta aturan yang relevan. Kontrol usulan meliputi pemisahan akses, reviu perubahan, pencocokan paket dan saluran pelaporan dengan akses terbatas; efektivitasnya diuji dari pelaksanaan, bukan keberadaan aplikasi."
+    "answerGuide": "Fakta: hari 45, dokumen tidak lengkap, prosedur alternatif belum selesai. Asumsi: bukti tambahan masih dapat diperoleh dan tidak ada simpulan materialitas final. Lakukan konfirmasi, observasi dan pemeriksaan catatan terkait; nilai cakupan serta hasilnya. Sampaikan jawaban/penjelasan dalam 60 hari dengan tindakan, bukti, sisa masalah dan alasan sah. Tidak dapat menentukan opini dari nominalRp 8 miliar saja. Menunggu semua selesai tanpa menjawab berisiko melampaui tenggat. Surat tanpa bukti tidak menyatakan rekomendasi selesai. BPK tetap memantau. Rujukan: UU 15/2004 Ps.2,4,6,16-20; cetak/PDF 4-5,8-11; Penjelasan Ps.16,20 PDF 27-28 Peraturan BPK 1/2017 Ps.3-5 dan KK par.14,18,21-42; cetak 4-5,5-13 KK; PDF 4-5,17-25"
+  },
+  {
+    "type": "case",
+    "scope": "TM 11: Latihan buatan: paket laporan LSM",
+    "difficulty": "Komprehensif",
+    "estimatedTime": "20-30 menit",
+    "question": "Latihan buatan: paket laporan LSM",
+    "context": "Model penyajian historis dalam juta Rp: donasi 200 tanpa pembatasan dan 100 untuk program, beban umum 120, program 60, peralatan 50. Rujukan: IAI DE ISAK 35(2018) contoh posisi keuangan/penghasilan/perubahan aset neto/arus kas/Ca LK; cetak 35.6-35.19, PDF 20-33; historis",
+    "data": [
+      "saldo awal/liabilitas/OCI nol; seluruh transaksi tunai.",
+      "Pengakuan penghasilan diasumsikan terpenuhi; peralatan belum siap digunakan.",
+      "Pembatasan program 60 terpenuhi."
+    ],
+    "instructions": [
+      "Susun surplus, perubahan aset neto, posisi, arus kas dan Ca LK.",
+      "Verifikasi keseimbangan dan batas klaim SAK."
+    ],
+    "outputFormat": [
+      "Pisahkan fakta, asumsi, analisis dan keputusan.",
+      "Tunjukkan hitungan atau bukti, lalu jelaskan batas kesimpulan."
+    ],
+    "rubric": [
+      "Ketepatan kerangka dan sumber: 30%.",
+      "Langkah, bukti dan pemeriksaan: 40%.",
+      "Keputusan serta kelemahan alternatif: 30%."
+    ],
+    "answerGuide": "Fakta: data kasus. Asumsi: pengakuan terpenuhi, tanpa OCI/liabilitas, peralatan belum siap digunakan. Surplus 300-180=120. Reklasifikasi 60 memberi tanpa 80 dan dengan 40; total 120. Kas 300-180-50=70;peralatan 50;aset 120=liabilitas 0+neto 120. Arusoperasi 120, investasi-50, pendanaan 0, kas akhir 70. Ca LK: kerangka/periode/satuan, kebijakan pengakuan yang diasumsikan, pembatasan 100, pembebasan 60 dan sisa 40, rincian beban/peralatan. Tidak ada pembulatan. Alternatif mengakui reklasifikasi sebagai donasi baru menduplikasi 60. Menganggap pembelian aset sebagai beban mengubah surplus tanpa dasar data. Ini latihan adaptasi DE 2018 dan tidak mengesahkan kepatuhan final SAK 2026. Rujukan: IAI DE ISAK 35(2018) contoh posisi keuangan/penghasilan/perubahan aset neto/arus kas/Ca LK; cetak 35.6-35.19, PDF 20-33; historis"
+  },
+  {
+    "type": "case",
+    "scope": "TM 11: Latihan buatan: laporan tahunan dan audit",
+    "difficulty": "Komprehensif",
+    "estimatedTime": "20-30 menit",
+    "question": "Latihan buatan: laporan tahunan dan audit",
+    "context": "Yayasan menerima bantuanRp 400 juta dalam satu tahun buku dan memiliki kekayaanRp 25 miliar di luar wakaf. Rujukan: UU 16/2001 Ps.48-50; cetak/PDF 15-16; UU 28/2004 Ps. I angka 16 perubahanPs.52; cetak/PDF 9-10",
+    "data": [
+      "Tidak ada informasi kontrak tambahan.",
+      "Data kekayaan diasumsikan benar."
+    ],
+    "instructions": [
+      "Tentukan kewajibanPasal 52.",
+      "Jelaskan dokumen dan pihak terkait."
+    ],
+    "outputFormat": [
+      "Pisahkan fakta, asumsi, analisis dan keputusan.",
+      "Tunjukkan hitungan atau bukti, lalu jelaskan batas kesimpulan."
+    ],
+    "rubric": [
+      "Ketepatan kerangka dan sumber: 30%.",
+      "Langkah, bukti dan pemeriksaan: 40%.",
+      "Keputusan serta kelemahan alternatif: 30%."
+    ],
+    "answerGuide": "Fakta: 400 juta dan 25 miliar. Asumsi: bantuan satu tahun buku, kekayaan mengecualikan wakaf. Bantuan tidak mencapai 500 juta, tetapi kekayaan melampaui 20 miliar. Pasal 52 menggunakan atau; ketentuan audit akuntan publik dan publikasi ikhtisar keuangan terpenuhi. Hasil audit disampaikan kepada Pembina dengan tembusan Menteri/instansi terkait. Laporan tahunan sesuai Pasal 49-50 tetap perlu disusun, ditandatangani dan disahkan. Meminta kedua syarat sekaligus meniadakan kewajiban yang ditetapkan UU. Membaca satu angka tanpa tahun buku/ruang kekayaan menghasilkan kesimpulan keliru. Rujukan: UU 16/2001 Ps.48-50; cetak/PDF 15-16; UU 28/2004 Ps. I angka 16 perubahanPs.52; cetak/PDF 9-10"
+  },
+  {
+    "type": "case",
+    "scope": "TM 12: Latihan buatan: laporan entitas dan LPJ bantuan",
+    "difficulty": "Komprehensif",
+    "estimatedTime": "20-30 menit",
+    "question": "Latihan buatan: laporan entitas dan LPJ bantuan",
+    "context": "Gunakan bantuan 75, iuran 25, donasi 50 serta beban pendidikan 50, sekretariat 25, kegiatan lain 25, seluruhnya juta Rp. Rujukan: UU 2/2008 sebagaimana diubah UU 2/2011 Ps.34,34 A,35,39; cetak/PDF 10-12 UU 2/2011 Permendagri 36/2018 Ps.27-37 dan lampiran LPJ; cetak/PDF 18-22,31-34; dibaca bersama perubahan 78/2020 IAI DE ISAK 35(2018) CI 01-04 dan contoh laporan, PDF 19-33; ilustrasi penyajian historis, pengakuan diasumsikan dalam latihan",
+    "data": [
+      "saldo awal/liabilitas/nonkas nol. Pengakuan penghasilan diasumsikan terpenuhi.",
+      "Bantuan 75 digunakan untuk pendidikan 50 dan sekretariat 25."
+    ],
+    "instructions": [
+      "Susun laporan entitas dan LPJ bantuan.",
+      "Jelaskan perbedaan saldo dan pemeriksa."
+    ],
+    "outputFormat": [
+      "Pisahkan fakta, asumsi, analisis dan keputusan.",
+      "Tunjukkan hitungan atau bukti, lalu jelaskan batas kesimpulan."
+    ],
+    "rubric": [
+      "Ketepatan kerangka dan sumber: 30%.",
+      "Langkah, bukti dan pemeriksaan: 40%.",
+      "Keputusan serta kelemahan alternatif: 30%."
+    ],
+    "answerGuide": "Fakta: penerimaan 150, beban 100. Asumsi: pengakuan telah terpenuhi, seluruhnya tunai, liabilitas/nonkas nol. Surplus 150-100=50, kas akhir 50 dan aset neto 50;aset 50=liabilitas 0+neto 50. Arusoperasi 50, investasi/pendanaan 0. LPJ bantuan 75-50-25=0. Rincian sumber menjelaskan kas entitas 50 berasal sumber lain. laporan realisasi anggaran entitas membandingkan seluruh anggaran/realisasi sesuai Pasal 39, sementara LPJ memerinci dana publik. Audit entitas olehakuntan publik berbeda dari BPK bantuan. Menyalin 50 sebagai sisa bantuan mencampur ruang. Model berbasis asumsi dan ilustrasi DE 2018 tidak menggantikan standar final SAK atau kontrak bantuan. Rujukan: UU 2/2008 sebagaimana diubah UU 2/2011 Ps.34,34 A,35,39; cetak/PDF 10-12 UU 2/2011 Permendagri 36/2018 Ps.27-37 dan lampiran LPJ; cetak/PDF 18-22,31-34; dibaca bersama perubahan 78/2020 IAI DE ISAK 35(2018) CI 01-04 dan contoh laporan, PDF 19-33; ilustrasi penyajian historis, pengakuan diasumsikan dalam latihan"
+  },
+  {
+    "type": "case",
+    "scope": "TM 12: Latihan buatan: bantuan dan pengendalian donor",
+    "difficulty": "Komprehensif",
+    "estimatedTime": "20-30 menit",
+    "question": "Latihan buatan: bantuan dan pengendalian donor",
+    "context": "Partai tingkat kabupaten memperoleh 50.000 suara dan kursi, tarif dasar 1.500. Seorang donor bukan anggota memberi 600 juta dua kali dalam satu tahun. Rujukan: UU 2/2008 sebagaimana diubah UU 2/2011 Ps.34,34 A,35,39; cetak/PDF 10-12 UU 2/2011 PP 5/2009 sebagaimana diubah PP 1/2018 Ps.5,9,16; cetak/PDF 2-4 PP 1/2018",
+    "data": [
+      "Tidak ada kenaikan tarif daerah dalam asumsi.",
+      "Penerimaan donor melalui rekening, nilai rupiahbulat."
+    ],
+    "instructions": [
+      "Hitung bantuan dan akumulasi donor.",
+      "Jelaskan keputusan penerimaan dan kelemahan alternatif."
+    ],
+    "outputFormat": [
+      "Pisahkan fakta, asumsi, analisis dan keputusan.",
+      "Tunjukkan hitungan atau bukti, lalu jelaskan batas kesimpulan."
+    ],
+    "rubric": [
+      "Ketepatan kerangka dan sumber: 30%.",
+      "Langkah, bukti dan pemeriksaan: 40%.",
+      "Keputusan serta kelemahan alternatif: 30%."
+    ],
+    "answerGuide": "Bantuan=50.000×Rp 1.500=Rp 75 juta pada syarat tingkat kabupaten dan satu tahun penuh. Donor=600+600=Rp 1,2 miliar, melebihi batasRp 1 miliar per orang setahun menurut Pasal 35. Keputusan: periksa bukti identitas/akumulasi dan tangani penerimaan sesuai aturan; penggunaan rekening tidak melegalkan kelebihan. Menilai per transfer mengabaikan tahun anggaran; memakai batas perusahaan mengubah kategori donor. tarif provinsi/pusat menghasilkan angka untuk tingkat berbeda. Tidak ada pembulatan;angka 50.000/600 juta buatan, tarif danbatas berasal aturan. Rujukan: UU 2/2008 sebagaimana diubah UU 2/2011 Ps.34,34 A,35,39; cetak/PDF 10-12 UU 2/2011 PP 5/2009 sebagaimana diubah PP 1/2018 Ps.5,9,16; cetak/PDF 2-4 PP 1/2018"
+  },
+  {
+    "type": "case",
+    "scope": "TM 13: Latihan buatan: tujuh laporan BLU",
+    "difficulty": "Komprehensif",
+    "estimatedTime": "20-30 menit",
+    "question": "Latihan buatan: tujuh laporan BLU",
+    "context": "Gunakan hak layanan 120, kas diterima 100, beban tunai 70, pembelian aset 20, seluruhnya juta Rp. Rujukan: SAP 2026, PSAP 13 par.6-12,17-31,76-88,116-123; cetak 250-266/PDF 257-273",
+    "data": [
+      "Awal kas/SAL/ekuitas/kewajiban nihil.",
+      "Hak sah, kas disahkan, aset belum siap dipakai, penyusutan/transaksi lain nihil."
+    ],
+    "instructions": [
+      "Susun hubungan tujuh laporan.",
+      "Periksa kas, akrual dan keseimbangan."
+    ],
+    "outputFormat": [
+      "Pisahkan fakta, asumsi, analisis dan keputusan.",
+      "Tunjukkan hitungan atau bukti, lalu jelaskan batas kesimpulan."
+    ],
+    "rubric": [
+      "Ketepatan kerangka dan sumber: 30%.",
+      "Langkah, bukti dan pemeriksaan: 40%.",
+      "Keputusan serta kelemahan alternatif: 30%."
+    ],
+    "answerGuide": "Fakta: layanan 120, kas 100, beban 70, aset 20. Asumsi: seluruh kondisi kasus terpenuhi. LO surplus 50; piutang 20. LRA 100-90=10; LPSAL 0+10=10 tanpa koreksi lain. LPE 0+50=50. Neraca kas 10+piutang 20+aset 20=0+ekuitas 50. LAK operasi 30, investasi-20, akhir 10. Ca LK memuat pengakuan/pengesahan dan asumsi. Menganggap surplus 50 sebagai kas atau membebankan seluruh aset 20 pada LO memberi salah hubungan. Angka buatan, tanpa pembulatan; SAL=kas hanya pada kasus ini. Rujukan: SAP 2026, PSAP 13 par.6-12,17-31,76-88,116-123; cetak 250-266/PDF 257-273"
+  },
+  {
+    "type": "case",
+    "scope": "TM 13: Latihan buatan: konsolidasi dan fleksibilitas rumah sakit",
+    "difficulty": "Komprehensif",
+    "estimatedTime": "20-30 menit",
+    "question": "Latihan buatan: konsolidasi dan fleksibilitas rumah sakit",
+    "context": "Pendapatan/beban internal 40 juta Rp cocok; BLUD memiliki ambang kasus 10%, belanja bertambah 12% dan kas cukup. Rujukan: SAP 2026, PSAP 13 par.6-12,17-31,76-88,116-123; cetak 250-266/PDF 257-273 PMK 128/2024, lampiran Sistem Akuntansi dan Pelaporan Keuangan BLU, PDF 17-20,168-175; berlaku untuk LK 2024 dan seterusnya Permendagri 79/2018 Ps.50-54,74-75,99-100; cetak/PDF 31-34,36-38,47-50; mengganti 61/2007",
+    "data": [
+      "Lingkup konsolidasi sama; tidak ada selisih internal.",
+      "Ambang 10% ditetapkan dalam asumsi RBA/DPA, bukan angka aturan universal."
+    ],
+    "instructions": [
+      "Buat jurnal eliminasi LO serta batas penerapannya.",
+      "Putuskan langkah belanja dan kelemahan alternatif."
+    ],
+    "outputFormat": [
+      "Pisahkan fakta, asumsi, analisis dan keputusan.",
+      "Tunjukkan hitungan atau bukti, lalu jelaskan batas kesimpulan."
+    ],
+    "rubric": [
+      "Ketepatan kerangka dan sumber: 30%.",
+      "Langkah, bukti dan pemeriksaan: 40%.",
+      "Keputusan serta kelemahan alternatif: 30%."
+    ],
+    "answerGuide": "Eliminasi kertas kerja: debit pendapatan 40, kredit beban 40;debit=kredit. Tidak ada kas baru; jangan menyalin ke LRA yang memiliki ketentuan berbeda. BLUD: 12%-10%=2 poin persentase di atas ambang. Periksa persetujuan kepala daerah dan dasar pendapatan/layanan. Kas cukup tidak menggantikan persetujuan; menolak seluruh fleksibilitas juga mengabaikan aturan. PMK 128 untuk sistem pusat, Permendagri 79/kebijakan daerah untuk BLUD;status entitas harus jelas. Rujukan: SAP 2026, PSAP 13 par.6-12,17-31,76-88,116-123; cetak 250-266/PDF 257-273 PMK 128/2024, lampiran Sistem Akuntansi dan Pelaporan Keuangan BLU, PDF 17-20,168-175; berlaku untuk LK 2024 dan seterusnya Permendagri 79/2018 Ps.50-54,74-75,99-100; cetak/PDF 31-34,36-38,47-50; mengganti 61/2007"
+  },
+  {
+    "type": "case",
+    "scope": "TM 14: Latihan sumber: ulasan hasil audit desa",
+    "difficulty": "Komprehensif",
+    "estimatedTime": "20-30 menit",
+    "question": "Latihan sumber: ulasan hasil audit desa",
+    "context": "Table 4 jalan: kontrol 0,277, perlakuan 0,192, efek-0,085, p 0,058, N 477. Rujukan: Olken(2007) Table 4 dan pembahasan, cetak 218-221/PDF 19-22; Figure 1 pada PDF 21",
+    "data": [
+      "Ambang 5% dipilih dalam soal.",
+      "Model lain: insinyur-0,076, p 0,039;strata-0,048, p 0,123."
+    ],
+    "instructions": [
+      "Hitung selisih poin dan perubahan relatif.",
+      "Nilai ketidakpastian serta sensitivitas model."
+    ],
+    "outputFormat": [
+      "Pisahkan fakta, asumsi, analisis dan keputusan.",
+      "Tunjukkan hitungan atau bukti, lalu jelaskan batas kesimpulan."
+    ],
+    "rubric": [
+      "Ketepatan kerangka dan sumber: 30%.",
+      "Langkah, bukti dan pemeriksaan: 40%.",
+      "Keputusan serta kelemahan alternatif: 30%."
+    ],
+    "answerGuide": "Fakta angkaTable 4. Selisih 0,085=8,5 poin;turunan relatif 0,085/0,277×100=30,69% dibulatkan dua desimal. Ambang 5% adalah asumsi soal: p 0,058 tidak melewati. model insinyur melewati, strata tidak. Kesimpulan efek negatif dengan ketidakpastian/model disebut;tidak semua signifikan 5%. Menulis 8,5%relatif salah satuan;membuktikan korupsi individu melampaui proksi. Buku/artikel dosen belum tersedia, artikel ini tambahan pilihan. Rujukan: Olken(2007) Table 4 dan pembahasan, cetak 218-221/PDF 19-22; Figure 1 pada PDF 21"
+  },
+  {
+    "type": "case",
+    "scope": "TM 14: Latihan buatan: usulan penelitian BLUD",
+    "difficulty": "Komprehensif",
+    "estimatedTime": "20-30 menit",
+    "question": "Latihan buatan: usulan penelitian BLUD",
+    "context": "Mahasiswa mengusulkan audit 100% semua rumah sakit hanya berdasarkan eksperimen jalan desa 2003. Rujukan: Olken(2007), Monitoring Corruption: Evidence from a Field Experiment in Indonesia, JPE 115(2), cetak 200-249/PDF 1-50; sumber tambahan pilihan, bukan artikel dosen yang terkonfirmasi Olken(2007) desain dan pengukuran, cetak 202-211,216-217/PDF 3-12,17-18 Olken(2007) Table 4 dan pembahasan, cetak 218-221/PDF 19-22; Figure 1 pada PDF 21",
+    "data": [
+      "Belum ada data rumah sakit atau biaya implementasi.",
+      "Usulan lanjutan dapat meneliti rekonsiliasi dan selisih laporan, belum ada hasil."
+    ],
+    "instructions": [
+      "Pisahkan fakta, asumsi dan klaim.",
+      "Susun rancangan yang dapat diuji serta batas rekomendasi."
+    ],
+    "outputFormat": [
+      "Pisahkan fakta, asumsi, analisis dan keputusan.",
+      "Tunjukkan hitungan atau bukti, lalu jelaskan batas kesimpulan."
+    ],
+    "rubric": [
+      "Ketepatan kerangka dan sumber: 30%.",
+      "Langkah, bukti dan pemeriksaan: 40%.",
+      "Keputusan serta kelemahan alternatif: 30%."
+    ],
+    "answerGuide": "Fakta: randomisasi dan proksi dalam konteks jalan desa historis. Asumsi transfer tanpa bukti harus diuji. Rancangan buatan: tetapkan unit penugasan, perlakuan jadwal rekonsiliasi, kelompok pembanding, periode, ukuran selisih, galat baku berkelompok dan akses data. Rekomendasi perlu biaya, kapasitas, mutu layanan dan validitas eksternal. Klaim pasti menghapus korupsi terlalu kuat;menolak semua bukti mengabaikan validitas internal sumber. Tidak ada angka hasil baru yang diklaim. Rujukan: Olken(2007), Monitoring Corruption: Evidence from a Field Experiment in Indonesia, JPE 115(2), cetak 200-249/PDF 1-50; sumber tambahan pilihan, bukan artikel dosen yang terkonfirmasi Olken(2007) desain dan pengukuran, cetak 202-211,216-217/PDF 3-12,17-18 Olken(2007) Table 4 dan pembahasan, cetak 218-221/PDF 19-22; Figure 1 pada PDF 21"
   }
 ];
 

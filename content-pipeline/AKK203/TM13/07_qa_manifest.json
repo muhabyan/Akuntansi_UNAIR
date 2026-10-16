@@ -1,0 +1,18 @@
+{
+  "tm": 13,
+  "canonicalSha256": "b8877117adcd9b25867301ee89930c70cd910d2dfb6c9d88459e153e897c0c4d",
+  "sourceStatus": "NEEDS_HUMAN_REVIEW",
+  "sourceComplete": false,
+  "visuals": 7,
+  "quiz": 8,
+  "cards": 6,
+  "cases": 2,
+  "independentChecks": "scripts/test-akk203-pra-uas.mjs",
+  "renderChecks": "scripts/test-akk203-pra-uas-render.mjs",
+  "browserChecks": "scripts/test-akk203-pra-uas-browser.mjs",
+  "technicalEvidence": "../qa-evidence.json",
+  "limitations": [
+    "DN Bab 3 dan aturan daerah/ambang aktual belum tersedia; sumber resmi dipakai dengan lingkup yang jelas.",
+    "Contoh rumah sakit buatan, tanpa klaim kepatuhan operasional satu rumah sakit nyata."
+  ]
+}

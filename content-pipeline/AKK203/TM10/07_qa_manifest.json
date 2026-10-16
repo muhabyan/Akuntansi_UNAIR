@@ -1,0 +1,18 @@
+{
+  "tm": 10,
+  "canonicalSha256": "ccd403c2ee7d745bbb5aef6ab734c2fb2fbe68c900238efe5afa55e1f43370de",
+  "sourceStatus": "NEEDS_HUMAN_REVIEW",
+  "sourceComplete": false,
+  "visuals": 6,
+  "quiz": 9,
+  "cards": 6,
+  "cases": 2,
+  "independentChecks": "scripts/test-akk203-pra-uas.mjs",
+  "renderChecks": "scripts/test-akk203-pra-uas-render.mjs",
+  "browserChecks": "scripts/test-akk203-pra-uas-browser.mjs",
+  "technicalEvidence": "../qa-evidence.json",
+  "limitations": [
+    "JP Bab 2 dan 9 tersedia dan sudah diaudit dalam edisi keenam 2010. RPP menulis 2000 sehingga konflik tahun dicatat. Bahan dosen khusus audit belum diperoleh.",
+    "Latihan opini tidak memberi aturan otomatis materialitas/pervasiveness yang memerlukan standar penugasan rinci."
+  ]
+}

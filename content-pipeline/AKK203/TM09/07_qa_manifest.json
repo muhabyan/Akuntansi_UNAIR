@@ -1,0 +1,18 @@
+{
+  "tm": 9,
+  "canonicalSha256": "096c07ebd99b0dc15bfc35063635cf06321778786becaf998abbb6272d2d4525",
+  "sourceStatus": "NEEDS_HUMAN_REVIEW",
+  "sourceComplete": false,
+  "visuals": 7,
+  "quiz": 9,
+  "cards": 6,
+  "cases": 2,
+  "independentChecks": "scripts/test-akk203-pra-uas.mjs",
+  "renderChecks": "scripts/test-akk203-pra-uas-render.mjs",
+  "browserChecks": "scripts/test-akk203-pra-uas-browser.mjs",
+  "technicalEvidence": "../qa-evidence.json",
+  "limitations": [
+    "MD Bab 8 dan DN Bab 8 belum terbaca penuh setelah pencarian penerbit, perpustakaan dan pratinjau. JP Bab 2 tersedia dan sudah diaudit; konflik tahun edisi pada RPP dicatat.",
+    "Definisi ISSAI 300 merupakan sumber tambahan konsep; aturan audit nasional tidak digantikan."
+  ]
+}

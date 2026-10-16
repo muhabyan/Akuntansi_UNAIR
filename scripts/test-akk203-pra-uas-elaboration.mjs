@@ -21,15 +21,15 @@ assert.deepEqual(course, alias, 'Retired and current course codes serve the same
 assert.equal(course.readings, alias.readings, 'Alias must retain the same cached reading collection');
 for (let tm = 1; tm <= 7; tm++) assert.deepEqual(course.readings[tm], m.AKS201_READINGS[tm]);
 assert.deepEqual(course.reviews.uts, { ...m.AKS201_REVIEW_READINGS.uts, tm: 0 }, 'Existing registry normalizes the UTS review number to zero');
-assert.equal(course.readings[12], undefined, 'Do not invent a completed standalone TM12');
+assert.ok(course.readings[12], 'The reviewed canonical TM12 must be reachable through the active route');
 const flat = bs => bs.flatMap(b => [b, ...flat(b.blocks ?? []), ...flat(b.answer ?? [])]);
-for (const tm of [8, 9, 10, 11, 13, 14]) {
+for (const tm of [8, 9, 10, 11, 12, 13, 14]) {
   const r = course.readings[tm];
   assert.equal(r.tm, tm); assert.equal(r.layout, 'layered');
-  assert.notDeepEqual(r, m.AKS201_READINGS[tm], 'Active route must supersede the old abbreviated reading');
+  assert.deepEqual(r.blocks.slice(0, m.AKS201_READINGS[tm].blocks.length), m.AKS201_READINGS[tm].blocks, 'Canonical source-audited blocks lead without replacement or reordering');
   const blocks = flat(r.blocks);
   assert.ok(blocks.some(b => b.kind === 'self-check') && blocks.some(b => b.kind === 'pendalaman'));
-  assert.ok(blocks.some(b => b.kind === 'example' && b.title.startsWith('Contoh terbimbing:') && b.blocks.some(c => c.kind === 'p' && /Ilustrasi penulis/.test(c.text))), 'Show the worked teaching case before the independent self-check');
+  if (tm !== 12) assert.ok(blocks.some(b => b.kind === 'example' && b.title.startsWith('Contoh terbimbing:') && b.blocks.some(c => c.kind === 'p' && /Ilustrasi penulis/.test(c.text))), 'Earlier worked teaching cases remain available as optional practice');
   for (const b of blocks.filter(b => b.kind === 'table')) {
     assert.ok(b.title && b.caption);
     b.rows.forEach(row => assert.equal(row.length, b.headers.length));
@@ -46,8 +46,8 @@ assert.deepEqual(rows.at(-1), [30, 35, 65]);
 const text = tm => JSON.stringify(course.readings[tm]);
 assert.match(text(9), /target outcome tidak tersedia/, 'Missing outcome target must not become a fabricated effectiveness ratio');
 assert.match(text(10), /10 April 2028/, 'SPKN adoption and effective dates stay distinct');
-assert.match(text(11), /60% adalah asumsi soal/);
-assert.doesNotMatch(text(11), /minimal 60% dana bantuan wajib/);
+assert.match(text(12), /60% adalah asumsi soal/);
+assert.doesNotMatch(text(12), /minimal 60% dana bantuan wajib|TM12 belum tersedia/);
 assert.match(text(13), /PTN-BH mempunyai status hukum dan tata kelola berbeda/);
 assert.match(text(14), /belum membuktikan penurunan emisi/);
 const baseline = JSON.parse(fs.readFileSync('content-pipeline/AKK203/elaboration-20261014/pre-uts-baseline.json', 'utf8'));
@@ -55,9 +55,9 @@ const hash = value => createHash('sha256').update(JSON.stringify(value)).digest(
 assert.equal(hash(m.AKS201_QUIZ_UTS), baseline.quiz);
 assert.equal(hash(m.AKS201_FC.filter(c => c.phase !== 'pra-uas')), baseline.cards);
 assert.equal(hash(m.AKS201_BANK_UTS), baseline.bank);
-assert.equal(m.AKS201_QUIZ_UAS.length, 35);
+assert.equal(m.AKS201_QUIZ_UAS.length, 60);
 assert.equal(m.AKS201_FC.filter(c => c.phase === 'pra-uas').length, 42);
-assert.equal(m.AKS201_BANK_UAS.length, 7);
+assert.equal(m.AKS201_BANK_UAS.length, 14);
 for (const q of m.AKS201_QUIZ_UAS) {
   assert.equal(new Set(q.options).size, 4);
   assert.ok(q.answer >= 0 && q.answer < 4);
@@ -66,8 +66,7 @@ for (const q of m.AKS201_QUIZ_UAS) {
 }
 assert.ok(m.AKS201_QUIZ_UAS.filter(q => q.q.includes('SAPP')).every(q => q.tm === 8));
 assert.equal(new Set(m.AKS201_FC.map(c => c.id)).size, m.AKS201_FC.length);
-const partyCase = m.AKS201_BANK_UAS.find(b => b.scope.startsWith('TM 12:'));
-assert.equal(120 / 240 * 100, 50); assert.equal((55 + 20) / 240 * 100, 31.25);
-assert.match(partyCase.answerGuide, /50%/); assert.match(partyCase.answerGuide, /31,25%/);
-assert.doesNotMatch(partyCase.instructions.join(' '), /minimal 60%/);
-console.log('ASP active pra-UAS PASS: six revised readings, alias routing, pre-UTS preservation, net-asset rollforward and corrected source regressions.');
+const partyCases = m.AKS201_BANK_UAS.filter(b => b.scope.startsWith('TM 12:'));
+assert.equal(partyCases.length, 2);
+for (const partyCase of partyCases) assert.doesNotMatch(partyCase.instructions.join(' '), /minimal 60%/);
+console.log('ASP active pra-UAS PASS: seven canonical readings, optional prior examples, alias routing, pre-UTS preservation, net-asset rollforward and corrected source regressions.');
