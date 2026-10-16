@@ -75,11 +75,34 @@ try {
   const openCalls = [];
   await act(async () => { root.render(React.createElement(HomeView, { onSelectSemester() {}, onOpenCourseDirectly: (...args) => openCalls.push(args) })); await pause(); });
   const resume = document.querySelector('[aria-label="Bacaan terakhir"]'); assert.ok(resume);
-  assert.ok(document.querySelector('#continue-learning').getBoundingClientRect().top <= 0);
-  assert.ok(document.querySelector('details')?.textContent.includes('Tentang AkuntansiHub'));
-  assert.equal(document.querySelector('#continue-learning').previousElementSibling, null, 'Returning student sees continuation before hero');
+  assert.ok(document.querySelector('section').querySelector('h1'), 'The introduction stays first for returning students');
+  assert.equal(document.querySelector('#continue-learning').previousElementSibling, document.querySelector('section'), 'Useful continuation follows the introduction');
+  assert.ok(!document.querySelector('h1').closest('details'), 'The introduction is never hidden in a disclosure');
+  assert.ok(!document.body.textContent.includes('Belum ada progres materi.'), 'A recent visit does not show a contradictory empty-progress banner');
   await click(resume.querySelector('button'));
   assert.deepEqual(openCalls[0], ['AKA201', 'tm-9']);
+  const renderHome = async (progress = {}, visits = []) => {
+    await act(async () => root.unmount()); root = createRoot(document.getElementById('root'));
+    localStorage.setItem('akuntansi-feb-unair:study-progress', JSON.stringify(progress));
+    localStorage.setItem(LEARNING_KEY, JSON.stringify({ attempts: {}, visits }));
+    await act(async () => { root.render(React.createElement(HomeView, { onSelectSemester() {}, onOpenCourseDirectly: (...args) => openCalls.push(args) })); await pause(); });
+  };
+  let scrollTarget = '';
+  window.HTMLElement.prototype.scrollIntoView = function () { scrollTarget = this.id; };
+  await renderHome();
+  assert.equal(document.querySelector('#continue-learning'), null, 'New students do not receive an empty continuation section');
+  await click(button('Mulai Belajar')); assert.equal(scrollTarget, 'course-catalog');
+  const completedCourse = Object.fromEntries([...(course.materiTM1_7 ?? []), ...(course.materiTM8_14 ?? [])].map(material => [`${course.code}:tm${material.tm}`, true]));
+  await renderHome(completedCourse);
+  assert.equal(document.querySelector('#continue-learning'), null, 'A completed course without recent readings cannot displace the introduction with an empty banner');
+  await click(button('Mulai Belajar')); assert.equal(scrollTarget, 'course-catalog');
+  await renderHome({}, [{ courseCode: 'FAKE', tm: 9, updatedAt: 1 }]);
+  assert.equal(document.querySelector('#continue-learning'), null, 'Stale visits cannot create empty continuation space');
+  await renderHome({ [`${course.code}:tm1`]: true });
+  assert.ok(document.querySelector('#continue-learning'));
+  assert.ok(document.querySelector('section').querySelector('h1'));
+  await click(button('Mulai Belajar')); assert.equal(scrollTarget, 'continue-learning');
+  await click(button('Lanjut TM 2')); assert.deepEqual(openCalls.at(-1), ['AKA201', 'tm-2']);
   const calls = [];
   globalThis.fetch = async (url, options) => { calls.push({ url, options }); return { ok: true, json: async () => url.includes('/models?') ? { models: [{ name: 'models/gemini-unit', displayName: 'Model uji', supportedGenerationMethods: ['generateContent'] }] } : { modelVersion: 'gemini-unit', candidates: [{ content: { parts: [{ text: 'Terhubung' }] } }] } }; };
   function SettingsHarness() {
