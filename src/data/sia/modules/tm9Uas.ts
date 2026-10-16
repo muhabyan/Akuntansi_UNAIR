@@ -1,4 +1,5 @@
 import type { Reading } from '../../../types';
+import { SIA_COVERAGE } from '../coverageComplements';
 import { h, p, table, note, warn, example, check, extra, source } from '../uasBlocks';
 import { SIA_ANALYTICS_SUPPLEMENT } from './analyticsSupplement';
 import { conceptMap } from '../uasVisuals';
@@ -25,6 +26,7 @@ export const SIA_TM9: Reading = {
       ['Payroll', 'Jasa/waktu kerja dan Cash; Timecards serta Payroll; Employees dalam peran berbeda.', 'Beban, kewajiban dan kas sesuai akrual serta pembayaran.'],
     ]),
     p('Model terpadu berbagi master data seperti Employees, Inventory, dan Cash. Satu pegawai dapat muncul sebagai pekerja, supervisor, atau petugas pembayaran. Alias tabel pada perangkat database dapat mewakili peran berbeda tanpa berarti perusahaan harus menduplikasi orang yang sama. Exhibit 10.8–10.9, pp. 383–384.'),
+    ...SIA_COVERAGE[9].project,
     h('2. Dari multiplicity ke PK dan FK'),
     table('Skema latihan yang mendukung pembayaran parsial', ['Tabel', 'Kunci / hubungan', 'Tujuan'], [
       ['Customers', 'Customer_ID sebagai PK.', 'Satu pelanggan dapat memiliki banyak invoice.'],
@@ -41,6 +43,7 @@ export const SIA_TM9: Reading = {
       { title: 'Alokasi R-01 / I-01', lines: ['Nilai yang dialokasikan Rp60 juta.', 'FK harus mengarah ke data valid.'] },
       { title: 'Saldo invoice', lines: ['90 − 60 = Rp30 juta.', 'Cocokkan dengan subledger.'] },
     ], 'Skema latihan, bukan salinan persis skema buku. Hubungan many-to-many diterapkan melalui tabel alokasi.'),
+    ...SIA_COVERAGE[9].implementation,
     h('3. Kasus angka: satu bulan PT Global Distribusi Utama'),
     example('Baca asumsi sebelum menghitung',
       p('Satuan seluruh angka adalah Rp juta. Saldo awal: Kas 100, Persediaan 40, Modal 140; piutang dan utang awal nol. Persediaan perpetual, tanpa PPN, diskon, retur, depresiasi, pajak, dan biaya lain. Barang diterima/diterima baik serta penyerahan penjualan memenuhi asumsi pengakuan kasus. Tidak ada transaksi selain yang disebutkan.'),
@@ -99,6 +102,7 @@ SELECT i.Invoice_ID,
 FROM Invoices i
 LEFT JOIN Allocated a ON a.Invoice_ID = i.Invoice_ID;` },
     p('Gunakan LEFT JOIN agar invoice tanpa pembayaran tetap masuk. Nilai Outstanding negatif perlu diperiksa sebagai kemungkinan kelebihan alokasi, kredit, atau salah data. Uji keunikan PK, tipe tanggal/angka, FK, dan control total setelah impor sebelum mengandalkan laporan. Richardson pp. 383–384 (PDF 408–409).'),
+    ...SIA_COVERAGE[9].reporting,
     h('6. Kasus pengendalian: diagnosis sampai bukti audit'),
     example('Empat temuan dan tindak lanjut',
       table('Matriks jawaban yang dapat diuji', ['Kondisi → risiko', 'Kontrol dan pemilik', 'Bukti / prosedur audit'], [

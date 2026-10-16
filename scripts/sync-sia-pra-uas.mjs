@@ -19,15 +19,15 @@ for (let tm=8;tm<=14;tm++) {
   const dir=`content-pipeline/SII306/TM${String(tm).padStart(2,'0')}/audit-20261012`;
   const reading=m.SII306_READINGS[tm],questions=m.SII306_QUIZ_UAS.filter(q=>q.tm===tm),flashcards=m.SII306_FC.filter(c=>c.tm===tm);
   const bank=m.SII306_BANK_UAS[tm-8];
-  const json=JSON.stringify({code:'SII306',tm,reading,questions,flashcards,bank,scope:'Active package revised 2026-10-16 against RPS-SIA p.1; supersedes historical catalog mapping. See docs/sia-pra-uas-20261016.md.'},null,2)+'\n';
+  const json=JSON.stringify({code:'SII306',tm,reading,questions,flashcards,bank,scope:'Active package revised 2026-10-17: RPS-SIA mapping retained; missing concepts from supplied summaries added. Traceability: docs/sia-rmk-coverage-20261017.md. Author mapping awaits independent review.'},null,2)+'\n';
   const hash=createHash('sha256').update(json).digest('hex');
   fs.writeFileSync(`${dir}/04_canonical_spec.json`,json);
-  fs.writeFileSync(`${dir}/04_canonical_spec.md`,`# SII306 TM${tm}: ${reading.title}\n\nActive revision: 2026-10-16. RPS-SIA p.1.\n\n${reading.ref}\n\nSHA256: ${hash}\n\nAudit directory retained for compatibility; the previous October 12 mapping is superseded. Source/coverage decisions: docs/sia-pra-uas-20261016.md.\n`);
+  fs.writeFileSync(`${dir}/04_canonical_spec.md`,`# SII306 TM${tm}: ${reading.title}\n\nActive revision: 2026-10-17. RPS-SIA p.1.\n\n${reading.ref}\n\nSHA256: ${hash}\n\nAudit directory retained for compatibility; the previous October 12 mapping is superseded. Source/coverage decisions: docs/sia-rmk-coverage-20261017.md.\n`);
   fs.writeFileSync(`${dir}/05_student_learning_version.md`,`# ${reading.title}\n\n${reading.intro}\n\n${render(reading.blocks)}\n\n## Latihan\n\n${questions.map(q=>q.q+'\n\n'+q.explanation).join('\n\n')}\n\n## Flashcard\n\n${flashcards.map(c=>c.front+'\n\n'+c.back).join('\n\n')}\n`);
   fs.writeFileSync(`${dir}/08_flashcard_alignment.json`,JSON.stringify(flashcards,null,2)+'\n');
   fs.writeFileSync(`${dir}/06_implementation_brief.md`,`Active RPS-aligned package SHA256 ${hash}. Typed module, quiz, flashcards and case must match JSON. Pre-UTS is independently preserved.\n`);
-  fs.writeFileSync(`${dir}/00_status.md`,'Status: RPS-aligned revision implemented 2026-10-16. Technical and visual evidence: docs/sia-pra-uas-20261016.md. Not a claim of independent review or official exam prediction.\n');
-  fs.writeFileSync(`${dir}/07_qa_manifest.md`,'Run node scripts/test-sia-pra-uas.mjs plus standard checks. Source mapping and verification results: docs/sia-pra-uas-20261016.md.\n');
+  fs.writeFileSync(`${dir}/00_status.md`,'Status: RPS mapping retained; source-point additions implemented 2026-10-17. Technical checks and author traceability are separate evidence. See docs/sia-rmk-coverage-20261017.md. Independent review remains open.\n');
+  fs.writeFileSync(`${dir}/07_qa_manifest.md`,'Run node scripts/test-sia-pra-uas.mjs and node scripts/test-sia-rmk-traceability.mjs plus standard checks. Source mapping and verification results: docs/sia-rmk-coverage-20261017.md. Technical success does not certify academic completeness.\n');
   const flat=flatten(reading.blocks);stats.push({tm,figures:flat.filter(b=>b.kind==='figure').length,checks:flat.filter(b=>b.kind==='self-check').length,journals:flat.filter(b=>b.kind==='journal').length,words:render(reading.blocks).split(/\s+/).length});
 }
 fs.mkdirSync('content-pipeline/SII306/revision-20261016',{recursive:true});

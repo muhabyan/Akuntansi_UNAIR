@@ -36,6 +36,12 @@ Labor operations / time records | Mencatat pekerjaan, pelaku, jam, dan tarif akt
 
 Inspection dan completion | Mencatat mutu, hasil diterima, serta tanggal selesai aktual. | Pisahkan inspeksi dari pelaksana, batasi jumlah selesai.
 
+Tujuan produksi, pemicu, dan hubungan antarsiklus
+
+Purchases menyediakan material, conversion mengolahnya, lalu sales menyerahkan produk. Persediaan yang dipakai bersama harus konsisten agar pembelian tidak dihitung lagi sebagai pemakaian dan produk selesai tidak langsung dianggap terjual. Tujuan conversion mencakup ketersediaan produk, mutu, efisiensi sumber daya, serta informasi biaya yang andal. Produksi dapat dipicu pengisian stok minimum atau kebutuhan pesanan sesuai kebijakan; contoh Sunset memakai kebutuhan barang jadi. Otorisasi menyetujui rencana, belum membuktikan penyelesaian.
+
+**Labor plan** menyimpan rencana operasi atau waktu standar; **labor operations** mencatat pekerjaan aktual. Bandingkan keduanya untuk menilai produktivitas dan telusuri selisih sebelum menyimpulkan pemborosan. Standar pada BOM, labor plan, dan kategori produk dibedakan dari kuantitas, jam, tarif, serta biaya aktual setiap pekerjaan. Model boleh disesuaikan jika perusahaan tidak memakai labor plan formal. Richardson Ch.9 pp.352–353, 358–362.
+
 2. Contoh bertahap: dari biaya masuk sampai HPP
 
 Asumsi latihan biaya per bulan
@@ -124,6 +130,10 @@ Barang cacat: periksa aturan sebelum menggambar
 
 Pada uraian Sunset, barang yang gagal mutu dibuang dan dibuat penggantinya. Jika perusahaan lain mengizinkan rework, diagram perlu cabang rework, inspeksi ulang, dan catatan biaya terkait. Jangan menggambar semua kegagalan mutu langsung masuk barang jadi. Aturan bisnis menentukan cabang proses serta informasi yang perlu disimpan.
 
+Membaca data objects, batch, dan subprocess
+
+Pada model dasar satu pool mewakili proses internal; lane membedakan Inventory Manager, Conversion Employees dan pemeriksa mutu sesuai organisasi. **Data objects** memperlihatkan otorisasi, material issue dan catatan pekerjaan yang dibuat atau digunakan aktivitas. Pada batch berulang, collapsed subprocess merangkum pekerjaan; expanded subprocess menunjukkan persiapan, bahan, pengerjaan dan inspeksi. Gateway menguji apakah batch maupun seluruh kuantitas telah selesai. Sequence flow tetap berada dalam pool; loop tidak berarti setiap barang cacat boleh diterima. Richardson pp.353–357.
+
 4. Business rules, akses, dan kontrol aplikasi
 
 Adaptasi kontrol Exhibit 9.6
@@ -175,6 +185,14 @@ Nama tabel dan atribut pada contoh Sunset
 Exhibit 9.9 menyebut tblBill_of_Material, tblLabor_Operations, tblLabor_Operations_Employees, tblMaterial_Issue, tblMaterial_Issue_Materials, tblMaterials, tblEmployees, tblProduct_Category, tblProduction_Authorizations, dan tblProducts. Tabel penghubung mencegah daftar banyak nilai disimpan pada satu field.
 
 Production authorizations membedakan Prod_auth_date, Scheduled_completion_date dan Actual_completion_date, selain Scheduled_qty_to_produce dan Actual_qty_produced. Jangan menyamakan tanggal otorisasi dengan tanggal selesai. Database juga memerlukan PK, tipe data, FK serta referential integrity setelah tabel dibentuk. Richardson pp.361–363 (PDF 386–388).
+
+Pengembangan model dan pemeriksaan database produksi
+
+Model conversion dasar memakai agent internal: Employees berperan sebagai pemberi otorisasi, penerbit material dan pekerja; external agent tidak wajib ditambahkan untuk aktivitas internal. Satu authorization dapat mempunyai banyak material issues dan labor operations; minimum keterlibatannya mengikuti status dan aturan bisnis. Hubungan produk–material adalah many-to-many. Type images seperti BOM dan Product Category menyimpan standar/kategori, dan BOM dapat diperinci menjadi kelas bila atribut serta kebijakannya memerlukan itu.
+
+Jika perusahaan perlu melacak pemakaian mesin, tambahkan **Equipment** sebagai resource serta **Equipment Operations** sebagai event dengan waktu dan dasar biaya. Hubungan konsumsi material/tenaga kerja dengan hasil produksi membantu menelusuri pertukaran sumber daya; jangan memaksakan pola penjualan–penerimaan kas pada konversi internal. WIP yang dihitung dari biaya pekerjaan belum selesai tetap dapat menjadi saldo akuntansi walaupun tidak menjadi kelas resource tersendiri.
+
+Saat implementasi, pilih PK, tipe data dan FK; enforce referential integrity, lalu simpan kuantitas/biaya pada event atau baris penghubung yang tepat. Query manajemen dapat menjumlah kebutuhan material menurut BOM, membandingkan standar dengan aktual, menghitung biaya per job, dan memisahkan job selesai dari WIP. Uji satu job sampai dokumen asal: FK valid saja belum membuktikan kuantitas atau tarifnya benar. Richardson pp.358–365.
 
 6. Uji pemahaman
 

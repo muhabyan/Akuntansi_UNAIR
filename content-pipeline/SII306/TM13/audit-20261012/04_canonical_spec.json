@@ -129,6 +129,37 @@
         "text": "Public/private sering membahas keterbukaan atau pengelolaan, sementara permissioned/permissionless membahas izin partisipasi. Jangan menganggap istilah itu selalu sinonim. Proof of work, proof of stake, dan mekanisme lain memberi pendekatan berbeda untuk konsensus; tidak semua jaringan memakai mining atau menyimpan data secara rahasia. Richardson pp. 498–504."
       },
       {
+        "kind": "table",
+        "title": "Tiga mekanisme konsensus",
+        "headers": [
+          "Mekanisme",
+          "Cara dasar",
+          "Pertimbangan kontrol"
+        ],
+        "rows": [
+          [
+            "Proof of Work",
+            "Miner bersaing melakukan komputasi untuk memenuhi syarat protokol.",
+            "Kebutuhan energi/komputasi dan konsentrasi kendali ikut dinilai."
+          ],
+          [
+            "Proof of Stake",
+            "Validator menempatkan stake; insentif dan konsekuensi mengikuti protokol.",
+            "Jangan menyamakan semua desain staking atau mekanisme penalti."
+          ],
+          [
+            "Proof of Authority",
+            "Validator/administrator beridentitas dikenal diberi wewenang membuat atau memvalidasi blok.",
+            "Pemilihan, reputasi, pengawasan dan perubahan wewenang validator penting."
+          ]
+        ],
+        "stackOnMobile": true
+      },
+      {
+        "kind": "p",
+        "text": "Public blockchain membuka partisipasi sesuai protokol; private blockchain membatasi peserta di bawah pengelolaan tertentu; consortium dikelola beberapa organisasi bersama. Bitcoin berfokus pada peer-to-peer cryptocurrency, sedangkan Ethereum memperluas platform programmable untuk smart contracts. Hak baca, kirim dan validasi tetap mengikuti desain masing-masing jaringan. Richardson Ch.15 pp.497–504."
+      },
+      {
         "kind": "h2",
         "text": "3. Smart contract dan oracle problem"
       },
@@ -201,6 +232,20 @@
           ]
         ],
         "stackOnMobile": true
+      },
+      {
+        "kind": "pendalaman",
+        "title": "Supply chain, loyalty program, dan audit berkelanjutan",
+        "blocks": [
+          {
+            "kind": "p",
+            "text": "Supply chain dapat berbagi asal material, perpindahan dan status pengiriman; sensor serta inspeksi tetap mengendalikan data fisik sebelum dicatat. **Loyalty program** lintas mitra dapat memakai catatan bersama untuk saldo dan penukaran points, sehingga perbedaan antarmitra lebih mudah direkonsiliasi. Rules harus mengatur siapa boleh menerbitkan/menukar points, kedaluwarsa dan koreksi transaksi. Richardson pp.504–506."
+          },
+          {
+            "kind": "p",
+            "text": "Nilai implementation challenges: speed, confidentiality, governance, interoperability dan integrasi ERP. Akses lebih sering ke catatan memungkinkan continuous audit atas aturan/exception, tetapi auditor tetap menilai kecukupan bukti, hak/kewajiban dan valuation. Kompetensi protokol, smart contract dan integrasi sistem dibutuhkan; IT specialists dapat membantu menguji kode serta kontrol. Shared source of truth mengurangi perbedaan catatan, bukan menjamin kebenaran semua input. Richardson pp.506–508."
+          }
+        ]
       },
       {
         "kind": "h2",
@@ -380,6 +425,50 @@
         "text": "AI dapat membantu proses yang masukannya tidak terstruktur, sedangkan RPA menjalankan aksi yang terdefinisi. Menggabungkan keduanya tidak menghilangkan kebutuhan kontrol. AI bisa salah membaca rekening, dan bot dapat meneruskan hasil salah dengan sangat konsisten. Pilih teknologi sesuai proses, bukan sekadar label produk."
       },
       {
+        "kind": "h3",
+        "text": "AI, neural networks, dan deep learning"
+      },
+      {
+        "kind": "p",
+        "text": "AI mencakup kemampuan mesin melakukan tugas seperti pengenalan pola, bahasa dan penalaran; machine learning mempelajari pola dari data. **Neural network** memproses input melalui nodes/neurons, weights dan activation functions hingga menghasilkan output. Training menyesuaikan parameter berdasarkan tujuan belajar. **Deep learning** memakai banyak lapisan untuk mempelajari pola kompleks; data, biaya komputasi serta evaluasi tetap menentukan kegunaannya. Lebih banyak lapisan tidak otomatis lebih baik. Richardson pp.508–513."
+      },
+      {
+        "kind": "table",
+        "title": "Empat cara belajar dan tugasnya",
+        "headers": [
+          "Cara belajar",
+          "Data/feedback",
+          "Ilustrasi dan batas"
+        ],
+        "rows": [
+          [
+            "Supervised learning",
+            "Pasangan input–label/output diketahui.",
+            "Classification invoice valid/tidak valid; regression memprediksi nilai numerik."
+          ],
+          [
+            "Unsupervised learning",
+            "Tidak memakai label target yang sudah ditentukan.",
+            "Clustering pelanggan atau mencari outlier; datanya dapat tetap terstruktur."
+          ],
+          [
+            "Semi-supervised learning",
+            "Sebagian data berlabel, sebagian tidak atau perlu diperiksa.",
+            "Gabungkan contoh terverifikasi dengan data lain; kualitas label tetap penting."
+          ],
+          [
+            "Reinforcement learning",
+            "Agen mencoba tindakan dan mendapat feedback/reward.",
+            "Mempelajari kebijakan tindakan; reward harus mencerminkan tujuan dan batas lingkungan."
+          ]
+        ],
+        "stackOnMobile": true
+      },
+      {
+        "kind": "p",
+        "text": "Classification menghasilkan kategori, regression nilai kontinu, clustering kelompok menurut kemiripan. Reinforcement learning berbeda karena tindakan memengaruhi pengalaman dan reward berikutnya. Pilih pendekatan dari pertanyaan bisnis, bukan dari istilah yang paling canggih. Richardson pp.513–514."
+      },
+      {
         "kind": "h2",
         "text": "8. Proses mana yang layak diotomasi?"
       },
@@ -438,6 +527,10 @@
             "text": "Attended automation membantu pengguna dalam sesi kerja dengan keterlibatan manusia. Unattended automation berjalan dengan penjadwalan/pemicu dan pengelolaan terpusat tanpa interaksi pengguna pada setiap langkah. Keduanya tetap memerlukan pemilik, pengamanan kredensial, log, serta penanganan kegagalan. Ini istilah implementasi pelengkap, bukan pembeda “RPA versus AI”."
           }
         ]
+      },
+      {
+        "kind": "p",
+        "text": "**Natural Language Processing (NLP)** membantu memahami atau mengekstraksi informasi dari bahasa/teks, misalnya tanggal serta ketentuan penting pada kontrak. RPA menjalankan workflow berulang; AI/ML atau NLP dapat membantu membaca input bervariasi sebelum RPA meneruskan tindakan. Anomaly detection hanya menyeleksi transaksi untuk pemeriksaan, contract analysis membantu ekstraksi, dan risk assessment menggabungkan konteks financial/nonfinancial. Periksa kualitas data, kompetensi reviewer dan batas otorisasi. Richardson pp.514–516."
       },
       {
         "kind": "h2",
@@ -645,6 +738,58 @@
         "text": "Ringkasan kontrak atau usulan jurnal dari AI generatif bisa keliru atau mengarang rujukan. Verifikasi terhadap dokumen sumber, lindungi data, dan pertahankan review pihak berwenang. Bagian ini perluasan pedagogis; buku yang dibaca berfokus pada AI/ML dan RPA, bukan panduan produk AI terkini."
       },
       {
+        "kind": "example",
+        "title": "Precision, recall, dan accuracy dari satu confusion matrix",
+        "blocks": [
+          {
+            "kind": "p",
+            "text": "Asumsi evaluasi independen 1.000 transaksi: ada 10 kasus positif sebenarnya. Model menandai 20 transaksi, terdiri atas 8 true positive dan 12 false positive; 2 kasus terlewat sebagai false negative, sedangkan 978 true negative."
+          },
+          {
+            "kind": "table",
+            "title": "Penyebut menjawab pertanyaan berbeda",
+            "headers": [
+              "Metrik",
+              "Hitungan",
+              "Interpretasi"
+            ],
+            "rows": [
+              [
+                "Precision = TP / (TP + FP)",
+                "8 / 20 = 40%.",
+                "Dari yang ditandai, 40% benar positif."
+              ],
+              [
+                "Recall = TP / (TP + FN)",
+                "8 / 10 = 80%.",
+                "Dari kasus positif sebenarnya, 80% ditemukan."
+              ],
+              [
+                "Accuracy = (TP + TN) / seluruh kasus",
+                "(8 + 978) / 1.000 = 98,6%.",
+                "Akurasi tinggi masih menyisakan 2 kasus yang terlewat."
+              ]
+            ],
+            "stackOnMobile": true
+          },
+          {
+            "kind": "p",
+            "text": "Mengubah threshold dapat menukar beban false positive dengan risiko false negative; hasil aktual perlu diuji pada data evaluasi. Management memantau kualitas data, bias, keamanan dan perubahan pola, mencatat versi model serta keputusan, dan mempertahankan human review. Angka ini latihan buatan untuk konsep evaluasi Ch.15 p.514; label positif tidak boleh ditetapkan hanya dari dugaan model."
+          }
+        ]
+      },
+      {
+        "kind": "self-check",
+        "question": "Mengapa unsupervised tidak berarti unstructured?",
+        "answer": [
+          {
+            "kind": "p",
+            "text": "Unsupervised menjelaskan tidak adanya label target, sedangkan unstructured menjelaskan bentuk data. Tabel transaksi yang terstruktur tetap dapat dianalisis tanpa label fraud untuk clustering atau deteksi outlier."
+          }
+        ],
+        "signal": "Jika alasannya belum jelas, kembali ke contoh sebelum membuka jawaban."
+      },
+      {
         "kind": "h2",
         "text": "13. Uji pemahaman"
       },
@@ -841,5 +986,5 @@
     ],
     "answerGuide": "Tahan pembayaran karena bukti mutu tidak konsisten; angka Rp98 juta hanya berlaku bila syarat diskon/penerimaan terpenuhi. Ledger konsisten belum membuktikan kondisi fisik. Shared receipt mendukung double-entry, bukan sisi debit ketiga. Validasi caller, oracle dan approval; cek UNPAID; reservasi satu kali; minta settlement; konfirmasi sebelum PAID; jika ambigu masuk reviewer. Gunakan identitas bot terbatas, vault, log, change control dan idempotency. AI perlu evaluasi false positive/negative, precision/recall, mutu data dan drift, bukan akurasi saja. Rujukan: Richardson AIS 4e, Ch.15 pp.494–516 (PDF 519–541)."
   },
-  "scope": "Active package revised 2026-10-16 against RPS-SIA p.1; supersedes historical catalog mapping. See docs/sia-pra-uas-20261016.md."
+  "scope": "Active package revised 2026-10-17: RPS-SIA mapping retained; missing concepts from supplied summaries added. Traceability: docs/sia-rmk-coverage-20261017.md. Author mapping awaits independent review."
 }

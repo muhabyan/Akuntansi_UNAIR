@@ -1,4 +1,5 @@
 import type { Reading } from '../../../types';
+import { SIA_COVERAGE } from '../coverageComplements';
 import { h, p, ol, table, note, warn, example, check, extra, source } from '../uasBlocks';
 import { conceptMap } from '../uasVisuals';
 import { conversionBpmn } from '../conversionVisual';
@@ -25,6 +26,7 @@ export const SIA_TM8: Reading = {
       ['Labor operations / time records', 'Mencatat pekerjaan, pelaku, jam, dan tarif aktual.', 'Validasi waktu/tarif, approval independen.'],
       ['Inspection dan completion', 'Mencatat mutu, hasil diterima, serta tanggal selesai aktual.', 'Pisahkan inspeksi dari pelaksana, batasi jumlah selesai.'],
     ]),
+    ...SIA_COVERAGE[8].planning,
     h('2. Contoh bertahap: dari biaya masuk sampai HPP'),
     example('Asumsi latihan biaya per bulan',
       p('Seluruh angka Rp juta, sistem perpetual. WIP awal 10; bahan langsung digunakan 30; tenaga kerja langsung 20; overhead dibebankan 10; WIP akhir 14. Barang jadi awal 8 dan akhir 12. Tidak ada spoilage abnormal, retur, atau penyesuaian overhead dalam hitungan ini.'),
@@ -41,6 +43,7 @@ export const SIA_TM8: Reading = {
     conversionBpmn,
     p('Pada BPMN, sequence flow menghubungkan aktivitas di dalam pool. Message flow dipakai antar-pool peserta berbeda; memisahkan fungsi internal menjadi lane tidak otomatis memerlukan message flow. Exclusive gateway memilih jalur sesuai kondisi. Loop menggambarkan pekerjaan berulang, sedangkan parallel gateway menunjukkan cabang yang berjalan bersamaan dan harus disinkronkan sesuai desain.'),
     example('Barang cacat: periksa aturan sebelum menggambar', p('Pada uraian Sunset, barang yang gagal mutu dibuang dan dibuat penggantinya. Jika perusahaan lain mengizinkan rework, diagram perlu cabang rework, inspeksi ulang, dan catatan biaya terkait. Jangan menggambar semua kegagalan mutu langsung masuk barang jadi. Aturan bisnis menentukan cabang proses serta informasi yang perlu disimpan.')),
+    ...SIA_COVERAGE[8].process,
     h('4. Business rules, akses, dan kontrol aplikasi'),
     table('Adaptasi kontrol Exhibit 9.6', ['Langkah', 'Pemisahan / akses', 'Kontrol aplikasi dan bukti'], [
       ['Authorize production', 'Pengotorisasi tidak bebas mengubah catatan persediaan.', 'Nomor otorisasi, batas kuantitas/nilai, approval sesuai wewenang.'],
@@ -67,6 +70,7 @@ export const SIA_TM8: Reading = {
     extra('Nama tabel dan atribut pada contoh Sunset',
       p('Exhibit 9.9 menyebut tblBill_of_Material, tblLabor_Operations, tblLabor_Operations_Employees, tblMaterial_Issue, tblMaterial_Issue_Materials, tblMaterials, tblEmployees, tblProduct_Category, tblProduction_Authorizations, dan tblProducts. Tabel penghubung mencegah daftar banyak nilai disimpan pada satu field.'),
       p('Production authorizations membedakan Prod_auth_date, Scheduled_completion_date dan Actual_completion_date, selain Scheduled_qty_to_produce dan Actual_qty_produced. Jangan menyamakan tanggal otorisasi dengan tanggal selesai. Database juga memerlukan PK, tipe data, FK serta referential integrity setelah tabel dibentuk. Richardson pp.361–363 (PDF 386–388).')),
+    ...SIA_COVERAGE[8].data,
     h('6. Uji pemahaman'),
     check('Dengan data contoh, WIP akhir sebenarnya 18. Berapa COGM dan COGS jika FG akhir tetap 12?', p('Biaya tersedia di WIP tetap 70. COGM = 70 − 18 = 52. Barang jadi tersedia = 8 + 52 = 60; COGS = 60 − 12 = 48. WIP lebih tinggi berarti lebih sedikit biaya ditransfer, bukan biaya tambahan otomatis.')),
     check('BOM dan material issue terlihat berbeda. Mengapa ini belum otomatis fraud?', p('BOM menunjukkan rencana, issue menunjukkan aktual. Perbedaan bisa berasal dari perubahan spesifikasi, kehilangan, pemborosan, atau kesalahan pencatatan. Periksa versi BOM, approval, jumlah hasil, retur bahan, dan bukti fisik sebelum menyimpulkan penyebab.')),

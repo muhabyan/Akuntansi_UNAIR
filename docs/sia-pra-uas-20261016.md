@@ -1,5 +1,7 @@
 # SIA pra-UAS: revisi materi TM8–14, 16 Oktober 2026
 
+> Riwayat revisi awal. Pemeriksaan terhadap tujuh RMK kemudian menemukan rincian yang belum terwakili. Perbaikan dan daftar penelusuran 17 Oktober tersedia di [laporan cakupan](sia-rmk-coverage-20261017.md). Kelulusan teknis dalam laporan ini bukan bukti bahwa seluruh poin sumber telah tercakup.
+
 Materi inti, katalog, kuis, flashcard, dan bank soal kini mengikuti urutan RPS-SIA. Versi sebelumnya memasangkan COSO dengan TM8, keamanan dengan TM9, analitika dengan TM11, dan integrasi dengan TM14; urutan tersebut tidak sesuai RPS. Revisi ini juga mengisi tiga pokok yang sebelumnya belum terwakili dengan benar: conversion, reporting/XBRL, dan justifikasi/manajemen proyek TI.
 
 ## Cakupan dan peta sumber

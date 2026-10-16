@@ -1,4 +1,5 @@
 import type { Reading } from '../../../types';
+import { SIA_COVERAGE } from '../coverageComplements';
 import { h, sub, p, ol, table, note, warn, example, check, extra, source } from '../uasBlocks';
 import { conceptMap, recoveryTimeline } from '../uasVisuals';
 
@@ -27,6 +28,7 @@ export const SIA_TM11: Reading = {
       ['Kegagalan listrik / perangkat / kesalahan manusia', 'Catatan hilang atau pemrosesan terputus tanpa serangan.', 'UPS sesuai kebutuhan, redundansi, validasi input, backup dan pemulihan teruji.'],
     ]),
     p('**Defense in depth** berarti menggunakan lapisan yang menangani kegagalan berbeda. Firewall tidak memverifikasi keberadaan barang. MFA membantu mengurangi pembajakan akun, tetapi pengguna yang sudah login masih perlu batas otorisasi. Antivirus tidak menggantikan review perubahan program atau rekonsiliasi transaksi.'),
+    ...SIA_COVERAGE[11].threats,
     h('2. Siapa masuk, boleh melakukan apa, dan meninggalkan bukti apa?'),
     table('Tiga konsep akses', ['Konsep', 'Pertanyaan', 'Contoh'], [
       ['Authentication', 'Apakah identitas pengguna dapat diverifikasi?', 'Password dan faktor tambahan untuk masuk.'],
@@ -50,6 +52,7 @@ export const SIA_TM11: Reading = {
       { title: 'Interpretasikan hasil', lines: ['Valid: data dan signature cocok.', 'Tidak membuktikan barang ada.'] },
     ], 'Ilustrasi umum, tidak menyamakan semua algoritme signature dengan “mengenkripsi hash”. Richardson pp. 425–426 dan pelengkap NIST Digital Signature.'),
     warn('Batas kriptografi', 'Signature yang valid tidak otomatis membuktikan pemilik manusia sengaja menyetujui transaksi jika kunci dicuri. Dukungan non-repudiation bergantung pada identitas, perlindungan kunci, dan bukti proses. SHA-256 menghasilkan 256 bit = 32 byte, umumnya ditulis sebagai 64 karakter heksadesimal; byte dan karakter tidak sama.'),
+    ...SIA_COVERAGE[11].identity,
     h('4. Computer fraud dan fraud triangle'),
     p('Fraud triangle membantu menilai **pressure/incentive**, **opportunity**, dan **rationalization**. Tekanan target laba dapat memberi dorongan; hak akses tanpa pengawasan memberi peluang; pelaku dapat membenarkan tindakannya sebagai “pinjaman sementara”. Kerangka ini membantu asesmen, tetapi keberadaan tekanan bukan bukti bahwa seseorang berbuat curang. Richardson pp. 428–431.'),
     table('Titik manipulasi dalam SIA', ['Titik', 'Contoh skema', 'Kontrol / bukti audit'], [
@@ -58,6 +61,7 @@ export const SIA_TM11: Reading = {
       ['Data tersimpan', 'Rekening vendor diubah oleh orang dalam.', 'Pembatasan master data dan log perubahan yang ditinjau.'],
       ['Output', 'Laporan exception dihapus sebelum ditinjau.', 'Distribusi ke reviewer independen; rekonsiliasi kelengkapan laporan.'],
     ]),
+    ...SIA_COVERAGE[11].prevention,
     sub('Menangani insiden secara terarah'),
     ol('Identifikasi dan nilai insiden: sistem, data, pihak, serta dampak yang terpengaruh.', 'Batasi penyebaran sesuai prosedur insiden; jaga bukti dan koordinasi dengan penanggung jawab.', 'Hilangkan penyebab dan pulihkan dari sumber yang dipercaya.', 'Validasi integritas data, rekonsiliasi transaksi tertunda, dan setujui pengoperasian kembali.', 'Evaluasi akar masalah, perbaiki kontrol, dan lakukan pemberitahuan sesuai ketentuan yang berlaku.'),
     h('5. BCP, DRP, dan target pemulihan'),
@@ -76,6 +80,7 @@ export const SIA_TM11: Reading = {
       ['Hot site', 'Infrastruktur relatif siap, dilengkapi mekanisme pemulihan data.', 'Biaya lebih tinggi; kesiapan aplikasi dan data tetap harus dibuktikan.'],
     ]),
     note('Backup yang bisa dipakai', 'Prinsip 3-2-1: tiga salinan, dua jenis media, satu di lokasi berbeda. Offsite tidak otomatis offline atau immutable. Perlindungan dari penghapusan/ransomware, pemisahan kredensial, dan uji restore tetap perlu ditentukan. RAID atau replikasi langsung dapat menyalin kerusakan dan tidak menggantikan backup.'),
+    ...SIA_COVERAGE[11].continuity,
     h('6. Pihak ketiga, cloud, dan laporan SOC'),
     p('Memindahkan sistem ke penyedia layanan memindahkan sebagian kegiatan, bukan seluruh tanggung jawab pengguna. Periksa hak akses perusahaan sendiri, kontrak, lokasi/retensi data, pemulihan, ketergantungan jaringan, serta kontrol pengguna yang disyaratkan laporan penyedia.'),
     extra('SOC 1, SOC 2, dan Type 1/Type 2',
@@ -86,6 +91,7 @@ export const SIA_TM11: Reading = {
         ['Type 2', 'Rancangan dan efektivitas operasi selama periode tertentu.'],
       ]),
       p('Periksa periode, cakupan layanan, pengecualian, subservice organization, serta complementary user entity controls. Logo atau sertifikat pemasaran tidak menggantikan pembacaan laporan yang sesuai. Richardson pp. 436–438.')),
+    ...SIA_COVERAGE[11].assurance,
     h('7. Uji pemahaman'),
     check('Dokumen pembayaran telah dienkripsi dan ditandatangani. Apakah cukup untuk menyetujui pembayaran?',
       p('Belum. Periksa kewenangan penyetuju, kepercayaan identitas kunci, bukti penerimaan, kelengkapan invoice, dan rekening tujuan. Kriptografi melindungi aspek data dan asal, bukan substansi seluruh transaksi.')),

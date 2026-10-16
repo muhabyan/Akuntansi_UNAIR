@@ -1,4 +1,5 @@
 import type { Reading } from '../../../types';
+import { SIA_COVERAGE } from '../coverageComplements';
 import { h, p, ol, table, warn, example, check, extra, source } from '../uasBlocks';
 import { conceptMap } from '../uasVisuals';
 
@@ -20,6 +21,7 @@ export const SIA_AUTOMATION_SUPPLEMENT: Reading = {
       ['OCR + AI + RPA', 'Baca dokumen, ekstrak informasi, lalu jalankan alur.', 'Ekstraksi invoice perlu confidence threshold dan review untuk field meragukan.'],
     ]),
     p('AI dapat membantu proses yang masukannya tidak terstruktur, sedangkan RPA menjalankan aksi yang terdefinisi. Menggabungkan keduanya tidak menghilangkan kebutuhan kontrol. AI bisa salah membaca rekening, dan bot dapat meneruskan hasil salah dengan sangat konsisten. Pilih teknologi sesuai proses, bukan sekadar label produk.'),
+    ...SIA_COVERAGE[13].learning,
     h('2. Proses mana yang layak diotomasi?'),
     conceptMap('rpa-fit', 'Menilai kesiapan proses', [
       { title: 'Aturan jelas', lines: ['Input, keputusan, output terdefinisi.', 'Sengketa perlu jalur manusia.'] },
@@ -35,6 +37,7 @@ export const SIA_AUTOMATION_SUPPLEMENT: Reading = {
     ]),
     extra('Attended dan unattended',
       p('Attended automation membantu pengguna dalam sesi kerja dengan keterlibatan manusia. Unattended automation berjalan dengan penjadwalan/pemicu dan pengelolaan terpusat tanpa interaksi pengguna pada setiap langkah. Keduanya tetap memerlukan pemilik, pengamanan kredensial, log, serta penanganan kegagalan. Ini istilah implementasi pelengkap, bukan pembeda “RPA versus AI”.')),
+    ...SIA_COVERAGE[13].nlp,
     h('3. Merancang rekonsiliasi yang aman'),
     conceptMap('rpa-bank', 'Alur bot dengan gerbang review', [
       { title: 'Ambil dan validasi', lines: ['Bank + GL, periode dan rekening.', 'Cocokkan jumlah serta total file.'] },
@@ -81,6 +84,7 @@ export const SIA_AUTOMATION_SUPPLEMENT: Reading = {
     ]),
     p('Pada 1.000 transaksi dengan 10 masalah, model yang menyebut semuanya normal punya akurasi 99% tetapi menangkap nol masalah. Karena itu evaluasi juga **precision** (dari yang ditandai, berapa yang benar bermasalah) dan **recall** (dari seluruh masalah, berapa yang tertangkap), bersama biaya serta kapasitas review. Perubahan pola bisnis dapat mengurangi kinerja model atau menimbulkan drift.'),
     warn('Pelengkap AI generatif', 'Ringkasan kontrak atau usulan jurnal dari AI generatif bisa keliru atau mengarang rujukan. Verifikasi terhadap dokumen sumber, lindungi data, dan pertahankan review pihak berwenang. Bagian ini perluasan pedagogis; buku yang dibaca berfokus pada AI/ML dan RPA, bukan panduan produk AI terkini.'),
+    ...SIA_COVERAGE[13].evaluation,
     h('7. Uji pemahaman'),
     check('Bot menemukan dua transaksi bernilai sama. Apakah keduanya boleh langsung dianggap cocok?',
       p('Tidak. Periksa referensi, rekening, tanggal, dan keunikan pasangan. Pasangan ambigu masuk exception. Simpan bukti keputusan agar proses dapat ditelusuri.')),

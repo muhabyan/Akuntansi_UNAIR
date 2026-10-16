@@ -38,6 +38,42 @@ Keputusan | Apa rekomendasi, kriteria dan pemiliknya? | Sponsor menyetujui pilot
 
 Manfaat dapat berupa revenue enhancement, revenue protection, cost savings dan cost avoidance. Pisahkan manfaat berwujud yang dapat diukur dari manfaat yang sulit dimonetisasi. Mempercepat pekerjaan bisa melepas kapasitas tanpa menurunkan pembayaran gaji. Biaya akuisisi meliputi implementasi langsung/tidak langsung; biaya operasi mencakup dukungan sepanjang umur sistem. Richardson pp.554–557.
 
+Kebutuhan, complementary changes, dan ukuran keberhasilan
+
+Dana dan sumber daya terbatas, sedangkan beberapa alternatif investasi TI bersaing untuk dipilih. **Economic justification** membandingkan kebutuhan, manfaat, biaya dan risiko agar pilihan memberi nilai bagi perusahaan. Business case mendokumentasikan alasan, alternatif, waktu dan ukuran keberhasilan sebagai dasar persetujuan serta alokasi sumber daya; fitur terbaru saja belum cukup menjadi alasan investasi.
+
+Hubungkan kesenjangan current performance terhadap target dengan **critical success factors**. Bandingkan perubahan proses, upgrade, beli atau bangun, termasuk pilihan tidak melanjutkan. Teknologi menghasilkan manfaat melalui complementary changes: training, perubahan tugas, workflow serta incentives. Tetapkan baseline, target, waktu pencapaian dan pemilik manfaat. Akuntan berperan sebagai user, manager, designer serta evaluator untuk menilai proses, biaya dan hasil. Richardson Ch.17 pp.552–555.
+
+Empat jenis manfaat
+
+Manfaat | Contoh ilustratif | Pemeriksaan
+
+Revenue enhancement | Kanal baru menambah penjualan. | Hitung kontribusi kas tambahan, bukan seluruh omzet tanpa biaya.
+
+Revenue protection | Layanan lebih andal menjaga pelanggan. | Jelaskan pendapatan berisiko dan asumsi retensi.
+
+Cost savings | Biaya pemrosesan yang sedang berjalan berkurang. | Buktikan pengeluaran apa yang benar-benar turun.
+
+Cost avoidance | Kenaikan biaya masa depan dapat dihindari. | Bandingkan dengan skenario tanpa proyek; hindari menghitung manfaat dua kali.
+
+Empat metode estimasi dan total cost of ownership
+
+Metode pada buku p.555
+
+Metode | Cara memakai | Yang perlu diuji
+
+Simulation | Uji perubahan KPI dan dampak finansial pada beberapa asumsi. | Data baseline, hubungan proses dan sensitivitas.
+
+Expert opinion | Minta pakar menilai manfaat dan peluang tercapainya. | Dasar estimasi, pengalaman dan potensi bias.
+
+External benchmarks | Bandingkan pengalaman organisasi dalam konteks serupa. | Skala, proses, waktu dan perbedaan kondisi.
+
+Real option theory | Nilai fleksibilitas investasi bertahap/menunda/memperluas di bawah ketidakpastian. | Skenario, probabilitas, biaya pilihan dan nilai fleksibilitas; bukan kepastian manfaat.
+
+Acquisition costs langsung meliputi hardware, software, networking, development, project management, consulting dan training. Biaya tidak langsung meliputi gangguan operasi serta waktu staf selama implementasi. Operating costs meliputi maintenance, upgrades, help desk, administration, pelatihan lanjutan, penggantian perangkat dan penghentian sistem lama. **Total Cost of Ownership (TCO)** menilai biaya langsung/tidak langsung sepanjang life cycle, memakai jumlah dan timing relevan terhadap alternatif. Richardson pp.555–557.
+
+Benefit dependency perlu ditunjukkan: waktu yang dipangkas → perubahan kapasitas/tugas → hasil bisnis → arus kas atau manfaat nonkas. Menghemat dua jam staf tidak otomatis menurunkan gaji. Manfaat harus ditautkan ke perubahan nyata dan pemilik yang bertanggung jawab.
+
 2. Metrik ekonomi: satu angka tidak cukup
 
 Metrik dan batasnya
@@ -100,6 +136,24 @@ Technology | Solusi tidak bekerja seperti direncanakan. | Pilot, pengujian integ
 
 Implementation / change | Organisasi tidak dapat menerapkan atau memakai solusi dengan baik. | Pelatihan, peran pemilik, data migrasi bersih, dukungan dan umpan balik.
 
+Enam kategori risiko pada Ch.17 p.557
+
+Risiko | Pertanyaan | Contoh mitigasi
+
+Alignment risk | Apakah solusi selaras dengan strategi? | Validasi kebutuhan dan critical success factors bersama sponsor.
+
+Solution risk | Apakah solusi menghasilkan manfaat yang diproyeksikan? | Uji proses dan benefit dependency melalui pilot.
+
+Financial risk | Apakah hasil finansial yang diharapkan tercapai? | Uji skenario biaya, manfaat, timing dan discount rate.
+
+Project risk | Apakah proyek selesai dalam waktu dan anggaran? | Baseline, monitoring, ketergantungan dan eskalasi.
+
+Change risk | Apakah organisasi mampu beradaptasi? | Training, dukungan management, perubahan tugas dan komunikasi.
+
+Technological risk | Apakah teknologi memenuhi fungsi/kinerja yang dibutuhkan? | Vendor demonstration, pengujian integrasi dan kontrak yang sesuai.
+
+Untuk setiap risiko, catat likelihood, financial/business impact dan biaya mitigasi. Penyesuaian estimasi manfaat/biaya harus transparan agar risiko yang sama tidak dihitung dua kali. Kategori membantu diagnosis; satu kejadian dapat memengaruhi beberapa kategori. Richardson pp.557–558.
+
 4. Systems Development Life Cycle (SDLC)
 
 Lima fase SDLC
@@ -137,6 +191,10 @@ Proyek bersifat sementara dengan hasil yang didefinisikan. **Project sponsor** m
 15-15 rule adalah heuristik buku
 
 Buku menyajikan keterlambatan atau kelebihan anggaran >15% sebagai sinyal penting untuk menilai kembali kelanjutan proyek. Ini bukan hukum bahwa proyek pasti gagal atau wajib dihentikan; sponsor perlu menilai manfaat tersisa, biaya tambahan dan alternatif.
+
+Project management life cycle dan baseline
+
+Siklus manajemen proyek mencakup **initiating, planning, executing, monitoring and controlling, closing**. Ini berbeda dari SDLC yang mengatur pengembangan sistem: satu proyek dapat mengelola aktivitas berbagai fase SDLC. Project manager mengkoordinasikan pekerjaan harian; sponsor memperoleh dukungan/sumber daya dan memutus masalah di luar kewenangan manager. Bandingkan actual costs, scope dan kemajuan dengan baseline; analisis change request, dapatkan persetujuan dan perbarui jadwal/sumber daya bila diperlukan. Richardson pp.563–568.
 
 6. WBS, dependency, dan critical path
 

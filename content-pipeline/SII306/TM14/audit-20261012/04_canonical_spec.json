@@ -89,6 +89,96 @@
         "text": "Manfaat dapat berupa revenue enhancement, revenue protection, cost savings dan cost avoidance. Pisahkan manfaat berwujud yang dapat diukur dari manfaat yang sulit dimonetisasi. Mempercepat pekerjaan bisa melepas kapasitas tanpa menurunkan pembayaran gaji. Biaya akuisisi meliputi implementasi langsung/tidak langsung; biaya operasi mencakup dukungan sepanjang umur sistem. Richardson pp.554–557."
       },
       {
+        "kind": "h3",
+        "text": "Kebutuhan, complementary changes, dan ukuran keberhasilan"
+      },
+      {
+        "kind": "p",
+        "text": "Dana dan sumber daya terbatas, sedangkan beberapa alternatif investasi TI bersaing untuk dipilih. **Economic justification** membandingkan kebutuhan, manfaat, biaya dan risiko agar pilihan memberi nilai bagi perusahaan. Business case mendokumentasikan alasan, alternatif, waktu dan ukuran keberhasilan sebagai dasar persetujuan serta alokasi sumber daya; fitur terbaru saja belum cukup menjadi alasan investasi."
+      },
+      {
+        "kind": "p",
+        "text": "Hubungkan kesenjangan current performance terhadap target dengan **critical success factors**. Bandingkan perubahan proses, upgrade, beli atau bangun, termasuk pilihan tidak melanjutkan. Teknologi menghasilkan manfaat melalui complementary changes: training, perubahan tugas, workflow serta incentives. Tetapkan baseline, target, waktu pencapaian dan pemilik manfaat. Akuntan berperan sebagai user, manager, designer serta evaluator untuk menilai proses, biaya dan hasil. Richardson Ch.17 pp.552–555."
+      },
+      {
+        "kind": "table",
+        "title": "Empat jenis manfaat",
+        "headers": [
+          "Manfaat",
+          "Contoh ilustratif",
+          "Pemeriksaan"
+        ],
+        "rows": [
+          [
+            "Revenue enhancement",
+            "Kanal baru menambah penjualan.",
+            "Hitung kontribusi kas tambahan, bukan seluruh omzet tanpa biaya."
+          ],
+          [
+            "Revenue protection",
+            "Layanan lebih andal menjaga pelanggan.",
+            "Jelaskan pendapatan berisiko dan asumsi retensi."
+          ],
+          [
+            "Cost savings",
+            "Biaya pemrosesan yang sedang berjalan berkurang.",
+            "Buktikan pengeluaran apa yang benar-benar turun."
+          ],
+          [
+            "Cost avoidance",
+            "Kenaikan biaya masa depan dapat dihindari.",
+            "Bandingkan dengan skenario tanpa proyek; hindari menghitung manfaat dua kali."
+          ]
+        ],
+        "stackOnMobile": true
+      },
+      {
+        "kind": "pendalaman",
+        "title": "Empat metode estimasi dan total cost of ownership",
+        "blocks": [
+          {
+            "kind": "table",
+            "title": "Metode pada buku p.555",
+            "headers": [
+              "Metode",
+              "Cara memakai",
+              "Yang perlu diuji"
+            ],
+            "rows": [
+              [
+                "Simulation",
+                "Uji perubahan KPI dan dampak finansial pada beberapa asumsi.",
+                "Data baseline, hubungan proses dan sensitivitas."
+              ],
+              [
+                "Expert opinion",
+                "Minta pakar menilai manfaat dan peluang tercapainya.",
+                "Dasar estimasi, pengalaman dan potensi bias."
+              ],
+              [
+                "External benchmarks",
+                "Bandingkan pengalaman organisasi dalam konteks serupa.",
+                "Skala, proses, waktu dan perbedaan kondisi."
+              ],
+              [
+                "Real option theory",
+                "Nilai fleksibilitas investasi bertahap/menunda/memperluas di bawah ketidakpastian.",
+                "Skenario, probabilitas, biaya pilihan dan nilai fleksibilitas; bukan kepastian manfaat."
+              ]
+            ],
+            "stackOnMobile": true
+          },
+          {
+            "kind": "p",
+            "text": "Acquisition costs langsung meliputi hardware, software, networking, development, project management, consulting dan training. Biaya tidak langsung meliputi gangguan operasi serta waktu staf selama implementasi. Operating costs meliputi maintenance, upgrades, help desk, administration, pelatihan lanjutan, penggantian perangkat dan penghentian sistem lama. **Total Cost of Ownership (TCO)** menilai biaya langsung/tidak langsung sepanjang life cycle, memakai jumlah dan timing relevan terhadap alternatif. Richardson pp.555–557."
+          },
+          {
+            "kind": "p",
+            "text": "Benefit dependency perlu ditunjukkan: waktu yang dipangkas → perubahan kapasitas/tugas → hasil bisnis → arus kas atau manfaat nonkas. Menghemat dua jam staf tidak otomatis menurunkan gaji. Manfaat harus ditautkan ke perubahan nyata dan pemilik yang bertanggung jawab."
+          }
+        ]
+      },
+      {
         "kind": "h2",
         "text": "2. Metrik ekonomi: satu angka tidak cukup"
       },
@@ -230,6 +320,52 @@
         "stackOnMobile": true
       },
       {
+        "kind": "table",
+        "title": "Enam kategori risiko pada Ch.17 p.557",
+        "headers": [
+          "Risiko",
+          "Pertanyaan",
+          "Contoh mitigasi"
+        ],
+        "rows": [
+          [
+            "Alignment risk",
+            "Apakah solusi selaras dengan strategi?",
+            "Validasi kebutuhan dan critical success factors bersama sponsor."
+          ],
+          [
+            "Solution risk",
+            "Apakah solusi menghasilkan manfaat yang diproyeksikan?",
+            "Uji proses dan benefit dependency melalui pilot."
+          ],
+          [
+            "Financial risk",
+            "Apakah hasil finansial yang diharapkan tercapai?",
+            "Uji skenario biaya, manfaat, timing dan discount rate."
+          ],
+          [
+            "Project risk",
+            "Apakah proyek selesai dalam waktu dan anggaran?",
+            "Baseline, monitoring, ketergantungan dan eskalasi."
+          ],
+          [
+            "Change risk",
+            "Apakah organisasi mampu beradaptasi?",
+            "Training, dukungan management, perubahan tugas dan komunikasi."
+          ],
+          [
+            "Technological risk",
+            "Apakah teknologi memenuhi fungsi/kinerja yang dibutuhkan?",
+            "Vendor demonstration, pengujian integrasi dan kontrak yang sesuai."
+          ]
+        ],
+        "stackOnMobile": true
+      },
+      {
+        "kind": "p",
+        "text": "Untuk setiap risiko, catat likelihood, financial/business impact dan biaya mitigasi. Penyesuaian estimasi manfaat/biaya harus transparan agar risiko yang sama tidak dihitung dua kali. Kategori membantu diagnosis; satu kejadian dapat memengaruhi beberapa kategori. Richardson pp.557–558."
+      },
+      {
         "kind": "h2",
         "text": "4. Systems Development Life Cycle (SDLC)"
       },
@@ -296,6 +432,14 @@
         "variant": "info",
         "title": "15-15 rule adalah heuristik buku",
         "text": "Buku menyajikan keterlambatan atau kelebihan anggaran >15% sebagai sinyal penting untuk menilai kembali kelanjutan proyek. Ini bukan hukum bahwa proyek pasti gagal atau wajib dihentikan; sponsor perlu menilai manfaat tersisa, biaya tambahan dan alternatif."
+      },
+      {
+        "kind": "h3",
+        "text": "Project management life cycle dan baseline"
+      },
+      {
+        "kind": "p",
+        "text": "Siklus manajemen proyek mencakup **initiating, planning, executing, monitoring and controlling, closing**. Ini berbeda dari SDLC yang mengatur pengembangan sistem: satu proyek dapat mengelola aktivitas berbagai fase SDLC. Project manager mengkoordinasikan pekerjaan harian; sponsor memperoleh dukungan/sumber daya dan memutus masalah di luar kewenangan manager. Bandingkan actual costs, scope dan kemajuan dengan baseline; analisis change request, dapatkan persetujuan dan perbarui jadwal/sumber daya bila diperlukan. Richardson pp.563–568."
       },
       {
         "kind": "h2",
@@ -689,5 +833,5 @@
     ],
     "answerGuide": "PV factor tiga tahun 10% = 2,486852. NPV dasar = 50×factor−120 = 4,34 juta; skenario = 45×factor−120 = −8,09 juta. Payback interpolasi 2,4 tahun hanya jika kas merata; dengan kas akhir tahun pengembalian pada akhir tahun3. Jadwal A0–2 B2–5 C2–6 D6–8; backward A0–2 B3–6 C2–6 D6–8; float B1, lainnya0. Critical path A–C–D =8. Jika B terlambat2 hari, proyek9 hari. WBS mencakup seluruh lingkup; 100%rule tidak berarti estimasi pasti. Sponsor menilai manfaat/risiko, project manager mengkoordinasikan. Perubahan perlu analisis dampak dan approval baseline. Rujukan: Richardson AIS 4e, Ch.17 pp.550–571 (PDF 575–596)."
   },
-  "scope": "Active package revised 2026-10-16 against RPS-SIA p.1; supersedes historical catalog mapping. See docs/sia-pra-uas-20261016.md."
+  "scope": "Active package revised 2026-10-17: RPS-SIA mapping retained; missing concepts from supplied summaries added. Traceability: docs/sia-rmk-coverage-20261017.md. Author mapping awaits independent review."
 }

@@ -1,1 +1,1 @@
-Run node scripts/test-sia-pra-uas.mjs plus standard checks. Source mapping and verification results: docs/sia-pra-uas-20261016.md.
+Run node scripts/test-sia-pra-uas.mjs and node scripts/test-sia-rmk-traceability.mjs plus standard checks. Source mapping and verification results: docs/sia-rmk-coverage-20261017.md. Technical success does not certify academic completeness.

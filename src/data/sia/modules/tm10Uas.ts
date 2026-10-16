@@ -1,4 +1,5 @@
 import type { Reading } from '../../../types';
+import { SIA_COVERAGE } from '../coverageComplements';
 import { h, sub, p, ol, table, note, warn, example, check, extra, source } from '../uasBlocks';
 import { SIA_AUDIT_SUPPLEMENT } from './auditSupplement';
 import { conceptMap } from '../uasVisuals';
@@ -25,6 +26,7 @@ export const SIA_TM10: Reading = {
       { title: 'Kontrol + bukti', lines: ['Verifikasi vendor dan approval.', 'Simpan jejak siapa menyetujui.'] },
       { title: 'Evaluasi + perbaikan', lines: ['Uji pelaksanaan sepanjang periode.', 'Tindak lanjuti setiap penyimpangan.'] },
     ], 'Peta konsep buatan. Urutan baca 1–4; evaluasi memberi umpan balik ke rancangan. COSO sendiri merupakan sistem komponen yang saling berhubungan.'),
+    ...SIA_COVERAGE[10].governance,
     h('2. Lima komponen dan 17 prinsip COSO 2013'),
     p('Bayangkan kelima komponen sebagai satu sistem. Lingkungan pengendalian membentuk perilaku; penilaian risiko menentukan fokus; aktivitas pengendalian merespons risiko; informasi menghubungkan pelaku; pemantauan menunjukkan bagian yang perlu diperbaiki. Tidak cukup memasang banyak approval bila manajemen rutin memerintahkan pegawai melewatinya.'),
     sub('Control environment · prinsip 1–5'),
@@ -70,6 +72,7 @@ export const SIA_TM10: Reading = {
       { title: 'Setelah memproses', lines: ['Tinjau exception dan rekening bank.', 'Detektif; simpan bukti review.'] },
       { title: 'Saat ditemukan salah', lines: ['Hentikan akses, pulihkan catatan.', 'Korektif; uji ulang kontrol.'] },
     ], 'Lapisan buatan saling melengkapi. Tidak ada urutan “selalu paling ekonomis”; pilihan kontrol bergantung pada risiko dan biaya.'),
+    ...SIA_COVERAGE[10].controls,
     h('4. Risiko bawaan, risiko sisa, dan respons'),
     p('**Inherent risk** adalah risiko sebelum mempertimbangkan tindakan pengendalian. **Residual risk** adalah risiko yang tersisa setelah respons dan kontrol. **Risk appetite** menggambarkan jenis dan besarnya risiko yang bersedia diambil untuk mengejar nilai. Toleransi menerjemahkannya ke variasi kinerja yang dapat diterima. Istilah ini perlu konteks, ukuran, serta periode yang konsisten.'),
     warn('Tidak ada rumus pengurangan universal', 'Skor risiko bawaan tidak dapat langsung dikurangi “persentase efektivitas kontrol” tanpa model dan satuan yang jelas. Nilai risiko sisa dengan menilai ulang peluang, dampak, dan ketergantungan antarkontrol. Skala ordinal rendah–sedang–tinggi tidak otomatis bisa dihitung sebagai rupiah.'),
@@ -81,6 +84,7 @@ export const SIA_TM10: Reading = {
     ]),
     example('Contoh bertahap: risk register pembayaran',
       ol('Tetapkan tujuan: pembayaran hanya untuk barang yang benar-benar diterima.', 'Catat ancaman: staf membuat vendor fiktif; kelemahan: satu akun memegang seluruh hak.', 'Nilai risiko awal: dampak tinggi dan peluang meningkat karena akses tanpa review.', 'Rancang kontrol: pembuat vendor independen, verifikasi rekening, approval terpisah, laporan perubahan master.', 'Tentukan bukti: tiket vendor, hasil konfirmasi, log perubahan, persetujuan dan review bulanan.', 'Nilai ulang risiko: kolusi dan override masih mungkin; pantau perubahan rekening menjelang pembayaran.')),
+    ...SIA_COVERAGE[10].risk,
     h('5. COSO internal control dan dua versi ERM'),
     table('Jangan mencampur jumlah komponen antarversi', ['Kerangka', 'Struktur', 'Fokus'], [
       ['COSO IC 2013', '3 kategori tujuan; 5 komponen; 17 prinsip.', 'Efektivitas sistem pengendalian internal.'],
@@ -108,6 +112,7 @@ export const SIA_TM10: Reading = {
     check('Mengapa laporan exception yang lengkap tetap belum cukup disebut monitoring efektif?',
       p('Laporan harus benar-benar ditinjau oleh petugas yang kompeten, penyimpangan diinvestigasi, dan perbaikan diuji. Informasi tanpa tindakan belum membuktikan kontrol berfungsi. Hubungkan prinsip 13, 16, dan 17.')),
     note('Kerangka jawaban UAS', 'Kondisi → tujuan dan risiko → komponen/prinsip COSO → kontrol spesifik → pemilik dan frekuensi → bukti yang diuji → risiko sisa. Ini panduan pengerjaan, bukan jaminan penilaian dosen.'),
+    ...SIA_COVERAGE[10].frameworks,
     extra('Pelengkap: COBIT dan teknik audit SI (Ch. 13)', ...SIA_AUDIT_SUPPLEMENT.blocks),
     source('Sumber utama dibaca: Richardson, Chang & Smith, AIS 4e ISE, Ch. 11 pp. 386–408; khusus 17 prinsip pp. 393–394, ERM pp. 395–400. [COSO: ERM 2017](https://www.coso.org/guidance-erm) sebagai pelengkap identitas kerangka.'),
   ],
