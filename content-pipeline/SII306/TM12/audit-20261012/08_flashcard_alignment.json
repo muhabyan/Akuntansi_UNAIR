@@ -1,56 +1,56 @@
 [
   {
-    "id": "aks301-tm12-01",
+    "id": "aks301-v3-tm12-01",
     "phase": "pra-uas",
     "tm": 12,
-    "topic": "Robotic Process Automation (RPA) & AI dalam SIA",
-    "category": "Mekanisme",
-    "front": "Definisi Robotic Process Automation (RPA)",
-    "back": "Aplikasi perangkat lunak bot yang meniru klik dan interaksi manusia untuk mengeksekusi tugas rutin berulang berbasis aturan (rule-based). Rujukan: Richardson et al. AIS 4e · Ch. 15, hal. 508-516 (PDF 533-541)."
-  },
-  {
-    "id": "aks301-tm12-02",
-    "phase": "pra-uas",
-    "tm": 12,
-    "topic": "Robotic Process Automation (RPA) & AI dalam SIA",
+    "topic": "Reporting dan XBRL",
     "category": "Konsep",
-    "front": "Kriteria Proses yang Ideal untuk RPA",
-    "back": "Volume transaksi tinggi, berbasis aturan terstruktur, data input digital konsisten, dan tingkat pengecualian (exceptions) yang rendah. Rujukan: Richardson et al. AIS 4e · Ch. 15, hal. 508-516 (PDF 533-541)."
+    "front": "Warehouse, mart, lake",
+    "back": "Warehouse mengintegrasi data historis; mart subset kebutuhan tertentu; lake dapat menampung data terstruktur/tidak terstruktur. Rujukan: Richardson AIS 4e, Ch.14 pp.470–483 (PDF 495–508)."
   },
   {
-    "id": "aks301-tm12-03",
+    "id": "aks301-v3-tm12-02",
     "phase": "pra-uas",
     "tm": 12,
-    "topic": "Robotic Process Automation (RPA) & AI dalam SIA",
-    "category": "Contoh",
-    "front": "Penerapan RPA pada Rekonsiliasi Bank",
-    "back": "Bot otomatis mengunduh rekening koran bank setiap pagi, mencocokkan mutasi kas dengan buku besar ERP, dan menandai selisih saldo. Rujukan: Richardson et al. AIS 4e · Ch. 15, hal. 508-516 (PDF 533-541)."
-  },
-  {
-    "id": "aks301-tm12-04",
-    "phase": "pra-uas",
-    "tm": 12,
-    "topic": "Robotic Process Automation (RPA) & AI dalam SIA",
+    "topic": "Reporting dan XBRL",
     "category": "Konsep",
-    "front": "Optical Character Recognition (OCR) Cerdas",
-    "back": "Mengonversi gambar pindaian faktur vendor fisik atau PDF menjadi data teks terstruktur yang otomatis terinput ke akun utang usaha. Rujukan: Richardson et al. AIS 4e · Ch. 15, hal. 508-516 (PDF 533-541)."
+    "front": "Dashboard yang berguna",
+    "back": "Tentukan tujuan, definisi KPI, penyebut, tanggal refresh, sumber dan pemilik tindakan; banyak grafik bukan ukuran keberhasilan. Rujukan: Richardson AIS 4e, Ch.14 pp.470–483 (PDF 495–508)."
   },
   {
-    "id": "aks301-tm12-05",
+    "id": "aks301-v3-tm12-03",
     "phase": "pra-uas",
     "tm": 12,
-    "topic": "Robotic Process Automation (RPA) & AI dalam SIA",
+    "topic": "Reporting dan XBRL",
     "category": "Konsep",
-    "front": "Machine Learning dalam Deteksi Anomali Jurnal",
-    "back": "Algoritma pembelajaran mesin tanpa pengawasan (Unsupervised ML) yang otomatis menandai pola transaksi yang menyimpang dari perilaku historis normal. Rujukan: Richardson et al. AIS 4e · Ch. 15, hal. 508-516 (PDF 533-541)."
+    "front": "Taxonomy versus instance",
+    "back": "Taxonomy mendefinisikan konsep/tipe/hubungan; instance berisi fakta entitas beserta context dan unit. Rujukan: Richardson AIS 4e, Ch.14 pp.470–483 (PDF 495–508)."
   },
   {
-    "id": "aks301-tm12-06",
+    "id": "aks301-v3-tm12-04",
     "phase": "pra-uas",
     "tm": 12,
-    "topic": "Robotic Process Automation (RPA) & AI dalam SIA",
+    "topic": "Reporting dan XBRL",
     "category": "Konsep",
-    "front": "Tata Kelola & Pengendalian Bot (Bot Governance)",
-    "back": "Memerlukan manajemen kredensial akses bot, pemantauan log aktivitas, dan pengujian kontrol saat ada pembaruan versi sistem ERP. Rujukan: Richardson et al. AIS 4e · Ch. 15, hal. 508-516 (PDF 533-541)."
+    "front": "Instant versus duration",
+    "back": "Saldo kas: satu tanggal (instant). Revenue: rentang periode (duration). Entity dan dimensi juga harus cocok. Rujukan: Richardson AIS 4e, Ch.14 pp.470–483 (PDF 495–508)."
+  },
+  {
+    "id": "aks301-v3-tm12-05",
+    "phase": "pra-uas",
+    "tm": 12,
+    "topic": "Reporting dan XBRL",
+    "category": "Konsep",
+    "front": "Validasi XBRL",
+    "back": "Uji tag, context, unit, skala, tanda, ketelitian dan kelengkapan terhadap sumber; valid teknis belum benar secara akuntansi. Rujukan: Richardson AIS 4e, Ch.14 pp.470–483 (PDF 495–508)."
+  },
+  {
+    "id": "aks301-v3-tm12-06",
+    "phase": "pra-uas",
+    "tm": 12,
+    "topic": "Reporting dan XBRL",
+    "category": "Konsep",
+    "front": "XBRL GL",
+    "back": "Kerangka pertukaran data tingkat transaksi/ledger; berbeda dari fakta agregat taxonomy pelaporan keuangan. Rujukan: Richardson AIS 4e, Ch.14 pp.470–483 (PDF 495–508)."
   }
 ]

@@ -1,56 +1,56 @@
 [
   {
-    "id": "aks301-tm10-01",
+    "id": "aks301-v3-tm10-01",
     "phase": "pra-uas",
     "tm": 10,
-    "topic": "Audit Sistem Informasi & Tata Kelola TI (COBIT)",
-    "category": "Prosedur",
-    "front": "Auditing AROUND the Computer",
-    "back": "Mengabaikan pemrosesan komputer internal; auditor hanya mencocokkan dokumen input sumber dengan laporan output cetak (hanya cocok untuk sistem sederhana). Rujukan: Richardson et al. AIS 4e · Ch. 11 dan 13, hal. 403-408 dan 450-463 (PDF 428-433 dan 475-488)."
+    "topic": "Internal Controls dan COSO",
+    "category": "Konsep",
+    "front": "Tiga tujuan COSO",
+    "back": "Operations, reporting, compliance. Reporting mencakup laporan internal/eksternal dan keuangan/nonkeuangan. Rujukan: Richardson AIS 4e, Ch.11 pp.386–408 (PDF 411–433)."
   },
   {
-    "id": "aks301-tm10-02",
+    "id": "aks301-v3-tm10-02",
     "phase": "pra-uas",
     "tm": 10,
-    "topic": "Audit Sistem Informasi & Tata Kelola TI (COBIT)",
-    "category": "Prosedur",
-    "front": "Auditing THROUGH the Computer",
-    "back": "Auditor menguji langsung logika pemrograman dan kontrol internal yang tertanam di dalam perangkat lunak komputer. Rujukan: Richardson et al. AIS 4e · Ch. 11 dan 13, hal. 403-408 dan 450-463 (PDF 428-433 dan 475-488)."
+    "topic": "Internal Controls dan COSO",
+    "category": "Konsep",
+    "front": "Lima komponen COSO",
+    "back": "Control environment; risk assessment; control activities; information/communication; monitoring. Rujukan: Richardson AIS 4e, Ch.11 pp.386–408 (PDF 411–433)."
   },
   {
-    "id": "aks301-tm10-03",
+    "id": "aks301-v3-tm10-03",
     "phase": "pra-uas",
     "tm": 10,
-    "topic": "Audit Sistem Informasi & Tata Kelola TI (COBIT)",
-    "category": "Prosedur",
-    "front": "Test Data Approach (Pendekatan Data Uji)",
-    "back": "Auditor memasukkan data transaksi buatan (valid dan tidak valid) ke dalam program klien untuk memverifikasi apakah kontrol sistem menolak data salah. Rujukan: Richardson et al. AIS 4e · Ch. 11 dan 13, hal. 403-408 dan 450-463 (PDF 428-433 dan 475-488)."
+    "topic": "Internal Controls dan COSO",
+    "category": "Konsep",
+    "front": "17 prinsip COSO 2013",
+    "back": "Pembagian 5 + 4 + 3 + 3 + 2 pada lima komponen. Periksa hadir, berfungsi, dan bekerja bersama. Rujukan: Richardson AIS 4e, Ch.11 pp.386–408 (PDF 411–433)."
   },
   {
-    "id": "aks301-tm10-04",
+    "id": "aks301-v3-tm10-04",
     "phase": "pra-uas",
     "tm": 10,
-    "topic": "Audit Sistem Informasi & Tata Kelola TI (COBIT)",
-    "category": "Prosedur",
-    "front": "Parallel Simulation (Simulasi Paralel)",
-    "back": "Auditor menulis kode simulasi independen yang menjalankan data transaksi riil klien, lalu membandingkan outputnya dengan hasil produksi sistem klien. Rujukan: Richardson et al. AIS 4e · Ch. 11 dan 13, hal. 403-408 dan 450-463 (PDF 428-433 dan 475-488)."
+    "topic": "Internal Controls dan COSO",
+    "category": "Konsep",
+    "front": "Preventif, detektif, korektif",
+    "back": "Mencegah masalah; menemukan masalah; memperbaiki/memulihkan. Contoh: approval, rekonsiliasi, restore. Rujukan: Richardson AIS 4e, Ch.11 pp.386–408 (PDF 411–433)."
   },
   {
-    "id": "aks301-tm10-05",
+    "id": "aks301-v3-tm10-05",
     "phase": "pra-uas",
     "tm": 10,
-    "topic": "Audit Sistem Informasi & Tata Kelola TI (COBIT)",
-    "category": "Standar",
-    "front": "Kerangka Kerja Tata Kelola TI: COBIT 2019",
-    "back": "Control Objectives for Information and Related Technologies (ISACA) yang menyelaraskan tata kelola TI dengan tujuan strategis bisnis korporasi. Rujukan: Richardson et al. AIS 4e · Ch. 11 dan 13, hal. 403-408 dan 450-463 (PDF 428-433 dan 475-488)."
+    "topic": "Internal Controls dan COSO",
+    "category": "Konsep",
+    "front": "Desain versus pelaksanaan",
+    "back": "Desain: mampu mengatasi risiko jika dijalankan. Pelaksanaan: benar-benar berjalan konsisten pada periode relevan. Rujukan: Richardson AIS 4e, Ch.11 pp.386–408 (PDF 411–433)."
   },
   {
-    "id": "aks301-tm10-06",
+    "id": "aks301-v3-tm10-06",
     "phase": "pra-uas",
     "tm": 10,
-    "topic": "Audit Sistem Informasi & Tata Kelola TI (COBIT)",
-    "category": "Klasifikasi",
-    "front": "Pemisahan Tugas Khusus Departemen TI",
-    "back": "Analis Sistem (merancang sistem) harus terpisah dari Programmer (menulis kode) dan terpisah dari Operator Komputer (menjalankan live system). Rujukan: Richardson et al. AIS 4e · Ch. 11 dan 13, hal. 403-408 dan 450-463 (PDF 428-433 dan 475-488)."
+    "topic": "Internal Controls dan COSO",
+    "category": "Konsep",
+    "front": "IC dan ERM",
+    "back": "IC 2013: 5 komponen/17 prinsip. ERM 2004: 8 komponen. ERM 2017: 5 komponen/20 prinsip. Jangan dicampur. Rujukan: Richardson AIS 4e, Ch.11 pp.386–408 (PDF 411–433)."
   }
 ]

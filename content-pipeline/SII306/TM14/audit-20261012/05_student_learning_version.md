@@ -1,99 +1,275 @@
-# Integrasi Sistem Perusahaan & Simulasi Kasus Komprehensif Pra-UAS
+# Justifying and Planning IT Initiatives Using Project Management Techniques
 
-Tatap muka penutup yang mengintegrasikan seluruh materi SIA: siklus transaksi, arsitektur ERP terpusat, tata kelola COSO/COBIT, keamanan siber, analitika data, dan teknologi masa depan. Dilengkapi dengan metodologi diagnostik kasus komprehensif persiapan Ujian Akhir Semester (UAS).
+Proyek TI harus menjawab masalah bisnis, layak secara ekonomi, dan dapat dilaksanakan. Bangun business case, bedakan laba dan arus kas, uji sensitivitas, lalu susun lingkup serta jadwal yang memperhitungkan ketergantungan. Contoh NPV dan critical path ditunjukkan langkah demi langkah.
 
-Gambar 14.1: Peta Arsitektur Integrasi ERP Terpusat dan Simulasi Komprehensif Siklus Bisnis Pra-UAS.
+ERP baru karena masalah apa?
 
-Peta Integrasi Arsitektur Sistem Informasi Akuntansi Terintegrasi
+Usulan “beli ERP karena pesaing sudah memakai” belum menjadi business case. Mulai dari masalah: penutupan buku memerlukan 12 hari karena data cabang tidak seragam. Tetapkan hasil yang diharapkan, alternatif perbaikan, siapa yang memperoleh manfaat, kapan manfaat muncul, dan bagaimana mencocokkannya dengan biaya serta risiko.
 
-SIA terpadu menghubungkan data proses operasional dengan pencatatan dan pelaporan. Dampak tiap peristiwa bergantung pada model data, pemetaan akun, otorisasi dan kontrol yang diterapkan. Richardson Ch.10, PDF 408-409, membedakan peran event, resources dan query laporan:
+1. Business case: kebutuhan sebelum teknologi
 
-Tabel 14.1: Integrasi Lintas Siklus Transaksi ke Buku Besar Umum (General Ledger / GL)
+Empat tahap justifikasi ekonomi
 
-Siklus Asal | Pemicu Transaksi (Trigger) | Jurnal Otomatis yang Terbentuk | Modul ERP Terkait
+Adaptasi buatan dari Exhibit 17.1, Richardson p.553. Estimasi manfaat, biaya dan risiko saling terkait.
 
-Siklus Pendapatan (O2C) | Konfirmasi Bill of Lading pengiriman barang dagang ke pelanggan. | Debit: Piutang Usaha / Kas; Kredit: Pendapatan Penjualan. Debit: Beban Pokok Penjualan; Kredit: Persediaan Barang Jadi. | SD (Sales & Distribution) -> FI (Financial Accounting) & MM (Materials Management).
+1. Business requirements: Definisikan masalah dan ukuran sukses. Hubungkan dengan strategi organisasi.
 
-Siklus Pengeluaran (P2P) | Three-Way Match disetujui (PO + RR + Vendor Invoice). | Debit: Persediaan Bahan Baku / Beban Operasional; Kredit: Utang Usaha. | MM (Materials Management) -> FI (Accounts Payable).
+2. Alternatif solusi: Perbaiki proses, upgrade, beli, bangun. Nilai opsi tidak melanjutkan proyek.
 
-Siklus Konversi | Laporan penyelesaian batch produksi dari stasiun perakitan. | Debit: Persediaan Barang Jadi; Kredit: Barang Dalam Proses (WIP). | PP (Production Planning) -> CO (Controlling) & FI.
+3. Manfaat, biaya, risiko: Sebutkan nominal, waktu dan asumsi. Jangan hitung manfaat dua kali.
 
-Siklus Penggajian (Payroll) | Otorisasi rekapitulasi jam kerja biometrik bulanan. | Debit: Beban Gaji & Upah; Kredit: Utang PPh 21, Utang BPJS, dan Kas/Utang Gaji. | HR/HCM (Human Capital) -> FI.
+4. Value proposition: Bandingkan hasil dan sensitivitas. Rekomendasikan dengan batas jelas.
 
-Simulasi Kasus UAS: Diagnosa Kegagalan Sistem PT Global Distribusi Utama
+Komponen business case yang dapat diperiksa
 
-Konteks Kasus: PT Global Distribusi Utama mengalami kerugian Rp 3.2 miliar dalam satu tahun buku. Hasil investigasi komite audit menemukan temuan-temuan berikut:
+Komponen | Pertanyaan | Contoh
 
-Temuan 1: Database ERP sering down selama 6 jam saat penutupan buku bulanan karena server kelebihan beban.
+Kebutuhan | Masalah apa, lingkup mana, ukuran sukses apa? | Tutup buku turun dari 12 menjadi 7 hari dengan tingkat kesalahan terkendali.
 
-Temuan 2: Staf pembelian merangkap sebagai admin yang memiliki hak akses menambah vendor baru dan menyetujui Purchase Order.
+Alternatif | Apakah teknologi baru merupakan satu-satunya cara? | Standarisasi proses dahulu, upgrade sistem, SaaS, atau bangun sendiri.
 
-Temuan 3: Perusahaan membayar Rp 850 juta ke vendor bernama 'CV Maju Lancar' yang beralamat sama dengan rumah pribadi Manajer Logistik.
+Manfaat | Siapa mendapat manfaat dan kapan? | Kurangi overtime atau risiko salah bayar; kapasitas berbeda dari kas.
 
-Temuan 4: Terjadi kebocoran data rahasia harga pokok produksi ke kompetitor melalui USB flashdisk staf magang IT.
+Biaya | Apa biaya awal dan berulang sepanjang umur solusi? | Lisensi, migrasi, integrasi, pelatihan, operasi, maintenance, downtime dan exit.
 
-Solusi Matriks Rekomendasi Audit (Standar Jawaban UAS)
+Risiko | Apa yang bisa menggagalkan hasil? | Teknologi tidak sesuai, perubahan tidak diterima, manfaat terlambat.
 
-Tabel 14.2: Matriks Diagnosa & Rekomendasi Komprehensif UAS
+Keputusan | Apa rekomendasi, kriteria dan pemiliknya? | Sponsor menyetujui pilot dengan tolok ukur dan titik evaluasi.
 
-Kasus | Kelemahan Pengendalian | Kategori COSO / GITC | Solusi & Pengendalian Perbaikan
+Manfaat dapat berupa revenue enhancement, revenue protection, cost savings dan cost avoidance. Pisahkan manfaat berwujud yang dapat diukur dari manfaat yang sulit dimonetisasi. Mempercepat pekerjaan bisa melepas kapasitas tanpa menurunkan pembayaran gaji. Biaya akuisisi meliputi implementasi langsung/tidak langsung; biaya operasi mencakup dukungan sepanjang umur sistem. Richardson pp.554–557.
 
-Temuan 1 | Ketiadaan perencanaan kapasitas server dan tidak adanya High Availability / Hot Site. | GITC (Computer Operations & Availability) | Migrasikan database ke arsitektur Cloud ERP yang memiliki auto-scaling; siapkan server replikasi aktif.
+2. Metrik ekonomi: satu angka tidak cukup
 
-Temuan 2 | Pelanggaran serius pemisahan tugas (SoD) antara pendaftaran vendor dan pemesanan. | Control Activities (Segregation of Duties) | Cabut hak akses otorisasi PO dari staf pendaftaran vendor; terapkan matriks SoD di konfigurasi modul ERP.
+Metrik dan batasnya
 
-Temuan 3 | Fraud Vendor Fiktif (Shell Company) dan transaksi dengan pihak berelasi tanpa deklarasi. | Risk Assessment & Control Environment | Wajibkan verifikasi fisik dan legalitas NPWP/NIB vendor oleh Bagian Legal; terapkan audit data matching alamat vendor vs karyawan.
+Metrik | Cara memahami | Batas
 
-Temuan 4 | Ketiadaan Data Loss Prevention (DLP) dan akses fisik port USB yang terbuka bebas. | Information Security (GITC - Logical Access) | Nonaktifkan seluruh port USB di komputer kantor melalui Group Policy Windows; enkripsi harddisk laptop dengan BitLocker; terapkan perjanjian kerahasiaan (NDA).
+Payback | Waktu sampai investasi awal tertutup arus kas masuk bersih. | Payback sederhana mengabaikan nilai waktu uang dan kas setelah titik pulih.
 
-Strategi Sukses Menghadapi UAS SIA
+ARR | Laba akuntansi rata-rata dibanding investasi sesuai definisi yang dipakai. | Laba berbeda dari arus kas dan definisi penyebut harus eksplisit.
 
-Gunakan pendekatan multidisipliner: hubungkan aspek bisnis, hukum, standar akuntansi, dan teknologi informasi. Jawaban yang menggabungkan prinsip akuntansi (pengakuan jurnal) dengan pengendalian TI (GITC & Application Controls) selalu mendapatkan nilai tertinggi dari dosen penguji.
+NPV | Present value seluruh arus kas masuk dikurangi keluar. | Sensitif pada estimasi kas, timing dan discount rate.
+
+IRR | Tingkat diskonto yang membuat NPV nol. | Dapat menyesatkan untuk pola kas tidak biasa dan perbandingan skala proyek.
+
+\mathrm{NPV}=-I_0+\sum_{t=1}^{n}\frac{CF_t}{(1+r)^t}
+
+I₀ = pengeluaran awal; CFₜ = arus kas bersih pada periode t; r = tingkat diskonto yang konsisten dengan satuan periode dan asumsi kas.
+
+Asumsi latihan: investasi Rp120 juta
+
+Investasi dibayar hari ini Rp120 juta. Arus kas bersih tambahan Rp50 juta setiap akhir tahun selama tiga tahun, sudah setelah biaya operasi; nilai residu nol. Diskonto 10% per tahun. Untuk menyederhanakan, abaikan pajak dan inflasi.
+
+Diskonto arus kas
+
+Waktu | Arus kas Rp juta | Present value Rp juta
+
+0 | −120 | −120
+
+Akhir tahun 1 | 50 | 50 / 1,10 = 45,45
+
+Akhir tahun 2 | 50 | 50 / 1,10² = 41,32
+
+Akhir tahun 3 | 50 | 50 / 1,10³ = 37,57
+
+Total PV masuk tanpa pembulatan antara = 124,3426.
+
+NPV = 124,3426 − 120 = Rp4,3426 juta, dibulatkan Rp4,34 juta.
+
+Payback sederhana secara interpolasi = 120 / 50 = 2,4 tahun jika kas dianggap merata; jika benar-benar hanya diterima di akhir tahun, pengembalian terjadi pada akhir tahun ke-3.
+
+NPV positif dalam asumsi kasus mendukung nilai ekonomi, tetapi margin kecil sehingga sensitivitas penting. Keputusan juga mempertimbangkan risiko, sumber daya dan alternatif.
+
+Jika arus kas tidak merata, jumlahkan kas tiap periode dan cari saat kumulatif menutup investasi, bukan membagi investasi dengan kas rata-rata tanpa penjelasan. Jangan memasukkan depresiasi sebagai pengeluaran kas kedua kali; dampak pajaknya hanya dimasukkan bila model memang mencakup pajak.
+
+3. Risiko dan sensitivitas nilai proyek
+
+Manfaat turun 10%
+
+Kas bersih menjadi Rp45 juta/tahun. Total PV = 45 × (1/1,1 + 1/1,1² + 1/1,1³) = Rp111,9083 juta. NPV menjadi **−Rp8,09 juta**. Penurunan manfaat yang tampak kecil mengubah simpulan ekonomi.
+
+Titik impas kas tahunan = 120 ÷ 2,486852 = sekitar Rp48,25 juta/tahun. Bandingkan estimasi Rp50 juta dengan ambang ini. Gunakan skenario biaya lebih tinggi, peluncuran terlambat, dan adopsi lebih rendah, lalu jelaskan mana asumsi yang paling menentukan.
+
+Jenis risiko proyek
+
+Risiko | Makna | Tindakan
+
+Alignment | Solusi tidak mendukung strategi/kebutuhan. | Uji kebutuhan dan kriteria sukses dengan pemilik bisnis.
+
+Technology | Solusi tidak bekerja seperti direncanakan. | Pilot, pengujian integrasi, keamanan dan kapasitas.
+
+Implementation / change | Organisasi tidak dapat menerapkan atau memakai solusi dengan baik. | Pelatihan, peran pemilik, data migrasi bersih, dukungan dan umpan balik.
+
+4. Systems Development Life Cycle (SDLC)
+
+Lima fase SDLC
+
+Lima fase pada Richardson pp.561–562. Angka adalah urutan pembelajaran; SDLC berulang, bukan selesai selamanya setelah go-live.
+
+1. Planning: Kebutuhan, kelayakan, business case. Tetapkan sponsor dan lingkup.
+
+2. Analysis: Rinci kebutuhan pengguna/proses. Apa yang harus dicapai sistem?
+
+3. Design: Rancang data, kontrol dan antarmuka. Bagaimana kebutuhan dipenuhi?
+
+4. Implementation: Bangun, uji, migrasi, latih, terapkan. Verifikasi hasil sebelum produksi.
+
+5. Maintenance: Koreksi, dukung dan perbarui. Perubahan besar memulai siklus baru.
+
+Waterfall dan Agile
+
+Aspek | Waterfall | Agile
+
+Pola | Fase cenderung berurutan dengan keluaran dan persetujuan. | Iterasi/increment dengan kolaborasi dan umpan balik.
+
+Kesesuaian | Kebutuhan cukup stabil dan urutan dapat direncanakan. | Kebutuhan berkembang dan pembelajaran iteratif diperlukan.
+
+Kontrol | Baseline, dokumentasi, pengujian, approval tetap penting. | Backlog, acceptance criteria, pengujian dan approval tetap penting.
+
+Agile bukan izin untuk melewati dokumentasi atau kontrol. Waterfall pun tidak menjamin proyek pasti tepat waktu. Nilai kompleksitas, ketidakpastian, regulasi, kemampuan tim dan ketergantungan. Akuntan membantu mendefinisikan kebutuhan data, mapping akun, pengujian laporan, rekonsiliasi migrasi serta kontrol pengguna.
+
+5. Lingkup, sponsor, dan pengendalian perubahan
+
+Proyek bersifat sementara dengan hasil yang didefinisikan. **Project sponsor** menyediakan dukungan, wewenang dan keputusan strategis; **project manager** mengkoordinasikan pelaksanaan, sumber daya, jadwal dan pelaporan. Scope, time dan cost saling memengaruhi: menambah lingkup tanpa menambah waktu atau sumber daya dapat menurunkan mutu atau meningkatkan risiko.
+
+**Scope creep** adalah perluasan tanpa pengendalian yang memadai. Perubahan yang sah perlu analisis dampak, persetujuan dan pembaruan baseline. Rencana TI harus selaras strategi, memiliki lingkup/waktu yang relevan, manfaat realistis, kinerja terukur, evaluasi berkala, komunikasi, akuntabilitas dan komitmen. Richardson pp.563–568.
+
+15-15 rule adalah heuristik buku
+
+Buku menyajikan keterlambatan atau kelebihan anggaran >15% sebagai sinyal penting untuk menilai kembali kelanjutan proyek. Ini bukan hukum bahwa proyek pasti gagal atau wajib dihentikan; sponsor perlu menilai manfaat tersisa, biaya tambahan dan alternatif.
+
+6. WBS, dependency, dan critical path
+
+**Work breakdown structure (WBS)** memecah seluruh lingkup menjadi pekerjaan yang dapat dikelola. **100% rule** menuntut cakupan pekerjaan lengkap, termasuk pekerjaan internal, eksternal dan interim; bukan berarti semua durasi harus diperkirakan 100% tepat atau setiap tugas sudah selesai. Dari daftar pekerjaan, tentukan dependency, durasi dan sumber daya.
+
+Data jaringan latihan
+
+Aktivitas | Durasi hari | Predecessor
+
+A · Kebutuhan | 2 | Tidak ada
+
+B · Konfigurasi | 3 | A
+
+C · Bersihkan data | 4 | A
+
+D · Uji terpadu | 2 | B dan C
+
+Jaringan aktivitas: A → B/C → D
+
+Contoh buatan, activity-on-node. Ini jaringan dengan durasi deterministik, bukan estimasi probabilistik PERT tiga titik. Jadwal mengasumsikan sumber daya memadai dan tidak ada lag.
+
+Aktivitas digambar pada node (activity-on-node), berbeda dari contoh activity-on-arrow buku.
+
+A: durasi 2, tidak punya predecessor. B: durasi 3 setelah A. C: durasi 4 setelah A. D: durasi 2 setelah B dan C.
+
+Jalur A–B–D = 7; A–C–D = 8 hari. Asumsi sumber daya cukup agar B dan C paralel.
+
+Warna amber dan garis lebih tebal menandai lintasan kritis; hasil yang sama diberikan dalam teks.
+
+Forward pass, backward pass dan float
+
+Forward pass: ES awal A = 0; EF = ES + durasi. A selesai 2, B selesai 5 dan C selesai 6.
+
+D harus menunggu B dan C, sehingga ES D = max(5,6) = 6 dan EF D = 8.
+
+Backward pass dari akhir 8: LS D = 6. B harus selesai ≤6 sehingga LS B = 3; C LS = 2. A harus selesai paling lambat min(3,2) = 2 sehingga LS A = 0.
+
+Total float = LS − ES. A = 0; B = 1; C = 0; D = 0.
+
+Critical path A–C–D sepanjang 8 hari. Bila C terlambat 1 hari tanpa kompensasi, proyek selesai hari 9. B terlambat 1 hari masih dapat selesai hari 6 sehingga D tetap mulai 6.
+
+Hasil perhitungan jadwal
+
+Aktivitas | ES / EF | LS / LF | Float
+
+A | 0 / 2 | 0 / 2 | 0
+
+B | 2 / 5 | 3 / 6 | 1
+
+C | 2 / 6 | 2 / 6 | 0
+
+D | 6 / 8 | 6 / 8 | 0
+
+Asumsi sumber daya
+
+Critical path memberi durasi minimum menurut dependency ketika sumber daya cukup. Jika B dan C harus memakai orang yang sama dan tidak dapat paralel, jadwal perlu resource leveling. Contoh 8 hari tidak lagi otomatis berlaku. Jalur kritis dapat lebih dari satu atau berubah setelah durasi berubah.
+
+Gantt: jadwal paling awal untuk proyek 8 hari
+
+Gantt buatan untuk data yang sama dengan jaringan di atas. Garis waktu membantu monitoring; dependency menentukan apakah pergeseran suatu tugas menunda proyek.
+
+Sumbu horizontal menunjukkan hari sejak proyek dimulai, bukan tanggal kalender.
+
+A 0–2; B 2–5; C 2–6; D 6–8. B dan C overlap sesuai asumsi sumber daya.
+
+Jadwal merupakan rencana paling awal, bukan bukti pekerjaan telah selesai.
+
+PERT probabilistik dan dummy activity
+
+PERT dapat memakai estimasi tiga titik: optimistic (a), most likely (m), dan pessimistic (b). Expected duration lazimnya (a + 4m + b) / 6; estimasi bukan kepastian. Contoh jaringan halaman ini memakai durasi deterministik agar hitung dependency terlihat. Pada activity-on-arrow, dummy activity menunjukkan dependency tanpa pekerjaan/durasi tambahan; activity-on-node dapat menyatakan dependency langsung lewat panah.
+
+t_e=\frac{a+4m+b}{6}
+
+Pelengkap teknik penjadwalan. Misal a=2, m=4, b=8 memberi 26/6 ≈4,33 hari; jangan mengganti semua durasi jaringan tanpa menghitung ulang.
+
+7. Uji pemahaman
+
+B terlambat dua hari dari rencana awal. Kapan proyek selesai?
+
+B selesai 7, C selesai 6; D mulai max(7,6) = 7 lalu selesai 9. Float B hanya satu hari, sehingga satu hari keterlambatan melewati float menunda proyek satu hari.
+
+NPV dasar positif tetapi skenario manfaat turun 10% negatif. Apa yang sebaiknya ditulis dalam rekomendasi?
+
+Jelaskan bahwa nilai proyek sensitif terhadap manfaat. Uji bukti estimasi, lakukan pilot/komitmen pemilik manfaat, bandingkan alternatif, dan tetapkan batas evaluasi. Jangan menyatakan layak tanpa menyebut asumsi dan margin risikonya.
+
+Sumber dan batas pembahasan
+
+RPS-SIA minggu 14; Richardson Ch.17 pp.550–571 (PDF 575–596): business case pp.552–560, SDLC pp.561–563, planning/project constraints pp.563–568, WBS/PERT/Gantt pp.569–570. Perhitungan NPV, jaringan dan seluruh angka adalah latihan buatan; PERT tiga titik merupakan pelengkap metode. Angka, perusahaan, diagram, dan skenario latihan di halaman ini adalah ilustrasi buatan kecuali dinyatakan lain. Urutan materi inti mengikuti RPS-SIA, Pembagian Mengajar Gasal 2025/2026, halaman 1; pendalaman di luar bab terjadwal diberi label pelengkap.
+
+## Latihan
+
+Investasi 120 dan kas bersih tahunan 50 (Rp juta). Payback sederhana dengan asumsi kas merata adalah...
+
+120/50 = 2,4. Jika kas hanya masuk pada akhir tahun, interpolasi perlu dibedakan dari saat kas benar-benar diterima. Rujukan: Richardson AIS 4e, Ch.17 pp.550–571 (PDF 575–596).
+
+NPV memasukkan...
+
+NPV mempertimbangkan time value of money; asumsi kas dan discount rate harus konsisten. Rujukan: Richardson AIS 4e, Ch.17 pp.550–571 (PDF 575–596).
+
+A=2 hari; B=3 dan C=4 setelah A; D=2 setelah B dan C. Dengan sumber daya cukup, critical path adalah...
+
+D menunggu jalur terlama: A–C selesai hari 6, lalu D dua hari. B punya float satu hari. Rujukan: Richardson AIS 4e, Ch.17 pp.550–571 (PDF 575–596).
+
+Makna 100% rule dalam perencanaan pekerjaan adalah...
+
+100% rule menyangkut kelengkapan lingkup/WBS, bukan kepastian estimasi atau persentase penyelesaian. Rujukan: Richardson AIS 4e, Ch.17 pp.550–571 (PDF 575–596).
+
+Apa pernyataan yang tepat tentang Agile dan Waterfall?
+
+Metodologi mengatur cara kerja, bukan menghapus tanggung jawab akuntabilitas dan kualitas hasil. Rujukan: Richardson AIS 4e, Ch.17 pp.550–571 (PDF 575–596).
 
 ## Flashcard
 
-Fokus Utama Soal Ujian Akhir Semester (UAS) SIA
+Business case
 
-Perkiraan prioritas dari RPP dan materi: proses transaksi, kelemahan pengendalian, metode audit TI dan batas teknologi. Arsip UAS yang mendukung bentuk/bobot spesifik belum ditemukan. Rujukan: Richardson et al. AIS 4e · Ch. 10, Integrated Project, hal. 376-385 (PDF 401-410).
+Kebutuhan, alternatif, manfaat, biaya, risiko, value proposition dan ukuran sukses; mulai dari masalah bisnis. Rujukan: Richardson AIS 4e, Ch.17 pp.550–571 (PDF 575–596).
 
-Mendiagnosis Single Point of Failure (SPOF)
+NPV dan payback
 
-Mengidentifikasi kelemahan di mana kegagalan satu komponen kontrol atau staf tunggal dapat meruntuhkan seluruh keandalan sistem akuntansi. Rujukan: Richardson et al. AIS 4e · Ch. 10, Integrated Project, hal. 376-385 (PDF 401-410).
+NPV mendiskontokan kas menurut waktu. Payback sederhana mengukur pemulihan investasi; nyatakan asumsi timing. Rujukan: Richardson AIS 4e, Ch.17 pp.550–571 (PDF 575–596).
 
-Analisis Celah Pemisahan Tugas (SoD Matrix)
+Lima fase SDLC
 
-Memastikan tidak ada staf yang memegang akses gabungan yang berbahaya: misalnya staf yang membuat master data vendor tidak boleh memproses pembayaran faktur. Rujukan: Richardson et al. AIS 4e · Ch. 10, Integrated Project, hal. 376-385 (PDF 401-410).
+Planning, analysis, design, implementation, maintenance. Perubahan besar dapat memulai siklus kembali. Rujukan: Richardson AIS 4e, Ch.17 pp.550–571 (PDF 575–596).
 
-Perlakuan Audit atas Bukti Elektronik
+Triple constraint
 
-Bukti digital memerlukan pemeliharaan jejak audit (audit trail) dan verifikasi bahwa pengendalian umum TI (GITC) berfungsi efektif sepanjang tahun. Rujukan: Richardson et al. AIS 4e · Ch. 10, Integrated Project, hal. 376-385 (PDF 401-410).
+Scope, time dan cost saling terkait; perubahan memerlukan analisis dampak, approval dan baseline baru. Rujukan: Richardson AIS 4e, Ch.17 pp.550–571 (PDF 575–596).
 
-Peran Laporan SOC 1 (SSAE 18 / ISAE 3402)
+WBS dan 100% rule
 
-SOC 1 berkaitan dengan pengendalian organisasi jasa yang relevan bagi pengendalian internal pelaporan keuangan entitas pengguna. Jenis, periode, pengecualian dan kontrol pelengkap pengguna harus dibaca. Rujukan standar: ISA 402 paragraf 8 dan 16-17. Rujukan: Richardson et al. AIS 4e · Ch. 10, Integrated Project, hal. 376-385 (PDF 401-410).
+Pecah seluruh lingkup, termasuk pekerjaan internal/eksternal/interim. Kelengkapan lingkup tidak berarti estimasi pasti. Rujukan: Richardson AIS 4e, Ch.17 pp.550–571 (PDF 575–596).
 
-Saran Sukses Ujian Akhir Semester SIA
+Critical path dan float
 
-Gunakan diagram alur atau bagan saat menjelaskan usulan perbaikan sistem; identifikasi risiko bisnis terlebih dahulu sebelum menawarkan aktivitas pengendalian. Rujukan: Richardson et al. AIS 4e · Ch. 10, Integrated Project, hal. 376-385 (PDF 401-410).
-
-## Kuis TM terdaftar
-
-Dalam integrated project Richardson, bagaimana model proses dan database mendukung laporan keuangan?
-
-Buku menghubungkan business requirements, BPMN, integrated UML class diagram, tabel/relasi dan query laporan. Penjualan, pembelian, timecards dan pembayaran mempunyai peran berbeda; integrasi tidak berarti semua event adalah kas. Rujukan: Richardson AIS 4e, Ch.10, Exhibit 10.8 dan Summary, PDF 408-410.
-
-Konsep 'Audit Trail' (Jejak Audit) dalam sistem ERP akuntansi modern berfungsi untuk...
-
-Jejak audit mendukung penelusuran transaksi dan perubahan. Integritas catatan perlu pengendalian akses; jejak saja tidak membuktikan keberadaan, hak atau nilai transaksi. Rujukan: Richardson AIS 4e, Ch.11-13, Internal Controls dan Auditing AIS, PDF 411-433,475-488.
-
-Kontrol preventif apa yang sesuai untuk membatasi penyalahgunaan jurnal manual dalam AIS?
-
-Akses yang dibatasi, pemisahan tugas, otorisasi dan bukti membatasi kesempatan manipulasi. Ambang persetujuan mengikuti risiko dan kebijakan; tidak ada larangan universal semua jurnal ke Kas pada sumber ini. Rujukan: Richardson AIS 4e, Ch.11, Control Activities, PDF 411-433.
-
-Manakah pernyataan yang paling tepat mengenai peranan Chart of Accounts (Bagan Akun Standar) dalam arsitektur sistem informasi akuntansi ERP?
-
-Bagan akun mendukung klasifikasi dan pengikhtisaran transaksi. Daftar akun tidak menggantikan master data, validasi atau kontrol akses. Rujukan: Richardson AIS 4e, Ch.10, Develop Financial Statement Information, PDF 408-410.
-
-Dalam integrated project Richardson, apa yang perlu dilakukan setelah data diimpor untuk menjaga keandalan query AIS?
-
-PDF 409 mengharuskan koreksi data, primary key, tipe data dan struktur tabel yang efisien, kemudian relasi dengan referential integrity. Tanpa integritas referensial, keandalan query terpengaruh. Langkah ini memakai UML class diagram sebagai blueprint. Rujukan: Richardson AIS 4e, Ch.10, Import Data into Access, Create Efficient Tables, and Set Relationships, PDF 408-409, Exhibit 10.9.
+Jalur terlama menentukan minimum durasi menurut dependency dan sumber daya memadai. Float mengukur kelonggaran; jalur bisa berubah. Rujukan: Richardson AIS 4e, Ch.17 pp.550–571 (PDF 575–596).

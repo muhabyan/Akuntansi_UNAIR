@@ -1,97 +1,243 @@
-# Kerangka Pengendalian Internal: COSO Internal Control & COSO ERM
+# Conversion Business Process: Produksi, Biaya, dan Model Data
 
-Membahas secara mendalam kerangka kerja COSO Internal Control Integrated Framework (17 Prinsip) dan COSO Enterprise Risk Management (ERM). Memahami taksonomi pengendalian preventif, detektif, dan korektif serta kriteria defisiensi pengendalian menurut standar audit.
+Conversion mengubah bahan menjadi barang jadi sekaligus mengumpulkan biaya per pekerjaan. Ikuti alur fisik, dokumen, pencatatan, BPMN, pengendalian dan model data agar dapat menjelaskan dari mana biaya produksi berasal serta bagaimana kebenarannya diuji.
 
-Gambar 8.1: Kerangka Kerja Pengendalian Internal COSO: 5 Komponen dan 17 Prinsip Pengendalian.
+Bahan dibeli belum berarti barang sudah selesai
 
-Lima Komponen COSO Internal Control Framework
+Percetakan membeli kain, memakai sebagian untuk pesanan, membayar pekerja, lalu memeriksa hasil. Sebagian pesanan belum selesai pada akhir bulan. Kalau semua biaya langsung dianggap HPP, persediaan dan laba akan keliru. SIA harus melacak **bahan, pekerjaan dalam proses, barang jadi, dan barang terjual** secara terpisah.
 
-COSO (Committee of Sponsoring Organizations of the Treadway Commission) mendefinisikan pengendalian internal sebagai proses yang dipengaruhi oleh dewan direksi, manajemen, dan personel lain, yang dirancang untuk memberikan keyakinan memadai terkait pencapaian tujuan operasi, pelaporan, dan kepatuhan.
+1. Alur barang dan alur biaya
 
-Tabel 8.1: Lima Komponen COSO dan Inti Prinsipnya
+Conversion business process mencakup pemeliharaan bahan/barang jadi, produksi, pencatatan tenaga kerja langsung, biaya langsung lain, serta alokasi overhead. Proses bisa berbeda antarperusahaan, tetapi kebutuhan informasinya serupa: apa diproduksi, berapa input dipakai, siapa mengerjakan, kapan selesai, dan berapa biaya hasilnya. Richardson pp.352–353.
 
-Komponen COSO | Fokus Utama | Contoh Implementasi Praktis
+Empat posisi biaya yang berbeda
 
-1. Control Environment (Lingkungan Pengendalian) | Fondasi organisasi, integritas, nilai etika, struktur pelaporan, dan komitmen terhadap kompetensi ('Tone at the Top'). | Penerbitan Kode Etik Karyawan, Whistleblowing System independen, Komite Audit yang aktif.
+Peta buatan untuk sistem perpetual. COGM (harga pokok produksi selesai) berbeda dari COGS/HPP barang terjual.
 
-2. Risk Assessment (Penilaian Risiko) | Proses dinamis untuk mengidentifikasi dan menilai risiko ketercapaian tujuan, termasuk risiko fraud dan perubahan teknologi. | Penyusunan Risk Register tahunan, analisis kerentanan sistem siber, evaluasi risiko kecurangan pelaporan keuangan.
+1. Raw materials: Bahan tersedia untuk produksi. Belum dipakai: tetap persediaan.
 
-3. Control Activities (Aktivitas Pengendalian) | Tindakan yang ditetapkan melalui kebijakan dan prosedur untuk memitigasi risiko hingga tingkat yang dapat diterima. | Pemisahan tugas (SoD), otorisasi ganda transaksi di atas Rp 100 juta, pembatasan akses fisik ruang server.
+2. Work-in-process: Bahan dipakai + tenaga kerja + OH. Biaya pekerjaan yang belum selesai.
 
-4. Information & Communication | Penyediaan informasi berkualitas yang relevan dan tepat waktu, serta saluran komunikasi dua arah (internal dan eksternal). | Sistem pelaporan manajerial real-time, manual kebijakan akuntansi yang terdistribusi, pengaduan konsumen.
+3. Finished goods: Biaya produk yang sudah selesai. Transfer dari WIP = COGM.
 
-5. Monitoring Activities (Pemantauan) | Evaluasi berkala dan berkelanjutan untuk memastikan kelima komponen pengendalian berfungsi efektif. | Audit internal rutin, audit penetration testing berkala, tindak lanjut atas temuan auditor eksternal.
+4. Cost of goods sold: Biaya barang yang sudah dijual. Transfer dari finished goods.
 
-Taksonomi Pengendalian: Preventif, Detektif, dan Korektif
+Dokumen dan informasi proses
 
-Pengendalian Preventif (Mencegah): Mencegah kesalahan atau kecurangan sebelum terjadi. Paling efektif dan ekonomis. Contoh: Password kompleks, pemisahan tugas, validasi input format angka, otorisasi transaksi.
+Dokumen / catatan | Fungsi | Kontrol
 
-Pengendalian Detektif (Mendeteksi): Menemukan kesalahan atau kecurangan yang lolos dari pencegahan segera setelah peristiwa terjadi. Contoh: Rekonsiliasi bank bulanan, stock opname fisik gudang, review anggaran vs realisasi bulanan, audit trail.
+Production authorization | Menyetujui produk/kuantitas yang akan dibuat dan jadwalnya. | Petugas berwenang; perubahan terotorisasi.
 
-Pengendalian Korektif (Memperbaiki): Mengoreksi masalah yang terdeteksi dan memulihkan kondisi sistem. Contoh: Backup data harian, klaim asuransi kerugian, prosedur pemulihan bencana (disaster recovery plan).
+Bill of materials (BOM) | Rencana jenis dan kuantitas bahan untuk produk. | Versi dan perubahan standar dikendalikan.
 
-Klasifikasi Tingkat Defisiensi Pengendalian Menurut Standar Audit
+Material issue | Mencatat bahan aktual dikeluarkan ke pekerjaan. | Tautkan ke otorisasi, petugas dan kuantitas.
 
-Auditor eksternal dan komite audit mengelompokkan kelemahan pengendalian internal ke dalam tiga kategori berdasarkan tingkat keparahannya:
+Labor operations / time records | Mencatat pekerjaan, pelaku, jam, dan tarif aktual. | Validasi waktu/tarif, approval independen.
 
-Tabel 8.2: Tingkat Defisiensi Pengendalian Internal
+Inspection dan completion | Mencatat mutu, hasil diterima, serta tanggal selesai aktual. | Pisahkan inspeksi dari pelaksana, batasi jumlah selesai.
 
-Klasifikasi | Ambang Batas Keparahan | Kewajiban Pelaporan
+2. Contoh bertahap: dari biaya masuk sampai HPP
 
-Control Deficiency (Defisiensi Pengendalian) | Rancangan atau operasi pengendalian tidak memungkinkan personel mencegah atau mendeteksi salah saji tepat waktu dalam kegiatan normal. | Dilaporkan ke manajemen operasional dalam Management Letter.
+Asumsi latihan biaya per bulan
 
-Significant Deficiency (Defisiensi Signifikan) | Defisiensi yang cukup penting untuk mendapatkan perhatian dari pihak yang bertanggung jawab atas tata kelola (Komite Audit/Dewan Komisaris), namun tidak berpotensi salah saji material. | Wajib dilaporkan secara tertulis kepada Komite Audit dan Dewan Direksi.
+Seluruh angka Rp juta, sistem perpetual. WIP awal 10; bahan langsung digunakan 30; tenaga kerja langsung 20; overhead dibebankan 10; WIP akhir 14. Barang jadi awal 8 dan akhir 12. Tidak ada spoilage abnormal, retur, atau penyesuaian overhead dalam hitungan ini.
 
-Material Weakness (Kelemahan Material) | Tingkat defisiensi paling parah di mana terdapat kemungkinan masuk akal (reasonable possibility) bahwa salah saji material pada laporan keuangan tidak dapat dicegah atau dideteksi tepat waktu. | Wajib dipublikasikan dalam opini audit publik SOX 404 dan menyebabkan Opini Tidak Wajar (Adverse Opinion) atas ICFR.
+Biaya ditambahkan ke produksi = 30 + 20 + 10 = 60.
 
-Prinsip Evaluasi Risiko
+Biaya yang harus dipertanggungjawabkan di WIP = awal 10 + tambahan 60 = 70.
 
-Residual Risk (Risiko Sisa) = Inherent Risk (Risiko Bawaan) dikurangi Efektivitas Pengendalian Internal. Manajemen tidak mungkin mengeliminasi risiko hingga 0%, melainkan menekannya hingga berada di bawah Risk Appetite organisasi.
+COGM = 70 − WIP akhir 14 = 56. Sebanyak 56 ditransfer ke barang jadi.
+
+Barang jadi tersedia = awal 8 + COGM 56 = 64.
+
+COGS = 64 − barang jadi akhir 12 = 52.
+
+Periksa: 10 + 30 + 20 + 10 = 14 + 56 dan 8 + 56 = 12 + 52.
+
+\mathrm{COGM}=\mathrm{WIP}_{awal}+\mathrm{DM}+\mathrm{DL}+\mathrm{OH}_{dibebankan}-\mathrm{WIP}_{akhir}
+
+DM: direct materials used; DL: direct labor; OH: manufacturing overhead. Semua satuan dan periode harus sama.
+
+Bahan digunakan
+
+Rp juta, sesuai contoh.
+
+Work-in-Process: debit 30; credit –
+
+Raw Materials: debit –; credit 30
+
+Tenaga kerja langsung
+
+Rp juta; asumsi belum dibayar.
+
+Work-in-Process: debit 20; credit –
+
+Wages Payable: debit –; credit 20
+
+Overhead dibebankan
+
+Rp juta; akun overhead control mencatat pembebanan.
+
+Work-in-Process: debit 10; credit –
+
+Manufacturing Overhead: debit –; credit 10
+
+Produksi selesai
+
+Rp juta; hanya biaya produk selesai.
+
+Finished Goods: debit 56; credit –
+
+Work-in-Process: debit –; credit 56
+
+Biaya barang terjual
+
+Rp juta; jurnal pendapatan terpisah dan harga jual tidak diberikan.
+
+Cost of Goods Sold: debit 52; credit –
+
+Finished Goods: debit –; credit 52
+
+Biaya standar dan aktual
+
+Overhead yang dibebankan tidak selalu sama dengan overhead aktual. Tarif, cost driver dan selisih harus ditelusuri menurut sistem biaya. Jangan menjumlahkan biaya yang sama dua kali dari tarif overhead dan tagihan aktual. Contoh di atas mengasumsikan tidak ada selisih yang perlu disesuaikan.
+
+3. Model aktivitas BPMN dan exception produksi
+
+Sunset memulai produksi saat perlu mengisi barang jadi. Otorisasi diikuti pengeluaran bahan serta pekerjaan, kemudian inspeksi dan penyelesaian. Batch dapat berulang sampai kebutuhan selesai. Model dasar dapat diperinci dengan lane untuk menunjukkan fungsi dan subproses untuk mengelola kerumitan; pilih detail yang membantu menjelaskan tanggung jawab.
+
+BPMN sederhana: produksi, inspeksi, dan penggantian barang cacat
+
+Diagram adaptasi buatan dari uraian Sunset Graphics, Richardson Ch.9 pp.354–357. Ini model satu pool dengan sequence flow, bukan collaboration antarpihak; jalur barang cacat mengikuti asumsi discard dan penggantian.
+
+Satu pool perusahaan: seluruh aktivitas internal dihubungkan sequence flow.
+
+Start → Authorize production → Issue materials → Perform work → Inspect work.
+
+Exclusive gateway mutu: satu jalur dipilih. Tidak lulus → Discard defects → produksi pengganti; lulus → Complete production → End.
+
+Model ini menyederhanakan batch dan inspeksi; subproses/loop batch serta lane dapat ditambahkan sesuai kebutuhan.
+
+Pada BPMN, sequence flow menghubungkan aktivitas di dalam pool. Message flow dipakai antar-pool peserta berbeda; memisahkan fungsi internal menjadi lane tidak otomatis memerlukan message flow. Exclusive gateway memilih jalur sesuai kondisi. Loop menggambarkan pekerjaan berulang, sedangkan parallel gateway menunjukkan cabang yang berjalan bersamaan dan harus disinkronkan sesuai desain.
+
+Barang cacat: periksa aturan sebelum menggambar
+
+Pada uraian Sunset, barang yang gagal mutu dibuang dan dibuat penggantinya. Jika perusahaan lain mengizinkan rework, diagram perlu cabang rework, inspeksi ulang, dan catatan biaya terkait. Jangan menggambar semua kegagalan mutu langsung masuk barang jadi. Aturan bisnis menentukan cabang proses serta informasi yang perlu disimpan.
+
+4. Business rules, akses, dan kontrol aplikasi
+
+Adaptasi kontrol Exhibit 9.6
+
+Langkah | Pemisahan / akses | Kontrol aplikasi dan bukti
+
+Authorize production | Pengotorisasi tidak bebas mengubah catatan persediaan. | Nomor otorisasi, batas kuantitas/nilai, approval sesuai wewenang.
+
+Issue materials | Penerbit bahan berbeda dari pengotorisasi; tidak bebas mengubah BOM. | Tautkan ke job dan BOM, cek rentang jumlah, catat tanggal/petugas.
+
+Perform work | Pencatat jam tidak mengubah otorisasi produksi tanpa izin. | Nomor operasi, cek jam/tarif, identitas pekerja dan supervisor.
+
+Inspect work | Inspektur berbeda dari pelaksana pekerjaan yang diperiksa. | Jumlah diterima/cacat dan hasil inspeksi terdokumentasi.
+
+Complete production | Pemindah hasil tidak mengambil alih otorisasi produksi. | Jumlah selesai dibatasi otorisasi, tanggal aktual, stok diperbarui.
+
+Buku memakai contoh batas supervisor untuk otorisasi >$5.000. Itu aturan kasus Sunset, bukan batas universal seluruh perusahaan. Default tanggal hari ini mengurangi salah input, tetapi tidak boleh menyembunyikan tanggal kejadian sebenarnya atau cutoff. Nilai default tetap perlu validasi dan jejak koreksi. Richardson p.358 (PDF 383).
+
+5. Struktur REA/UML dan perhitungan WIP
+
+Resources, events, agents dan rencana
+
+Peta REA konseptual buatan, bukan UML dengan multiplicity. Tabel berikut menjelaskan hubungan yang diterapkan.
+
+1. Resources: Bahan dan produk jadi. Equipment bila diperlukan.
+
+2. Events: Authorization, issue, labor. Rekam aktual dan status selesai.
+
+3. Agents: Pengotorisasi, gudang, pekerja. Simpan peran pada setiap event.
+
+4. Plans / type images: BOM, kategori dan rencana kerja. Bandingkan standar dengan aktual.
+
+Pada model generik buku, WIP tidak harus menjadi kelas resource tersendiri karena nilainya dapat dihitung dari biaya material issues, labor operations dan alokasi overhead yang belum ditransfer ke barang jadi. Ini keputusan model data, bukan berarti akun atau saldo WIP hilang dari akuntansi. Production authorization menyimpan rencana dan kemudian diperbarui dengan hasil/tanggal aktual. Richardson pp.358–362.
+
+Hubungan dan implementasi tabel
+
+Hubungan | Aturan / multiplicity | Implementasi
+
+Authorization–Material issue | Satu authorization dapat mempunyai beberapa issue; satu issue merujuk satu authorization. | Prod_auth_number FK pada Material_Issue.
+
+Material issue–Materials | Satu issue memuat beberapa bahan; satu bahan dapat dikeluarkan pada banyak issue. | Link Material_Issue_Materials dengan PK gabungan dan Qty_issued.
+
+Labor operations–Employees | Satu operasi dapat melibatkan beberapa pegawai; satu pegawai bekerja pada banyak operasi. | Link Labor_Operations_Employees menyimpan jam dan tarif aktual.
+
+Products–Materials | Bahan dapat dipakai banyak produk dan produk memerlukan banyak bahan. | BOM dengan identitas serta kuantitas standar; Sunset memodelkannya sebagai type image.
+
+Nama tabel dan atribut pada contoh Sunset
+
+Exhibit 9.9 menyebut tblBill_of_Material, tblLabor_Operations, tblLabor_Operations_Employees, tblMaterial_Issue, tblMaterial_Issue_Materials, tblMaterials, tblEmployees, tblProduct_Category, tblProduction_Authorizations, dan tblProducts. Tabel penghubung mencegah daftar banyak nilai disimpan pada satu field.
+
+Production authorizations membedakan Prod_auth_date, Scheduled_completion_date dan Actual_completion_date, selain Scheduled_qty_to_produce dan Actual_qty_produced. Jangan menyamakan tanggal otorisasi dengan tanggal selesai. Database juga memerlukan PK, tipe data, FK serta referential integrity setelah tabel dibentuk. Richardson pp.361–363 (PDF 386–388).
+
+6. Uji pemahaman
+
+Dengan data contoh, WIP akhir sebenarnya 18. Berapa COGM dan COGS jika FG akhir tetap 12?
+
+Biaya tersedia di WIP tetap 70. COGM = 70 − 18 = 52. Barang jadi tersedia = 8 + 52 = 60; COGS = 60 − 12 = 48. WIP lebih tinggi berarti lebih sedikit biaya ditransfer, bukan biaya tambahan otomatis.
+
+BOM dan material issue terlihat berbeda. Mengapa ini belum otomatis fraud?
+
+BOM menunjukkan rencana, issue menunjukkan aktual. Perbedaan bisa berasal dari perubahan spesifikasi, kehilangan, pemborosan, atau kesalahan pencatatan. Periksa versi BOM, approval, jumlah hasil, retur bahan, dan bukti fisik sebelum menyimpulkan penyebab.
+
+Pola jawaban
+
+Alur fisik → dokumen/event → dampak biaya → kontrol → hubungan data → bukti. Bedakan rencana dan aktual, COGM dan COGS, serta akun WIP dan kelas pada model.
+
+Sumber dan batas pembahasan
+
+RPS-SIA minggu 8; Richardson Ch.9 pp.350–365 (PDF 375–390), terutama Exhibit 9.1, 9.6, 9.7–9.10. Angka biaya adalah latihan buatan, sedangkan nama tabel dan pembedaan tanggal mengikuti Exhibit 9.9. Angka, perusahaan, diagram, dan skenario latihan di halaman ini adalah ilustrasi buatan kecuali dinyatakan lain. Urutan materi inti mengikuti RPS-SIA, Pembagian Mengajar Gasal 2025/2026, halaman 1; pendalaman di luar bab terjadwal diberi label pelengkap.
+
+## Latihan
+
+Saat bahan langsung dikeluarkan untuk produksi dalam sistem perpetual, jurnal yang tepat adalah...
+
+Biaya berpindah dari bahan ke WIP; belum otomatis menjadi barang jadi atau HPP. Rujukan: Richardson AIS 4e, Ch.9 pp.350–365 (PDF 375–390).
+
+WIP awal 10, DM 30, DL 20, OH dibebankan 10 dan WIP akhir 14 (Rp juta). COGM adalah...
+
+COGM = 10 + 30 + 20 + 10 − 14 = 56. WIP akhir belum ditransfer ke barang jadi. Rujukan: Richardson AIS 4e, Ch.9 pp.350–365 (PDF 375–390).
+
+Dalam model generik conversion, mengapa WIP tidak harus menjadi kelas resource terpisah?
+
+Model data dapat menghitung WIP dari biaya material, labor dan overhead pada pekerjaan terbuka. Ini tidak menghapus saldo akuntansi WIP. Rujukan: Richardson AIS 4e, Ch.9 pp.350–365 (PDF 375–390).
+
+Satu material issue memuat beberapa bahan, dan satu bahan muncul pada banyak issue. Implementasi relasionalnya adalah...
+
+Hubungan many-to-many diterapkan melalui linking table; identitas issue dan bahan menjadi referensi yang valid. Rujukan: Richardson AIS 4e, Ch.9 pp.350–365 (PDF 375–390).
+
+Pada model Sunset, barang gagal inspeksi dibuang lalu dibuat penggantinya. Model aktivitas harus menunjukkan...
+
+Gateway mengarahkan hasil mutu; loop/exception mengikuti aturan perusahaan. Sequence flow digunakan di dalam pool. Rujukan: Richardson AIS 4e, Ch.9 pp.350–365 (PDF 375–390).
 
 ## Flashcard
 
-Definisi Pengendalian Internal COSO
+Alur biaya conversion
 
-Proses yang dipengaruhi oleh dewan komisaris, manajemen, dan personel untuk memberikan keyakinan memadai atas pencapaian tujuan operasi, pelaporan, dan kepatuhan. Rujukan: Richardson et al. AIS 4e · Ch. 11, hal. cetak 386-408 (PDF 411-433).
+Raw materials → WIP → finished goods → COGS; COGM adalah transfer produk selesai, COGS biaya produk terjual. Rujukan: Richardson AIS 4e, Ch.9 pp.350–365 (PDF 375–390).
 
-Tiga Kategori Tujuan Pengendalian COSO
+Rumus COGM
 
-(1) Operations Objectives (efektivitas operasional), (2) Reporting Objectives (keandalan laporan), dan (3) Compliance Objectives (kepatuhan hukum). Rujukan: Richardson et al. AIS 4e · Ch. 11, hal. cetak 386-408 (PDF 411-433).
+WIP awal + bahan langsung terpakai + tenaga kerja langsung + overhead dibebankan − WIP akhir. Rujukan: Richardson AIS 4e, Ch.9 pp.350–365 (PDF 375–390).
 
-Lima Komponen Pengendalian Internal COSO
+BOM versus material issue
 
-(1) Control Environment, (2) Risk Assessment, (3) Control Activities, (4) Information & Communication, dan (5) Monitoring Activities. Rujukan: Richardson et al. AIS 4e · Ch. 11, hal. cetak 386-408 (PDF 411-433).
+BOM memuat rencana bahan; material issue mencatat pemakaian aktual. Selisih perlu investigasi dan approval. Rujukan: Richardson AIS 4e, Ch.9 pp.350–365 (PDF 375–390).
 
-Tiga Tipe Pengendalian Berdasarkan Waktu
+Model WIP
 
-Preventif (mencegah kesalahan terjadi), Detektif (menemukan kesalahan yang lolos), dan Korektif (memperbaiki dampak kesalahan yang ditemukan). Rujukan: Richardson et al. AIS 4e · Ch. 11, hal. cetak 386-408 (PDF 411-433).
+WIP dapat dihitung dari biaya event pekerjaan belum selesai; tidak harus menjadi kelas resource tersendiri pada model generik. Rujukan: Richardson AIS 4e, Ch.9 pp.350–365 (PDF 375–390).
 
-Sarbanes-Oxley Act (SOX) Section 404
+Linking table conversion
 
-Mewajibkan manajemen perusahaan publik menilai efektivitas pengendalian internal pelaporan keuangan (ICFR) dan diaudit auditor independen. Rujukan: Richardson et al. AIS 4e · Ch. 11, hal. cetak 386-408 (PDF 411-433).
+Hubungan banyak material issue–bahan dan labor operations–pegawai memakai tabel penghubung dengan data jumlah/jam. Rujukan: Richardson AIS 4e, Ch.9 pp.350–365 (PDF 375–390).
 
-COSO Enterprise Risk Management (ERM)
+Tanggal production authorization
 
-Kerangka kerja perluasan COSO yang mengintegrasikan pengelolaan risiko ke dalam strategi korporasi dan penciptaan nilai pemegang saham. Rujukan: Richardson et al. AIS 4e · Ch. 11, hal. cetak 386-408 (PDF 411-433).
-
-## Kuis TM terdaftar
-
-Komponen pengendalian internal COSO yang dianggap sebagai fondasi utama bagi seluruh komponen pengendalian lainnya karena menentukan 'Tone at the Top' organisasi adalah...
-
-Control Environment adalah fondasi piramida COSO. Komponen ini mencakup integritas, nilai etika dewan direksi/komisaris, filosofi manajemen, struktur organisasi, dan komitmen terhadap kompetensi SDM.
-
-Berdasarkan kerangka COSO 2013, berapakah jumlah prinsip pendukung (principles) yang wajib diterapkan di seluruh 5 komponen pengendalian agar sistem pengendalian internal dinilai efektif?
-
-COSO 2013 menetapkan 17 prinsip eksplisit yang terbagi ke dalam 5 komponen: Lingkungan Pengendalian (5 prinsip), Penilaian Risiko (4 prinsip), Aktivitas Pengendalian (3 prinsip), Informasi & Komunikasi (3 prinsip), dan Pemantauan (2 prinsip).
-
-Pemasangan kamera CCTV di gudang dan rekonsiliasi bulanan antara saldo fisik kas dengan catatan pembukuan diklasifikasikan sebagai jenis pengendalian...
-
-Pengendalian Detektif berfungsi untuk menemukan dan mengidentifikasi kesalahan, anomali, atau kecurangan setelah peristiwa tersebut terjadi (misal: rekonsiliasi bank, review varians biaya, stock opname).
-
-Dalam Fraud Triangle, tiga kondisi yang hampir selalu hadir saat kecurangan akuntansi terjadi adalah...
-
-Teori Fraud Triangle Donald Cressey: (1) Pressure (tekanan finansial/target), (2) Opportunity (peluang akibat lemahnya internal control), dan (3) Rationalization (pembenaran moral pelaku bahwa tindakannya sah).
-
-Manakah di bawah ini yang merupakan contoh dari Pengendalian Korektif (Corrective Control)?
-
-Corrective Control bertujuan memperbaiki masalah dan mengembalikan sistem ke kondisi normal setelah insiden terjadi, seperti me-restore data backup, mendiskualifikasi vendor curang, atau merevisi jurnal koreksi.
+Bedakan tanggal otorisasi, tanggal selesai terjadwal, dan tanggal selesai aktual; jangan menyamakannya. Rujukan: Richardson AIS 4e, Ch.9 pp.350–365 (PDF 375–390).

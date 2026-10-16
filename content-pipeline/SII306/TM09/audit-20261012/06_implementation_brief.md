@@ -1,1 +1,1 @@
-Snapshot 04 JSON SHA256 c6814c277969caeee05d92ce09326901124a1284046da45913941f19e6e713ce. Cocokkan reading, flashcards dan kuis TM yang mempunyai metadata. SVG, opsi serta kunci lengkap berada pada JSON. Pra-UTS tidak termasuk snapshot.
+Active RPS-aligned package SHA256 5abc9880eaa6db2733c91e33e033e81030db7d1bf0bee1f3970aeb923c102ae6. Typed module, quiz, flashcards and case must match JSON. Pre-UTS is independently preserved.

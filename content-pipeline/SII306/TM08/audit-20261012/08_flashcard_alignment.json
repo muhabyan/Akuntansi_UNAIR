@@ -1,56 +1,56 @@
 [
   {
-    "id": "aks301-tm08-01",
+    "id": "aks301-v3-tm08-01",
     "phase": "pra-uas",
     "tm": 8,
-    "topic": "Pengendalian Internal COSO Framework",
-    "category": "Definisi",
-    "front": "Definisi Pengendalian Internal COSO",
-    "back": "Proses yang dipengaruhi oleh dewan komisaris, manajemen, dan personel untuk memberikan keyakinan memadai atas pencapaian tujuan operasi, pelaporan, dan kepatuhan. Rujukan: Richardson et al. AIS 4e · Ch. 11, hal. cetak 386-408 (PDF 411-433)."
-  },
-  {
-    "id": "aks301-tm08-02",
-    "phase": "pra-uas",
-    "tm": 8,
-    "topic": "Pengendalian Internal COSO Framework",
+    "topic": "Conversion Business Process",
     "category": "Konsep",
-    "front": "Tiga Kategori Tujuan Pengendalian COSO",
-    "back": "(1) Operations Objectives (efektivitas operasional), (2) Reporting Objectives (keandalan laporan), dan (3) Compliance Objectives (kepatuhan hukum). Rujukan: Richardson et al. AIS 4e · Ch. 11, hal. cetak 386-408 (PDF 411-433)."
+    "front": "Alur biaya conversion",
+    "back": "Raw materials → WIP → finished goods → COGS; COGM adalah transfer produk selesai, COGS biaya produk terjual. Rujukan: Richardson AIS 4e, Ch.9 pp.350–365 (PDF 375–390)."
   },
   {
-    "id": "aks301-tm08-03",
+    "id": "aks301-v3-tm08-02",
     "phase": "pra-uas",
     "tm": 8,
-    "topic": "Pengendalian Internal COSO Framework",
+    "topic": "Conversion Business Process",
     "category": "Konsep",
-    "front": "Lima Komponen Pengendalian Internal COSO",
-    "back": "(1) Control Environment, (2) Risk Assessment, (3) Control Activities, (4) Information & Communication, dan (5) Monitoring Activities. Rujukan: Richardson et al. AIS 4e · Ch. 11, hal. cetak 386-408 (PDF 411-433)."
+    "front": "Rumus COGM",
+    "back": "WIP awal + bahan langsung terpakai + tenaga kerja langsung + overhead dibebankan − WIP akhir. Rujukan: Richardson AIS 4e, Ch.9 pp.350–365 (PDF 375–390)."
   },
   {
-    "id": "aks301-tm08-04",
+    "id": "aks301-v3-tm08-03",
     "phase": "pra-uas",
     "tm": 8,
-    "topic": "Pengendalian Internal COSO Framework",
-    "category": "Klasifikasi",
-    "front": "Tiga Tipe Pengendalian Berdasarkan Waktu",
-    "back": "Preventif (mencegah kesalahan terjadi), Detektif (menemukan kesalahan yang lolos), dan Korektif (memperbaiki dampak kesalahan yang ditemukan). Rujukan: Richardson et al. AIS 4e · Ch. 11, hal. cetak 386-408 (PDF 411-433)."
-  },
-  {
-    "id": "aks301-tm08-05",
-    "phase": "pra-uas",
-    "tm": 8,
-    "topic": "Pengendalian Internal COSO Framework",
-    "category": "Hukum",
-    "front": "Sarbanes-Oxley Act (SOX) Section 404",
-    "back": "Mewajibkan manajemen perusahaan publik menilai efektivitas pengendalian internal pelaporan keuangan (ICFR) dan diaudit auditor independen. Rujukan: Richardson et al. AIS 4e · Ch. 11, hal. cetak 386-408 (PDF 411-433)."
-  },
-  {
-    "id": "aks301-tm08-06",
-    "phase": "pra-uas",
-    "tm": 8,
-    "topic": "Pengendalian Internal COSO Framework",
+    "topic": "Conversion Business Process",
     "category": "Konsep",
-    "front": "COSO Enterprise Risk Management (ERM)",
-    "back": "Kerangka kerja perluasan COSO yang mengintegrasikan pengelolaan risiko ke dalam strategi korporasi dan penciptaan nilai pemegang saham. Rujukan: Richardson et al. AIS 4e · Ch. 11, hal. cetak 386-408 (PDF 411-433)."
+    "front": "BOM versus material issue",
+    "back": "BOM memuat rencana bahan; material issue mencatat pemakaian aktual. Selisih perlu investigasi dan approval. Rujukan: Richardson AIS 4e, Ch.9 pp.350–365 (PDF 375–390)."
+  },
+  {
+    "id": "aks301-v3-tm08-04",
+    "phase": "pra-uas",
+    "tm": 8,
+    "topic": "Conversion Business Process",
+    "category": "Konsep",
+    "front": "Model WIP",
+    "back": "WIP dapat dihitung dari biaya event pekerjaan belum selesai; tidak harus menjadi kelas resource tersendiri pada model generik. Rujukan: Richardson AIS 4e, Ch.9 pp.350–365 (PDF 375–390)."
+  },
+  {
+    "id": "aks301-v3-tm08-05",
+    "phase": "pra-uas",
+    "tm": 8,
+    "topic": "Conversion Business Process",
+    "category": "Konsep",
+    "front": "Linking table conversion",
+    "back": "Hubungan banyak material issue–bahan dan labor operations–pegawai memakai tabel penghubung dengan data jumlah/jam. Rujukan: Richardson AIS 4e, Ch.9 pp.350–365 (PDF 375–390)."
+  },
+  {
+    "id": "aks301-v3-tm08-06",
+    "phase": "pra-uas",
+    "tm": 8,
+    "topic": "Conversion Business Process",
+    "category": "Konsep",
+    "front": "Tanggal production authorization",
+    "back": "Bedakan tanggal otorisasi, tanggal selesai terjadwal, dan tanggal selesai aktual; jangan menyamakannya. Rujukan: Richardson AIS 4e, Ch.9 pp.350–365 (PDF 375–390)."
   }
 ]

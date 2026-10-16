@@ -1,99 +1,227 @@
-# Otomasi Proses Robotik (RPA) & Kecerdasan Buatan (AI) dalam Akuntansi
+# Reporting Processes dan eXtensible Business Reporting Language (XBRL)
 
-Mempelajari pemanfaatan Robotic Process Automation (RPA) dan Artificial Intelligence (Machine Learning, NLP, Generative AI) dalam mengotomatisasi pekerjaan akuntansi repetitif seperti rekonsiliasi bank, pemrosesan faktur OCR, dan deteksi anomali jurnal.
+Pelaporan mengubah data transaksi menjadi informasi bagi manajemen dan pihak luar. Ikuti perjalanan data dari ERP ke warehouse, dashboard dan XBRL; lalu pelajari mengapa angka yang terbaca mesin tetap memerlukan definisi, konteks, unit, rekonsiliasi dan pengujian.
 
-Gambar 12.1: Transformasi Efisiensi Akuntansi melalui Robotic Process Automation (RPA) dan Artificial Intelligence.
+Angka 115 berarti apa?
 
-Kriteria Kelayakan Otomasi Menggunakan RPA
+Kas perusahaan ditampilkan “115” pada dashboard, file laporan, dan grafik investor. Tanpa tahu entitas, tanggal, mata uang, skala jutaan atau rupiah penuh, serta apakah angka itu konsolidasian, pembaca dapat mengambil keputusan salah. XBRL menambahkan makna terstruktur, tetapi pemetaan dan konteksnya harus benar.
 
-Robotic Process Automation (RPA) adalah perangkat lunak 'bot' yang meniru tindakan manusia dalam berinteraksi dengan antarmuka pengguna (UI) komputer untuk menyelesaikan pekerjaan bervolume tinggi. Tidak semua proses akuntansi cocok untuk RPA. Proses ideal wajib memenuhi lima syarat berikut:
+1. Dari transaksi ke informasi pelaporan
 
-1. Rule-based (Berbasis Aturan Baku): Logika keputusan transparan dan tidak membutuhkan pertimbangan subjektif manusia (judgment). Contoh: 'Jika nomor akun cocok dan nominal sama, tandai cocok'.
+Database operasional dioptimalkan untuk pencatatan transaksi harian. Pelaporan lintas periode dan sistem sering memakai repositori analisis terpisah. Data dipindahkan melalui ETL: extract, transform, load. Hasil transformasi harus dapat direkonsiliasi ke sistem asal; proses cepat tidak berguna bila satu cabang hilang dari ekstraksi. Richardson pp.472–474.
 
-2. High Volume & Repetitive: Tugas dikerjakan berulang kali dalam frekuensi tinggi (ratusan hingga ribuan kali per hari).
+Perjalanan data pelaporan
 
-3. Digital & Structured Input: Data masukan berupa format digital terstruktur (seperti spreadsheet Excel, database SQL, atau file CSV/XML).
+Alur buatan. Dashboard dan laporan eksternal dapat memiliki pengguna, detail, serta jadwal berbeda.
 
-4. Low Exception Rate: Tingkat pengecualian (kejadian aneh di luar SOP) rendah (< 5%).
+1. Sumber operasional: ERP, penjualan, bank dan payroll. Tetapkan periode serta populasi.
 
-5. Stable Process: Prosedur operasional dan tata letak aplikasi stabil dan tidak sering berubah.
+2. ETL + warehouse: Bersihkan, gabungkan, simpan histori. Uji jumlah, total dan pemetaan.
 
-Studi Kasus RPA: Rekonsiliasi Bank Otomatis di PT Mitra Logistik
+3. BI + dashboard: Analisis KPI, tren dan exception. Sertakan waktu pembaruan data.
 
-Sebelum Otomasi: Tiga staf akuntansi menghabiskan 4 jam setiap pagi untuk mengunduh rekening koran dari internet banking, membuka file buku besar bank, dan mencocokkan nomor referensi secara manual satu per satu.
+4. Laporan eksternal: Tag fakta sesuai taxonomy/konteks. Validasi dan rekonsiliasi XBRL.
 
-Alur Kerja Bot RPA Terotomatisasi:
+Repositori untuk kebutuhan berbeda
 
-Pukul 02.00: Bot login otomatis ke portal internet banking menggunakan kredensial aman (Credential Vault), mengunduh mutasi rekening dalam format CSV.
+Repositori | Karakter | Batas
 
-Pukul 02.15: Bot mengekstrak data jurnal penerimaan dan pengeluaran kas dari modul SAP FI.
+Operational database | Transaksi berjalan; sering diperbarui saat kejadian. | Query analitis berat dapat mengganggu operasi.
 
-Pukul 02.30: Bot mencocokkan transaksi berdasarkan kombinasi: Nomor Referensi + Tanggal (+/- 2 hari) + Nilai Nominal Persis.
+Data warehouse | Integrasi data historis untuk analisis, relatif stabil setelah dimuat. | Perlu ETL, definisi konsisten, kontrol histori serta rekonsiliasi.
 
-Pukul 02.45: Untuk transaksi yang 100% cocok (match), bot langsung menjurnal clearing di SAP.
+Data mart | Subset data untuk fungsi/kelompok kebutuhan tertentu. | Definisi antarmart harus selaras agar angka tidak saling bertentangan.
 
-Pukul 03.00: Untuk transaksi selisih (unmatched exceptions), bot menyusun laporan pengecualian (Exception Report) dan mengirimkannya via email kepada Manajer Akuntansi untuk ditindaklanjuti manusia pada pukul 08.00 pagi.
+Data lake | Menampung data terstruktur dan tidak terstruktur dalam ragam besar. | Tanpa katalog/kualitas dapat sulit ditemukan dan dianalisis.
 
-Tabel 12.1: Perbandingan Peran Akuntan: Tradisional vs Era AI/RPA
+Business intelligence mengumpulkan informasi, menganalisis pola, lalu mendukung keputusan. Dashboard menyajikan metrik yang kritis untuk pengguna tertentu dan memungkinkan penelusuran lebih rinci. Jangan mengukur keberhasilan dashboard dari banyaknya grafik; tanyakan keputusan apa yang menjadi lebih jelas dan siapa yang bertindak.
 
-Aktivitas Akuntansi | Metode Konvensional | Era AI & Otomasi
+2. KPI yang bisa diartikan dan ditindaklanjuti
 
-Input Faktur Vendor | Mengetik manual nomor faktur, tanggal, dan nominal item per item. | Intelligent Document Processing (IDP/OCR) memindai PDF faktur dan mengisi field ERP otomatis.
+Definisi KPI sebelum memilih warna
 
-Rekonsiliasi Bank | Pencocokan manual manual baris demi baris menggunakan pulpen stabilo. | Bot RPA mencocokkan 95% transaksi otomatis; manusia hanya menangani 5% sisa pengecualian.
+KPI | Definisi | Hal yang perlu dijelaskan
 
-Pendeteksian Fraud | Pemeriksaan acak berdasarkan sampel audit tahunan. | Machine learning memantau 100% aliran transaksi real-time dan memberikan peringatan fraud seketika.
+Overdue ratio | Piutang lewat jatuh tempo ÷ total piutang pada tanggal yang sama. | Due date, cutoff kas, saldo kredit, penyebut, dan tanggal refresh.
 
-Fokus Nilai Tambah | Pencatatan data klerikal (Data Processing). | Interpretasi wawasan strategis, penilaian risiko, dan pengambilan keputusan (Decision Support).
+On-time delivery | Pengiriman tepat waktu ÷ pengiriman yang relevan. | Tanggal janji, tanggal aktual, toleransi dan perlakuan pembatalan.
 
-Tata Kelola Bot (Bot Governance)
+Defect rate | Unit cacat ÷ unit diperiksa pada lingkup yang sama. | Metode inspeksi, rework dan apakah data mewakili seluruh produksi.
 
-Bot RPA harus memiliki Identitas Pengguna (User ID) unik yang terpisah dari akun manusia. Dilarang keras menggunakan akun karyawan untuk menjalankan bot! Setiap tindakan bot wajib tercatat di audit trail sistem untuk akuntabilitas hukum.
+Contoh KPI aging piutang
+
+Asumsi saldo Rp juta: belum jatuh tempo 40, overdue 1–30 hari 30, 31–60 hari 20, >60 hari 10. Total 100; overdue 60 sehingga overdue ratio 60%. Grafik menunjukkan nominal yang membentuk rasio itu. Angka ini menggambarkan keterlambatan, belum jumlah kerugian kredit.
+
+Aging piutang: Rp100 juta, Rp60 juta sudah lewat jatuh tempo
+
+Data latihan buatan. Umur dihitung dari due date, saldo setelah alokasi penerimaan kas. Nilai penuh tersedia pada tabel kasus.
+
+Belum jatuh tempo: Rp40 juta.
+
+Lewat jatuh tempo 1–30 hari: Rp30 juta.
+
+Lewat jatuh tempo 31–60 hari: Rp20 juta.
+
+Lewat jatuh tempo >60 hari: Rp10 juta.
+
+Total Rp100 juta; jumlah lewat jatuh tempo Rp60 juta atau 60%. Grafik memakai skala nol dan satu tanggal analisis.
+
+Tindak lanjut: petugas penagihan memeriksa saldo lama dan sengketa; supervisor meninjau hasil pada jadwal yang ditentukan. Dashboard harus menampilkan tanggal data dan sumber, bukan memberi kesan real-time jika pemuatan hanya setiap malam.
+
+3. Komponen XBRL dan perbedaannya
+
+**eXtensible Business Reporting Language (XBRL)** memungkinkan pertukaran fakta bisnis dengan makna terstruktur. Buku mengenalkan XBRL berbasis XML. XBRL adalah format/standar pelaporan data, bukan standar pengakuan pendapatan atau pengganti prinsip akuntansi. Richardson pp.477–480.
+
+Istilah yang sering tertukar
+
+Istilah | Fungsi | Analogi terbatas
+
+Specification | Aturan teknis bagaimana dokumen/fakta XBRL disusun. | Tata bahasa teknis.
+
+Taxonomy | Definisi konsep data, tipe, label dan hubungan. | Kamus terstruktur untuk makna laporan.
+
+Tag / concept | Penanda konsep tertentu, misalnya kas atau revenue. | Nama bermakna; lebih dari label tampilan.
+
+Instance document | Fakta yang benar-benar dilaporkan beserta konteks/unitnya. | Isian laporan suatu entitas/periode.
+
+Style sheet / rendering | Menyajikan data agar dapat dibaca manusia. | Tampilan; tidak mengubah makna fakta yang salah.
+
+Satu fakta harus membawa makna
+
+Fakta ilustratif: kas Rp115 juta pada tanggal pelaporan. Nama konsep contoh tidak dinyatakan sebagai tag resmi taxonomy tertentu.
+
+1. Concept: Kas dan setara kas. Pilih definisi yang tepat.
+
+2. Context: Entitas + periode + dimensi relevan. Saldo memakai satu tanggal.
+
+3. Unit + nilai: IDR · 115.000.000. Jangan keliru skala jutaan.
+
+4. Validation: Cek tag, tipe, unit dan hubungan. Cocokkan dengan laporan disetujui.
+
+4. Context, unit, dan instant versus duration
+
+Saldo kas adalah fakta pada satu titik waktu (**instant**), sedangkan pendapatan adalah fakta sepanjang periode (**duration**). Context mengidentifikasi entitas dan periode, serta dimensi yang relevan. Unit menunjukkan mata uang atau ukuran lain. Dua angka sama belum dapat dibandingkan jika tanggal, entitas, konsolidasi, atau unit berbeda.
+
+Menyiapkan dua fakta dari kasus integrasi
+
+Asumsi latihan laporan tahun 2025
+
+Fakta | Periode | Nilai dan unit
+
+Kas akhir | Instant: 31 Desember 2025. | IDR 115.000.000.
+
+Penjualan | Duration: 1 Januari–31 Desember 2025. | IDR 90.000.000 dalam asumsi hanya ada transaksi kasus.
+
+Jika tampilan laporan menggunakan “Rp juta”, nilai 115 pada tampilan perlu ditransformasikan dengan benar menjadi rupiah penuh atau diberi mekanisme skala sesuai format yang digunakan. **Decimals** menyatakan ketelitian pembulatan fakta, bukan perintah mengalikan jutaan atau sekadar jumlah digit yang terlihat di layar.
+
+Concept: CashAndCashEquivalents (nama ilustratif)
+Entity: PT Contoh
+Period: instant 2025-12-31
+Unit: IDR
+Value: 115000000
+Rounding accuracy: ditentukan dari data sumber
+Dimensions: sesuai lingkup fakta yang dilaporkan
+
+Notasi konsep pedagogis, bukan instance XML siap diajukan ke regulator.
+
+5. Pemetaan, validasi, dan assurance
+
+Gunakan taxonomy dan versinya yang sesuai kebutuhan pelaporan.
+
+Petakan akun/pos ke concept berdasarkan definisi, bukan kemiripan nama semata.
+
+Tetapkan context, unit, dimensi, tanda dan ketelitian untuk fakta.
+
+Bangun instance atau format pelaporan yang disyaratkan dan jalankan validasi teknis.
+
+Rekonsiliasi fakta ke laporan yang disetujui dan telusuri ke sumber transaksi.
+
+Review perubahan tag, exception, approval, akses dan bukti pengiriman/penerimaan.
+
+Kesalahan tagging yang dapat lolos tampilan
+
+Kesalahan | Dampak | Pengujian
+
+Kas diberi tag revenue | Makna salah meskipun angka tetap 115. | Cocokkan concept, tipe dan definisi ke pos laporan.
+
+Instant dipakai untuk pendapatan | Periode kinerja salah. | Periksa period type dan tanggal awal/akhir.
+
+Unit USD untuk rupiah | Pembanding nilai keliru. | Cocokkan mata uang dan konversi.
+
+Nilai juta dikirim sebagai rupiah | Nilai 1.000.000 kali terlalu kecil. | Uji skala pada fakta, ekspor dan rendering.
+
+Fakta penting terlewat | Laporan data tidak lengkap. | Rekonsiliasi daftar disclosure dan laporan sumber.
+
+Valid teknis belum berarti benar secara akuntansi
+
+Dokumen yang lolos aturan XML/XBRL masih bisa memakai konsep yang salah secara substansi atau bersumber dari transaksi yang tidak sah. Assurance perlu menilai tagging, kelengkapan, akurasi, konteks, kontrol proses dan lingkup penugasan. Jangan menganggap laporan yang bisa dibuka otomatis telah diaudit.
+
+6. XBRL GL dan perkembangan penyajian
+
+**XBRL GL (Global Ledger)** menyediakan kerangka data tingkat transaksi/ledger untuk pertukaran dan integrasi, sedangkan taxonomy pelaporan keuangan berfokus pada fakta laporan. XBRL GL dapat membantu standardisasi antarsistem, tetapi implementasi, mapping dan kualitas data tetap diperlukan. Richardson pp.481–483.
+
+Pelengkap: taxonomy relationships dan Inline XBRL
+
+Taxonomy dapat memuat hubungan presentation, calculation, definition, label dan reference. Hubungan perhitungan membantu pemeriksaan aritmetika tertentu, tetapi tidak membuktikan seluruh laporan benar. Inline XBRL menggabungkan data terstruktur dengan dokumen yang dapat dibaca manusia, sehingga penyajian dan data mesin tetap perlu dicocokkan. [XBRL International: XBRL Essentials](https://specifications.xbrl.org/xbrl-essentials.html).
+
+7. Uji pemahaman
+
+Angka revenue dan kas sama-sama 115. Bolehkah memakai context yang sama?
+
+Belum tentu. Kas lazimnya instant dan revenue duration. Entitas serta dimensi juga harus cocok; angka yang sama tidak menentukan konteks yang sama.
+
+Dashboard overdue ratio turun dari 60% ke 30%, tetapi cabang terbesar belum dimuat. Apa simpulan yang tepat?
+
+Belum dapat menyimpulkan kualitas penagihan membaik. Uji kelengkapan populasi dan konsistensi penyebut, lalu hitung ulang setelah seluruh cabang serta cutoff valid.
+
+Sumber dan batas pembahasan
+
+RPS-SIA minggu 12; Richardson Ch.14 pp.470–483 (PDF 495–508): warehouse/mart/lake, BI, dashboard, taxonomy, instance, style sheet, assurance dan XBRL GL. Context/unit/decimals diperjelas dengan [SEC XBRL Glossary](https://www.sec.gov/page/osd_xbrlglossary). Tidak ada klaim semua entitas atau regulator memakai taxonomy/versi yang sama. Angka, perusahaan, diagram, dan skenario latihan di halaman ini adalah ilustrasi buatan kecuali dinyatakan lain. Urutan materi inti mengikuti RPS-SIA, Pembagian Mengajar Gasal 2025/2026, halaman 1; pendalaman di luar bab terjadwal diberi label pelengkap.
+
+## Latihan
+
+Subset warehouse untuk fungsi tertentu disebut...
+
+Data mart memusatkan kebutuhan kelompok tertentu; definisinya tetap harus konsisten dengan sumber. Rujukan: Richardson AIS 4e, Ch.14 pp.470–483 (PDF 495–508).
+
+Taxonomy dan instance document berbeda karena...
+
+Konsep, tipe dan hubungan memberi makna; fakta memerlukan context dan unit yang benar. Rujukan: Richardson AIS 4e, Ch.14 pp.470–483 (PDF 495–508).
+
+Pasangan periode XBRL yang lazimnya benar adalah...
+
+Kas adalah saldo pada tanggal; revenue adalah kinerja selama periode. Entitas/dimensi juga perlu cocok. Rujukan: Richardson AIS 4e, Ch.14 pp.470–483 (PDF 495–508).
+
+Dokumen XBRL lolos validasi teknis. Apa yang masih perlu diperiksa?
+
+Validasi teknis tidak menggantikan substansi akuntansi, rekonsiliasi atau assurance proses. Rujukan: Richardson AIS 4e, Ch.14 pp.470–483 (PDF 495–508).
+
+Angka 115 pada laporan dalam Rp juta dikirim sebagai IDR 115. Masalahnya adalah...
+
+Skala dan ketelitian berbeda. Decimals bukan perintah otomatis mengalikan jutaan; pemetaan nilai perlu benar. Rujukan: Richardson AIS 4e, Ch.14 pp.470–483 (PDF 495–508).
 
 ## Flashcard
 
-Definisi Robotic Process Automation (RPA)
+Warehouse, mart, lake
 
-Aplikasi perangkat lunak bot yang meniru klik dan interaksi manusia untuk mengeksekusi tugas rutin berulang berbasis aturan (rule-based). Rujukan: Richardson et al. AIS 4e · Ch. 15, hal. 508-516 (PDF 533-541).
+Warehouse mengintegrasi data historis; mart subset kebutuhan tertentu; lake dapat menampung data terstruktur/tidak terstruktur. Rujukan: Richardson AIS 4e, Ch.14 pp.470–483 (PDF 495–508).
 
-Kriteria Proses yang Ideal untuk RPA
+Dashboard yang berguna
 
-Volume transaksi tinggi, berbasis aturan terstruktur, data input digital konsisten, dan tingkat pengecualian (exceptions) yang rendah. Rujukan: Richardson et al. AIS 4e · Ch. 15, hal. 508-516 (PDF 533-541).
+Tentukan tujuan, definisi KPI, penyebut, tanggal refresh, sumber dan pemilik tindakan; banyak grafik bukan ukuran keberhasilan. Rujukan: Richardson AIS 4e, Ch.14 pp.470–483 (PDF 495–508).
 
-Penerapan RPA pada Rekonsiliasi Bank
+Taxonomy versus instance
 
-Bot otomatis mengunduh rekening koran bank setiap pagi, mencocokkan mutasi kas dengan buku besar ERP, dan menandai selisih saldo. Rujukan: Richardson et al. AIS 4e · Ch. 15, hal. 508-516 (PDF 533-541).
+Taxonomy mendefinisikan konsep/tipe/hubungan; instance berisi fakta entitas beserta context dan unit. Rujukan: Richardson AIS 4e, Ch.14 pp.470–483 (PDF 495–508).
 
-Optical Character Recognition (OCR) Cerdas
+Instant versus duration
 
-Mengonversi gambar pindaian faktur vendor fisik atau PDF menjadi data teks terstruktur yang otomatis terinput ke akun utang usaha. Rujukan: Richardson et al. AIS 4e · Ch. 15, hal. 508-516 (PDF 533-541).
+Saldo kas: satu tanggal (instant). Revenue: rentang periode (duration). Entity dan dimensi juga harus cocok. Rujukan: Richardson AIS 4e, Ch.14 pp.470–483 (PDF 495–508).
 
-Machine Learning dalam Deteksi Anomali Jurnal
+Validasi XBRL
 
-Algoritma pembelajaran mesin tanpa pengawasan (Unsupervised ML) yang otomatis menandai pola transaksi yang menyimpang dari perilaku historis normal. Rujukan: Richardson et al. AIS 4e · Ch. 15, hal. 508-516 (PDF 533-541).
+Uji tag, context, unit, skala, tanda, ketelitian dan kelengkapan terhadap sumber; valid teknis belum benar secara akuntansi. Rujukan: Richardson AIS 4e, Ch.14 pp.470–483 (PDF 495–508).
 
-Tata Kelola & Pengendalian Bot (Bot Governance)
+XBRL GL
 
-Memerlukan manajemen kredensial akses bot, pemantauan log aktivitas, dan pengujian kontrol saat ada pembaruan versi sistem ERP. Rujukan: Richardson et al. AIS 4e · Ch. 15, hal. 508-516 (PDF 533-541).
-
-## Kuis TM terdaftar
-
-Karakteristik proses bisnis akuntansi manakah yang PALING IDEAL untuk diotomatisasi menggunakan Robotic Process Automation (RPA)?
-
-RPA unggul pada tugas klerikal yang berulang dan berbasis aturan pasti (misal: mengunduh rekening koran bank setiap pagi jam 06.00, mencocokkan mutasi, dan memposting jurnal kliring otomatis ke ERP).
-
-Perbedaan utama antara Attended RPA dan Unattended RPA dalam lingkungan kantor akuntansi adalah...
-
-Pembedaan berkaitan dengan interaksi pengguna dan cara pemicu dijalankan. Bot tetap memerlukan otorisasi, pemantauan, penanganan pengecualian dan pemeliharaan. Istilah ini memakai sumber vendor sebagai pelengkap buku. Rujukan: UiPath Overview, Attended vs. Unattended automation, bagian Attended Automations dan Unattended Automations, https://docs.uipath.com/overview/other/latest/overview/attended-vs-unattended-automation, dibaca 12 Oktober 2026; Richardson AIS 4e Ch.15 memberi konteks otomasi.
-
-Teknologi AI yang mengonversi dokumen pindaian faktur kertas atau format PDF menjadi teks dan angka digital terstruktur untuk dimasukkan ke sistem ERP disebut...
-
-OCR (Optical Character Recognition) yang dipadukan dengan Machine Learning mampu mengenali tata letak faktur vendor, mengekstrak nomor PO, tanggal, dan subtotal, lalu meneruskannya ke software akuntansi otomatis.
-
-Dengan semakin meluasnya implementasi bot RPA dan AI dalam sistem akuntansi, bagaimana peran profesional akuntan bertransformasi di masa depan?
-
-RPA membebaskan akuntan dari pekerjaan manual berulang. Nilai tambah akuntan bergeser ke ranah penafsiran bisnis strategis, penilaian risiko sistem, kepatuhan etika algoritma AI, dan konsultasi manajerial.
-
-Risiko pengendalian baru yang timbul akibat penggunaan bot RPA dalam proses akuntansi adalah...
-
-Perubahan input atau antarmuka dapat membuat aturan bot salah diterapkan berulang. Change control, testing dan pemantauan pengecualian tetap diperlukan. Rujukan: Richardson AIS 4e, Ch.15, Automation dan RPA, PDF 539-541.
+Kerangka pertukaran data tingkat transaksi/ledger; berbeda dari fakta agregat taxonomy pelaporan keuangan. Rujukan: Richardson AIS 4e, Ch.14 pp.470–483 (PDF 495–508).

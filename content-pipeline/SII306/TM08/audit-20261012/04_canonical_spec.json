@@ -3,247 +3,577 @@
   "tm": 8,
   "reading": {
     "tm": 8,
-    "title": "Kerangka Pengendalian Internal: COSO Internal Control & COSO ERM",
-    "ref": "Richardson et al. AIS 4e · Ch. 11, hal. cetak 386-408 (PDF 411-433)",
-    "intro": "Membahas secara mendalam kerangka kerja COSO Internal Control Integrated Framework (17 Prinsip) dan COSO Enterprise Risk Management (ERM). Memahami taksonomi pengendalian preventif, detektif, dan korektif serta kriteria defisiensi pengendalian menurut standar audit.",
+    "title": "Conversion Business Process: Produksi, Biaya, dan Model Data",
+    "ref": "RPS-SIA minggu 8 · Richardson AIS 4e · Ch. 9, pp. 350–365 (PDF 375–390)",
+    "intro": "Conversion mengubah bahan menjadi barang jadi sekaligus mengumpulkan biaya per pekerjaan. Ikuti alur fisik, dokumen, pencatatan, BPMN, pengendalian dan model data agar dapat menjelaskan dari mana biaya produksi berasal serta bagaimana kebenarannya diuji.",
     "objectives": [
-      "Menguraikan 5 komponen COSO Internal Control Framework beserta 17 prinsip turunannya.",
-      "Membedakan fungsi pengendalian preventif (preventive), detektif (detective), dan korektif (corrective).",
-      "Memahami evolusi COSO ERM (Governance, Strategy, Performance, Review, Information).",
-      "Mengklasifikasikan tingkat kelemahan audit: Control Deficiency, Significant Deficiency, dan Material Weakness.",
-      "Menerapkan kerangka COSO untuk mengevaluasi lingkungan pengendalian sistem teknologi informasi."
+      "Menjelaskan authorization, issue materials, work, inspection, dan completion.",
+      "Menghitung WIP, cost of goods manufactured dan cost of goods sold dengan asumsi jelas.",
+      "Membaca BPMN termasuk batch, loop dan exception mutu.",
+      "Menerjemahkan business rules menjadi access dan application controls.",
+      "Menghubungkan REA/UML, BOM, multiplicity, PK/FK dan linking table dalam database konversi."
     ],
     "blocks": [
       {
+        "kind": "example",
+        "title": "Bahan dibeli belum berarti barang sudah selesai",
+        "blocks": [
+          {
+            "kind": "p",
+            "text": "Percetakan membeli kain, memakai sebagian untuk pesanan, membayar pekerja, lalu memeriksa hasil. Sebagian pesanan belum selesai pada akhir bulan. Kalau semua biaya langsung dianggap HPP, persediaan dan laba akan keliru. SIA harus melacak **bahan, pekerjaan dalam proses, barang jadi, dan barang terjual** secara terpisah."
+          }
+        ]
+      },
+      {
+        "kind": "h2",
+        "text": "1. Alur barang dan alur biaya"
+      },
+      {
+        "kind": "p",
+        "text": "Conversion business process mencakup pemeliharaan bahan/barang jadi, produksi, pencatatan tenaga kerja langsung, biaya langsung lain, serta alokasi overhead. Proses bisa berbeda antarperusahaan, tetapi kebutuhan informasinya serupa: apa diproduksi, berapa input dipakai, siapa mengerjakan, kapan selesai, dan berapa biaya hasilnya. Richardson pp.352–353."
+      },
+      {
         "kind": "figure",
-        "caption": "Gambar 8.1: Kerangka Kerja Pengendalian Internal COSO: 5 Komponen dan 17 Prinsip Pengendalian.",
-        "svg": "<svg class=\"course-diagram-svg\" viewBox=\"0 0 680 250\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif\">\n  <rect class=\"svg-bg\" x=\"10\" y=\"10\" width=\"660\" height=\"230\" rx=\"12\" fill=\"#0f172a\" stroke=\"#334155\" stroke-width=\"1.5\"/>\n  <rect class=\"svg-header\" x=\"10\" y=\"10\" width=\"660\" height=\"38\" rx=\"12\" fill=\"#1e293b\" fill-opacity=\"0.6\"/>\n  <line class=\"svg-divider\" x1=\"10\" y1=\"48\" x2=\"670\" y2=\"48\" stroke=\"#334155\" stroke-width=\"1\"/>\n  <text class=\"svg-title text-accent-red\" x=\"340\" y=\"34\" fill=\"#f43f5e\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">KERANGKA KERJA PENGENDALIAN INTERNAL: COSO 5 KOMPONEN &amp; 17 PRINSIP</text>\n\n  <!-- 5 Horizontal Bars of COSO -->\n  <rect class=\"svg-card\" x=\"30\" y=\"56\" width=\"410\" height=\"32\" rx=\"4\" fill=\"#1e293b\" stroke=\"#38bdf8\"/>\n  <text class=\"text-accent-blue\" x=\"42\" y=\"76\" fill=\"#38bdf8\" font-size=\"9\" font-weight=\"700\">1. CONTROL ENVIRONMENT (Prinsip 1-5)</text>\n  <text class=\"svg-muted\" x=\"270\" y=\"76\" fill=\"#94a3b8\" font-size=\"8\">Integritas, Tone at the Top, Dewan Komisaris, Struktur</text>\n\n  <rect class=\"svg-card\" x=\"30\" y=\"91\" width=\"410\" height=\"32\" rx=\"4\" fill=\"#1e293b\" stroke=\"#34d399\"/>\n  <text class=\"text-accent-green\" x=\"42\" y=\"111\" fill=\"#34d399\" font-size=\"9\" font-weight=\"700\">2. RISK ASSESSMENT (Prinsip 6-9)</text>\n  <text class=\"svg-muted\" x=\"270\" y=\"111\" fill=\"#94a3b8\" font-size=\"8\">Identifikasi Risiko, Analisis Dampak, Fraud Risk, Perubahan</text>\n\n  <rect class=\"svg-card\" x=\"30\" y=\"126\" width=\"410\" height=\"32\" rx=\"4\" fill=\"#1e293b\" stroke=\"#f59e0b\"/>\n  <text class=\"text-accent-amber\" x=\"42\" y=\"146\" fill=\"#fbbf24\" font-size=\"9\" font-weight=\"700\">3. CONTROL ACTIVITIES (Prinsip 10-12)</text>\n  <text class=\"svg-muted\" x=\"270\" y=\"146\" fill=\"#94a3b8\" font-size=\"8\">Otorisasi, SoD, General IT Controls (GITC), Kebijakan</text>\n\n  <rect class=\"svg-card\" x=\"30\" y=\"161\" width=\"410\" height=\"32\" rx=\"4\" fill=\"#1e293b\" stroke=\"#a855f7\"/>\n  <text class=\"text-accent-purple\" x=\"42\" y=\"181\" fill=\"#a78bfa\" font-size=\"9\" font-weight=\"700\">4. INFORMATION &amp; COMM. (Prinsip 13-15)</text>\n  <text class=\"svg-muted\" x=\"270\" y=\"181\" fill=\"#94a3b8\" font-size=\"8\">Kualitas Informasi Akuntansi, Komunikasi Internal &amp; Eksternal</text>\n\n  <rect class=\"svg-card\" x=\"30\" y=\"196\" width=\"410\" height=\"32\" rx=\"4\" fill=\"#1e293b\" stroke=\"#f43f5e\"/>\n  <text class=\"text-accent-red\" x=\"42\" y=\"216\" fill=\"#f87171\" font-size=\"9\" font-weight=\"700\">5. MONITORING ACTIVITIES (Prinsip 16-17)</text>\n  <text class=\"svg-muted\" x=\"270\" y=\"216\" fill=\"#94a3b8\" font-size=\"8\">Evaluasi Berkelanjutan, Audit Internal, Pelaporan Defisiensi</text>\n\n  <!-- Right: 3 Objectives of COSO -->\n  <rect class=\"svg-card\" x=\"460\" y=\"56\" width=\"190\" height=\"172\" rx=\"8\" fill=\"#1e293b\" stroke=\"#f43f5e\" stroke-width=\"1.5\"/>\n  <text class=\"text-accent-red\" x=\"555\" y=\"78\" fill=\"#f43f5e\" font-size=\"10.5\" font-weight=\"700\" text-anchor=\"middle\">3 TUJUAN UTAMA COSO</text>\n  <line class=\"svg-divider\" x1=\"470\" y1=\"88\" x2=\"640\" y2=\"88\" stroke=\"#334155\"/>\n\n  <rect class=\"svg-subcard\" x=\"475\" y=\"96\" width=\"160\" height=\"38\" rx=\"4\" fill=\"#0f172a\" stroke=\"#38bdf8\"/>\n  <text class=\"text-accent-blue\" x=\"555\" y=\"112\" fill=\"#38bdf8\" font-size=\"8.5\" font-weight=\"700\" text-anchor=\"middle\">OPERATIONS</text>\n  <text class=\"svg-muted\" x=\"555\" y=\"126\" fill=\"#94a3b8\" font-size=\"7.5\" text-anchor=\"middle\">Efektivitas &amp; Efisiensi Aset</text>\n\n  <rect class=\"svg-subcard\" x=\"475\" y=\"140\" width=\"160\" height=\"38\" rx=\"4\" fill=\"#0f172a\" stroke=\"#34d399\"/>\n  <text class=\"text-accent-green\" x=\"555\" y=\"156\" fill=\"#34d399\" font-size=\"8.5\" font-weight=\"700\" text-anchor=\"middle\">REPORTING (ICFR)</text>\n  <text class=\"svg-muted\" x=\"555\" y=\"170\" fill=\"#94a3b8\" font-size=\"7.5\" text-anchor=\"middle\">Keandalan Laporan Keuangan</text>\n\n  <rect class=\"svg-subcard\" x=\"475\" y=\"184\" width=\"160\" height=\"38\" rx=\"4\" fill=\"#0f172a\" stroke=\"#f59e0b\"/>\n  <text class=\"text-accent-amber\" x=\"555\" y=\"200\" fill=\"#fbbf24\" font-size=\"8.5\" font-weight=\"700\" text-anchor=\"middle\">COMPLIANCE</text>\n  <text class=\"svg-muted\" x=\"555\" y=\"214\" fill=\"#94a3b8\" font-size=\"7.5\" text-anchor=\"middle\">Kepatuhan Hukum &amp; Regulasi</text>\n</svg>"
-      },
-      {
-        "kind": "h2",
-        "text": "Lima Komponen COSO Internal Control Framework"
-      },
-      {
-        "kind": "p",
-        "text": "COSO (Committee of Sponsoring Organizations of the Treadway Commission) mendefinisikan pengendalian internal sebagai proses yang dipengaruhi oleh dewan direksi, manajemen, dan personel lain, yang dirancang untuk memberikan keyakinan memadai terkait pencapaian tujuan operasi, pelaporan, dan kepatuhan."
-      },
-      {
-        "kind": "table",
-        "caption": "Tabel 8.1: Lima Komponen COSO dan Inti Prinsipnya",
-        "headers": [
-          "Komponen COSO",
-          "Fokus Utama",
-          "Contoh Implementasi Praktis"
-        ],
-        "rows": [
-          [
-            "1. Control Environment (Lingkungan Pengendalian)",
-            "Fondasi organisasi, integritas, nilai etika, struktur pelaporan, dan komitmen terhadap kompetensi ('Tone at the Top').",
-            "Penerbitan Kode Etik Karyawan, Whistleblowing System independen, Komite Audit yang aktif."
-          ],
-          [
-            "2. Risk Assessment (Penilaian Risiko)",
-            "Proses dinamis untuk mengidentifikasi dan menilai risiko ketercapaian tujuan, termasuk risiko fraud dan perubahan teknologi.",
-            "Penyusunan Risk Register tahunan, analisis kerentanan sistem siber, evaluasi risiko kecurangan pelaporan keuangan."
-          ],
-          [
-            "3. Control Activities (Aktivitas Pengendalian)",
-            "Tindakan yang ditetapkan melalui kebijakan dan prosedur untuk memitigasi risiko hingga tingkat yang dapat diterima.",
-            "Pemisahan tugas (SoD), otorisasi ganda transaksi di atas Rp 100 juta, pembatasan akses fisik ruang server."
-          ],
-          [
-            "4. Information & Communication",
-            "Penyediaan informasi berkualitas yang relevan dan tepat waktu, serta saluran komunikasi dua arah (internal dan eksternal).",
-            "Sistem pelaporan manajerial real-time, manual kebijakan akuntansi yang terdistribusi, pengaduan konsumen."
-          ],
-          [
-            "5. Monitoring Activities (Pemantauan)",
-            "Evaluasi berkala dan berkelanjutan untuk memastikan kelima komponen pengendalian berfungsi efektif.",
-            "Audit internal rutin, audit penetration testing berkala, tindak lanjut atas temuan auditor eksternal."
-          ]
+        "title": "Empat posisi biaya yang berbeda",
+        "svg": "<svg class=\"course-diagram-svg\" role=\"img\" aria-label=\"Empat posisi biaya yang berbeda\" viewBox=\"0 0 800 278\" xmlns=\"http://www.w3.org/2000/svg\" style=\"font-family:Inter,Arial,sans-serif;width:100%;height:auto\"><title>Empat posisi biaya yang berbeda</title><defs><marker id=\"conversion-cost-a-false\" markerWidth=\"6\" markerHeight=\"6\" refX=\"5\" refY=\"3\" orient=\"auto\"><path d=\"M0 0 L6 3 L0 6\" fill=\"none\" stroke=\"#64748b\" stroke-width=\"1.5\"/></marker></defs><g><rect x=\"16\" y=\"16\" width=\"365\" height=\"108\" rx=\"12\" fill=\"#eff6ff\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"45\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">1. Raw materials</text>\n      <text x=\"32\" y=\"72\" fill=\"#334155\" font-size=\"14\">Bahan tersedia untuk produksi.</text><text x=\"32\" y=\"94\" fill=\"#334155\" font-size=\"14\">Belum dipakai: tetap persediaan.</text></g><path d=\"M384 70 h23\" marker-end=\"url(#conversion-cost-a-false)\" stroke=\"#64748b\" stroke-width=\"2\"/><g><rect x=\"411\" y=\"16\" width=\"365\" height=\"108\" rx=\"12\" fill=\"#ecfdf5\" stroke=\"#94a3b8\"/>\n      <text x=\"427\" y=\"45\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">2. Work-in-process</text>\n      <text x=\"427\" y=\"72\" fill=\"#334155\" font-size=\"14\">Bahan dipakai + tenaga kerja + OH.</text><text x=\"427\" y=\"94\" fill=\"#334155\" font-size=\"14\">Biaya pekerjaan yang belum selesai.</text></g><path d=\"M593.5 126 v12 H198.5 v10\" fill=\"none\" marker-end=\"url(#conversion-cost-a-false)\" stroke=\"#64748b\" stroke-width=\"2\"/><g><rect x=\"16\" y=\"154\" width=\"365\" height=\"108\" rx=\"12\" fill=\"#eff6ff\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"183\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">3. Finished goods</text>\n      <text x=\"32\" y=\"210\" fill=\"#334155\" font-size=\"14\">Biaya produk yang sudah selesai.</text><text x=\"32\" y=\"232\" fill=\"#334155\" font-size=\"14\">Transfer dari WIP = COGM.</text></g><path d=\"M384 208 h23\" marker-end=\"url(#conversion-cost-a-false)\" stroke=\"#64748b\" stroke-width=\"2\"/><g><rect x=\"411\" y=\"154\" width=\"365\" height=\"108\" rx=\"12\" fill=\"#ecfdf5\" stroke=\"#94a3b8\"/>\n      <text x=\"427\" y=\"183\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">4. Cost of goods sold</text>\n      <text x=\"427\" y=\"210\" fill=\"#334155\" font-size=\"14\">Biaya barang yang sudah dijual.</text><text x=\"427\" y=\"232\" fill=\"#334155\" font-size=\"14\">Transfer dari finished goods.</text></g></svg>",
+        "mobileSvg": "<svg class=\"course-diagram-svg\" role=\"img\" aria-label=\"Empat posisi biaya yang berbeda\" viewBox=\"0 0 360 566\" xmlns=\"http://www.w3.org/2000/svg\" style=\"font-family:Inter,Arial,sans-serif;width:100%;height:auto\"><title>Empat posisi biaya yang berbeda</title><defs><marker id=\"conversion-cost-a-true\" markerWidth=\"6\" markerHeight=\"6\" refX=\"5\" refY=\"3\" orient=\"auto\"><path d=\"M0 0 L6 3 L0 6\" fill=\"none\" stroke=\"#64748b\" stroke-width=\"1.5\"/></marker></defs><g><rect x=\"16\" y=\"16\" width=\"328\" height=\"108\" rx=\"12\" fill=\"#eff6ff\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"45\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">1. Raw materials</text>\n      <text x=\"32\" y=\"72\" fill=\"#334155\" font-size=\"14\">Bahan tersedia untuk produksi.</text><text x=\"32\" y=\"94\" fill=\"#334155\" font-size=\"14\">Belum dipakai: tetap persediaan.</text></g><path d=\"M180 128 v22\" marker-end=\"url(#conversion-cost-a-true)\" stroke=\"#64748b\" stroke-width=\"2\"/><g><rect x=\"16\" y=\"158\" width=\"328\" height=\"108\" rx=\"12\" fill=\"#ecfdf5\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"187\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">2. Work-in-process</text>\n      <text x=\"32\" y=\"214\" fill=\"#334155\" font-size=\"14\">Bahan dipakai + tenaga kerja + OH.</text><text x=\"32\" y=\"236\" fill=\"#334155\" font-size=\"14\">Biaya pekerjaan yang belum selesai.</text></g><path d=\"M180 270 v22\" marker-end=\"url(#conversion-cost-a-true)\" stroke=\"#64748b\" stroke-width=\"2\"/><g><rect x=\"16\" y=\"300\" width=\"328\" height=\"108\" rx=\"12\" fill=\"#eff6ff\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"329\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">3. Finished goods</text>\n      <text x=\"32\" y=\"356\" fill=\"#334155\" font-size=\"14\">Biaya produk yang sudah selesai.</text><text x=\"32\" y=\"378\" fill=\"#334155\" font-size=\"14\">Transfer dari WIP = COGM.</text></g><path d=\"M180 412 v22\" marker-end=\"url(#conversion-cost-a-true)\" stroke=\"#64748b\" stroke-width=\"2\"/><g><rect x=\"16\" y=\"442\" width=\"328\" height=\"108\" rx=\"12\" fill=\"#ecfdf5\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"471\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">4. Cost of goods sold</text>\n      <text x=\"32\" y=\"498\" fill=\"#334155\" font-size=\"14\">Biaya barang yang sudah dijual.</text><text x=\"32\" y=\"520\" fill=\"#334155\" font-size=\"14\">Transfer dari finished goods.</text></g></svg>",
+        "caption": "Peta buatan untuk sistem perpetual. COGM (harga pokok produksi selesai) berbeda dari COGS/HPP barang terjual.",
+        "altText": "1. Raw materials: Bahan tersedia untuk produksi. Belum dipakai: tetap persediaan.; 2. Work-in-process: Bahan dipakai + tenaga kerja + OH. Biaya pekerjaan yang belum selesai.; 3. Finished goods: Biaya produk yang sudah selesai. Transfer dari WIP = COGM.; 4. Cost of goods sold: Biaya barang yang sudah dijual. Transfer dari finished goods.",
+        "transcript": [
+          "1. Raw materials: Bahan tersedia untuk produksi. Belum dipakai: tetap persediaan.",
+          "2. Work-in-process: Bahan dipakai + tenaga kerja + OH. Biaya pekerjaan yang belum selesai.",
+          "3. Finished goods: Biaya produk yang sudah selesai. Transfer dari WIP = COGM.",
+          "4. Cost of goods sold: Biaya barang yang sudah dijual. Transfer dari finished goods."
         ]
       },
       {
-        "kind": "h2",
-        "text": "Taksonomi Pengendalian: Preventif, Detektif, dan Korektif"
-      },
-      {
-        "kind": "ul",
-        "items": [
-          "Pengendalian Preventif (Mencegah): Mencegah kesalahan atau kecurangan sebelum terjadi. Paling efektif dan ekonomis. Contoh: Password kompleks, pemisahan tugas, validasi input format angka, otorisasi transaksi.",
-          "Pengendalian Detektif (Mendeteksi): Menemukan kesalahan atau kecurangan yang lolos dari pencegahan segera setelah peristiwa terjadi. Contoh: Rekonsiliasi bank bulanan, stock opname fisik gudang, review anggaran vs realisasi bulanan, audit trail.",
-          "Pengendalian Korektif (Memperbaiki): Mengoreksi masalah yang terdeteksi dan memulihkan kondisi sistem. Contoh: Backup data harian, klaim asuransi kerugian, prosedur pemulihan bencana (disaster recovery plan)."
-        ]
-      },
-      {
-        "kind": "h2",
-        "text": "Klasifikasi Tingkat Defisiensi Pengendalian Menurut Standar Audit"
-      },
-      {
-        "kind": "p",
-        "text": "Auditor eksternal dan komite audit mengelompokkan kelemahan pengendalian internal ke dalam tiga kategori berdasarkan tingkat keparahannya:"
-      },
-      {
         "kind": "table",
-        "caption": "Tabel 8.2: Tingkat Defisiensi Pengendalian Internal",
+        "title": "Dokumen dan informasi proses",
         "headers": [
-          "Klasifikasi",
-          "Ambang Batas Keparahan",
-          "Kewajiban Pelaporan"
+          "Dokumen / catatan",
+          "Fungsi",
+          "Kontrol"
         ],
         "rows": [
           [
-            "Control Deficiency (Defisiensi Pengendalian)",
-            "Rancangan atau operasi pengendalian tidak memungkinkan personel mencegah atau mendeteksi salah saji tepat waktu dalam kegiatan normal.",
-            "Dilaporkan ke manajemen operasional dalam Management Letter."
+            "Production authorization",
+            "Menyetujui produk/kuantitas yang akan dibuat dan jadwalnya.",
+            "Petugas berwenang; perubahan terotorisasi."
           ],
           [
-            "Significant Deficiency (Defisiensi Signifikan)",
-            "Defisiensi yang cukup penting untuk mendapatkan perhatian dari pihak yang bertanggung jawab atas tata kelola (Komite Audit/Dewan Komisaris), namun tidak berpotensi salah saji material.",
-            "Wajib dilaporkan secara tertulis kepada Komite Audit dan Dewan Direksi."
+            "Bill of materials (BOM)",
+            "Rencana jenis dan kuantitas bahan untuk produk.",
+            "Versi dan perubahan standar dikendalikan."
           ],
           [
-            "Material Weakness (Kelemahan Material)",
-            "Tingkat defisiensi paling parah di mana terdapat kemungkinan masuk akal (reasonable possibility) bahwa salah saji material pada laporan keuangan tidak dapat dicegah atau dideteksi tepat waktu.",
-            "Wajib dipublikasikan dalam opini audit publik SOX 404 dan menyebabkan Opini Tidak Wajar (Adverse Opinion) atas ICFR."
+            "Material issue",
+            "Mencatat bahan aktual dikeluarkan ke pekerjaan.",
+            "Tautkan ke otorisasi, petugas dan kuantitas."
+          ],
+          [
+            "Labor operations / time records",
+            "Mencatat pekerjaan, pelaku, jam, dan tarif aktual.",
+            "Validasi waktu/tarif, approval independen."
+          ],
+          [
+            "Inspection dan completion",
+            "Mencatat mutu, hasil diterima, serta tanggal selesai aktual.",
+            "Pisahkan inspeksi dari pelaksana, batasi jumlah selesai."
           ]
+        ],
+        "stackOnMobile": true
+      },
+      {
+        "kind": "h2",
+        "text": "2. Contoh bertahap: dari biaya masuk sampai HPP"
+      },
+      {
+        "kind": "example",
+        "title": "Asumsi latihan biaya per bulan",
+        "blocks": [
+          {
+            "kind": "p",
+            "text": "Seluruh angka Rp juta, sistem perpetual. WIP awal 10; bahan langsung digunakan 30; tenaga kerja langsung 20; overhead dibebankan 10; WIP akhir 14. Barang jadi awal 8 dan akhir 12. Tidak ada spoilage abnormal, retur, atau penyesuaian overhead dalam hitungan ini."
+          },
+          {
+            "kind": "ol",
+            "items": [
+              "Biaya ditambahkan ke produksi = 30 + 20 + 10 = 60.",
+              "Biaya yang harus dipertanggungjawabkan di WIP = awal 10 + tambahan 60 = 70.",
+              "COGM = 70 − WIP akhir 14 = 56. Sebanyak 56 ditransfer ke barang jadi.",
+              "Barang jadi tersedia = awal 8 + COGM 56 = 64.",
+              "COGS = 64 − barang jadi akhir 12 = 52.",
+              "Periksa: 10 + 30 + 20 + 10 = 14 + 56 dan 8 + 56 = 12 + 52."
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "formula",
+        "text": "\\mathrm{COGM}=\\mathrm{WIP}_{awal}+\\mathrm{DM}+\\mathrm{DL}+\\mathrm{OH}_{dibebankan}-\\mathrm{WIP}_{akhir}",
+        "note": "DM: direct materials used; DL: direct labor; OH: manufacturing overhead. Semua satuan dan periode harus sama."
+      },
+      {
+        "kind": "journal",
+        "title": "Bahan digunakan",
+        "caption": "Rp juta, sesuai contoh.",
+        "lines": [
+          {
+            "account": "Work-in-Process",
+            "debit": "30"
+          },
+          {
+            "account": "Raw Materials",
+            "credit": "30",
+            "isCredit": true
+          }
+        ]
+      },
+      {
+        "kind": "journal",
+        "title": "Tenaga kerja langsung",
+        "caption": "Rp juta; asumsi belum dibayar.",
+        "lines": [
+          {
+            "account": "Work-in-Process",
+            "debit": "20"
+          },
+          {
+            "account": "Wages Payable",
+            "credit": "20",
+            "isCredit": true
+          }
+        ]
+      },
+      {
+        "kind": "journal",
+        "title": "Overhead dibebankan",
+        "caption": "Rp juta; akun overhead control mencatat pembebanan.",
+        "lines": [
+          {
+            "account": "Work-in-Process",
+            "debit": "10"
+          },
+          {
+            "account": "Manufacturing Overhead",
+            "credit": "10",
+            "isCredit": true
+          }
+        ]
+      },
+      {
+        "kind": "journal",
+        "title": "Produksi selesai",
+        "caption": "Rp juta; hanya biaya produk selesai.",
+        "lines": [
+          {
+            "account": "Finished Goods",
+            "debit": "56"
+          },
+          {
+            "account": "Work-in-Process",
+            "credit": "56",
+            "isCredit": true
+          }
+        ]
+      },
+      {
+        "kind": "journal",
+        "title": "Biaya barang terjual",
+        "caption": "Rp juta; jurnal pendapatan terpisah dan harga jual tidak diberikan.",
+        "lines": [
+          {
+            "account": "Cost of Goods Sold",
+            "debit": "52"
+          },
+          {
+            "account": "Finished Goods",
+            "credit": "52",
+            "isCredit": true
+          }
         ]
       },
       {
         "kind": "callout",
-        "variant": "key",
-        "title": "Prinsip Evaluasi Risiko",
-        "text": "Residual Risk (Risiko Sisa) = Inherent Risk (Risiko Bawaan) dikurangi Efektivitas Pengendalian Internal. Manajemen tidak mungkin mengeliminasi risiko hingga 0%, melainkan menekannya hingga berada di bawah Risk Appetite organisasi."
+        "variant": "warning",
+        "title": "Biaya standar dan aktual",
+        "text": "Overhead yang dibebankan tidak selalu sama dengan overhead aktual. Tarif, cost driver dan selisih harus ditelusuri menurut sistem biaya. Jangan menjumlahkan biaya yang sama dua kali dari tarif overhead dan tagihan aktual. Contoh di atas mengasumsikan tidak ada selisih yang perlu disesuaikan."
+      },
+      {
+        "kind": "h2",
+        "text": "3. Model aktivitas BPMN dan exception produksi"
+      },
+      {
+        "kind": "p",
+        "text": "Sunset memulai produksi saat perlu mengisi barang jadi. Otorisasi diikuti pengeluaran bahan serta pekerjaan, kemudian inspeksi dan penyelesaian. Batch dapat berulang sampai kebutuhan selesai. Model dasar dapat diperinci dengan lane untuk menunjukkan fungsi dan subproses untuk mengelola kerumitan; pilih detail yang membantu menjelaskan tanggung jawab."
+      },
+      {
+        "kind": "figure",
+        "title": "BPMN sederhana: produksi, inspeksi, dan penggantian barang cacat",
+        "svg": "<svg class=\"course-diagram-svg\" viewBox=\"0 0 800 450\" xmlns=\"http://www.w3.org/2000/svg\" style=\"font-family:Inter,Arial,sans-serif;width:100%;height:auto\"><title>Model BPMN konversi dalam satu pool perusahaan</title><defs><marker id=\"conv-bpmn-a\" markerWidth=\"7\" markerHeight=\"7\" refX=\"6\" refY=\"3.5\" orient=\"auto\"><path d=\"M0 0 L7 3.5 L0 7\" fill=\"none\" stroke=\"#0369a1\" stroke-width=\"1.5\"/></marker></defs><rect x=\"8\" y=\"8\" width=\"784\" height=\"434\" fill=\"#f8fafc\" stroke=\"#64748b\"/><text x=\"26\" y=\"32\" font-size=\"14\" fill=\"#475569\">POOL · Perusahaan manufaktur (contoh adaptasi)</text><g fill=\"#eff6ff\" stroke=\"#0369a1\" stroke-width=\"2\"><circle cx=\"48\" cy=\"83\" r=\"16\"/><rect x=\"90\" y=\"58\" width=\"160\" height=\"50\" rx=\"9\"/><rect x=\"310\" y=\"58\" width=\"150\" height=\"50\" rx=\"9\"/><rect x=\"530\" y=\"58\" width=\"180\" height=\"50\" rx=\"9\"/><rect x=\"530\" y=\"200\" width=\"180\" height=\"50\" rx=\"9\"/><path d=\"M360 196 L389 225 L360 254 L331 225 Z\" fill=\"#fff7ed\"/><rect x=\"90\" y=\"200\" width=\"180\" height=\"50\" rx=\"9\"/><rect x=\"310\" y=\"340\" width=\"200\" height=\"50\" rx=\"9\"/><circle cx=\"615\" cy=\"365\" r=\"17\" fill=\"#ecfdf5\" stroke-width=\"4\"/></g><g fill=\"#0f172a\" text-anchor=\"middle\" font-size=\"15\"><text x=\"170\" y=\"88\">Authorize production</text><text x=\"385\" y=\"88\">Issue materials</text><text x=\"620\" y=\"88\">Perform work</text><text x=\"620\" y=\"230\">Inspect work</text><text x=\"180\" y=\"230\">Discard defects</text><text x=\"410\" y=\"370\">Complete production</text></g><g stroke=\"#0369a1\" fill=\"none\" stroke-width=\"2\" marker-end=\"url(#conv-bpmn-a)\"><path d=\"M64 83 H84\"/><path d=\"M250 83 H304\"/><path d=\"M460 83 H524\"/><path d=\"M620 108 V194\"/><path d=\"M530 225 H395\"/><path d=\"M331 225 H276\"/><path d=\"M180 200 V155 H385 V114\"/><path d=\"M360 254 V310 H410 V334\"/><path d=\"M510 365 H592\"/></g><g fill=\"#475569\" font-size=\"14\"><text x=\"348\" y=\"230\">×</text><text x=\"300\" y=\"190\">Lulus mutu?</text><text x=\"285\" y=\"215\">Tidak</text><text x=\"370\" y=\"290\">Ya</text><text x=\"193\" y=\"146\">Produksi pengganti</text><text x=\"34\" y=\"125\">Mulai</text><text x=\"592\" y=\"405\">Selesai</text><text x=\"28\" y=\"426\">Garis penuh = sequence flow dalam pool. Diamond × = exclusive gateway.</text></g></svg>",
+        "mobileFlow": {
+          "mode": "cards",
+          "title": "Baca alur produksi",
+          "stages": [
+            {
+              "actor": "Planning",
+              "actions": [
+                "Otorisasi produksi sesuai kebutuhan."
+              ]
+            },
+            {
+              "actor": "Gudang dan produksi",
+              "actions": [
+                "Keluarkan bahan sesuai otorisasi/BOM.",
+                "Kerjakan produksi dan catat biaya."
+              ]
+            },
+            {
+              "actor": "Inspeksi",
+              "actions": [
+                "Lulus mutu: selesaikan produksi.",
+                "Tidak lulus: buang barang cacat dan produksi pengganti sesuai asumsi."
+              ]
+            },
+            {
+              "actor": "Penyelesaian",
+              "actions": [
+                "Perbarui barang jadi dan biaya produksi."
+              ]
+            }
+          ]
+        },
+        "altText": "Start, authorize production, issue materials, perform work, inspect work, exclusive gateway mutu. Jika tidak lulus, discard defects lalu ulangi issue dan work. Jika lulus, complete production dan end.",
+        "transcript": [
+          "Satu pool perusahaan: seluruh aktivitas internal dihubungkan sequence flow.",
+          "Start → Authorize production → Issue materials → Perform work → Inspect work.",
+          "Exclusive gateway mutu: satu jalur dipilih. Tidak lulus → Discard defects → produksi pengganti; lulus → Complete production → End.",
+          "Model ini menyederhanakan batch dan inspeksi; subproses/loop batch serta lane dapat ditambahkan sesuai kebutuhan."
+        ],
+        "caption": "Diagram adaptasi buatan dari uraian Sunset Graphics, Richardson Ch.9 pp.354–357. Ini model satu pool dengan sequence flow, bukan collaboration antarpihak; jalur barang cacat mengikuti asumsi discard dan penggantian."
+      },
+      {
+        "kind": "p",
+        "text": "Pada BPMN, sequence flow menghubungkan aktivitas di dalam pool. Message flow dipakai antar-pool peserta berbeda; memisahkan fungsi internal menjadi lane tidak otomatis memerlukan message flow. Exclusive gateway memilih jalur sesuai kondisi. Loop menggambarkan pekerjaan berulang, sedangkan parallel gateway menunjukkan cabang yang berjalan bersamaan dan harus disinkronkan sesuai desain."
+      },
+      {
+        "kind": "example",
+        "title": "Barang cacat: periksa aturan sebelum menggambar",
+        "blocks": [
+          {
+            "kind": "p",
+            "text": "Pada uraian Sunset, barang yang gagal mutu dibuang dan dibuat penggantinya. Jika perusahaan lain mengizinkan rework, diagram perlu cabang rework, inspeksi ulang, dan catatan biaya terkait. Jangan menggambar semua kegagalan mutu langsung masuk barang jadi. Aturan bisnis menentukan cabang proses serta informasi yang perlu disimpan."
+          }
+        ]
+      },
+      {
+        "kind": "h2",
+        "text": "4. Business rules, akses, dan kontrol aplikasi"
+      },
+      {
+        "kind": "table",
+        "title": "Adaptasi kontrol Exhibit 9.6",
+        "headers": [
+          "Langkah",
+          "Pemisahan / akses",
+          "Kontrol aplikasi dan bukti"
+        ],
+        "rows": [
+          [
+            "Authorize production",
+            "Pengotorisasi tidak bebas mengubah catatan persediaan.",
+            "Nomor otorisasi, batas kuantitas/nilai, approval sesuai wewenang."
+          ],
+          [
+            "Issue materials",
+            "Penerbit bahan berbeda dari pengotorisasi; tidak bebas mengubah BOM.",
+            "Tautkan ke job dan BOM, cek rentang jumlah, catat tanggal/petugas."
+          ],
+          [
+            "Perform work",
+            "Pencatat jam tidak mengubah otorisasi produksi tanpa izin.",
+            "Nomor operasi, cek jam/tarif, identitas pekerja dan supervisor."
+          ],
+          [
+            "Inspect work",
+            "Inspektur berbeda dari pelaksana pekerjaan yang diperiksa.",
+            "Jumlah diterima/cacat dan hasil inspeksi terdokumentasi."
+          ],
+          [
+            "Complete production",
+            "Pemindah hasil tidak mengambil alih otorisasi produksi.",
+            "Jumlah selesai dibatasi otorisasi, tanggal aktual, stok diperbarui."
+          ]
+        ],
+        "stackOnMobile": true
+      },
+      {
+        "kind": "p",
+        "text": "Buku memakai contoh batas supervisor untuk otorisasi >$5.000. Itu aturan kasus Sunset, bukan batas universal seluruh perusahaan. Default tanggal hari ini mengurangi salah input, tetapi tidak boleh menyembunyikan tanggal kejadian sebenarnya atau cutoff. Nilai default tetap perlu validasi dan jejak koreksi. Richardson p.358 (PDF 383)."
+      },
+      {
+        "kind": "h2",
+        "text": "5. Struktur REA/UML dan perhitungan WIP"
+      },
+      {
+        "kind": "figure",
+        "title": "Resources, events, agents dan rencana",
+        "svg": "<svg class=\"course-diagram-svg\" role=\"img\" aria-label=\"Resources, events, agents dan rencana\" viewBox=\"0 0 800 278\" xmlns=\"http://www.w3.org/2000/svg\" style=\"font-family:Inter,Arial,sans-serif;width:100%;height:auto\"><title>Resources, events, agents dan rencana</title><defs><marker id=\"conversion-rea-a-false\" markerWidth=\"6\" markerHeight=\"6\" refX=\"5\" refY=\"3\" orient=\"auto\"><path d=\"M0 0 L6 3 L0 6\" fill=\"none\" stroke=\"#64748b\" stroke-width=\"1.5\"/></marker></defs><g><rect x=\"16\" y=\"16\" width=\"365\" height=\"108\" rx=\"12\" fill=\"#eff6ff\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"45\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">1. Resources</text>\n      <text x=\"32\" y=\"72\" fill=\"#334155\" font-size=\"14\">Bahan dan produk jadi.</text><text x=\"32\" y=\"94\" fill=\"#334155\" font-size=\"14\">Equipment bila diperlukan.</text></g><g><rect x=\"411\" y=\"16\" width=\"365\" height=\"108\" rx=\"12\" fill=\"#ecfdf5\" stroke=\"#94a3b8\"/>\n      <text x=\"427\" y=\"45\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">2. Events</text>\n      <text x=\"427\" y=\"72\" fill=\"#334155\" font-size=\"14\">Authorization, issue, labor.</text><text x=\"427\" y=\"94\" fill=\"#334155\" font-size=\"14\">Rekam aktual dan status selesai.</text></g><g><rect x=\"16\" y=\"154\" width=\"365\" height=\"108\" rx=\"12\" fill=\"#eff6ff\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"183\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">3. Agents</text>\n      <text x=\"32\" y=\"210\" fill=\"#334155\" font-size=\"14\">Pengotorisasi, gudang, pekerja.</text><text x=\"32\" y=\"232\" fill=\"#334155\" font-size=\"14\">Simpan peran pada setiap event.</text></g><g><rect x=\"411\" y=\"154\" width=\"365\" height=\"108\" rx=\"12\" fill=\"#ecfdf5\" stroke=\"#94a3b8\"/>\n      <text x=\"427\" y=\"183\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">4. Plans / type images</text>\n      <text x=\"427\" y=\"210\" fill=\"#334155\" font-size=\"14\">BOM, kategori dan rencana kerja.</text><text x=\"427\" y=\"232\" fill=\"#334155\" font-size=\"14\">Bandingkan standar dengan aktual.</text></g></svg>",
+        "mobileSvg": "<svg class=\"course-diagram-svg\" role=\"img\" aria-label=\"Resources, events, agents dan rencana\" viewBox=\"0 0 360 566\" xmlns=\"http://www.w3.org/2000/svg\" style=\"font-family:Inter,Arial,sans-serif;width:100%;height:auto\"><title>Resources, events, agents dan rencana</title><defs><marker id=\"conversion-rea-a-true\" markerWidth=\"6\" markerHeight=\"6\" refX=\"5\" refY=\"3\" orient=\"auto\"><path d=\"M0 0 L6 3 L0 6\" fill=\"none\" stroke=\"#64748b\" stroke-width=\"1.5\"/></marker></defs><g><rect x=\"16\" y=\"16\" width=\"328\" height=\"108\" rx=\"12\" fill=\"#eff6ff\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"45\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">1. Resources</text>\n      <text x=\"32\" y=\"72\" fill=\"#334155\" font-size=\"14\">Bahan dan produk jadi.</text><text x=\"32\" y=\"94\" fill=\"#334155\" font-size=\"14\">Equipment bila diperlukan.</text></g><g><rect x=\"16\" y=\"158\" width=\"328\" height=\"108\" rx=\"12\" fill=\"#ecfdf5\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"187\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">2. Events</text>\n      <text x=\"32\" y=\"214\" fill=\"#334155\" font-size=\"14\">Authorization, issue, labor.</text><text x=\"32\" y=\"236\" fill=\"#334155\" font-size=\"14\">Rekam aktual dan status selesai.</text></g><g><rect x=\"16\" y=\"300\" width=\"328\" height=\"108\" rx=\"12\" fill=\"#eff6ff\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"329\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">3. Agents</text>\n      <text x=\"32\" y=\"356\" fill=\"#334155\" font-size=\"14\">Pengotorisasi, gudang, pekerja.</text><text x=\"32\" y=\"378\" fill=\"#334155\" font-size=\"14\">Simpan peran pada setiap event.</text></g><g><rect x=\"16\" y=\"442\" width=\"328\" height=\"108\" rx=\"12\" fill=\"#ecfdf5\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"471\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">4. Plans / type images</text>\n      <text x=\"32\" y=\"498\" fill=\"#334155\" font-size=\"14\">BOM, kategori dan rencana kerja.</text><text x=\"32\" y=\"520\" fill=\"#334155\" font-size=\"14\">Bandingkan standar dengan aktual.</text></g></svg>",
+        "caption": "Peta REA konseptual buatan, bukan UML dengan multiplicity. Tabel berikut menjelaskan hubungan yang diterapkan.",
+        "altText": "1. Resources: Bahan dan produk jadi. Equipment bila diperlukan.; 2. Events: Authorization, issue, labor. Rekam aktual dan status selesai.; 3. Agents: Pengotorisasi, gudang, pekerja. Simpan peran pada setiap event.; 4. Plans / type images: BOM, kategori dan rencana kerja. Bandingkan standar dengan aktual.",
+        "transcript": [
+          "1. Resources: Bahan dan produk jadi. Equipment bila diperlukan.",
+          "2. Events: Authorization, issue, labor. Rekam aktual dan status selesai.",
+          "3. Agents: Pengotorisasi, gudang, pekerja. Simpan peran pada setiap event.",
+          "4. Plans / type images: BOM, kategori dan rencana kerja. Bandingkan standar dengan aktual."
+        ]
+      },
+      {
+        "kind": "p",
+        "text": "Pada model generik buku, WIP tidak harus menjadi kelas resource tersendiri karena nilainya dapat dihitung dari biaya material issues, labor operations dan alokasi overhead yang belum ditransfer ke barang jadi. Ini keputusan model data, bukan berarti akun atau saldo WIP hilang dari akuntansi. Production authorization menyimpan rencana dan kemudian diperbarui dengan hasil/tanggal aktual. Richardson pp.358–362."
+      },
+      {
+        "kind": "table",
+        "title": "Hubungan dan implementasi tabel",
+        "headers": [
+          "Hubungan",
+          "Aturan / multiplicity",
+          "Implementasi"
+        ],
+        "rows": [
+          [
+            "Authorization–Material issue",
+            "Satu authorization dapat mempunyai beberapa issue; satu issue merujuk satu authorization.",
+            "Prod_auth_number FK pada Material_Issue."
+          ],
+          [
+            "Material issue–Materials",
+            "Satu issue memuat beberapa bahan; satu bahan dapat dikeluarkan pada banyak issue.",
+            "Link Material_Issue_Materials dengan PK gabungan dan Qty_issued."
+          ],
+          [
+            "Labor operations–Employees",
+            "Satu operasi dapat melibatkan beberapa pegawai; satu pegawai bekerja pada banyak operasi.",
+            "Link Labor_Operations_Employees menyimpan jam dan tarif aktual."
+          ],
+          [
+            "Products–Materials",
+            "Bahan dapat dipakai banyak produk dan produk memerlukan banyak bahan.",
+            "BOM dengan identitas serta kuantitas standar; Sunset memodelkannya sebagai type image."
+          ]
+        ],
+        "stackOnMobile": true
+      },
+      {
+        "kind": "pendalaman",
+        "title": "Nama tabel dan atribut pada contoh Sunset",
+        "blocks": [
+          {
+            "kind": "p",
+            "text": "Exhibit 9.9 menyebut tblBill_of_Material, tblLabor_Operations, tblLabor_Operations_Employees, tblMaterial_Issue, tblMaterial_Issue_Materials, tblMaterials, tblEmployees, tblProduct_Category, tblProduction_Authorizations, dan tblProducts. Tabel penghubung mencegah daftar banyak nilai disimpan pada satu field."
+          },
+          {
+            "kind": "p",
+            "text": "Production authorizations membedakan Prod_auth_date, Scheduled_completion_date dan Actual_completion_date, selain Scheduled_qty_to_produce dan Actual_qty_produced. Jangan menyamakan tanggal otorisasi dengan tanggal selesai. Database juga memerlukan PK, tipe data, FK serta referential integrity setelah tabel dibentuk. Richardson pp.361–363 (PDF 386–388)."
+          }
+        ]
+      },
+      {
+        "kind": "h2",
+        "text": "6. Uji pemahaman"
+      },
+      {
+        "kind": "self-check",
+        "question": "Dengan data contoh, WIP akhir sebenarnya 18. Berapa COGM dan COGS jika FG akhir tetap 12?",
+        "answer": [
+          {
+            "kind": "p",
+            "text": "Biaya tersedia di WIP tetap 70. COGM = 70 − 18 = 52. Barang jadi tersedia = 8 + 52 = 60; COGS = 60 − 12 = 48. WIP lebih tinggi berarti lebih sedikit biaya ditransfer, bukan biaya tambahan otomatis."
+          }
+        ],
+        "signal": "Jika alasannya belum jelas, kembali ke contoh sebelum membuka jawaban."
+      },
+      {
+        "kind": "self-check",
+        "question": "BOM dan material issue terlihat berbeda. Mengapa ini belum otomatis fraud?",
+        "answer": [
+          {
+            "kind": "p",
+            "text": "BOM menunjukkan rencana, issue menunjukkan aktual. Perbedaan bisa berasal dari perubahan spesifikasi, kehilangan, pemborosan, atau kesalahan pencatatan. Periksa versi BOM, approval, jumlah hasil, retur bahan, dan bukti fisik sebelum menyimpulkan penyebab."
+          }
+        ],
+        "signal": "Jika alasannya belum jelas, kembali ke contoh sebelum membuka jawaban."
+      },
+      {
+        "kind": "callout",
+        "variant": "info",
+        "title": "Pola jawaban",
+        "text": "Alur fisik → dokumen/event → dampak biaya → kontrol → hubungan data → bukti. Bedakan rencana dan aktual, COGM dan COGS, serta akun WIP dan kelas pada model."
+      },
+      {
+        "kind": "callout",
+        "variant": "info",
+        "title": "Sumber dan batas pembahasan",
+        "text": "RPS-SIA minggu 8; Richardson Ch.9 pp.350–365 (PDF 375–390), terutama Exhibit 9.1, 9.6, 9.7–9.10. Angka biaya adalah latihan buatan, sedangkan nama tabel dan pembedaan tanggal mengikuti Exhibit 9.9. Angka, perusahaan, diagram, dan skenario latihan di halaman ini adalah ilustrasi buatan kecuali dinyatakan lain. Urutan materi inti mengikuti RPS-SIA, Pembagian Mengajar Gasal 2025/2026, halaman 1; pendalaman di luar bab terjadwal diberi label pelengkap."
       }
     ]
   },
   "questions": [
     {
       "tm": 8,
-      "topic": "Pengendalian Internal COSO",
+      "topic": "Conversion Business Process",
       "difficulty": "medium",
-      "q": "Komponen pengendalian internal COSO yang dianggap sebagai fondasi utama bagi seluruh komponen pengendalian lainnya karena menentukan 'Tone at the Top' organisasi adalah...",
+      "q": "Saat bahan langsung dikeluarkan untuk produksi dalam sistem perpetual, jurnal yang tepat adalah...",
       "options": [
-        "Risk Assessment",
-        "Control Environment (Lingkungan Pengendalian)",
-        "Monitoring Activities",
-        "Information and Communication"
+        "Dr WIP; Cr Raw Materials.",
+        "Dr COGS; Cr Cash.",
+        "Dr Finished Goods; Cr Revenue.",
+        "Dr Accounts Receivable; Cr WIP."
       ],
-      "answer": 1,
-      "explanation": "Control Environment adalah fondasi piramida COSO. Komponen ini mencakup integritas, nilai etika dewan direksi/komisaris, filosofi manajemen, struktur organisasi, dan komitmen terhadap kompetensi SDM."
+      "answer": 0,
+      "explanation": "Biaya berpindah dari bahan ke WIP; belum otomatis menjadi barang jadi atau HPP. Rujukan: Richardson AIS 4e, Ch.9 pp.350–365 (PDF 375–390)."
     },
     {
       "tm": 8,
-      "topic": "Pengendalian Internal COSO",
-      "difficulty": "advanced",
-      "q": "Berdasarkan kerangka COSO 2013, berapakah jumlah prinsip pendukung (principles) yang wajib diterapkan di seluruh 5 komponen pengendalian agar sistem pengendalian internal dinilai efektif?",
-      "options": [
-        "10 Prinsip",
-        "17 Prinsip",
-        "25 Prinsip",
-        "5 Prinsip"
-      ],
-      "answer": 1,
-      "explanation": "COSO 2013 menetapkan 17 prinsip eksplisit yang terbagi ke dalam 5 komponen: Lingkungan Pengendalian (5 prinsip), Penilaian Risiko (4 prinsip), Aktivitas Pengendalian (3 prinsip), Informasi & Komunikasi (3 prinsip), dan Pemantauan (2 prinsip)."
-    },
-    {
-      "tm": 8,
-      "topic": "Pengendalian Internal COSO",
+      "topic": "Conversion Business Process",
       "difficulty": "medium",
-      "q": "Pemasangan kamera CCTV di gudang dan rekonsiliasi bulanan antara saldo fisik kas dengan catatan pembukuan diklasifikasikan sebagai jenis pengendalian...",
+      "q": "WIP awal 10, DM 30, DL 20, OH dibebankan 10 dan WIP akhir 14 (Rp juta). COGM adalah...",
       "options": [
-        "Pengendalian Preventif",
-        "Pengendalian Detektif",
-        "Pengendalian Korektif",
-        "Pengendalian Kompensasi"
+        "Rp46 juta.",
+        "Rp56 juta.",
+        "Rp60 juta.",
+        "Rp70 juta."
       ],
       "answer": 1,
-      "explanation": "Pengendalian Detektif berfungsi untuk menemukan dan mengidentifikasi kesalahan, anomali, atau kecurangan setelah peristiwa tersebut terjadi (misal: rekonsiliasi bank, review varians biaya, stock opname)."
+      "explanation": "COGM = 10 + 30 + 20 + 10 − 14 = 56. WIP akhir belum ditransfer ke barang jadi. Rujukan: Richardson AIS 4e, Ch.9 pp.350–365 (PDF 375–390)."
     },
     {
       "tm": 8,
-      "topic": "Pengendalian Internal COSO",
-      "difficulty": "advanced",
-      "q": "Dalam Fraud Triangle, tiga kondisi yang hampir selalu hadir saat kecurangan akuntansi terjadi adalah...",
-      "options": [
-        "Kolusi, Teknologi Usang, dan Kelalaian Pajak",
-        "Tekanan/Insentif (Pressure), Peluang (Opportunity), dan Rasionalisasi (Rationalization)",
-        "Inflasi, Suku Bunga Tinggi, dan Likuiditas Rendah",
-        "Sistem Terbuka, Password Lemah, dan Jaringan Nirkabel"
-      ],
-      "answer": 1,
-      "explanation": "Teori Fraud Triangle Donald Cressey: (1) Pressure (tekanan finansial/target), (2) Opportunity (peluang akibat lemahnya internal control), dan (3) Rationalization (pembenaran moral pelaku bahwa tindakannya sah)."
-    },
-    {
-      "tm": 8,
-      "topic": "Pengendalian Internal COSO",
+      "topic": "Conversion Business Process",
       "difficulty": "medium",
-      "q": "Manakah di bawah ini yang merupakan contoh dari Pengendalian Korektif (Corrective Control)?",
+      "q": "Dalam model generik conversion, mengapa WIP tidak harus menjadi kelas resource terpisah?",
       "options": [
-        "Pemisahan tugas antara kasir dan pencatat piutang",
-        "Pembuatan password akun dengan otentikasi dua faktor (2FA)",
-        "Pemulihan file database akuntansi dari cadangan data (backup restore) setelah sistem terinfeksi malware",
-        "Pemeriksaan nomor urut faktur penjualan"
+        "Karena seluruh biaya produksi harus langsung menjadi beban periode.",
+        "Karena WIP hanya berisi bahan yang belum pernah dikeluarkan.",
+        "Karena nilainya dapat diturunkan dari biaya event yang belum ditransfer.",
+        "Karena ledger tidak boleh mencatat akun persediaan yang belum selesai."
       ],
       "answer": 2,
-      "explanation": "Corrective Control bertujuan memperbaiki masalah dan mengembalikan sistem ke kondisi normal setelah insiden terjadi, seperti me-restore data backup, mendiskualifikasi vendor curang, atau merevisi jurnal koreksi."
+      "explanation": "Model data dapat menghitung WIP dari biaya material, labor dan overhead pada pekerjaan terbuka. Ini tidak menghapus saldo akuntansi WIP. Rujukan: Richardson AIS 4e, Ch.9 pp.350–365 (PDF 375–390)."
+    },
+    {
+      "tm": 8,
+      "topic": "Conversion Business Process",
+      "difficulty": "medium",
+      "q": "Satu material issue memuat beberapa bahan, dan satu bahan muncul pada banyak issue. Implementasi relasionalnya adalah...",
+      "options": [
+        "Menyimpan seluruh nomor bahan dalam satu field berisi daftar.",
+        "Menghapus identitas bahan dan menyimpan satu total perusahaan.",
+        "Menjadikan tanggal issue sebagai satu-satunya primary key.",
+        "Membuat linking table issue–bahan dengan kuantitas per pasangan."
+      ],
+      "answer": 3,
+      "explanation": "Hubungan many-to-many diterapkan melalui linking table; identitas issue dan bahan menjadi referensi yang valid. Rujukan: Richardson AIS 4e, Ch.9 pp.350–365 (PDF 375–390)."
+    },
+    {
+      "tm": 8,
+      "topic": "Conversion Business Process",
+      "difficulty": "medium",
+      "q": "Pada model Sunset, barang gagal inspeksi dibuang lalu dibuat penggantinya. Model aktivitas harus menunjukkan...",
+      "options": [
+        "Jalur exception yang kembali ke aktivitas produksi sesuai aturan.",
+        "Message flow wajib antarlane dalam satu pool perusahaan.",
+        "Penggabungan seluruh hasil cacat ke barang jadi tanpa inspeksi.",
+        "End event sebelum hasil inspeksi diketahui atau dicatat."
+      ],
+      "answer": 0,
+      "explanation": "Gateway mengarahkan hasil mutu; loop/exception mengikuti aturan perusahaan. Sequence flow digunakan di dalam pool. Rujukan: Richardson AIS 4e, Ch.9 pp.350–365 (PDF 375–390)."
     }
   ],
   "flashcards": [
     {
-      "id": "aks301-tm08-01",
+      "id": "aks301-v3-tm08-01",
       "phase": "pra-uas",
       "tm": 8,
-      "topic": "Pengendalian Internal COSO Framework",
-      "category": "Definisi",
-      "front": "Definisi Pengendalian Internal COSO",
-      "back": "Proses yang dipengaruhi oleh dewan komisaris, manajemen, dan personel untuk memberikan keyakinan memadai atas pencapaian tujuan operasi, pelaporan, dan kepatuhan. Rujukan: Richardson et al. AIS 4e · Ch. 11, hal. cetak 386-408 (PDF 411-433)."
-    },
-    {
-      "id": "aks301-tm08-02",
-      "phase": "pra-uas",
-      "tm": 8,
-      "topic": "Pengendalian Internal COSO Framework",
+      "topic": "Conversion Business Process",
       "category": "Konsep",
-      "front": "Tiga Kategori Tujuan Pengendalian COSO",
-      "back": "(1) Operations Objectives (efektivitas operasional), (2) Reporting Objectives (keandalan laporan), dan (3) Compliance Objectives (kepatuhan hukum). Rujukan: Richardson et al. AIS 4e · Ch. 11, hal. cetak 386-408 (PDF 411-433)."
+      "front": "Alur biaya conversion",
+      "back": "Raw materials → WIP → finished goods → COGS; COGM adalah transfer produk selesai, COGS biaya produk terjual. Rujukan: Richardson AIS 4e, Ch.9 pp.350–365 (PDF 375–390)."
     },
     {
-      "id": "aks301-tm08-03",
+      "id": "aks301-v3-tm08-02",
       "phase": "pra-uas",
       "tm": 8,
-      "topic": "Pengendalian Internal COSO Framework",
+      "topic": "Conversion Business Process",
       "category": "Konsep",
-      "front": "Lima Komponen Pengendalian Internal COSO",
-      "back": "(1) Control Environment, (2) Risk Assessment, (3) Control Activities, (4) Information & Communication, dan (5) Monitoring Activities. Rujukan: Richardson et al. AIS 4e · Ch. 11, hal. cetak 386-408 (PDF 411-433)."
+      "front": "Rumus COGM",
+      "back": "WIP awal + bahan langsung terpakai + tenaga kerja langsung + overhead dibebankan − WIP akhir. Rujukan: Richardson AIS 4e, Ch.9 pp.350–365 (PDF 375–390)."
     },
     {
-      "id": "aks301-tm08-04",
+      "id": "aks301-v3-tm08-03",
       "phase": "pra-uas",
       "tm": 8,
-      "topic": "Pengendalian Internal COSO Framework",
-      "category": "Klasifikasi",
-      "front": "Tiga Tipe Pengendalian Berdasarkan Waktu",
-      "back": "Preventif (mencegah kesalahan terjadi), Detektif (menemukan kesalahan yang lolos), dan Korektif (memperbaiki dampak kesalahan yang ditemukan). Rujukan: Richardson et al. AIS 4e · Ch. 11, hal. cetak 386-408 (PDF 411-433)."
-    },
-    {
-      "id": "aks301-tm08-05",
-      "phase": "pra-uas",
-      "tm": 8,
-      "topic": "Pengendalian Internal COSO Framework",
-      "category": "Hukum",
-      "front": "Sarbanes-Oxley Act (SOX) Section 404",
-      "back": "Mewajibkan manajemen perusahaan publik menilai efektivitas pengendalian internal pelaporan keuangan (ICFR) dan diaudit auditor independen. Rujukan: Richardson et al. AIS 4e · Ch. 11, hal. cetak 386-408 (PDF 411-433)."
-    },
-    {
-      "id": "aks301-tm08-06",
-      "phase": "pra-uas",
-      "tm": 8,
-      "topic": "Pengendalian Internal COSO Framework",
+      "topic": "Conversion Business Process",
       "category": "Konsep",
-      "front": "COSO Enterprise Risk Management (ERM)",
-      "back": "Kerangka kerja perluasan COSO yang mengintegrasikan pengelolaan risiko ke dalam strategi korporasi dan penciptaan nilai pemegang saham. Rujukan: Richardson et al. AIS 4e · Ch. 11, hal. cetak 386-408 (PDF 411-433)."
+      "front": "BOM versus material issue",
+      "back": "BOM memuat rencana bahan; material issue mencatat pemakaian aktual. Selisih perlu investigasi dan approval. Rujukan: Richardson AIS 4e, Ch.9 pp.350–365 (PDF 375–390)."
+    },
+    {
+      "id": "aks301-v3-tm08-04",
+      "phase": "pra-uas",
+      "tm": 8,
+      "topic": "Conversion Business Process",
+      "category": "Konsep",
+      "front": "Model WIP",
+      "back": "WIP dapat dihitung dari biaya event pekerjaan belum selesai; tidak harus menjadi kelas resource tersendiri pada model generik. Rujukan: Richardson AIS 4e, Ch.9 pp.350–365 (PDF 375–390)."
+    },
+    {
+      "id": "aks301-v3-tm08-05",
+      "phase": "pra-uas",
+      "tm": 8,
+      "topic": "Conversion Business Process",
+      "category": "Konsep",
+      "front": "Linking table conversion",
+      "back": "Hubungan banyak material issue–bahan dan labor operations–pegawai memakai tabel penghubung dengan data jumlah/jam. Rujukan: Richardson AIS 4e, Ch.9 pp.350–365 (PDF 375–390)."
+    },
+    {
+      "id": "aks301-v3-tm08-06",
+      "phase": "pra-uas",
+      "tm": 8,
+      "topic": "Conversion Business Process",
+      "category": "Konsep",
+      "front": "Tanggal production authorization",
+      "back": "Bedakan tanggal otorisasi, tanggal selesai terjadwal, dan tanggal selesai aktual; jangan menyamakannya. Rujukan: Richardson AIS 4e, Ch.9 pp.350–365 (PDF 375–390)."
     }
   ],
-  "scope": "Snapshot audit pasca-UTS. Kebenaran sumber dan batas diperiksa terpisah dari kesamaan implementasi."
+  "bank": {
+    "type": "case",
+    "scope": "TM 8: Conversion Business Process",
+    "difficulty": "Komprehensif",
+    "estimatedTime": "30–45 menit",
+    "question": "Studi Kasus 8: Conversion Business Process",
+    "context": "Ilustrasi latihan buatan. Pabrik memakai persediaan perpetual dan mencatat biaya per job. Beberapa pekerja juga menginspeksi hasilnya sendiri.",
+    "data": [
+      "Rp juta: WIP awal 10; DM terpakai 30; DL 20; OH dibebankan 10; WIP akhir 14; FG awal 8; FG akhir 12.",
+      "Tanpa spoilage abnormal, selisih OH, retur atau transaksi lain dalam hitungan."
+    ],
+    "instructions": [
+      "Hitung COGM/COGS dan tulis jurnal perpindahan biaya.",
+      "Gambarkan produksi–inspeksi dengan jalur cacat mengikuti asumsi discard/penggantian.",
+      "Rancang kontrol inspeksi serta relasi data issue–bahan dan operasi–pegawai."
+    ],
+    "outputFormat": [
+      "Alur/diagram dan analisis konsep",
+      "Perhitungan atau rancangan dengan asumsi jelas",
+      "Kontrol, bukti dan batas simpulan"
+    ],
+    "rubric": [
+      "Ketepatan konsep dan pemetaan (30%)",
+      "Ketepatan langkah serta perhitungan/rancangan (40%)",
+      "Alasan, bukti dan batas jawaban (30%)"
+    ],
+    "answerGuide": "Biaya ditambahkan 60; tersedia di WIP 70; COGM 56; FG tersedia 64; COGS 52. Jurnal Rp juta: Dr WIP 30 Cr RM 30; Dr WIP 20 Cr utang gaji 20; Dr WIP 10 Cr OH 10; Dr FG 56 Cr WIP 56; Dr COGS 52 Cr FG 52. Alur: otorisasi → issue → work → inspect; gagal dibuang/diganti, lulus selesai. Pisahkan inspektur dan pekerja, batasi perubahan BOM, simpan bukti jumlah/biaya serta tanggal aktual. Gunakan linking table issue–material dan labor–employee, PK/FK dan referential integrity. WIP dapat dihitung dari event terbuka; akun WIP tetap ada. Rujukan: Richardson AIS 4e, Ch.9 pp.350–365 (PDF 375–390)."
+  },
+  "scope": "Active package revised 2026-10-16 against RPS-SIA p.1; supersedes historical catalog mapping. See docs/sia-pra-uas-20261016.md."
 }

@@ -178,7 +178,11 @@
   },
   "src/data/banksoal/sii306.ts": {
     "worktree": "5eca2952e3848c514be436a9f6371ed60b5b6f493d3b4d767693d2916322167a",
-    "repository": "3f2ccda6897abdceb8fcb68c170f2c6e66706ee8a9a8b83594f2c93969c81479"
+    "repository": "3f2ccda6897abdceb8fcb68c170f2c6e66706ee8a9a8b83594f2c93969c81479",
+    "authorizedSiaRps20261016": [
+      "ddc9ac48b7c4f9b6214960ee4363e645cb36f2f5a02ee743f1b70933359401ff",
+      "1804641729ad64dd1e773959b7646981c807147a7e2cdcf8c38aae12eac282f2"
+    ]
   },
   "src/data/flashcards/agx101.ts": {
     "worktree": "f7a6b166190a1f439d1a02d29702078aab111dbd2ce9452bc30fdabf0309e7c6",
@@ -315,6 +319,10 @@
     "authorizedAudit20261012": [
       "aed9ddf3c02d45a298b9c281c5b226795b4afda5bc5023f703763a1217390e8d",
       "4dff7faac4ab088d7db6308a0b4fa721a5669de8158caabd0519dccfb43a8e8b"
+    ],
+    "authorizedSiaRps20261016": [
+      "eee5ffaeab757ae62009f47660a5596eeb3f7c3b0c548c0dc33ee3fc61162584",
+      "1859ef0843aa45197ce6f17091aee0826492a06053d5c762e3cc6855c0e753e1"
     ]
   },
   "src/data/flashcards/sip107.ts": {
@@ -509,6 +517,10 @@
       "e43a7a9a678036ceadc06c30d4acdd0d6268ac4d83bc04f9848f1bec4749e793",
       "4922df2f4a4f454d1e21740e4e068478fe482a104d42acbbd25706c3db4f96af",
       "b0c1fce3776ef8e1e615c64ec92b098f3528663ffae142512468f08cf059d9dd"
+    ],
+    "authorizedSiaRps20261016": [
+      "2cba127f2d19ced32348289b6f94e5b5c437f246df120aee1643b619960d18db",
+      "8845d41bb5754c08d08fb53463a81676f510a6f26b2e5db5b1fc1aa161cd4b63"
     ]
   },
   "src/data/quizzes/sip107.ts": {

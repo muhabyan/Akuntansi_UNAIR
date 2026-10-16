@@ -333,13 +333,13 @@ const SII306_TM1_7 = materi([
   ['Purchases and Payments Business Process', 'Richardson et al. AIS 4e · Ch. 8'],
 ], 1);
 const SII306_TM8_14 = materi([
-  ['Pengendalian Internal & Kerangka Kerja COSO', 'Richardson et al. AIS 4e · Ch. 9'],
-  ['Keamanan Informasi, Ancaman Siber & Computer Fraud', 'Richardson et al. AIS 4e · Ch. 10'],
-  ['Audit Sistem Informasi, CAATs & Tata Kelola TI (COBIT)', 'Richardson et al. AIS 4e · Ch. 11'],
-  ['Analitika Data Akuntansi & Big Data', 'Richardson et al. AIS 4e · Ch. 12'],
-  ['RPA & Kecerdasan Buatan dalam Akuntansi', 'Richardson et al. AIS 4e · Ch. 13'],
-  ['Blockchain, Smart Contracts & Cloud Accounting', 'Richardson et al. AIS 4e · Ch. 14'],
-  ['Review Komprehensif Siklus SIA & Simulasi Kasus UAS', 'Richardson et al. AIS 4e · Kompilasi'],
+  ['Conversion Business Process', 'Richardson et al. AIS 4e · Ch. 9'],
+  ['Integrated Project', 'Richardson et al. AIS 4e · Ch. 10'],
+  ['Accounting Information Systems and Internal Controls', 'Richardson et al. AIS 4e · Ch. 11'],
+  ['Cybersecurity and Computer Fraud', 'Richardson et al. AIS 4e · Ch. 12'],
+  ['Reporting Processes and XBRL', 'Richardson et al. AIS 4e · Ch. 14'],
+  ['Emerging Technologies: Blockchain and AI Automation', 'Richardson et al. AIS 4e · Ch. 15'],
+  ['Justifying and Planning IT Initiatives Using Project Management Techniques', 'Richardson et al. AIS 4e · Ch. 17'],
 ], 8);
 const SII306_REF = [
   'Richardson, V. J., Chang, C. J., & Smith, R. E. (2023). Accounting Information Systems (4th ISE ed.). McGraw-Hill. (Wajib)',

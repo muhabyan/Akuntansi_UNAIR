@@ -1,7 +1,9 @@
-# SII306 TM12: snapshot hasil audit
+# SII306 TM12: Reporting Processes dan eXtensible Business Reporting Language (XBRL)
 
-04 JSON SHA256: 5721d25b2b233fe24d1de4240619c4d1b27a82d73a13bc5bb75e4c9cfde825ce
+Active revision: 2026-10-16. RPS-SIA p.1.
 
-Sumber terdaftar: Richardson et al. AIS 4e · Ch. 15, hal. 508-516 (PDF 533-541)
+RPS-SIA minggu 12 · Richardson AIS 4e · Ch. 14, pp. 470–483 (PDF 495–508)
 
-Batas verifikasi sumber ada pada docs/audit-2026-10-12/SII306.md. Snapshot JSON mempertahankan teks data historis; 05 menormalkan gaya penulisan untuk dibaca mahasiswa. Snapshot ini mengunci isi implementasi dan tidak menyatakan semua klaim sumber lengkap.
+SHA256: 4097372fd4f9aba0f670f791fcc5b568143937d90b36bd19dc4e4a1c682fcad1
+
+Audit directory retained for compatibility; the previous October 12 mapping is superseded. Source/coverage decisions: docs/sia-pra-uas-20261016.md.
