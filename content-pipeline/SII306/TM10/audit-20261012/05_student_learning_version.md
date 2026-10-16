@@ -34,6 +34,30 @@ Peta konsep buatan. Urutan baca 1–4; evaluasi memberi umpan balik ke rancangan
 
 4. Evaluasi + perbaikan: Uji pelaksanaan sepanjang periode. Tindak lanjuti setiap penyimpangan.
 
+Corporate governance, kode etik, dan akuntabilitas SOX
+
+**Corporate governance** mengarahkan dan mengawasi organisasi melalui kebijakan, tanggung jawab serta mekanisme internal/eksternal untuk kepentingan stakeholders. Code of ethics menjelaskan perilaku yang diharapkan dan konflik kepentingan. Tone at the top perlu tampak dalam keputusan dan penanganan pelanggaran; kode etik tertulis tidak cukup bila pimpinan memerintahkan override.
+
+SOX dalam konteks pembahasan buku
+
+Pokok | Arti dan tanggung jawab
+
+Latar belakang | Respons Amerika Serikat terhadap skandal pelaporan; memperkuat akuntabilitas, independensi auditor dan perhatian pada ICFR.
+
+Section 302 | Sertifikasi laporan oleh pimpinan sesuai cakupan ketentuannya.
+
+Section 404 | Tanggung jawab/evaluasi pengendalian internal pelaporan keuangan; persyaratan atestasi bergantung cakupan entitas.
+
+Section 406 | Kode etik bagi senior financial officers dalam konteks pengungkapan SOX.
+
+Management dan Audit Committee | Management merancang, menjalankan dan mengevaluasi kontrol; Audit Committee mengawasi.
+
+PCAOB dan auditor | PCAOB mengawasi firma audit dalam cakupannya; auditor mengevaluasi bukti dengan fokus berbasis risiko.
+
+Konteks yurisdiksi
+
+Ringkasan SOX/PCAOB di sini menjelaskan materi historis buku Ch.11 pp.388–391, termasuk Exhibit 11.1. Jangan memperlakukannya sebagai daftar kewajiban yang otomatis berlaku bagi setiap perusahaan Indonesia.
+
 2. Lima komponen dan 17 prinsip COSO 2013
 
 Bayangkan kelima komponen sebagai satu sistem. Lingkungan pengendalian membentuk perilaku; penilaian risiko menentukan fokus; aktivitas pengendalian merespons risiko; informasi menghubungkan pelaku; pemantauan menunjukkan bagian yang perlu diperbaiki. Tidak cukup memasang banyak approval bila manajemen rutin memerintahkan pegawai melewatinya.
@@ -126,6 +150,22 @@ Lapisan buatan saling melengkapi. Tidak ada urutan “selalu paling ekonomis”;
 
 4. Saat ditemukan salah: Hentikan akses, pulihkan catatan. Korektif; uji ulang kontrol.
 
+Kontrol input, pemrosesan, dan output
+
+**Segregation of duties** memisahkan authorization, custody of assets dan recordkeeping. Orang yang menyetujui pembayaran tidak sekaligus menguasai kas serta mencatat seluruh transaksi tanpa review. Bila jumlah staf terbatas, supervision dan independent review dapat mengompensasi sebagian risiko; nilai ketelitian, frekuensi dan bukti review, karena kolusi serta override masih mungkin.
+
+Telusuri satu batch invoice
+
+Tahap | Kontrol | Apa yang diperiksa
+
+Input | Validity, completeness, range/limit check. | Vendor/akun valid, field wajib terisi, nilai berada pada batas yang disetujui.
+
+Processing | Sequence check, record count, control total dan hash total. | Nomor hilang/ganda, jumlah record serta total sebelum/sesudah pemrosesan dibandingkan.
+
+Output | Review, rekonsiliasi dan distribusi terbatas. | Laporan cocok dengan input/hasil sah dan hanya diterima pengguna berwenang.
+
+**Hash total** dalam kontrol batch dapat menjumlah field nonmoneter seperti nomor pelanggan untuk mendeteksi perubahan kumpulan record; ini berbeda dari cryptographic hash SHA-256. Investigasi selisih diperlukan karena jumlah yang sama tidak menjamin isi identik. Audit trail merekam asal transaksi dan perubahan. ITGC mencakup lingkungan TI, akses, development/acquisition, change management dan operasi seperti patch, backup serta recovery. Contoh kontrol merupakan penerapan konsep Ch.11 pp.400–408.
+
 4. Risiko bawaan, risiko sisa, dan respons
 
 **Inherent risk** adalah risiko sebelum mempertimbangkan tindakan pengendalian. **Residual risk** adalah risiko yang tersisa setelah respons dan kontrol. **Risk appetite** menggambarkan jenis dan besarnya risiko yang bersedia diambil untuk mengejar nilai. Toleransi menerjemahkannya ke variasi kinerja yang dapat diterima. Istilah ini perlu konteks, ukuran, serta periode yang konsisten.
@@ -159,6 +199,12 @@ Rancang kontrol: pembuat vendor independen, verifikasi rekening, approval terpis
 Tentukan bukti: tiket vendor, hasil konfirmasi, log perubahan, persetujuan dan review bulanan.
 
 Nilai ulang risiko: kolusi dan override masih mungkin; pantau perubahan rekening menjelang pembayaran.
+
+**Control risk** adalah risiko pengendalian gagal mencegah atau mendeteksi kesalahan yang relevan; **residual risk** mencakup risiko yang masih ada setelah respons. Keduanya tidak otomatis sama. Dalam cost-benefit analysis, bandingkan biaya kontrol dengan penurunan expected loss dan manfaat lain menggunakan asumsi peluang serta dampak yang jelas.
+
+Ilustrasi kelayakan kontrol
+
+Asumsi satu jenis kerugian bernilai Rp100 juta, peluang tahunan turun dari 10% menjadi 2% karena kontrol. Expected loss turun dari Rp10 juta menjadi Rp2 juta: manfaat terukur Rp8 juta/tahun. Biaya kontrol Rp3 juta memberi selisih manfaat Rp5 juta dalam model sederhana ini. Ini bukan pengurangan skor ordinal dan belum memasukkan kolusi, ketidakpastian estimasi atau kewajiban yang harus dipenuhi.
 
 5. COSO internal control dan dua versi ERM
 
@@ -215,6 +261,14 @@ Laporan harus benar-benar ditinjau oleh petugas yang kompeten, penyimpangan diin
 Kerangka jawaban UAS
 
 Kondisi → tujuan dan risiko → komponen/prinsip COSO → kontrol spesifik → pemilik dan frekuensi → bukti yang diuji → risiko sisa. Ini panduan pengerjaan, bukan jaminan penilaian dosen.
+
+Kriteria informasi lintas versi dan hubungan antarframework
+
+Tujuan COBIT ialah membantu penciptaan nilai dari informasi/teknologi melalui manfaat, risiko dan sumber daya. Governance mengevaluasi kebutuhan stakeholders, mengarahkan dan memantau; management merencanakan, membangun, menjalankan dan menilai sesuai arah itu. Domain COBIT 2019 EDM, APO, BAI, DSS dan MEA dirinci pada pelengkap berikut.
+
+Tujuh information criteria **effectiveness, efficiency, confidentiality, integrity, availability, compliance, reliability** berasal dari pembahasan COBIT generasi terdahulu. Daftar itu berguna untuk memahami kebutuhan informasi, tetapi jangan menyebutnya tujuh domain atau struktur khusus COBIT 2019. Versi framework harus disebut ketika membandingkan istilah.
+
+ITIL berfokus pada IT service management. Dalam keluarga ISO 27000, ISO 27001 memuat persyaratan sistem manajemen keamanan informasi dan ISO 27002 panduan kontrol. COSO berfokus pada internal control; ERM menghubungkan risiko dengan strategi/kinerja; COBIT pada governance/management TI. Pada ERP, integrasi perlu role-based access, review konflik SoD dan kontrol konfigurasi/perubahan supaya satu akun tidak menguasai pembuatan vendor sampai pembayaran. Ini perbandingan konsep dalam bab, bukan sertifikasi kepatuhan suatu perusahaan.
 
 Pelengkap: COBIT dan teknik audit SI (Ch. 13)
 

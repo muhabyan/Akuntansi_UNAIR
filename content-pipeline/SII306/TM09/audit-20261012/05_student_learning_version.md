@@ -34,6 +34,34 @@ Payroll | Jasa/waktu kerja dan Cash; Timecards serta Payroll; Employees dalam pe
 
 Model terpadu berbagi master data seperti Employees, Inventory, dan Cash. Satu pegawai dapat muncul sebagai pekerja, supervisor, atau petugas pembayaran. Alias tabel pada perangkat database dapat mewakili peran berbeda tanpa berarti perusahaan harus menduplikasi orang yang sama. Exhibit 10.8–10.9, pp. 383–384.
 
+Pilihan proyek dalam buku dan keluaran yang diminta
+
+Tiga pilihan pada Ch.10 p.378
+
+Proyek buku | Konteks | Pekerjaan utama
+
+Y Not Flowers | Distributor bunga dengan beberapa toko. | BPMN, UML, pindah data Excel ke Access, laporan keuangan dan temuan.
+
+Z Cheddr | Toko cheese/wine dengan penjualan daring. | Dokumentasikan proses, rancang data, implementasikan database, susun laporan dan temuan.
+
+Y Not Flowers Boston · Small Business Accounting | Simulasi sistem akuntansi satu toko. | Masukkan transaksi dan tinjau informasi ringkasan; tugas terpisah dari dua proyek desain lengkap.
+
+Kasus angka pada halaman ini adalah latihan buatan untuk memahami integrasi. Buku memberi pilihan proyek berbeda tingkat kompleksitas; jangan menganggap setiap proyek memerlukan semua tabel atau mempunyai angka yang sama. Keluaran yang diminta dosen menentukan lingkup.
+
+Rencana proyek dan penemuan kebutuhan
+
+Mulai dari **problem statement**, hasil yang diharapkan, tugas, penanggung jawab, tenggat dan ketergantungan. Urutan Exhibit 10.1 ialah project plan → business requirements → activity models → structure diagrams → import data → queries → report. Gantt membantu memantau jadwal; review berkala memperbarui rencana saat kebutuhan atau hambatan berubah. Ini urutan kerja yang bisa diiterasi, bukan alasan menunda validasi sampai laporan akhir.
+
+Fact finding menanyakan siapa, apa, kapan, di mana, mengapa dan bagaimana. Wawancarai managers/employees, periksa Sales Order, Invoice, Purchase Order, Timecard dan bukti kas, kemudian validasi kebutuhan bersama pengguna. Tentukan pengguna, periode dan tingkat rincian laporan sejak awal agar atribut yang dibutuhkan benar-benar dikumpulkan. Richardson pp.378–379.
+
+Dari context diagram ke BPMN yang divalidasi
+
+Dalam context diagram BPMN buku, focal organization ditempatkan sebagai pool utama dan Customers, Suppliers, Bank serta Payroll Service sebagai pool luar. Message flows menunjukkan pesanan, kiriman, kas atau informasi yang dipertukarkan. Pesan masuk harus memperoleh respons proses; pesan keluar harus memiliki aktivitas sumber. Interaksi ini membantu mengenali proses sales, purchases, payroll dan kas sebelum menggambar rincian internal.
+
+Mulai dari basic process flow, lalu tambahkan lane pelaksana dan data objects. Pada contoh sales, Customer Service mencatat pesanan, Shipping/Receiving menyiapkan barang dan Accounting mencatat pembayaran. Jika barang tidak tersedia, error boundary event dapat mengalihkan proses ke pembatalan, pembaruan status serta pemberitahuan pelanggan. Pilih notasi exception sesuai pemicu; gateway tidak identik dengan boundary event. Validasi urutan, tanggung jawab, dokumen dan pengecualian dengan stakeholders.
+
+Business rules menentukan otorisasi, batas akses dan kondisi transaksi. SoD memisahkan otorisasi, custody dan pencatatan. Evaluasi value-added versus cost-added activities: kurangi perpindahan, waktu tunggu dan koreksi berulang, tetapi pertahankan kontrol yang dibutuhkan. Approval yang tidak menambah nilai produk masih mungkin diperlukan untuk mengelola risiko. Richardson pp.379–382.
+
 2. Dari multiplicity ke PK dan FK
 
 Skema latihan yang mendukung pembayaran parsial
@@ -65,6 +93,10 @@ Skema latihan, bukan salinan persis skema buku. Hubungan many-to-many diterapkan
 3. Alokasi R-01 / I-01: Nilai yang dialokasikan Rp60 juta. FK harus mengarah ke data valid.
 
 4. Saldo invoice: 90 − 60 = Rp30 juta. Cocokkan dengan subledger.
+
+Implementasi Access dan pemeriksaan hasil impor
+
+Setiap class menjadi tabel; atribut menjadi field dengan tipe/ukuran sesuai isinya. PK sisi one ditempatkan sebagai FK sisi many, sedangkan many-to-many memakai linking table. Sebelum impor Excel, periksa nama field, format tanggal, ID, nilai kosong dan duplikasi. Setelah impor, uji PK unik, FK valid, jumlah record dan total nilai; aktifkan referential integrity pada relationships Access. Diagram UML menjadi cetak biru, bukan sekadar lampiran laporan. Richardson pp.383–384.
 
 3. Kasus angka: satu bulan PT Global Distribusi Utama
 
@@ -189,6 +221,12 @@ LEFT JOIN Allocated a ON a.Invoice_ID = i.Invoice_ID;
 Query ilustratif saldo per invoice. Total alokasi perlu cutoff serta validasi terpisah.
 
 Gunakan LEFT JOIN agar invoice tanpa pembayaran tetap masuk. Nilai Outstanding negatif perlu diperiksa sebagai kemungkinan kelebihan alokasi, kredit, atau salah data. Uji keunikan PK, tipe tanggal/angka, FK, dan control total setelah impor sebelum mengandalkan laporan. Richardson pp. 383–384 (PDF 408–409).
+
+Laporan akhir: hasil query harus menjawab kebutuhan awal
+
+Transaction queries memilih field, join, menghitung dan mengelompokkan pada grain yang tepat. Sales, inventory, purchases serta timecards/payroll mendukung laba rugi sesuai pengakuan dan pembebanan; saldo resources dan alokasi pembayaran mendukung neraca; cash receipts, cash disbursements serta payroll mendukung arus kas. Query per pelanggan, produk atau toko mendukung penilaian kinerja. Jangan menjumlah pembelian sebagai HPP tanpa memperhitungkan persediaan.
+
+Rekonsiliasi jumlah/nilai query ke dokumen, peristiwa dan saldo yang relevan. **Final report** menjelaskan masalah, model proses/data, implementasi, hasil pengujian, temuan kontrol serta rekomendasi berbukti. Perubahan kebutuhan harus tercermin pada BPMN, UML, database dan report sekaligus. Contoh pemeriksaan: bila laporan meminta penjualan per toko, setiap transaksi harus memiliki hubungan toko yang dapat ditelusuri, bukan toko yang baru ditebak pada akhir proyek. Richardson pp.383–385.
 
 6. Kasus pengendalian: diagnosis sampai bukti audit
 

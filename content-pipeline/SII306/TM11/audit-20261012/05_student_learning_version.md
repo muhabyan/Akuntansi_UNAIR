@@ -40,6 +40,24 @@ Kegagalan listrik / perangkat / kesalahan manusia | Catatan hilang atau pemroses
 
 **Defense in depth** berarti menggunakan lapisan yang menangani kegagalan berbeda. Firewall tidak memverifikasi keberadaan barang. MFA membantu mengurangi pembajakan akun, tetapi pengguna yang sudah login masih perlu batas otorisasi. Antivirus tidak menggantikan review perubahan program atau rekonsiliasi transaksi.
 
+**Information security** melindungi informasi dan sistem dari akses, perubahan serta gangguan yang tidak sah. Tujuannya mendukung confidentiality, integrity dan availability bagi pengguna berwenang, sehingga operasi, perlindungan aset dan data pelaporan SIA dapat diandalkan.
+
+Istilah ancaman yang perlu dibedakan
+
+Cara ancaman bekerja
+
+Istilah | Ciri | Contoh dampak SIA
+
+Virus / worm | Virus menginfeksi file/program; worm dapat menyebar sendiri melalui jaringan. | File transaksi rusak atau jaringan ERP terganggu.
+
+Trojan horse / spyware | Trojan tampak berguna namun menjalankan fungsi berbahaya; spyware mengumpulkan informasi diam-diam. | Program palsu mengambil kredensial staf pembayaran.
+
+Botnet / denial of service | Botnet ialah perangkat yang dikendalikan penyerang; DoS menghambat layanan pengguna sah. | Pemrosesan penjualan dan pembayaran tidak tersedia.
+
+Spoofing / social engineering | Pemalsuan identitas sumber dan manipulasi manusia dapat dipakai bersama. | Pelaku menyamar sebagai help desk atau pemasok untuk memperoleh akses.
+
+Satu insiden dapat memadukan beberapa teknik. Identifikasi mekanisme serangan dan tujuan CIA yang terpengaruh sebelum memilih kontrol. Richardson Ch.12 pp.422–423.
+
 2. Siapa masuk, boleh melakukan apa, dan meninggalkan bukti apa?
 
 Tiga konsep akses
@@ -94,6 +112,8 @@ Batas kriptografi
 
 Signature yang valid tidak otomatis membuktikan pemilik manusia sengaja menyetujui transaksi jika kunci dicuri. Dukungan non-repudiation bergantung pada identitas, perlindungan kunci, dan bukti proses. SHA-256 menghasilkan 256 bit = 32 byte, umumnya ditulis sebagai 64 karakter heksadesimal; byte dan karakter tidak sama.
 
+Pada **digital certificate**, Certificate Authority mengikat identitas dengan public key menurut proses penerbitannya. **Public-Key Infrastructure (PKI)** mencakup penerbitan, pemeliharaan dan pencabutan sertifikat serta pemeriksaan kepercayaan. Periksa identitas, masa berlaku dan status pencabutan; menemukan public key di email belum membuktikan pemiliknya. Hashing membantu mendeteksi perubahan dengan pembanding yang dipercaya, tetapi kolisi tetap mungkin secara matematis. Signature dan kunci perlu dikelola bersama kontrol proses. Richardson pp.424–426.
+
 4. Computer fraud dan fraud triangle
 
 Fraud triangle membantu menilai **pressure/incentive**, **opportunity**, dan **rationalization**. Tekanan target laba dapat memberi dorongan; hak akses tanpa pengawasan memberi peluang; pelaku dapat membenarkan tindakannya sebagai “pinjaman sementara”. Kerangka ini membantu asesmen, tetapi keberadaan tekanan bukan bukti bahwa seseorang berbuat curang. Richardson pp. 428–431.
@@ -109,6 +129,18 @@ Program / processing | Logika komisi diubah untuk menguntungkan akun tertentu. |
 Data tersimpan | Rekening vendor diubah oleh orang dalam. | Pembatasan master data dan log perubahan yang ditinjau.
 
 Output | Laporan exception dihapus sebelum ditinjau. | Distribusi ke reviewer independen; rekonsiliasi kelengkapan laporan.
+
+Kebijakan penggunaan dan kontrol sepanjang SDLC
+
+Computer fraud melibatkan kesengajaan untuk menipu, menyembunyikan atau menyalahgunakan kepercayaan demi keuntungan; error biasa tidak otomatis fraud. Risiko dapat muncul pada requirements, design, development, implementation maupun maintenance. Code review, otorisasi perubahan, testing, documentation dan backup mencegah akses operasional berubah menjadi hak mengedit source code produksi tanpa pengawasan.
+
+**Acceptable Use Policy (AUP)** menjelaskan pemakaian TI yang diperbolehkan, larangan, tanggung jawab dan pelaporan insiden. Komunikasikan serta minta pengakuan pengguna sebelum akses diberikan; lengkapi dengan least privilege, MFA, review akses dan pencabutan akses saat tugas berakhir. Kebijakan tanpa penegakan atau log belum membuktikan pencegahan efektif. Richardson pp.428–432.
+
+Siklus vulnerability assessment dan management
+
+Inventaris aset TI dan pemiliknya → identifikasi threat/vulnerability → nilai likelihood, business impact dan kritikalitas → prioritaskan respons → terapkan patch/perubahan terotorisasi → uji ulang dan pantau. Vulnerability dapat berupa konfigurasi buruk, software tertinggal, akses berlebihan atau prosedur pemulihan lemah. Risk response plan menetapkan pemilik, tenggat dan bukti penutupan; hasil scanner saja belum memastikan kelemahan sudah diperbaiki. Richardson pp.432–434.
+
+Management melakukan fraud risk assessment yang diperbarui ketika sistem atau ancaman berubah; Audit Committee mengawasi. Continuous monitoring atas log dan transaksi menyoroti exception untuk investigasi. Pelaporan cybersecurity risk management AICPA mencakup deskripsi program serta assurance atas kontrol sesuai kriteria/lingkup; itu berbeda dari sekadar daftar insiden. Trust Services Criteria mencakup **security, availability, processing integrity, confidentiality dan privacy**. Privacy membahas pemrosesan data pribadi, bukan hanya menutup akses. Richardson pp.426–427, 430–434.
 
 Menangani insiden secara terarah
 
@@ -172,6 +204,14 @@ Backup yang bisa dipakai
 
 Prinsip 3-2-1: tiga salinan, dua jenis media, satu di lokasi berbeda. Offsite tidak otomatis offline atau immutable. Perlindungan dari penghapusan/ransomware, pemisahan kredensial, dan uji restore tetap perlu ditentukan. RAID atau replikasi langsung dapat menyalin kerusakan dan tidak menggantikan backup.
 
+**UPS** memberi daya sementara untuk menjaga operasi singkat atau shutdown terkontrol. Fault tolerance memakai komponen redundan agar satu kegagalan tidak langsung menghentikan layanan. RAID dapat mengatasi kegagalan drive sesuai konfigurasi, tetapi penghapusan salah atau ransomware tetap memerlukan backup terpisah. Saat memilih cloud provider, nilai rekam jejak/credibility, kontrol, keamanan, financial viability, SLA dan kemampuan pemulihannya. Richardson pp.434–436.
+
+BCM life cycle dan privacy
+
+Siklus BCM dimulai dari memahami organisasi dan risiko, business impact analysis, strategi continuity, pengembangan/implementasi rencana, lalu pengujian serta perbaikan. Catat orang, komunikasi, pemasok, prosedur manual sementara dan hubungan pemulihan TI dengan layanan bisnis. Latihan harus mengevaluasi transaksi selama gangguan, bukan hanya apakah server menyala.
+
+GDPR dibahas buku sebagai konteks perlindungan data pribadi. Poin belajar di sini ialah mengelola pengumpulan, akses, pemrosesan, penyimpanan/retensi dan penanganan insiden data secara bertanggung jawab. Kewajiban hukum perlu dinilai menurut yurisdiksi dan kegiatan entitas; paragraf ini tidak menentukan cakupan penerapan hukum untuk kasus tertentu. Richardson pp.432, 438–439.
+
 6. Pihak ketiga, cloud, dan laporan SOC
 
 Memindahkan sistem ke penyedia layanan memindahkan sebagian kegiatan, bukan seluruh tanggung jawab pengguna. Periksa hak akses perusahaan sendiri, kontrak, lokasi/retensi data, pemulihan, ketergantungan jaringan, serta kontrol pengguna yang disyaratkan laporan penyedia.
@@ -191,6 +231,8 @@ Type 1 | Rancangan kontrol pada tanggal tertentu.
 Type 2 | Rancangan dan efektivitas operasi selama periode tertentu.
 
 Periksa periode, cakupan layanan, pengecualian, subservice organization, serta complementary user entity controls. Logo atau sertifikat pemasaran tidak menggantikan pembacaan laporan yang sesuai. Richardson pp. 436–438.
+
+**SOC 3** menyajikan laporan assurance untuk distribusi umum dalam bentuk lebih ringkas; SOC 2 menyediakan rincian sistem/kontrol sesuai pembatasan penggunaannya. Laporan AICPA/SOC perlu dibedakan menurut tujuan dan ruang lingkup. Type 1 menilai desain pada tanggal tertentu, Type 2 juga efektivitas operasi selama periode; jangan memperluas klasifikasi ini seolah seluruh jenis laporan identik. Periksa periode, hasil/pengecualian dan kontrol yang wajib dijalankan pengguna. Richardson pp.436–438.
 
 7. Uji pemahaman
 

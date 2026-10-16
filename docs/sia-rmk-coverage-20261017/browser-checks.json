@@ -1,0 +1,247 @@
+[
+  {
+    "viewport": 1440,
+    "expanded": 2,
+    "contentWidth": 1425,
+    "required": [
+      {
+        "present": true,
+        "text": "Labor plan"
+      },
+      {
+        "present": true,
+        "text": "Equipment Operations"
+      }
+    ],
+    "title": "Conversion Business Process: Produksi, Biaya, dan Model Data",
+    "tm": 8,
+    "width": 1425
+  },
+  {
+    "viewport": 1440,
+    "expanded": 4,
+    "contentWidth": 1425,
+    "required": [
+      {
+        "present": true,
+        "text": "Y Not Flowers"
+      },
+      {
+        "present": true,
+        "text": "Z Cheddr"
+      }
+    ],
+    "title": "Integrated Project: Proses, Database, dan Laporan",
+    "tm": 9,
+    "width": 1425
+  },
+  {
+    "viewport": 1440,
+    "expanded": 3,
+    "contentWidth": 1425,
+    "required": [
+      {
+        "present": true,
+        "text": "Section 302"
+      },
+      {
+        "present": true,
+        "text": "Hash total"
+      }
+    ],
+    "title": "Pengendalian Internal: COSO, Risiko, dan Bukti Kontrol",
+    "tm": 10,
+    "width": 1425
+  },
+  {
+    "viewport": 1440,
+    "expanded": 3,
+    "contentWidth": 1425,
+    "required": [
+      {
+        "present": true,
+        "text": "PKI"
+      },
+      {
+        "present": true,
+        "text": "SOC 3"
+      }
+    ],
+    "title": "Keamanan Informasi, Computer Fraud, dan Pemulihan Bisnis",
+    "tm": 11,
+    "width": 1425
+  },
+  {
+    "viewport": 1440,
+    "expanded": 1,
+    "contentWidth": 1425,
+    "required": [
+      {
+        "present": true,
+        "text": "OLAP"
+      },
+      {
+        "present": true,
+        "text": "DSS"
+      }
+    ],
+    "title": "Reporting Processes dan eXtensible Business Reporting Language (XBRL)",
+    "tm": 12,
+    "width": 1425
+  },
+  {
+    "viewport": 1440,
+    "expanded": 3,
+    "contentWidth": 1425,
+    "required": [
+      {
+        "present": true,
+        "text": "Semi-supervised learning"
+      },
+      {
+        "present": true,
+        "text": "Precision = TP"
+      }
+    ],
+    "title": "Emerging Technologies: Blockchain dan AI Automation",
+    "tm": 13,
+    "width": 1425
+  },
+  {
+    "viewport": 1440,
+    "expanded": 2,
+    "contentWidth": 1425,
+    "required": [
+      {
+        "present": true,
+        "text": "Financial risk"
+      },
+      {
+        "present": true,
+        "text": "External benchmarks"
+      }
+    ],
+    "title": "Justifying and Planning IT Initiatives Using Project Management Techniques",
+    "tm": 14,
+    "width": 1425
+  },
+  {
+    "viewport": 390,
+    "expanded": 2,
+    "contentWidth": 375,
+    "required": [
+      {
+        "present": true,
+        "text": "Labor plan"
+      },
+      {
+        "present": true,
+        "text": "Equipment Operations"
+      }
+    ],
+    "tm": 8,
+    "width": 375
+  },
+  {
+    "viewport": 390,
+    "expanded": 4,
+    "contentWidth": 375,
+    "required": [
+      {
+        "present": true,
+        "text": "Y Not Flowers"
+      },
+      {
+        "present": true,
+        "text": "Z Cheddr"
+      }
+    ],
+    "tm": 9,
+    "width": 375
+  },
+  {
+    "viewport": 390,
+    "expanded": 3,
+    "contentWidth": 375,
+    "required": [
+      {
+        "present": true,
+        "text": "Section 302"
+      },
+      {
+        "present": true,
+        "text": "Hash total"
+      }
+    ],
+    "tm": 10,
+    "width": 375
+  },
+  {
+    "viewport": 390,
+    "expanded": 3,
+    "contentWidth": 375,
+    "required": [
+      {
+        "present": true,
+        "text": "PKI"
+      },
+      {
+        "present": true,
+        "text": "SOC 3"
+      }
+    ],
+    "tm": 11,
+    "width": 375
+  },
+  {
+    "viewport": 390,
+    "expanded": 1,
+    "contentWidth": 375,
+    "required": [
+      {
+        "present": true,
+        "text": "OLAP"
+      },
+      {
+        "present": true,
+        "text": "DSS"
+      }
+    ],
+    "tm": 12,
+    "width": 375
+  },
+  {
+    "viewport": 390,
+    "expanded": 3,
+    "contentWidth": 375,
+    "required": [
+      {
+        "present": true,
+        "text": "Semi-supervised learning"
+      },
+      {
+        "present": true,
+        "text": "Precision = TP"
+      }
+    ],
+    "tm": 13,
+    "width": 375
+  },
+  {
+    "viewport": 390,
+    "expanded": 2,
+    "contentWidth": 375,
+    "required": [
+      {
+        "present": true,
+        "text": "Financial risk"
+      },
+      {
+        "present": true,
+        "text": "External benchmarks"
+      }
+    ],
+    "tm": 14,
+    "width": 375
+  }
+]

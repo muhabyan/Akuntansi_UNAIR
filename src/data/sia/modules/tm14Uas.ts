@@ -1,4 +1,5 @@
 import type { Reading } from '../../../types';
+import { SIA_COVERAGE } from '../coverageComplements';
 import { h, p, ol, table, note, warn, example, check, extra, source } from '../uasBlocks';
 import { conceptMap } from '../uasVisuals';
 import { projectNetwork, projectGantt } from '../projectVisuals';
@@ -26,6 +27,7 @@ export const SIA_TM14: Reading = {
       ['Keputusan', 'Apa rekomendasi, kriteria dan pemiliknya?', 'Sponsor menyetujui pilot dengan tolok ukur dan titik evaluasi.'],
     ]),
     p('Manfaat dapat berupa revenue enhancement, revenue protection, cost savings dan cost avoidance. Pisahkan manfaat berwujud yang dapat diukur dari manfaat yang sulit dimonetisasi. Mempercepat pekerjaan bisa melepas kapasitas tanpa menurunkan pembayaran gaji. Biaya akuisisi meliputi implementasi langsung/tidak langsung; biaya operasi mencakup dukungan sepanjang umur sistem. Richardson pp.554–557.'),
+    ...SIA_COVERAGE[14].benefits,
     h('2. Metrik ekonomi: satu angka tidak cukup'),
     table('Metrik dan batasnya', ['Metrik', 'Cara memahami', 'Batas'], [
       ['Payback', 'Waktu sampai investasi awal tertutup arus kas masuk bersih.', 'Payback sederhana mengabaikan nilai waktu uang dan kas setelah titik pulih.'],
@@ -51,6 +53,7 @@ export const SIA_TM14: Reading = {
       ['Technology', 'Solusi tidak bekerja seperti direncanakan.', 'Pilot, pengujian integrasi, keamanan dan kapasitas.'],
       ['Implementation / change', 'Organisasi tidak dapat menerapkan atau memakai solusi dengan baik.', 'Pelatihan, peran pemilik, data migrasi bersih, dukungan dan umpan balik.'],
     ]),
+    ...SIA_COVERAGE[14].risks,
     h('4. Systems Development Life Cycle (SDLC)'),
     conceptMap('sdlc-uas', 'Lima fase SDLC', [
       { title: 'Planning', lines: ['Kebutuhan, kelayakan, business case.', 'Tetapkan sponsor dan lingkup.'] },
@@ -69,6 +72,7 @@ export const SIA_TM14: Reading = {
     p('Proyek bersifat sementara dengan hasil yang didefinisikan. **Project sponsor** menyediakan dukungan, wewenang dan keputusan strategis; **project manager** mengkoordinasikan pelaksanaan, sumber daya, jadwal dan pelaporan. Scope, time dan cost saling memengaruhi: menambah lingkup tanpa menambah waktu atau sumber daya dapat menurunkan mutu atau meningkatkan risiko.'),
     p('**Scope creep** adalah perluasan tanpa pengendalian yang memadai. Perubahan yang sah perlu analisis dampak, persetujuan dan pembaruan baseline. Rencana TI harus selaras strategi, memiliki lingkup/waktu yang relevan, manfaat realistis, kinerja terukur, evaluasi berkala, komunikasi, akuntabilitas dan komitmen. Richardson pp.563–568.'),
     note('15-15 rule adalah heuristik buku', 'Buku menyajikan keterlambatan atau kelebihan anggaran >15% sebagai sinyal penting untuk menilai kembali kelanjutan proyek. Ini bukan hukum bahwa proyek pasti gagal atau wajib dihentikan; sponsor perlu menilai manfaat tersisa, biaya tambahan dan alternatif.'),
+    ...SIA_COVERAGE[14].management,
     h('6. WBS, dependency, dan critical path'),
     p('**Work breakdown structure (WBS)** memecah seluruh lingkup menjadi pekerjaan yang dapat dikelola. **100% rule** menuntut cakupan pekerjaan lengkap, termasuk pekerjaan internal, eksternal dan interim; bukan berarti semua durasi harus diperkirakan 100% tepat atau setiap tugas sudah selesai. Dari daftar pekerjaan, tentukan dependency, durasi dan sumber daya.'),
     table('Data jaringan latihan', ['Aktivitas', 'Durasi hari', 'Predecessor'], [

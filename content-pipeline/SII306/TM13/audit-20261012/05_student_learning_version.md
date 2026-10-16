@@ -56,6 +56,18 @@ Private / consortium | Pengelolaan oleh satu organisasi atau kelompok organisasi
 
 Public/private sering membahas keterbukaan atau pengelolaan, sementara permissioned/permissionless membahas izin partisipasi. Jangan menganggap istilah itu selalu sinonim. Proof of work, proof of stake, dan mekanisme lain memberi pendekatan berbeda untuk konsensus; tidak semua jaringan memakai mining atau menyimpan data secara rahasia. Richardson pp. 498–504.
 
+Tiga mekanisme konsensus
+
+Mekanisme | Cara dasar | Pertimbangan kontrol
+
+Proof of Work | Miner bersaing melakukan komputasi untuk memenuhi syarat protokol. | Kebutuhan energi/komputasi dan konsentrasi kendali ikut dinilai.
+
+Proof of Stake | Validator menempatkan stake; insentif dan konsekuensi mengikuti protokol. | Jangan menyamakan semua desain staking atau mekanisme penalti.
+
+Proof of Authority | Validator/administrator beridentitas dikenal diberi wewenang membuat atau memvalidasi blok. | Pemilihan, reputasi, pengawasan dan perubahan wewenang validator penting.
+
+Public blockchain membuka partisipasi sesuai protokol; private blockchain membatasi peserta di bawah pengelolaan tertentu; consortium dikelola beberapa organisasi bersama. Bitcoin berfokus pada peer-to-peer cryptocurrency, sedangkan Ethereum memperluas platform programmable untuk smart contracts. Hak baca, kirim dan validasi tetap mengikuti desain masing-masing jaringan. Richardson Ch.15 pp.497–504.
+
 3. Smart contract dan oracle problem
 
 **Smart contract** adalah program yang menjalankan aturan pada lingkungan blockchain ketika kondisi yang didefinisikan terpenuhi. Nama “contract” tidak otomatis berarti seluruh syarat hukum dan substansi kontrak bisnis sudah tercakup. Kode membutuhkan data tentang dunia luar dari **oracle**, seperti sensor, sistem gudang, atau inspektur. Kesalahan oracle dapat memicu aksi salah meskipun program berjalan sesuai kode.
@@ -105,6 +117,12 @@ Bug / aturan kontrak tidak tepat | Review kode, test case, approval bisnis dan p
 Kunci dicuri | Penyimpanan aman, pemisahan peran dan multi-approval sesuai risiko. | Inventaris kunci, kebijakan akses dan log.
 
 Salah bayar / double payment | Status transaksi unik dan konfirmasi settlement. | Ledger status, referensi bank serta hasil rekonsiliasi.
+
+Supply chain, loyalty program, dan audit berkelanjutan
+
+Supply chain dapat berbagi asal material, perpindahan dan status pengiriman; sensor serta inspeksi tetap mengendalikan data fisik sebelum dicatat. **Loyalty program** lintas mitra dapat memakai catatan bersama untuk saldo dan penukaran points, sehingga perbedaan antarmitra lebih mudah direkonsiliasi. Rules harus mengatur siapa boleh menerbitkan/menukar points, kedaluwarsa dan koreksi transaksi. Richardson pp.504–506.
+
+Nilai implementation challenges: speed, confidentiality, governance, interoperability dan integrasi ERP. Akses lebih sering ke catatan memungkinkan continuous audit atas aturan/exception, tetapi auditor tetap menilai kecukupan bukti, hak/kewajiban dan valuation. Kompetensi protokol, smart contract dan integrasi sistem dibutuhkan; IT specialists dapat membantu menguji kode serta kontrol. Shared source of truth mengurangi perbedaan catatan, bukan menjamin kebenaran semua input. Richardson pp.506–508.
 
 4. Double-entry, shared receipt, dan triple-entry
 
@@ -190,6 +208,24 @@ OCR + AI + RPA | Baca dokumen, ekstrak informasi, lalu jalankan alur. | Ekstraks
 
 AI dapat membantu proses yang masukannya tidak terstruktur, sedangkan RPA menjalankan aksi yang terdefinisi. Menggabungkan keduanya tidak menghilangkan kebutuhan kontrol. AI bisa salah membaca rekening, dan bot dapat meneruskan hasil salah dengan sangat konsisten. Pilih teknologi sesuai proses, bukan sekadar label produk.
 
+AI, neural networks, dan deep learning
+
+AI mencakup kemampuan mesin melakukan tugas seperti pengenalan pola, bahasa dan penalaran; machine learning mempelajari pola dari data. **Neural network** memproses input melalui nodes/neurons, weights dan activation functions hingga menghasilkan output. Training menyesuaikan parameter berdasarkan tujuan belajar. **Deep learning** memakai banyak lapisan untuk mempelajari pola kompleks; data, biaya komputasi serta evaluasi tetap menentukan kegunaannya. Lebih banyak lapisan tidak otomatis lebih baik. Richardson pp.508–513.
+
+Empat cara belajar dan tugasnya
+
+Cara belajar | Data/feedback | Ilustrasi dan batas
+
+Supervised learning | Pasangan input–label/output diketahui. | Classification invoice valid/tidak valid; regression memprediksi nilai numerik.
+
+Unsupervised learning | Tidak memakai label target yang sudah ditentukan. | Clustering pelanggan atau mencari outlier; datanya dapat tetap terstruktur.
+
+Semi-supervised learning | Sebagian data berlabel, sebagian tidak atau perlu diperiksa. | Gabungkan contoh terverifikasi dengan data lain; kualitas label tetap penting.
+
+Reinforcement learning | Agen mencoba tindakan dan mendapat feedback/reward. | Mempelajari kebijakan tindakan; reward harus mencerminkan tujuan dan batas lingkungan.
+
+Classification menghasilkan kategori, regression nilai kontinu, clustering kelompok menurut kemiripan. Reinforcement learning berbeda karena tindakan memengaruhi pengalaman dan reward berikutnya. Pilih pendekatan dari pertanyaan bisnis, bukan dari istilah yang paling canggih. Richardson pp.513–514.
+
 8. Proses mana yang layak diotomasi?
 
 Menilai kesiapan proses
@@ -219,6 +255,8 @@ Prioritas | Kandidat awal jika sumber dan kontrol siap. | Otomasi bagian adminis
 Attended dan unattended
 
 Attended automation membantu pengguna dalam sesi kerja dengan keterlibatan manusia. Unattended automation berjalan dengan penjadwalan/pemicu dan pengelolaan terpusat tanpa interaksi pengguna pada setiap langkah. Keduanya tetap memerlukan pemilik, pengamanan kredensial, log, serta penanganan kegagalan. Ini istilah implementasi pelengkap, bukan pembeda “RPA versus AI”.
+
+**Natural Language Processing (NLP)** membantu memahami atau mengekstraksi informasi dari bahasa/teks, misalnya tanggal serta ketentuan penting pada kontrak. RPA menjalankan workflow berulang; AI/ML atau NLP dapat membantu membaca input bervariasi sebelum RPA meneruskan tindakan. Anomaly detection hanya menyeleksi transaksi untuk pemeriksaan, contract analysis membantu ekstraksi, dan risk assessment menggabungkan konteks financial/nonfinancial. Periksa kualitas data, kompetensi reviewer dan batas otorisasi. Richardson pp.514–516.
 
 9. Merancang rekonsiliasi yang aman
 
@@ -325,6 +363,26 @@ Pada 1.000 transaksi dengan 10 masalah, model yang menyebut semuanya normal puny
 Pelengkap AI generatif
 
 Ringkasan kontrak atau usulan jurnal dari AI generatif bisa keliru atau mengarang rujukan. Verifikasi terhadap dokumen sumber, lindungi data, dan pertahankan review pihak berwenang. Bagian ini perluasan pedagogis; buku yang dibaca berfokus pada AI/ML dan RPA, bukan panduan produk AI terkini.
+
+Precision, recall, dan accuracy dari satu confusion matrix
+
+Asumsi evaluasi independen 1.000 transaksi: ada 10 kasus positif sebenarnya. Model menandai 20 transaksi, terdiri atas 8 true positive dan 12 false positive; 2 kasus terlewat sebagai false negative, sedangkan 978 true negative.
+
+Penyebut menjawab pertanyaan berbeda
+
+Metrik | Hitungan | Interpretasi
+
+Precision = TP / (TP + FP) | 8 / 20 = 40%. | Dari yang ditandai, 40% benar positif.
+
+Recall = TP / (TP + FN) | 8 / 10 = 80%. | Dari kasus positif sebenarnya, 80% ditemukan.
+
+Accuracy = (TP + TN) / seluruh kasus | (8 + 978) / 1.000 = 98,6%. | Akurasi tinggi masih menyisakan 2 kasus yang terlewat.
+
+Mengubah threshold dapat menukar beban false positive dengan risiko false negative; hasil aktual perlu diuji pada data evaluasi. Management memantau kualitas data, bias, keamanan dan perubahan pola, mencatat versi model serta keputusan, dan mempertahankan human review. Angka ini latihan buatan untuk konsep evaluasi Ch.15 p.514; label positif tidak boleh ditetapkan hanya dari dugaan model.
+
+Mengapa unsupervised tidak berarti unstructured?
+
+Unsupervised menjelaskan tidak adanya label target, sedangkan unstructured menjelaskan bentuk data. Tabel transaksi yang terstruktur tetap dapat dianalisis tanpa label fraud untuk clustering atau deteksi outlier.
 
 13. Uji pemahaman
 

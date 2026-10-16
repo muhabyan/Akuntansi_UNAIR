@@ -1,4 +1,5 @@
 import type { Reading } from '../../../types';
+import { SIA_COVERAGE } from '../coverageComplements';
 import { h, p, ul, table, warn, example, check, extra, source } from '../uasBlocks';
 import { SIA_AUTOMATION_SUPPLEMENT } from './automationSupplement';
 import { conceptMap } from '../uasVisuals';
@@ -35,6 +36,7 @@ export const SIA_TM13: Reading = {
       ['Private / consortium', 'Pengelolaan oleh satu organisasi atau kelompok organisasi.', 'Pembagian kuasa, konflik, akses data, dan prosedur keluar anggota.'],
     ]),
     p('Public/private sering membahas keterbukaan atau pengelolaan, sementara permissioned/permissionless membahas izin partisipasi. Jangan menganggap istilah itu selalu sinonim. Proof of work, proof of stake, dan mekanisme lain memberi pendekatan berbeda untuk konsensus; tidak semua jaringan memakai mining atau menyimpan data secara rahasia. Richardson pp. 498–504.'),
+    ...SIA_COVERAGE[13].consensus,
     h('3. Smart contract dan oracle problem'),
     p('**Smart contract** adalah program yang menjalankan aturan pada lingkungan blockchain ketika kondisi yang didefinisikan terpenuhi. Nama “contract” tidak otomatis berarti seluruh syarat hukum dan substansi kontrak bisnis sudah tercakup. Kode membutuhkan data tentang dunia luar dari **oracle**, seperti sensor, sistem gudang, atau inspektur. Kesalahan oracle dapat memicu aksi salah meskipun program berjalan sesuai kode.'),
     conceptMap('oracle', 'Gerbang bukti sebelum pembayaran', [
@@ -65,6 +67,7 @@ ELSE:
       ['Kunci dicuri', 'Penyimpanan aman, pemisahan peran dan multi-approval sesuai risiko.', 'Inventaris kunci, kebijakan akses dan log.'],
       ['Salah bayar / double payment', 'Status transaksi unik dan konfirmasi settlement.', 'Ledger status, referensi bank serta hasil rekonsiliasi.'],
     ]),
+    ...SIA_COVERAGE[13].applications,
     h('4. Double-entry, shared receipt, dan triple-entry'),
     p('Double-entry tetap mencatat dua sisi setiap transaksi pada pembukuan masing-masing entitas. Pada konsep triple-entry, bukti transaksi yang ditandatangani dan dapat diverifikasi bersama menjadi lapisan bukti tambahan. “Entri ketiga” bukan sisi ketiga yang mengubah persamaan debit = kredit. Konsep shared receipt juga tidak mensyaratkan semua implementasi menggunakan blockchain.'),
     p('Sumber pelengkap primer untuk shared signed receipt: [Ian Grigg, Triple Entry Accounting (2005)](https://iang.org/papers/triple_entry.html). Konsep ini mendahului public blockchain modern.'),

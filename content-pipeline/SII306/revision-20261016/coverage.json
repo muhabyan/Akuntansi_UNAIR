@@ -4,48 +4,48 @@
     "figures": 3,
     "checks": 2,
     "journals": 5,
-    "words": 1460
+    "words": 1857
   },
   {
     "tm": 9,
     "figures": 6,
     "checks": 4,
     "journals": 6,
-    "words": 3301
+    "words": 3908
   },
   {
     "tm": 10,
     "figures": 6,
     "checks": 4,
     "journals": 0,
-    "words": 3213
+    "words": 3837
   },
   {
     "tm": 11,
     "figures": 3,
     "checks": 2,
     "journals": 0,
-    "words": 1629
+    "words": 2301
   },
   {
     "tm": 12,
     "figures": 3,
     "checks": 2,
     "journals": 0,
-    "words": 1337
+    "words": 1870
   },
   {
     "tm": 13,
     "figures": 6,
-    "checks": 4,
+    "checks": 5,
     "journals": 0,
-    "words": 2848
+    "words": 3536
   },
   {
     "tm": 14,
     "figures": 4,
     "checks": 2,
     "journals": 0,
-    "words": 1783
+    "words": 2384
   }
 ]

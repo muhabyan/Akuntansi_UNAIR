@@ -1,1 +1,1 @@
-Status: RPS-aligned revision implemented 2026-10-16. Technical and visual evidence: docs/sia-pra-uas-20261016.md. Not a claim of independent review or official exam prediction.
+Status: RPS mapping retained; source-point additions implemented 2026-10-17. Technical checks and author traceability are separate evidence. See docs/sia-rmk-coverage-20261017.md. Independent review remains open.

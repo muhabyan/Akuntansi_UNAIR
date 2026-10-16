@@ -36,6 +36,34 @@ Data lake | Menampung data terstruktur dan tidak terstruktur dalam ragam besar. 
 
 Business intelligence mengumpulkan informasi, menganalisis pola, lalu mendukung keputusan. Dashboard menyajikan metrik yang kritis untuk pengguna tertentu dan memungkinkan penelusuran lebih rinci. Jangan mengukur keberhasilan dashboard dari banyaknya grafik; tanyakan keputusan apa yang menjadi lebih jelas dan siapa yang bertindak.
 
+Warehouse, OLAP, DSS, dan management by exception
+
+Pelaporan mengubah data transaksi menjadi informasi untuk keputusan. **Internal reporting** mendukung planning, control dan evaluasi melalui budget variance, sales trends, inventory levels serta accounts receivable aging. **External reporting** menyampaikan informasi financial/nonfinancial kepada stakeholders sesuai kebutuhan pelaporan. Keduanya perlu populasi, periode, tingkat rincian dan tujuan pengguna yang jelas.
+
+Warehouse menggabungkan sumber internal seperti GL, inventory, sales dan purchases dengan sumber eksternal seperti kondisi ekonomi, industri serta pasar. Samakan kode, format, periode dan klasifikasi sebelum memuat histori. Warehouse yang terpisah membantu analisis tanpa membebani transaksi berjalan; **distributed computing** membagi penyimpanan/pemrosesan ke beberapa sistem, dengan kebutuhan integrasi dan kontrol yang tetap ada. Richardson Ch.14 pp.472–474.
+
+Dari data ke keputusan
+
+Konsep | Pertanyaan dan contoh | Batas interpretasi
+
+OLAP · Online Analytical Processing | Analisis penjualan menurut produk × toko × periode; ringkas, bandingkan, lalu drill down. | Utamanya analisis data terstruktur; tidak otomatis mengolah semua isi data lake.
+
+DSS · Decision Support System | Bandingkan alternatif kredit atau persediaan menggunakan data dan model analisis. | Mendukung judgment manajemen; rekomendasi bergantung asumsi dan kualitas data.
+
+Management by exception | Sorot overdue atau selisih anggaran yang melampaui toleransi. | Tentukan batas, pemilik tindak lanjut dan bukti penyelesaian; exception bukan otomatis fraud.
+
+Data refresh | Perbarui data sesuai kebutuhan dan tampilkan waktu/periode pemuatan. | Keputusan dapat keliru bila dashboard hari ini memakai populasi kemarin yang tidak lengkap.
+
+Business intelligence dan data mining
+
+Alur BI ialah **gather information → analyze patterns → make decisions**. Data dapat berasal dari sistem internal atau sumber luar; web crawler mengunjungi serta mengindeks isi web secara sistematis. Pilih sumber dan data yang relevan, periksa kualitasnya, cari pola, lalu terjemahkan temuan menjadi tindakan dengan pemilik serta ukuran hasil. Richardson pp.474–475.
+
+**Data mining** memakai teknik statistik/analitis untuk menemukan pola dalam kumpulan data besar, misalnya produk yang sering dibeli bersama. **Correlation tidak otomatis causation**: penjualan es krim dan minuman dapat sama-sama naik karena cuaca, sehingga promosi salah satu belum terbukti menyebabkan kenaikan lainnya. Komunikasikan hasil sebagai hubungan/asosiasi sampai ada bukti sebab-akibat yang memadai. Uji konteks bisnis, populasi dan penjelasan alternatif sebelum mengambil keputusan.
+
+Dari dashboard ke tindakan
+
+Asumsi dashboard menunjukkan overdue naik di Toko A. Drill down ke pelanggan, invoice, due date dan penerimaan kas. Ternyata file pembayaran cabang belum dimuat. Perbarui dan rekonsiliasi data sebelum mengubah kebijakan kredit. Jika sesudah itu overdue tetap tinggi, gunakan DSS untuk membandingkan alternatif limit kredit atau penagihan dan pantau dampaknya. Contoh ini menghubungkan OLAP, refresh, exception dan keputusan tanpa menyamakan pola dengan sebab.
+
 2. KPI yang bisa diartikan dan ditindaklanjuti
 
 Definisi KPI sebelum memilih warna
@@ -97,6 +125,8 @@ Fakta ilustratif: kas Rp115 juta pada tanggal pelaporan. Nama konsep contoh tida
 3. Unit + nilai: IDR · 115.000.000. Jangan keliru skala jutaan.
 
 4. Validation: Cek tag, tipe, unit dan hubungan. Cocokkan dengan laporan disetujui.
+
+**XML (Extensible Markup Language)** adalah format penandaan data terstruktur; XBRL memakai konsep/tag bermakna untuk pertukaran informasi pelaporan. Data bertag dapat diekstraksi serta dipakai ulang tanpa mengetik ulang, membantu efisiensi dan perbandingan. Comparability tetap memerlukan pemahaman perbedaan taxonomy, pemilihan konsep, entitas, periode dan unit. Format yang sama tidak menghapus perbedaan kebijakan akuntansi. Richardson pp.477–481.
 
 4. Context, unit, dan instant versus duration
 
@@ -163,6 +193,8 @@ Dokumen yang lolos aturan XML/XBRL masih bisa memakai konsep yang salah secara s
 Pelengkap: taxonomy relationships dan Inline XBRL
 
 Taxonomy dapat memuat hubungan presentation, calculation, definition, label dan reference. Hubungan perhitungan membantu pemeriksaan aritmetika tertentu, tetapi tidak membuktikan seluruh laporan benar. Inline XBRL menggabungkan data terstruktur dengan dokumen yang dapat dibaca manusia, sehingga penyajian dan data mesin tetap perlu dicocokkan. [XBRL International: XBRL Essentials](https://specifications.xbrl.org/xbrl-essentials.html).
+
+XBRL GL dapat memuat chart of accounts, journal entries serta data transaksi financial/nonfinancial. **Reporting independence** berarti data rinci dapat mendukung berbagai laporan tanpa disimpan ulang hanya karena tampilan berbeda. **System independence** membantu pertukaran antaraplikasi dengan format seragam sehingga koneksi khusus tiap pasangan sistem dapat dikurangi. Untuk consolidation dan analisis lintas unit, tetap dibutuhkan mapping akun, definisi, kontrol kelengkapan dan rekonsiliasi; format saja tidak menyelesaikan perbedaan tersebut. Richardson pp.481–483.
 
 7. Uji pemahaman
 

@@ -1,4 +1,5 @@
 import type { Reading } from '../../../types';
+import { SIA_COVERAGE } from '../coverageComplements';
 import { h, p, ol, table, warn, example, check, extra, source } from '../uasBlocks';
 import { conceptMap, agingChart } from '../uasVisuals';
 
@@ -24,6 +25,7 @@ export const SIA_TM12: Reading = {
       ['Data lake', 'Menampung data terstruktur dan tidak terstruktur dalam ragam besar.', 'Tanpa katalog/kualitas dapat sulit ditemukan dan dianalisis.'],
     ]),
     p('Business intelligence mengumpulkan informasi, menganalisis pola, lalu mendukung keputusan. Dashboard menyajikan metrik yang kritis untuk pengguna tertentu dan memungkinkan penelusuran lebih rinci. Jangan mengukur keberhasilan dashboard dari banyaknya grafik; tanyakan keputusan apa yang menjadi lebih jelas dan siapa yang bertindak.'),
+    ...SIA_COVERAGE[12].analysis,
     h('2. KPI yang bisa diartikan dan ditindaklanjuti'),
     table('Definisi KPI sebelum memilih warna', ['KPI', 'Definisi', 'Hal yang perlu dijelaskan'], [
       ['Overdue ratio', 'Piutang lewat jatuh tempo ÷ total piutang pada tanggal yang sama.', 'Due date, cutoff kas, saldo kredit, penyebut, dan tanggal refresh.'],
@@ -48,6 +50,7 @@ export const SIA_TM12: Reading = {
       { title: 'Unit + nilai', lines: ['IDR · 115.000.000.', 'Jangan keliru skala jutaan.'] },
       { title: 'Validation', lines: ['Cek tag, tipe, unit dan hubungan.', 'Cocokkan dengan laporan disetujui.'] },
     ], 'Fakta ilustratif: kas Rp115 juta pada tanggal pelaporan. Nama konsep contoh tidak dinyatakan sebagai tag resmi taxonomy tertentu.', false),
+    ...SIA_COVERAGE[12].exchange,
     h('4. Context, unit, dan instant versus duration'),
     p('Saldo kas adalah fakta pada satu titik waktu (**instant**), sedangkan pendapatan adalah fakta sepanjang periode (**duration**). Context mengidentifikasi entitas dan periode, serta dimensi yang relevan. Unit menunjukkan mata uang atau ukuran lain. Dua angka sama belum dapat dibandingkan jika tanggal, entitas, konsolidasi, atau unit berbeda.'),
     example('Menyiapkan dua fakta dari kasus integrasi',
@@ -77,6 +80,7 @@ Dimensions: sesuai lingkup fakta yang dilaporkan` },
     p('**XBRL GL (Global Ledger)** menyediakan kerangka data tingkat transaksi/ledger untuk pertukaran dan integrasi, sedangkan taxonomy pelaporan keuangan berfokus pada fakta laporan. XBRL GL dapat membantu standardisasi antarsistem, tetapi implementasi, mapping dan kualitas data tetap diperlukan. Richardson pp.481–483.'),
     extra('Pelengkap: taxonomy relationships dan Inline XBRL',
       p('Taxonomy dapat memuat hubungan presentation, calculation, definition, label dan reference. Hubungan perhitungan membantu pemeriksaan aritmetika tertentu, tetapi tidak membuktikan seluruh laporan benar. Inline XBRL menggabungkan data terstruktur dengan dokumen yang dapat dibaca manusia, sehingga penyajian dan data mesin tetap perlu dicocokkan. [XBRL International: XBRL Essentials](https://specifications.xbrl.org/xbrl-essentials.html).')),
+    ...SIA_COVERAGE[12].ledger,
     h('7. Uji pemahaman'),
     check('Angka revenue dan kas sama-sama 115. Bolehkah memakai context yang sama?', p('Belum tentu. Kas lazimnya instant dan revenue duration. Entitas serta dimensi juga harus cocok; angka yang sama tidak menentukan konteks yang sama.')),
     check('Dashboard overdue ratio turun dari 60% ke 30%, tetapi cabang terbesar belum dimuat. Apa simpulan yang tepat?', p('Belum dapat menyimpulkan kualitas penagihan membaik. Uji kelengkapan populasi dan konsistensi penyebut, lalu hitung ulang setelah seluruh cabang serta cutoff valid.')),
