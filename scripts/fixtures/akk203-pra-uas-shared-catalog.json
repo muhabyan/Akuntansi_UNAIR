@@ -1,4 +1,8 @@
 {
   "mnu108OutsidePost": "dfd8937ad531bff3198e1f55872e52cb866c71af269f7ef039a7f7955cb791ac",
-  "reason": "Only the AKK203 TM8-14 catalog literal changes. The independent ASP baseline guards every byte outside that literal; the MNU108 fixture and source remain unchanged."
+  "reason": "Only the AKK203 TM8-14 catalog literal changes. The independent ASP baseline guards every byte outside that literal; the MNU108 fixture and source remain unchanged.",
+  "authorizedAspSiaIntegration20261016": [
+    "59bbbd89da1aa1bfeebc11cf156d8a5a6e470495e995d3411969adb88ca97396"
+  ],
+  "integrationReason": "Exact ASP + SIA catalog combination; original snapshots remain unchanged."
 }

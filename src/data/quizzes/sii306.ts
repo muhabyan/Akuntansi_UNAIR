@@ -504,493 +504,493 @@ export const SII306_QUIZ_UTS: QuizQuestion[] = [
 export const SII306_QUIZ_UAS: QuizQuestion[] = [
   {
     "tm": 8,
-    "topic": "Pengendalian Internal COSO",
+    "topic": "Conversion Business Process",
     "difficulty": "medium",
-    "q": "Komponen pengendalian internal COSO yang dianggap sebagai fondasi utama bagi seluruh komponen pengendalian lainnya karena menentukan 'Tone at the Top' organisasi adalah...",
+    "q": "Saat bahan langsung dikeluarkan untuk produksi dalam sistem perpetual, jurnal yang tepat adalah...",
     "options": [
-      "Risk Assessment",
-      "Control Environment (Lingkungan Pengendalian)",
-      "Monitoring Activities",
-      "Information and Communication"
+      "Dr WIP; Cr Raw Materials.",
+      "Dr COGS; Cr Cash.",
+      "Dr Finished Goods; Cr Revenue.",
+      "Dr Accounts Receivable; Cr WIP."
     ],
-    "answer": 1,
-    "explanation": "Control Environment adalah fondasi piramida COSO. Komponen ini mencakup integritas, nilai etika dewan direksi/komisaris, filosofi manajemen, struktur organisasi, dan komitmen terhadap kompetensi SDM."
+    "answer": 0,
+    "explanation": "Biaya berpindah dari bahan ke WIP; belum otomatis menjadi barang jadi atau HPP. Rujukan: Richardson AIS 4e, Ch.9 pp.350–365 (PDF 375–390)."
   },
   {
     "tm": 8,
-    "topic": "Pengendalian Internal COSO",
-    "difficulty": "advanced",
-    "q": "Berdasarkan kerangka COSO 2013, berapakah jumlah prinsip pendukung (principles) yang wajib diterapkan di seluruh 5 komponen pengendalian agar sistem pengendalian internal dinilai efektif?",
-    "options": [
-      "10 Prinsip",
-      "17 Prinsip",
-      "25 Prinsip",
-      "5 Prinsip"
-    ],
-    "answer": 1,
-    "explanation": "COSO 2013 menetapkan 17 prinsip eksplisit yang terbagi ke dalam 5 komponen: Lingkungan Pengendalian (5 prinsip), Penilaian Risiko (4 prinsip), Aktivitas Pengendalian (3 prinsip), Informasi & Komunikasi (3 prinsip), dan Pemantauan (2 prinsip)."
-  },
-  {
-    "tm": 8,
-    "topic": "Pengendalian Internal COSO",
+    "topic": "Conversion Business Process",
     "difficulty": "medium",
-    "q": "Pemasangan kamera CCTV di gudang dan rekonsiliasi bulanan antara saldo fisik kas dengan catatan pembukuan diklasifikasikan sebagai jenis pengendalian...",
+    "q": "WIP awal 10, DM 30, DL 20, OH dibebankan 10 dan WIP akhir 14 (Rp juta). COGM adalah...",
     "options": [
-      "Pengendalian Preventif",
-      "Pengendalian Detektif",
-      "Pengendalian Korektif",
-      "Pengendalian Kompensasi"
+      "Rp46 juta.",
+      "Rp56 juta.",
+      "Rp60 juta.",
+      "Rp70 juta."
     ],
     "answer": 1,
-    "explanation": "Pengendalian Detektif berfungsi untuk menemukan dan mengidentifikasi kesalahan, anomali, atau kecurangan setelah peristiwa tersebut terjadi (misal: rekonsiliasi bank, review varians biaya, stock opname)."
+    "explanation": "COGM = 10 + 30 + 20 + 10 − 14 = 56. WIP akhir belum ditransfer ke barang jadi. Rujukan: Richardson AIS 4e, Ch.9 pp.350–365 (PDF 375–390)."
   },
   {
     "tm": 8,
-    "topic": "Pengendalian Internal COSO",
-    "difficulty": "advanced",
-    "q": "Dalam Fraud Triangle, tiga kondisi yang hampir selalu hadir saat kecurangan akuntansi terjadi adalah...",
-    "options": [
-      "Kolusi, Teknologi Usang, dan Kelalaian Pajak",
-      "Tekanan/Insentif (Pressure), Peluang (Opportunity), dan Rasionalisasi (Rationalization)",
-      "Inflasi, Suku Bunga Tinggi, dan Likuiditas Rendah",
-      "Sistem Terbuka, Password Lemah, dan Jaringan Nirkabel"
-    ],
-    "answer": 1,
-    "explanation": "Teori Fraud Triangle Donald Cressey: (1) Pressure (tekanan finansial/target), (2) Opportunity (peluang akibat lemahnya internal control), dan (3) Rationalization (pembenaran moral pelaku bahwa tindakannya sah)."
-  },
-  {
-    "tm": 8,
-    "topic": "Pengendalian Internal COSO",
+    "topic": "Conversion Business Process",
     "difficulty": "medium",
-    "q": "Manakah di bawah ini yang merupakan contoh dari Pengendalian Korektif (Corrective Control)?",
+    "q": "Dalam model generik conversion, mengapa WIP tidak harus menjadi kelas resource terpisah?",
     "options": [
-      "Pemisahan tugas antara kasir dan pencatat piutang",
-      "Pembuatan password akun dengan otentikasi dua faktor (2FA)",
-      "Pemulihan file database akuntansi dari cadangan data (backup restore) setelah sistem terinfeksi malware",
-      "Pemeriksaan nomor urut faktur penjualan"
+      "Karena seluruh biaya produksi harus langsung menjadi beban periode.",
+      "Karena WIP hanya berisi bahan yang belum pernah dikeluarkan.",
+      "Karena nilainya dapat diturunkan dari biaya event yang belum ditransfer.",
+      "Karena ledger tidak boleh mencatat akun persediaan yang belum selesai."
     ],
     "answer": 2,
-    "explanation": "Corrective Control bertujuan memperbaiki masalah dan mengembalikan sistem ke kondisi normal setelah insiden terjadi, seperti me-restore data backup, mendiskualifikasi vendor curang, atau merevisi jurnal koreksi."
+    "explanation": "Model data dapat menghitung WIP dari biaya material, labor dan overhead pada pekerjaan terbuka. Ini tidak menghapus saldo akuntansi WIP. Rujukan: Richardson AIS 4e, Ch.9 pp.350–365 (PDF 375–390)."
   },
   {
-    "tm": 9,
-    "topic": "Keamanan Siber & Kriptografi",
+    "tm": 8,
+    "topic": "Conversion Business Process",
     "difficulty": "medium",
-    "q": "Tiga pilar utama keamanan sistem informasi akuntansi yang dikenal sebagai CIA Triad adalah...",
+    "q": "Satu material issue memuat beberapa bahan, dan satu bahan muncul pada banyak issue. Implementasi relasionalnya adalah...",
     "options": [
-      "Control, Inspection, Audit",
-      "Confidentiality, Integrity, Availability",
-      "Compliance, Integration, Accuracy",
-      "Cost, Investment, Accounting"
-    ],
-    "answer": 1,
-    "explanation": "CIA Triad: Confidentiality (data hanya bisa dibaca oleh pihak berwenang), Integrity (data terlindung dari manipulasi ilegal), dan Availability (sistem dan data siap diakses saat dibutuhkan operasional bisnis)."
-  },
-  {
-    "tm": 9,
-    "topic": "Keamanan Siber & Kriptografi",
-    "difficulty": "advanced",
-    "q": "Dalam sistem Kriptografi Asimetris (Public-Key Cryptography), jika Perusahaan A ingin mengirimkan dokumen keuangan rahasia ke Auditor B sehingga HANYA Auditor B yang bisa membacanya, maka dokumen tersebut harus dienkripsi menggunakan...",
-    "options": [
-      "Private Key milik Perusahaan A",
-      "Public Key milik Auditor B",
-      "Private Key milik Auditor B",
-      "Public Key milik Perusahaan A"
-    ],
-    "answer": 1,
-    "explanation": "Untuk kerahasiaan (encryption): Pengirim mengenkripsi pesan menggunakan Public Key Penerima (Auditor B). Pesan tersebut secara matematis hanya dapat didekripsi menggunakan Private Key rahasia milik Auditor B."
-  },
-  {
-    "tm": 9,
-    "topic": "Keamanan Siber & Kriptografi",
-    "difficulty": "advanced",
-    "q": "Fungsi utama dari Tanda Tangan Digital (Digital Signature) yang dibuat dengan mengenkripsi hash dokumen menggunakan Private Key pengirim adalah menjamin...",
-    "options": [
-      "Kecepatan transmisi jaringan internet 5G",
-      "Otentikasi pengirim, keutuhan data (data integrity), dan ketiadaan sangkalan (non-repudiation)",
-      "Ukuran file dokumen menjadi lebih kecil 90%",
-      "Penghapusan kewajiban pelaporan pajak SPT tahunan"
-    ],
-    "answer": 1,
-    "explanation": "Digital Signature membuktikan secara kriptografis bahwa dokumen benar-benar berasal dari pemilik private key (otentikasi), isi dokumen tidak diubah satu bit pun saat transit (integritas), dan pengirim tidak dapat menyangkal telah menandatanganinya (non-repudiation)."
-  },
-  {
-    "tm": 9,
-    "topic": "Keamanan Siber & Kriptografi",
-    "difficulty": "medium",
-    "q": "Dalam perencanaan kelangsungan usaha dan pemulihan bencana (BCP/DRP), metrik RPO (Recovery Point Objective) mengukur...",
-    "options": [
-      "Jumlah waktu maksimal sistem boleh offline sebelum perusahaan bangkrut",
-      "Batas maksimal toleransi kehilangan data transaksi (misal: data 2 jam terakhir sebelum server down)",
-      "Biaya pembelian genset cadangan listrik",
-      "Gaji konsultan keamanan siber per jam"
-    ],
-    "answer": 1,
-    "explanation": "RPO (Recovery Point Objective) mengukur toleransi kehilangan data dalam satuan waktu (misal: backup tiap jam berarti RPO = 1 jam). Sedangkan RTO (Recovery Time Objective) mengukur target kecepatan memulihkan sistem hingga online kembali."
-  },
-  {
-    "tm": 9,
-    "topic": "Keamanan Siber & Kriptografi",
-    "difficulty": "medium",
-    "q": "Serangan siber di mana pelaku menyisipkan kode berbahaya ke formulir input web sehingga sistem database mengeksekusi perintah manipulasi data secara tidak sah disebut...",
-    "options": [
-      "SQL Injection Attack",
-      "Denial of Service (DoS)",
-      "Social Engineering",
-      "Brute Force Attack"
-    ],
-    "answer": 0,
-    "explanation": "SQL Injection mengeksploitasi kelemahan validasi form input aplikasi akuntansi. Jika input tidak disanitasi, peretas dapat memasukkan sintaks SQL seperti \"' OR '1'='1\" untuk mencuri seluruh data laporan keuangan atau menghapus tabel transaksi."
-  },
-  {
-    "tm": 10,
-    "topic": "COBIT & Audit Sistem Informasi",
-    "difficulty": "medium",
-    "q": "Dalam kerangka kerja COBIT 2019, domain tata kelola (Governance Domain) yang menjadi tanggung jawab utama Dewan Komisaris dan Direksi adalah...",
-    "options": [
-      "APO (Align, Plan, and Organize)",
-      "EDM (Evaluate, Direct, and Monitor)",
-      "BAI (Build, Acquire, and Implement)",
-      "DSS (Deliver, Service, and Support)"
-    ],
-    "answer": 1,
-    "explanation": "COBIT 2019 membagi tata kelola dan manajemen: Domain Governance tunggal adalah EDM (Evaluate, Direct, and Monitor). Empat domain lainnya (APO, BAI, DSS, MEA) adalah Domain Manajemen yang dipimpin eksekutif operasional TI."
-  },
-  {
-    "tm": 10,
-    "topic": "COBIT & Audit Sistem Informasi",
-    "difficulty": "advanced",
-    "q": "Apa pembeda audit around dan through the computer dalam pemeriksaan AIS?",
-    "options": [
-      "Around menguji kode program, sedangkan through hanya membandingkan total laporan.",
-      "Around berfokus input dan output, sedangkan through juga menguji proses di sistem.",
-      "Around menguji seluruh proses, sedangkan through hanya membaca dokumen input.",
-      "Around membuktikan semua kontrol, sedangkan through hanya menguji saldo akun."
-    ],
-    "answer": 1,
-    "explanation": "Perbedaan terletak pada apakah pemrosesan di dalam sistem juga diuji. Pemilihan prosedur tetap mengikuti risiko dan bukti yang diperlukan. Rujukan: Richardson AIS 4e, Ch.13, Computer-Assisted Audit Techniques, PDF 480-488."
-  },
-  {
-    "tm": 10,
-    "topic": "COBIT & Audit Sistem Informasi",
-    "difficulty": "advanced",
-    "q": "Teknik audit berbantuan komputer (CAATs) di mana auditor memasukkan unit bisnis atau entitas fiktif ke dalam sistem ERP operasional klien untuk memantau pemrosesan transaksi secara live tanpa mencemari laporan keuangan aktual disebut...",
-    "options": [
-      "Test Data Approach",
-      "Integrated Test Facility (ITF)",
-      "Parallel Simulation",
-      "Embedded Audit Module"
-    ],
-    "answer": 1,
-    "explanation": "Integrated Test Facility (ITF) membuat divisi/entitas dummy dalam sistem live klien. Transaksi audit diproses bersama transaksi riil, lalu jurnal pembalik otomatis diaktifkan untuk mengisolasi agar laporan keuangan publik tidak terdistorsi."
-  },
-  {
-    "tm": 10,
-    "topic": "COBIT & Audit Sistem Informasi",
-    "difficulty": "medium",
-    "q": "Manakah pemisahan tugas (Segregation of Duties) yang WAJIB diterapkan di dalam struktur internal Departemen Teknologi Informasi (TI)?",
-    "options": [
-      "Staf programmer pengembang software DILARANG memiliki akses ke lingkungan produksi/live database operasional",
-      "Staf helpdesk dilarang berbicara dengan pengguna komputer",
-      "Manajer TI dilarang melapor ke Direktur Utama",
-      "Auditor sistem dilarang menggunakan komputer"
-    ],
-    "answer": 0,
-    "explanation": "Prinsip dasar kontrol umum TI (GITC): Systems Analyst dan Systems Programmer (pembuat kode) harus dipisahkan dari Computer Operators dan Database Administrator (DBA). Programmer tidak boleh memiliki akses langsung memodifikasi live data produksi."
-  },
-  {
-    "tm": 10,
-    "topic": "COBIT & Audit Sistem Informasi",
-    "difficulty": "medium",
-    "q": "Pengendalian Umum TI (General IT Controls / GITC) mencakup area berikut, KECUALI...",
-    "options": [
-      "Pemeriksaan validitas limit harga diskon pada formulir pesanan penjualan individual",
-      "Manajemen akses logis dan kata sandi jaringan",
-      "Prosedur manajemen perubahan program software (Change Management)",
-      "Operasional komputer, backup, dan Disaster Recovery Plan"
-    ],
-    "answer": 0,
-    "explanation": "Pemeriksaan validitas limit diskon pada form penjualan individual adalah contoh Pengendalian Aplikasi (Application Control), bukan GITC. GITC adalah kontrol tingkat infrastruktur yang menaungi seluruh aplikasi."
-  },
-  {
-    "tm": 11,
-    "topic": "Analitika Data Akuntansi",
-    "difficulty": "medium",
-    "q": "Urutan enam langkah metodologis dalam siklus analitika data akuntansi model IMPACT adalah...",
-    "options": [
-      "Input, Model, Process, Audit, Calculate, Terminate",
-      "Identify questions, Master the data, Perform test plan, Address results, Communicate insights, Track outcomes",
-      "Information, Management, Protocol, Analysis, Control, Technology",
-      "Inspect, Match, Post, Adjust, Close, Transfer"
-    ],
-    "answer": 1,
-    "explanation": "Model IMPACT (Richardson, Teeter, Terrell): (1) Identify questions, (2) Master the data, (3) Perform the test plan, (4) Address and refine results, (5) Communicate insights, dan (6) Track outcomes."
-  },
-  {
-    "tm": 11,
-    "topic": "Analitika Data Akuntansi",
-    "difficulty": "advanced",
-    "q": "Tingkatan analitika data yang bertujuan menjawab pertanyaan: 'Apa tindakan terbaik yang harus diambil oleh perusahaan berdasarkan skenario masa depan?' diklasifikasikan sebagai...",
-    "options": [
-      "Analitika Deskriptif (Descriptive Analytics)",
-      "Analitika Diagnostik (Diagnostic Analytics)",
-      "Analitika Prediktif (Predictive Analytics)",
-      "Analitika Preskriptif (Prescriptive Analytics)"
+      "Menyimpan seluruh nomor bahan dalam satu field berisi daftar.",
+      "Menghapus identitas bahan dan menyimpan satu total perusahaan.",
+      "Menjadikan tanggal issue sebagai satu-satunya primary key.",
+      "Membuat linking table issue–bahan dengan kuantitas per pasangan."
     ],
     "answer": 3,
-    "explanation": "Hierarki Analitika: (1) Deskriptif = Apa yang terjadi?; (2) Diagnostik = Mengapa terjadi?; (3) Prediktif = Apa yang mungkin terjadi?; (4) Preskriptif = Apa rekomendasi tindakan terbaik yang harus diambil (optimalisasi)?."
+    "explanation": "Hubungan many-to-many diterapkan melalui linking table; identitas issue dan bahan menjadi referensi yang valid. Rujukan: Richardson AIS 4e, Ch.9 pp.350–365 (PDF 375–390)."
+  },
+  {
+    "tm": 8,
+    "topic": "Conversion Business Process",
+    "difficulty": "medium",
+    "q": "Pada model Sunset, barang gagal inspeksi dibuang lalu dibuat penggantinya. Model aktivitas harus menunjukkan...",
+    "options": [
+      "Jalur exception yang kembali ke aktivitas produksi sesuai aturan.",
+      "Message flow wajib antarlane dalam satu pool perusahaan.",
+      "Penggabungan seluruh hasil cacat ke barang jadi tanpa inspeksi.",
+      "End event sebelum hasil inspeksi diketahui atau dicatat."
+    ],
+    "answer": 0,
+    "explanation": "Gateway mengarahkan hasil mutu; loop/exception mengikuti aturan perusahaan. Sequence flow digunakan di dalam pool. Rujukan: Richardson AIS 4e, Ch.9 pp.350–365 (PDF 375–390)."
+  },
+  {
+    "tm": 9,
+    "topic": "Integrated Project",
+    "difficulty": "medium",
+    "q": "Apa urutan logis integrated project?",
+    "options": [
+      "Buat tampilan laporan, hapus sumber, lalu tentukan kebutuhan.",
+      "Kebutuhan, proses, model data, database, lalu query tervalidasi.",
+      "Pasang database, abaikan relasi, lalu kumpulkan pertanyaan.",
+      "Jumlahkan seluruh event sebagai kas tanpa pemetaan akun."
+    ],
+    "answer": 1,
+    "explanation": "Business requirements memandu model proses dan data; model menjadi blueprint database dan query. Rujukan: Richardson AIS 4e, Ch.10 pp.376–385 (PDF 401–410)."
+  },
+  {
+    "tm": 9,
+    "topic": "Integrated Project",
+    "difficulty": "medium",
+    "q": "Setelah impor data, tindakan yang mendukung keandalan query adalah...",
+    "options": [
+      "Memakai nama pelanggan sebagai PK meskipun duplikat.",
+      "Menunda pemeriksaan FK sampai seluruh laporan diterbitkan.",
+      "Menetapkan PK, tipe data, struktur dan referential integrity.",
+      "Menggabungkan seluruh master dan event ke satu kolom teks."
+    ],
+    "answer": 2,
+    "explanation": "Periksa kunci, tipe data dan relasi setelah impor. Rincian langkah ini berada pada PDF 408–409. Rujukan: Richardson AIS 4e, Ch.10 pp.376–385 (PDF 401–410)."
+  },
+  {
+    "tm": 9,
+    "topic": "Integrated Project",
+    "difficulty": "medium",
+    "q": "Kas awal 100, penerimaan 60, pembayaran vendor 35 dan gaji 10 (Rp juta). Kas akhir adalah...",
+    "options": [
+      "Rp75 juta.",
+      "Rp100 juta.",
+      "Rp125 juta.",
+      "Rp115 juta."
+    ],
+    "answer": 3,
+    "explanation": "100 + 60 − 35 − 10 = 115. Laba tidak sama dengan perubahan kas. Rujukan: Richardson AIS 4e, Ch.10 pp.376–385 (PDF 401–410)."
+  },
+  {
+    "tm": 9,
+    "topic": "Integrated Project",
+    "difficulty": "medium",
+    "q": "Invoice dapat dibayar beberapa kali. Mengapa kas perlu diagregasi per invoice sebelum join?",
+    "options": [
+      "Untuk menghindari penggandaan nilai karena hubungan banyak baris.",
+      "Untuk memastikan invoice tanpa pembayaran dikeluarkan dari analisis.",
+      "Untuk menghapus seluruh baris pembayaran yang nominalnya sama.",
+      "Untuk mengganti invoice ID dengan tanggal posting perusahaan."
+    ],
+    "answer": 0,
+    "explanation": "Grain dan multiplicity join dapat menggandakan agregat. Tabel alokasi dan LEFT JOIN membantu menjaga invoice terbuka. Rujukan: Richardson AIS 4e, Ch.10 pp.376–385 (PDF 401–410)."
+  },
+  {
+    "tm": 9,
+    "topic": "Integrated Project",
+    "difficulty": "medium",
+    "q": "Neraca saldo seimbang. Apa simpulan yang dapat didukung?",
+    "options": [
+      "Semua transaksi pasti telah tercatat dan seluruh barang ada.",
+      "Aritmetika debit-kredit seimbang; kelengkapan masih harus diuji.",
+      "Seluruh harga dan estimasi sudah pasti wajar tanpa bukti lain.",
+      "Semua akses pengguna sudah sesuai otorisasi dan jabatan."
+    ],
+    "answer": 1,
+    "explanation": "Transaksi yang sama-sama tidak dicatat pada debit/kredit tidak merusak keseimbangan. Perlu bukti sumber dan kontrol kelengkapan. Rujukan: Richardson AIS 4e, Ch.10 pp.376–385 (PDF 401–410)."
+  },
+  {
+    "tm": 10,
+    "topic": "Internal Controls dan COSO",
+    "difficulty": "medium",
+    "q": "Tujuan COSO mencakup...",
+    "options": [
+      "Operasi, pelaporan, dan kepatuhan.",
+      "Penjualan, produksi, dan pemasaran.",
+      "Enkripsi, mining, dan settlement.",
+      "Planning, design, dan maintenance."
+    ],
+    "answer": 0,
+    "explanation": "COSO IC memiliki tiga kategori tujuan; reporting mencakup informasi keuangan/nonkeuangan internal/eksternal. Rujukan: Richardson AIS 4e, Ch.11 pp.386–408 (PDF 411–433)."
+  },
+  {
+    "tm": 10,
+    "topic": "Internal Controls dan COSO",
+    "difficulty": "medium",
+    "q": "Jumlah komponen dan prinsip COSO IC 2013 yang benar adalah...",
+    "options": [
+      "Delapan komponen dan lima prinsip.",
+      "Lima komponen dan tujuh belas prinsip.",
+      "Empat komponen dan dua puluh prinsip.",
+      "Tiga komponen dan empat puluh prinsip."
+    ],
+    "answer": 1,
+    "explanation": "Jangan mencampur COSO IC 2013, ERM 2004 dan ERM 2017. Exhibit 11.2 menjelaskan 17 prinsip. Rujukan: Richardson AIS 4e, Ch.11 pp.386–408 (PDF 411–433)."
+  },
+  {
+    "tm": 10,
+    "topic": "Internal Controls dan COSO",
+    "difficulty": "medium",
+    "q": "Review rekonsiliasi bank setelah transaksi bertujuan menemukan selisih. Fungsi utamanya adalah...",
+    "options": [
+      "Preventif sebelum peristiwa terjadi.",
+      "Transfer seluruh risiko ke bank.",
+      "Detektif atas masalah yang terjadi.",
+      "Menghapus seluruh risiko residual."
+    ],
+    "answer": 2,
+    "explanation": "Deteksi diikuti investigasi dan koreksi bila perlu. Review harus meninggalkan bukti. Rujukan: Richardson AIS 4e, Ch.11 pp.386–408 (PDF 411–433)."
+  },
+  {
+    "tm": 10,
+    "topic": "Internal Controls dan COSO",
+    "difficulty": "medium",
+    "q": "SOP mewajibkan approval, tetapi pembayaran berulang tanpa approval. Aspek utama yang gagal adalah...",
+    "options": [
+      "Nama dan ikon aplikasi yang dipakai.",
+      "Pemilihan jenis server pada jaringan.",
+      "Kapasitas penyimpanan arsip historis.",
+      "Pelaksanaan kontrol sepanjang periode."
+    ],
+    "answer": 3,
+    "explanation": "Desain dan operating effectiveness berbeda; kondisi kasus menunjukkan masalah pelaksanaan dan perlu dinilai juga desainnya. Rujukan: Richardson AIS 4e, Ch.11 pp.386–408 (PDF 411–433)."
+  },
+  {
+    "tm": 10,
+    "topic": "Internal Controls dan COSO",
+    "difficulty": "medium",
+    "q": "Apa pemahaman yang tepat tentang residual risk?",
+    "options": [
+      "Risiko sisa setelah respons yang harus dinilai ulang dalam konteks.",
+      "Selalu nol setelah perusahaan memiliki ERP dan audit internal.",
+      "Skor ordinal awal dikurangi persentase kontrol tanpa model.",
+      "Seluruh tanggung jawab otomatis berpindah kepada asuransi."
+    ],
+    "answer": 0,
+    "explanation": "Tidak ada rumus pengurangan universal tanpa model/satuan yang sesuai. Kolusi, override dan perubahan tetap mungkin. Rujukan: Richardson AIS 4e, Ch.11 pp.386–408 (PDF 411–433)."
   },
   {
     "tm": 11,
-    "topic": "Analitika Data Akuntansi",
-    "difficulty": "advanced",
-    "q": "Dalam pengujian audit analitika forensik, Hukum Benford (Benford's Law) digunakan oleh akuntan untuk...",
+    "topic": "Cybersecurity dan Computer Fraud",
+    "difficulty": "medium",
+    "q": "Tiga tujuan CIA adalah...",
     "options": [
-      "Menghitung amortisasi obligasi suku bunga efektif",
-      "Mendeteksi anomali rekayasa angka transaksi dengan membandingkan frekuensi kemunculan digit pertama angka terhadap distribusi logaritmik alami",
-      "Menentukan nilai depresiasi aset tetap metode saldo menurun ganda",
-      "Mengonversi mata uang asing ke kurs tengah Bank Indonesia"
+      "Cost, Investment, Accounting.",
+      "Confidentiality, Integrity, Availability.",
+      "Compliance, Integration, Accuracy.",
+      "Control, Inspection, Authorization."
     ],
     "answer": 1,
-    "explanation": "Hukum Benford memprediksi bahwa dalam kumpulan data transaksi akuntansi alami, angka '1' muncul sebagai digit pertama sekitar 30.1% dari waktu, sedangkan angka '9' kurang dari 5%. Deviasi drastis mengindikasikan fabrikasi angka atau manipulasi transaksi buatan manusia."
+    "explanation": "Kerahasiaan, keutuhan dan ketersediaan dapat terdampak bersamaan dalam satu insiden. Rujukan: Richardson AIS 4e, Ch.12 pp.420–439 (PDF 445–464)."
   },
   {
     "tm": 11,
-    "topic": "Analitika Data Akuntansi",
+    "topic": "Cybersecurity dan Computer Fraud",
     "difficulty": "medium",
-    "q": "Aktivitas 'Master the Data' dalam model IMPACT mencakup proses ETL. Kepanjangan dari ETL adalah...",
+    "q": "Apa batas tanda tangan digital yang valid?",
     "options": [
-      "Estimate, Tax, Ledger",
-      "Extract, Transform, and Load",
-      "Electronic Transfer Link",
-      "Execute, Test, and Log"
+      "Otomatis membuktikan barang fisik ada dan berkualitas.",
+      "Mengenkripsi seluruh isi tanpa protokol tambahan.",
+      "Mendukung asal/integritas; tetap bergantung pada keamanan kunci.",
+      "Membuktikan semua transaksi sah secara ekonomi dan hukum."
     ],
-    "answer": 1,
-    "explanation": "ETL (Extract, Transform, Load) adalah proses mengekstrak data dari berbagai sumber ERP/database, mentransformasi data menjadi format yang bersih dan konsisten, lalu memuatnya (load) ke dalam Data Warehouse untuk dianalisis."
+    "answer": 2,
+    "explanation": "Signature bukan bukti seluruh asersi bisnis. Kepercayaan identitas dan pengelolaan private key penting. Rujukan: Richardson AIS 4e, Ch.12 pp.420–439 (PDF 445–464)."
   },
   {
     "tm": 11,
-    "topic": "Analitika Data Akuntansi",
+    "topic": "Cybersecurity dan Computer Fraud",
     "difficulty": "medium",
-    "q": "Teknik Audit Data Analytics (ADA) manakah yang paling efektif untuk mengidentifikasi adanya pembayaran ganda (duplicate payments) kepada vendor dalam satu tahun buku?",
+    "q": "Target RPO 30 menit. Backup valid 08.00, insiden 09.20, tanpa log tambahan. Hasil evaluasi adalah...",
     "options": [
-      "Mencocokkan nomor faktur, vendor, tanggal dan nominal, lalu meninjau kandidat duplikat.",
-      "Meregresikan laba terhadap penjualan, lalu menilai perubahan tren laba tahunan.",
-      "Meringkas pembayaran per bulan, lalu menilai apakah total tahun sama dengan anggaran.",
-      "Mengurutkan vendor menurut saldo akhir, lalu menguji vendor dengan saldo terbesar."
+      "RPO terpenuhi karena layanan belum dipulihkan.",
+      "RPO otomatis berubah menjadi 80 menit.",
+      "Kehilangan data pasti nol karena ada backup.",
+      "Potensi kehilangan 80 menit; target terlampaui 50 menit."
+    ],
+    "answer": 3,
+    "explanation": "Bandingkan kemampuan aktual dengan target. Interval backup bukan otomatis sasaran RPO. Rujukan: Richardson AIS 4e, Ch.12 pp.420–439 (PDF 445–464)."
+  },
+  {
+    "tm": 11,
+    "topic": "Cybersecurity dan Computer Fraud",
+    "difficulty": "medium",
+    "q": "Apa perbedaan authentication dan authorization?",
+    "options": [
+      "Memverifikasi identitas versus menentukan tindakan yang diizinkan.",
+      "Mencatat nominal invoice versus menentukan biaya barang jadi.",
+      "Menghapus log pengguna versus mengganti seluruh dokumen audit.",
+      "Memulihkan server versus menghitung seluruh saldo akun."
     ],
     "answer": 0,
-    "explanation": "Pencocokan tepat dan fuzzy dapat menemukan kandidat ganda. Kandidat tetap diperiksa terhadap transaksi asli; kemiripan field tidak otomatis membuktikan pembayaran ganda. Rujukan: Richardson AIS 4e, Ch.3, Exploratory Data Analysis, PDF 135-151."
+    "explanation": "Login yang sah tidak memberikan hak tak terbatas; akses perlu dibatasi menurut peran. Rujukan: Richardson AIS 4e, Ch.12 pp.420–439 (PDF 445–464)."
   },
   {
-    "tm": 12,
-    "topic": "RPA & AI dalam Akuntansi",
+    "tm": 11,
+    "topic": "Cybersecurity dan Computer Fraud",
     "difficulty": "medium",
-    "q": "Karakteristik proses bisnis akuntansi manakah yang PALING IDEAL untuk diotomatisasi menggunakan Robotic Process Automation (RPA)?",
+    "q": "BCP dan DRP berbeda terutama karena...",
     "options": [
-      "Proses yang membutuhkan pertimbangan moral dan negosiasi tatap muka",
-      "Proses bervolume tinggi, sangat repetitif, memiliki aturan logis yang pasti (rule-based), dan mengolah data digital terstruktur",
-      "Penyusunan visi strategis perusahaan 20 tahun ke depan",
-      "Penyelesaian sengketa hukum perdata di pengadilan"
+      "BCP hanya membeli perangkat; DRP hanya merekrut staf baru.",
+      "BCP mencakup kelangsungan bisnis; DRP fokus pemulihan TI.",
+      "BCP selalu tanpa biaya; DRP selalu tanpa kegiatan pengujian.",
+      "BCP menghapus semua risiko; DRP mengganti kebutuhan backup."
     ],
     "answer": 1,
-    "explanation": "RPA unggul pada tugas klerikal yang berulang dan berbasis aturan pasti (misal: mengunduh rekening koran bank setiap pagi jam 06.00, mencocokkan mutasi, dan memposting jurnal kliring otomatis ke ERP)."
+    "explanation": "Manusia, komunikasi, lokasi dan prosedur alternatif merupakan bagian kelangsungan bisnis. Restore TI mendukungnya. Rujukan: Richardson AIS 4e, Ch.12 pp.420–439 (PDF 445–464)."
   },
   {
     "tm": 12,
-    "topic": "RPA & AI dalam Akuntansi",
-    "difficulty": "advanced",
-    "q": "Perbedaan utama antara Attended RPA dan Unattended RPA dalam lingkungan kantor akuntansi adalah...",
+    "topic": "Reporting dan XBRL",
+    "difficulty": "medium",
+    "q": "Subset warehouse untuk fungsi tertentu disebut...",
     "options": [
-      "Attended dipicu/didampingi pengguna; unattended berjalan menurut pemicu terjadwal.",
-      "Attended dijadwalkan di server; unattended selalu menunggu klik pengguna desktop.",
-      "Attended beroperasi tanpa pengguna; unattended meminta pengguna pada setiap langkah.",
-      "Attended dan unattended sama-sama harus dipicu manual dari sesi pengguna desktop."
+      "Data mart.",
+      "Primary key.",
+      "Instance fact.",
+      "Private key."
     ],
     "answer": 0,
-    "explanation": "Pembedaan berkaitan dengan interaksi pengguna dan cara pemicu dijalankan. Bot tetap memerlukan otorisasi, pemantauan, penanganan pengecualian dan pemeliharaan. Istilah ini memakai sumber vendor sebagai pelengkap buku. Rujukan: UiPath Overview, Attended vs. Unattended automation, bagian Attended Automations dan Unattended Automations, https://docs.uipath.com/overview/other/latest/overview/attended-vs-unattended-automation, dibaca 12 Oktober 2026; Richardson AIS 4e Ch.15 memberi konteks otomasi."
+    "explanation": "Data mart memusatkan kebutuhan kelompok tertentu; definisinya tetap harus konsisten dengan sumber. Rujukan: Richardson AIS 4e, Ch.14 pp.470–483 (PDF 495–508)."
   },
   {
     "tm": 12,
-    "topic": "RPA & AI dalam Akuntansi",
+    "topic": "Reporting dan XBRL",
     "difficulty": "medium",
-    "q": "Teknologi AI yang mengonversi dokumen pindaian faktur kertas atau format PDF menjadi teks dan angka digital terstruktur untuk dimasukkan ke sistem ERP disebut...",
+    "q": "Taxonomy dan instance document berbeda karena...",
     "options": [
-      "Optical Character Recognition (OCR)",
-      "Virtual Private Network (VPN)",
-      "Domain Name System (DNS)",
-      "File Transfer Protocol (FTP)"
+      "Taxonomy berisi seluruh nominal entitas; instance hanya warna grafik.",
+      "Taxonomy mendefinisikan konsep; instance berisi fakta yang dilaporkan.",
+      "Taxonomy mengganti prinsip akuntansi; instance mengganti audit bukti.",
+      "Taxonomy merupakan akun bank; instance merupakan password akses."
+    ],
+    "answer": 1,
+    "explanation": "Konsep, tipe dan hubungan memberi makna; fakta memerlukan context dan unit yang benar. Rujukan: Richardson AIS 4e, Ch.14 pp.470–483 (PDF 495–508)."
+  },
+  {
+    "tm": 12,
+    "topic": "Reporting dan XBRL",
+    "difficulty": "medium",
+    "q": "Pasangan periode XBRL yang lazimnya benar adalah...",
+    "options": [
+      "Kas: duration; revenue: instant.",
+      "Kas: duration; revenue: duration.",
+      "Kas: instant; revenue: duration.",
+      "Kas: instant; revenue: instant."
+    ],
+    "answer": 2,
+    "explanation": "Kas adalah saldo pada tanggal; revenue adalah kinerja selama periode. Entitas/dimensi juga perlu cocok. Rujukan: Richardson AIS 4e, Ch.14 pp.470–483 (PDF 495–508)."
+  },
+  {
+    "tm": 12,
+    "topic": "Reporting dan XBRL",
+    "difficulty": "medium",
+    "q": "Dokumen XBRL lolos validasi teknis. Apa yang masih perlu diperiksa?",
+    "options": [
+      "Tidak ada; validasi teknis membuktikan seluruh asersi.",
+      "Hanya warna tabel karena makna fakta sudah pasti benar.",
+      "Hanya jumlah halaman tanpa memeriksa angka sumber.",
+      "Tag, konteks, unit, kelengkapan dan kesesuaian sumber."
+    ],
+    "answer": 3,
+    "explanation": "Validasi teknis tidak menggantikan substansi akuntansi, rekonsiliasi atau assurance proses. Rujukan: Richardson AIS 4e, Ch.14 pp.470–483 (PDF 495–508)."
+  },
+  {
+    "tm": 12,
+    "topic": "Reporting dan XBRL",
+    "difficulty": "medium",
+    "q": "Angka 115 pada laporan dalam Rp juta dikirim sebagai IDR 115. Masalahnya adalah...",
+    "options": [
+      "Skala nilai salah; seharusnya setara IDR 115.000.000.",
+      "Taxonomy otomatis berubah menjadi ledger transaksi internal.",
+      "Semua context harus diubah dari instant menjadi duration.",
+      "Unit rupiah selalu mengharuskan penggantian ke dolar AS."
     ],
     "answer": 0,
-    "explanation": "OCR (Optical Character Recognition) yang dipadukan dengan Machine Learning mampu mengenali tata letak faktur vendor, mengekstrak nomor PO, tanggal, dan subtotal, lalu meneruskannya ke software akuntansi otomatis."
-  },
-  {
-    "tm": 12,
-    "topic": "RPA & AI dalam Akuntansi",
-    "difficulty": "advanced",
-    "q": "Dengan semakin meluasnya implementasi bot RPA dan AI dalam sistem akuntansi, bagaimana peran profesional akuntan bertransformasi di masa depan?",
-    "options": [
-      "Profesi akuntan akan punah sepenuhnya karena komputer tidak pernah membuat kesalahan",
-      "Akuntan bertransisi dari sekadar pencatat buku klerikal (bookkeeper) menjadi analis bisnis strategis, desainer tata kelola sistem, dan auditor algoritma AI",
-      "Akuntan hanya bertugas merakit kabel perangkat keras komputer",
-      "Akuntan kembali menggunakan pembukuan kertas manual untuk menghindari hacking"
-    ],
-    "answer": 1,
-    "explanation": "RPA membebaskan akuntan dari pekerjaan manual berulang. Nilai tambah akuntan bergeser ke ranah penafsiran bisnis strategis, penilaian risiko sistem, kepatuhan etika algoritma AI, dan konsultasi manajerial."
-  },
-  {
-    "tm": 12,
-    "topic": "RPA & AI dalam Akuntansi",
-    "difficulty": "medium",
-    "q": "Risiko pengendalian baru yang timbul akibat penggunaan bot RPA dalam proses akuntansi adalah...",
-    "options": [
-      "Bot memastikan format input selalu sama sehingga pengujian perubahan dapat dihentikan.",
-      "Perubahan format input tanpa pembaruan bot dapat menghasilkan kesalahan berulang.",
-      "Bot mengurangi risiko input sehingga seluruh otorisasi transaksi dapat dihapuskan.",
-      "Bot membuat laporan akhir benar sehingga jejak transaksi tidak perlu disimpan."
-    ],
-    "answer": 1,
-    "explanation": "Perubahan input atau antarmuka dapat membuat aturan bot salah diterapkan berulang. Change control, testing dan pemantauan pengecualian tetap diperlukan. Rujukan: Richardson AIS 4e, Ch.15, Automation dan RPA, PDF 539-541."
+    "explanation": "Skala dan ketelitian berbeda. Decimals bukan perintah otomatis mengalikan jutaan; pemetaan nilai perlu benar. Rujukan: Richardson AIS 4e, Ch.14 pp.470–483 (PDF 495–508)."
   },
   {
     "tm": 13,
-    "topic": "Blockchain & Triple-Entry Accounting",
+    "topic": "Blockchain dan AI Automation",
     "difficulty": "medium",
-    "q": "Dalam arsitektur blockchain, elemen mana yang menghubungkan blok dengan catatan blok sebelumnya? Rujukan: Richardson AIS 4e, hal. 497-499 (PDF 522-524).",
+    "q": "Apa yang menghubungkan sebuah blok dengan blok sebelumnya?",
     "options": [
-      "Alamat jaringan validator saat ini",
-      "Hash Pointer / Previous Block Hash",
-      "Kunci privat milik penerima transaksi",
-      "Jumlah saldo agregat seluruh transaksi"
+      "Saldo kas agregat seluruh peserta.",
+      "Previous block hash / hash pointer.",
+      "Private key milik semua penerima.",
+      "Nama staf pembuat laporan laba."
     ],
     "answer": 1,
-    "explanation": "Previous hash mengikat data blok sebelumnya. Perubahan data mengubah digest, sehingga validasi hubungan perlu diperiksa ulang. Alamat jaringan dan saldo bukan pengganti hubungan hash; kunci privat tidak disalin sebagai tautan antarbIok. Rujukan: Richardson AIS 4e, hal. 497-499 (PDF 522-524)."
+    "explanation": "Hash mengikat riwayat data; tidak otomatis membuktikan kondisi barang dunia nyata. Rujukan: Richardson AIS 4e, Ch.15 pp.494–516 (PDF 519–541)."
   },
   {
     "tm": 13,
-    "topic": "Blockchain & Triple-Entry Accounting",
-    "difficulty": "advanced",
-    "q": "Apa peran tambahan pada konsep triple-entry Ian Grigg? Sumber pelengkap primer: Grigg (2005), bagian The Initial Role of a Receipt dan Triple Entry.",
+    "topic": "Blockchain dan AI Automation",
+    "difficulty": "medium",
+    "q": "Apa yang dimaksud oracle problem?",
     "options": [
-      "Menyediakan akun debit ketiga untuk setiap transaksi",
-      "Menyediakan tanda terima bertanda tangan sebagai bukti bersama",
-      "Menghapus pencatatan lokal setelah validator menyetujui transaksi",
-      "Menggantikan pemeriksaan nilai aset dengan verifikasi tanda tangan"
+      "Seluruh konsensus harus menggunakan proof of work.",
+      "Setiap receipt wajib mengganti catatan double-entry.",
+      "Input dunia luar bisa salah meskipun kode berjalan sesuai aturan.",
+      "Semua database terpusat wajib dipindahkan ke public blockchain."
     ],
-    "answer": 1,
-    "explanation": "Grigg menjelaskan tanda terima bersama yang mendukung catatan pihak terkait. Paper tahun 2005 itu tidak mensyaratkan public blockchain modern. Tanda terima tidak menetapkan satu jurnal universal atau menggantikan pengujian nilai aset. Sumber pelengkap primer: [Grigg (2005), The Initial Role of a Receipt dan Triple Entry](https://iang.org/papers/triple_entry.html)."
+    "answer": 2,
+    "explanation": "Sensor, petugas dan sistem luar perlu kontrol keandalan. Validasi ledger belum cukup untuk substansi. Rujukan: Richardson AIS 4e, Ch.15 pp.494–516 (PDF 519–541)."
   },
   {
     "tm": 13,
-    "topic": "Blockchain & Triple-Entry Accounting",
-    "difficulty": "advanced",
-    "q": "Kode yang menjalankan tindakan ketika kondisi kontrak terpenuhi disebut apa? Rujukan: Richardson AIS 4e, Ch. 15, Blockchain Applications, hal. 504-507 (PDF 529-532).",
+    "topic": "Blockchain dan AI Automation",
+    "difficulty": "medium",
+    "q": "Apa arti shared receipt pada konsep triple-entry?",
     "options": [
-      "Electronic data interchange protocol",
-      "Smart contract execution code",
-      "Virtual private network tunnel",
-      "Relational database query view"
+      "Sisi debit ketiga yang mengganti persamaan akuntansi.",
+      "Bukti seluruh aset pasti ada tanpa pemeriksaan fisik.",
+      "Penghapusan semua jurnal internal setelah settlement.",
+      "Bukti bersama terverifikasi yang mendukung catatan pihak terkait."
     ],
-    "answer": 1,
-    "explanation": "Smart contract mengeksekusi kode berdasarkan kondisi yang didefinisikan. Jika syarat bergantung pada sensor atau data luar, keandalan input itu tetap perlu diuji. EDI bertukar dokumen, VPN menghubungkan jaringan dan view menyajikan hasil query. Rujukan: Richardson AIS 4e, Ch. 15, Blockchain Applications, hal. 504-507 (PDF 529-532)."
+    "answer": 3,
+    "explanation": "Double-entry tetap ada pada masing-masing entitas; shared signed receipt bukan pengganti semua rekonsiliasi. Sumber pelengkap: Grigg (2005). Rujukan: Richardson AIS 4e, Ch.15 pp.494–516 (PDF 519–541)."
   },
   {
     "tm": 13,
-    "topic": "Blockchain & Triple-Entry Accounting",
+    "topic": "Blockchain dan AI Automation",
     "difficulty": "medium",
-    "q": "Apa manfaat utama immutability bagi pemeriksaan catatan? Rujukan: Richardson AIS 4e, hal. 497-507 (PDF 522-532).",
+    "q": "Bot gagal mendapat respons setelah meminta pembayaran. Kontrol retry yang tepat adalah...",
     "options": [
-      "Memberi bukti bahwa nilai wajar aset selalu benar",
-      "Membantu menelusuri perubahan melalui hash dan validasi jaringan",
-      "Menghilangkan kebutuhan menguji otorisasi transaksi oleh pelanggan",
-      "Menjamin seluruh transaksi dunia nyata masuk ke ledger"
-    ],
-    "answer": 1,
-    "explanation": "Hash dan validasi jaringan membuat perubahan catatan lebih mudah ditelusuri. Risiko manipulasi dan kesalahan input tetap perlu diuji; validasi ledger tidak membuktikan keberadaan atau nilai transaksi dunia nyata. Rujukan: Richardson AIS 4e, hal. 497-507 (PDF 522-532)."
-  },
-  {
-    "tm": 13,
-    "topic": "Blockchain & Triple-Entry Accounting",
-    "difficulty": "advanced",
-    "q": "Mengapa validasi ledger belum cukup sebagai bukti semua asersi laporan keuangan? Rujukan: Richardson AIS 4e, hal. 507 (PDF 532).",
-    "options": [
-      "Karena pemeriksaan ledger sepenuhnya menggantikan asersi keberadaan aset",
-      "Karena catatan tervalidasi belum membuktikan hak dan nilai transaksi",
-      "Karena jumlah validator langsung menentukan kewajaran laporan keuangan",
-      "Karena bentuk hash menentukan klasifikasi akun dan estimasi akuntansi"
-    ],
-    "answer": 1,
-    "explanation": "Validasi jaringan memeriksa catatan menurut aturan jaringan. Kesepakatan fiktif atau nilai aset keliru masih dapat masuk. Auditor perlu bukti keberadaan, hak, kelengkapan dan penilaian, serta memahami kontrol input. Rujukan: Richardson AIS 4e, hal. 507 (PDF 532)."
-  },
-  {
-    "tm": 14,
-    "topic": "Integrasi ERP & Simulasi UAS",
-    "difficulty": "medium",
-    "q": "Dalam integrated project Richardson, bagaimana model proses dan database mendukung laporan keuangan?",
-    "options": [
-      "Semua event langsung dijumlahkan sebagai kas tanpa membedakan pembayaran dan penjualan.",
-      "Event, resources dan hubungan dipetakan untuk menyiapkan query serta laporan yang sesuai.",
-      "Database menggantikan kebutuhan memodelkan kontrol dan menetapkan business requirements.",
-      "UML class diagram hanya mengatur tampilan laporan tanpa menghubungkan data antarproses."
-    ],
-    "answer": 1,
-    "explanation": "Buku menghubungkan business requirements, BPMN, integrated UML class diagram, tabel/relasi dan query laporan. Penjualan, pembelian, timecards dan pembayaran mempunyai peran berbeda; integrasi tidak berarti semua event adalah kas. Rujukan: Richardson AIS 4e, Ch.10, Exhibit 10.8 dan Summary, PDF 408-410."
-  },
-  {
-    "tm": 14,
-    "topic": "Integrasi ERP & Simulasi UAS",
-    "difficulty": "advanced",
-    "q": "Konsep 'Audit Trail' (Jejak Audit) dalam sistem ERP akuntansi modern berfungsi untuk...",
-    "options": [
-      "Mengurangi volume data dengan menghapus seluruh riwayat setelah laporan ditutup.",
-      "Menelusuri pelaku, waktu dan perubahan transaksi untuk pemeriksaan bukti serta kontrol.",
-      "Menghilangkan kebutuhan otorisasi karena setiap transaksi sudah tercatat dalam sistem.",
-      "Membuktikan isi transaksi benar hanya dari urutan waktu pencatatan dokumen dalam sistem."
-    ],
-    "answer": 1,
-    "explanation": "Jejak audit mendukung penelusuran transaksi dan perubahan. Integritas catatan perlu pengendalian akses; jejak saja tidak membuktikan keberadaan, hak atau nilai transaksi. Rujukan: Richardson AIS 4e, Ch.11-13, Internal Controls dan Auditing AIS, PDF 411-433,475-488."
-  },
-  {
-    "tm": 14,
-    "topic": "Integrasi ERP & Simulasi UAS",
-    "difficulty": "advanced",
-    "q": "Kontrol preventif apa yang sesuai untuk membatasi penyalahgunaan jurnal manual dalam AIS?",
-    "options": [
-      "Memberikan akses tanpa batas pada seluruh staf agar koreksi dapat dicatat secepatnya.",
-      "Membatasi akses, memisahkan tugas dan mensyaratkan persetujuan serta bukti pendukung.",
-      "Menghapus identitas pengguna setelah posting agar data pegawai terlindungi dari pemeriksa.",
-      "Menyimpan jurnal tak seimbang sampai akhir tahun agar tim dapat memperbaiki semuanya."
-    ],
-    "answer": 1,
-    "explanation": "Akses yang dibatasi, pemisahan tugas, otorisasi dan bukti membatasi kesempatan manipulasi. Ambang persetujuan mengikuti risiko dan kebijakan; tidak ada larangan universal semua jurnal ke Kas pada sumber ini. Rujukan: Richardson AIS 4e, Ch.11, Control Activities, PDF 411-433."
-  },
-  {
-    "tm": 14,
-    "topic": "Integrasi ERP & Simulasi UAS",
-    "difficulty": "medium",
-    "q": "Manakah pernyataan yang paling tepat mengenai peranan Chart of Accounts (Bagan Akun Standar) dalam arsitektur sistem informasi akuntansi ERP?",
-    "options": [
-      "Mengelompokkan akun secara konsisten untuk mencatat transaksi dan menyusun laporan.",
-      "Mengelompokkan vendor menurut nama untuk mengizinkan pembayaran tanpa validasi.",
-      "Mengelompokkan pengguna menurut unit kerja untuk menggantikan otorisasi transaksi.",
-      "Mengelompokkan dokumen menurut tanggal untuk membuktikan nilai seluruh saldo akun."
+      "Periksa status dan kunci unik agar pembayaran tidak terduplikasi.",
+      "Ulangi seluruh batch tanpa melihat transaksi yang sudah sukses.",
+      "Hapus seluruh audit trail untuk mempercepat proses berikutnya.",
+      "Berikan akun bot hak menyetujui semua transaksi tanpa batas."
     ],
     "answer": 0,
-    "explanation": "Bagan akun mendukung klasifikasi dan pengikhtisaran transaksi. Daftar akun tidak menggantikan master data, validasi atau kontrol akses. Rujukan: Richardson AIS 4e, Ch.10, Develop Financial Statement Information, PDF 408-410."
+    "explanation": "Timeout tidak selalu berarti aksi gagal. Idempotency, status settlement, approval serta log diperlukan. Rujukan: Richardson AIS 4e, Ch.15 pp.494–516 (PDF 519–541)."
+  },
+  {
+    "tm": 13,
+    "topic": "Blockchain dan AI Automation",
+    "difficulty": "medium",
+    "q": "Model mendeteksi fraud dengan akurasi 99% pada populasi yang hampir semuanya normal. Evaluasi berikutnya adalah...",
+    "options": [
+      "Hentikan semua pengujian karena angka 99% cukup untuk approval.",
+      "Nilai false positive/negative, precision, recall dan dampak kesalahan.",
+      "Hilangkan semua reviewer karena komputer tidak dapat keliru.",
+      "Gunakan data training sebagai bukti tunggal kinerja data baru."
+    ],
+    "answer": 1,
+    "explanation": "Akurasi tinggi bisa melewatkan semua kejadian langka; kualitas data, drift dan review tetap perlu dinilai. Rujukan: Richardson AIS 4e, Ch.15 pp.494–516 (PDF 519–541)."
   },
   {
     "tm": 14,
-    "topic": "Integrasi ERP & Simulasi UAS",
-    "difficulty": "advanced",
-    "q": "Dalam integrated project Richardson, apa yang perlu dilakukan setelah data diimpor untuk menjaga keandalan query AIS?",
+    "topic": "Justifying and Planning IT Initiatives",
+    "difficulty": "medium",
+    "q": "Investasi 120 dan kas bersih tahunan 50 (Rp juta). Payback sederhana dengan asumsi kas merata adalah...",
     "options": [
-      "Menyusun query dari tabel impor dahulu dan menggunakan nama pelanggan sebagai kunci.",
-      "Menetapkan primary key, memeriksa tipe data, lalu menegakkan referential integrity.",
-      "Menggabungkan seluruh event dalam satu tabel dan menetapkan tanggal sebagai kunci.",
-      "Menyusun laporan dari tabel impor dahulu dan memeriksa hubungan setelah penutupan."
+      "2,4 tahun.",
+      "0,42 tahun.",
+      "3,4 tahun.",
+      "6,0 tahun."
+    ],
+    "answer": 0,
+    "explanation": "120/50 = 2,4. Jika kas hanya masuk pada akhir tahun, interpolasi perlu dibedakan dari saat kas benar-benar diterima. Rujukan: Richardson AIS 4e, Ch.17 pp.550–571 (PDF 575–596)."
+  },
+  {
+    "tm": 14,
+    "topic": "Justifying and Planning IT Initiatives",
+    "difficulty": "medium",
+    "q": "NPV memasukkan...",
+    "options": [
+      "Hanya laba akuntansi tanpa mempertimbangkan timing.",
+      "Arus kas bersih yang didiskontokan sesuai waktunya.",
+      "Hanya biaya pembelian tanpa biaya operasi lanjutan.",
+      "Seluruh jam kapasitas sebagai penghematan kas pasti."
     ],
     "answer": 1,
-    "explanation": "PDF 409 mengharuskan koreksi data, primary key, tipe data dan struktur tabel yang efisien, kemudian relasi dengan referential integrity. Tanpa integritas referensial, keandalan query terpengaruh. Langkah ini memakai UML class diagram sebagai blueprint. Rujukan: Richardson AIS 4e, Ch.10, Import Data into Access, Create Efficient Tables, and Set Relationships, PDF 408-409, Exhibit 10.9."
+    "explanation": "NPV mempertimbangkan time value of money; asumsi kas dan discount rate harus konsisten. Rujukan: Richardson AIS 4e, Ch.17 pp.550–571 (PDF 575–596)."
+  },
+  {
+    "tm": 14,
+    "topic": "Justifying and Planning IT Initiatives",
+    "difficulty": "medium",
+    "q": "A=2 hari; B=3 dan C=4 setelah A; D=2 setelah B dan C. Dengan sumber daya cukup, critical path adalah...",
+    "options": [
+      "A–B–D selama 7 hari.",
+      "B–C–D selama 9 hari.",
+      "A–C–D selama 8 hari.",
+      "A–B–C–D selama 11 hari."
+    ],
+    "answer": 2,
+    "explanation": "D menunggu jalur terlama: A–C selesai hari 6, lalu D dua hari. B punya float satu hari. Rujukan: Richardson AIS 4e, Ch.17 pp.550–571 (PDF 575–596)."
+  },
+  {
+    "tm": 14,
+    "topic": "Justifying and Planning IT Initiatives",
+    "difficulty": "medium",
+    "q": "Makna 100% rule dalam perencanaan pekerjaan adalah...",
+    "options": [
+      "Seluruh tugas harus selesai sebelum proyek disetujui.",
+      "Semua estimasi durasi pasti tepat tanpa ketidakpastian.",
+      "Seluruh anggaran harus dipakai tanpa mempertimbangkan manfaat.",
+      "Seluruh lingkup pekerjaan internal, eksternal dan interim tercakup."
+    ],
+    "answer": 3,
+    "explanation": "100% rule menyangkut kelengkapan lingkup/WBS, bukan kepastian estimasi atau persentase penyelesaian. Rujukan: Richardson AIS 4e, Ch.17 pp.550–571 (PDF 575–596)."
+  },
+  {
+    "tm": 14,
+    "topic": "Justifying and Planning IT Initiatives",
+    "difficulty": "medium",
+    "q": "Apa pernyataan yang tepat tentang Agile dan Waterfall?",
+    "options": [
+      "Keduanya tetap membutuhkan kebutuhan jelas, pengujian dan kontrol perubahan.",
+      "Agile membolehkan semua transaksi produksi tanpa persetujuan.",
+      "Waterfall menjamin proyek pasti tepat waktu dan tanpa risiko.",
+      "Agile menghilangkan kebutuhan dokumentasi serta bukti pengujian."
+    ],
+    "answer": 0,
+    "explanation": "Metodologi mengatur cara kerja, bukan menghapus tanggung jawab akuntabilitas dan kualitas hasil. Rujukan: Richardson AIS 4e, Ch.17 pp.550–571 (PDF 575–596)."
   }
 ];
 

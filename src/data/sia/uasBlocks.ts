@@ -1,0 +1,13 @@
+import type { ContentBlock } from '../../types';
+export const h = (text: string): ContentBlock => ({ kind: 'h2', text });
+export const sub = (text: string): ContentBlock => ({ kind: 'h3', text });
+export const p = (text: string): ContentBlock => ({ kind: 'p', text });
+export const ul = (...items: string[]): ContentBlock => ({ kind: 'ul', items });
+export const ol = (...items: string[]): ContentBlock => ({ kind: 'ol', items });
+export const table = (title: string, headers: string[], rows: string[][]): ContentBlock => ({ kind: 'table', title, headers, rows, stackOnMobile: true });
+export const note = (title: string, text: string): ContentBlock => ({ kind: 'callout', variant: 'info', title, text });
+export const warn = (title: string, text: string): ContentBlock => ({ kind: 'callout', variant: 'warning', title, text });
+export const example = (title: string, ...blocks: ContentBlock[]): ContentBlock => ({ kind: 'example', title, blocks });
+export const check = (question: string, ...answer: ContentBlock[]): ContentBlock => ({ kind: 'self-check', question, answer, signal: 'Jika alasannya belum jelas, kembali ke contoh sebelum membuka jawaban.' });
+export const extra = (title: string, ...blocks: ContentBlock[]): ContentBlock => ({ kind: 'pendalaman', title, blocks });
+export const source = (text: string): ContentBlock => note('Sumber dan batas pembahasan', text + ' Angka, perusahaan, diagram, dan skenario latihan di halaman ini adalah ilustrasi buatan kecuali dinyatakan lain. Urutan materi inti mengikuti RPS-SIA, Pembagian Mengajar Gasal 2025/2026, halaman 1; pendalaman di luar bab terjadwal diberi label pelengkap.');

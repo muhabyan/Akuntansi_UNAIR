@@ -1,56 +1,56 @@
 [
   {
-    "id": "aks301-tm11-01",
+    "id": "aks301-v3-tm11-01",
     "phase": "pra-uas",
     "tm": 11,
-    "topic": "Analitika Data Akuntansi (Data Analytics) & Big Data",
+    "topic": "Cybersecurity dan Computer Fraud",
     "category": "Konsep",
-    "front": "Karakteristik Big Data (5V)",
-    "back": "Volume (besaran ukuran data), Velocity (kecepatan data tercipta), Variety (ragam format), Veracity (keandalan data), dan Value (nilai bisnis). Rujukan: Richardson et al. AIS 4e · Ch. 2 dan 3, hal. 49-60 dan 110-126 (PDF 74-85 dan 135-151)."
+    "front": "CIA",
+    "back": "Confidentiality: rahasia; integrity: utuh/akurat; availability: tersedia. Satu insiden dapat memengaruhi beberapa tujuan. Rujukan: Richardson AIS 4e, Ch.12 pp.420–439 (PDF 445–464)."
   },
   {
-    "id": "aks301-tm11-02",
+    "id": "aks301-v3-tm11-02",
     "phase": "pra-uas",
     "tm": 11,
-    "topic": "Analitika Data Akuntansi (Data Analytics) & Big Data",
+    "topic": "Cybersecurity dan Computer Fraud",
     "category": "Konsep",
-    "front": "Model Siklus Analitika IMPACT",
-    "back": "Identify questions, Master the data, Perform test plan, Address and refine results, Communicate insights, Track outcomes. Rujukan: Richardson et al. AIS 4e · Ch. 2 dan 3, hal. 49-60 dan 110-126 (PDF 74-85 dan 135-151)."
+    "front": "Authentication dan authorization",
+    "back": "Verifikasi identitas berbeda dari pembatasan tindakan; pengguna sah tetap memerlukan least privilege. Rujukan: Richardson AIS 4e, Ch.12 pp.420–439 (PDF 445–464)."
   },
   {
-    "id": "aks301-tm11-03",
+    "id": "aks301-v3-tm11-03",
     "phase": "pra-uas",
     "tm": 11,
-    "topic": "Analitika Data Akuntansi (Data Analytics) & Big Data",
+    "topic": "Cybersecurity dan Computer Fraud",
     "category": "Konsep",
-    "front": "Analisis Deskriptif vs Diagnostik",
-    "back": "Deskriptif menjawab: \"Apa yang telah terjadi?\" (summary rasio). Diagnostik menjawab: \"Mengapa hal itu bisa terjadi?\" (analisis varians mendalam). Rujukan: Richardson et al. AIS 4e · Ch. 2 dan 3, hal. 49-60 dan 110-126 (PDF 74-85 dan 135-151)."
+    "front": "Hash, encryption, signature",
+    "back": "Hash merangkum integritas; encryption menjaga rahasia; signature mendukung asal/integritas dengan kepercayaan kunci. Rujukan: Richardson AIS 4e, Ch.12 pp.420–439 (PDF 445–464)."
   },
   {
-    "id": "aks301-tm11-04",
+    "id": "aks301-v3-tm11-04",
     "phase": "pra-uas",
     "tm": 11,
-    "topic": "Analitika Data Akuntansi (Data Analytics) & Big Data",
+    "topic": "Cybersecurity dan Computer Fraud",
     "category": "Konsep",
-    "front": "Analisis Prediktif vs Preskriptif",
-    "back": "Prediktif menjawab: \"Apa yang mungkin terjadi di masa depan?\" (regresi, tren). Preskriptif menjawab: \"Tindakan optimal apa yang harus diambil?\" (optimasi). Rujukan: Richardson et al. AIS 4e · Ch. 2 dan 3, hal. 49-60 dan 110-126 (PDF 74-85 dan 135-151)."
+    "front": "RPO versus RTO",
+    "back": "RPO: titik pemulihan data/toleransi kehilangan. RTO: target durasi pemulihan layanan. Interval backup bukan otomatis target. Rujukan: Richardson AIS 4e, Ch.12 pp.420–439 (PDF 445–464)."
   },
   {
-    "id": "aks301-tm11-05",
+    "id": "aks301-v3-tm11-05",
     "phase": "pra-uas",
     "tm": 11,
-    "topic": "Analitika Data Akuntansi (Data Analytics) & Big Data",
+    "topic": "Cybersecurity dan Computer Fraud",
     "category": "Konsep",
-    "front": "Audit Data Analytics (ADA) pada Buku Besar",
-    "back": "Menguji seluruh populasi jurnal umum untuk menemukan anomali: jurnal manual di akhir pekan, user ID mencurigakan, atau pembulatan angka janggal. Rujukan: Richardson et al. AIS 4e · Ch. 2 dan 3, hal. 49-60 dan 110-126 (PDF 74-85 dan 135-151)."
+    "front": "Fraud triangle",
+    "back": "Pressure/incentive, opportunity, rationalization membantu asesmen risiko; keberadaannya belum bukti individu curang. Rujukan: Richardson AIS 4e, Ch.12 pp.420–439 (PDF 445–464)."
   },
   {
-    "id": "aks301-tm11-06",
+    "id": "aks301-v3-tm11-06",
     "phase": "pra-uas",
     "tm": 11,
-    "topic": "Analitika Data Akuntansi (Data Analytics) & Big Data",
+    "topic": "Cybersecurity dan Computer Fraud",
     "category": "Konsep",
-    "front": "Visualisasi Data Akuntansi",
-    "back": "Penyajian pola data interaktif melalui grafik, dashboard PowerBI/Tableau yang memudahkan identifikasi outlier bagi pengambil keputusan. Rujukan: Richardson et al. AIS 4e · Ch. 2 dan 3, hal. 49-60 dan 110-126 (PDF 74-85 dan 135-151)."
+    "front": "BCP, DRP dan SOC",
+    "back": "BCP mencakup kelangsungan bisnis; DRP pemulihan TI. SOC 1 fokus ICFR pengguna; SOC 2 kriteria Trust Services sesuai cakupan. Rujukan: Richardson AIS 4e, Ch.12 pp.420–439 (PDF 445–464)."
   }
 ]

@@ -3,258 +3,691 @@
   "tm": 14,
   "reading": {
     "tm": 14,
-    "title": "Integrasi Sistem Perusahaan & Simulasi Kasus Komprehensif Pra-UAS",
-    "ref": "Richardson et al. AIS 4e · Ch. 10, Integrated Project, hal. 376-385 (PDF 401-410)",
-    "intro": "Tatap muka penutup yang mengintegrasikan seluruh materi SIA: siklus transaksi, arsitektur ERP terpusat, tata kelola COSO/COBIT, keamanan siber, analitika data, dan teknologi masa depan. Dilengkapi dengan metodologi diagnostik kasus komprehensif persiapan Ujian Akhir Semester (UAS).",
+    "title": "Justifying and Planning IT Initiatives Using Project Management Techniques",
+    "ref": "RPS-SIA minggu 14 · Richardson AIS 4e · Ch. 17, pp. 550–571 (PDF 575–596)",
+    "intro": "Proyek TI harus menjawab masalah bisnis, layak secara ekonomi, dan dapat dilaksanakan. Bangun business case, bedakan laba dan arus kas, uji sensitivitas, lalu susun lingkup serta jadwal yang memperhitungkan ketergantungan. Contoh NPV dan critical path ditunjukkan langkah demi langkah.",
     "objectives": [
-      "Mengintegrasikan aliran data dan kontrol antar seluruh siklus transaksi bisnis (O2C, P2P, Konversi, Penggajian, Pelaporan Keuangan).",
-      "Mendiagnosis kegagalan sistem terintegrasi dan kelemahan pengendalian internal material dalam studi kasus perusahaan nyata.",
-      "Menyusun matriks mitigasi risiko berbasis COSO Internal Control dan IT General Controls (GITC).",
-      "Mengevaluasi kesiapan menghadapi evaluasi kompetensi Ujian Akhir Semester (UAS).",
-      "Merumuskan strategi transformasi digital sistem akuntansi yang aman dan efisien."
+      "Menyusun business case dengan kebutuhan, alternatif, manfaat, biaya dan risiko.",
+      "Menghitung payback serta NPV dan membedakan ARR/IRR beserta batasnya.",
+      "Menjelaskan lima fase SDLC serta Waterfall dan Agile.",
+      "Menghubungkan scope, time, cost, sponsor dan pengendalian perubahan.",
+      "Menerapkan WBS/100% rule, jaringan, forward/backward pass, float dan Gantt."
     ],
     "blocks": [
       {
+        "kind": "example",
+        "title": "ERP baru karena masalah apa?",
+        "blocks": [
+          {
+            "kind": "p",
+            "text": "Usulan “beli ERP karena pesaing sudah memakai” belum menjadi business case. Mulai dari masalah: penutupan buku memerlukan 12 hari karena data cabang tidak seragam. Tetapkan hasil yang diharapkan, alternatif perbaikan, siapa yang memperoleh manfaat, kapan manfaat muncul, dan bagaimana mencocokkannya dengan biaya serta risiko."
+          }
+        ]
+      },
+      {
+        "kind": "h2",
+        "text": "1. Business case: kebutuhan sebelum teknologi"
+      },
+      {
         "kind": "figure",
-        "caption": "Gambar 14.1: Peta Arsitektur Integrasi ERP Terpusat dan Simulasi Komprehensif Siklus Bisnis Pra-UAS.",
-        "svg": "<svg class=\"course-diagram-svg\" viewBox=\"0 0 680 250\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif\">\n  <rect class=\"svg-bg\" x=\"10\" y=\"10\" width=\"660\" height=\"230\" rx=\"12\" fill=\"#0f172a\" stroke=\"#334155\" stroke-width=\"1.5\"/>\n  <rect class=\"svg-header\" x=\"10\" y=\"10\" width=\"660\" height=\"38\" rx=\"12\" fill=\"#1e293b\" fill-opacity=\"0.6\"/>\n  <line class=\"svg-divider\" x1=\"10\" y1=\"48\" x2=\"670\" y2=\"48\" stroke=\"#334155\" stroke-width=\"1\"/>\n  <text class=\"svg-title text-accent-blue\" x=\"340\" y=\"34\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">PETA INTEGRASI SISTEM ERP &amp; SIMULASI SIKLUS BISNIS LENGKAP (UAS)</text>\n\n  <!-- Central Hub: Centralized ERP Database -->\n  <rect class=\"svg-subcard\" x=\"255\" y=\"90\" width=\"170\" height=\"85\" rx=\"8\" fill=\"#0f172a\" stroke=\"#10b981\" stroke-width=\"2\"/>\n  <text class=\"text-accent-green\" x=\"340\" y=\"112\" fill=\"#34d399\" font-size=\"10\" font-weight=\"800\" text-anchor=\"middle\">&#9881; CENTRAL DATABASE ERP</text>\n  <line class=\"svg-divider\" x1=\"265\" y1=\"120\" x2=\"415\" y2=\"120\" stroke=\"#334155\"/>\n  <text class=\"svg-text\" x=\"340\" y=\"135\" fill=\"#cbd5e1\" font-size=\"8\" text-anchor=\"middle\">Single Source of Truth</text>\n  <text class=\"svg-muted\" x=\"340\" y=\"148\" fill=\"#94a3b8\" font-size=\"7.5\" text-anchor=\"middle\">SAP S/4HANA / Oracle Cloud</text>\n  <text class=\"text-accent-green\" x=\"340\" y=\"162\" fill=\"#34d399\" font-size=\"7.5\" font-weight=\"600\" text-anchor=\"middle\">Integrasi Real-Time Transaksi</text>\n\n  <!-- Top Left: Sales (SD) -->\n  <rect class=\"svg-card\" x=\"30\" y=\"58\" width=\"180\" height=\"52\" rx=\"6\" fill=\"#1e293b\" stroke=\"#38bdf8\" stroke-width=\"1.5\"/>\n  <text class=\"text-accent-blue\" x=\"120\" y=\"76\" fill=\"#38bdf8\" font-size=\"9.5\" font-weight=\"700\" text-anchor=\"middle\">1. SALES &amp; DISTRIBUTION (O2C)</text>\n  <text class=\"svg-muted\" x=\"120\" y=\"92\" fill=\"#94a3b8\" font-size=\"8\" text-anchor=\"middle\">Pesanan &#8594; Kirim &#8594; Faktur &#8594; Kas Masuk</text>\n  <line x1=\"210\" y1=\"84\" x2=\"255\" y2=\"110\" stroke=\"#38bdf8\" stroke-width=\"1.5\"/>\n\n  <!-- Top Right: Purchasing (MM) -->\n  <rect class=\"svg-card\" x=\"470\" y=\"58\" width=\"180\" height=\"52\" rx=\"6\" fill=\"#1e293b\" stroke=\"#f59e0b\" stroke-width=\"1.5\"/>\n  <text class=\"text-accent-amber\" x=\"560\" y=\"76\" fill=\"#fbbf24\" font-size=\"9.5\" font-weight=\"700\" text-anchor=\"middle\">2. MATERIALS MGMT (P2P)</text>\n  <text class=\"svg-muted\" x=\"560\" y=\"92\" fill=\"#94a3b8\" font-size=\"8\" text-anchor=\"middle\">PR &#8594; PO &#8594; LPB &#8594; 3-Way Match &#8594; Bayar</text>\n  <line x1=\"470\" y1=\"84\" x2=\"425\" y2=\"110\" stroke=\"#f59e0b\" stroke-width=\"1.5\"/>\n\n  <!-- Bottom Left: Production (PP) -->\n  <rect class=\"svg-card\" x=\"30\" y=\"155\" width=\"180\" height=\"52\" rx=\"6\" fill=\"#1e293b\" stroke=\"#a855f7\" stroke-width=\"1.5\"/>\n  <text class=\"text-accent-purple\" x=\"120\" y=\"173\" fill=\"#a78bfa\" font-size=\"9.5\" font-weight=\"700\" text-anchor=\"middle\">3. PRODUCTION PLANNING (PP)</text>\n  <text class=\"svg-muted\" x=\"120\" y=\"189\" fill=\"#94a3b8\" font-size=\"8\" text-anchor=\"middle\">BOM &#8594; Work Order &#8594; WIP &#8594; Barang Jadi</text>\n  <line x1=\"210\" y1=\"181\" x2=\"255\" y2=\"155\" stroke=\"#a855f7\" stroke-width=\"1.5\"/>\n\n  <!-- Bottom Right: Financial & Controlling (FI/CO) -->\n  <rect class=\"svg-card\" x=\"470\" y=\"155\" width=\"180\" height=\"52\" rx=\"6\" fill=\"#1e293b\" stroke=\"#34d399\" stroke-width=\"1.5\"/>\n  <text class=\"text-accent-green\" x=\"560\" y=\"173\" fill=\"#34d399\" font-size=\"9.5\" font-weight=\"700\" text-anchor=\"middle\">4. FINANCIAL &amp; CONTROLLING (FI/CO)</text>\n  <text class=\"svg-muted\" x=\"560\" y=\"189\" fill=\"#94a3b8\" font-size=\"8\" text-anchor=\"middle\">Posting GL Otomatis &#8594; Laporan L/R &amp; Neraca</text>\n  <line x1=\"470\" y1=\"181\" x2=\"425\" y2=\"155\" stroke=\"#34d399\" stroke-width=\"1.5\"/>\n\n  <!-- Bottom Banner: Governance & Audit Trail -->\n  <rect class=\"svg-subcard\" x=\"150\" y=\"195\" width=\"380\" height=\"34\" rx=\"4\" fill=\"#0f172a\" stroke=\"#38bdf8\"/>\n  <text class=\"text-accent-blue\" x=\"340\" y=\"210\" fill=\"#38bdf8\" font-size=\"8\" font-weight=\"700\" text-anchor=\"middle\">KONTROL TERPADU: COSO &amp; COBIT 2019 COMPLIANCE</text>\n  <text class=\"svg-muted\" x=\"340\" y=\"222\" fill=\"#94a3b8\" font-size=\"7.5\" text-anchor=\"middle\">SoD Terintegrasi &#8226; Log Jejak Audit Tak Terhapus &#8226; Proteksi Keamanan Siber</text>\n</svg>"
-      },
-      {
-        "kind": "h2",
-        "text": "Peta Integrasi Arsitektur Sistem Informasi Akuntansi Terintegrasi"
-      },
-      {
-        "kind": "p",
-        "text": "SIA terpadu menghubungkan data proses operasional dengan pencatatan dan pelaporan. Dampak tiap peristiwa bergantung pada model data, pemetaan akun, otorisasi dan kontrol yang diterapkan. Richardson Ch.10, PDF 408-409, membedakan peran event, resources dan query laporan:"
-      },
-      {
-        "kind": "table",
-        "caption": "Tabel 14.1: Integrasi Lintas Siklus Transaksi ke Buku Besar Umum (General Ledger / GL)",
-        "headers": [
-          "Siklus Asal",
-          "Pemicu Transaksi (Trigger)",
-          "Jurnal Otomatis yang Terbentuk",
-          "Modul ERP Terkait"
-        ],
-        "rows": [
-          [
-            "Siklus Pendapatan (O2C)",
-            "Konfirmasi Bill of Lading pengiriman barang dagang ke pelanggan.",
-            "Debit: Piutang Usaha / Kas; Kredit: Pendapatan Penjualan. Debit: Beban Pokok Penjualan; Kredit: Persediaan Barang Jadi.",
-            "SD (Sales & Distribution) -> FI (Financial Accounting) & MM (Materials Management)."
-          ],
-          [
-            "Siklus Pengeluaran (P2P)",
-            "Three-Way Match disetujui (PO + RR + Vendor Invoice).",
-            "Debit: Persediaan Bahan Baku / Beban Operasional; Kredit: Utang Usaha.",
-            "MM (Materials Management) -> FI (Accounts Payable)."
-          ],
-          [
-            "Siklus Konversi",
-            "Laporan penyelesaian batch produksi dari stasiun perakitan.",
-            "Debit: Persediaan Barang Jadi; Kredit: Barang Dalam Proses (WIP).",
-            "PP (Production Planning) -> CO (Controlling) & FI."
-          ],
-          [
-            "Siklus Penggajian (Payroll)",
-            "Otorisasi rekapitulasi jam kerja biometrik bulanan.",
-            "Debit: Beban Gaji & Upah; Kredit: Utang PPh 21, Utang BPJS, dan Kas/Utang Gaji.",
-            "HR/HCM (Human Capital) -> FI."
-          ]
+        "title": "Empat tahap justifikasi ekonomi",
+        "svg": "<svg class=\"course-diagram-svg\" role=\"img\" aria-label=\"Empat tahap justifikasi ekonomi\" viewBox=\"0 0 800 278\" xmlns=\"http://www.w3.org/2000/svg\" style=\"font-family:Inter,Arial,sans-serif;width:100%;height:auto\"><title>Empat tahap justifikasi ekonomi</title><defs><marker id=\"it-business-case-a-false\" markerWidth=\"6\" markerHeight=\"6\" refX=\"5\" refY=\"3\" orient=\"auto\"><path d=\"M0 0 L6 3 L0 6\" fill=\"none\" stroke=\"#64748b\" stroke-width=\"1.5\"/></marker></defs><g><rect x=\"16\" y=\"16\" width=\"365\" height=\"108\" rx=\"12\" fill=\"#eff6ff\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"45\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">1. Business requirements</text>\n      <text x=\"32\" y=\"72\" fill=\"#334155\" font-size=\"14\">Definisikan masalah dan ukuran sukses.</text><text x=\"32\" y=\"94\" fill=\"#334155\" font-size=\"14\">Hubungkan dengan strategi organisasi.</text></g><path d=\"M384 70 h23\" marker-end=\"url(#it-business-case-a-false)\" stroke=\"#64748b\" stroke-width=\"2\"/><g><rect x=\"411\" y=\"16\" width=\"365\" height=\"108\" rx=\"12\" fill=\"#ecfdf5\" stroke=\"#94a3b8\"/>\n      <text x=\"427\" y=\"45\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">2. Alternatif solusi</text>\n      <text x=\"427\" y=\"72\" fill=\"#334155\" font-size=\"14\">Perbaiki proses, upgrade, beli, bangun.</text><text x=\"427\" y=\"94\" fill=\"#334155\" font-size=\"14\">Nilai opsi tidak melanjutkan proyek.</text></g><path d=\"M593.5 126 v12 H198.5 v10\" fill=\"none\" marker-end=\"url(#it-business-case-a-false)\" stroke=\"#64748b\" stroke-width=\"2\"/><g><rect x=\"16\" y=\"154\" width=\"365\" height=\"108\" rx=\"12\" fill=\"#eff6ff\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"183\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">3. Manfaat, biaya, risiko</text>\n      <text x=\"32\" y=\"210\" fill=\"#334155\" font-size=\"14\">Sebutkan nominal, waktu dan asumsi.</text><text x=\"32\" y=\"232\" fill=\"#334155\" font-size=\"14\">Jangan hitung manfaat dua kali.</text></g><path d=\"M384 208 h23\" marker-end=\"url(#it-business-case-a-false)\" stroke=\"#64748b\" stroke-width=\"2\"/><g><rect x=\"411\" y=\"154\" width=\"365\" height=\"108\" rx=\"12\" fill=\"#ecfdf5\" stroke=\"#94a3b8\"/>\n      <text x=\"427\" y=\"183\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">4. Value proposition</text>\n      <text x=\"427\" y=\"210\" fill=\"#334155\" font-size=\"14\">Bandingkan hasil dan sensitivitas.</text><text x=\"427\" y=\"232\" fill=\"#334155\" font-size=\"14\">Rekomendasikan dengan batas jelas.</text></g></svg>",
+        "mobileSvg": "<svg class=\"course-diagram-svg\" role=\"img\" aria-label=\"Empat tahap justifikasi ekonomi\" viewBox=\"0 0 360 588\" xmlns=\"http://www.w3.org/2000/svg\" style=\"font-family:Inter,Arial,sans-serif;width:100%;height:auto\"><title>Empat tahap justifikasi ekonomi</title><defs><marker id=\"it-business-case-a-true\" markerWidth=\"6\" markerHeight=\"6\" refX=\"5\" refY=\"3\" orient=\"auto\"><path d=\"M0 0 L6 3 L0 6\" fill=\"none\" stroke=\"#64748b\" stroke-width=\"1.5\"/></marker></defs><g><rect x=\"16\" y=\"16\" width=\"328\" height=\"108\" rx=\"12\" fill=\"#eff6ff\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"45\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">1. Business requirements</text>\n      <text x=\"32\" y=\"72\" fill=\"#334155\" font-size=\"14\">Definisikan masalah dan ukuran sukses.</text><text x=\"32\" y=\"94\" fill=\"#334155\" font-size=\"14\">Hubungkan dengan strategi organisasi.</text></g><path d=\"M180 128 v22\" marker-end=\"url(#it-business-case-a-true)\" stroke=\"#64748b\" stroke-width=\"2\"/><g><rect x=\"16\" y=\"158\" width=\"328\" height=\"130\" rx=\"12\" fill=\"#ecfdf5\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"187\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">2. Alternatif solusi</text>\n      <text x=\"32\" y=\"214\" fill=\"#334155\" font-size=\"14\">Perbaiki proses, upgrade, beli,</text><text x=\"32\" y=\"236\" fill=\"#334155\" font-size=\"14\">bangun.</text><text x=\"32\" y=\"258\" fill=\"#334155\" font-size=\"14\">Nilai opsi tidak melanjutkan proyek.</text></g><path d=\"M180 292 v22\" marker-end=\"url(#it-business-case-a-true)\" stroke=\"#64748b\" stroke-width=\"2\"/><g><rect x=\"16\" y=\"322\" width=\"328\" height=\"108\" rx=\"12\" fill=\"#eff6ff\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"351\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">3. Manfaat, biaya, risiko</text>\n      <text x=\"32\" y=\"378\" fill=\"#334155\" font-size=\"14\">Sebutkan nominal, waktu dan asumsi.</text><text x=\"32\" y=\"400\" fill=\"#334155\" font-size=\"14\">Jangan hitung manfaat dua kali.</text></g><path d=\"M180 434 v22\" marker-end=\"url(#it-business-case-a-true)\" stroke=\"#64748b\" stroke-width=\"2\"/><g><rect x=\"16\" y=\"464\" width=\"328\" height=\"108\" rx=\"12\" fill=\"#ecfdf5\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"493\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">4. Value proposition</text>\n      <text x=\"32\" y=\"520\" fill=\"#334155\" font-size=\"14\">Bandingkan hasil dan sensitivitas.</text><text x=\"32\" y=\"542\" fill=\"#334155\" font-size=\"14\">Rekomendasikan dengan batas jelas.</text></g></svg>",
+        "caption": "Adaptasi buatan dari Exhibit 17.1, Richardson p.553. Estimasi manfaat, biaya dan risiko saling terkait.",
+        "altText": "1. Business requirements: Definisikan masalah dan ukuran sukses. Hubungkan dengan strategi organisasi.; 2. Alternatif solusi: Perbaiki proses, upgrade, beli, bangun. Nilai opsi tidak melanjutkan proyek.; 3. Manfaat, biaya, risiko: Sebutkan nominal, waktu dan asumsi. Jangan hitung manfaat dua kali.; 4. Value proposition: Bandingkan hasil dan sensitivitas. Rekomendasikan dengan batas jelas.",
+        "transcript": [
+          "1. Business requirements: Definisikan masalah dan ukuran sukses. Hubungkan dengan strategi organisasi.",
+          "2. Alternatif solusi: Perbaiki proses, upgrade, beli, bangun. Nilai opsi tidak melanjutkan proyek.",
+          "3. Manfaat, biaya, risiko: Sebutkan nominal, waktu dan asumsi. Jangan hitung manfaat dua kali.",
+          "4. Value proposition: Bandingkan hasil dan sensitivitas. Rekomendasikan dengan batas jelas."
         ]
       },
       {
-        "kind": "h2",
-        "text": "Simulasi Kasus UAS: Diagnosa Kegagalan Sistem PT Global Distribusi Utama"
-      },
-      {
-        "kind": "p",
-        "text": "Konteks Kasus: PT Global Distribusi Utama mengalami kerugian Rp 3.2 miliar dalam satu tahun buku. Hasil investigasi komite audit menemukan temuan-temuan berikut:"
-      },
-      {
-        "kind": "ul",
-        "items": [
-          "Temuan 1: Database ERP sering down selama 6 jam saat penutupan buku bulanan karena server kelebihan beban.",
-          "Temuan 2: Staf pembelian merangkap sebagai admin yang memiliki hak akses menambah vendor baru dan menyetujui Purchase Order.",
-          "Temuan 3: Perusahaan membayar Rp 850 juta ke vendor bernama 'CV Maju Lancar' yang beralamat sama dengan rumah pribadi Manajer Logistik.",
-          "Temuan 4: Terjadi kebocoran data rahasia harga pokok produksi ke kompetitor melalui USB flashdisk staf magang IT."
-        ]
-      },
-      {
-        "kind": "h2",
-        "text": "Solusi Matriks Rekomendasi Audit (Standar Jawaban UAS)"
-      },
-      {
         "kind": "table",
-        "caption": "Tabel 14.2: Matriks Diagnosa & Rekomendasi Komprehensif UAS",
+        "title": "Komponen business case yang dapat diperiksa",
         "headers": [
-          "Kasus",
-          "Kelemahan Pengendalian",
-          "Kategori COSO / GITC",
-          "Solusi & Pengendalian Perbaikan"
+          "Komponen",
+          "Pertanyaan",
+          "Contoh"
         ],
         "rows": [
           [
-            "Temuan 1",
-            "Ketiadaan perencanaan kapasitas server dan tidak adanya High Availability / Hot Site.",
-            "GITC (Computer Operations & Availability)",
-            "Migrasikan database ke arsitektur Cloud ERP yang memiliki auto-scaling; siapkan server replikasi aktif."
+            "Kebutuhan",
+            "Masalah apa, lingkup mana, ukuran sukses apa?",
+            "Tutup buku turun dari 12 menjadi 7 hari dengan tingkat kesalahan terkendali."
           ],
           [
-            "Temuan 2",
-            "Pelanggaran serius pemisahan tugas (SoD) antara pendaftaran vendor dan pemesanan.",
-            "Control Activities (Segregation of Duties)",
-            "Cabut hak akses otorisasi PO dari staf pendaftaran vendor; terapkan matriks SoD di konfigurasi modul ERP."
+            "Alternatif",
+            "Apakah teknologi baru merupakan satu-satunya cara?",
+            "Standarisasi proses dahulu, upgrade sistem, SaaS, atau bangun sendiri."
           ],
           [
-            "Temuan 3",
-            "Fraud Vendor Fiktif (Shell Company) dan transaksi dengan pihak berelasi tanpa deklarasi.",
-            "Risk Assessment & Control Environment",
-            "Wajibkan verifikasi fisik dan legalitas NPWP/NIB vendor oleh Bagian Legal; terapkan audit data matching alamat vendor vs karyawan."
+            "Manfaat",
+            "Siapa mendapat manfaat dan kapan?",
+            "Kurangi overtime atau risiko salah bayar; kapasitas berbeda dari kas."
           ],
           [
-            "Temuan 4",
-            "Ketiadaan Data Loss Prevention (DLP) dan akses fisik port USB yang terbuka bebas.",
-            "Information Security (GITC - Logical Access)",
-            "Nonaktifkan seluruh port USB di komputer kantor melalui Group Policy Windows; enkripsi harddisk laptop dengan BitLocker; terapkan perjanjian kerahasiaan (NDA)."
+            "Biaya",
+            "Apa biaya awal dan berulang sepanjang umur solusi?",
+            "Lisensi, migrasi, integrasi, pelatihan, operasi, maintenance, downtime dan exit."
+          ],
+          [
+            "Risiko",
+            "Apa yang bisa menggagalkan hasil?",
+            "Teknologi tidak sesuai, perubahan tidak diterima, manfaat terlambat."
+          ],
+          [
+            "Keputusan",
+            "Apa rekomendasi, kriteria dan pemiliknya?",
+            "Sponsor menyetujui pilot dengan tolok ukur dan titik evaluasi."
           ]
+        ],
+        "stackOnMobile": true
+      },
+      {
+        "kind": "p",
+        "text": "Manfaat dapat berupa revenue enhancement, revenue protection, cost savings dan cost avoidance. Pisahkan manfaat berwujud yang dapat diukur dari manfaat yang sulit dimonetisasi. Mempercepat pekerjaan bisa melepas kapasitas tanpa menurunkan pembayaran gaji. Biaya akuisisi meliputi implementasi langsung/tidak langsung; biaya operasi mencakup dukungan sepanjang umur sistem. Richardson pp.554–557."
+      },
+      {
+        "kind": "h2",
+        "text": "2. Metrik ekonomi: satu angka tidak cukup"
+      },
+      {
+        "kind": "table",
+        "title": "Metrik dan batasnya",
+        "headers": [
+          "Metrik",
+          "Cara memahami",
+          "Batas"
+        ],
+        "rows": [
+          [
+            "Payback",
+            "Waktu sampai investasi awal tertutup arus kas masuk bersih.",
+            "Payback sederhana mengabaikan nilai waktu uang dan kas setelah titik pulih."
+          ],
+          [
+            "ARR",
+            "Laba akuntansi rata-rata dibanding investasi sesuai definisi yang dipakai.",
+            "Laba berbeda dari arus kas dan definisi penyebut harus eksplisit."
+          ],
+          [
+            "NPV",
+            "Present value seluruh arus kas masuk dikurangi keluar.",
+            "Sensitif pada estimasi kas, timing dan discount rate."
+          ],
+          [
+            "IRR",
+            "Tingkat diskonto yang membuat NPV nol.",
+            "Dapat menyesatkan untuk pola kas tidak biasa dan perbandingan skala proyek."
+          ]
+        ],
+        "stackOnMobile": true
+      },
+      {
+        "kind": "formula",
+        "text": "\\mathrm{NPV}=-I_0+\\sum_{t=1}^{n}\\frac{CF_t}{(1+r)^t}",
+        "note": "I₀ = pengeluaran awal; CFₜ = arus kas bersih pada periode t; r = tingkat diskonto yang konsisten dengan satuan periode dan asumsi kas."
+      },
+      {
+        "kind": "example",
+        "title": "Asumsi latihan: investasi Rp120 juta",
+        "blocks": [
+          {
+            "kind": "p",
+            "text": "Investasi dibayar hari ini Rp120 juta. Arus kas bersih tambahan Rp50 juta setiap akhir tahun selama tiga tahun, sudah setelah biaya operasi; nilai residu nol. Diskonto 10% per tahun. Untuk menyederhanakan, abaikan pajak dan inflasi."
+          },
+          {
+            "kind": "table",
+            "title": "Diskonto arus kas",
+            "headers": [
+              "Waktu",
+              "Arus kas Rp juta",
+              "Present value Rp juta"
+            ],
+            "rows": [
+              [
+                "0",
+                "−120",
+                "−120"
+              ],
+              [
+                "Akhir tahun 1",
+                "50",
+                "50 / 1,10 = 45,45"
+              ],
+              [
+                "Akhir tahun 2",
+                "50",
+                "50 / 1,10² = 41,32"
+              ],
+              [
+                "Akhir tahun 3",
+                "50",
+                "50 / 1,10³ = 37,57"
+              ]
+            ],
+            "stackOnMobile": true
+          },
+          {
+            "kind": "ol",
+            "items": [
+              "Total PV masuk tanpa pembulatan antara = 124,3426.",
+              "NPV = 124,3426 − 120 = Rp4,3426 juta, dibulatkan Rp4,34 juta.",
+              "Payback sederhana secara interpolasi = 120 / 50 = 2,4 tahun jika kas dianggap merata; jika benar-benar hanya diterima di akhir tahun, pengembalian terjadi pada akhir tahun ke-3.",
+              "NPV positif dalam asumsi kasus mendukung nilai ekonomi, tetapi margin kecil sehingga sensitivitas penting. Keputusan juga mempertimbangkan risiko, sumber daya dan alternatif."
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "p",
+        "text": "Jika arus kas tidak merata, jumlahkan kas tiap periode dan cari saat kumulatif menutup investasi, bukan membagi investasi dengan kas rata-rata tanpa penjelasan. Jangan memasukkan depresiasi sebagai pengeluaran kas kedua kali; dampak pajaknya hanya dimasukkan bila model memang mencakup pajak."
+      },
+      {
+        "kind": "h2",
+        "text": "3. Risiko dan sensitivitas nilai proyek"
+      },
+      {
+        "kind": "example",
+        "title": "Manfaat turun 10%",
+        "blocks": [
+          {
+            "kind": "p",
+            "text": "Kas bersih menjadi Rp45 juta/tahun. Total PV = 45 × (1/1,1 + 1/1,1² + 1/1,1³) = Rp111,9083 juta. NPV menjadi **−Rp8,09 juta**. Penurunan manfaat yang tampak kecil mengubah simpulan ekonomi."
+          },
+          {
+            "kind": "p",
+            "text": "Titik impas kas tahunan = 120 ÷ 2,486852 = sekitar Rp48,25 juta/tahun. Bandingkan estimasi Rp50 juta dengan ambang ini. Gunakan skenario biaya lebih tinggi, peluncuran terlambat, dan adopsi lebih rendah, lalu jelaskan mana asumsi yang paling menentukan."
+          }
+        ]
+      },
+      {
+        "kind": "table",
+        "title": "Jenis risiko proyek",
+        "headers": [
+          "Risiko",
+          "Makna",
+          "Tindakan"
+        ],
+        "rows": [
+          [
+            "Alignment",
+            "Solusi tidak mendukung strategi/kebutuhan.",
+            "Uji kebutuhan dan kriteria sukses dengan pemilik bisnis."
+          ],
+          [
+            "Technology",
+            "Solusi tidak bekerja seperti direncanakan.",
+            "Pilot, pengujian integrasi, keamanan dan kapasitas."
+          ],
+          [
+            "Implementation / change",
+            "Organisasi tidak dapat menerapkan atau memakai solusi dengan baik.",
+            "Pelatihan, peran pemilik, data migrasi bersih, dukungan dan umpan balik."
+          ]
+        ],
+        "stackOnMobile": true
+      },
+      {
+        "kind": "h2",
+        "text": "4. Systems Development Life Cycle (SDLC)"
+      },
+      {
+        "kind": "figure",
+        "title": "Lima fase SDLC",
+        "svg": "<svg class=\"course-diagram-svg\" role=\"img\" aria-label=\"Lima fase SDLC\" viewBox=\"0 0 800 416\" xmlns=\"http://www.w3.org/2000/svg\" style=\"font-family:Inter,Arial,sans-serif;width:100%;height:auto\"><title>Lima fase SDLC</title><defs><marker id=\"sdlc-uas-a-false\" markerWidth=\"6\" markerHeight=\"6\" refX=\"5\" refY=\"3\" orient=\"auto\"><path d=\"M0 0 L6 3 L0 6\" fill=\"none\" stroke=\"#64748b\" stroke-width=\"1.5\"/></marker></defs><g><rect x=\"16\" y=\"16\" width=\"365\" height=\"108\" rx=\"12\" fill=\"#eff6ff\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"45\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">1. Planning</text>\n      <text x=\"32\" y=\"72\" fill=\"#334155\" font-size=\"14\">Kebutuhan, kelayakan, business case.</text><text x=\"32\" y=\"94\" fill=\"#334155\" font-size=\"14\">Tetapkan sponsor dan lingkup.</text></g><path d=\"M384 70 h23\" marker-end=\"url(#sdlc-uas-a-false)\" stroke=\"#64748b\" stroke-width=\"2\"/><g><rect x=\"411\" y=\"16\" width=\"365\" height=\"108\" rx=\"12\" fill=\"#ecfdf5\" stroke=\"#94a3b8\"/>\n      <text x=\"427\" y=\"45\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">2. Analysis</text>\n      <text x=\"427\" y=\"72\" fill=\"#334155\" font-size=\"14\">Rinci kebutuhan pengguna/proses.</text><text x=\"427\" y=\"94\" fill=\"#334155\" font-size=\"14\">Apa yang harus dicapai sistem?</text></g><path d=\"M593.5 126 v12 H198.5 v10\" fill=\"none\" marker-end=\"url(#sdlc-uas-a-false)\" stroke=\"#64748b\" stroke-width=\"2\"/><g><rect x=\"16\" y=\"154\" width=\"365\" height=\"108\" rx=\"12\" fill=\"#eff6ff\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"183\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">3. Design</text>\n      <text x=\"32\" y=\"210\" fill=\"#334155\" font-size=\"14\">Rancang data, kontrol dan antarmuka.</text><text x=\"32\" y=\"232\" fill=\"#334155\" font-size=\"14\">Bagaimana kebutuhan dipenuhi?</text></g><path d=\"M384 208 h23\" marker-end=\"url(#sdlc-uas-a-false)\" stroke=\"#64748b\" stroke-width=\"2\"/><g><rect x=\"411\" y=\"154\" width=\"365\" height=\"108\" rx=\"12\" fill=\"#ecfdf5\" stroke=\"#94a3b8\"/>\n      <text x=\"427\" y=\"183\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">4. Implementation</text>\n      <text x=\"427\" y=\"210\" fill=\"#334155\" font-size=\"14\">Bangun, uji, migrasi, latih, terapkan.</text><text x=\"427\" y=\"232\" fill=\"#334155\" font-size=\"14\">Verifikasi hasil sebelum produksi.</text></g><path d=\"M593.5 264 v12 H198.5 v10\" fill=\"none\" marker-end=\"url(#sdlc-uas-a-false)\" stroke=\"#64748b\" stroke-width=\"2\"/><g><rect x=\"16\" y=\"292\" width=\"365\" height=\"108\" rx=\"12\" fill=\"#eff6ff\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"321\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">5. Maintenance</text>\n      <text x=\"32\" y=\"348\" fill=\"#334155\" font-size=\"14\">Koreksi, dukung dan perbarui.</text><text x=\"32\" y=\"370\" fill=\"#334155\" font-size=\"14\">Perubahan besar memulai siklus baru.</text></g></svg>",
+        "mobileSvg": "<svg class=\"course-diagram-svg\" role=\"img\" aria-label=\"Lima fase SDLC\" viewBox=\"0 0 360 708\" xmlns=\"http://www.w3.org/2000/svg\" style=\"font-family:Inter,Arial,sans-serif;width:100%;height:auto\"><title>Lima fase SDLC</title><defs><marker id=\"sdlc-uas-a-true\" markerWidth=\"6\" markerHeight=\"6\" refX=\"5\" refY=\"3\" orient=\"auto\"><path d=\"M0 0 L6 3 L0 6\" fill=\"none\" stroke=\"#64748b\" stroke-width=\"1.5\"/></marker></defs><g><rect x=\"16\" y=\"16\" width=\"328\" height=\"108\" rx=\"12\" fill=\"#eff6ff\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"45\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">1. Planning</text>\n      <text x=\"32\" y=\"72\" fill=\"#334155\" font-size=\"14\">Kebutuhan, kelayakan, business case.</text><text x=\"32\" y=\"94\" fill=\"#334155\" font-size=\"14\">Tetapkan sponsor dan lingkup.</text></g><path d=\"M180 128 v22\" marker-end=\"url(#sdlc-uas-a-true)\" stroke=\"#64748b\" stroke-width=\"2\"/><g><rect x=\"16\" y=\"158\" width=\"328\" height=\"108\" rx=\"12\" fill=\"#ecfdf5\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"187\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">2. Analysis</text>\n      <text x=\"32\" y=\"214\" fill=\"#334155\" font-size=\"14\">Rinci kebutuhan pengguna/proses.</text><text x=\"32\" y=\"236\" fill=\"#334155\" font-size=\"14\">Apa yang harus dicapai sistem?</text></g><path d=\"M180 270 v22\" marker-end=\"url(#sdlc-uas-a-true)\" stroke=\"#64748b\" stroke-width=\"2\"/><g><rect x=\"16\" y=\"300\" width=\"328\" height=\"108\" rx=\"12\" fill=\"#eff6ff\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"329\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">3. Design</text>\n      <text x=\"32\" y=\"356\" fill=\"#334155\" font-size=\"14\">Rancang data, kontrol dan antarmuka.</text><text x=\"32\" y=\"378\" fill=\"#334155\" font-size=\"14\">Bagaimana kebutuhan dipenuhi?</text></g><path d=\"M180 412 v22\" marker-end=\"url(#sdlc-uas-a-true)\" stroke=\"#64748b\" stroke-width=\"2\"/><g><rect x=\"16\" y=\"442\" width=\"328\" height=\"108\" rx=\"12\" fill=\"#ecfdf5\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"471\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">4. Implementation</text>\n      <text x=\"32\" y=\"498\" fill=\"#334155\" font-size=\"14\">Bangun, uji, migrasi, latih, terapkan.</text><text x=\"32\" y=\"520\" fill=\"#334155\" font-size=\"14\">Verifikasi hasil sebelum produksi.</text></g><path d=\"M180 554 v22\" marker-end=\"url(#sdlc-uas-a-true)\" stroke=\"#64748b\" stroke-width=\"2\"/><g><rect x=\"16\" y=\"584\" width=\"328\" height=\"108\" rx=\"12\" fill=\"#eff6ff\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"613\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">5. Maintenance</text>\n      <text x=\"32\" y=\"640\" fill=\"#334155\" font-size=\"14\">Koreksi, dukung dan perbarui.</text><text x=\"32\" y=\"662\" fill=\"#334155\" font-size=\"14\">Perubahan besar memulai siklus baru.</text></g></svg>",
+        "caption": "Lima fase pada Richardson pp.561–562. Angka adalah urutan pembelajaran; SDLC berulang, bukan selesai selamanya setelah go-live.",
+        "altText": "1. Planning: Kebutuhan, kelayakan, business case. Tetapkan sponsor dan lingkup.; 2. Analysis: Rinci kebutuhan pengguna/proses. Apa yang harus dicapai sistem?; 3. Design: Rancang data, kontrol dan antarmuka. Bagaimana kebutuhan dipenuhi?; 4. Implementation: Bangun, uji, migrasi, latih, terapkan. Verifikasi hasil sebelum produksi.; 5. Maintenance: Koreksi, dukung dan perbarui. Perubahan besar memulai siklus baru.",
+        "transcript": [
+          "1. Planning: Kebutuhan, kelayakan, business case. Tetapkan sponsor dan lingkup.",
+          "2. Analysis: Rinci kebutuhan pengguna/proses. Apa yang harus dicapai sistem?",
+          "3. Design: Rancang data, kontrol dan antarmuka. Bagaimana kebutuhan dipenuhi?",
+          "4. Implementation: Bangun, uji, migrasi, latih, terapkan. Verifikasi hasil sebelum produksi.",
+          "5. Maintenance: Koreksi, dukung dan perbarui. Perubahan besar memulai siklus baru."
+        ]
+      },
+      {
+        "kind": "table",
+        "title": "Waterfall dan Agile",
+        "headers": [
+          "Aspek",
+          "Waterfall",
+          "Agile"
+        ],
+        "rows": [
+          [
+            "Pola",
+            "Fase cenderung berurutan dengan keluaran dan persetujuan.",
+            "Iterasi/increment dengan kolaborasi dan umpan balik."
+          ],
+          [
+            "Kesesuaian",
+            "Kebutuhan cukup stabil dan urutan dapat direncanakan.",
+            "Kebutuhan berkembang dan pembelajaran iteratif diperlukan."
+          ],
+          [
+            "Kontrol",
+            "Baseline, dokumentasi, pengujian, approval tetap penting.",
+            "Backlog, acceptance criteria, pengujian dan approval tetap penting."
+          ]
+        ],
+        "stackOnMobile": true
+      },
+      {
+        "kind": "p",
+        "text": "Agile bukan izin untuk melewati dokumentasi atau kontrol. Waterfall pun tidak menjamin proyek pasti tepat waktu. Nilai kompleksitas, ketidakpastian, regulasi, kemampuan tim dan ketergantungan. Akuntan membantu mendefinisikan kebutuhan data, mapping akun, pengujian laporan, rekonsiliasi migrasi serta kontrol pengguna."
+      },
+      {
+        "kind": "h2",
+        "text": "5. Lingkup, sponsor, dan pengendalian perubahan"
+      },
+      {
+        "kind": "p",
+        "text": "Proyek bersifat sementara dengan hasil yang didefinisikan. **Project sponsor** menyediakan dukungan, wewenang dan keputusan strategis; **project manager** mengkoordinasikan pelaksanaan, sumber daya, jadwal dan pelaporan. Scope, time dan cost saling memengaruhi: menambah lingkup tanpa menambah waktu atau sumber daya dapat menurunkan mutu atau meningkatkan risiko."
+      },
+      {
+        "kind": "p",
+        "text": "**Scope creep** adalah perluasan tanpa pengendalian yang memadai. Perubahan yang sah perlu analisis dampak, persetujuan dan pembaruan baseline. Rencana TI harus selaras strategi, memiliki lingkup/waktu yang relevan, manfaat realistis, kinerja terukur, evaluasi berkala, komunikasi, akuntabilitas dan komitmen. Richardson pp.563–568."
+      },
+      {
+        "kind": "callout",
+        "variant": "info",
+        "title": "15-15 rule adalah heuristik buku",
+        "text": "Buku menyajikan keterlambatan atau kelebihan anggaran >15% sebagai sinyal penting untuk menilai kembali kelanjutan proyek. Ini bukan hukum bahwa proyek pasti gagal atau wajib dihentikan; sponsor perlu menilai manfaat tersisa, biaya tambahan dan alternatif."
+      },
+      {
+        "kind": "h2",
+        "text": "6. WBS, dependency, dan critical path"
+      },
+      {
+        "kind": "p",
+        "text": "**Work breakdown structure (WBS)** memecah seluruh lingkup menjadi pekerjaan yang dapat dikelola. **100% rule** menuntut cakupan pekerjaan lengkap, termasuk pekerjaan internal, eksternal dan interim; bukan berarti semua durasi harus diperkirakan 100% tepat atau setiap tugas sudah selesai. Dari daftar pekerjaan, tentukan dependency, durasi dan sumber daya."
+      },
+      {
+        "kind": "table",
+        "title": "Data jaringan latihan",
+        "headers": [
+          "Aktivitas",
+          "Durasi hari",
+          "Predecessor"
+        ],
+        "rows": [
+          [
+            "A · Kebutuhan",
+            "2",
+            "Tidak ada"
+          ],
+          [
+            "B · Konfigurasi",
+            "3",
+            "A"
+          ],
+          [
+            "C · Bersihkan data",
+            "4",
+            "A"
+          ],
+          [
+            "D · Uji terpadu",
+            "2",
+            "B dan C"
+          ]
+        ],
+        "stackOnMobile": true
+      },
+      {
+        "kind": "figure",
+        "title": "Jaringan aktivitas: A → B/C → D",
+        "svg": "<svg class=\"course-diagram-svg\" viewBox=\"0 0 800 320\" xmlns=\"http://www.w3.org/2000/svg\" style=\"font-family:Inter,Arial,sans-serif;width:100%;height:auto\"><title>Jaringan aktivitas dengan lintasan kritis A C D selama 8 hari</title><defs><marker id=\"pm-a\" markerWidth=\"7\" markerHeight=\"7\" refX=\"6\" refY=\"3.5\" orient=\"auto\"><path d=\"M0 0 L7 3.5 L0 7\" fill=\"none\" stroke=\"#64748b\" stroke-width=\"1.5\"/></marker></defs><rect width=\"800\" height=\"320\" rx=\"14\" fill=\"#f8fafc\"/><g fill=\"none\" stroke=\"#64748b\" stroke-width=\"2\" marker-end=\"url(#pm-a)\"><path d=\"M220 160 H260 V75 H294\"/><path d=\"M500 75 H540 V160 H574\"/></g><g fill=\"none\" stroke=\"#b45309\" stroke-width=\"4\" marker-end=\"url(#pm-a)\"><path d=\"M220 160 H260 V245 H294\"/><path d=\"M500 245 H540 V160 H574\"/></g><g stroke-width=\"2\"><rect x=\"25\" y=\"120\" width=\"195\" height=\"80\" rx=\"10\" fill=\"#fff7ed\" stroke=\"#b45309\"/><rect x=\"300\" y=\"35\" width=\"200\" height=\"80\" rx=\"10\" fill=\"#eff6ff\" stroke=\"#64748b\"/><rect x=\"300\" y=\"205\" width=\"200\" height=\"80\" rx=\"10\" fill=\"#fff7ed\" stroke=\"#b45309\"/><rect x=\"580\" y=\"120\" width=\"195\" height=\"80\" rx=\"10\" fill=\"#fff7ed\" stroke=\"#b45309\"/></g><g fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\" text-anchor=\"middle\"><text x=\"122\" y=\"153\">A · Kebutuhan · 2</text><text x=\"400\" y=\"68\">B · Konfigurasi · 3</text><text x=\"400\" y=\"238\">C · Bersihkan data · 4</text><text x=\"677\" y=\"153\">D · Uji terpadu · 2</text></g><g fill=\"#475569\" font-size=\"14\" text-anchor=\"middle\"><text x=\"122\" y=\"179\">Mulai 0; selesai 2</text><text x=\"400\" y=\"94\">Mulai 2; selesai 5</text><text x=\"400\" y=\"264\">Mulai 2; selesai 6</text><text x=\"677\" y=\"179\">Menunggu B dan C</text><text x=\"400\" y=\"157\">Durasi dalam hari</text><text x=\"400\" y=\"309\">Lintasan kritis A–C–D = 8 hari; A–B–D = 7 hari. Angka pada node = durasi aktivitas.</text></g></svg>",
+        "mobileFlow": {
+          "mode": "cards",
+          "title": "Jaringan dan ketergantungan",
+          "stages": [
+            {
+              "actor": "A · 2 hari",
+              "actions": [
+                "Kebutuhan diselesaikan dahulu, hari 0–2."
+              ]
+            },
+            {
+              "actor": "B dan C dapat paralel",
+              "actions": [
+                "B konfigurasi: 3 hari, hari 2–5.",
+                "C bersihkan data: 4 hari, hari 2–6."
+              ]
+            },
+            {
+              "actor": "D menunggu B dan C",
+              "actions": [
+                "Uji terpadu: 2 hari, hari 6–8."
+              ]
+            },
+            {
+              "actor": "Critical path",
+              "actions": [
+                "A–C–D: 8 hari. Jalur A–B–D: 7 hari.",
+                "Float B: 1 hari; float A, C, D: 0."
+              ]
+            }
+          ]
+        },
+        "altText": "A dua hari mendahului B tiga hari dan C empat hari. D dua hari menunggu keduanya. Critical path A C D delapan hari; B punya total float satu hari.",
+        "transcript": [
+          "Aktivitas digambar pada node (activity-on-node), berbeda dari contoh activity-on-arrow buku.",
+          "A: durasi 2, tidak punya predecessor. B: durasi 3 setelah A. C: durasi 4 setelah A. D: durasi 2 setelah B dan C.",
+          "Jalur A–B–D = 7; A–C–D = 8 hari. Asumsi sumber daya cukup agar B dan C paralel.",
+          "Warna amber dan garis lebih tebal menandai lintasan kritis; hasil yang sama diberikan dalam teks."
+        ],
+        "caption": "Contoh buatan, activity-on-node. Ini jaringan dengan durasi deterministik, bukan estimasi probabilistik PERT tiga titik. Jadwal mengasumsikan sumber daya memadai dan tidak ada lag."
+      },
+      {
+        "kind": "example",
+        "title": "Forward pass, backward pass dan float",
+        "blocks": [
+          {
+            "kind": "ol",
+            "items": [
+              "Forward pass: ES awal A = 0; EF = ES + durasi. A selesai 2, B selesai 5 dan C selesai 6.",
+              "D harus menunggu B dan C, sehingga ES D = max(5,6) = 6 dan EF D = 8.",
+              "Backward pass dari akhir 8: LS D = 6. B harus selesai ≤6 sehingga LS B = 3; C LS = 2. A harus selesai paling lambat min(3,2) = 2 sehingga LS A = 0.",
+              "Total float = LS − ES. A = 0; B = 1; C = 0; D = 0.",
+              "Critical path A–C–D sepanjang 8 hari. Bila C terlambat 1 hari tanpa kompensasi, proyek selesai hari 9. B terlambat 1 hari masih dapat selesai hari 6 sehingga D tetap mulai 6."
+            ]
+          },
+          {
+            "kind": "table",
+            "title": "Hasil perhitungan jadwal",
+            "headers": [
+              "Aktivitas",
+              "ES / EF",
+              "LS / LF",
+              "Float"
+            ],
+            "rows": [
+              [
+                "A",
+                "0 / 2",
+                "0 / 2",
+                "0"
+              ],
+              [
+                "B",
+                "2 / 5",
+                "3 / 6",
+                "1"
+              ],
+              [
+                "C",
+                "2 / 6",
+                "2 / 6",
+                "0"
+              ],
+              [
+                "D",
+                "6 / 8",
+                "6 / 8",
+                "0"
+              ]
+            ],
+            "stackOnMobile": true
+          }
         ]
       },
       {
         "kind": "callout",
-        "variant": "key",
-        "title": "Strategi Sukses Menghadapi UAS SIA",
-        "text": "Gunakan pendekatan multidisipliner: hubungkan aspek bisnis, hukum, standar akuntansi, dan teknologi informasi. Jawaban yang menggabungkan prinsip akuntansi (pengakuan jurnal) dengan pengendalian TI (GITC & Application Controls) selalu mendapatkan nilai tertinggi dari dosen penguji."
+        "variant": "warning",
+        "title": "Asumsi sumber daya",
+        "text": "Critical path memberi durasi minimum menurut dependency ketika sumber daya cukup. Jika B dan C harus memakai orang yang sama dan tidak dapat paralel, jadwal perlu resource leveling. Contoh 8 hari tidak lagi otomatis berlaku. Jalur kritis dapat lebih dari satu atau berubah setelah durasi berubah."
+      },
+      {
+        "kind": "figure",
+        "title": "Gantt: jadwal paling awal untuk proyek 8 hari",
+        "svg": "<svg class=\"course-diagram-svg\" viewBox=\"0 0 720 300\" xmlns=\"http://www.w3.org/2000/svg\" style=\"font-family:Inter,Arial,sans-serif;width:100%;height:auto\"><title>Gantt A 0-2 B 2-5 C 2-6 D 6-8</title><rect width=\"720\" height=\"300\" rx=\"14\" fill=\"#f8fafc\"/><g stroke=\"#cbd5e1\"><path d=\"M150 45 V255 H670\"/><path d=\"M215 45 V255 M280 45 V255 M345 45 V255 M410 45 V255 M475 45 V255 M540 45 V255 M605 45 V255 M670 45 V255\"/></g><g fill=\"#0f172a\" font-size=\"16\"><text x=\"25\" y=\"87\">A · Kebutuhan</text><text x=\"25\" y=\"137\">B · Konfigurasi</text><text x=\"25\" y=\"187\">C · Data</text><text x=\"25\" y=\"237\">D · Uji</text></g><rect x=\"150\" y=\"63\" width=\"130\" height=\"34\" fill=\"#b45309\" rx=\"3\"/><rect x=\"280\" y=\"113\" width=\"195\" height=\"34\" fill=\"#0369a1\" rx=\"3\"/><rect x=\"280\" y=\"163\" width=\"260\" height=\"34\" fill=\"#b45309\" rx=\"3\"/><rect x=\"540\" y=\"213\" width=\"130\" height=\"34\" fill=\"#b45309\" rx=\"3\"/><g fill=\"#475569\" text-anchor=\"middle\" font-size=\"13\"><text x=\"150\" y=\"278\">0</text><text x=\"215\" y=\"278\">1</text><text x=\"280\" y=\"278\">2</text><text x=\"345\" y=\"278\">3</text><text x=\"410\" y=\"278\">4</text><text x=\"475\" y=\"278\">5</text><text x=\"540\" y=\"278\">6</text><text x=\"605\" y=\"278\">7</text><text x=\"670\" y=\"278\">8</text></g></svg>",
+        "mobileFlow": {
+          "mode": "cards",
+          "title": "Jadwal Gantt dalam hari",
+          "stages": [
+            {
+              "actor": "A",
+              "actions": [
+                "Mulai 0; selesai 2."
+              ]
+            },
+            {
+              "actor": "B",
+              "actions": [
+                "Mulai 2; selesai 5; boleh bergeser paling lama 1 hari."
+              ]
+            },
+            {
+              "actor": "C",
+              "actions": [
+                "Mulai 2; selesai 6."
+              ]
+            },
+            {
+              "actor": "D",
+              "actions": [
+                "Mulai 6; selesai 8 setelah B dan C."
+              ]
+            }
+          ]
+        },
+        "altText": "Sumbu hari 0–8. A hari 0–2; B 2–5; C 2–6; D 6–8.",
+        "transcript": [
+          "Sumbu horizontal menunjukkan hari sejak proyek dimulai, bukan tanggal kalender.",
+          "A 0–2; B 2–5; C 2–6; D 6–8. B dan C overlap sesuai asumsi sumber daya.",
+          "Jadwal merupakan rencana paling awal, bukan bukti pekerjaan telah selesai."
+        ],
+        "caption": "Gantt buatan untuk data yang sama dengan jaringan di atas. Garis waktu membantu monitoring; dependency menentukan apakah pergeseran suatu tugas menunda proyek."
+      },
+      {
+        "kind": "pendalaman",
+        "title": "PERT probabilistik dan dummy activity",
+        "blocks": [
+          {
+            "kind": "p",
+            "text": "PERT dapat memakai estimasi tiga titik: optimistic (a), most likely (m), dan pessimistic (b). Expected duration lazimnya (a + 4m + b) / 6; estimasi bukan kepastian. Contoh jaringan halaman ini memakai durasi deterministik agar hitung dependency terlihat. Pada activity-on-arrow, dummy activity menunjukkan dependency tanpa pekerjaan/durasi tambahan; activity-on-node dapat menyatakan dependency langsung lewat panah."
+          },
+          {
+            "kind": "formula",
+            "text": "t_e=\\frac{a+4m+b}{6}",
+            "note": "Pelengkap teknik penjadwalan. Misal a=2, m=4, b=8 memberi 26/6 ≈4,33 hari; jangan mengganti semua durasi jaringan tanpa menghitung ulang."
+          }
+        ]
+      },
+      {
+        "kind": "h2",
+        "text": "7. Uji pemahaman"
+      },
+      {
+        "kind": "self-check",
+        "question": "B terlambat dua hari dari rencana awal. Kapan proyek selesai?",
+        "answer": [
+          {
+            "kind": "p",
+            "text": "B selesai 7, C selesai 6; D mulai max(7,6) = 7 lalu selesai 9. Float B hanya satu hari, sehingga satu hari keterlambatan melewati float menunda proyek satu hari."
+          }
+        ],
+        "signal": "Jika alasannya belum jelas, kembali ke contoh sebelum membuka jawaban."
+      },
+      {
+        "kind": "self-check",
+        "question": "NPV dasar positif tetapi skenario manfaat turun 10% negatif. Apa yang sebaiknya ditulis dalam rekomendasi?",
+        "answer": [
+          {
+            "kind": "p",
+            "text": "Jelaskan bahwa nilai proyek sensitif terhadap manfaat. Uji bukti estimasi, lakukan pilot/komitmen pemilik manfaat, bandingkan alternatif, dan tetapkan batas evaluasi. Jangan menyatakan layak tanpa menyebut asumsi dan margin risikonya."
+          }
+        ],
+        "signal": "Jika alasannya belum jelas, kembali ke contoh sebelum membuka jawaban."
+      },
+      {
+        "kind": "callout",
+        "variant": "info",
+        "title": "Sumber dan batas pembahasan",
+        "text": "RPS-SIA minggu 14; Richardson Ch.17 pp.550–571 (PDF 575–596): business case pp.552–560, SDLC pp.561–563, planning/project constraints pp.563–568, WBS/PERT/Gantt pp.569–570. Perhitungan NPV, jaringan dan seluruh angka adalah latihan buatan; PERT tiga titik merupakan pelengkap metode. Angka, perusahaan, diagram, dan skenario latihan di halaman ini adalah ilustrasi buatan kecuali dinyatakan lain. Urutan materi inti mengikuti RPS-SIA, Pembagian Mengajar Gasal 2025/2026, halaman 1; pendalaman di luar bab terjadwal diberi label pelengkap."
       }
     ]
   },
   "questions": [
     {
       "tm": 14,
-      "topic": "Integrasi ERP & Simulasi UAS",
+      "topic": "Justifying and Planning IT Initiatives",
       "difficulty": "medium",
-      "q": "Dalam integrated project Richardson, bagaimana model proses dan database mendukung laporan keuangan?",
+      "q": "Investasi 120 dan kas bersih tahunan 50 (Rp juta). Payback sederhana dengan asumsi kas merata adalah...",
       "options": [
-        "Semua event langsung dijumlahkan sebagai kas tanpa membedakan pembayaran dan penjualan.",
-        "Event, resources dan hubungan dipetakan untuk menyiapkan query serta laporan yang sesuai.",
-        "Database menggantikan kebutuhan memodelkan kontrol dan menetapkan business requirements.",
-        "UML class diagram hanya mengatur tampilan laporan tanpa menghubungkan data antarproses."
-      ],
-      "answer": 1,
-      "explanation": "Buku menghubungkan business requirements, BPMN, integrated UML class diagram, tabel/relasi dan query laporan. Penjualan, pembelian, timecards dan pembayaran mempunyai peran berbeda; integrasi tidak berarti semua event adalah kas. Rujukan: Richardson AIS 4e, Ch.10, Exhibit 10.8 dan Summary, PDF 408-410."
-    },
-    {
-      "tm": 14,
-      "topic": "Integrasi ERP & Simulasi UAS",
-      "difficulty": "advanced",
-      "q": "Konsep 'Audit Trail' (Jejak Audit) dalam sistem ERP akuntansi modern berfungsi untuk...",
-      "options": [
-        "Mengurangi volume data dengan menghapus seluruh riwayat setelah laporan ditutup.",
-        "Menelusuri pelaku, waktu dan perubahan transaksi untuk pemeriksaan bukti serta kontrol.",
-        "Menghilangkan kebutuhan otorisasi karena setiap transaksi sudah tercatat dalam sistem.",
-        "Membuktikan isi transaksi benar hanya dari urutan waktu pencatatan dokumen dalam sistem."
-      ],
-      "answer": 1,
-      "explanation": "Jejak audit mendukung penelusuran transaksi dan perubahan. Integritas catatan perlu pengendalian akses; jejak saja tidak membuktikan keberadaan, hak atau nilai transaksi. Rujukan: Richardson AIS 4e, Ch.11-13, Internal Controls dan Auditing AIS, PDF 411-433,475-488."
-    },
-    {
-      "tm": 14,
-      "topic": "Integrasi ERP & Simulasi UAS",
-      "difficulty": "advanced",
-      "q": "Kontrol preventif apa yang sesuai untuk membatasi penyalahgunaan jurnal manual dalam AIS?",
-      "options": [
-        "Memberikan akses tanpa batas pada seluruh staf agar koreksi dapat dicatat secepatnya.",
-        "Membatasi akses, memisahkan tugas dan mensyaratkan persetujuan serta bukti pendukung.",
-        "Menghapus identitas pengguna setelah posting agar data pegawai terlindungi dari pemeriksa.",
-        "Menyimpan jurnal tak seimbang sampai akhir tahun agar tim dapat memperbaiki semuanya."
-      ],
-      "answer": 1,
-      "explanation": "Akses yang dibatasi, pemisahan tugas, otorisasi dan bukti membatasi kesempatan manipulasi. Ambang persetujuan mengikuti risiko dan kebijakan; tidak ada larangan universal semua jurnal ke Kas pada sumber ini. Rujukan: Richardson AIS 4e, Ch.11, Control Activities, PDF 411-433."
-    },
-    {
-      "tm": 14,
-      "topic": "Integrasi ERP & Simulasi UAS",
-      "difficulty": "medium",
-      "q": "Manakah pernyataan yang paling tepat mengenai peranan Chart of Accounts (Bagan Akun Standar) dalam arsitektur sistem informasi akuntansi ERP?",
-      "options": [
-        "Mengelompokkan akun secara konsisten untuk mencatat transaksi dan menyusun laporan.",
-        "Mengelompokkan vendor menurut nama untuk mengizinkan pembayaran tanpa validasi.",
-        "Mengelompokkan pengguna menurut unit kerja untuk menggantikan otorisasi transaksi.",
-        "Mengelompokkan dokumen menurut tanggal untuk membuktikan nilai seluruh saldo akun."
+        "2,4 tahun.",
+        "0,42 tahun.",
+        "3,4 tahun.",
+        "6,0 tahun."
       ],
       "answer": 0,
-      "explanation": "Bagan akun mendukung klasifikasi dan pengikhtisaran transaksi. Daftar akun tidak menggantikan master data, validasi atau kontrol akses. Rujukan: Richardson AIS 4e, Ch.10, Develop Financial Statement Information, PDF 408-410."
+      "explanation": "120/50 = 2,4. Jika kas hanya masuk pada akhir tahun, interpolasi perlu dibedakan dari saat kas benar-benar diterima. Rujukan: Richardson AIS 4e, Ch.17 pp.550–571 (PDF 575–596)."
     },
     {
       "tm": 14,
-      "topic": "Integrasi ERP & Simulasi UAS",
-      "difficulty": "advanced",
-      "q": "Dalam integrated project Richardson, apa yang perlu dilakukan setelah data diimpor untuk menjaga keandalan query AIS?",
+      "topic": "Justifying and Planning IT Initiatives",
+      "difficulty": "medium",
+      "q": "NPV memasukkan...",
       "options": [
-        "Menyusun query dari tabel impor dahulu dan menggunakan nama pelanggan sebagai kunci.",
-        "Menetapkan primary key, memeriksa tipe data, lalu menegakkan referential integrity.",
-        "Menggabungkan seluruh event dalam satu tabel dan menetapkan tanggal sebagai kunci.",
-        "Menyusun laporan dari tabel impor dahulu dan memeriksa hubungan setelah penutupan."
+        "Hanya laba akuntansi tanpa mempertimbangkan timing.",
+        "Arus kas bersih yang didiskontokan sesuai waktunya.",
+        "Hanya biaya pembelian tanpa biaya operasi lanjutan.",
+        "Seluruh jam kapasitas sebagai penghematan kas pasti."
       ],
       "answer": 1,
-      "explanation": "PDF 409 mengharuskan koreksi data, primary key, tipe data dan struktur tabel yang efisien, kemudian relasi dengan referential integrity. Tanpa integritas referensial, keandalan query terpengaruh. Langkah ini memakai UML class diagram sebagai blueprint. Rujukan: Richardson AIS 4e, Ch.10, Import Data into Access, Create Efficient Tables, and Set Relationships, PDF 408-409, Exhibit 10.9."
+      "explanation": "NPV mempertimbangkan time value of money; asumsi kas dan discount rate harus konsisten. Rujukan: Richardson AIS 4e, Ch.17 pp.550–571 (PDF 575–596)."
+    },
+    {
+      "tm": 14,
+      "topic": "Justifying and Planning IT Initiatives",
+      "difficulty": "medium",
+      "q": "A=2 hari; B=3 dan C=4 setelah A; D=2 setelah B dan C. Dengan sumber daya cukup, critical path adalah...",
+      "options": [
+        "A–B–D selama 7 hari.",
+        "B–C–D selama 9 hari.",
+        "A–C–D selama 8 hari.",
+        "A–B–C–D selama 11 hari."
+      ],
+      "answer": 2,
+      "explanation": "D menunggu jalur terlama: A–C selesai hari 6, lalu D dua hari. B punya float satu hari. Rujukan: Richardson AIS 4e, Ch.17 pp.550–571 (PDF 575–596)."
+    },
+    {
+      "tm": 14,
+      "topic": "Justifying and Planning IT Initiatives",
+      "difficulty": "medium",
+      "q": "Makna 100% rule dalam perencanaan pekerjaan adalah...",
+      "options": [
+        "Seluruh tugas harus selesai sebelum proyek disetujui.",
+        "Semua estimasi durasi pasti tepat tanpa ketidakpastian.",
+        "Seluruh anggaran harus dipakai tanpa mempertimbangkan manfaat.",
+        "Seluruh lingkup pekerjaan internal, eksternal dan interim tercakup."
+      ],
+      "answer": 3,
+      "explanation": "100% rule menyangkut kelengkapan lingkup/WBS, bukan kepastian estimasi atau persentase penyelesaian. Rujukan: Richardson AIS 4e, Ch.17 pp.550–571 (PDF 575–596)."
+    },
+    {
+      "tm": 14,
+      "topic": "Justifying and Planning IT Initiatives",
+      "difficulty": "medium",
+      "q": "Apa pernyataan yang tepat tentang Agile dan Waterfall?",
+      "options": [
+        "Keduanya tetap membutuhkan kebutuhan jelas, pengujian dan kontrol perubahan.",
+        "Agile membolehkan semua transaksi produksi tanpa persetujuan.",
+        "Waterfall menjamin proyek pasti tepat waktu dan tanpa risiko.",
+        "Agile menghilangkan kebutuhan dokumentasi serta bukti pengujian."
+      ],
+      "answer": 0,
+      "explanation": "Metodologi mengatur cara kerja, bukan menghapus tanggung jawab akuntabilitas dan kualitas hasil. Rujukan: Richardson AIS 4e, Ch.17 pp.550–571 (PDF 575–596)."
     }
   ],
   "flashcards": [
     {
-      "id": "aks301-tm14-01",
+      "id": "aks301-v3-tm14-01",
       "phase": "pra-uas",
       "tm": 14,
-      "topic": "Review Komprehensif UAS Sistem Informasi Akuntansi",
+      "topic": "Justifying and Planning IT Initiatives",
       "category": "Konsep",
-      "front": "Fokus Utama Soal Ujian Akhir Semester (UAS) SIA",
-      "back": "Perkiraan prioritas dari RPP dan materi: proses transaksi, kelemahan pengendalian, metode audit TI dan batas teknologi. Arsip UAS yang mendukung bentuk/bobot spesifik belum ditemukan. Rujukan: Richardson et al. AIS 4e · Ch. 10, Integrated Project, hal. 376-385 (PDF 401-410)."
+      "front": "Business case",
+      "back": "Kebutuhan, alternatif, manfaat, biaya, risiko, value proposition dan ukuran sukses; mulai dari masalah bisnis. Rujukan: Richardson AIS 4e, Ch.17 pp.550–571 (PDF 575–596)."
     },
     {
-      "id": "aks301-tm14-02",
+      "id": "aks301-v3-tm14-02",
       "phase": "pra-uas",
       "tm": 14,
-      "topic": "Review Komprehensif UAS Sistem Informasi Akuntansi",
+      "topic": "Justifying and Planning IT Initiatives",
       "category": "Konsep",
-      "front": "Mendiagnosis Single Point of Failure (SPOF)",
-      "back": "Mengidentifikasi kelemahan di mana kegagalan satu komponen kontrol atau staf tunggal dapat meruntuhkan seluruh keandalan sistem akuntansi. Rujukan: Richardson et al. AIS 4e · Ch. 10, Integrated Project, hal. 376-385 (PDF 401-410)."
+      "front": "NPV dan payback",
+      "back": "NPV mendiskontokan kas menurut waktu. Payback sederhana mengukur pemulihan investasi; nyatakan asumsi timing. Rujukan: Richardson AIS 4e, Ch.17 pp.550–571 (PDF 575–596)."
     },
     {
-      "id": "aks301-tm14-03",
+      "id": "aks301-v3-tm14-03",
       "phase": "pra-uas",
       "tm": 14,
-      "topic": "Review Komprehensif UAS Sistem Informasi Akuntansi",
+      "topic": "Justifying and Planning IT Initiatives",
       "category": "Konsep",
-      "front": "Analisis Celah Pemisahan Tugas (SoD Matrix)",
-      "back": "Memastikan tidak ada staf yang memegang akses gabungan yang berbahaya: misalnya staf yang membuat master data vendor tidak boleh memproses pembayaran faktur. Rujukan: Richardson et al. AIS 4e · Ch. 10, Integrated Project, hal. 376-385 (PDF 401-410)."
+      "front": "Lima fase SDLC",
+      "back": "Planning, analysis, design, implementation, maintenance. Perubahan besar dapat memulai siklus kembali. Rujukan: Richardson AIS 4e, Ch.17 pp.550–571 (PDF 575–596)."
     },
     {
-      "id": "aks301-tm14-04",
+      "id": "aks301-v3-tm14-04",
       "phase": "pra-uas",
       "tm": 14,
-      "topic": "Review Komprehensif UAS Sistem Informasi Akuntansi",
-      "category": "Standar",
-      "front": "Perlakuan Audit atas Bukti Elektronik",
-      "back": "Bukti digital memerlukan pemeliharaan jejak audit (audit trail) dan verifikasi bahwa pengendalian umum TI (GITC) berfungsi efektif sepanjang tahun. Rujukan: Richardson et al. AIS 4e · Ch. 10, Integrated Project, hal. 376-385 (PDF 401-410)."
+      "topic": "Justifying and Planning IT Initiatives",
+      "category": "Konsep",
+      "front": "Triple constraint",
+      "back": "Scope, time dan cost saling terkait; perubahan memerlukan analisis dampak, approval dan baseline baru. Rujukan: Richardson AIS 4e, Ch.17 pp.550–571 (PDF 575–596)."
     },
     {
-      "id": "aks301-tm14-05",
+      "id": "aks301-v3-tm14-05",
       "phase": "pra-uas",
       "tm": 14,
-      "topic": "Review Komprehensif UAS Sistem Informasi Akuntansi",
+      "topic": "Justifying and Planning IT Initiatives",
       "category": "Konsep",
-      "front": "Peran Laporan SOC 1 (SSAE 18 / ISAE 3402)",
-      "back": "SOC 1 berkaitan dengan pengendalian organisasi jasa yang relevan bagi pengendalian internal pelaporan keuangan entitas pengguna. Jenis, periode, pengecualian dan kontrol pelengkap pengguna harus dibaca. Rujukan standar: ISA 402 paragraf 8 dan 16-17. Rujukan: Richardson et al. AIS 4e · Ch. 10, Integrated Project, hal. 376-385 (PDF 401-410)."
+      "front": "WBS dan 100% rule",
+      "back": "Pecah seluruh lingkup, termasuk pekerjaan internal/eksternal/interim. Kelengkapan lingkup tidak berarti estimasi pasti. Rujukan: Richardson AIS 4e, Ch.17 pp.550–571 (PDF 575–596)."
     },
     {
-      "id": "aks301-tm14-06",
+      "id": "aks301-v3-tm14-06",
       "phase": "pra-uas",
       "tm": 14,
-      "topic": "Review Komprehensif UAS Sistem Informasi Akuntansi",
+      "topic": "Justifying and Planning IT Initiatives",
       "category": "Konsep",
-      "front": "Saran Sukses Ujian Akhir Semester SIA",
-      "back": "Gunakan diagram alur atau bagan saat menjelaskan usulan perbaikan sistem; identifikasi risiko bisnis terlebih dahulu sebelum menawarkan aktivitas pengendalian. Rujukan: Richardson et al. AIS 4e · Ch. 10, Integrated Project, hal. 376-385 (PDF 401-410)."
+      "front": "Critical path dan float",
+      "back": "Jalur terlama menentukan minimum durasi menurut dependency dan sumber daya memadai. Float mengukur kelonggaran; jalur bisa berubah. Rujukan: Richardson AIS 4e, Ch.17 pp.550–571 (PDF 575–596)."
     }
   ],
-  "scope": "Snapshot audit pasca-UTS. Kebenaran sumber dan batas diperiksa terpisah dari kesamaan implementasi."
+  "bank": {
+    "type": "case",
+    "scope": "TM 14: Justifying and Planning IT Initiatives",
+    "difficulty": "Komprehensif",
+    "estimatedTime": "30–45 menit",
+    "question": "Studi Kasus 14: Justifying and Planning IT Initiatives",
+    "context": "Ilustrasi latihan buatan. Tim mengusulkan investasi TI lalu menyusun rencana implementasi.",
+    "data": [
+      "Rp juta: investasi awal 120; kas bersih 50 per akhir tahun selama 3 tahun; diskonto 10%; tanpa pajak, inflasi, residu atau kas lain.",
+      "A=2 hari; B=3 dan C=4 setelah A; D=2 setelah B dan C; sumber daya cukup untuk paralel.",
+      "Skenario alternatif: kas bersih hanya 45/tahun."
+    ],
+    "instructions": [
+      "Hitung NPV dasar, NPV skenario dan payback dengan asumsi timing.",
+      "Hitung ES/EF, LS/LF, float dan critical path; gambarkan Gantt.",
+      "Jelaskan WBS/100% rule, sponsor dan pengendalian perubahan lingkup."
+    ],
+    "outputFormat": [
+      "Alur/diagram dan analisis konsep",
+      "Perhitungan atau rancangan dengan asumsi jelas",
+      "Kontrol, bukti dan batas simpulan"
+    ],
+    "rubric": [
+      "Ketepatan konsep dan pemetaan (30%)",
+      "Ketepatan langkah serta perhitungan/rancangan (40%)",
+      "Alasan, bukti dan batas jawaban (30%)"
+    ],
+    "answerGuide": "PV factor tiga tahun 10% = 2,486852. NPV dasar = 50×factor−120 = 4,34 juta; skenario = 45×factor−120 = −8,09 juta. Payback interpolasi 2,4 tahun hanya jika kas merata; dengan kas akhir tahun pengembalian pada akhir tahun3. Jadwal A0–2 B2–5 C2–6 D6–8; backward A0–2 B3–6 C2–6 D6–8; float B1, lainnya0. Critical path A–C–D =8. Jika B terlambat2 hari, proyek9 hari. WBS mencakup seluruh lingkup; 100%rule tidak berarti estimasi pasti. Sponsor menilai manfaat/risiko, project manager mengkoordinasikan. Perubahan perlu analisis dampak dan approval baseline. Rujukan: Richardson AIS 4e, Ch.17 pp.550–571 (PDF 575–596)."
+  },
+  "scope": "Active package revised 2026-10-16 against RPS-SIA p.1; supersedes historical catalog mapping. See docs/sia-pra-uas-20261016.md."
 }

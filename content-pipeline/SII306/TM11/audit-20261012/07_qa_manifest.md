@@ -1,1 +1,1 @@
-Sinkronisasi snapshot diperiksa dengan skrip sync-audit-deltas; batas sumber tetap pada laporan. Hasil teknis akhir ada di docs/audit-2026-10-12/verification.md.
+Run node scripts/test-sia-pra-uas.mjs plus standard checks. Source mapping and verification results: docs/sia-pra-uas-20261016.md.

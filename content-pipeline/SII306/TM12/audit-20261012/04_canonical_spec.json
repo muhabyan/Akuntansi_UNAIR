@@ -3,228 +3,516 @@
   "tm": 12,
   "reading": {
     "tm": 12,
-    "title": "Otomasi Proses Robotik (RPA) & Kecerdasan Buatan (AI) dalam Akuntansi",
-    "ref": "Richardson et al. AIS 4e · Ch. 15, hal. 508-516 (PDF 533-541)",
-    "intro": "Mempelajari pemanfaatan Robotic Process Automation (RPA) dan Artificial Intelligence (Machine Learning, NLP, Generative AI) dalam mengotomatisasi pekerjaan akuntansi repetitif seperti rekonsiliasi bank, pemrosesan faktur OCR, dan deteksi anomali jurnal.",
+    "title": "Reporting Processes dan eXtensible Business Reporting Language (XBRL)",
+    "ref": "RPS-SIA minggu 12 · Richardson AIS 4e · Ch. 14, pp. 470–483 (PDF 495–508)",
+    "intro": "Pelaporan mengubah data transaksi menjadi informasi bagi manajemen dan pihak luar. Ikuti perjalanan data dari ERP ke warehouse, dashboard dan XBRL; lalu pelajari mengapa angka yang terbaca mesin tetap memerlukan definisi, konteks, unit, rekonsiliasi dan pengujian.",
     "objectives": [
-      "Mengidentifikasi kriteria proses bisnis akuntansi yang cocok diotomatisasi dengan RPA.",
-      "Menganalisis arsitektur bot RPA dan integrasinya dengan aplikasi ERP tanpa mengubah kode backend.",
-      "Menjelaskan pemanfaatan Optical Character Recognition (OCR) dan Natural Language Processing (NLP) pada dokumen keuangan.",
-      "Memahami tata kelola bot (Bot Governance), pemisahan tugas identitas bot, dan audit trail otomasi.",
-      "Mengevaluasi etika dan dampak kecerdasan buatan terhadap masa depan profesi akuntan."
+      "Membedakan operational database, warehouse, mart dan lake.",
+      "Menghubungkan business intelligence dan dashboard dengan tujuan serta KPI.",
+      "Membedakan specification, taxonomy, tag, instance document dan penyajian.",
+      "Menentukan entity, period, unit dan precision/decimals pada fakta laporan.",
+      "Mengevaluasi risiko tagging serta peran XBRL GL dan assurance."
     ],
     "blocks": [
       {
-        "kind": "figure",
-        "caption": "Gambar 12.1: Transformasi Efisiensi Akuntansi melalui Robotic Process Automation (RPA) dan Artificial Intelligence.",
-        "svg": "<svg class=\"course-diagram-svg\" viewBox=\"0 0 680 250\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif\">\n  <rect class=\"svg-bg\" x=\"10\" y=\"10\" width=\"660\" height=\"230\" rx=\"12\" fill=\"#0f172a\" stroke=\"#334155\" stroke-width=\"1.5\"/>\n  <rect class=\"svg-header\" x=\"10\" y=\"10\" width=\"660\" height=\"38\" rx=\"12\" fill=\"#1e293b\" fill-opacity=\"0.6\"/>\n  <line class=\"svg-divider\" x1=\"10\" y1=\"48\" x2=\"670\" y2=\"48\" stroke=\"#334155\" stroke-width=\"1\"/>\n  <text class=\"svg-title text-accent-green\" x=\"340\" y=\"34\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">OTOMASI PROSES ROBOTIK (RPA) &amp; KECERDASAN BUATAN (AI) AKUNTANSI</text>\n\n  <!-- Left: Manual Bottleneck -->\n  <rect class=\"svg-card\" x=\"30\" y=\"58\" width=\"180\" height=\"170\" rx=\"8\" fill=\"#1e293b\" stroke=\"#f43f5e\" stroke-width=\"1.5\"/>\n  <text class=\"text-accent-red\" x=\"120\" y=\"78\" fill=\"#f87171\" font-size=\"10\" font-weight=\"700\" text-anchor=\"middle\">PROSES MANUAL LAMA</text>\n  <line class=\"svg-divider\" x1=\"40\" y1=\"88\" x2=\"200\" y2=\"88\" stroke=\"#334155\"/>\n  <text class=\"svg-text\" x=\"120\" y=\"108\" fill=\"#cbd5e1\" font-size=\"8\" text-anchor=\"middle\">&#10007; Entri data berulang (Rekeying)</text>\n  <text class=\"svg-text\" x=\"120\" y=\"124\" fill=\"#cbd5e1\" font-size=\"8\" text-anchor=\"middle\">&#10007; Rentan salah ketik (Typo error)</text>\n  <text class=\"svg-text\" x=\"120\" y=\"140\" fill=\"#cbd5e1\" font-size=\"8\" text-anchor=\"middle\">&#10007; Waktu tutup buku bulanan lama</text>\n  <text class=\"svg-text\" x=\"120\" y=\"156\" fill=\"#cbd5e1\" font-size=\"8\" text-anchor=\"middle\">&#10007; Biaya lembur staf akuntansi</text>\n  <rect class=\"svg-subcard\" x=\"40\" y=\"172\" width=\"160\" height=\"42\" rx=\"4\" fill=\"#0f172a\" stroke=\"#f43f5e\"/>\n  <text class=\"text-accent-red\" x=\"120\" y=\"190\" fill=\"#f87171\" font-size=\"8\" font-weight=\"700\" text-anchor=\"middle\">Titik Lemah Efisiensi:</text>\n  <text class=\"svg-muted\" x=\"120\" y=\"204\" fill=\"#94a3b8\" font-size=\"7.5\" text-anchor=\"middle\">Karyawan terjebak pekerjaan klerikal</text>\n\n  <!-- Arrow -->\n  <text class=\"text-accent-green\" x=\"230\" y=\"145\" fill=\"#34d399\" font-size=\"20\" font-weight=\"800\" text-anchor=\"middle\">&#8594;</text>\n\n  <!-- Middle: RPA Engine -->\n  <rect class=\"svg-card\" x=\"250\" y=\"58\" width=\"220\" height=\"170\" rx=\"8\" fill=\"#1e293b\" stroke=\"#38bdf8\" stroke-width=\"1.5\"/>\n  <text class=\"text-accent-blue\" x=\"360\" y=\"78\" fill=\"#38bdf8\" font-size=\"10.5\" font-weight=\"700\" text-anchor=\"middle\">RPA BOT (RULE-BASED)</text>\n  <line class=\"svg-divider\" x1=\"260\" y1=\"88\" x2=\"460\" y2=\"88\" stroke=\"#334155\"/>\n  <text class=\"svg-text\" x=\"360\" y=\"108\" fill=\"#cbd5e1\" font-size=\"8\" text-anchor=\"middle\">&#10003; Baca e-statement bank via API</text>\n  <text class=\"svg-text\" x=\"360\" y=\"124\" fill=\"#cbd5e1\" font-size=\"8\" text-anchor=\"middle\">&#10003; Cocokkan mutasi vs buku besar</text>\n  <text class=\"svg-text\" x=\"360\" y=\"140\" fill=\"#cbd5e1\" font-size=\"8\" text-anchor=\"middle\">&#10003; Posting jurnal kliring otomatis</text>\n  <text class=\"svg-text\" x=\"360\" y=\"156\" fill=\"#cbd5e1\" font-size=\"8\" text-anchor=\"middle\">&#10003; Bekerja 24/7 dengan 0% human error</text>\n  <rect class=\"svg-subcard\" x=\"260\" y=\"172\" width=\"200\" height=\"42\" rx=\"4\" fill=\"#0f172a\" stroke=\"#0284c7\"/>\n  <text class=\"text-accent-blue\" x=\"360\" y=\"190\" fill=\"#38bdf8\" font-size=\"8\" font-weight=\"700\" text-anchor=\"middle\">Karakteristik RPA:</text>\n  <text class=\"svg-muted\" x=\"360\" y=\"204\" fill=\"#94a3b8\" font-size=\"7.5\" text-anchor=\"middle\">Struktur data jelas, aturan pasti (if-then)</text>\n\n  <!-- Arrow -->\n  <text class=\"text-accent-purple\" x=\"490\" y=\"145\" fill=\"#a855f7\" font-size=\"20\" font-weight=\"800\" text-anchor=\"middle\">&#8594;</text>\n\n  <!-- Right: Cognitive AI -->\n  <rect class=\"svg-card\" x=\"510\" y=\"58\" width=\"140\" height=\"170\" rx=\"8\" fill=\"#1e293b\" stroke=\"#a855f7\" stroke-width=\"1.5\"/>\n  <text class=\"text-accent-purple\" x=\"580\" y=\"78\" fill=\"#a78bfa\" font-size=\"10\" font-weight=\"700\" text-anchor=\"middle\">AI &amp; MACHINE LEARNING</text>\n  <line class=\"svg-divider\" x1=\"520\" y1=\"88\" x2=\"640\" y2=\"88\" stroke=\"#334155\"/>\n  <text class=\"svg-text\" x=\"580\" y=\"108\" fill=\"#cbd5e1\" font-size=\"7.5\" text-anchor=\"middle\">OCR Ekstrak Faktur</text>\n  <text class=\"svg-text\" x=\"580\" y=\"124\" fill=\"#cbd5e1\" font-size=\"7.5\" text-anchor=\"middle\">Prediksi Piutang Macet</text>\n  <text class=\"svg-text\" x=\"580\" y=\"140\" fill=\"#cbd5e1\" font-size=\"7.5\" text-anchor=\"middle\">Deteksi Fraud Anomali</text>\n  <text class=\"svg-text\" x=\"580\" y=\"156\" fill=\"#cbd5e1\" font-size=\"7.5\" text-anchor=\"middle\">Analisis Tren Strategis</text>\n  <rect class=\"svg-subcard\" x=\"520\" y=\"172\" width=\"120\" height=\"42\" rx=\"4\" fill=\"#0f172a\" stroke=\"#7c3aed\"/>\n  <text class=\"text-accent-purple\" x=\"580\" y=\"190\" fill=\"#a78bfa\" font-size=\"7.5\" font-weight=\"700\" text-anchor=\"middle\">Peran Baru Akuntan:</text>\n  <text class=\"text-accent-green\" x=\"580\" y=\"204\" fill=\"#34d399\" font-size=\"7\" font-weight=\"600\" text-anchor=\"middle\">Analis Bisnis &amp; Advisor</text>\n</svg>"
-      },
-      {
-        "kind": "h2",
-        "text": "Kriteria Kelayakan Otomasi Menggunakan RPA"
-      },
-      {
-        "kind": "p",
-        "text": "Robotic Process Automation (RPA) adalah perangkat lunak 'bot' yang meniru tindakan manusia dalam berinteraksi dengan antarmuka pengguna (UI) komputer untuk menyelesaikan pekerjaan bervolume tinggi. Tidak semua proses akuntansi cocok untuk RPA. Proses ideal wajib memenuhi lima syarat berikut:"
-      },
-      {
-        "kind": "ul",
-        "items": [
-          "1. Rule-based (Berbasis Aturan Baku): Logika keputusan transparan dan tidak membutuhkan pertimbangan subjektif manusia (judgment). Contoh: 'Jika nomor akun cocok dan nominal sama, tandai cocok'.",
-          "2. High Volume & Repetitive: Tugas dikerjakan berulang kali dalam frekuensi tinggi (ratusan hingga ribuan kali per hari).",
-          "3. Digital & Structured Input: Data masukan berupa format digital terstruktur (seperti spreadsheet Excel, database SQL, atau file CSV/XML).",
-          "4. Low Exception Rate: Tingkat pengecualian (kejadian aneh di luar SOP) rendah (< 5%).",
-          "5. Stable Process: Prosedur operasional dan tata letak aplikasi stabil dan tidak sering berubah."
+        "kind": "example",
+        "title": "Angka 115 berarti apa?",
+        "blocks": [
+          {
+            "kind": "p",
+            "text": "Kas perusahaan ditampilkan “115” pada dashboard, file laporan, dan grafik investor. Tanpa tahu entitas, tanggal, mata uang, skala jutaan atau rupiah penuh, serta apakah angka itu konsolidasian, pembaca dapat mengambil keputusan salah. XBRL menambahkan makna terstruktur, tetapi pemetaan dan konteksnya harus benar."
+          }
         ]
       },
       {
         "kind": "h2",
-        "text": "Studi Kasus RPA: Rekonsiliasi Bank Otomatis di PT Mitra Logistik"
+        "text": "1. Dari transaksi ke informasi pelaporan"
       },
       {
         "kind": "p",
-        "text": "Sebelum Otomasi: Tiga staf akuntansi menghabiskan 4 jam setiap pagi untuk mengunduh rekening koran dari internet banking, membuka file buku besar bank, dan mencocokkan nomor referensi secara manual satu per satu."
+        "text": "Database operasional dioptimalkan untuk pencatatan transaksi harian. Pelaporan lintas periode dan sistem sering memakai repositori analisis terpisah. Data dipindahkan melalui ETL: extract, transform, load. Hasil transformasi harus dapat direkonsiliasi ke sistem asal; proses cepat tidak berguna bila satu cabang hilang dari ekstraksi. Richardson pp.472–474."
       },
       {
-        "kind": "p",
-        "text": "Alur Kerja Bot RPA Terotomatisasi:"
-      },
-      {
-        "kind": "ul",
-        "items": [
-          "Pukul 02.00: Bot login otomatis ke portal internet banking menggunakan kredensial aman (Credential Vault), mengunduh mutasi rekening dalam format CSV.",
-          "Pukul 02.15: Bot mengekstrak data jurnal penerimaan dan pengeluaran kas dari modul SAP FI.",
-          "Pukul 02.30: Bot mencocokkan transaksi berdasarkan kombinasi: Nomor Referensi + Tanggal (+/- 2 hari) + Nilai Nominal Persis.",
-          "Pukul 02.45: Untuk transaksi yang 100% cocok (match), bot langsung menjurnal clearing di SAP.",
-          "Pukul 03.00: Untuk transaksi selisih (unmatched exceptions), bot menyusun laporan pengecualian (Exception Report) dan mengirimkannya via email kepada Manajer Akuntansi untuk ditindaklanjuti manusia pada pukul 08.00 pagi."
+        "kind": "figure",
+        "title": "Perjalanan data pelaporan",
+        "svg": "<svg class=\"course-diagram-svg\" role=\"img\" aria-label=\"Perjalanan data pelaporan\" viewBox=\"0 0 800 278\" xmlns=\"http://www.w3.org/2000/svg\" style=\"font-family:Inter,Arial,sans-serif;width:100%;height:auto\"><title>Perjalanan data pelaporan</title><defs><marker id=\"report-pipeline-a-false\" markerWidth=\"6\" markerHeight=\"6\" refX=\"5\" refY=\"3\" orient=\"auto\"><path d=\"M0 0 L6 3 L0 6\" fill=\"none\" stroke=\"#64748b\" stroke-width=\"1.5\"/></marker></defs><g><rect x=\"16\" y=\"16\" width=\"365\" height=\"108\" rx=\"12\" fill=\"#eff6ff\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"45\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">1. Sumber operasional</text>\n      <text x=\"32\" y=\"72\" fill=\"#334155\" font-size=\"14\">ERP, penjualan, bank dan payroll.</text><text x=\"32\" y=\"94\" fill=\"#334155\" font-size=\"14\">Tetapkan periode serta populasi.</text></g><path d=\"M384 70 h23\" marker-end=\"url(#report-pipeline-a-false)\" stroke=\"#64748b\" stroke-width=\"2\"/><g><rect x=\"411\" y=\"16\" width=\"365\" height=\"108\" rx=\"12\" fill=\"#ecfdf5\" stroke=\"#94a3b8\"/>\n      <text x=\"427\" y=\"45\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">2. ETL + warehouse</text>\n      <text x=\"427\" y=\"72\" fill=\"#334155\" font-size=\"14\">Bersihkan, gabungkan, simpan histori.</text><text x=\"427\" y=\"94\" fill=\"#334155\" font-size=\"14\">Uji jumlah, total dan pemetaan.</text></g><path d=\"M593.5 126 v12 H198.5 v10\" fill=\"none\" marker-end=\"url(#report-pipeline-a-false)\" stroke=\"#64748b\" stroke-width=\"2\"/><g><rect x=\"16\" y=\"154\" width=\"365\" height=\"108\" rx=\"12\" fill=\"#eff6ff\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"183\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">3. BI + dashboard</text>\n      <text x=\"32\" y=\"210\" fill=\"#334155\" font-size=\"14\">Analisis KPI, tren dan exception.</text><text x=\"32\" y=\"232\" fill=\"#334155\" font-size=\"14\">Sertakan waktu pembaruan data.</text></g><path d=\"M384 208 h23\" marker-end=\"url(#report-pipeline-a-false)\" stroke=\"#64748b\" stroke-width=\"2\"/><g><rect x=\"411\" y=\"154\" width=\"365\" height=\"108\" rx=\"12\" fill=\"#ecfdf5\" stroke=\"#94a3b8\"/>\n      <text x=\"427\" y=\"183\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">4. Laporan eksternal</text>\n      <text x=\"427\" y=\"210\" fill=\"#334155\" font-size=\"14\">Tag fakta sesuai taxonomy/konteks.</text><text x=\"427\" y=\"232\" fill=\"#334155\" font-size=\"14\">Validasi dan rekonsiliasi XBRL.</text></g></svg>",
+        "mobileSvg": "<svg class=\"course-diagram-svg\" role=\"img\" aria-label=\"Perjalanan data pelaporan\" viewBox=\"0 0 360 566\" xmlns=\"http://www.w3.org/2000/svg\" style=\"font-family:Inter,Arial,sans-serif;width:100%;height:auto\"><title>Perjalanan data pelaporan</title><defs><marker id=\"report-pipeline-a-true\" markerWidth=\"6\" markerHeight=\"6\" refX=\"5\" refY=\"3\" orient=\"auto\"><path d=\"M0 0 L6 3 L0 6\" fill=\"none\" stroke=\"#64748b\" stroke-width=\"1.5\"/></marker></defs><g><rect x=\"16\" y=\"16\" width=\"328\" height=\"108\" rx=\"12\" fill=\"#eff6ff\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"45\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">1. Sumber operasional</text>\n      <text x=\"32\" y=\"72\" fill=\"#334155\" font-size=\"14\">ERP, penjualan, bank dan payroll.</text><text x=\"32\" y=\"94\" fill=\"#334155\" font-size=\"14\">Tetapkan periode serta populasi.</text></g><path d=\"M180 128 v22\" marker-end=\"url(#report-pipeline-a-true)\" stroke=\"#64748b\" stroke-width=\"2\"/><g><rect x=\"16\" y=\"158\" width=\"328\" height=\"108\" rx=\"12\" fill=\"#ecfdf5\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"187\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">2. ETL + warehouse</text>\n      <text x=\"32\" y=\"214\" fill=\"#334155\" font-size=\"14\">Bersihkan, gabungkan, simpan histori.</text><text x=\"32\" y=\"236\" fill=\"#334155\" font-size=\"14\">Uji jumlah, total dan pemetaan.</text></g><path d=\"M180 270 v22\" marker-end=\"url(#report-pipeline-a-true)\" stroke=\"#64748b\" stroke-width=\"2\"/><g><rect x=\"16\" y=\"300\" width=\"328\" height=\"108\" rx=\"12\" fill=\"#eff6ff\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"329\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">3. BI + dashboard</text>\n      <text x=\"32\" y=\"356\" fill=\"#334155\" font-size=\"14\">Analisis KPI, tren dan exception.</text><text x=\"32\" y=\"378\" fill=\"#334155\" font-size=\"14\">Sertakan waktu pembaruan data.</text></g><path d=\"M180 412 v22\" marker-end=\"url(#report-pipeline-a-true)\" stroke=\"#64748b\" stroke-width=\"2\"/><g><rect x=\"16\" y=\"442\" width=\"328\" height=\"108\" rx=\"12\" fill=\"#ecfdf5\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"471\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">4. Laporan eksternal</text>\n      <text x=\"32\" y=\"498\" fill=\"#334155\" font-size=\"14\">Tag fakta sesuai taxonomy/konteks.</text><text x=\"32\" y=\"520\" fill=\"#334155\" font-size=\"14\">Validasi dan rekonsiliasi XBRL.</text></g></svg>",
+        "caption": "Alur buatan. Dashboard dan laporan eksternal dapat memiliki pengguna, detail, serta jadwal berbeda.",
+        "altText": "1. Sumber operasional: ERP, penjualan, bank dan payroll. Tetapkan periode serta populasi.; 2. ETL + warehouse: Bersihkan, gabungkan, simpan histori. Uji jumlah, total dan pemetaan.; 3. BI + dashboard: Analisis KPI, tren dan exception. Sertakan waktu pembaruan data.; 4. Laporan eksternal: Tag fakta sesuai taxonomy/konteks. Validasi dan rekonsiliasi XBRL.",
+        "transcript": [
+          "1. Sumber operasional: ERP, penjualan, bank dan payroll. Tetapkan periode serta populasi.",
+          "2. ETL + warehouse: Bersihkan, gabungkan, simpan histori. Uji jumlah, total dan pemetaan.",
+          "3. BI + dashboard: Analisis KPI, tren dan exception. Sertakan waktu pembaruan data.",
+          "4. Laporan eksternal: Tag fakta sesuai taxonomy/konteks. Validasi dan rekonsiliasi XBRL."
         ]
       },
       {
         "kind": "table",
-        "caption": "Tabel 12.1: Perbandingan Peran Akuntan: Tradisional vs Era AI/RPA",
+        "title": "Repositori untuk kebutuhan berbeda",
         "headers": [
-          "Aktivitas Akuntansi",
-          "Metode Konvensional",
-          "Era AI & Otomasi"
+          "Repositori",
+          "Karakter",
+          "Batas"
         ],
         "rows": [
           [
-            "Input Faktur Vendor",
-            "Mengetik manual nomor faktur, tanggal, dan nominal item per item.",
-            "Intelligent Document Processing (IDP/OCR) memindai PDF faktur dan mengisi field ERP otomatis."
+            "Operational database",
+            "Transaksi berjalan; sering diperbarui saat kejadian.",
+            "Query analitis berat dapat mengganggu operasi."
           ],
           [
-            "Rekonsiliasi Bank",
-            "Pencocokan manual manual baris demi baris menggunakan pulpen stabilo.",
-            "Bot RPA mencocokkan 95% transaksi otomatis; manusia hanya menangani 5% sisa pengecualian."
+            "Data warehouse",
+            "Integrasi data historis untuk analisis, relatif stabil setelah dimuat.",
+            "Perlu ETL, definisi konsisten, kontrol histori serta rekonsiliasi."
           ],
           [
-            "Pendeteksian Fraud",
-            "Pemeriksaan acak berdasarkan sampel audit tahunan.",
-            "Machine learning memantau 100% aliran transaksi real-time dan memberikan peringatan fraud seketika."
+            "Data mart",
+            "Subset data untuk fungsi/kelompok kebutuhan tertentu.",
+            "Definisi antarmart harus selaras agar angka tidak saling bertentangan."
           ],
           [
-            "Fokus Nilai Tambah",
-            "Pencatatan data klerikal (Data Processing).",
-            "Interpretasi wawasan strategis, penilaian risiko, dan pengambilan keputusan (Decision Support)."
+            "Data lake",
+            "Menampung data terstruktur dan tidak terstruktur dalam ragam besar.",
+            "Tanpa katalog/kualitas dapat sulit ditemukan dan dianalisis."
           ]
+        ],
+        "stackOnMobile": true
+      },
+      {
+        "kind": "p",
+        "text": "Business intelligence mengumpulkan informasi, menganalisis pola, lalu mendukung keputusan. Dashboard menyajikan metrik yang kritis untuk pengguna tertentu dan memungkinkan penelusuran lebih rinci. Jangan mengukur keberhasilan dashboard dari banyaknya grafik; tanyakan keputusan apa yang menjadi lebih jelas dan siapa yang bertindak."
+      },
+      {
+        "kind": "h2",
+        "text": "2. KPI yang bisa diartikan dan ditindaklanjuti"
+      },
+      {
+        "kind": "table",
+        "title": "Definisi KPI sebelum memilih warna",
+        "headers": [
+          "KPI",
+          "Definisi",
+          "Hal yang perlu dijelaskan"
+        ],
+        "rows": [
+          [
+            "Overdue ratio",
+            "Piutang lewat jatuh tempo ÷ total piutang pada tanggal yang sama.",
+            "Due date, cutoff kas, saldo kredit, penyebut, dan tanggal refresh."
+          ],
+          [
+            "On-time delivery",
+            "Pengiriman tepat waktu ÷ pengiriman yang relevan.",
+            "Tanggal janji, tanggal aktual, toleransi dan perlakuan pembatalan."
+          ],
+          [
+            "Defect rate",
+            "Unit cacat ÷ unit diperiksa pada lingkup yang sama.",
+            "Metode inspeksi, rework dan apakah data mewakili seluruh produksi."
+          ]
+        ],
+        "stackOnMobile": true
+      },
+      {
+        "kind": "example",
+        "title": "Contoh KPI aging piutang",
+        "blocks": [
+          {
+            "kind": "p",
+            "text": "Asumsi saldo Rp juta: belum jatuh tempo 40, overdue 1–30 hari 30, 31–60 hari 20, >60 hari 10. Total 100; overdue 60 sehingga overdue ratio 60%. Grafik menunjukkan nominal yang membentuk rasio itu. Angka ini menggambarkan keterlambatan, belum jumlah kerugian kredit."
+          },
+          {
+            "kind": "figure",
+            "title": "Aging piutang: Rp100 juta, Rp60 juta sudah lewat jatuh tempo",
+            "svg": "<svg class=\"course-diagram-svg\" viewBox=\"0 0 650 330\" xmlns=\"http://www.w3.org/2000/svg\" style=\"font-family:Inter,Arial,sans-serif;width:100%;height:auto\"><title>Saldo piutang per kelompok umur</title><rect width=\"650\" height=\"330\" rx=\"14\" fill=\"#f8fafc\"/><g stroke=\"#cbd5e1\"><path d=\"M155 45 V270 H565\"/><path d=\"M255 45 V270 M355 45 V270 M455 45 V270 M555 45 V270\"/></g><g fill=\"#475569\" font-size=\"15\" text-anchor=\"end\"><text x=\"140\" y=\"83\">Belum jatuh tempo</text><text x=\"140\" y=\"139\">1–30 hari</text><text x=\"140\" y=\"195\">31–60 hari</text><text x=\"140\" y=\"251\">&gt;60 hari</text></g><rect x=\"155\" y=\"58\" width=\"400\" height=\"36\" rx=\"4\" fill=\"#0369a1\"/><rect x=\"155\" y=\"114\" width=\"300\" height=\"36\" rx=\"4\" fill=\"#b45309\"/><rect x=\"155\" y=\"170\" width=\"200\" height=\"36\" rx=\"4\" fill=\"#b45309\"/><rect x=\"155\" y=\"226\" width=\"100\" height=\"36\" rx=\"4\" fill=\"#b45309\"/><g fill=\"#fff\" font-size=\"16\" font-weight=\"700\"><text x=\"170\" y=\"82\">40</text><text x=\"170\" y=\"138\">30</text><text x=\"170\" y=\"194\">20</text><text x=\"170\" y=\"250\">10</text></g><g fill=\"#475569\" font-size=\"13\" text-anchor=\"middle\"><text x=\"155\" y=\"292\">0</text><text x=\"255\" y=\"292\">10</text><text x=\"355\" y=\"292\">20</text><text x=\"455\" y=\"292\">30</text><text x=\"555\" y=\"292\">40</text><text x=\"355\" y=\"317\">Saldo piutang (Rp juta) · tanggal analisis sama</text></g></svg>",
+            "mobileSvg": "<svg class=\"course-diagram-svg\" viewBox=\"0 0 360 430\" xmlns=\"http://www.w3.org/2000/svg\" style=\"font-family:Inter,Arial,sans-serif;width:100%;height:auto\"><title>Aging dalam Rp juta</title><rect width=\"360\" height=\"430\" rx=\"14\" fill=\"#f8fafc\"/><g fill=\"#0f172a\" font-size=\"15\"><text x=\"18\" y=\"35\">Belum jatuh tempo · 40</text><text x=\"18\" y=\"125\">1–30 hari · 30</text><text x=\"18\" y=\"215\">31–60 hari · 20</text><text x=\"18\" y=\"305\">Lebih dari 60 hari · 10</text></g><rect x=\"18\" y=\"49\" width=\"300\" height=\"28\" rx=\"4\" fill=\"#0369a1\"/><rect x=\"18\" y=\"139\" width=\"225\" height=\"28\" rx=\"4\" fill=\"#b45309\"/><rect x=\"18\" y=\"229\" width=\"150\" height=\"28\" rx=\"4\" fill=\"#b45309\"/><rect x=\"18\" y=\"319\" width=\"75\" height=\"28\" rx=\"4\" fill=\"#b45309\"/><path d=\"M18 370 H318\" stroke=\"#64748b\"/><g fill=\"#475569\" font-size=\"13\" text-anchor=\"middle\"><text x=\"18\" y=\"391\">0</text><text x=\"93\" y=\"391\">10</text><text x=\"168\" y=\"391\">20</text><text x=\"243\" y=\"391\">30</text><text x=\"318\" y=\"391\">40</text><text x=\"168\" y=\"417\">Saldo piutang (Rp juta)</text></g></svg>",
+            "altText": "Belum jatuh tempo 40 juta; 1 sampai 30 hari lewat jatuh tempo 30 juta; 31 sampai 60 hari 20 juta; lebih dari 60 hari 10 juta. Total 100 juta.",
+            "transcript": [
+              "Belum jatuh tempo: Rp40 juta.",
+              "Lewat jatuh tempo 1–30 hari: Rp30 juta.",
+              "Lewat jatuh tempo 31–60 hari: Rp20 juta.",
+              "Lewat jatuh tempo >60 hari: Rp10 juta.",
+              "Total Rp100 juta; jumlah lewat jatuh tempo Rp60 juta atau 60%. Grafik memakai skala nol dan satu tanggal analisis."
+            ],
+            "caption": "Data latihan buatan. Umur dihitung dari due date, saldo setelah alokasi penerimaan kas. Nilai penuh tersedia pada tabel kasus."
+          },
+          {
+            "kind": "p",
+            "text": "Tindak lanjut: petugas penagihan memeriksa saldo lama dan sengketa; supervisor meninjau hasil pada jadwal yang ditentukan. Dashboard harus menampilkan tanggal data dan sumber, bukan memberi kesan real-time jika pemuatan hanya setiap malam."
+          }
         ]
+      },
+      {
+        "kind": "h2",
+        "text": "3. Komponen XBRL dan perbedaannya"
+      },
+      {
+        "kind": "p",
+        "text": "**eXtensible Business Reporting Language (XBRL)** memungkinkan pertukaran fakta bisnis dengan makna terstruktur. Buku mengenalkan XBRL berbasis XML. XBRL adalah format/standar pelaporan data, bukan standar pengakuan pendapatan atau pengganti prinsip akuntansi. Richardson pp.477–480."
+      },
+      {
+        "kind": "table",
+        "title": "Istilah yang sering tertukar",
+        "headers": [
+          "Istilah",
+          "Fungsi",
+          "Analogi terbatas"
+        ],
+        "rows": [
+          [
+            "Specification",
+            "Aturan teknis bagaimana dokumen/fakta XBRL disusun.",
+            "Tata bahasa teknis."
+          ],
+          [
+            "Taxonomy",
+            "Definisi konsep data, tipe, label dan hubungan.",
+            "Kamus terstruktur untuk makna laporan."
+          ],
+          [
+            "Tag / concept",
+            "Penanda konsep tertentu, misalnya kas atau revenue.",
+            "Nama bermakna; lebih dari label tampilan."
+          ],
+          [
+            "Instance document",
+            "Fakta yang benar-benar dilaporkan beserta konteks/unitnya.",
+            "Isian laporan suatu entitas/periode."
+          ],
+          [
+            "Style sheet / rendering",
+            "Menyajikan data agar dapat dibaca manusia.",
+            "Tampilan; tidak mengubah makna fakta yang salah."
+          ]
+        ],
+        "stackOnMobile": true
+      },
+      {
+        "kind": "figure",
+        "title": "Satu fakta harus membawa makna",
+        "svg": "<svg class=\"course-diagram-svg\" role=\"img\" aria-label=\"Satu fakta harus membawa makna\" viewBox=\"0 0 800 278\" xmlns=\"http://www.w3.org/2000/svg\" style=\"font-family:Inter,Arial,sans-serif;width:100%;height:auto\"><title>Satu fakta harus membawa makna</title><defs><marker id=\"xbrl-fact-a-false\" markerWidth=\"6\" markerHeight=\"6\" refX=\"5\" refY=\"3\" orient=\"auto\"><path d=\"M0 0 L6 3 L0 6\" fill=\"none\" stroke=\"#64748b\" stroke-width=\"1.5\"/></marker></defs><g><rect x=\"16\" y=\"16\" width=\"365\" height=\"108\" rx=\"12\" fill=\"#eff6ff\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"45\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">1. Concept</text>\n      <text x=\"32\" y=\"72\" fill=\"#334155\" font-size=\"14\">Kas dan setara kas.</text><text x=\"32\" y=\"94\" fill=\"#334155\" font-size=\"14\">Pilih definisi yang tepat.</text></g><g><rect x=\"411\" y=\"16\" width=\"365\" height=\"108\" rx=\"12\" fill=\"#ecfdf5\" stroke=\"#94a3b8\"/>\n      <text x=\"427\" y=\"45\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">2. Context</text>\n      <text x=\"427\" y=\"72\" fill=\"#334155\" font-size=\"14\">Entitas + periode + dimensi relevan.</text><text x=\"427\" y=\"94\" fill=\"#334155\" font-size=\"14\">Saldo memakai satu tanggal.</text></g><g><rect x=\"16\" y=\"154\" width=\"365\" height=\"108\" rx=\"12\" fill=\"#eff6ff\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"183\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">3. Unit + nilai</text>\n      <text x=\"32\" y=\"210\" fill=\"#334155\" font-size=\"14\">IDR · 115.000.000.</text><text x=\"32\" y=\"232\" fill=\"#334155\" font-size=\"14\">Jangan keliru skala jutaan.</text></g><g><rect x=\"411\" y=\"154\" width=\"365\" height=\"108\" rx=\"12\" fill=\"#ecfdf5\" stroke=\"#94a3b8\"/>\n      <text x=\"427\" y=\"183\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">4. Validation</text>\n      <text x=\"427\" y=\"210\" fill=\"#334155\" font-size=\"14\">Cek tag, tipe, unit dan hubungan.</text><text x=\"427\" y=\"232\" fill=\"#334155\" font-size=\"14\">Cocokkan dengan laporan disetujui.</text></g></svg>",
+        "mobileSvg": "<svg class=\"course-diagram-svg\" role=\"img\" aria-label=\"Satu fakta harus membawa makna\" viewBox=\"0 0 360 566\" xmlns=\"http://www.w3.org/2000/svg\" style=\"font-family:Inter,Arial,sans-serif;width:100%;height:auto\"><title>Satu fakta harus membawa makna</title><defs><marker id=\"xbrl-fact-a-true\" markerWidth=\"6\" markerHeight=\"6\" refX=\"5\" refY=\"3\" orient=\"auto\"><path d=\"M0 0 L6 3 L0 6\" fill=\"none\" stroke=\"#64748b\" stroke-width=\"1.5\"/></marker></defs><g><rect x=\"16\" y=\"16\" width=\"328\" height=\"108\" rx=\"12\" fill=\"#eff6ff\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"45\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">1. Concept</text>\n      <text x=\"32\" y=\"72\" fill=\"#334155\" font-size=\"14\">Kas dan setara kas.</text><text x=\"32\" y=\"94\" fill=\"#334155\" font-size=\"14\">Pilih definisi yang tepat.</text></g><g><rect x=\"16\" y=\"158\" width=\"328\" height=\"108\" rx=\"12\" fill=\"#ecfdf5\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"187\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">2. Context</text>\n      <text x=\"32\" y=\"214\" fill=\"#334155\" font-size=\"14\">Entitas + periode + dimensi relevan.</text><text x=\"32\" y=\"236\" fill=\"#334155\" font-size=\"14\">Saldo memakai satu tanggal.</text></g><g><rect x=\"16\" y=\"300\" width=\"328\" height=\"108\" rx=\"12\" fill=\"#eff6ff\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"329\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">3. Unit + nilai</text>\n      <text x=\"32\" y=\"356\" fill=\"#334155\" font-size=\"14\">IDR · 115.000.000.</text><text x=\"32\" y=\"378\" fill=\"#334155\" font-size=\"14\">Jangan keliru skala jutaan.</text></g><g><rect x=\"16\" y=\"442\" width=\"328\" height=\"108\" rx=\"12\" fill=\"#ecfdf5\" stroke=\"#94a3b8\"/>\n      <text x=\"32\" y=\"471\" fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\">4. Validation</text>\n      <text x=\"32\" y=\"498\" fill=\"#334155\" font-size=\"14\">Cek tag, tipe, unit dan hubungan.</text><text x=\"32\" y=\"520\" fill=\"#334155\" font-size=\"14\">Cocokkan dengan laporan disetujui.</text></g></svg>",
+        "caption": "Fakta ilustratif: kas Rp115 juta pada tanggal pelaporan. Nama konsep contoh tidak dinyatakan sebagai tag resmi taxonomy tertentu.",
+        "altText": "1. Concept: Kas dan setara kas. Pilih definisi yang tepat.; 2. Context: Entitas + periode + dimensi relevan. Saldo memakai satu tanggal.; 3. Unit + nilai: IDR · 115.000.000. Jangan keliru skala jutaan.; 4. Validation: Cek tag, tipe, unit dan hubungan. Cocokkan dengan laporan disetujui.",
+        "transcript": [
+          "1. Concept: Kas dan setara kas. Pilih definisi yang tepat.",
+          "2. Context: Entitas + periode + dimensi relevan. Saldo memakai satu tanggal.",
+          "3. Unit + nilai: IDR · 115.000.000. Jangan keliru skala jutaan.",
+          "4. Validation: Cek tag, tipe, unit dan hubungan. Cocokkan dengan laporan disetujui."
+        ]
+      },
+      {
+        "kind": "h2",
+        "text": "4. Context, unit, dan instant versus duration"
+      },
+      {
+        "kind": "p",
+        "text": "Saldo kas adalah fakta pada satu titik waktu (**instant**), sedangkan pendapatan adalah fakta sepanjang periode (**duration**). Context mengidentifikasi entitas dan periode, serta dimensi yang relevan. Unit menunjukkan mata uang atau ukuran lain. Dua angka sama belum dapat dibandingkan jika tanggal, entitas, konsolidasi, atau unit berbeda."
+      },
+      {
+        "kind": "example",
+        "title": "Menyiapkan dua fakta dari kasus integrasi",
+        "blocks": [
+          {
+            "kind": "table",
+            "title": "Asumsi latihan laporan tahun 2025",
+            "headers": [
+              "Fakta",
+              "Periode",
+              "Nilai dan unit"
+            ],
+            "rows": [
+              [
+                "Kas akhir",
+                "Instant: 31 Desember 2025.",
+                "IDR 115.000.000."
+              ],
+              [
+                "Penjualan",
+                "Duration: 1 Januari–31 Desember 2025.",
+                "IDR 90.000.000 dalam asumsi hanya ada transaksi kasus."
+              ]
+            ],
+            "stackOnMobile": true
+          },
+          {
+            "kind": "p",
+            "text": "Jika tampilan laporan menggunakan “Rp juta”, nilai 115 pada tampilan perlu ditransformasikan dengan benar menjadi rupiah penuh atau diberi mekanisme skala sesuai format yang digunakan. **Decimals** menyatakan ketelitian pembulatan fakta, bukan perintah mengalikan jutaan atau sekadar jumlah digit yang terlihat di layar."
+          }
+        ]
+      },
+      {
+        "kind": "code",
+        "language": "text",
+        "caption": "Notasi konsep pedagogis, bukan instance XML siap diajukan ke regulator.",
+        "text": "Concept: CashAndCashEquivalents (nama ilustratif)\nEntity: PT Contoh\nPeriod: instant 2025-12-31\nUnit: IDR\nValue: 115000000\nRounding accuracy: ditentukan dari data sumber\nDimensions: sesuai lingkup fakta yang dilaporkan"
+      },
+      {
+        "kind": "h2",
+        "text": "5. Pemetaan, validasi, dan assurance"
+      },
+      {
+        "kind": "ol",
+        "items": [
+          "Gunakan taxonomy dan versinya yang sesuai kebutuhan pelaporan.",
+          "Petakan akun/pos ke concept berdasarkan definisi, bukan kemiripan nama semata.",
+          "Tetapkan context, unit, dimensi, tanda dan ketelitian untuk fakta.",
+          "Bangun instance atau format pelaporan yang disyaratkan dan jalankan validasi teknis.",
+          "Rekonsiliasi fakta ke laporan yang disetujui dan telusuri ke sumber transaksi.",
+          "Review perubahan tag, exception, approval, akses dan bukti pengiriman/penerimaan."
+        ]
+      },
+      {
+        "kind": "table",
+        "title": "Kesalahan tagging yang dapat lolos tampilan",
+        "headers": [
+          "Kesalahan",
+          "Dampak",
+          "Pengujian"
+        ],
+        "rows": [
+          [
+            "Kas diberi tag revenue",
+            "Makna salah meskipun angka tetap 115.",
+            "Cocokkan concept, tipe dan definisi ke pos laporan."
+          ],
+          [
+            "Instant dipakai untuk pendapatan",
+            "Periode kinerja salah.",
+            "Periksa period type dan tanggal awal/akhir."
+          ],
+          [
+            "Unit USD untuk rupiah",
+            "Pembanding nilai keliru.",
+            "Cocokkan mata uang dan konversi."
+          ],
+          [
+            "Nilai juta dikirim sebagai rupiah",
+            "Nilai 1.000.000 kali terlalu kecil.",
+            "Uji skala pada fakta, ekspor dan rendering."
+          ],
+          [
+            "Fakta penting terlewat",
+            "Laporan data tidak lengkap.",
+            "Rekonsiliasi daftar disclosure dan laporan sumber."
+          ]
+        ],
+        "stackOnMobile": true
       },
       {
         "kind": "callout",
         "variant": "warning",
-        "title": "Tata Kelola Bot (Bot Governance)",
-        "text": "Bot RPA harus memiliki Identitas Pengguna (User ID) unik yang terpisah dari akun manusia. Dilarang keras menggunakan akun karyawan untuk menjalankan bot! Setiap tindakan bot wajib tercatat di audit trail sistem untuk akuntabilitas hukum."
+        "title": "Valid teknis belum berarti benar secara akuntansi",
+        "text": "Dokumen yang lolos aturan XML/XBRL masih bisa memakai konsep yang salah secara substansi atau bersumber dari transaksi yang tidak sah. Assurance perlu menilai tagging, kelengkapan, akurasi, konteks, kontrol proses dan lingkup penugasan. Jangan menganggap laporan yang bisa dibuka otomatis telah diaudit."
+      },
+      {
+        "kind": "h2",
+        "text": "6. XBRL GL dan perkembangan penyajian"
+      },
+      {
+        "kind": "p",
+        "text": "**XBRL GL (Global Ledger)** menyediakan kerangka data tingkat transaksi/ledger untuk pertukaran dan integrasi, sedangkan taxonomy pelaporan keuangan berfokus pada fakta laporan. XBRL GL dapat membantu standardisasi antarsistem, tetapi implementasi, mapping dan kualitas data tetap diperlukan. Richardson pp.481–483."
+      },
+      {
+        "kind": "pendalaman",
+        "title": "Pelengkap: taxonomy relationships dan Inline XBRL",
+        "blocks": [
+          {
+            "kind": "p",
+            "text": "Taxonomy dapat memuat hubungan presentation, calculation, definition, label dan reference. Hubungan perhitungan membantu pemeriksaan aritmetika tertentu, tetapi tidak membuktikan seluruh laporan benar. Inline XBRL menggabungkan data terstruktur dengan dokumen yang dapat dibaca manusia, sehingga penyajian dan data mesin tetap perlu dicocokkan. [XBRL International: XBRL Essentials](https://specifications.xbrl.org/xbrl-essentials.html)."
+          }
+        ]
+      },
+      {
+        "kind": "h2",
+        "text": "7. Uji pemahaman"
+      },
+      {
+        "kind": "self-check",
+        "question": "Angka revenue dan kas sama-sama 115. Bolehkah memakai context yang sama?",
+        "answer": [
+          {
+            "kind": "p",
+            "text": "Belum tentu. Kas lazimnya instant dan revenue duration. Entitas serta dimensi juga harus cocok; angka yang sama tidak menentukan konteks yang sama."
+          }
+        ],
+        "signal": "Jika alasannya belum jelas, kembali ke contoh sebelum membuka jawaban."
+      },
+      {
+        "kind": "self-check",
+        "question": "Dashboard overdue ratio turun dari 60% ke 30%, tetapi cabang terbesar belum dimuat. Apa simpulan yang tepat?",
+        "answer": [
+          {
+            "kind": "p",
+            "text": "Belum dapat menyimpulkan kualitas penagihan membaik. Uji kelengkapan populasi dan konsistensi penyebut, lalu hitung ulang setelah seluruh cabang serta cutoff valid."
+          }
+        ],
+        "signal": "Jika alasannya belum jelas, kembali ke contoh sebelum membuka jawaban."
+      },
+      {
+        "kind": "callout",
+        "variant": "info",
+        "title": "Sumber dan batas pembahasan",
+        "text": "RPS-SIA minggu 12; Richardson Ch.14 pp.470–483 (PDF 495–508): warehouse/mart/lake, BI, dashboard, taxonomy, instance, style sheet, assurance dan XBRL GL. Context/unit/decimals diperjelas dengan [SEC XBRL Glossary](https://www.sec.gov/page/osd_xbrlglossary). Tidak ada klaim semua entitas atau regulator memakai taxonomy/versi yang sama. Angka, perusahaan, diagram, dan skenario latihan di halaman ini adalah ilustrasi buatan kecuali dinyatakan lain. Urutan materi inti mengikuti RPS-SIA, Pembagian Mengajar Gasal 2025/2026, halaman 1; pendalaman di luar bab terjadwal diberi label pelengkap."
       }
     ]
   },
   "questions": [
     {
       "tm": 12,
-      "topic": "RPA & AI dalam Akuntansi",
+      "topic": "Reporting dan XBRL",
       "difficulty": "medium",
-      "q": "Karakteristik proses bisnis akuntansi manakah yang PALING IDEAL untuk diotomatisasi menggunakan Robotic Process Automation (RPA)?",
+      "q": "Subset warehouse untuk fungsi tertentu disebut...",
       "options": [
-        "Proses yang membutuhkan pertimbangan moral dan negosiasi tatap muka",
-        "Proses bervolume tinggi, sangat repetitif, memiliki aturan logis yang pasti (rule-based), dan mengolah data digital terstruktur",
-        "Penyusunan visi strategis perusahaan 20 tahun ke depan",
-        "Penyelesaian sengketa hukum perdata di pengadilan"
-      ],
-      "answer": 1,
-      "explanation": "RPA unggul pada tugas klerikal yang berulang dan berbasis aturan pasti (misal: mengunduh rekening koran bank setiap pagi jam 06.00, mencocokkan mutasi, dan memposting jurnal kliring otomatis ke ERP)."
-    },
-    {
-      "tm": 12,
-      "topic": "RPA & AI dalam Akuntansi",
-      "difficulty": "advanced",
-      "q": "Perbedaan utama antara Attended RPA dan Unattended RPA dalam lingkungan kantor akuntansi adalah...",
-      "options": [
-        "Attended dipicu/didampingi pengguna; unattended berjalan menurut pemicu terjadwal.",
-        "Attended dijadwalkan di server; unattended selalu menunggu klik pengguna desktop.",
-        "Attended beroperasi tanpa pengguna; unattended meminta pengguna pada setiap langkah.",
-        "Attended dan unattended sama-sama harus dipicu manual dari sesi pengguna desktop."
+        "Data mart.",
+        "Primary key.",
+        "Instance fact.",
+        "Private key."
       ],
       "answer": 0,
-      "explanation": "Pembedaan berkaitan dengan interaksi pengguna dan cara pemicu dijalankan. Bot tetap memerlukan otorisasi, pemantauan, penanganan pengecualian dan pemeliharaan. Istilah ini memakai sumber vendor sebagai pelengkap buku. Rujukan: UiPath Overview, Attended vs. Unattended automation, bagian Attended Automations dan Unattended Automations, https://docs.uipath.com/overview/other/latest/overview/attended-vs-unattended-automation, dibaca 12 Oktober 2026; Richardson AIS 4e Ch.15 memberi konteks otomasi."
+      "explanation": "Data mart memusatkan kebutuhan kelompok tertentu; definisinya tetap harus konsisten dengan sumber. Rujukan: Richardson AIS 4e, Ch.14 pp.470–483 (PDF 495–508)."
     },
     {
       "tm": 12,
-      "topic": "RPA & AI dalam Akuntansi",
+      "topic": "Reporting dan XBRL",
       "difficulty": "medium",
-      "q": "Teknologi AI yang mengonversi dokumen pindaian faktur kertas atau format PDF menjadi teks dan angka digital terstruktur untuk dimasukkan ke sistem ERP disebut...",
+      "q": "Taxonomy dan instance document berbeda karena...",
       "options": [
-        "Optical Character Recognition (OCR)",
-        "Virtual Private Network (VPN)",
-        "Domain Name System (DNS)",
-        "File Transfer Protocol (FTP)"
+        "Taxonomy berisi seluruh nominal entitas; instance hanya warna grafik.",
+        "Taxonomy mendefinisikan konsep; instance berisi fakta yang dilaporkan.",
+        "Taxonomy mengganti prinsip akuntansi; instance mengganti audit bukti.",
+        "Taxonomy merupakan akun bank; instance merupakan password akses."
+      ],
+      "answer": 1,
+      "explanation": "Konsep, tipe dan hubungan memberi makna; fakta memerlukan context dan unit yang benar. Rujukan: Richardson AIS 4e, Ch.14 pp.470–483 (PDF 495–508)."
+    },
+    {
+      "tm": 12,
+      "topic": "Reporting dan XBRL",
+      "difficulty": "medium",
+      "q": "Pasangan periode XBRL yang lazimnya benar adalah...",
+      "options": [
+        "Kas: duration; revenue: instant.",
+        "Kas: duration; revenue: duration.",
+        "Kas: instant; revenue: duration.",
+        "Kas: instant; revenue: instant."
+      ],
+      "answer": 2,
+      "explanation": "Kas adalah saldo pada tanggal; revenue adalah kinerja selama periode. Entitas/dimensi juga perlu cocok. Rujukan: Richardson AIS 4e, Ch.14 pp.470–483 (PDF 495–508)."
+    },
+    {
+      "tm": 12,
+      "topic": "Reporting dan XBRL",
+      "difficulty": "medium",
+      "q": "Dokumen XBRL lolos validasi teknis. Apa yang masih perlu diperiksa?",
+      "options": [
+        "Tidak ada; validasi teknis membuktikan seluruh asersi.",
+        "Hanya warna tabel karena makna fakta sudah pasti benar.",
+        "Hanya jumlah halaman tanpa memeriksa angka sumber.",
+        "Tag, konteks, unit, kelengkapan dan kesesuaian sumber."
+      ],
+      "answer": 3,
+      "explanation": "Validasi teknis tidak menggantikan substansi akuntansi, rekonsiliasi atau assurance proses. Rujukan: Richardson AIS 4e, Ch.14 pp.470–483 (PDF 495–508)."
+    },
+    {
+      "tm": 12,
+      "topic": "Reporting dan XBRL",
+      "difficulty": "medium",
+      "q": "Angka 115 pada laporan dalam Rp juta dikirim sebagai IDR 115. Masalahnya adalah...",
+      "options": [
+        "Skala nilai salah; seharusnya setara IDR 115.000.000.",
+        "Taxonomy otomatis berubah menjadi ledger transaksi internal.",
+        "Semua context harus diubah dari instant menjadi duration.",
+        "Unit rupiah selalu mengharuskan penggantian ke dolar AS."
       ],
       "answer": 0,
-      "explanation": "OCR (Optical Character Recognition) yang dipadukan dengan Machine Learning mampu mengenali tata letak faktur vendor, mengekstrak nomor PO, tanggal, dan subtotal, lalu meneruskannya ke software akuntansi otomatis."
-    },
-    {
-      "tm": 12,
-      "topic": "RPA & AI dalam Akuntansi",
-      "difficulty": "advanced",
-      "q": "Dengan semakin meluasnya implementasi bot RPA dan AI dalam sistem akuntansi, bagaimana peran profesional akuntan bertransformasi di masa depan?",
-      "options": [
-        "Profesi akuntan akan punah sepenuhnya karena komputer tidak pernah membuat kesalahan",
-        "Akuntan bertransisi dari sekadar pencatat buku klerikal (bookkeeper) menjadi analis bisnis strategis, desainer tata kelola sistem, dan auditor algoritma AI",
-        "Akuntan hanya bertugas merakit kabel perangkat keras komputer",
-        "Akuntan kembali menggunakan pembukuan kertas manual untuk menghindari hacking"
-      ],
-      "answer": 1,
-      "explanation": "RPA membebaskan akuntan dari pekerjaan manual berulang. Nilai tambah akuntan bergeser ke ranah penafsiran bisnis strategis, penilaian risiko sistem, kepatuhan etika algoritma AI, dan konsultasi manajerial."
-    },
-    {
-      "tm": 12,
-      "topic": "RPA & AI dalam Akuntansi",
-      "difficulty": "medium",
-      "q": "Risiko pengendalian baru yang timbul akibat penggunaan bot RPA dalam proses akuntansi adalah...",
-      "options": [
-        "Bot memastikan format input selalu sama sehingga pengujian perubahan dapat dihentikan.",
-        "Perubahan format input tanpa pembaruan bot dapat menghasilkan kesalahan berulang.",
-        "Bot mengurangi risiko input sehingga seluruh otorisasi transaksi dapat dihapuskan.",
-        "Bot membuat laporan akhir benar sehingga jejak transaksi tidak perlu disimpan."
-      ],
-      "answer": 1,
-      "explanation": "Perubahan input atau antarmuka dapat membuat aturan bot salah diterapkan berulang. Change control, testing dan pemantauan pengecualian tetap diperlukan. Rujukan: Richardson AIS 4e, Ch.15, Automation dan RPA, PDF 539-541."
+      "explanation": "Skala dan ketelitian berbeda. Decimals bukan perintah otomatis mengalikan jutaan; pemetaan nilai perlu benar. Rujukan: Richardson AIS 4e, Ch.14 pp.470–483 (PDF 495–508)."
     }
   ],
   "flashcards": [
     {
-      "id": "aks301-tm12-01",
+      "id": "aks301-v3-tm12-01",
       "phase": "pra-uas",
       "tm": 12,
-      "topic": "Robotic Process Automation (RPA) & AI dalam SIA",
-      "category": "Mekanisme",
-      "front": "Definisi Robotic Process Automation (RPA)",
-      "back": "Aplikasi perangkat lunak bot yang meniru klik dan interaksi manusia untuk mengeksekusi tugas rutin berulang berbasis aturan (rule-based). Rujukan: Richardson et al. AIS 4e · Ch. 15, hal. 508-516 (PDF 533-541)."
-    },
-    {
-      "id": "aks301-tm12-02",
-      "phase": "pra-uas",
-      "tm": 12,
-      "topic": "Robotic Process Automation (RPA) & AI dalam SIA",
+      "topic": "Reporting dan XBRL",
       "category": "Konsep",
-      "front": "Kriteria Proses yang Ideal untuk RPA",
-      "back": "Volume transaksi tinggi, berbasis aturan terstruktur, data input digital konsisten, dan tingkat pengecualian (exceptions) yang rendah. Rujukan: Richardson et al. AIS 4e · Ch. 15, hal. 508-516 (PDF 533-541)."
+      "front": "Warehouse, mart, lake",
+      "back": "Warehouse mengintegrasi data historis; mart subset kebutuhan tertentu; lake dapat menampung data terstruktur/tidak terstruktur. Rujukan: Richardson AIS 4e, Ch.14 pp.470–483 (PDF 495–508)."
     },
     {
-      "id": "aks301-tm12-03",
+      "id": "aks301-v3-tm12-02",
       "phase": "pra-uas",
       "tm": 12,
-      "topic": "Robotic Process Automation (RPA) & AI dalam SIA",
-      "category": "Contoh",
-      "front": "Penerapan RPA pada Rekonsiliasi Bank",
-      "back": "Bot otomatis mengunduh rekening koran bank setiap pagi, mencocokkan mutasi kas dengan buku besar ERP, dan menandai selisih saldo. Rujukan: Richardson et al. AIS 4e · Ch. 15, hal. 508-516 (PDF 533-541)."
-    },
-    {
-      "id": "aks301-tm12-04",
-      "phase": "pra-uas",
-      "tm": 12,
-      "topic": "Robotic Process Automation (RPA) & AI dalam SIA",
+      "topic": "Reporting dan XBRL",
       "category": "Konsep",
-      "front": "Optical Character Recognition (OCR) Cerdas",
-      "back": "Mengonversi gambar pindaian faktur vendor fisik atau PDF menjadi data teks terstruktur yang otomatis terinput ke akun utang usaha. Rujukan: Richardson et al. AIS 4e · Ch. 15, hal. 508-516 (PDF 533-541)."
+      "front": "Dashboard yang berguna",
+      "back": "Tentukan tujuan, definisi KPI, penyebut, tanggal refresh, sumber dan pemilik tindakan; banyak grafik bukan ukuran keberhasilan. Rujukan: Richardson AIS 4e, Ch.14 pp.470–483 (PDF 495–508)."
     },
     {
-      "id": "aks301-tm12-05",
+      "id": "aks301-v3-tm12-03",
       "phase": "pra-uas",
       "tm": 12,
-      "topic": "Robotic Process Automation (RPA) & AI dalam SIA",
+      "topic": "Reporting dan XBRL",
       "category": "Konsep",
-      "front": "Machine Learning dalam Deteksi Anomali Jurnal",
-      "back": "Algoritma pembelajaran mesin tanpa pengawasan (Unsupervised ML) yang otomatis menandai pola transaksi yang menyimpang dari perilaku historis normal. Rujukan: Richardson et al. AIS 4e · Ch. 15, hal. 508-516 (PDF 533-541)."
+      "front": "Taxonomy versus instance",
+      "back": "Taxonomy mendefinisikan konsep/tipe/hubungan; instance berisi fakta entitas beserta context dan unit. Rujukan: Richardson AIS 4e, Ch.14 pp.470–483 (PDF 495–508)."
     },
     {
-      "id": "aks301-tm12-06",
+      "id": "aks301-v3-tm12-04",
       "phase": "pra-uas",
       "tm": 12,
-      "topic": "Robotic Process Automation (RPA) & AI dalam SIA",
+      "topic": "Reporting dan XBRL",
       "category": "Konsep",
-      "front": "Tata Kelola & Pengendalian Bot (Bot Governance)",
-      "back": "Memerlukan manajemen kredensial akses bot, pemantauan log aktivitas, dan pengujian kontrol saat ada pembaruan versi sistem ERP. Rujukan: Richardson et al. AIS 4e · Ch. 15, hal. 508-516 (PDF 533-541)."
+      "front": "Instant versus duration",
+      "back": "Saldo kas: satu tanggal (instant). Revenue: rentang periode (duration). Entity dan dimensi juga harus cocok. Rujukan: Richardson AIS 4e, Ch.14 pp.470–483 (PDF 495–508)."
+    },
+    {
+      "id": "aks301-v3-tm12-05",
+      "phase": "pra-uas",
+      "tm": 12,
+      "topic": "Reporting dan XBRL",
+      "category": "Konsep",
+      "front": "Validasi XBRL",
+      "back": "Uji tag, context, unit, skala, tanda, ketelitian dan kelengkapan terhadap sumber; valid teknis belum benar secara akuntansi. Rujukan: Richardson AIS 4e, Ch.14 pp.470–483 (PDF 495–508)."
+    },
+    {
+      "id": "aks301-v3-tm12-06",
+      "phase": "pra-uas",
+      "tm": 12,
+      "topic": "Reporting dan XBRL",
+      "category": "Konsep",
+      "front": "XBRL GL",
+      "back": "Kerangka pertukaran data tingkat transaksi/ledger; berbeda dari fakta agregat taxonomy pelaporan keuangan. Rujukan: Richardson AIS 4e, Ch.14 pp.470–483 (PDF 495–508)."
     }
   ],
-  "scope": "Snapshot audit pasca-UTS. Kebenaran sumber dan batas diperiksa terpisah dari kesamaan implementasi."
+  "bank": {
+    "type": "case",
+    "scope": "TM 12: Reporting dan XBRL",
+    "difficulty": "Komprehensif",
+    "estimatedTime": "30–45 menit",
+    "question": "Studi Kasus 12: Reporting dan XBRL",
+    "context": "Ilustrasi latihan buatan. Tim membuat dashboard piutang dan file XBRL dari data ERP.",
+    "data": [
+      "Aging Rp juta: belum jatuh tempo 40; 1–30 hari 30; 31–60 hari 20; >60 hari 10.",
+      "Laporan kas akhir dalam Rp juta menunjukkan 115; ekspor XBRL memuat unit IDR dan nilai 115.",
+      "Pendapatan setahun diberi context instant; cabang A belum masuk ETL."
+    ],
+    "instructions": [
+      "Hitung overdue ratio dan pilih visual yang sesuai.",
+      "Bedakan taxonomy, instance, context dan unit; identifikasi kesalahan fakta.",
+      "Susun validasi teknis serta rekonsiliasi sumber dan kontrol pelaporan."
+    ],
+    "outputFormat": [
+      "Alur/diagram dan analisis konsep",
+      "Perhitungan atau rancangan dengan asumsi jelas",
+      "Kontrol, bukti dan batas simpulan"
+    ],
+    "rubric": [
+      "Ketepatan konsep dan pemetaan (30%)",
+      "Ketepatan langkah serta perhitungan/rancangan (40%)",
+      "Alasan, bukti dan batas jawaban (30%)"
+    ],
+    "answerGuide": "Total 100 dan overdue 60, rasio 60% hanya untuk populasi yang diberikan; cabang hilang membatasi kesimpulan perusahaan. Gunakan bar chart aging dengan unit, tanggal, label dan sumber. Taxonomy mendefinisikan konsep; instance memuat fakta. Kas 115 juta harus setara IDR115.000.000; jangan memakai decimals sebagai pengganti skala. Revenue setahun memakai duration, kas akhir instant. Perbaiki ETL dan rekonsiliasi jumlah/total, tag, unit, periode, dimensi serta laporan disetujui. Valid teknis belum membuktikan akuntansi benar. Rujukan: Richardson AIS 4e, Ch.14 pp.470–483 (PDF 495–508)."
+  },
+  "scope": "Active package revised 2026-10-16 against RPS-SIA p.1; supersedes historical catalog mapping. See docs/sia-pra-uas-20261016.md."
 }

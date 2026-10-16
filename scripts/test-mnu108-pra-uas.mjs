@@ -18,7 +18,7 @@ assert.equal(jsonHash(m.MNM101_FC.filter(c=>c.phase==='pra-uts')),baseline.preCa
 assert.equal(jsonHash((await m.loadCourseContent('MNU108')).reviews.uts),baseline.utsReview);
 const catalog=fs.readFileSync('src/data/courseData.ts','utf8').replace(/\r\n/g,'\n').replace(/const MNU108_TM8_14 = materi\(\[[\s\S]*?\], 9\);/,'MNU108_POST_CATALOG').replace(/(materiTM1_7: MNU108_TM1_7, materiTM8_14: MNU108_TM8_14,\n\s*flashcardCount:) \d+/, '$1 MNU108_COUNT');
 const aspCatalog=JSON.parse(fs.readFileSync('scripts/fixtures/akk203-pra-uas-shared-catalog.json','utf8'));
-assert.ok([baseline.catalogOutsidePost,aspCatalog.mnu108OutsidePost].includes(hash(catalog)),'Every catalog byte outside explicitly recorded MNU108/ASP revisions unchanged');
+assert.ok([baseline.catalogOutsidePost,aspCatalog.mnu108OutsidePost,...(baseline.authorizedSiaRps20261016??[]),...(aspCatalog.authorizedAspSiaIntegration20261016??[])].includes(hash(catalog)),'Every catalog byte outside explicitly recorded MNU108/ASP revisions unchanged');
 const specs=Array.from({length:7},(_,i)=>JSON.parse(fs.readFileSync(`content-pipeline/MNU108/TM${String(i+9).padStart(2,'0')}/04_canonical_spec.json`,'utf8')));
 const qs=m.MNM101_QUIZ_UAS,cards=m.MNM101_FC.filter(c=>c.phase==='pra-uas'),bank=m.MNM101_BANK_UAS;
 assert.equal(qs.length,60);assert.equal(cards.length,42);assert.equal(bank.length,14);

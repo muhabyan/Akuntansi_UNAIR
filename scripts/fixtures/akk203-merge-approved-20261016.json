@@ -1,0 +1,177 @@
+{
+  "reason": "Explicit integration of reviewed PR61, PR64 and PR65 with merged PR63; historical baselines are not recaptured. Original pre-UTS hashes stay mandatory.",
+  "includedHeads": {
+    "asp": "ff928bad81a1a6bfee7e866be4a6b5e7319d3e7e",
+    "sia": "3d89f4c0804f13eb37082f3574388acb924b35c0",
+    "home": "b4b6327762c41453aea2a985b2690e8bbc00372c",
+    "main": "fea47c7c2ee6335090509809d64f4723880252a6"
+  },
+  "files": {
+    "src/components/AITutorFloating.tsx": {
+      "sha256": "ae05650486c8aa52cc03de81696efa0c4b0217f570448a7015d6a88376525e7c",
+      "sourceRef": "b4b6327762c41453aea2a985b2690e8bbc00372c"
+    },
+    "src/components/GuideView.tsx": {
+      "sha256": "63dda9df0c86a0527d0a29f77efa439f11920bfbf0bd38ca6c1d646973e5e2d1",
+      "sourceRef": "b4b6327762c41453aea2a985b2690e8bbc00372c"
+    },
+    "src/components/HomeView.tsx": {
+      "sha256": "a6ed7a0b117502db2253ca645b5bb894f54f307b2018d75eefdf2a8d45900f1a",
+      "sourceRef": "b4b6327762c41453aea2a985b2690e8bbc00372c"
+    },
+    "src/components/ReadingView.tsx": {
+      "sha256": "d90af5dd88272d6c847ee0e33518c7d2e2d8977bef03082efed35188065dc676",
+      "sourceRef": "b4b6327762c41453aea2a985b2690e8bbc00372c"
+    },
+    "src/hooks/useGeminiSettings.ts": {
+      "sha256": "9ae109eb4eb115b42c8a1a8f5ff9b37394b4efa2c79f599c91b3c5c66013cae4",
+      "sourceRef": "b4b6327762c41453aea2a985b2690e8bbc00372c"
+    },
+    "src/lib/aiClient.ts": {
+      "sha256": "714f6659ec93f5f7cfb503ac8efb2c9da6e5754c9aa84ce7fe99630b35b2fe64",
+      "sourceRef": "b4b6327762c41453aea2a985b2690e8bbc00372c"
+    },
+    "src/components/course/CourseLayout.tsx": {
+      "sha256": "27257122875ef5d2ec59584bbf3cce6bc1115dfb09c158c7f6a90ebb7f546145",
+      "sourceRef": "b4b6327762c41453aea2a985b2690e8bbc00372c"
+    },
+    "src/components/course/LayeredBlocks.tsx": {
+      "sha256": "2468d0cf8c9afed3b1a81b50fe5a1589b20fefd95f040f36363cb7c304b0abab",
+      "sourceRef": "b4b6327762c41453aea2a985b2690e8bbc00372c"
+    },
+    "src/data/banksoal/sii306.ts": {
+      "sha256": "ddc9ac48b7c4f9b6214960ee4363e645cb36f2f5a02ee743f1b70933359401ff",
+      "sourceRef": "3d89f4c0804f13eb37082f3574388acb924b35c0"
+    },
+    "src/data/courses/courseRegistry.ts": {
+      "sha256": "18f0e58f20238a673391ebb443a85e3697baba17f83550d8f439544db97cbe69",
+      "sourceRef": "ASP routing resolution: canonical readings with retained optional examples"
+    },
+    "src/data/flashcards/sii306.ts": {
+      "sha256": "eee5ffaeab757ae62009f47660a5596eeb3f7c3b0c548c0dc33ee3fc61162584",
+      "sourceRef": "3d89f4c0804f13eb37082f3574388acb924b35c0"
+    },
+    "src/data/quizzes/sii306.ts": {
+      "sha256": "2cba127f2d19ced32348289b6f94e5b5c437f246df120aee1643b619960d18db",
+      "sourceRef": "3d89f4c0804f13eb37082f3574388acb924b35c0"
+    },
+    "src/data/sia/siaReadings.ts": {
+      "sha256": "d15852674f39ae19cf59b9a2232a84e4c201ce9931144087e4d8f86a761d6f03",
+      "sourceRef": "3d89f4c0804f13eb37082f3574388acb924b35c0"
+    },
+    "src/data/akm2/modules/tm10.ts": {
+      "sha256": "228e7b51b1cdce700131549c199aeb1bf14c5f3fca2376f04fc06c6af0cfca67",
+      "sourceRef": "b4b6327762c41453aea2a985b2690e8bbc00372c"
+    },
+    "src/data/akm2/modules/tm11.ts": {
+      "sha256": "f9d3f70e09365f7ba2267cf323418667b4d63d47f56412b284edc7a42ce75d4f",
+      "sourceRef": "b4b6327762c41453aea2a985b2690e8bbc00372c"
+    },
+    "src/data/akm2/modules/tm12.ts": {
+      "sha256": "8890203dccb023683ce2c5624690bc676ea48dd3efb1d53837c26987b06158a1",
+      "sourceRef": "b4b6327762c41453aea2a985b2690e8bbc00372c"
+    },
+    "src/data/akm2/modules/tm13.ts": {
+      "sha256": "e6d4c0ce140abaf4ac9c9aef1b7750bb30d5806c1f0de901fe5722515b48387e",
+      "sourceRef": "b4b6327762c41453aea2a985b2690e8bbc00372c"
+    },
+    "src/data/akm2/modules/tm14.ts": {
+      "sha256": "3f4039eb63c062d11af686154ff2d933b986869d08da27da8a4a639d8cbe5565",
+      "sourceRef": "b4b6327762c41453aea2a985b2690e8bbc00372c"
+    },
+    "src/data/akm2/modules/tm15.ts": {
+      "sha256": "1af7579b9bb919d1c31646ba002e6a227867766712c1f857b56eefe9e7c53ae0",
+      "sourceRef": "b4b6327762c41453aea2a985b2690e8bbc00372c"
+    },
+    "src/data/akm2/modules/tm9.ts": {
+      "sha256": "7af8f161e0e17a917f1208a3bb62b4127d7751b16ed1f7d9a56b3e4dddba3b31",
+      "sourceRef": "b4b6327762c41453aea2a985b2690e8bbc00372c"
+    },
+    "src/data/mankeu/modules/tm10.ts": {
+      "sha256": "62082f34fc8c0a98867ace139a63ad96dd2b498e6137efba9c75ca4b43e556f2",
+      "sourceRef": "b4b6327762c41453aea2a985b2690e8bbc00372c"
+    },
+    "src/data/mankeu/modules/tm11.ts": {
+      "sha256": "3bbcb7532dcc6e7756e6a812b950c4bea3f084fbe85742d71d9f96bb85d8e3bf",
+      "sourceRef": "b4b6327762c41453aea2a985b2690e8bbc00372c"
+    },
+    "src/data/mankeu/modules/tm12.ts": {
+      "sha256": "90702ca3e1de15be8547ba37c4068e01764e60cdab0ca09796c67802aa3fdbc2",
+      "sourceRef": "b4b6327762c41453aea2a985b2690e8bbc00372c"
+    },
+    "src/data/mankeu/modules/tm13.ts": {
+      "sha256": "c62c1dbf03b2d9daf42319b3d328c5a2ab6db6eeb16bc991a31e813db6ec4e44",
+      "sourceRef": "b4b6327762c41453aea2a985b2690e8bbc00372c"
+    },
+    "src/data/mankeu/modules/tm14.ts": {
+      "sha256": "993458c54277c9179ebb7b1cff6eeb1aa8f6b219e2231c7f60cf2648d444134b",
+      "sourceRef": "b4b6327762c41453aea2a985b2690e8bbc00372c"
+    },
+    "src/data/mankeu/modules/tm15.ts": {
+      "sha256": "9ad81a97cf51f2a1eb24ccd9d28f70e018da9ecbc9040e7cd19a6a27112cb03e",
+      "sourceRef": "b4b6327762c41453aea2a985b2690e8bbc00372c"
+    },
+    "src/data/mankeu/modules/tm9.ts": {
+      "sha256": "4d8a196a79f31388ddb0f22922e98e7f0d864dd831b6af8eeb31800f9749e613",
+      "sourceRef": "b4b6327762c41453aea2a985b2690e8bbc00372c"
+    },
+    "src/data/pbri/modules/tm10.ts": {
+      "sha256": "0c459ab83f334ffe2e3471c4292677aab410434a9b28c3a1a3a847441f21c5d4",
+      "sourceRef": "b4b6327762c41453aea2a985b2690e8bbc00372c"
+    },
+    "src/data/pbri/modules/tm11.ts": {
+      "sha256": "d538c741e1e3b06c51e888b2d123176d79c653e8d2e9223095878063c089fb00",
+      "sourceRef": "b4b6327762c41453aea2a985b2690e8bbc00372c"
+    },
+    "src/data/pbri/modules/tm12.ts": {
+      "sha256": "35a95b6bb3fce0c2c380aa27b616da8a682118ee25293e2da31ef91d7772dbaa",
+      "sourceRef": "b4b6327762c41453aea2a985b2690e8bbc00372c"
+    },
+    "src/data/pbri/modules/tm13.ts": {
+      "sha256": "e053efaaf172f06b2c63302abf93d8c3fc93aefa5370e52bfc39e3cf6e808088",
+      "sourceRef": "b4b6327762c41453aea2a985b2690e8bbc00372c"
+    },
+    "src/data/pbri/modules/tm14.ts": {
+      "sha256": "e4ef3f5bdfa50ce38a84b7d1701679f3b6d46980736829d24598079259ac157e",
+      "sourceRef": "b4b6327762c41453aea2a985b2690e8bbc00372c"
+    },
+    "src/data/pbri/modules/tm15.ts": {
+      "sha256": "a64e32995a91060c2e38dde5734c8b7a443231dbe6f273566cc950a30551ba87",
+      "sourceRef": "b4b6327762c41453aea2a985b2690e8bbc00372c"
+    },
+    "src/data/pbri/modules/tm9.ts": {
+      "sha256": "1ff8f048601e8a3289a99f520e5e9db555c4f9388f45ae8a7346b2f76404a548",
+      "sourceRef": "b4b6327762c41453aea2a985b2690e8bbc00372c"
+    },
+    "src/data/pjk2/modules/tm10.ts": {
+      "sha256": "b4977ac15ab507fdfeb2b8396324b5ca52eb71a581a5b1476f94689b1144b085",
+      "sourceRef": "b4b6327762c41453aea2a985b2690e8bbc00372c"
+    },
+    "src/data/pjk2/modules/tm11.ts": {
+      "sha256": "efbc9bddb7bd6a320404a6181621462e128fd517fde8cd13fe45e3bcc60566bd",
+      "sourceRef": "b4b6327762c41453aea2a985b2690e8bbc00372c"
+    },
+    "src/data/pjk2/modules/tm12.ts": {
+      "sha256": "fc6dce0ca949ef14e991941cbbd997fbd2dbfb219049270fa79e553a0ab15f4a",
+      "sourceRef": "b4b6327762c41453aea2a985b2690e8bbc00372c"
+    },
+    "src/data/pjk2/modules/tm13.ts": {
+      "sha256": "d855c4599d09b53a5028ecb0eecf159c58d67f08f4840b5e6e7db17c80a4a74e",
+      "sourceRef": "b4b6327762c41453aea2a985b2690e8bbc00372c"
+    },
+    "src/data/pjk2/modules/tm14.ts": {
+      "sha256": "4d16e29a1bba679b004a49936181f68d750998518ad9af44aadc6df81899d4a3",
+      "sourceRef": "b4b6327762c41453aea2a985b2690e8bbc00372c"
+    },
+    "src/data/pjk2/modules/tm15.ts": {
+      "sha256": "f24bc376b5eb80663c652fcde5762aeed7683cc46fdccaafb6333fe923e89e79",
+      "sourceRef": "b4b6327762c41453aea2a985b2690e8bbc00372c"
+    },
+    "src/data/pjk2/modules/tm9.ts": {
+      "sha256": "c60e08fc6657790c07f4d579201804ac30b8c72d7820f8ac482791498c550928",
+      "sourceRef": "b4b6327762c41453aea2a985b2690e8bbc00372c"
+    }
+  },
+  "catalogOutsideAsp": "f0ca39bc468554451dc8c4be9e6c207d3c78d316921fbc3ea71ae41eaba5a324",
+  "catalogOutsideSia": "220d3604c20a3f3136b824f236ca6a5c937cb6c1f201ba69a01d7d28585ed5a4"
+}

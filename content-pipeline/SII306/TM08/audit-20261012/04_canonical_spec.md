@@ -1,7 +1,9 @@
-# SII306 TM8: snapshot hasil audit
+# SII306 TM8: Conversion Business Process: Produksi, Biaya, dan Model Data
 
-04 JSON SHA256: a6f0ae0834f45684a4943b476c36e794d6c192357f500b74b1fc470ee6e4241e
+Active revision: 2026-10-16. RPS-SIA p.1.
 
-Sumber terdaftar: Richardson et al. AIS 4e · Ch. 11, hal. cetak 386-408 (PDF 411-433)
+RPS-SIA minggu 8 · Richardson AIS 4e · Ch. 9, pp. 350–365 (PDF 375–390)
 
-Batas verifikasi sumber ada pada docs/audit-2026-10-12/SII306.md. Snapshot JSON mempertahankan teks data historis; 05 menormalkan gaya penulisan untuk dibaca mahasiswa. Snapshot ini mengunci isi implementasi dan tidak menyatakan semua klaim sumber lengkap.
+SHA256: 4296543ca942e88617159d0e1c5f85ff70013fb4b0af2430a4d3456a6dc5ac23
+
+Audit directory retained for compatibility; the previous October 12 mapping is superseded. Source/coverage decisions: docs/sia-pra-uas-20261016.md.

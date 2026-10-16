@@ -1,7 +1,9 @@
-# SII306 TM10: snapshot hasil audit
+# SII306 TM10: Pengendalian Internal: COSO, Risiko, dan Bukti Kontrol
 
-04 JSON SHA256: b4b53afc0f47b0a288212ba1e1447dc53c12c28b772215312364664daaa4c562
+Active revision: 2026-10-16. RPS-SIA p.1.
 
-Sumber terdaftar: Richardson et al. AIS 4e · Ch. 11 dan 13, hal. 403-408 dan 450-463 (PDF 428-433 dan 475-488)
+Richardson et al. AIS 4e · Ch. 11, hal. cetak 386–408 (PDF 411–433)
 
-Batas verifikasi sumber ada pada docs/audit-2026-10-12/SII306.md. Snapshot JSON mempertahankan teks data historis; 05 menormalkan gaya penulisan untuk dibaca mahasiswa. Snapshot ini mengunci isi implementasi dan tidak menyatakan semua klaim sumber lengkap.
+SHA256: f69b47f5e1dcf612cc4524d3c7e7f1bed73cc14fc563f3ca2d8ff59b0b6a56a4
+
+Audit directory retained for compatibility; the previous October 12 mapping is superseded. Source/coverage decisions: docs/sia-pra-uas-20261016.md.

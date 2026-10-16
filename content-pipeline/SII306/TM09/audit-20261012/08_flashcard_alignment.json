@@ -1,56 +1,56 @@
 [
   {
-    "id": "aks301-tm09-01",
+    "id": "aks301-v3-tm09-01",
     "phase": "pra-uas",
     "tm": 9,
-    "topic": "Keamanan Informasi & Computer Fraud",
+    "topic": "Integrated Project",
     "category": "Konsep",
-    "front": "Triad Keamanan Informasi (CIA Triad)",
-    "back": "Confidentiality (Kerahasiaan data dari pihak tak berhak), Integrity (Akurasi & keutuhan data), dan Availability (Ketersediaan sistem saat dibutuhkan). Rujukan: Richardson et al. AIS 4e · Ch. 12, hal. cetak 420-439 (PDF 445-464)."
+    "front": "Urutan Integrated Project",
+    "back": "Kebutuhan → model proses → UML/REA terpadu → database → query dan validasi. Rujukan: Richardson AIS 4e, Ch.10 pp.376–385 (PDF 401–410)."
   },
   {
-    "id": "aks301-tm09-02",
+    "id": "aks301-v3-tm09-02",
     "phase": "pra-uas",
     "tm": 9,
-    "topic": "Keamanan Informasi & Computer Fraud",
+    "topic": "Integrated Project",
     "category": "Konsep",
-    "front": "Metode Phishing & Social Engineering",
-    "back": "Upaya memanipulasi psikologis korban melalui email atau situs web tiruan palsu untuk mencuri kredensial login akun dan data rahasia. Rujukan: Richardson et al. AIS 4e · Ch. 12, hal. cetak 420-439 (PDF 445-464)."
+    "front": "Kunci dan integritas referensial",
+    "back": "PK unik dan tidak null; FK mengarah data yang valid sesuai aturan. Ini tidak membuktikan substansi barang. Rujukan: Richardson AIS 4e, Ch.10 pp.376–385 (PDF 401–410)."
   },
   {
-    "id": "aks301-tm09-03",
+    "id": "aks301-v3-tm09-03",
     "phase": "pra-uas",
     "tm": 9,
-    "topic": "Keamanan Informasi & Computer Fraud",
+    "topic": "Integrated Project",
     "category": "Konsep",
-    "front": "Ransomware & Malware",
-    "back": "Perangkat lunak jahat yang mengenkripsi seluruh file dan basis data sistem perusahaan, lalu menuntut uang tebusan untuk kunci pembuka enkripsi. Rujukan: Richardson et al. AIS 4e · Ch. 12, hal. cetak 420-439 (PDF 445-464)."
+    "front": "Saldo piutang",
+    "back": "Masukkan saldo awal, penjualan, alokasi kas, retur/kredit dan penyesuaian; nyatakan asumsi formula sederhana. Rujukan: Richardson AIS 4e, Ch.10 pp.376–385 (PDF 401–410)."
   },
   {
-    "id": "aks301-tm09-04",
+    "id": "aks301-v3-tm09-04",
     "phase": "pra-uas",
     "tm": 9,
-    "topic": "Keamanan Informasi & Computer Fraud",
+    "topic": "Integrated Project",
     "category": "Konsep",
-    "front": "Enkripsi Simetris vs Asimetris",
-    "back": "Simetris memakai satu kunci yang sama untuk enkripsi dan dekripsi (cepat). Asimetris memakai sepasang Public Key dan Private Key. Rujukan: Richardson et al. AIS 4e · Ch. 12, hal. cetak 420-439 (PDF 445-464)."
+    "front": "Grain dan join",
+    "back": "Satu baris mewakili unit yang jelas. Join banyak baris dapat menggandakan total; agregasikan dan rekonsiliasi. Rujukan: Richardson AIS 4e, Ch.10 pp.376–385 (PDF 401–410)."
   },
   {
-    "id": "aks301-tm09-05",
+    "id": "aks301-v3-tm09-05",
     "phase": "pra-uas",
     "tm": 9,
-    "topic": "Keamanan Informasi & Computer Fraud",
+    "topic": "Integrated Project",
     "category": "Konsep",
-    "front": "Fungsi Tanda Tangan Digital (Digital Signature)",
-    "back": "Menjamin keaslian pengirim (autentikasi), keutuhan isi dokumen (integritas), dan pencegahan penyangkalan transaksi (non-repudiation). Rujukan: Richardson et al. AIS 4e · Ch. 12, hal. cetak 420-439 (PDF 445-464)."
+    "front": "Audit trail",
+    "back": "Tautkan dokumen, pelaku, waktu dan perubahan. Penelusuran ke bahan baku memerlukan traceability yang tersedia. Rujukan: Richardson AIS 4e, Ch.10 pp.376–385 (PDF 401–410)."
   },
   {
-    "id": "aks301-tm09-06",
+    "id": "aks301-v3-tm09-06",
     "phase": "pra-uas",
     "tm": 9,
-    "topic": "Keamanan Informasi & Computer Fraud",
-    "category": "Mekanisme",
-    "front": "Pusat Pemulihan Bencana: Hot Site vs Cold Site",
-    "back": "Hot Site adalah fasilitas komputasi duplikat lengkap yang siap beroperasi dalam hitungan menit. Cold Site hanya ruang gedung tanpa instalasi komputer lengkap. Rujukan: Richardson et al. AIS 4e · Ch. 12, hal. cetak 420-439 (PDF 445-464)."
+    "topic": "Integrated Project",
+    "category": "Konsep",
+    "front": "Saldo seimbang",
+    "back": "Debit = kredit membantu aritmetika; transaksi yang sama-sama terlewat tetap dapat membuat laporan salah. Rujukan: Richardson AIS 4e, Ch.10 pp.376–385 (PDF 401–410)."
   }
 ]

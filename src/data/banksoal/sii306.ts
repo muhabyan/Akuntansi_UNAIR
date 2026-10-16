@@ -245,209 +245,204 @@ export const SII306_BANK_UTS: BankSoal[] = [
 export const SII306_BANK_UAS: BankSoal[] = [
   {
     "type": "case",
-    "scope": "TM 8: Desain Matriks Pengendalian Internal COSO 17 Prinsip",
+    "scope": "TM 8: Conversion Business Process",
     "difficulty": "Komprehensif",
-    "estimatedTime": "35\u201345 menit",
-    "question": "Studi Kasus 8: Restrukturisasi Sistem Pengendalian Internal Berbasis COSO 2013",
-    "context": "PT Mega Finansial Nusantara berencana melakukan penawaran umum perdana saham (IPO) di Bursa Efek Indonesia. Untuk memenuhi persyaratan Otoritas Jasa Keuangan (OJK) dan standar Sarbanes-Oxley, komite audit menugaskan konsultan untuk menyusun matriks kepatuhan pengendalian internal menyeluruh menggunakan kerangka kerja COSO 2013 (5 Komponen dan 17 Prinsip).",
+    "estimatedTime": "30–45 menit",
+    "question": "Studi Kasus 8: Conversion Business Process",
+    "context": "Ilustrasi latihan buatan. Pabrik memakai persediaan perpetual dan mencatat biaya per job. Beberapa pekerja juga menginspeksi hasilnya sendiri.",
     "data": [
-      "Temuan Kondisi Saat Ini: Belum ada kode etik tertulis (Tone at the Top lemah); penilaian risiko kecurangan (fraud risk assessment) belum pernah dilakukan; otorisasi transaksi bernilai di atas Rp 1 miliar hanya dilakukan via chat WhatsApp; tidak ada fungsi audit internal.",
-      "Target: Menyusun sistem kontrol terpadu yang mencakup 3 kategori tujuan (Operations, Reporting, Compliance)."
+      "Rp juta: WIP awal 10; DM terpakai 30; DL 20; OH dibebankan 10; WIP akhir 14; FG awal 8; FG akhir 12.",
+      "Tanpa spoilage abnormal, selisih OH, retur atau transaksi lain dalam hitungan."
     ],
     "instructions": [
-      "Petakan 5 komponen COSO 2013 dan jelaskan bagaimana masing-masing komponen saling menopang satu sama lain dalam menjaga keandalan laporan keuangan.",
-      "Pilih 3 prinsip COSO yang paling kritis dilanggar berdasarkan temuan kondisi di atas, dan rancang kebijakan korektif spesifik untuk memenuhinya.",
-      "Jelaskan bagaimana konsep 'Monitoring Activities' (Prinsip 16 & 17) memastikan bahwa sistem pengendalian internal tidak statis melainkan adaptif terhadap perubahan risiko bisnis."
+      "Hitung COGM/COGS dan tulis jurnal perpindahan biaya.",
+      "Gambarkan produksi–inspeksi dengan jalur cacat mengikuti asumsi discard/penggantian.",
+      "Rancang kontrol inspeksi serta relasi data issue–bahan dan operasi–pegawai."
     ],
     "outputFormat": [
-      "Matriks analisis 5 komponen COSO",
-      "Rancangan kebijakan mitigasi 3 prinsip kritis",
-      "Uraian mekanisme monitoring berkelanjutan"
+      "Alur/diagram dan analisis konsep",
+      "Perhitungan atau rancangan dengan asumsi jelas",
+      "Kontrol, bukti dan batas simpulan"
     ],
     "rubric": [
-      "Penguasaan kerangka kerja COSO 2013 (35%)",
-      "Kualitas kebijakan korektif praktis (35%)",
-      "Kedalaman evaluasi monitoring sistem (30%)"
+      "Ketepatan konsep dan pemetaan (30%)",
+      "Ketepatan langkah serta perhitungan/rancangan (40%)",
+      "Alasan, bukti dan batas jawaban (30%)"
     ],
-    "answerGuide": "1. 5 Komponen COSO: Control Environment (fondasi etika dan struktur) -> Risk Assessment (mengidentifikasi ancaman apa saja yang bisa menggagalkan tujuan) -> Control Activities (kebijakan dan prosedur untuk meredam risiko tersebut) -> Information & Communication (memastikan data akuntansi mengalir transparan) -> Monitoring Activities (mengawasi apakah kontrol bekerja konsisten).\n\n2. Tiga Prinsip yang Dilanggar: (a) Prinsip 1 (Integritas & Etika): Rancang Code of Conduct formal dan Pakta Integritas yang ditandatangani seluruh karyawan serta pembentukan Whistleblowing System independen; (b) Prinsip 8 (Fraud Risk Assessment): Wajibkan Komite Audit melakukan asesmen risiko fraud tahunan atas insentif dan peluang perangkapan jabatan; (c) Prinsip 10 (Aktivitas Pengendalian): Implementasikan Workflow Approval digital resmi bersertifikasi di sistem ERP untuk otorisasi di atas Rp 1 miliar.\n\n3. Monitoring: Membentuk Departemen Audit Internal independen yang melapor langsung ke Komite Audit Dewan Komisaris untuk menjalankan evaluasi periodik dan audit kepatuhan (Prinsip 16), serta mewajibkan pelaporan seluruh defisiensi kontrol ke Dewan Direksi dalam waktu 14 hari kerja (Prinsip 17)."
+    "answerGuide": "Biaya ditambahkan 60; tersedia di WIP 70; COGM 56; FG tersedia 64; COGS 52. Jurnal Rp juta: Dr WIP 30 Cr RM 30; Dr WIP 20 Cr utang gaji 20; Dr WIP 10 Cr OH 10; Dr FG 56 Cr WIP 56; Dr COGS 52 Cr FG 52. Alur: otorisasi → issue → work → inspect; gagal dibuang/diganti, lulus selesai. Pisahkan inspektur dan pekerja, batasi perubahan BOM, simpan bukti jumlah/biaya serta tanggal aktual. Gunakan linking table issue–material dan labor–employee, PK/FK dan referential integrity. WIP dapat dihitung dari event terbuka; akun WIP tetap ada. Rujukan: Richardson AIS 4e, Ch.9 pp.350–365 (PDF 375–390)."
   },
   {
     "type": "case",
-    "scope": "TM 9: Keamanan Siber, Kriptografi & Rencana Pemulihan Bencana (BCP/DRP)",
-    "difficulty": "Sulit",
-    "estimatedTime": "35\u201345 menit",
-    "question": "Studi Kasus 9: Respon Serangan Ransomware, Enkripsi Asimetris & Strategi DRP",
-    "context": "Pada hari Minggu pukul 02.15 dini hari, server basis data utama ERP PT Bank Artha Syariah diserang ransomware. File database buku besar umum dan subledger nasabah terenkripsi dengan ekstensi '.locked'. Pelaku menuntut tebusan 25 Bitcoin (sekitar Rp 25 miliar) dalam waktu 48 jam jika ingin kunci dekripsi diberikan.",
-    "data": [
-      "Infrastruktur: Bank memiliki cadangan data lokal (Local Backup) di server room yang sama dan cadangan cloud mingguan (Cloud Backup) yang diperbarui setiap hari Minggu pukul 00.00.",
-      "Target Regulasi Bank Indonesia: RPO maksimal 2 jam dan RTO maksimal 4 jam untuk sistem pembayaran kritis.",
-      "Temuan Penetrasi: Serangan masuk melalui email Phishing yang dibuka oleh staf akuntansi dari laptop pribadi yang terhubung ke jaringan kantor via VPN tanpa Multi-Factor Authentication (MFA)."
-    ],
-    "instructions": [
-      "Evaluasi insiden tersebut berdasarkan 3 pilar keamanan informasi CIA Triad (Confidentiality, Integrity, Availability). Pilar mana yang paling parah dikompromikan?",
-      "Jelaskan mengapa perusahaan DILARANG membayar uang tebusan ransomware dan langkah teknis apa yang harus diambil untuk memulihkan data menggunakan konsep RPO dan RTO.",
-      "Rancang skema Disaster Recovery Plan (DRP) yang mencakup Cold Site, Warm Site, atau Hot Site yang paling sesuai untuk bank tersebut.",
-      "Sebutkan 3 kontrol preventif keamanan siber yang wajib diterapkan agar serangan serupa tidak terulang kembali."
-    ],
-    "outputFormat": [
-      "Analisis pelanggaran CIA Triad",
-      "Strategi pemulihan data dan justifikasi penolakan tebusan",
-      "Rancangan arsitektur DRP Hot Site",
-      "Daftar kontrol preventif keamanan siber"
-    ],
-    "rubric": [
-      "Ketajaman analisis CIA Triad (25%)",
-      "Strategi eksekusi BCP/DRP berbasis RTO/RPO (45%)",
-      "Kualitas rekomendasi arsitektur preventif siber (30%)"
-    ],
-    "answerGuide": "1. CIA Triad: Pilar yang paling parah dikompromikan adalah Availability (sistem lumpuh total tidak bisa melayani nasabah) dan Integrity (keutuhan database dirusak oleh enkripsi jahat ransomware).\n\n2. Tolak Tebusan & Pemulihan: Membayar tebusan tidak menjamin kunci diberikan dan melanggar etika/hukum pendanaan terorisme siber. Langkah pemulihan: Isolasi total jaringan yang terinfeksi -> Bersihkan malware -> Lakukan restore data dari Cloud Backup hari Minggu pukul 00.00. Karena insiden terjadi pukul 02.15, kehilangan data transaksi adalah 2 jam 15 menit (hampir memenuhi RPO 2 jam).\n\n3. Arsitektur DRP: Bank wajib menggunakan arsitektur 'Hot Site' dengan fasilitas Disaster Recovery Center (DRC) terpisah geografis minimal 30 km yang melakukan Replikasi Sinkron Real-Time (Data Mirroring). Jika site primer runtuh, sistem otomatis failover ke DRC dalam hitungan menit (RTO < 15 menit).\n\n4. Kontrol Preventif: (a) Wajibkan Otentikasi Multi-Faktor (MFA / Hardware Token) untuk seluruh koneksi VPN jarak jauh; (b) Terapkan Network Segmentation dan Zero Trust Architecture; (c) Lakukan pelatihan berkala simulasi anti-phishing kepada seluruh staf keuangan."
-  },
-  {
-    "type": "case",
-    "scope": "TM 10: Tata Kelola TI (COBIT 2019) & Metodologi Audit Sistem Informasi",
+    "scope": "TM 9: Integrated Project",
     "difficulty": "Komprehensif",
-    "estimatedTime": "35\u201345 menit",
-    "question": "Studi Kasus 10: Audit Sistem Informasi Berbantuan Komputer (CAATs) & Pengujian GITC",
-    "context": "Dalam penugasan audit tahunan pada PT E-Commerce Global, tim audit sistem informasi (IT Auditor) menemukan bahwa terdapat 12 kali perubahan kode program (Change Management) pada modul perhitungan diskon penjualan dan komisi afiliasi yang langsung diunggah ke server produksi tanpa melewati pengujian di User Acceptance Test (UAT) dan tanpa otorisasi Manajer TI.",
+    "estimatedTime": "30–45 menit",
+    "question": "Studi Kasus 9: Integrated Project",
+    "context": "Ilustrasi latihan buatan. Distributor mengimpor data sales, purchases, receipts dan payments untuk laporan terpadu.",
     "data": [
-      "Volume Transaksi: 250.000 pesanan per hari.",
-      "Risiko: Potensi kebocoran komisi atau perubahan persentase diskon yang disengaja oleh programmer untuk menguntungkan pihak luar.",
-      "Kelemahan GITC: Programmer pengembang memiliki password akses Administrator database (DBA) pada server live produksi."
+      "Rp juta: kas awal 100; persediaan awal 40; modal awal 140; AR/AP awal nol.",
+      "Beli kredit 50; jual kredit 90 dengan HPP 55; terima piutang 60; bayar utang 35; bayar gaji periode 10.",
+      "Tanpa pajak, diskon, retur, depresiasi atau transaksi lain; pengakuan penyerahan dan penerimaan barang terpenuhi."
     ],
     "instructions": [
-      "Jelaskan mengapa pendekatan 'Audit Around the Computer' TIDAK MEMADAI untuk menguji modul perhitungan e-commerce tersebut dan mengapa harus menggunakan 'Audit Through the Computer'.",
-      "Rancang prosedur pengujian menggunakan teknik CAATs 'Test Data Method' dan 'Parallel Simulation' untuk memverifikasi akurasi perhitungan komisi.",
-      "Identifikasi pelanggaran tata kelola pemisahan tugas (SoD) di departemen TI dan buat rekomendasi perbaikan berdasarkan domain COBIT 2019 BAI (Build, Acquire, and Implement) dan DSS (Deliver, Service, and Support)."
+      "Hitung kas, piutang, inventory, utang, laba dan ekuitas akhir.",
+      "Tunjukkan hubungan invoice–alokasi–receipts yang mendukung pembayaran parsial.",
+      "Jelaskan uji PK/FK, cutoff, control total dan keterbatasan saldo seimbang."
     ],
     "outputFormat": [
-      "Evaluasi pendekatan audit sistem informasi",
-      "Rancangan prosedur CAATs (Test Data & Parallel Simulation)",
-      "Rekomendasi tata kelola SoD TI berbasis COBIT 2019"
+      "Alur/diagram dan analisis konsep",
+      "Perhitungan atau rancangan dengan asumsi jelas",
+      "Kontrol, bukti dan batas simpulan"
     ],
     "rubric": [
-      "Pemahaman konsep Audit Through the Computer (30%)",
-      "Ketepatan desain metodologi CAATs (40%)",
-      "Penerapan kerangka tata kelola COBIT 2019 (30%)"
+      "Ketepatan konsep dan pemetaan (30%)",
+      "Ketepatan langkah serta perhitungan/rancangan (40%)",
+      "Alasan, bukti dan batas jawaban (30%)"
     ],
-    "answerGuide": "1. Alasan Audit Through: Volume transaksi 250.000 per hari sangat masif dan logika diskon tertanam dalam kode algoritma yang rumit. Audit Around (hanya melihat invoice cetak) tidak mampu membuktikan apakah ada kondisi tersembunyi (backdoor logic) yang disusupkan programmer nakal.\n\n2. Prosedur CAATs: (a) Test Data: Auditor menyiapkan sekumpulan transaksi dummy (pesanan normal, pesanan diskon ekstrim, kupon kadaluarsa) dan menjalankannya pada salinan software untuk melihat apakah sistem menolak input tidak valid; (b) Parallel Simulation: Auditor menulis skrip independen (menggunakan Python/ACL) dengan logika komisi resmi, memproses data transaksi riil tahun berjalan, lalu membandingkan hasil perhitungan auditor dengan output ERP klien (setiap selisih diinvestigasi).\n\n3. Rekomendasi COBIT: (a) Terapkan pemisahan tegas lingkungan kerja: Development, Staging/Testing, dan Production; (b) Cabut seluruh akses write/admin programmer pada server produksi; (c) Mengacu pada COBIT BAI06 (Manage Changes), setiap revisi program wajib melalui tiket perubahan resmi, approval manajer, dan lolos uji UAT independen sebelum di-deploy oleh staf Release Management."
+    "answerGuide": "Kas 115; AR 30; inventory 35; AP 15; laba 25; ekuitas 165. Aset 180 = utang 15 + ekuitas 165. Invoice dan receipts mempunyai PK; alokasi menautkan keduanya dan nilai terkait. Agregasikan kas per invoice sebelum join agar tidak berlipat. Periksa record count, total sumber, tipe data, referential integrity dan cutoff. Pembelian menambah persediaan, HPP muncul dari barang dijual. Seimbang tidak membuktikan kelengkapan atau barang ada. Rujukan: Richardson AIS 4e, Ch.10 pp.376–385 (PDF 401–410)."
   },
   {
     "type": "case",
-    "scope": "TM 11: Analitika Data Akuntansi (IMPACT Model) & Uji Hukum Benford",
-    "difficulty": "Sulit",
-    "estimatedTime": "40\u201350 menit",
-    "question": "Studi Kasus 11: Audit Forensik Jurnal Manual Menggunakan Model IMPACT & Hukum Benford",
-    "context": "Auditor forensik ditugaskan memeriksa 85.000 baris jurnal penyesuaian manual (Manual Journal Entries) pada akhir tahun buku PT Agro Makmur karena laba bersih melonjak 300% pada 3 hari terakhir bulan Desember tanpa ada peningkatan arus kas operasional yang sejalan.",
-    "data": [
-      "Hasil Ekstraksi Data: Terdapat 1.200 jurnal manual bernilai antara Rp 90.000.000 s.d. Rp 99.500.000 yang diposting oleh staf akuntansi pada tanggal 31 Desember antara pukul 22.00 s.d. 03.00 dini hari.",
-      "Ambang Batas Otorisasi: Kebijakan internal mewajibkan persetujuan Direktur Keuangan untuk setiap jurnal di atas Rp 100.000.000.",
-      "Uji Hukum Benford: Distribusi digit pertama angka '9' muncul pada 38.4% transaksi (standar alami Benford hanya 4.6%), sedangkan digit pertama angka '1' hanya muncul 8.2% (standar alami Benford adalah 30.1%)."
-    ],
-    "instructions": [
-      "Petakan langkah-langkah audit forensik tersebut ke dalam 6 tahapan siklus analitika data model IMPACT.",
-      "Jelaskan signifikansi temuan Hukum Benford dan pola nominal Rp 90jt\u201399jt dalam konteks deteksi kecurangan (Threshold Avoidance Fraud).",
-      "Rancang query analitis data (Filter/Rule) yang harus disematkan pada modul audit analitika berkelanjutan (Continuous Audit) untuk mendeteksi manipulasi jurnal di masa depan."
-    ],
-    "outputFormat": [
-      "Matriks tahapan 6 langkah Model IMPACT",
-      "Analisis statistik forensik Hukum Benford & Threshold Avoidance",
-      "Daftar aturan deteksi Continuous Audit"
-    ],
-    "rubric": [
-      "Penerapan metodologi IMPACT Model (35%)",
-      "Analisis statistik kecurangan akuntansi (35%)",
-      "Rancangan aturan Continuous Audit (30%)"
-    ],
-    "answerGuide": "1. Siklus IMPACT: (I)dentify: Apakah ada jurnal manual fiktif untuk menggelembungkan laba akhir tahun?; (M)aster data: Ekstrak tabel GL_JE_Header dan GL_JE_Lines; (P)erform test: Jalankan uji digit pertama Benford's Law dan analisis distribusi waktu posting; (A)ddress results: Temukan deviasi ekstrim pada digit '9' dan pola posting malam tahun baru; (C)ommunicate: Sajikan grafik bar chart Benford deviasi ke Komite Audit; (T)rack: Buat kontrol otomatis alert pada ERP.\n\n2. Analisis Forensik: Deviasi tajam pada angka 9 (38.4% vs 4.6%) membuktikan adanya manipulasi manusia yang disengaja. Nominal Rp 90jt-99jt membuktikan skema 'Threshold Avoidance' (Structuring): pelaku sengaja memecah transaksi bernilai miliaran rupiah menjadi potongan di bawah Rp 100 juta agar tidak memicu kewajiban persetujuan Direktur Keuangan.\n\n3. Aturan Continuous Audit ERP: (a) Alert Otomatis jika jurnal manual diposting di luar jam kerja resmi (20.00 - 06.00) atau akhir pekan; (b) Duplicate & Cumulative Amount Rule: Sistem otomatis membekukan posting jika satu pengguna menginput multiple voucher ke akun yang sama dengan total kumulatif melebihi batas wewenangnya dalam 24 jam; (c) Wajib upload dokumen pendukung digital (bukti transaksi eksternal) sebelum tombol save jurnal manual aktif."
-  },
-  {
-    "type": "case",
-    "scope": "TM 12: Otomasi Proses Robotik (RPA) & Kecerdasan Buatan dalam Akuntansi",
+    "scope": "TM 10: Internal Controls dan COSO",
     "difficulty": "Komprehensif",
-    "estimatedTime": "35\u201345 menit",
-    "question": "Studi Kasus 12: Desain Proyek Otomasi RPA pada Rekonsiliasi Bank Multi-Rekening",
-    "context": "Departemen Akuntansi Keuangan PT Finansial Solusindo mengelola 45 rekening bank di 8 bank nasional yang memproses rata-rata 30.000 mutasi transaksi per hari. Saat ini, 6 staf akuntan menghabiskan 4 jam setiap pagi hanya untuk mengunduh mutasi internet banking, mengonversi file CSV ke Excel, mencocokkan nomor referensi dengan buku besar kas ERP, dan menandai transaksi yang sudah kliring.",
+    "estimatedTime": "30–45 menit",
+    "question": "Studi Kasus 10: Internal Controls dan COSO",
+    "context": "Ilustrasi latihan buatan. Staf dapat membuat vendor dan menyetujui pembayaran sendiri. SOP approval ada, tetapi beberapa bukti approval kosong.",
     "data": [
-      "Biaya Operasional Staf Rekonsiliasi: Rp 480 juta per tahun.",
-      "Tingkat Kesalahan Manusia: Rata-rata 45 kesalahan pencocokan per bulan yang menyebabkan keterlambatan laporan posisi kas harian (Treasury Cash Position).",
-      "Usulan Solusi: Mengembangkan bot Unattended RPA berbasis UiPath yang terintegrasi dengan API perbankan dan SAP ERP."
+      "Review perubahan rekening belum ditetapkan pemiliknya.",
+      "Direktur ingin menganggap ERP sudah cukup menghilangkan risiko."
     ],
     "instructions": [
-      "Evaluasi kelayakan proses rekonsiliasi bank tersebut menggunakan 4 kriteria kelayakan otomasi RPA (Rule-based, High Volume, Repetitive, Structured Data).",
-      "Susun alur diagram alir (Process Flowchart) logika eksekusi bot RPA dari proses login bank hingga pelaporan pengecualian (Exception Handling).",
-      "Jelaskan bagaimana bot menangani transaksi 'Exception' (misal: ada biaya admin bank yang belum ada jurnalnya di ERP) tanpa menyebabkan sistem macet.",
-      "Hitung estimasi penghematan efisiensi waktu dan susun pengendalian keamanan atas kredensial login bank yang digunakan oleh bot."
+      "Petakan kondisi ke komponen dan prinsip COSO relevan.",
+      "Bedakan kelemahan desain dan pelaksanaan.",
+      "Rancang kontrol dengan pemilik, frekuensi, bukti dan risiko sisa."
     ],
     "outputFormat": [
-      "Evaluasi 4 kriteria kelayakan proses RPA",
-      "Bagan alur logika kerja bot RPA",
-      "Mekanisme Exception Handling & keamanan kredensial"
+      "Alur/diagram dan analisis konsep",
+      "Perhitungan atau rancangan dengan asumsi jelas",
+      "Kontrol, bukti dan batas simpulan"
     ],
     "rubric": [
-      "Evaluasi kelayakan proses otomasi (25%)",
-      "Logika perancangan bot & exception handling (45%)",
-      "Manajemen risiko dan keamanan kredensial bot (30%)"
+      "Ketepatan konsep dan pemetaan (30%)",
+      "Ketepatan langkah serta perhitungan/rancangan (40%)",
+      "Alasan, bukti dan batas jawaban (30%)"
     ],
-    "answerGuide": "1. Kelayakan RPA: (a) Rule-based: Aturan pencocokan pasti (Tanggal, Nominal, No Referensi); (b) High Volume: 30.000 transaksi/hari; (c) Repetitive: Dilakukan setiap hari dengan langkah identik; (d) Structured Data: Format e-statement bank dan tabel GL ERP memiliki kolom baku. Kesimpulan: 100% SANGAT LAYAK.\n\n2. Alur Logika Bot: Jam 05.00 Bot aktif otomatis -> Ambil kredensial terenkripsi -> Download e-statement -> Parse tabel mutasi -> Ambil data GL buku kas -> Jalankan matching algorithm -> Jika cocok sempurna (100% match), ubah status menjadi Cleared di SAP -> Jika tidak cocok, pindahkan ke file 'Exceptions_Report.xlsx' -> Jam 06.30 Kirim email ringkasan ke Manajer Keuangan.\n\n3. Exception Handling: Transaksi yang tidak cocok otomatis dikelompokkan: (a) Selisih waktu (timing difference seperti setoran dalam perjalanan) dicatat dalam antrean pending; (b) Biaya admin bank/bunga yang belum ada di ERP otomatis memicu draf jurnal otomatis ke akun 'Beban Administrasi Bank' untuk disetujui staf akuntan manusia (Human-in-the-Loop).\n\n4. Keamanan Kredensial: Username dan password internet banking dilarang keras ditulis dalam kode script (hardcoded). Kredensial wajib disimpan dalam Enterprise Credential Vault (seperti CyberArk) yang dienkripsi AES-256 dan hanya bisa diakses bot melalui otentikasi token dinamis."
+    "answerGuide": "Prinsip 3/5 terkait wewenang/akuntabilitas; 7/8 asesmen risiko/fraud; 10/11/12 kontrol dan TI; 13/14 informasi; 16/17 monitoring/tindak lanjut. Hak yang konflik merupakan masalah desain, approval yang tidak dijalankan masalah pelaksanaan. Pisahkan master vendor, pencatatan dan treasury; verifikasi rekening melalui kontak tepercaya; review perubahan sebelum bayar dan berkala. Tentukan reviewer dan simpan log, konfirmasi, approval serta tindak lanjut. Evaluasi kolusi/override sebagai risiko sisa; reasonable assurance bukan risiko nol. Rujukan: Richardson AIS 4e, Ch.11 pp.386–408 (PDF 411–433)."
   },
   {
     "type": "case",
-    "scope": "TM 13: Blockchain, Smart Contracts & Paradigma Triple-Entry Accounting",
-    "difficulty": "Sulit",
-    "estimatedTime": "40\u201350 menit",
-    "question": "Studi Kasus 13: Implementasi Smart Contracts & Auditability pada Supply Chain Finance",
-    "context": "PT Mitra Logistik Global membentuk konsorsium bersama 15 pemasok dan 2 bank mitra menggunakan private permissioned blockchain. Tujuannya adalah mempercepat pembiayaan anjak piutang (Supply Chain Invoice Financing) dan menghilangkan perselisihan penagihan faktur barang yang rusak atau hilang.",
-    "data": [
-      "Masalah Lama: Waktu penagihan faktur membutuhkan 60 hari karena bank mitra harus memverifikasi keaslian faktur secara manual ke pihak pembeli melalui telepon dan email untuk menghindari faktur ganda.",
-      "Solusi Baru: Setiap kali kontainer barang dikirim, sensor IoT mengunggah koordinat GPS dan status suhu kontainer ke smart contract. Ketika kontainer tiba di gerbang pelabuhan pembeli dan sensor RFID memindai barang, smart contract otomatis memvalidasi kondisi dan mencatat entri akuntansi."
-    ],
-    "instructions": [
-      "Jelaskan bagaimana konsep 'Triple-Entry Accounting' bekerja pada konsorsium tersebut dan bedanya dengan pencatatan akuntansi ganda tradisional (Double-Entry).",
-      "Rancang logika pseudo-code dari Smart Contract 'Automatic Invoice Settlement' (Kondisi: Jika barang diterima 100% mulus, cairkan dana pembayaran bank dalam waktu 24 jam dengan diskon 2%).",
-      "Analisis 2 implikasi audit terhadap profesi auditor eksternal: Apakah bukti transaksi di blockchain dapat langsung diterima sebagai bukti audit yang cukup dan tepat (sufficient appropriate audit evidence)?",
-      "Jelaskan risiko 'Garbage In, Garbage Out' (Oracle Problem) pada integrasi blockchain dan bagaimana pengendalian internal mengatasinya."
-    ],
-    "outputFormat": [
-      "Komparasi Double-Entry vs Triple-Entry Accounting",
-      "Rancangan logika algoritma Smart Contract",
-      "Analisis implikasi bukti audit dan mitigasi Oracle Problem"
-    ],
-    "rubric": [
-      "Penguasaan konsep Triple-Entry Accounting (30%)",
-      "Logika perancangan algoritma Smart Contract (35%)",
-      "Kedalaman analisis bukti audit dan Oracle Problem (35%)"
-    ],
-    "answerGuide": "1. Triple-Entry: Pada double-entry lama, Penjual mencatat Piutang (Debit) & Penjualan (Kredit), Pembeli mencatat Pembelian (Debit) & Utang (Kredit), lalu di akhir bulan kedua pihak saling kirim rekening koran untuk rekonsiliasi. Pada Triple-Entry, transaksi tersebut ditandatangani secara kriptografis oleh kedua belah pihak dan diposting ke shared blockchain ledger sebagai entri ketiga yang immutable. Tidak ada rekonsiliasi yang diperlukan lagi karena kedua belah pihak melihat catatan tunggal yang identik.\n\n2. Pseudo-code Smart Contract:\nIF (RFID_Scan == TRUE AND Container_Temp <= -18C AND Goods_Quantity == PO_Quantity) {\n    Trigger_Payment(Bank_Escrow, Supplier_Account, Net_Amount_After_2%_Discount);\n    Update_Accounting_State(Status = 'PAID_SETTLED');\n    Emit_Event('InvoiceSettledSuccessfully');\n} ELSE {\n    Hold_Escrow_Payment();\n    Alert_Inspector('DiscrepancyDetected');\n}\n\n3. Implikasi Bukti Audit: Catatan blockchain memberikan kepastian mutlak atas hak kepemilikan dan tanggal waktu transaksi (Timestamp & Existence). Namun auditor tetap harus memverifikasi apakah harga kontrak tersebut wajar secara pasar dan apakah pihak-pihak yang bertransaksi adalah entitas yang sah secara hukum.\n\n4. Oracle Problem: Blockchain hanya memproses data yang diumpankan dari dunia luar (Oracle). Jika sensor RFID diretas atau petugas menempelkan RFID pada barang rongsokan, blockchain tetap mengeksekusi pembayaran (GIGO). Mitigasi: Terapkan Multi-Signature Oracle (data divalidasi oleh sensor IoT sekaligus inspektur surveyor independen sebelum memicu smart contract)."
-  },
-  {
-    "type": "case",
-    "scope": "TM 14: Peta Integrasi Sistem ERP & Simulasi Siklus Bisnis UAS",
+    "scope": "TM 11: Cybersecurity dan Computer Fraud",
     "difficulty": "Komprehensif",
-    "estimatedTime": "45\u201360 menit",
-    "question": "Studi Kasus 14: Master Integrasi Modul ERP SAP S/4HANA & Investigasi Jejak Audit UAS",
-    "context": "PT Manufaktur Otomotif Indonesia mengimplementasikan sistem ERP SAP S/4HANA yang mengintegrasikan seluruh lini bisnis: Sales and Distribution (SD), Materials Management (MM), Production Planning (PP), serta Financial Accounting and Controlling (FI/CO). Dalam audit akhir tahun (UAS SIA), mahasiswa diminta menguji integritas alur transaksi dari hulu ke hilir.",
+    "estimatedTime": "30–45 menit",
+    "question": "Studi Kasus 11: Cybersecurity dan Computer Fraud",
+    "context": "Ilustrasi latihan buatan. ERP terganggu ransomware dan tim harus menilai pemulihan.",
     "data": [
-      "Skenario Transaksi: Pelanggan memesan 50 unit transmisi mobil seharga Rp 500 juta. Biaya bahan baku per unit adalah Rp 6 juta, biaya konversi pabrik Rp 2 juta per unit (Total COGS = Rp 8 juta x 50 = Rp 400 juta).",
-      "Kondisi: Stok barang jadi di gudang mencukupi. Termin penjualan 2/10, n/30. Pelanggan melunasi tagihan pada hari ke-8."
+      "Backup bersih valid terakhir 10.00; insiden 10.40; layanan pulih 13.10 pada hari sama.",
+      "Target internal RPO 15 menit dan RTO 2 jam; tidak ada log/replikasi tambahan.",
+      "Akses jarak jauh tanpa MFA; backup lain tidak dapat dipakai dalam asumsi ini."
     ],
     "instructions": [
-      "Gambarkan peta keterkaitan modul ERP (SD, MM, PP, FI/CO) yang berinteraksi sepanjang siklus transaksi dari Sales Order hingga Pelunasan Kas.",
-      "Tuliskan seluruh ayat jurnal akuntansi keuangan (modul FI) yang diposting secara otomatis oleh sistem ERP pada saat: (a) Pengiriman barang ke pelanggan (Goods Issue); (b) Penerbitan faktur tagihan (Billing); (c) Penerimaan pembayaran pelunasan kas dalam masa diskon.",
-      "Jelaskan bagaimana konsep 'Audit Trail' (Jejak Audit Digital) pada SAP memungkinkan auditor melacak nomor dokumen dari pembayaran bank mundur hingga nomor Purchase Order bahan baku pertama kali.",
-      "Berikan 3 rekomendasi pengendalian preventif tingkat lanjut untuk memastikan integritas data keuangan pada sistem ERP berbasis cloud."
+      "Evaluasi CIA dan jelaskan apa yang belum diketahui.",
+      "Hitung potensi kehilangan data dan durasi pemulihan dibanding target.",
+      "Rancang respons insiden, pemulihan tervalidasi serta pencegahan berulang."
     ],
     "outputFormat": [
-      "Diagram arsitektur integrasi modul ERP",
-      "Daftar ayat jurnal akuntansi otomatis sistem",
-      "Uraian mekanisme penelusuran Jejak Audit (Audit Trail)",
-      "Tiga rekomendasi pengendalian preventif cloud ERP"
+      "Alur/diagram dan analisis konsep",
+      "Perhitungan atau rancangan dengan asumsi jelas",
+      "Kontrol, bukti dan batas simpulan"
     ],
     "rubric": [
-      "Pemahaman arsitektur terpadu ERP (30%)",
-      "Akurasi jurnal akuntansi otomatis (35%)",
-      "Penguasaan konsep Audit Trail & keamanan cloud ERP (35%)"
+      "Ketepatan konsep dan pemetaan (30%)",
+      "Ketepatan langkah serta perhitungan/rancangan (40%)",
+      "Alasan, bukti dan batas jawaban (30%)"
     ],
-    "answerGuide": "1. Keterkaitan Modul ERP: Pelanggan kontak Sales (SD) -> SD cek ketersediaan stok di MM -> MM konfirmasi stok mencukupi -> SD buat Delivery Order -> Gudang (MM) posting Goods Issue -> Otomatis trigger jurnal di FI -> SD terbitkan Faktur -> Otomatis update Piutang di FI -> Pelanggan transfer kas -> Modul FI update Kas dan menghapus saldo piutang secara real-time.\n\n2. Ayat Jurnal Otomatis:\n(a) Saat Pengiriman Barang (Goods Issue):\n[D] Beban Pokok Penjualan (COGS) Rp 400.000.000\n   [K] Persediaan Produk Jadi (Finished Goods) Rp 400.000.000\n(b) Saat Penagihan Faktur (Billing):\n[D] Piutang Usaha (Accounts Receivable) Rp 500.000.000\n   [K] Pendapatan Penjualan (Sales Revenue) Rp 500.000.000\n(c) Saat Pelunasan Hari ke-8 (Diskon 2% x Rp 500 jt = Rp 10 jt):\n[D] Kas dan Bank Rp 490.000.000\n[D] Diskon Penjualan (Sales Discount) Rp 10.000.000\n   [K] Piutang Usaha Rp 500.000.000\n(Seluruh jurnal terbentuk otomatis oleh sistem tanpa intervensi manual akuntan).\n\n3. Mekanisme Jejak Audit (Document Flow): Setiap dokumen di SAP memiliki nomor unik yang saling terkait (Document Flow / Audit Trail). Dari dokumen penerimaan kas, auditor dapat mengklik link dokumen faktur, dari faktur mengklik surat jalan, dari surat jalan mengklik work order perakitan, hingga ke nomor PO pembelian bahan baku asalnya.\n\n4. Pengendalian Preventif Cloud ERP: (a) Enkripsi data end-to-end baik saat diam (data at rest) maupun saat transit (data in transit); (b) Pembatasan akses berbasis peran yang ketat (Role-Based Access Control / RBAC) dengan pemantauan hak akses istimewa (Privileged Access Management); (c) Pengaktifan log audit tak terhapus (WORM - Write Once Read Many storage) untuk seluruh transaksi finansial."
+    "answerGuide": "Availability terganggu; integritas dan kemungkinan exfiltration/confidentiality perlu diperiksa. Potensi kehilangan data 40 menit, melampaui RPO 25 menit. Waktu pulih 150 menit, melampaui RTO 30 menit. Isolasi sesuai prosedur, jaga bukti, hilangkan sebab, restore sumber dipercaya, rekonsiliasi dan validasi sebelum operasi. Terapkan MFA, akses terbatas, patch, backup terlindungi/terpisah, uji restore dan BCP alternatif. Target merupakan asumsi internal, bukan kutipan regulasi. Hot site sendiri tidak menjamin data mutakhir. Rujukan: Richardson AIS 4e, Ch.12 pp.420–439 (PDF 445–464)."
+  },
+  {
+    "type": "case",
+    "scope": "TM 12: Reporting dan XBRL",
+    "difficulty": "Komprehensif",
+    "estimatedTime": "30–45 menit",
+    "question": "Studi Kasus 12: Reporting dan XBRL",
+    "context": "Ilustrasi latihan buatan. Tim membuat dashboard piutang dan file XBRL dari data ERP.",
+    "data": [
+      "Aging Rp juta: belum jatuh tempo 40; 1–30 hari 30; 31–60 hari 20; >60 hari 10.",
+      "Laporan kas akhir dalam Rp juta menunjukkan 115; ekspor XBRL memuat unit IDR dan nilai 115.",
+      "Pendapatan setahun diberi context instant; cabang A belum masuk ETL."
+    ],
+    "instructions": [
+      "Hitung overdue ratio dan pilih visual yang sesuai.",
+      "Bedakan taxonomy, instance, context dan unit; identifikasi kesalahan fakta.",
+      "Susun validasi teknis serta rekonsiliasi sumber dan kontrol pelaporan."
+    ],
+    "outputFormat": [
+      "Alur/diagram dan analisis konsep",
+      "Perhitungan atau rancangan dengan asumsi jelas",
+      "Kontrol, bukti dan batas simpulan"
+    ],
+    "rubric": [
+      "Ketepatan konsep dan pemetaan (30%)",
+      "Ketepatan langkah serta perhitungan/rancangan (40%)",
+      "Alasan, bukti dan batas jawaban (30%)"
+    ],
+    "answerGuide": "Total 100 dan overdue 60, rasio 60% hanya untuk populasi yang diberikan; cabang hilang membatasi kesimpulan perusahaan. Gunakan bar chart aging dengan unit, tanggal, label dan sumber. Taxonomy mendefinisikan konsep; instance memuat fakta. Kas 115 juta harus setara IDR115.000.000; jangan memakai decimals sebagai pengganti skala. Revenue setahun memakai duration, kas akhir instant. Perbaiki ETL dan rekonsiliasi jumlah/total, tag, unit, periode, dimensi serta laporan disetujui. Valid teknis belum membuktikan akuntansi benar. Rujukan: Richardson AIS 4e, Ch.14 pp.470–483 (PDF 495–508)."
+  },
+  {
+    "type": "case",
+    "scope": "TM 13: Blockchain dan AI Automation",
+    "difficulty": "Komprehensif",
+    "estimatedTime": "30–45 menit",
+    "question": "Studi Kasus 13: Blockchain dan AI Automation",
+    "context": "Ilustrasi latihan buatan. Konsorsium memakai sensor dan smart contract; bot mengambil data lalu mengajukan settlement.",
+    "data": [
+      "Invoice Rp100 juta; diskon kontraktual 2% hanya jika seluruh syarat diterima baik terpenuhi.",
+      "Sensor menyebut 100 unit diterima, tetapi inspektur menemukan 10 rusak.",
+      "Bot timeout setelah permintaan pembayaran; model AI memakai akurasi sebagai satu-satunya ukuran."
+    ],
+    "instructions": [
+      "Jelaskan oracle problem, shared receipt dan batas bukti ledger.",
+      "Rancang pseudocode pemeriksaan syarat/status, exception dan retry.",
+      "Nilai kontrol bot serta ukuran kualitas AI."
+    ],
+    "outputFormat": [
+      "Alur/diagram dan analisis konsep",
+      "Perhitungan atau rancangan dengan asumsi jelas",
+      "Kontrol, bukti dan batas simpulan"
+    ],
+    "rubric": [
+      "Ketepatan konsep dan pemetaan (30%)",
+      "Ketepatan langkah serta perhitungan/rancangan (40%)",
+      "Alasan, bukti dan batas jawaban (30%)"
+    ],
+    "answerGuide": "Tahan pembayaran karena bukti mutu tidak konsisten; angka Rp98 juta hanya berlaku bila syarat diskon/penerimaan terpenuhi. Ledger konsisten belum membuktikan kondisi fisik. Shared receipt mendukung double-entry, bukan sisi debit ketiga. Validasi caller, oracle dan approval; cek UNPAID; reservasi satu kali; minta settlement; konfirmasi sebelum PAID; jika ambigu masuk reviewer. Gunakan identitas bot terbatas, vault, log, change control dan idempotency. AI perlu evaluasi false positive/negative, precision/recall, mutu data dan drift, bukan akurasi saja. Rujukan: Richardson AIS 4e, Ch.15 pp.494–516 (PDF 519–541)."
+  },
+  {
+    "type": "case",
+    "scope": "TM 14: Justifying and Planning IT Initiatives",
+    "difficulty": "Komprehensif",
+    "estimatedTime": "30–45 menit",
+    "question": "Studi Kasus 14: Justifying and Planning IT Initiatives",
+    "context": "Ilustrasi latihan buatan. Tim mengusulkan investasi TI lalu menyusun rencana implementasi.",
+    "data": [
+      "Rp juta: investasi awal 120; kas bersih 50 per akhir tahun selama 3 tahun; diskonto 10%; tanpa pajak, inflasi, residu atau kas lain.",
+      "A=2 hari; B=3 dan C=4 setelah A; D=2 setelah B dan C; sumber daya cukup untuk paralel.",
+      "Skenario alternatif: kas bersih hanya 45/tahun."
+    ],
+    "instructions": [
+      "Hitung NPV dasar, NPV skenario dan payback dengan asumsi timing.",
+      "Hitung ES/EF, LS/LF, float dan critical path; gambarkan Gantt.",
+      "Jelaskan WBS/100% rule, sponsor dan pengendalian perubahan lingkup."
+    ],
+    "outputFormat": [
+      "Alur/diagram dan analisis konsep",
+      "Perhitungan atau rancangan dengan asumsi jelas",
+      "Kontrol, bukti dan batas simpulan"
+    ],
+    "rubric": [
+      "Ketepatan konsep dan pemetaan (30%)",
+      "Ketepatan langkah serta perhitungan/rancangan (40%)",
+      "Alasan, bukti dan batas jawaban (30%)"
+    ],
+    "answerGuide": "PV factor tiga tahun 10% = 2,486852. NPV dasar = 50×factor−120 = 4,34 juta; skenario = 45×factor−120 = −8,09 juta. Payback interpolasi 2,4 tahun hanya jika kas merata; dengan kas akhir tahun pengembalian pada akhir tahun3. Jadwal A0–2 B2–5 C2–6 D6–8; backward A0–2 B3–6 C2–6 D6–8; float B1, lainnya0. Critical path A–C–D =8. Jika B terlambat2 hari, proyek9 hari. WBS mencakup seluruh lingkup; 100%rule tidak berarti estimasi pasti. Sponsor menilai manfaat/risiko, project manager mengkoordinasikan. Perubahan perlu analisis dampak dan approval baseline. Rujukan: Richardson AIS 4e, Ch.17 pp.550–571 (PDF 575–596)."
   }
 ];
 

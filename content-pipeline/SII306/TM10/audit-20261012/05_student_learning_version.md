@@ -1,101 +1,443 @@
-# Tata Kelola TI, Kerangka COBIT & Audit Sistem Informasi
+# Pengendalian Internal: COSO, Risiko, dan Bukti Kontrol
 
-Mendalami kerangka tata kelola teknologi informasi COBIT 2019, pemisahan tugas dalam departemen TI, serta metodologi audit sistem informasi: Audit Around the Computer vs Audit Through the Computer dan Computer-Assisted Audit Techniques (CAATs).
+Sistem yang bisa memproses transaksi belum tentu menghasilkan informasi yang dapat dipercaya. Pelajari bagaimana tujuan bisnis diterjemahkan menjadi risiko, kontrol, penanggung jawab, dan bukti bahwa kontrol benar-benar berjalan. COSO dipakai untuk melihat hubungan kelima komponen, bukan sekadar menghafal nama.
 
-Gambar 10.1: Domain Tata Kelola TI COBIT 2019 dan Metodologi Audit Sistem Informasi (CAATs).
+Mengapa pembayaran palsu tetap lolos dari ERP?
 
-General IT Controls (GITC) vs Application Controls
+Seorang staf membuat vendor baru, memasukkan invoice, lalu menyetujui pembayaran ke rekeningnya sendiri. ERP memproses seluruh langkah tanpa error. Masalahnya terletak pada **wewenang dan pemeriksaan**, bukan kecepatan komputer. Kita harus bertanya: tujuan apa yang gagal, risiko apa yang muncul, siapa seharusnya mencegahnya, dan bukti apa yang menunjukkan kontrol dijalankan?
 
-Dalam audit sistem informasi, pengendalian TI dibagi menjadi dua tingkatan hierarki yang saling melengkapi:
+1. Tujuan pengendalian dan keyakinan memadai
 
-General IT Controls (GITC): Pengendalian menyeluruh yang berlaku untuk seluruh lingkungan sistem informasi perusahaan. Jika GITC lemah, auditor TIDAK DAPAT mengandalkan Application Controls apa pun. GITC mencakup: Manajemen Akses Pengguna (User Access), Manajemen Perubahan Program (Change Management), Operasi Komputer & Backup, dan Tata Kelola Keamanan Siber.
+Pengendalian internal adalah proses yang dijalankan dewan, manajemen, dan personel untuk membantu mencapai tujuan organisasi. Proses berarti kegiatan berulang: menyetujui, memverifikasi, merekonsiliasi, dan memperbaiki. Memiliki prosedur tertulis saja belum membuktikan bahwa prosedur dipatuhi. Richardson, pp. 390–394.
 
-Application Controls: Pengendalian otomatis yang tertanam di dalam modul aplikasi perangkat lunak tertentu untuk memastikan integritas pemrosesan transaksi. Terdiri dari: Input Controls (misal: Field Check, Validity Check, Range Check, Limit Check), Processing Controls (misal: Run-to-Run Totals), dan Output Controls (misal: Spooling Reconciliation).
+Tiga tujuan COSO
 
-Tabel 10.1: Jenis Pengendalian Masukan Aplikasi (Input Controls) dalam SIA
+Tujuan | Arti | Contoh kegagalan
 
-Nama Pengendalian | Aturan Logika | Contoh Kasus Kesalahan yang Dicegah
+Operations | Operasi efektif dan efisien, termasuk perlindungan aset. | Barang keluar tanpa izin sehingga stok fisik hilang.
 
-Field Check / Type Check | Memastikan karakter yang dimasukkan memiliki tipe data yang benar. | Mencegah entri huruf pada kolom 'Jumlah Pembayaran'.
+Reporting | Pelaporan internal/eksternal, keuangan/nonkeuangan yang andal. | Dashboard stok dan laporan persediaan memuat jumlah salah.
 
-Sign Check | Memeriksa tanda aritmatika (positif/negatif) apakah logis. | Mencegah entri kuantitas jam kerja bernilai negatif.
+Compliance | Mematuhi ketentuan yang berlaku bagi entitas. | Perusahaan melewati kewajiban pelaporan yang memang berlaku baginya.
 
-Limit Check & Range Check | Memastikan nilai berada di bawah batas tertentu atau dalam rentang yang wajar. | Menolak entri jam lembur > 20 jam per minggu atau nilai gaji < UMR.
+**Reasonable assurance** berarti keyakinan memadai. Pertimbangan manusia bisa salah, dua pegawai bisa berkolusi, manajemen bisa melakukan override, dan lingkungan bisa berubah. Kontrol mengurangi risiko ke tingkat yang dapat diterima; manajemen tetap bertanggung jawab atas sistemnya. Auditor mengevaluasi dan memberi assurance sesuai lingkup penugasannya.
 
-Completeness Check | Memastikan tidak ada field wajib yang dibiarkan kosong. | Menolak menyimpan faktur jika nomor NPWP pelanggan belum diisi.
+Dari tujuan bisnis sampai evaluasi
 
-Validity Check | Mencocokkan nilai input dengan data master yang valid. | Menolak entri transaksi untuk Kode Akun yang tidak terdaftar di Bagan Akun (COA).
+Peta konsep buatan. Urutan baca 1–4; evaluasi memberi umpan balik ke rancangan. COSO sendiri merupakan sistem komponen yang saling berhubungan.
 
-Check Digit Verification | Menghitung angka penguji matematis pada digit terakhir nomor identifikasi. | Mencegah salah ketik nomor rekening bank atau nomor kartu kredit.
+1. Tujuan: Bayar hanya pembelian yang sah. Tentukan kriteria keberhasilan.
 
-Metodologi Audit SI: Around the Computer vs Through the Computer
+2. Risiko: Invoice vendor fiktif dibayar. Nilai peluang dan dampaknya.
 
-Tabel 10.2: Perbandingan Pendekatan Audit Sistem Informasi
+3. Kontrol + bukti: Verifikasi vendor dan approval. Simpan jejak siapa menyetujui.
 
-Dimensi | Audit Around the Computer (Black Box) | Audit Through the Computer (White Box)
+4. Evaluasi + perbaikan: Uji pelaksanaan sepanjang periode. Tindak lanjuti setiap penyimpangan.
 
-Fokus Audit | Mencocokkan input fisik (dokumen sumber) langsung dengan output laporan tanpa menguji logika program. | Menguji integritas logika program, algoritma penghitungan, dan pengendalian otomatis di dalam software.
+2. Lima komponen dan 17 prinsip COSO 2013
 
-Kapan Digunakan? | Sistem sederhana, volume transaksi rendah, jejak audit (audit trail) fisik tersedia lengkap. | Sistem kompleks, transaksi real-time tanpa kertas (paperless), pemrosesan cloud ERP berskala besar.
+Bayangkan kelima komponen sebagai satu sistem. Lingkungan pengendalian membentuk perilaku; penilaian risiko menentukan fokus; aktivitas pengendalian merespons risiko; informasi menghubungkan pelaku; pemantauan menunjukkan bagian yang perlu diperbaiki. Tidak cukup memasang banyak approval bila manajemen rutin memerintahkan pegawai melewatinya.
 
-Risiko Utama | Tidak mendeteksi kecurangan logika program yang disisipkan programmer (misal: Salami Fraud yang memotong sisa desimal sen). | Membutuhkan keahlian teknis auditor yang tinggi dan perangkat lunak audit khusus (CAATs).
+Control environment · prinsip 1–5
 
-Teknik Audit Berbantuan Komputer (CAATs)
+Fondasi perilaku dan pertanggungjawaban
 
-Test Data Approach: Auditor memasukkan data dummy (termasuk data salah seperti limit kredit minus) ke dalam sistem klien untuk melihat apakah sistem bereaksi menolak transaksi tersebut.
+Prinsip | Makna | Contoh bukti
 
-Integrated Test Facility (ITF): Auditor membuat 'entitas/divisi fiktif' di dalam sistem operasional nyata klien dan memproses transaksi uji bersamaan dengan transaksi nyata tanpa mengganggu laporan konsolidasi.
+1 · Integritas dan etika | Menunjukkan komitmen terhadap nilai etika. | Kode etik, penanganan pelanggaran, deklarasi konflik kepentingan.
 
-Parallel Simulation: Auditor menulis program independen yang meniru logika perhitungan klien, lalu memasukkan data transaksi nyata klien ke kedua program untuk membandingkan apakah hasilnya 100% identik.
+2 · Pengawasan independen | Dewan mengawasi pengembangan dan kinerja kontrol secara independen. | Agenda dan notulen komite audit, tindak lanjut yang tercatat.
 
-Pemisahan Tugas Wajib di Departemen TI
+3 · Struktur dan wewenang | Menetapkan garis pelaporan, kewenangan, dan tanggung jawab. | Matriks otorisasi dan peran yang disetujui.
 
-Programmer/Developer DILARANG KERAS memiliki akses ke lingkungan produksi (Live System). Program yang dibuat oleh Developer harus diuji oleh tim QA independen, disetujui oleh Manajemen Bisnis, dan dideploy ke server produksi HANYA oleh Operator/System Administrator.
+4 · Kompetensi | Merekrut, mengembangkan, dan mempertahankan personel kompeten. | Pelatihan dan evaluasi kemampuan staf rekonsiliasi.
+
+5 · Akuntabilitas | Meminta setiap orang mempertanggungjawabkan tugas kontrolnya. | Target, evaluasi, dan tindak lanjut atas rekonsiliasi terlambat.
+
+Risk assessment · prinsip 6–9
+
+Menentukan risiko terhadap tujuan
+
+Prinsip | Makna | Penerapan
+
+6 · Tujuan yang jelas | Tujuan cukup spesifik agar risiko dapat diidentifikasi. | Seluruh pembayaran harus didukung penerimaan barang yang valid.
+
+7 · Identifikasi dan analisis risiko | Menilai risiko lintas unit serta dasar penanganannya. | Risk register invoice ganda, vendor fiktif, dan salah rekening.
+
+8 · Risiko fraud | Mempertimbangkan kemungkinan kecurangan. | Nilai peluang staf mengubah rekening vendor lalu membayar sendiri.
+
+9 · Perubahan signifikan | Menilai perubahan yang memengaruhi kontrol. | Tinjau akses dan antarmuka saat pindah ke cloud ERP.
+
+Control activities · prinsip 10–12
+
+Menerjemahkan respons menjadi tindakan
+
+Prinsip | Makna | Penerapan
+
+10 · Aktivitas pengendalian | Memilih tindakan yang menurunkan risiko. | Three-way match, dual approval, rekonsiliasi independen.
+
+11 · Kontrol umum teknologi | Mengendalikan teknologi yang mendukung tujuan. | Pembatasan akses, pengujian perubahan, dan pemulihan teruji.
+
+12 · Kebijakan dan prosedur | Menjalankan harapan kebijakan melalui prosedur nyata. | SOP menjelaskan pemilik, frekuensi, bukti, dan eskalasi selisih.
+
+Information and communication · prinsip 13–15; monitoring · 16–17
+
+Informasi, evaluasi, dan tindak lanjut
+
+Prinsip | Makna | Penerapan
+
+13 · Informasi relevan dan berkualitas | Menghasilkan informasi yang mendukung kontrol. | Laporan exception lengkap dan cocok dengan populasi ERP.
+
+14 · Komunikasi internal | Mengkomunikasikan tujuan dan tanggung jawab. | Bagian utang tahu siapa menangani selisih invoice.
+
+15 · Komunikasi eksternal | Berkomunikasi tentang kontrol dengan pihak luar. | Konfirmasi perubahan rekening melalui kontak pemasok terverifikasi.
+
+16 · Evaluasi | Melakukan evaluasi berkelanjutan dan/atau terpisah. | Review supervisor dan pengujian audit internal.
+
+17 · Pelaporan defisiensi | Mengkomunikasikan kelemahan agar diperbaiki tepat waktu. | Daftar temuan, pemilik perbaikan, tenggat berbasis risiko, uji ulang.
+
+Cara menilai efektivitas
+
+Tanyakan apakah komponen dan prinsip yang relevan hadir, berfungsi, dan bekerja bersama. Banyaknya dokumen tidak menggantikan evaluasi pelaksanaan. Seluruh prinsip di atas diparafrasekan dari Exhibit 11.2, Richardson pp. 393–394 (PDF 418–419).
+
+3. Mengklasifikasikan kontrol dari dua sudut
+
+Fungsi berdasarkan waktu dan tujuan
+
+Fungsi | Cara bekerja | Contoh yang terukur
+
+Preventive | Mencegah sebelum kesalahan/kejadian diproses. | Sistem menolak invoice vendor tidak aktif; approval sebelum pembayaran.
+
+Detective | Mengidentifikasi masalah yang sudah terjadi. | Laporan invoice ganda dan rekonsiliasi bank ditinjau petugas independen.
+
+Corrective | Memulihkan atau memperbaiki masalah yang ditemukan. | Restore cadangan tervalidasi; investigasi lalu koreksi catatan.
+
+Kontrol juga dapat dibedakan menurut **cakupan**. Kontrol umum TI (GITC/ITGC) menjaga lingkungan sistem, misalnya manajemen akses dan perubahan program. Kontrol aplikasi menjaga transaksi tertentu, misalnya validitas vendor dan total invoice. Satu kontrol bisa sekaligus preventif dan GITC. Kedua klasifikasi menjawab pertanyaan berbeda.
+
+Pertahanan pada pembayaran vendor
+
+Lapisan buatan saling melengkapi. Tidak ada urutan “selalu paling ekonomis”; pilihan kontrol bergantung pada risiko dan biaya.
+
+1. Sebelum bayar: Pemisahan pembuat dan penyetuju. Preventif; akses berbasis peran.
+
+2. Saat memproses: Cocokkan PO, barang, invoice. Preventif; kontrol aplikasi.
+
+3. Setelah memproses: Tinjau exception dan rekening bank. Detektif; simpan bukti review.
+
+4. Saat ditemukan salah: Hentikan akses, pulihkan catatan. Korektif; uji ulang kontrol.
+
+4. Risiko bawaan, risiko sisa, dan respons
+
+**Inherent risk** adalah risiko sebelum mempertimbangkan tindakan pengendalian. **Residual risk** adalah risiko yang tersisa setelah respons dan kontrol. **Risk appetite** menggambarkan jenis dan besarnya risiko yang bersedia diambil untuk mengejar nilai. Toleransi menerjemahkannya ke variasi kinerja yang dapat diterima. Istilah ini perlu konteks, ukuran, serta periode yang konsisten.
+
+Tidak ada rumus pengurangan universal
+
+Skor risiko bawaan tidak dapat langsung dikurangi “persentase efektivitas kontrol” tanpa model dan satuan yang jelas. Nilai risiko sisa dengan menilai ulang peluang, dampak, dan ketergantungan antarkontrol. Skala ordinal rendah–sedang–tinggi tidak otomatis bisa dihitung sebagai rupiah.
+
+Empat respons risiko
+
+Respons | Arti | Contoh
+
+Avoid | Menghentikan aktivitas sumber risiko. | Tidak menawarkan layanan pembayaran yang belum dapat diamankan.
+
+Reduce | Menurunkan peluang atau dampak. | Verifikasi vendor, approval, dan batas akses.
+
+Share / transfer | Membagi konsekuensi dengan pihak lain. | Asuransi risiko tertentu; tanggung jawab pengawasan tetap ada.
+
+Accept | Menerima risiko dalam batas yang disetujui. | Menerima selisih kecil sesuai kebijakan dan tetap memantau.
+
+Contoh bertahap: risk register pembayaran
+
+Tetapkan tujuan: pembayaran hanya untuk barang yang benar-benar diterima.
+
+Catat ancaman: staf membuat vendor fiktif; kelemahan: satu akun memegang seluruh hak.
+
+Nilai risiko awal: dampak tinggi dan peluang meningkat karena akses tanpa review.
+
+Rancang kontrol: pembuat vendor independen, verifikasi rekening, approval terpisah, laporan perubahan master.
+
+Tentukan bukti: tiket vendor, hasil konfirmasi, log perubahan, persetujuan dan review bulanan.
+
+Nilai ulang risiko: kolusi dan override masih mungkin; pantau perubahan rekening menjelang pembayaran.
+
+5. COSO internal control dan dua versi ERM
+
+Jangan mencampur jumlah komponen antarversi
+
+Kerangka | Struktur | Fokus
+
+COSO IC 2013 | 3 kategori tujuan; 5 komponen; 17 prinsip. | Efektivitas sistem pengendalian internal.
+
+COSO ERM 2004 | 4 kategori tujuan; 8 komponen. | Risiko di seluruh entitas dengan strategi dan risk appetite.
+
+COSO ERM 2017 | 5 komponen; 20 prinsip. | Mengintegrasikan risiko dengan strategi dan kinerja.
+
+Delapan komponen ERM 2004 adalah internal environment, objective setting, event identification, risk assessment, risk response, control activities, information and communication, serta monitoring. Empat kategori tujuannya adalah strategic, operations, reporting, compliance. Richardson membahasnya sebelum pembaruan 2017, pp. 395–397.
+
+COSO ERM 2017: risiko melekat pada strategi
+
+Lima komponen ERM 2017, diparafrasekan dari Richardson pp. 397–400. Nomor adalah urutan baca; komponen bekerja berulang dan saling memengaruhi.
+
+1. Governance and Culture: Pengawasan, nilai, dan perilaku. Siapa bertanggung jawab?
+
+2. Strategy and Objective-Setting: Konteks, risk appetite, pilihan. Tujuan apa yang dikejar?
+
+3. Performance: Identifikasi, nilai, prioritaskan. Pilih respons dan lihat portofolio.
+
+4. Review and Revision: Nilai perubahan dan hasil kerja. Perbaiki respons yang tidak efektif.
+
+5. Information, Communication: and Reporting: dukung semua bagian. Sebarkan informasi risiko bermutu.
+
+6. Dari desain kontrol ke bukti pelaksanaan
+
+**Design effectiveness** menilai apakah kontrol, jika dijalankan oleh orang yang tepat, mampu menangani risiko. **Operating effectiveness** menilai apakah kontrol benar-benar berjalan konsisten selama periode yang dinilai. Wawancara menjelaskan proses; inspeksi dokumen, observasi, dan reperformance memberikan jenis bukti tambahan yang perlu dinilai kecukupannya.
+
+SOP bagus, approval kosong
+
+SOP mensyaratkan approval supervisor sebelum bayar. Dari transaksi yang diperiksa, beberapa dibayar sebelum approval tercatat. Desain mungkin memadai, tetapi pelaksanaan bermasalah. Jika supervisor hanya bisa melihat total tanpa bukti barang, desain pun bisa lemah. Rekomendasi harus menjawab kedua kemungkinan tersebut, bukan sekadar meminta staf “lebih teliti”.
+
+Pendalaman: control deficiency, significant deficiency, material weakness
+
+Sebagai pembanding dalam konteks audit ICFR Amerika Serikat, AS 2201 Appendix A membedakan defisiensi desain/operasi, kelemahan yang cukup penting bagi pengawas pelaporan (significant deficiency), serta kelemahan dengan reasonable possibility bahwa salah saji material tidak dicegah atau dideteksi tepat waktu (material weakness). Penilaiannya mempertimbangkan kemungkinan dan besarnya potensi salah saji, termasuk kombinasi kelemahan; salah saji aktual tidak harus sudah terjadi.
+
+Ini bukan otomatis klasifikasi kewajiban pelaporan untuk semua perusahaan Indonesia. SOX dan PCAOB dipakai dalam cakupan entitas/penugasan yang relevan. Tinjau standar dan yurisdiksi penugasan sebelum menyimpulkan kewajiban. [PCAOB AS 2201, Appendix A dan paragraf 62–70](https://pcaobus.org/oversight/standards/auditing-standards/details/AS2201).
+
+7. Uji pemahaman dan pola jawaban kasus
+
+Satu pegawai boleh membuat vendor dan membayar, tetapi direktur meninjau rekening koran bulanan. Apakah risikonya sudah hilang?
+
+Belum. Review independen adalah kontrol detektif yang mungkin mengompensasi sebagian risiko, bergantung pada ketelitian, frekuensi, dan bukti tindak lanjut. Pemisahan tugas preventif tetap perlu dipertimbangkan. Nilai apakah kerugian bisa terjadi sebelum review serta apakah direktur mampu mengenali vendor palsu.
+
+Mengapa laporan exception yang lengkap tetap belum cukup disebut monitoring efektif?
+
+Laporan harus benar-benar ditinjau oleh petugas yang kompeten, penyimpangan diinvestigasi, dan perbaikan diuji. Informasi tanpa tindakan belum membuktikan kontrol berfungsi. Hubungkan prinsip 13, 16, dan 17.
+
+Kerangka jawaban UAS
+
+Kondisi → tujuan dan risiko → komponen/prinsip COSO → kontrol spesifik → pemilik dan frekuensi → bukti yang diuji → risiko sisa. Ini panduan pengerjaan, bukan jaminan penilaian dosen.
+
+Pelengkap: COBIT dan teknik audit SI (Ch. 13)
+
+Komisi sesuai laporan, tetapi rumusnya disusupi
+
+Developer mengubah ERP agar satu sales mendapat komisi tambahan. Total laporan cocok dengan buku besar karena keduanya memakai program yang sama. Membandingkan dua output dari sumber logika yang sama belum memberikan bukti independen. Auditor perlu memahami perubahan program dan menghitung ulang komisi dengan aturan resmi.
+
+1. Tata kelola menentukan arah, manajemen menjalankan
+
+**Governance** mengevaluasi kebutuhan pemangku kepentingan, mengarahkan prioritas, dan memantau pencapaiannya. **Management** merencanakan serta menjalankan kegiatan sesuai arah itu. Dalam konteks TI, keduanya menghubungkan manfaat bisnis, risiko, dan penggunaan sumber daya. Membeli ERP baru adalah keputusan yang perlu tujuan bisnis serta akuntabilitas, bukan hanya keputusan teknis.
+
+Arah bisnis sampai assurance
+
+Ilustrasi buatan. Bukan urutan wajib proses COBIT; domain saling berhubungan.
+
+1. Pemangku kepentingan: Butuh laporan andal dan tepat waktu. Nilai manfaat, risiko, sumber daya.
+
+2. Governance · EDM: Evaluate, Direct and Monitor. Tetapkan arah dan pantau hasil.
+
+3. Management: APO → BAI → DSS, didukung MEA. Rencanakan, bangun, operasikan.
+
+4. Bukti dan umpan balik: KPI, insiden, temuan, tindak lanjut. Ubah prioritas bila risiko berubah.
+
+Lima domain COBIT 2019
+
+Domain | Tanggung jawab | Contoh SIA
+
+EDM · Evaluate, Direct and Monitor | Governance: badan pengarah mengevaluasi, memberi arah, memantau. | Menentukan prioritas integrasi dan risiko gangguan yang dapat diterima.
+
+APO · Align, Plan and Organize | Management: strategi, rencana, dan organisasi TI. | Rencana keamanan, data, SDM, serta vendor TI.
+
+BAI · Build, Acquire and Implement | Management: membangun/memperoleh dan menerapkan solusi. | Uji perubahan ERP dan migrasi data.
+
+DSS · Deliver, Service and Support | Management: penyediaan layanan dan dukungan operasi. | Kelola akses, insiden, keamanan dan layanan pembayaran.
+
+MEA · Monitor, Evaluate and Assess | Management: menilai kinerja, kontrol dan kesesuaian. | Evaluasi efektivitas kontrol dan hasil assurance.
+
+COBIT 2019 memiliki 40 governance and management objectives dalam lima domain. COSO memberi kerangka pengendalian internal organisasi; COBIT memberi kerangka governance dan management informasi/teknologi. ITIL berfokus pada pengelolaan layanan TI, sedangkan keluarga ISO 27000 berhubungan dengan keamanan informasi. Kerangka dapat saling melengkapi sesuai kebutuhan.
+
+2. GITC dan application controls saling bergantung
+
+Kontrol dan pengujian yang sesuai
+
+Area | Kontrol | Bukti yang perlu diperiksa
+
+GITC · akses | Pemberian, perubahan, pencabutan akses disetujui; akses istimewa ditinjau. | Permintaan akses, daftar peran, log, bukti review pengguna keluar.
+
+GITC · perubahan program | Perubahan diuji, disetujui, dan dipindah ke produksi secara terkendali. | Tiket, versi, hasil uji, persetujuan bisnis, jejak deployment.
+
+GITC · operasi | Job dipantau, backup diverifikasi, insiden ditindaklanjuti. | Log job, exception, hasil restore, tiket insiden.
+
+Aplikasi · input | Vendor valid, field wajib, batas nilai, larangan invoice duplikat. | Uji input valid/invalid dan konfigurasi aturan.
+
+Aplikasi · proses | Perhitungan dan total batch benar; transaksi tidak diproses ganda. | Reperformance dan rekonsiliasi jumlah serta total.
+
+Aplikasi · output | Laporan lengkap, akurat, dan diterima pihak berwenang. | Cocokkan parameter dan total laporan ke sumber; review distribusi.
+
+Jika developer bebas mengubah rumus di produksi, hasil uji kontrol aplikasi pada satu hari belum menjamin rumus itu tetap sama sepanjang periode. Karena itu reliance pada kontrol otomatis biasanya memerlukan pemahaman GITC yang relevan. Kelemahan GITC harus dianalisis dampaknya terhadap aplikasi terkait; jangan otomatis menyatakan semua transaksi pasti salah.
+
+Ketergantungan kontrol otomatis
+
+Ilustrasi buatan: logika yang baik, data lengkap, dan review manusia sama-sama diperlukan.
+
+1. Lingkungan terjaga: Akses dan perubahan dibatasi. GITC menjaga konsistensi sistem.
+
+2. Aturan transaksi: ERP menolak invoice ganda. Kontrol aplikasi diuji spesifik.
+
+3. Laporan exception: Populasi dan parameter benar. Uji kelengkapan serta akurasi.
+
+4. Reviewer bertindak: Investigasi dan selesaikan selisih. Simpan bukti serta tindak lanjut.
+
+3. Merancang audit dari risiko ke bukti
+
+Tentukan tujuan dan lingkup: sistem, periode, proses serta risiko/asersi yang diperiksa.
+
+Pahami alur melalui walkthrough: telusuri satu transaksi dan seluruh titik kendali yang relevan.
+
+Nilai desain: apakah kontrol mampu menangani risiko dan dijalankan oleh pihak berwenang?
+
+Uji operasi: pilih bukti selama periode secara tepat; inspeksi, observasi, dan lakukan ulang bila relevan.
+
+Evaluasi penyimpangan: sebab, luas dampak, kontrol kompensasi, dan prosedur tambahan.
+
+Laporkan kondisi, kriteria, sebab, akibat, rekomendasi, pemilik, tenggat, lalu tindak lanjut.
+
+Wawancara “selalu kami periksa” belum membuktikan review berlangsung. Log login membuktikan akses tercatat, tetapi tidak langsung membuktikan reviewer memeriksa substansi invoice. Evaluasi **relevansi dan keandalan bukti**, termasuk siapa membuatnya dan apakah bukti bisa diubah oleh pihak yang sedang diuji.
+
+Prosedur konkret untuk perubahan program komisi
+
+Peroleh daftar seluruh perubahan selama periode dan uji kelengkapannya dengan log repositori/deployment.
+
+Pilih perubahan relevan berdasarkan risiko, lalu periksa persetujuan, pengujian, dan pemisahan pihak yang memindahkannya.
+
+Gunakan aturan komisi yang disetujui bisnis untuk menghitung ulang transaksi.
+
+Bandingkan dengan ERP, investigasi selisih, dan nilai apakah perubahan tanpa izin memengaruhi periode lain.
+
+4. Around the computer dan through the computer
+
+Pendekatan menguji sistem
+
+Pendekatan | Apa yang diuji | Batas
+
+Around the computer | Membandingkan input dan output tanpa pengujian langsung logika internal. | Dapat melewatkan logika tersembunyi; kesesuaian input/output perlu konteks sistem.
+
+Through the computer | Menguji pemrosesan dan kontrol dengan teknik yang masuk pada logika sistem. | Membutuhkan keahlian serta perlindungan agar data uji tidak mencemari catatan nyata.
+
+5. Memilih CAATs berdasarkan pertanyaan audit
+
+Computer-assisted audit techniques
+
+Teknik | Data / cara | Tujuan dan risiko pelaksanaan
+
+Test data | Auditor menyiapkan input valid dan invalid untuk diproses program klien. | Uji apakah aturan menerima/menolak sesuai harapan; gunakan lingkungan uji yang representatif.
+
+Parallel simulation | Auditor memproses ulang data aktual dengan logika/program independen. | Bandingkan output dengan klien; validasi model independen dan rekonsiliasi populasi.
+
+Integrated test facility (ITF) | Entitas/transaksi fiktif dipakai dalam sistem operasional secara terkendali. | Uji operasi berulang; cegah dampak pada saldo, laporan, pembayaran, dan pengguna nyata.
+
+Embedded audit module (EAM) | Modul tertanam menangkap transaksi sesuai kriteria untuk auditor. | Kumpulkan exception; kendalikan perubahan modul, kelengkapan, akses serta kinerja.
+
+Generalized audit software (GAS) | Perangkat lunak umum untuk membaca dan menganalisis data. | Filter, duplikasi, gap, agregasi dan recalculation; hasil bergantung mutu data dan aturan.
+
+Satu pertanyaan, teknik berbeda
+
+Peta pilihan buatan; setiap teknik harus disesuaikan dengan tujuan, sistem dan izin penugasan.
+
+1. Aturan menolak salah?: Masukkan invoice yang duplikat. Test data: harapkan penolakan.
+
+2. Hitungan ERP benar?: Hitung ulang komisi data aktual. Parallel simulation: bandingkan.
+
+3. Pola apa yang janggal?: Kelompokkan invoice per vendor. GAS: cari duplikasi dan gap.
+
+4. Perlu pemantauan rutin?: Tangkap exception secara terkendali. ITF / EAM sesuai rancangan.
+
+Test plan: diskon maksimum 10%
+
+Asumsi aturan kasus: diskon >10% perlu persetujuan khusus
+
+Input uji | Hasil yang diharapkan | Apa yang dibuktikan
+
+Diskon 8%, user biasa | Diproses sesuai aturan. | Input valid tidak salah ditolak.
+
+Diskon 12%, tanpa approval | Diblokir atau masuk alur approval. | Input tidak sah tidak langsung diproses.
+
+Diskon 12%, approval sah | Diproses dengan jejak penyetuju. | Exception terotorisasi ditangani dengan benar.
+
+Diskon 10%, user biasa | Diproses jika batas inklusif 10%. | Perilaku tepat pada batas diuji.
+
+Catat input, expected result, actual result, versi program, waktu pengujian, dan bukti. Jika 12% lolos tanpa approval, jangan hanya menulis “sistem error”; telusuri konfigurasi, akses, perubahan, dan dampaknya.
+
+6. Continuous monitoring dan continuous auditing
+
+**Continuous monitoring** merupakan pemantauan manajemen atas proses dan kontrol. **Continuous auditing** merupakan prosedur audit berulang/otomatis untuk memberi assurance. Keduanya bisa memakai data yang sama, tetapi tujuan dan tanggung jawab berbeda. Frekuensi dapat harian atau lebih sering sesuai risiko, tidak selalu berarti setiap transaksi dinilai seketika.
+
+100% data bukan 100% assurance
+
+Menganalisis seluruh data yang diekspor tidak menjamin ekspor lengkap, aturan benar, transaksi di luar sistem terjangkau, atau seluruh risiko teruji. Verifikasi populasi, cutoff, parameter, versi query, serta tindak lanjut exception. Ukuran sampel audit tidak selalu 25–50 transaksi.
+
+Pada infrastruktur, pahami juga OS, database, LAN/WAN, wireless, dan remote access. OS mengatur sumber daya dan isolasi akses; database mengatur struktur serta hak data; jaringan menghubungkan sistem. Kegagalan pada salah satu lapisan bisa memengaruhi bukti audit aplikasi. Data warehouse menyimpan data historis untuk analisis dan harus direkonsiliasi ke sumber operasional. Richardson pp. 452–457.
+
+7. Uji pemahaman
+
+Auditor ingin membuktikan invoice duplikat ditolak. Apakah menjalankan query pencarian invoice ganda cukup?
+
+Query mendeteksi catatan duplikat yang sudah masuk. Untuk menguji penolakan, gunakan test data valid/invalid pada konfigurasi yang relevan. Temuan query tetap berguna untuk menilai dampak, tetapi kedua prosedur menjawab pertanyaan berbeda.
+
+Developer harus menangani insiden darurat di produksi. Bagaimana kontrolnya?
+
+Batasi akses darurat menurut kebutuhan dan waktu, minta persetujuan yang sesuai, catat aktivitas, lakukan review independen serta cabut hak setelah selesai. Pemisahan development/testing/production tetap menjadi tujuan; larangan absolut tanpa prosedur exception bisa tidak sesuai operasi.
+
+Sumber dan batas pembahasan
+
+Richardson Ch. 11 pp. 403–408 dan Ch. 13 pp. 450–463, terutama CAATs pp. 458–460 dan continuous audit pp. 460–461. Pelengkap versi: [ISACA: COBIT 2019, lima domain dan 40 objectives](https://www.isaca.org/resources/news-and-trends/industry-news/2018/a-new-cobit-is-in-town-and-i-really-like-how-it-looks). Angka, perusahaan, diagram, dan skenario latihan di halaman ini adalah ilustrasi buatan kecuali dinyatakan lain. Urutan materi inti mengikuti RPS-SIA, Pembagian Mengajar Gasal 2025/2026, halaman 1; pendalaman di luar bab terjadwal diberi label pelengkap.
+
+Sumber dan batas pembahasan
+
+Sumber utama dibaca: Richardson, Chang & Smith, AIS 4e ISE, Ch. 11 pp. 386–408; khusus 17 prinsip pp. 393–394, ERM pp. 395–400. [COSO: ERM 2017](https://www.coso.org/guidance-erm) sebagai pelengkap identitas kerangka. Angka, perusahaan, diagram, dan skenario latihan di halaman ini adalah ilustrasi buatan kecuali dinyatakan lain. Urutan materi inti mengikuti RPS-SIA, Pembagian Mengajar Gasal 2025/2026, halaman 1; pendalaman di luar bab terjadwal diberi label pelengkap.
+
+## Latihan
+
+Tujuan COSO mencakup...
+
+COSO IC memiliki tiga kategori tujuan; reporting mencakup informasi keuangan/nonkeuangan internal/eksternal. Rujukan: Richardson AIS 4e, Ch.11 pp.386–408 (PDF 411–433).
+
+Jumlah komponen dan prinsip COSO IC 2013 yang benar adalah...
+
+Jangan mencampur COSO IC 2013, ERM 2004 dan ERM 2017. Exhibit 11.2 menjelaskan 17 prinsip. Rujukan: Richardson AIS 4e, Ch.11 pp.386–408 (PDF 411–433).
+
+Review rekonsiliasi bank setelah transaksi bertujuan menemukan selisih. Fungsi utamanya adalah...
+
+Deteksi diikuti investigasi dan koreksi bila perlu. Review harus meninggalkan bukti. Rujukan: Richardson AIS 4e, Ch.11 pp.386–408 (PDF 411–433).
+
+SOP mewajibkan approval, tetapi pembayaran berulang tanpa approval. Aspek utama yang gagal adalah...
+
+Desain dan operating effectiveness berbeda; kondisi kasus menunjukkan masalah pelaksanaan dan perlu dinilai juga desainnya. Rujukan: Richardson AIS 4e, Ch.11 pp.386–408 (PDF 411–433).
+
+Apa pemahaman yang tepat tentang residual risk?
+
+Tidak ada rumus pengurangan universal tanpa model/satuan yang sesuai. Kolusi, override dan perubahan tetap mungkin. Rujukan: Richardson AIS 4e, Ch.11 pp.386–408 (PDF 411–433).
 
 ## Flashcard
 
-Auditing AROUND the Computer
+Tiga tujuan COSO
 
-Mengabaikan pemrosesan komputer internal; auditor hanya mencocokkan dokumen input sumber dengan laporan output cetak (hanya cocok untuk sistem sederhana). Rujukan: Richardson et al. AIS 4e · Ch. 11 dan 13, hal. 403-408 dan 450-463 (PDF 428-433 dan 475-488).
+Operations, reporting, compliance. Reporting mencakup laporan internal/eksternal dan keuangan/nonkeuangan. Rujukan: Richardson AIS 4e, Ch.11 pp.386–408 (PDF 411–433).
 
-Auditing THROUGH the Computer
+Lima komponen COSO
 
-Auditor menguji langsung logika pemrograman dan kontrol internal yang tertanam di dalam perangkat lunak komputer. Rujukan: Richardson et al. AIS 4e · Ch. 11 dan 13, hal. 403-408 dan 450-463 (PDF 428-433 dan 475-488).
+Control environment; risk assessment; control activities; information/communication; monitoring. Rujukan: Richardson AIS 4e, Ch.11 pp.386–408 (PDF 411–433).
 
-Test Data Approach (Pendekatan Data Uji)
+17 prinsip COSO 2013
 
-Auditor memasukkan data transaksi buatan (valid dan tidak valid) ke dalam program klien untuk memverifikasi apakah kontrol sistem menolak data salah. Rujukan: Richardson et al. AIS 4e · Ch. 11 dan 13, hal. 403-408 dan 450-463 (PDF 428-433 dan 475-488).
+Pembagian 5 + 4 + 3 + 3 + 2 pada lima komponen. Periksa hadir, berfungsi, dan bekerja bersama. Rujukan: Richardson AIS 4e, Ch.11 pp.386–408 (PDF 411–433).
 
-Parallel Simulation (Simulasi Paralel)
+Preventif, detektif, korektif
 
-Auditor menulis kode simulasi independen yang menjalankan data transaksi riil klien, lalu membandingkan outputnya dengan hasil produksi sistem klien. Rujukan: Richardson et al. AIS 4e · Ch. 11 dan 13, hal. 403-408 dan 450-463 (PDF 428-433 dan 475-488).
+Mencegah masalah; menemukan masalah; memperbaiki/memulihkan. Contoh: approval, rekonsiliasi, restore. Rujukan: Richardson AIS 4e, Ch.11 pp.386–408 (PDF 411–433).
 
-Kerangka Kerja Tata Kelola TI: COBIT 2019
+Desain versus pelaksanaan
 
-Control Objectives for Information and Related Technologies (ISACA) yang menyelaraskan tata kelola TI dengan tujuan strategis bisnis korporasi. Rujukan: Richardson et al. AIS 4e · Ch. 11 dan 13, hal. 403-408 dan 450-463 (PDF 428-433 dan 475-488).
+Desain: mampu mengatasi risiko jika dijalankan. Pelaksanaan: benar-benar berjalan konsisten pada periode relevan. Rujukan: Richardson AIS 4e, Ch.11 pp.386–408 (PDF 411–433).
 
-Pemisahan Tugas Khusus Departemen TI
+IC dan ERM
 
-Analis Sistem (merancang sistem) harus terpisah dari Programmer (menulis kode) dan terpisah dari Operator Komputer (menjalankan live system). Rujukan: Richardson et al. AIS 4e · Ch. 11 dan 13, hal. 403-408 dan 450-463 (PDF 428-433 dan 475-488).
-
-## Kuis TM terdaftar
-
-Dalam kerangka kerja COBIT 2019, domain tata kelola (Governance Domain) yang menjadi tanggung jawab utama Dewan Komisaris dan Direksi adalah...
-
-COBIT 2019 membagi tata kelola dan manajemen: Domain Governance tunggal adalah EDM (Evaluate, Direct, and Monitor). Empat domain lainnya (APO, BAI, DSS, MEA) adalah Domain Manajemen yang dipimpin eksekutif operasional TI.
-
-Apa pembeda audit around dan through the computer dalam pemeriksaan AIS?
-
-Perbedaan terletak pada apakah pemrosesan di dalam sistem juga diuji. Pemilihan prosedur tetap mengikuti risiko dan bukti yang diperlukan. Rujukan: Richardson AIS 4e, Ch.13, Computer-Assisted Audit Techniques, PDF 480-488.
-
-Teknik audit berbantuan komputer (CAATs) di mana auditor memasukkan unit bisnis atau entitas fiktif ke dalam sistem ERP operasional klien untuk memantau pemrosesan transaksi secara live tanpa mencemari laporan keuangan aktual disebut...
-
-Integrated Test Facility (ITF) membuat divisi/entitas dummy dalam sistem live klien. Transaksi audit diproses bersama transaksi riil, lalu jurnal pembalik otomatis diaktifkan untuk mengisolasi agar laporan keuangan publik tidak terdistorsi.
-
-Manakah pemisahan tugas (Segregation of Duties) yang WAJIB diterapkan di dalam struktur internal Departemen Teknologi Informasi (TI)?
-
-Prinsip dasar kontrol umum TI (GITC): Systems Analyst dan Systems Programmer (pembuat kode) harus dipisahkan dari Computer Operators dan Database Administrator (DBA). Programmer tidak boleh memiliki akses langsung memodifikasi live data produksi.
-
-Pengendalian Umum TI (General IT Controls / GITC) mencakup area berikut, KECUALI...
-
-Pemeriksaan validitas limit diskon pada form penjualan individual adalah contoh Pengendalian Aplikasi (Application Control), bukan GITC. GITC adalah kontrol tingkat infrastruktur yang menaungi seluruh aplikasi.
+IC 2013: 5 komponen/17 prinsip. ERM 2004: 8 komponen. ERM 2017: 5 komponen/20 prinsip. Jangan dicampur. Rujukan: Richardson AIS 4e, Ch.11 pp.386–408 (PDF 411–433).

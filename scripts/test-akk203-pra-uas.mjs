@@ -3,9 +3,11 @@ import fs from 'node:fs';
 import {hash,flatten,loadAsp,catalogOutsideAsp} from './akk203-pra-uas-lib.mjs';
 import {materializeReading} from './build-akk203-pra-uas.mjs';
 const baseline=JSON.parse(fs.readFileSync('scripts/fixtures/akk203-pra-uas-baseline.json','utf8')),m=await loadAsp();
-for(const [file,sha] of Object.entries({...baseline.modules,...baseline.outside}))assert.equal(hash(fs.readFileSync(file,'utf8').replace(/\r\n/g,'\n')),sha,'Protected source '+file);
+const integration=JSON.parse(fs.readFileSync('scripts/fixtures/akk203-merge-approved-20261016.json','utf8'));
+for(const [file,sha] of Object.entries(baseline.modules))assert.equal(hash(fs.readFileSync(file,'utf8').replace(/\r\n/g,'\n')),sha,'Original pre-UTS source '+file);
+for(const [file,sha] of Object.entries(baseline.outside))assert.ok([sha,integration.files[file]?.sha256].includes(hash(fs.readFileSync(file,'utf8').replace(/\r\n/g,'\n'))),'Protected source or exact reviewed integration '+file);
 assert.equal(hash(JSON.stringify(m.AKS201_QUIZ_UTS)),baseline.utsQuiz);assert.equal(hash(JSON.stringify(m.AKS201_BANK_UTS)),baseline.utsBank);assert.equal(hash(JSON.stringify(m.AKS201_FC.filter(c=>c.phase==='pra-uts'))),baseline.utsCards);assert.equal(hash(JSON.stringify(m.AKS201_REVIEW_READINGS.uts)),baseline.utsReview);
-assert.equal(hash(catalogOutsideAsp(fs.readFileSync('src/data/courseData.ts','utf8'))),baseline.catalogOutsideAsp);
+assert.ok([baseline.catalogOutsideAsp,integration.catalogOutsideAsp].includes(hash(catalogOutsideAsp(fs.readFileSync('src/data/courseData.ts','utf8')))),'Catalog outside ASP matches the historical or reviewed SIA version exactly');
 const releases=fs.readFileSync('src/data/releaseNotes.ts','utf8').replace(/\r\n/g,'\n');assert.ok(releases.endsWith(baseline.oldReleases.trimStart()),'Historical releases unchanged');
 const specs=[];for(let tm=8;tm<=14;tm++){
  const s=JSON.parse(fs.readFileSync(`content-pipeline/AKK203/TM${String(tm).padStart(2,'0')}/04_canonical_spec.json`,'utf8'));specs.push(s);
@@ -41,4 +43,4 @@ for(const s of specs)for(const b of flatten(s.reading.blocks).filter(b=>b.kind==
 const identityMap=JSON.parse(fs.readFileSync('content-pipeline/AKK203/card-identity-map.json','utf8'));
 for(const c of cards.filter(c=>baseline.oldPostCards.some(old=>old.id===c.id))){assert.ok(identityMap.retained.some(row=>row.id===c.id&&row.newFront===c.front),'Reviewed stable identity '+c.id);}
 assert.ok(!cards.some(c=>c.id==='aks201-tm13-05'),'Fraud card cannot become validity card');
-console.log('AKK203 source/structure PASS; preserved 380 unrelated sources and pre-UTS data; independent source facts/calculations checked. Source gaps remain open.');
+console.log(`AKK203 source/structure PASS; ${Object.keys(baseline.outside).length} historical source paths guarded with ${Object.keys(integration.files).length} exact integration variants; pre-UTS data preserved. Source gaps remain open.`);

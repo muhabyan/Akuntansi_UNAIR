@@ -5,5 +5,11 @@
   ],
   "authorizedAspPostUas20261014": [
     "2d5af73aaecf4cfea47fa4586ad4b2a4314a8212fe8283459220c2f5cf879570"
+  ],
+  "authorizedSiaRps20261016": [
+    "c995d969577bf6527f732621836a934cf1812d7b7f5e8eedc8967e68d4bb5f18"
+  ],
+  "authorizedAspSiaIntegration20261016": [
+    "05826a310b6a679d9376ae1582c963c5ee1870e51b48a0cb6f9129cba5ef952c"
   ]
 }

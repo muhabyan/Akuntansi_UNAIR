@@ -1,6 +1,6 @@
 // src/data/flashcards/sii306.ts
 // Flashcard Sistem Informasi Akuntansi (SII306): 9 kartu per TM Pra-UTS, 6 per TM Pra-UAS.
-// Note: card IDs keep the aks301- prefix so existing SRS review states remain unbroken.
+// Pra-UTS IDs are preserved. RPS-corrected post-UTS cards use v3 IDs so old-topic mastery is not reused.
 import type { AdvancedStudyCard } from '../../types';
 
 const cards: AdvancedStudyCard[] = [
@@ -59,6 +59,33 @@ const cards: AdvancedStudyCard[] = [
     "back": "CISA (Certified Information Systems Auditor), dari ISACA."
   },
   {
+    "id": "aks301-v3-tm01-07",
+    "phase": "pra-uts",
+    "tm": 1,
+    "topic": "Accounting Information Systems and Firm Value",
+    "category": "Prosedur",
+    "front": "Apa urutan information value chain dari data menuju keputusan?",
+    "back": "Data → information → knowledge → decision. Pengetahuan memberi makna pada informasi untuk memilih tindakan."
+  },
+  {
+    "id": "aks301-v3-tm01-08",
+    "phase": "pra-uts",
+    "tm": 1,
+    "topic": "Accounting Information Systems and Firm Value",
+    "category": "Pengendalian",
+    "front": "Laporan penuh data mentah menutupi stok kritis. Teknik pelaporan apa membantu?",
+    "back": "Exception reporting: tampilkan penyimpangan yang perlu tindakan, misalnya stok di bawah reorder point."
+  },
+  {
+    "id": "aks301-v3-tm01-09",
+    "phase": "pra-uts",
+    "tm": 1,
+    "topic": "Accounting Information Systems and Firm Value",
+    "category": "Konsep",
+    "front": "Kapan investasi informasi discretionary memberi nilai bersih positif?",
+    "back": "Saat manfaat yang diharapkan melebihi biaya: value of information = benefit − cost > 0."
+  },
+  {
     "id": "aks301-v2-tm02-01",
     "phase": "pra-uts",
     "tm": 2,
@@ -111,6 +138,33 @@ const cards: AdvancedStudyCard[] = [
     "category": "Mekanisme",
     "front": "Pada Goal Seek untuk breakeven, sel hasil, target, dan input yang diubah adalah apa?",
     "back": "Set Cell = laba bersih; To Value = 0; By Changing Cell = jumlah unit terjual."
+  },
+  {
+    "id": "aks301-v3-tm02-07",
+    "phase": "pra-uts",
+    "tm": 2,
+    "topic": "Data Analytics: Addressing Accounting Questions with Data",
+    "category": "Prosedur",
+    "front": "Apa urutan ETL saat Master the Data?",
+    "back": "Extract → Transform → Load: ambil data, bersihkan/seragamkan, lalu muat ke tempat analisis."
+  },
+  {
+    "id": "aks301-v3-tm02-08",
+    "phase": "pra-uts",
+    "tm": 2,
+    "topic": "Data Analytics: Addressing Accounting Questions with Data",
+    "category": "Perbandingan",
+    "front": "Banyak file berbeda format adalah Variety; kode pelanggan salah berulang adalah V apa?",
+    "back": "Veracity, yaitu keandalan dan ketepatan data; masalahnya perlu dibersihkan sebelum analisis."
+  },
+  {
+    "id": "aks301-v3-tm02-09",
+    "phase": "pra-uts",
+    "tm": 2,
+    "topic": "Data Analytics: Addressing Accounting Questions with Data",
+    "category": "Konsep",
+    "front": "Apa arti Gray Zone pada Altman Z-score?",
+    "back": "Sinyal risiko yang belum pasti: perlu telaah lanjutan, bukan vonis bangkrut atau aman."
   },
   {
     "id": "aks301-v2-tm03-01",
@@ -167,6 +221,33 @@ const cards: AdvancedStudyCard[] = [
     "back": "Black hole. Miracle adalah output tanpa input; gray hole menghasilkan output yang tidak didukung inputnya."
   },
   {
+    "id": "aks301-v3-tm03-07",
+    "phase": "pra-uts",
+    "tm": 3,
+    "topic": "Accountants as Business Analysts",
+    "category": "Perbandingan",
+    "front": "Gateway apa yang dapat membuka satu atau beberapa cabang yang kondisinya benar?",
+    "back": "Inclusive gateway (OR). XOR membuka tepat satu; AND membuka semua cabang."
+  },
+  {
+    "id": "aks301-v3-tm03-08",
+    "phase": "pra-uts",
+    "tm": 3,
+    "topic": "Accountants as Business Analysts",
+    "category": "Konsep",
+    "front": "Dalam BPMN, simbol apa menahan alur sampai tanggal tertentu?",
+    "back": "Intermediate timer event; proses berlanjut setelah waktu yang ditentukan tiba."
+  },
+  {
+    "id": "aks301-v3-tm03-09",
+    "phase": "pra-uts",
+    "tm": 3,
+    "topic": "Accountants as Business Analysts",
+    "category": "Pengendalian",
+    "front": "Satu swimlane menyetujui PO sekaligus menyimpan barang. Konflik tugas apa terlihat?",
+    "back": "Authorization dan custody digabung; pemegang barang tidak seharusnya menyetujui pembeliannya sendiri."
+  },
+  {
     "id": "aks301-v2-tm04-01",
     "phase": "pra-uts",
     "tm": 4,
@@ -219,6 +300,33 @@ const cards: AdvancedStudyCard[] = [
     "category": "Mekanisme",
     "front": "Relasi Order–Product bersifat M:N. Di mana Qty per produk disimpan?",
     "back": "Pada linking table Order_Line bersama Order_ID dan Product_ID; Qty milik pasangan order dan produk."
+  },
+  {
+    "id": "aks301-v3-tm04-07",
+    "phase": "pra-uts",
+    "tm": 4,
+    "topic": "Data Modeling",
+    "category": "Mekanisme",
+    "front": "Pada relasi Department 1:N Employee, di tabel mana Department_ID menjadi foreign key?",
+    "back": "Di Employee, yaitu sisi banyak; setiap karyawan menunjuk departemen induknya."
+  },
+  {
+    "id": "aks301-v3-tm04-08",
+    "phase": "pra-uts",
+    "tm": 4,
+    "topic": "Data Modeling",
+    "category": "Konsep",
+    "front": "Customer–Orders bertanda 0..* di sisi Orders. Bolehkah customer belum punya order?",
+    "back": "Boleh. Minimum 0 berarti customer dapat ada sebelum pesanan pertamanya."
+  },
+  {
+    "id": "aks301-v3-tm04-09",
+    "phase": "pra-uts",
+    "tm": 4,
+    "topic": "Data Modeling",
+    "category": "Perbandingan",
+    "front": "Invoice_Line tidak dapat ada tanpa Invoice. Composition atau aggregation?",
+    "back": "Composition: bagian bergantung pada induk; di UML diamond hitam berada di sisi Invoice."
   },
   {
     "id": "aks301-v2-tm05-01",
@@ -275,6 +383,33 @@ const cards: AdvancedStudyCard[] = [
     "back": "Ketergantungan pada vendor dan koneksi internet; akses dapat terganggu bila layanan tidak tersedia."
   },
   {
+    "id": "aks301-v3-tm05-07",
+    "phase": "pra-uts",
+    "tm": 5,
+    "topic": "Relational Databases and Enterprise Systems",
+    "category": "Prosedur",
+    "front": "Dalam SQL, klausa apa memilih tabel asal dan apa menyaring baris?",
+    "back": "FROM memilih tabel asal; WHERE menyaring baris sebelum hasil ditampilkan atau diagregasi."
+  },
+  {
+    "id": "aks301-v3-tm05-08",
+    "phase": "pra-uts",
+    "tm": 5,
+    "topic": "Relational Databases and Enterprise Systems",
+    "category": "Konsep",
+    "front": "Saat goods receipt diposting sebelum invoice datang, untuk apa akun GR/IR?",
+    "back": "Akun sementara penghubung penerimaan barang dan invoice pemasok yang kelak dicocokkan."
+  },
+  {
+    "id": "aks301-v3-tm05-09",
+    "phase": "pra-uts",
+    "tm": 5,
+    "topic": "Relational Databases and Enterprise Systems",
+    "category": "Mekanisme",
+    "front": "Receipt hanya menyimpan Invoice_Number. Bagaimana mengambil nama Customer pemilik invoice?",
+    "back": "JOIN Receipt ke Invoice lewat Invoice_Number, lalu ke Customer lewat Customer_ID."
+  },
+  {
     "id": "aks301-v2-tm06-01",
     "phase": "pra-uts",
     "tm": 6,
@@ -327,6 +462,33 @@ const cards: AdvancedStudyCard[] = [
     "category": "Konsep",
     "front": "Dalam REA, dari peristiwa apa saldo piutang pelanggan diturunkan?",
     "back": "Penjualan yang sudah ditagih dikurangi kas yang dialokasikan dan penyesuaian seperti retur atau diskon."
+  },
+  {
+    "id": "aks301-v3-tm06-07",
+    "phase": "pra-uts",
+    "tm": 6,
+    "topic": "Sales and Collections Business Process",
+    "category": "Dokumen",
+    "front": "Apa beda packing slip dan bill of lading saat barang dikirim?",
+    "back": "Packing slip merinci isi kiriman; bill of lading membuktikan penyerahan barang kepada carrier."
+  },
+  {
+    "id": "aks301-v3-tm06-08",
+    "phase": "pra-uts",
+    "tm": 6,
+    "topic": "Sales and Collections Business Process",
+    "category": "Dokumen",
+    "front": "Pelanggan mengembalikan barang yang sudah ditagih. Dokumen apa mengurangi piutangnya?",
+    "back": "Credit memo yang merujuk invoice asal, setelah retur disetujui."
+  },
+  {
+    "id": "aks301-v3-tm06-09",
+    "phase": "pra-uts",
+    "tm": 6,
+    "topic": "Sales and Collections Business Process",
+    "category": "Mekanisme",
+    "front": "Satu cash receipt melunasi dua invoice. Di mana Amount_Applied per invoice disimpan?",
+    "back": "Di linking table antara receipt dan invoice/penjualan; setiap baris menyimpan alokasinya."
   },
   {
     "id": "aks301-v2-tm07-01",
@@ -383,508 +545,409 @@ const cards: AdvancedStudyCard[] = [
     "back": "Dr Inventory; Cr Accounts Payable. PO yang baru diterbitkan belum menimbulkan jurnal ini."
   },
   {
-    "id": "aks301-v3-tm01-07", "phase": "pra-uts", "tm": 1,
-    "topic": "Accounting Information Systems and Firm Value", "category": "Prosedur",
-    "front": "Apa urutan information value chain dari data menuju keputusan?",
-    "back": "Data → information → knowledge → decision. Pengetahuan memberi makna pada informasi untuk memilih tindakan."
-  },
-  {
-    "id": "aks301-v3-tm01-08", "phase": "pra-uts", "tm": 1,
-    "topic": "Accounting Information Systems and Firm Value", "category": "Pengendalian",
-    "front": "Laporan penuh data mentah menutupi stok kritis. Teknik pelaporan apa membantu?",
-    "back": "Exception reporting: tampilkan penyimpangan yang perlu tindakan, misalnya stok di bawah reorder point."
-  },
-  {
-    "id": "aks301-v3-tm01-09", "phase": "pra-uts", "tm": 1,
-    "topic": "Accounting Information Systems and Firm Value", "category": "Konsep",
-    "front": "Kapan investasi informasi discretionary memberi nilai bersih positif?",
-    "back": "Saat manfaat yang diharapkan melebihi biaya: value of information = benefit − cost > 0."
-  },
-  {
-    "id": "aks301-v3-tm02-07", "phase": "pra-uts", "tm": 2,
-    "topic": "Data Analytics: Addressing Accounting Questions with Data", "category": "Prosedur",
-    "front": "Apa urutan ETL saat Master the Data?",
-    "back": "Extract → Transform → Load: ambil data, bersihkan/seragamkan, lalu muat ke tempat analisis."
-  },
-  {
-    "id": "aks301-v3-tm02-08", "phase": "pra-uts", "tm": 2,
-    "topic": "Data Analytics: Addressing Accounting Questions with Data", "category": "Perbandingan",
-    "front": "Banyak file berbeda format adalah Variety; kode pelanggan salah berulang adalah V apa?",
-    "back": "Veracity, yaitu keandalan dan ketepatan data; masalahnya perlu dibersihkan sebelum analisis."
-  },
-  {
-    "id": "aks301-v3-tm02-09", "phase": "pra-uts", "tm": 2,
-    "topic": "Data Analytics: Addressing Accounting Questions with Data", "category": "Konsep",
-    "front": "Apa arti Gray Zone pada Altman Z-score?",
-    "back": "Sinyal risiko yang belum pasti: perlu telaah lanjutan, bukan vonis bangkrut atau aman."
-  },
-  {
-    "id": "aks301-v3-tm03-07", "phase": "pra-uts", "tm": 3,
-    "topic": "Accountants as Business Analysts", "category": "Perbandingan",
-    "front": "Gateway apa yang dapat membuka satu atau beberapa cabang yang kondisinya benar?",
-    "back": "Inclusive gateway (OR). XOR membuka tepat satu; AND membuka semua cabang."
-  },
-  {
-    "id": "aks301-v3-tm03-08", "phase": "pra-uts", "tm": 3,
-    "topic": "Accountants as Business Analysts", "category": "Konsep",
-    "front": "Dalam BPMN, simbol apa menahan alur sampai tanggal tertentu?",
-    "back": "Intermediate timer event; proses berlanjut setelah waktu yang ditentukan tiba."
-  },
-  {
-    "id": "aks301-v3-tm03-09", "phase": "pra-uts", "tm": 3,
-    "topic": "Accountants as Business Analysts", "category": "Pengendalian",
-    "front": "Satu swimlane menyetujui PO sekaligus menyimpan barang. Konflik tugas apa terlihat?",
-    "back": "Authorization dan custody digabung; pemegang barang tidak seharusnya menyetujui pembeliannya sendiri."
-  },
-  {
-    "id": "aks301-v3-tm04-07", "phase": "pra-uts", "tm": 4,
-    "topic": "Data Modeling", "category": "Mekanisme",
-    "front": "Pada relasi Department 1:N Employee, di tabel mana Department_ID menjadi foreign key?",
-    "back": "Di Employee, yaitu sisi banyak; setiap karyawan menunjuk departemen induknya."
-  },
-  {
-    "id": "aks301-v3-tm04-08", "phase": "pra-uts", "tm": 4,
-    "topic": "Data Modeling", "category": "Konsep",
-    "front": "Customer–Orders bertanda 0..* di sisi Orders. Bolehkah customer belum punya order?",
-    "back": "Boleh. Minimum 0 berarti customer dapat ada sebelum pesanan pertamanya."
-  },
-  {
-    "id": "aks301-v3-tm04-09", "phase": "pra-uts", "tm": 4,
-    "topic": "Data Modeling", "category": "Perbandingan",
-    "front": "Invoice_Line tidak dapat ada tanpa Invoice. Composition atau aggregation?",
-    "back": "Composition: bagian bergantung pada induk; di UML diamond hitam berada di sisi Invoice."
-  },
-  {
-    "id": "aks301-v3-tm05-07", "phase": "pra-uts", "tm": 5,
-    "topic": "Relational Databases and Enterprise Systems", "category": "Prosedur",
-    "front": "Dalam SQL, klausa apa memilih tabel asal dan apa menyaring baris?",
-    "back": "FROM memilih tabel asal; WHERE menyaring baris sebelum hasil ditampilkan atau diagregasi."
-  },
-  {
-    "id": "aks301-v3-tm05-08", "phase": "pra-uts", "tm": 5,
-    "topic": "Relational Databases and Enterprise Systems", "category": "Konsep",
-    "front": "Saat goods receipt diposting sebelum invoice datang, untuk apa akun GR/IR?",
-    "back": "Akun sementara penghubung penerimaan barang dan invoice pemasok yang kelak dicocokkan."
-  },
-  {
-    "id": "aks301-v3-tm05-09", "phase": "pra-uts", "tm": 5,
-    "topic": "Relational Databases and Enterprise Systems", "category": "Mekanisme",
-    "front": "Receipt hanya menyimpan Invoice_Number. Bagaimana mengambil nama Customer pemilik invoice?",
-    "back": "JOIN Receipt ke Invoice lewat Invoice_Number, lalu ke Customer lewat Customer_ID."
-  },
-  {
-    "id": "aks301-v3-tm06-07", "phase": "pra-uts", "tm": 6,
-    "topic": "Sales and Collections Business Process", "category": "Dokumen",
-    "front": "Apa beda packing slip dan bill of lading saat barang dikirim?",
-    "back": "Packing slip merinci isi kiriman; bill of lading membuktikan penyerahan barang kepada carrier."
-  },
-  {
-    "id": "aks301-v3-tm06-08", "phase": "pra-uts", "tm": 6,
-    "topic": "Sales and Collections Business Process", "category": "Dokumen",
-    "front": "Pelanggan mengembalikan barang yang sudah ditagih. Dokumen apa mengurangi piutangnya?",
-    "back": "Credit memo yang merujuk invoice asal, setelah retur disetujui."
-  },
-  {
-    "id": "aks301-v3-tm06-09", "phase": "pra-uts", "tm": 6,
-    "topic": "Sales and Collections Business Process", "category": "Mekanisme",
-    "front": "Satu cash receipt melunasi dua invoice. Di mana Amount_Applied per invoice disimpan?",
-    "back": "Di linking table antara receipt dan invoice/penjualan; setiap baris menyimpan alokasinya."
-  },
-  {
-    "id": "aks301-v3-tm07-07", "phase": "pra-uts", "tm": 7,
-    "topic": "Purchases and Payments Business Process", "category": "Dokumen",
+    "id": "aks301-v3-tm07-07",
+    "phase": "pra-uts",
+    "tm": 7,
+    "topic": "Purchases and Payments Business Process",
+    "category": "Dokumen",
     "front": "Barang dari vendor rusak dan nilai utang harus dikurangi. Dokumen apa diterbitkan pembeli?",
     "back": "Debit memo: pemberitahuan pengurangan jumlah yang terutang kepada vendor."
   },
   {
-    "id": "aks301-v3-tm07-08", "phase": "pra-uts", "tm": 7,
-    "topic": "Purchases and Payments Business Process", "category": "Pengendalian",
+    "id": "aks301-v3-tm07-08",
+    "phase": "pra-uts",
+    "tm": 7,
+    "topic": "Purchases and Payments Business Process",
+    "category": "Pengendalian",
     "front": "Kontrol apa menangkap dua invoice bernomor sama dari vendor yang sama?",
     "back": "Cek keunikan Vendor_ID + Invoice_Number serta status pembayarannya sebelum invoice disetujui."
   },
   {
-    "id": "aks301-v3-tm07-09", "phase": "pra-uts", "tm": 7,
-    "topic": "Purchases and Payments Business Process", "category": "Konsep",
+    "id": "aks301-v3-tm07-09",
+    "phase": "pra-uts",
+    "tm": 7,
+    "topic": "Purchases and Payments Business Process",
+    "category": "Konsep",
     "front": "Dalam REA pembelian, dari event apa saldo utang usaha diturunkan?",
     "back": "Pembelian/barang diterima yang menimbulkan tagihan, dikurangi pembayaran dan penyesuaian yang diterapkan."
   },
   {
-    "id": "aks301-tm08-01",
+    "id": "aks301-v3-tm08-01",
     "phase": "pra-uas",
     "tm": 8,
-    "topic": "Pengendalian Internal COSO Framework",
-    "category": "Definisi",
-    "front": "Definisi Pengendalian Internal COSO",
-    "back": "Proses yang dipengaruhi oleh dewan komisaris, manajemen, dan personel untuk memberikan keyakinan memadai atas pencapaian tujuan operasi, pelaporan, dan kepatuhan. Rujukan: Richardson et al. AIS 4e · Ch. 11, hal. cetak 386-408 (PDF 411-433)."
+    "topic": "Conversion Business Process",
+    "category": "Konsep",
+    "front": "Alur biaya conversion",
+    "back": "Raw materials → WIP → finished goods → COGS; COGM adalah transfer produk selesai, COGS biaya produk terjual. Rujukan: Richardson AIS 4e, Ch.9 pp.350–365 (PDF 375–390)."
   },
   {
-    "id": "aks301-tm08-02",
+    "id": "aks301-v3-tm08-02",
     "phase": "pra-uas",
     "tm": 8,
-    "topic": "Pengendalian Internal COSO Framework",
+    "topic": "Conversion Business Process",
     "category": "Konsep",
-    "front": "Tiga Kategori Tujuan Pengendalian COSO",
-    "back": "(1) Operations Objectives (efektivitas operasional), (2) Reporting Objectives (keandalan laporan), dan (3) Compliance Objectives (kepatuhan hukum). Rujukan: Richardson et al. AIS 4e · Ch. 11, hal. cetak 386-408 (PDF 411-433)."
+    "front": "Rumus COGM",
+    "back": "WIP awal + bahan langsung terpakai + tenaga kerja langsung + overhead dibebankan − WIP akhir. Rujukan: Richardson AIS 4e, Ch.9 pp.350–365 (PDF 375–390)."
   },
   {
-    "id": "aks301-tm08-03",
+    "id": "aks301-v3-tm08-03",
     "phase": "pra-uas",
     "tm": 8,
-    "topic": "Pengendalian Internal COSO Framework",
+    "topic": "Conversion Business Process",
     "category": "Konsep",
-    "front": "Lima Komponen Pengendalian Internal COSO",
-    "back": "(1) Control Environment, (2) Risk Assessment, (3) Control Activities, (4) Information & Communication, dan (5) Monitoring Activities. Rujukan: Richardson et al. AIS 4e · Ch. 11, hal. cetak 386-408 (PDF 411-433)."
+    "front": "BOM versus material issue",
+    "back": "BOM memuat rencana bahan; material issue mencatat pemakaian aktual. Selisih perlu investigasi dan approval. Rujukan: Richardson AIS 4e, Ch.9 pp.350–365 (PDF 375–390)."
   },
   {
-    "id": "aks301-tm08-04",
+    "id": "aks301-v3-tm08-04",
     "phase": "pra-uas",
     "tm": 8,
-    "topic": "Pengendalian Internal COSO Framework",
-    "category": "Klasifikasi",
-    "front": "Tiga Tipe Pengendalian Berdasarkan Waktu",
-    "back": "Preventif (mencegah kesalahan terjadi), Detektif (menemukan kesalahan yang lolos), dan Korektif (memperbaiki dampak kesalahan yang ditemukan). Rujukan: Richardson et al. AIS 4e · Ch. 11, hal. cetak 386-408 (PDF 411-433)."
+    "topic": "Conversion Business Process",
+    "category": "Konsep",
+    "front": "Model WIP",
+    "back": "WIP dapat dihitung dari biaya event pekerjaan belum selesai; tidak harus menjadi kelas resource tersendiri pada model generik. Rujukan: Richardson AIS 4e, Ch.9 pp.350–365 (PDF 375–390)."
   },
   {
-    "id": "aks301-tm08-05",
+    "id": "aks301-v3-tm08-05",
     "phase": "pra-uas",
     "tm": 8,
-    "topic": "Pengendalian Internal COSO Framework",
-    "category": "Hukum",
-    "front": "Sarbanes-Oxley Act (SOX) Section 404",
-    "back": "Mewajibkan manajemen perusahaan publik menilai efektivitas pengendalian internal pelaporan keuangan (ICFR) dan diaudit auditor independen. Rujukan: Richardson et al. AIS 4e · Ch. 11, hal. cetak 386-408 (PDF 411-433)."
+    "topic": "Conversion Business Process",
+    "category": "Konsep",
+    "front": "Linking table conversion",
+    "back": "Hubungan banyak material issue–bahan dan labor operations–pegawai memakai tabel penghubung dengan data jumlah/jam. Rujukan: Richardson AIS 4e, Ch.9 pp.350–365 (PDF 375–390)."
   },
   {
-    "id": "aks301-tm08-06",
+    "id": "aks301-v3-tm08-06",
     "phase": "pra-uas",
     "tm": 8,
-    "topic": "Pengendalian Internal COSO Framework",
+    "topic": "Conversion Business Process",
     "category": "Konsep",
-    "front": "COSO Enterprise Risk Management (ERM)",
-    "back": "Kerangka kerja perluasan COSO yang mengintegrasikan pengelolaan risiko ke dalam strategi korporasi dan penciptaan nilai pemegang saham. Rujukan: Richardson et al. AIS 4e · Ch. 11, hal. cetak 386-408 (PDF 411-433)."
+    "front": "Tanggal production authorization",
+    "back": "Bedakan tanggal otorisasi, tanggal selesai terjadwal, dan tanggal selesai aktual; jangan menyamakannya. Rujukan: Richardson AIS 4e, Ch.9 pp.350–365 (PDF 375–390)."
   },
   {
-    "id": "aks301-tm09-01",
+    "id": "aks301-v3-tm09-01",
     "phase": "pra-uas",
     "tm": 9,
-    "topic": "Keamanan Informasi & Computer Fraud",
+    "topic": "Integrated Project",
     "category": "Konsep",
-    "front": "Triad Keamanan Informasi (CIA Triad)",
-    "back": "Confidentiality (Kerahasiaan data dari pihak tak berhak), Integrity (Akurasi & keutuhan data), dan Availability (Ketersediaan sistem saat dibutuhkan). Rujukan: Richardson et al. AIS 4e · Ch. 12, hal. cetak 420-439 (PDF 445-464)."
+    "front": "Urutan Integrated Project",
+    "back": "Kebutuhan → model proses → UML/REA terpadu → database → query dan validasi. Rujukan: Richardson AIS 4e, Ch.10 pp.376–385 (PDF 401–410)."
   },
   {
-    "id": "aks301-tm09-02",
+    "id": "aks301-v3-tm09-02",
     "phase": "pra-uas",
     "tm": 9,
-    "topic": "Keamanan Informasi & Computer Fraud",
+    "topic": "Integrated Project",
     "category": "Konsep",
-    "front": "Metode Phishing & Social Engineering",
-    "back": "Upaya memanipulasi psikologis korban melalui email atau situs web tiruan palsu untuk mencuri kredensial login akun dan data rahasia. Rujukan: Richardson et al. AIS 4e · Ch. 12, hal. cetak 420-439 (PDF 445-464)."
+    "front": "Kunci dan integritas referensial",
+    "back": "PK unik dan tidak null; FK mengarah data yang valid sesuai aturan. Ini tidak membuktikan substansi barang. Rujukan: Richardson AIS 4e, Ch.10 pp.376–385 (PDF 401–410)."
   },
   {
-    "id": "aks301-tm09-03",
+    "id": "aks301-v3-tm09-03",
     "phase": "pra-uas",
     "tm": 9,
-    "topic": "Keamanan Informasi & Computer Fraud",
+    "topic": "Integrated Project",
     "category": "Konsep",
-    "front": "Ransomware & Malware",
-    "back": "Perangkat lunak jahat yang mengenkripsi seluruh file dan basis data sistem perusahaan, lalu menuntut uang tebusan untuk kunci pembuka enkripsi. Rujukan: Richardson et al. AIS 4e · Ch. 12, hal. cetak 420-439 (PDF 445-464)."
+    "front": "Saldo piutang",
+    "back": "Masukkan saldo awal, penjualan, alokasi kas, retur/kredit dan penyesuaian; nyatakan asumsi formula sederhana. Rujukan: Richardson AIS 4e, Ch.10 pp.376–385 (PDF 401–410)."
   },
   {
-    "id": "aks301-tm09-04",
+    "id": "aks301-v3-tm09-04",
     "phase": "pra-uas",
     "tm": 9,
-    "topic": "Keamanan Informasi & Computer Fraud",
+    "topic": "Integrated Project",
     "category": "Konsep",
-    "front": "Enkripsi Simetris vs Asimetris",
-    "back": "Simetris memakai satu kunci yang sama untuk enkripsi dan dekripsi (cepat). Asimetris memakai sepasang Public Key dan Private Key. Rujukan: Richardson et al. AIS 4e · Ch. 12, hal. cetak 420-439 (PDF 445-464)."
+    "front": "Grain dan join",
+    "back": "Satu baris mewakili unit yang jelas. Join banyak baris dapat menggandakan total; agregasikan dan rekonsiliasi. Rujukan: Richardson AIS 4e, Ch.10 pp.376–385 (PDF 401–410)."
   },
   {
-    "id": "aks301-tm09-05",
+    "id": "aks301-v3-tm09-05",
     "phase": "pra-uas",
     "tm": 9,
-    "topic": "Keamanan Informasi & Computer Fraud",
+    "topic": "Integrated Project",
     "category": "Konsep",
-    "front": "Fungsi Tanda Tangan Digital (Digital Signature)",
-    "back": "Menjamin keaslian pengirim (autentikasi), keutuhan isi dokumen (integritas), dan pencegahan penyangkalan transaksi (non-repudiation). Rujukan: Richardson et al. AIS 4e · Ch. 12, hal. cetak 420-439 (PDF 445-464)."
+    "front": "Audit trail",
+    "back": "Tautkan dokumen, pelaku, waktu dan perubahan. Penelusuran ke bahan baku memerlukan traceability yang tersedia. Rujukan: Richardson AIS 4e, Ch.10 pp.376–385 (PDF 401–410)."
   },
   {
-    "id": "aks301-tm09-06",
+    "id": "aks301-v3-tm09-06",
     "phase": "pra-uas",
     "tm": 9,
-    "topic": "Keamanan Informasi & Computer Fraud",
-    "category": "Mekanisme",
-    "front": "Pusat Pemulihan Bencana: Hot Site vs Cold Site",
-    "back": "Hot Site adalah fasilitas komputasi duplikat lengkap yang siap beroperasi dalam hitungan menit. Cold Site hanya ruang gedung tanpa instalasi komputer lengkap. Rujukan: Richardson et al. AIS 4e · Ch. 12, hal. cetak 420-439 (PDF 445-464)."
+    "topic": "Integrated Project",
+    "category": "Konsep",
+    "front": "Saldo seimbang",
+    "back": "Debit = kredit membantu aritmetika; transaksi yang sama-sama terlewat tetap dapat membuat laporan salah. Rujukan: Richardson AIS 4e, Ch.10 pp.376–385 (PDF 401–410)."
   },
   {
-    "id": "aks301-tm10-01",
+    "id": "aks301-v3-tm10-01",
     "phase": "pra-uas",
     "tm": 10,
-    "topic": "Audit Sistem Informasi & Tata Kelola TI (COBIT)",
-    "category": "Prosedur",
-    "front": "Auditing AROUND the Computer",
-    "back": "Mengabaikan pemrosesan komputer internal; auditor hanya mencocokkan dokumen input sumber dengan laporan output cetak (hanya cocok untuk sistem sederhana). Rujukan: Richardson et al. AIS 4e · Ch. 11 dan 13, hal. 403-408 dan 450-463 (PDF 428-433 dan 475-488)."
+    "topic": "Internal Controls dan COSO",
+    "category": "Konsep",
+    "front": "Tiga tujuan COSO",
+    "back": "Operations, reporting, compliance. Reporting mencakup laporan internal/eksternal dan keuangan/nonkeuangan. Rujukan: Richardson AIS 4e, Ch.11 pp.386–408 (PDF 411–433)."
   },
   {
-    "id": "aks301-tm10-02",
+    "id": "aks301-v3-tm10-02",
     "phase": "pra-uas",
     "tm": 10,
-    "topic": "Audit Sistem Informasi & Tata Kelola TI (COBIT)",
-    "category": "Prosedur",
-    "front": "Auditing THROUGH the Computer",
-    "back": "Auditor menguji langsung logika pemrograman dan kontrol internal yang tertanam di dalam perangkat lunak komputer. Rujukan: Richardson et al. AIS 4e · Ch. 11 dan 13, hal. 403-408 dan 450-463 (PDF 428-433 dan 475-488)."
+    "topic": "Internal Controls dan COSO",
+    "category": "Konsep",
+    "front": "Lima komponen COSO",
+    "back": "Control environment; risk assessment; control activities; information/communication; monitoring. Rujukan: Richardson AIS 4e, Ch.11 pp.386–408 (PDF 411–433)."
   },
   {
-    "id": "aks301-tm10-03",
+    "id": "aks301-v3-tm10-03",
     "phase": "pra-uas",
     "tm": 10,
-    "topic": "Audit Sistem Informasi & Tata Kelola TI (COBIT)",
-    "category": "Prosedur",
-    "front": "Test Data Approach (Pendekatan Data Uji)",
-    "back": "Auditor memasukkan data transaksi buatan (valid dan tidak valid) ke dalam program klien untuk memverifikasi apakah kontrol sistem menolak data salah. Rujukan: Richardson et al. AIS 4e · Ch. 11 dan 13, hal. 403-408 dan 450-463 (PDF 428-433 dan 475-488)."
+    "topic": "Internal Controls dan COSO",
+    "category": "Konsep",
+    "front": "17 prinsip COSO 2013",
+    "back": "Pembagian 5 + 4 + 3 + 3 + 2 pada lima komponen. Periksa hadir, berfungsi, dan bekerja bersama. Rujukan: Richardson AIS 4e, Ch.11 pp.386–408 (PDF 411–433)."
   },
   {
-    "id": "aks301-tm10-04",
+    "id": "aks301-v3-tm10-04",
     "phase": "pra-uas",
     "tm": 10,
-    "topic": "Audit Sistem Informasi & Tata Kelola TI (COBIT)",
-    "category": "Prosedur",
-    "front": "Parallel Simulation (Simulasi Paralel)",
-    "back": "Auditor menulis kode simulasi independen yang menjalankan data transaksi riil klien, lalu membandingkan outputnya dengan hasil produksi sistem klien. Rujukan: Richardson et al. AIS 4e · Ch. 11 dan 13, hal. 403-408 dan 450-463 (PDF 428-433 dan 475-488)."
+    "topic": "Internal Controls dan COSO",
+    "category": "Konsep",
+    "front": "Preventif, detektif, korektif",
+    "back": "Mencegah masalah; menemukan masalah; memperbaiki/memulihkan. Contoh: approval, rekonsiliasi, restore. Rujukan: Richardson AIS 4e, Ch.11 pp.386–408 (PDF 411–433)."
   },
   {
-    "id": "aks301-tm10-05",
+    "id": "aks301-v3-tm10-05",
     "phase": "pra-uas",
     "tm": 10,
-    "topic": "Audit Sistem Informasi & Tata Kelola TI (COBIT)",
-    "category": "Standar",
-    "front": "Kerangka Kerja Tata Kelola TI: COBIT 2019",
-    "back": "Control Objectives for Information and Related Technologies (ISACA) yang menyelaraskan tata kelola TI dengan tujuan strategis bisnis korporasi. Rujukan: Richardson et al. AIS 4e · Ch. 11 dan 13, hal. 403-408 dan 450-463 (PDF 428-433 dan 475-488)."
+    "topic": "Internal Controls dan COSO",
+    "category": "Konsep",
+    "front": "Desain versus pelaksanaan",
+    "back": "Desain: mampu mengatasi risiko jika dijalankan. Pelaksanaan: benar-benar berjalan konsisten pada periode relevan. Rujukan: Richardson AIS 4e, Ch.11 pp.386–408 (PDF 411–433)."
   },
   {
-    "id": "aks301-tm10-06",
+    "id": "aks301-v3-tm10-06",
     "phase": "pra-uas",
     "tm": 10,
-    "topic": "Audit Sistem Informasi & Tata Kelola TI (COBIT)",
-    "category": "Klasifikasi",
-    "front": "Pemisahan Tugas Khusus Departemen TI",
-    "back": "Analis Sistem (merancang sistem) harus terpisah dari Programmer (menulis kode) dan terpisah dari Operator Komputer (menjalankan live system). Rujukan: Richardson et al. AIS 4e · Ch. 11 dan 13, hal. 403-408 dan 450-463 (PDF 428-433 dan 475-488)."
+    "topic": "Internal Controls dan COSO",
+    "category": "Konsep",
+    "front": "IC dan ERM",
+    "back": "IC 2013: 5 komponen/17 prinsip. ERM 2004: 8 komponen. ERM 2017: 5 komponen/20 prinsip. Jangan dicampur. Rujukan: Richardson AIS 4e, Ch.11 pp.386–408 (PDF 411–433)."
   },
   {
-    "id": "aks301-tm11-01",
+    "id": "aks301-v3-tm11-01",
     "phase": "pra-uas",
     "tm": 11,
-    "topic": "Analitika Data Akuntansi (Data Analytics) & Big Data",
+    "topic": "Cybersecurity dan Computer Fraud",
     "category": "Konsep",
-    "front": "Karakteristik Big Data (5V)",
-    "back": "Volume (besaran ukuran data), Velocity (kecepatan data tercipta), Variety (ragam format), Veracity (keandalan data), dan Value (nilai bisnis). Rujukan: Richardson et al. AIS 4e · Ch. 2 dan 3, hal. 49-60 dan 110-126 (PDF 74-85 dan 135-151)."
+    "front": "CIA",
+    "back": "Confidentiality: rahasia; integrity: utuh/akurat; availability: tersedia. Satu insiden dapat memengaruhi beberapa tujuan. Rujukan: Richardson AIS 4e, Ch.12 pp.420–439 (PDF 445–464)."
   },
   {
-    "id": "aks301-tm11-02",
+    "id": "aks301-v3-tm11-02",
     "phase": "pra-uas",
     "tm": 11,
-    "topic": "Analitika Data Akuntansi (Data Analytics) & Big Data",
+    "topic": "Cybersecurity dan Computer Fraud",
     "category": "Konsep",
-    "front": "Model Siklus Analitika IMPACT",
-    "back": "Identify questions, Master the data, Perform test plan, Address and refine results, Communicate insights, Track outcomes. Rujukan: Richardson et al. AIS 4e · Ch. 2 dan 3, hal. 49-60 dan 110-126 (PDF 74-85 dan 135-151)."
+    "front": "Authentication dan authorization",
+    "back": "Verifikasi identitas berbeda dari pembatasan tindakan; pengguna sah tetap memerlukan least privilege. Rujukan: Richardson AIS 4e, Ch.12 pp.420–439 (PDF 445–464)."
   },
   {
-    "id": "aks301-tm11-03",
+    "id": "aks301-v3-tm11-03",
     "phase": "pra-uas",
     "tm": 11,
-    "topic": "Analitika Data Akuntansi (Data Analytics) & Big Data",
+    "topic": "Cybersecurity dan Computer Fraud",
     "category": "Konsep",
-    "front": "Analisis Deskriptif vs Diagnostik",
-    "back": "Deskriptif menjawab: \"Apa yang telah terjadi?\" (summary rasio). Diagnostik menjawab: \"Mengapa hal itu bisa terjadi?\" (analisis varians mendalam). Rujukan: Richardson et al. AIS 4e · Ch. 2 dan 3, hal. 49-60 dan 110-126 (PDF 74-85 dan 135-151)."
+    "front": "Hash, encryption, signature",
+    "back": "Hash merangkum integritas; encryption menjaga rahasia; signature mendukung asal/integritas dengan kepercayaan kunci. Rujukan: Richardson AIS 4e, Ch.12 pp.420–439 (PDF 445–464)."
   },
   {
-    "id": "aks301-tm11-04",
+    "id": "aks301-v3-tm11-04",
     "phase": "pra-uas",
     "tm": 11,
-    "topic": "Analitika Data Akuntansi (Data Analytics) & Big Data",
+    "topic": "Cybersecurity dan Computer Fraud",
     "category": "Konsep",
-    "front": "Analisis Prediktif vs Preskriptif",
-    "back": "Prediktif menjawab: \"Apa yang mungkin terjadi di masa depan?\" (regresi, tren). Preskriptif menjawab: \"Tindakan optimal apa yang harus diambil?\" (optimasi). Rujukan: Richardson et al. AIS 4e · Ch. 2 dan 3, hal. 49-60 dan 110-126 (PDF 74-85 dan 135-151)."
+    "front": "RPO versus RTO",
+    "back": "RPO: titik pemulihan data/toleransi kehilangan. RTO: target durasi pemulihan layanan. Interval backup bukan otomatis target. Rujukan: Richardson AIS 4e, Ch.12 pp.420–439 (PDF 445–464)."
   },
   {
-    "id": "aks301-tm11-05",
+    "id": "aks301-v3-tm11-05",
     "phase": "pra-uas",
     "tm": 11,
-    "topic": "Analitika Data Akuntansi (Data Analytics) & Big Data",
+    "topic": "Cybersecurity dan Computer Fraud",
     "category": "Konsep",
-    "front": "Audit Data Analytics (ADA) pada Buku Besar",
-    "back": "Menguji seluruh populasi jurnal umum untuk menemukan anomali: jurnal manual di akhir pekan, user ID mencurigakan, atau pembulatan angka janggal. Rujukan: Richardson et al. AIS 4e · Ch. 2 dan 3, hal. 49-60 dan 110-126 (PDF 74-85 dan 135-151)."
+    "front": "Fraud triangle",
+    "back": "Pressure/incentive, opportunity, rationalization membantu asesmen risiko; keberadaannya belum bukti individu curang. Rujukan: Richardson AIS 4e, Ch.12 pp.420–439 (PDF 445–464)."
   },
   {
-    "id": "aks301-tm11-06",
+    "id": "aks301-v3-tm11-06",
     "phase": "pra-uas",
     "tm": 11,
-    "topic": "Analitika Data Akuntansi (Data Analytics) & Big Data",
+    "topic": "Cybersecurity dan Computer Fraud",
     "category": "Konsep",
-    "front": "Visualisasi Data Akuntansi",
-    "back": "Penyajian pola data interaktif melalui grafik, dashboard PowerBI/Tableau yang memudahkan identifikasi outlier bagi pengambil keputusan. Rujukan: Richardson et al. AIS 4e · Ch. 2 dan 3, hal. 49-60 dan 110-126 (PDF 74-85 dan 135-151)."
+    "front": "BCP, DRP dan SOC",
+    "back": "BCP mencakup kelangsungan bisnis; DRP pemulihan TI. SOC 1 fokus ICFR pengguna; SOC 2 kriteria Trust Services sesuai cakupan. Rujukan: Richardson AIS 4e, Ch.12 pp.420–439 (PDF 445–464)."
   },
   {
-    "id": "aks301-tm12-01",
+    "id": "aks301-v3-tm12-01",
     "phase": "pra-uas",
     "tm": 12,
-    "topic": "Robotic Process Automation (RPA) & AI dalam SIA",
-    "category": "Mekanisme",
-    "front": "Definisi Robotic Process Automation (RPA)",
-    "back": "Aplikasi perangkat lunak bot yang meniru klik dan interaksi manusia untuk mengeksekusi tugas rutin berulang berbasis aturan (rule-based). Rujukan: Richardson et al. AIS 4e · Ch. 15, hal. 508-516 (PDF 533-541)."
+    "topic": "Reporting dan XBRL",
+    "category": "Konsep",
+    "front": "Warehouse, mart, lake",
+    "back": "Warehouse mengintegrasi data historis; mart subset kebutuhan tertentu; lake dapat menampung data terstruktur/tidak terstruktur. Rujukan: Richardson AIS 4e, Ch.14 pp.470–483 (PDF 495–508)."
   },
   {
-    "id": "aks301-tm12-02",
+    "id": "aks301-v3-tm12-02",
     "phase": "pra-uas",
     "tm": 12,
-    "topic": "Robotic Process Automation (RPA) & AI dalam SIA",
+    "topic": "Reporting dan XBRL",
     "category": "Konsep",
-    "front": "Kriteria Proses yang Ideal untuk RPA",
-    "back": "Volume transaksi tinggi, berbasis aturan terstruktur, data input digital konsisten, dan tingkat pengecualian (exceptions) yang rendah. Rujukan: Richardson et al. AIS 4e · Ch. 15, hal. 508-516 (PDF 533-541)."
+    "front": "Dashboard yang berguna",
+    "back": "Tentukan tujuan, definisi KPI, penyebut, tanggal refresh, sumber dan pemilik tindakan; banyak grafik bukan ukuran keberhasilan. Rujukan: Richardson AIS 4e, Ch.14 pp.470–483 (PDF 495–508)."
   },
   {
-    "id": "aks301-tm12-03",
+    "id": "aks301-v3-tm12-03",
     "phase": "pra-uas",
     "tm": 12,
-    "topic": "Robotic Process Automation (RPA) & AI dalam SIA",
-    "category": "Contoh",
-    "front": "Penerapan RPA pada Rekonsiliasi Bank",
-    "back": "Bot otomatis mengunduh rekening koran bank setiap pagi, mencocokkan mutasi kas dengan buku besar ERP, dan menandai selisih saldo. Rujukan: Richardson et al. AIS 4e · Ch. 15, hal. 508-516 (PDF 533-541)."
+    "topic": "Reporting dan XBRL",
+    "category": "Konsep",
+    "front": "Taxonomy versus instance",
+    "back": "Taxonomy mendefinisikan konsep/tipe/hubungan; instance berisi fakta entitas beserta context dan unit. Rujukan: Richardson AIS 4e, Ch.14 pp.470–483 (PDF 495–508)."
   },
   {
-    "id": "aks301-tm12-04",
+    "id": "aks301-v3-tm12-04",
     "phase": "pra-uas",
     "tm": 12,
-    "topic": "Robotic Process Automation (RPA) & AI dalam SIA",
+    "topic": "Reporting dan XBRL",
     "category": "Konsep",
-    "front": "Optical Character Recognition (OCR) Cerdas",
-    "back": "Mengonversi gambar pindaian faktur vendor fisik atau PDF menjadi data teks terstruktur yang otomatis terinput ke akun utang usaha. Rujukan: Richardson et al. AIS 4e · Ch. 15, hal. 508-516 (PDF 533-541)."
+    "front": "Instant versus duration",
+    "back": "Saldo kas: satu tanggal (instant). Revenue: rentang periode (duration). Entity dan dimensi juga harus cocok. Rujukan: Richardson AIS 4e, Ch.14 pp.470–483 (PDF 495–508)."
   },
   {
-    "id": "aks301-tm12-05",
+    "id": "aks301-v3-tm12-05",
     "phase": "pra-uas",
     "tm": 12,
-    "topic": "Robotic Process Automation (RPA) & AI dalam SIA",
+    "topic": "Reporting dan XBRL",
     "category": "Konsep",
-    "front": "Machine Learning dalam Deteksi Anomali Jurnal",
-    "back": "Algoritma pembelajaran mesin tanpa pengawasan (Unsupervised ML) yang otomatis menandai pola transaksi yang menyimpang dari perilaku historis normal. Rujukan: Richardson et al. AIS 4e · Ch. 15, hal. 508-516 (PDF 533-541)."
+    "front": "Validasi XBRL",
+    "back": "Uji tag, context, unit, skala, tanda, ketelitian dan kelengkapan terhadap sumber; valid teknis belum benar secara akuntansi. Rujukan: Richardson AIS 4e, Ch.14 pp.470–483 (PDF 495–508)."
   },
   {
-    "id": "aks301-tm12-06",
+    "id": "aks301-v3-tm12-06",
     "phase": "pra-uas",
     "tm": 12,
-    "topic": "Robotic Process Automation (RPA) & AI dalam SIA",
+    "topic": "Reporting dan XBRL",
     "category": "Konsep",
-    "front": "Tata Kelola & Pengendalian Bot (Bot Governance)",
-    "back": "Memerlukan manajemen kredensial akses bot, pemantauan log aktivitas, dan pengujian kontrol saat ada pembaruan versi sistem ERP. Rujukan: Richardson et al. AIS 4e · Ch. 15, hal. 508-516 (PDF 533-541)."
+    "front": "XBRL GL",
+    "back": "Kerangka pertukaran data tingkat transaksi/ledger; berbeda dari fakta agregat taxonomy pelaporan keuangan. Rujukan: Richardson AIS 4e, Ch.14 pp.470–483 (PDF 495–508)."
   },
   {
-    "id": "aks301-tm13-01",
+    "id": "aks301-v3-tm13-01",
     "phase": "pra-uas",
     "tm": 13,
-    "topic": "Blockchain, Smart Contracts & Cloud Accounting",
+    "topic": "Blockchain dan AI Automation",
     "category": "Konsep",
-    "front": "Karakteristik Buku Besar Terdistribusi (Blockchain)",
-    "back": "Ledger memakai hash, validasi dan aturan jaringan untuk menjaga konsistensi. Algoritme, transparansi dan desentralisasi bergantung rancangan; perubahan sulit dilakukan tanpa jejak, tetapi integritas ledger tidak membuktikan transaksi dunia nyata benar. Rujukan: Richardson et al. AIS 4e · Ch. 15, hal. 494-508 (PDF 519-533)."
+    "front": "Blockchain dan batasnya",
+    "back": "Hash, signature, konsensus dan replikasi membantu konsistensi riwayat. Integritas ledger belum membuktikan transaksi fisik benar. Rujukan: Richardson AIS 4e, Ch.15 pp.494–516 (PDF 519–541)."
   },
   {
-    "id": "aks301-tm13-02",
+    "id": "aks301-v3-tm13-02",
     "phase": "pra-uas",
     "tm": 13,
-    "topic": "Blockchain, Smart Contracts & Cloud Accounting",
+    "topic": "Blockchain dan AI Automation",
     "category": "Konsep",
-    "front": "Triple-Entry Accounting",
-    "back": "Grigg (2005) menekankan receipt bersama yang ditandatangani secara kriptografis di samping pencatatan internal. Konsep ini tidak mensyaratkan shared public blockchain. Rujukan: Grigg (2005), Triple Entry Accounting, bagian Signed Receipts, https://iang.org/papers/triple_entry.html."
+    "front": "Oracle problem",
+    "back": "Input sensor/petugas/sistem luar dapat salah. Uji sumber, identitas, inspeksi, approval dan exception. Rujukan: Richardson AIS 4e, Ch.15 pp.494–516 (PDF 519–541)."
   },
   {
-    "id": "aks301-tm13-03",
+    "id": "aks301-v3-tm13-03",
     "phase": "pra-uas",
     "tm": 13,
-    "topic": "Blockchain, Smart Contracts & Cloud Accounting",
-    "category": "Mekanisme",
-    "front": "Smart Contracts (Kontrak Pintar)",
-    "back": "Program menjalankan ketentuan yang dikodekan ketika input/kondisi dipenuhi. Input atau oracle dapat salah; eksekusi otomatis tidak sendirian membuktikan hak, kewajiban atau nilai transaksi. Rujukan: Richardson et al. AIS 4e · Ch. 15, hal. 494-508 (PDF 519-533)."
+    "topic": "Blockchain dan AI Automation",
+    "category": "Konsep",
+    "front": "Triple-entry",
+    "back": "Shared signed receipt mendukung catatan pihak terkait; bukan sisi debit ketiga atau pengganti seluruh double-entry. Rujukan: Richardson AIS 4e, Ch.15 pp.494–516 (PDF 519–541)."
   },
   {
-    "id": "aks301-tm13-04",
+    "id": "aks301-v3-tm13-04",
     "phase": "pra-uas",
     "tm": 13,
-    "topic": "Blockchain, Smart Contracts & Cloud Accounting",
-    "category": "Perbandingan",
-    "front": "Public vs Private (Permissioned) Blockchain",
-    "back": "Public (siapa saja boleh bergabung, misal: Bitcoin). Private/Consortium (hanya entitas yang diizinkan dan diverifikasi yang boleh mengakses jaringan). Rujukan: Richardson et al. AIS 4e · Ch. 15, hal. 494-508 (PDF 519-533)."
+    "topic": "Blockchain dan AI Automation",
+    "category": "Konsep",
+    "front": "RPA dan AI",
+    "back": "RPA menjalankan aturan berulang; AI/ML memakai kemampuan/pola untuk tugas seperti klasifikasi. Keduanya butuh kontrol. Rujukan: Richardson AIS 4e, Ch.15 pp.494–516 (PDF 519–541)."
   },
   {
-    "id": "aks301-tm13-05",
+    "id": "aks301-v3-tm13-05",
     "phase": "pra-uas",
     "tm": 13,
-    "topic": "Blockchain, Smart Contracts & Cloud Accounting",
+    "topic": "Blockchain dan AI Automation",
     "category": "Konsep",
-    "front": "Manfaat Cloud Accounting (SaaS)",
-    "back": "Akses laporan keuangan kapan saja di mana saja, skalabilitas kapasitas fleksibel, pencadangan data otomatis, dan biaya modal TI lebih rendah. Rujukan: Richardson et al. AIS 4e · Ch. 15, hal. 494-508 (PDF 519-533)."
+    "front": "Bot governance",
+    "back": "Identitas terpisah, least privilege, vault, approval, pengujian perubahan, exception, log serta retry idempotent. Rujukan: Richardson AIS 4e, Ch.15 pp.494–516 (PDF 519–541)."
   },
   {
-    "id": "aks301-tm13-06",
+    "id": "aks301-v3-tm13-06",
     "phase": "pra-uas",
     "tm": 13,
-    "topic": "Blockchain, Smart Contracts & Cloud Accounting",
+    "topic": "Blockchain dan AI Automation",
     "category": "Konsep",
-    "front": "Risiko Pengendalian Cloud Computing",
-    "back": "Periksa ketergantungan vendor, akses, privasi, kontinuitas dan pengendalian yang harus dijalankan pelanggan. Pilih laporan assurance yang sesuai risiko/cakupan serta periode; SOC 1 dan SOC 2 mempunyai tujuan berbeda, bukan kewajiban universal untuk semua cloud. Rujukan: Richardson et al. AIS 4e · Ch. 15, hal. 494-508 (PDF 519-533)."
+    "front": "Evaluasi AI",
+    "back": "Nilai false positive/negative, precision/recall, mutu data, bias dan drift. Akurasi saja dapat menyesatkan untuk kejadian langka. Rujukan: Richardson AIS 4e, Ch.15 pp.494–516 (PDF 519–541)."
   },
   {
-    "id": "aks301-tm14-01",
+    "id": "aks301-v3-tm14-01",
     "phase": "pra-uas",
     "tm": 14,
-    "topic": "Review Komprehensif UAS Sistem Informasi Akuntansi",
+    "topic": "Justifying and Planning IT Initiatives",
     "category": "Konsep",
-    "front": "Fokus Utama Soal Ujian Akhir Semester (UAS) SIA",
-    "back": "Perkiraan prioritas dari RPP dan materi: proses transaksi, kelemahan pengendalian, metode audit TI dan batas teknologi. Arsip UAS yang mendukung bentuk/bobot spesifik belum ditemukan. Rujukan: Richardson et al. AIS 4e · Ch. 10, Integrated Project, hal. 376-385 (PDF 401-410)."
+    "front": "Business case",
+    "back": "Kebutuhan, alternatif, manfaat, biaya, risiko, value proposition dan ukuran sukses; mulai dari masalah bisnis. Rujukan: Richardson AIS 4e, Ch.17 pp.550–571 (PDF 575–596)."
   },
   {
-    "id": "aks301-tm14-02",
+    "id": "aks301-v3-tm14-02",
     "phase": "pra-uas",
     "tm": 14,
-    "topic": "Review Komprehensif UAS Sistem Informasi Akuntansi",
+    "topic": "Justifying and Planning IT Initiatives",
     "category": "Konsep",
-    "front": "Mendiagnosis Single Point of Failure (SPOF)",
-    "back": "Mengidentifikasi kelemahan di mana kegagalan satu komponen kontrol atau staf tunggal dapat meruntuhkan seluruh keandalan sistem akuntansi. Rujukan: Richardson et al. AIS 4e · Ch. 10, Integrated Project, hal. 376-385 (PDF 401-410)."
+    "front": "NPV dan payback",
+    "back": "NPV mendiskontokan kas menurut waktu. Payback sederhana mengukur pemulihan investasi; nyatakan asumsi timing. Rujukan: Richardson AIS 4e, Ch.17 pp.550–571 (PDF 575–596)."
   },
   {
-    "id": "aks301-tm14-03",
+    "id": "aks301-v3-tm14-03",
     "phase": "pra-uas",
     "tm": 14,
-    "topic": "Review Komprehensif UAS Sistem Informasi Akuntansi",
+    "topic": "Justifying and Planning IT Initiatives",
     "category": "Konsep",
-    "front": "Analisis Celah Pemisahan Tugas (SoD Matrix)",
-    "back": "Memastikan tidak ada staf yang memegang akses gabungan yang berbahaya: misalnya staf yang membuat master data vendor tidak boleh memproses pembayaran faktur. Rujukan: Richardson et al. AIS 4e · Ch. 10, Integrated Project, hal. 376-385 (PDF 401-410)."
+    "front": "Lima fase SDLC",
+    "back": "Planning, analysis, design, implementation, maintenance. Perubahan besar dapat memulai siklus kembali. Rujukan: Richardson AIS 4e, Ch.17 pp.550–571 (PDF 575–596)."
   },
   {
-    "id": "aks301-tm14-04",
+    "id": "aks301-v3-tm14-04",
     "phase": "pra-uas",
     "tm": 14,
-    "topic": "Review Komprehensif UAS Sistem Informasi Akuntansi",
-    "category": "Standar",
-    "front": "Perlakuan Audit atas Bukti Elektronik",
-    "back": "Bukti digital memerlukan pemeliharaan jejak audit (audit trail) dan verifikasi bahwa pengendalian umum TI (GITC) berfungsi efektif sepanjang tahun. Rujukan: Richardson et al. AIS 4e · Ch. 10, Integrated Project, hal. 376-385 (PDF 401-410)."
+    "topic": "Justifying and Planning IT Initiatives",
+    "category": "Konsep",
+    "front": "Triple constraint",
+    "back": "Scope, time dan cost saling terkait; perubahan memerlukan analisis dampak, approval dan baseline baru. Rujukan: Richardson AIS 4e, Ch.17 pp.550–571 (PDF 575–596)."
   },
   {
-    "id": "aks301-tm14-05",
+    "id": "aks301-v3-tm14-05",
     "phase": "pra-uas",
     "tm": 14,
-    "topic": "Review Komprehensif UAS Sistem Informasi Akuntansi",
+    "topic": "Justifying and Planning IT Initiatives",
     "category": "Konsep",
-    "front": "Peran Laporan SOC 1 (SSAE 18 / ISAE 3402)",
-    "back": "SOC 1 berkaitan dengan pengendalian organisasi jasa yang relevan bagi pengendalian internal pelaporan keuangan entitas pengguna. Jenis, periode, pengecualian dan kontrol pelengkap pengguna harus dibaca. Rujukan standar: ISA 402 paragraf 8 dan 16-17. Rujukan: Richardson et al. AIS 4e · Ch. 10, Integrated Project, hal. 376-385 (PDF 401-410)."
+    "front": "WBS dan 100% rule",
+    "back": "Pecah seluruh lingkup, termasuk pekerjaan internal/eksternal/interim. Kelengkapan lingkup tidak berarti estimasi pasti. Rujukan: Richardson AIS 4e, Ch.17 pp.550–571 (PDF 575–596)."
   },
   {
-    "id": "aks301-tm14-06",
+    "id": "aks301-v3-tm14-06",
     "phase": "pra-uas",
     "tm": 14,
-    "topic": "Review Komprehensif UAS Sistem Informasi Akuntansi",
+    "topic": "Justifying and Planning IT Initiatives",
     "category": "Konsep",
-    "front": "Saran Sukses Ujian Akhir Semester SIA",
-    "back": "Gunakan diagram alur atau bagan saat menjelaskan usulan perbaikan sistem; identifikasi risiko bisnis terlebih dahulu sebelum menawarkan aktivitas pengendalian. Rujukan: Richardson et al. AIS 4e · Ch. 10, Integrated Project, hal. 376-385 (PDF 401-410)."
+    "front": "Critical path dan float",
+    "back": "Jalur terlama menentukan minimum durasi menurut dependency dan sumber daya memadai. Float mengukur kelonggaran; jalur bisa berubah. Rujukan: Richardson AIS 4e, Ch.17 pp.550–571 (PDF 575–596)."
   }
 ];
 
