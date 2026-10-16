@@ -23,7 +23,7 @@ export default function HomeView({ onSelectSemester, onOpenCourseDirectly, onOpe
   const { countDone, isDone } = useStudyProgress();
   const { visits } = useLearningJournal();
 
-  const { continueItems, hasRecordedProgress } = useMemo(() => {
+  const continueItems = useMemo(() => {
     const items: Array<{
       course: Course;
       semesterNumber: number;
@@ -32,7 +32,6 @@ export default function HomeView({ onSelectSemester, onOpenCourseDirectly, onOpe
       nextTm: number;
       nextTitle: string;
     }> = [];
-    let hasProgress = false;
 
     for (const semester of ACTIVE_SEMESTERS) {
       for (const course of semester.groups.flatMap((group) => group.courses)) {
@@ -40,7 +39,6 @@ export default function HomeView({ onSelectSemester, onOpenCourseDirectly, onOpe
         if (materials.length === 0) continue;
 
         const completed = countDone(materials.map((material) => materialKey(course.code, material.tm)));
-        if (completed > 0) hasProgress = true;
         const nextMaterial = materials.find((material) => !isDone(materialKey(course.code, material.tm)));
 
         if (completed > 0 && nextMaterial) {
@@ -57,11 +55,17 @@ export default function HomeView({ onSelectSemester, onOpenCourseDirectly, onOpe
     }
 
     items.sort((a, b) => b.completed - a.completed || a.semesterNumber - b.semesterNumber);
-    return { continueItems: items.slice(0, 2), hasRecordedProgress: hasProgress };
+    return items.slice(0, 2);
   }, [countDone, isDone]);
 
+  const hasRecentReading = visits.some((visit) => {
+    const course = ACTIVE_SEMESTERS.flatMap(semester => semester.groups.flatMap(group => group.courses)).find(item => item.code === visit.courseCode);
+    return course && [...(course.materiTM1_7 ?? []), ...(course.materiTM8_14 ?? [])].some(material => material.tm === visit.tm);
+  });
+  const canContinue = Boolean(onOpenCourseDirectly) && (continueItems.length > 0 || hasRecentReading);
+
   const scrollToStudyStart = () => {
-    document.getElementById(continueItems.length > 0 ? 'continue-learning' : 'course-catalog')?.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById(canContinue ? 'continue-learning' : 'course-catalog')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   useEffect(() => {
@@ -86,7 +90,6 @@ export default function HomeView({ onSelectSemester, onOpenCourseDirectly, onOpe
     return () => observer.disconnect();
   }, []);
 
-  const returning = hasRecordedProgress || visits.length > 0;
   const hero = (<>
       {/* Hero Section. From 1024px it fills the first screen below the header (min 100svh, so the next section starts
           below the fold) and centres its text 4svh above the middle; 768-1023px starts 34px below the header. */}
@@ -133,10 +136,10 @@ export default function HomeView({ onSelectSemester, onOpenCourseDirectly, onOpe
 
   return (
     <>
-      {!returning && hero}
+      {hero}
 
       {/* Returning-student study continuation, powered only by existing progress keys. */}
-      <section id="continue-learning" className={`relative z-10 border-y border-line bg-surface ${returning ? 'pt-[var(--page-top)]' : ''}`}>
+      {canContinue && <section id="continue-learning" className="relative z-10 scroll-mt-20 border-y border-line bg-surface">
         <div className="mx-auto max-w-7xl px-5 py-6 sm:py-8 md:px-10 md:py-10 lg:px-14">
           <div className="mb-4 flex flex-col gap-2 sm:mb-5 sm:flex-row sm:items-end sm:justify-between">
             <div>
@@ -144,12 +147,12 @@ export default function HomeView({ onSelectSemester, onOpenCourseDirectly, onOpe
               <h2 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white md:text-3xl">Lanjutkan belajar</h2>
             </div>
             <p className="max-w-lg text-sm leading-relaxed text-gray-600 dark:text-gray-400">
-              Materi berikut diambil dari progres tatap muka yang sudah Anda tandai selesai.
+              Buka bacaan terakhir atau lanjutkan materi yang belum selesai.
             </p>
           </div>
 
           <LearningResume onOpen={onOpenCourseDirectly} />
-          {continueItems.length > 0 ? (
+          {continueItems.length > 0 && (
             <div className="overflow-hidden rounded-2xl border border-blue-100 bg-white/85 shadow-sm shadow-blue-950/5 dark:border-blue-900/50 dark:bg-gray-900/80">
               {continueItems.map((item) => {
                 const percent = Math.round((item.completed / item.total) * 100);
@@ -181,25 +184,9 @@ export default function HomeView({ onSelectSemester, onOpenCourseDirectly, onOpe
                 );
               })}
             </div>
-          ) : (
-            <div className="flex flex-col gap-3 border-l-4 border-blue-500 bg-white/55 px-4 py-3 dark:bg-gray-900/45 sm:flex-row sm:items-center sm:justify-between sm:gap-4 sm:px-5 sm:py-4">
-              <div>
-                <p className="font-bold text-gray-900 dark:text-white">
-                  {hasRecordedProgress ? 'Materi yang ditandai sudah selesai.' : 'Belum ada progres materi.'}
-                </p>
-                <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
-                  Pilih semester dan buka materi untuk menentukan titik belajar berikutnya.
-                </p>
-              </div>
-              <button type="button" onClick={() => document.getElementById('course-catalog')?.scrollIntoView({ behavior: 'smooth' })} className="inline-flex min-h-11 items-center gap-2 self-start font-bold text-blue-700 transition hover:text-blue-800 dark:text-blue-300 dark:hover:text-blue-200 sm:self-auto">
-                Jelajahi mata kuliah <ArrowRight size={16} />
-              </button>
-            </div>
           )}
         </div>
-      </section>
-
-      {returning && <details className="mx-auto w-full max-w-7xl px-5 py-3 md:px-10"><summary className="min-h-11 cursor-pointer py-2 text-sm font-semibold text-gray-600 dark:text-gray-300">Tentang AkuntansiHub</summary>{hero}</details>}
+      </section>}
 
       {onOpenCourseDirectly && (
         <section className="relative z-10 mx-auto max-w-7xl px-5 md:px-10 lg:px-14">
